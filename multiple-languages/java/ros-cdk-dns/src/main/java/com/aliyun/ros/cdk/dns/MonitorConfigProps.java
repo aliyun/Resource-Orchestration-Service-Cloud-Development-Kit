@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dns;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-monitorconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.884Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:23:04.481Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.MonitorConfigProps")
 @software.amazon.jsii.Jsii.Proxy(MonitorConfigProps.Jsii$Proxy.class)
 public interface MonitorConfigProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,7 +21,9 @@ public interface MonitorConfigProps extends software.amazon.jsii.JsiiSerializabl
     @org.jetbrains.annotations.NotNull java.lang.Object getEvaluationCount();
 
     /**
-     * Property interval: The interval of the monitor.
+     * Property interval: The health check interval.
+     * <p>
+     * Unit: seconds.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInterval();
 
@@ -31,17 +33,69 @@ public interface MonitorConfigProps extends software.amazon.jsii.JsiiSerializabl
     @org.jetbrains.annotations.NotNull java.lang.Object getIspCityNode();
 
     /**
-     * Property monitorExtendInfo: The extend info of the monitor.
+     * Property monitorExtendInfo: The extended information.
+     * <p>
+     * The parameters vary based on the protocol type.
+     * <p>
+     * <ul>
+     * <li>HTTP or HTTPS</li>
+     * <li>port: The health check port.</li>
+     * <li>host: The Host header.</li>
+     * <li>path: The URL path.</li>
+     * <li>code: The health check is considered abnormal if the returned HTTP status code
+     * is greater than this value.</li>
+     * <li>failureRate: The failure rate.</li>
+     * <li>sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+     * is used only when the health check protocol is HTTPS. Valid values:</li>
+     * <li>true</li>
+     * <li>false</li>
+     * <li>nodeType: The type of the monitoring node. This parameter is used when the
+     * address pool type is DOMAIN. Valid values:</li>
+     * <li>IPV4</li>
+     * <li>IPV6</li>
+     * <li>PING</li>
+     * <li>failureRate: The failure rate.</li>
+     * <li>packetNum: The number of ping packets.</li>
+     * <li>packetLossRate: The packet loss rate.</li>
+     * <li>nodeType: The type of the monitoring node. This parameter is used when the
+     * address pool type is DOMAIN. Valid values:</li>
+     * <li>IPV4</li>
+     * <li>IPV6</li>
+     * <li>TCP</li>
+     * <li>port: The health check port.</li>
+     * <li>failureRate: The failure rate.</li>
+     * <li>nodeType: The type of the monitoring node. This parameter is used when the
+     * address pool type is DOMAIN. Valid values:</li>
+     * <li>IPV4</li>
+     * <li>IPV6</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter must be a JSON string.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getMonitorExtendInfo();
 
     /**
-     * Property protocolType: The protocol type of the monitor.
+     * Property protocolType: The health check protocol.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>HTTP</li>
+     * <li>HTTPS</li>
+     * <li>PING</li>
+     * <li>TCP</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getProtocolType();
 
     /**
-     * Property timeout: The timeout of the monitor.
+     * Property timeout: The timeout period.
+     * <p>
+     * Unit: milliseconds.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTimeout();
 
@@ -105,7 +159,8 @@ public interface MonitorConfigProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link MonitorConfigProps#getInterval}
-         * @param interval Property interval: The interval of the monitor. This parameter is required.
+         * @param interval Property interval: The health check interval. This parameter is required.
+         *                 Unit: seconds.
          * @return {@code this}
          */
         public Builder interval(java.lang.Number interval) {
@@ -115,7 +170,8 @@ public interface MonitorConfigProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link MonitorConfigProps#getInterval}
-         * @param interval Property interval: The interval of the monitor. This parameter is required.
+         * @param interval Property interval: The health check interval. This parameter is required.
+         *                 Unit: seconds.
          * @return {@code this}
          */
         public Builder interval(com.aliyun.ros.cdk.core.IResolvable interval) {
@@ -145,7 +201,47 @@ public interface MonitorConfigProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link MonitorConfigProps#getMonitorExtendInfo}
-         * @param monitorExtendInfo Property monitorExtendInfo: The extend info of the monitor. This parameter is required.
+         * @param monitorExtendInfo Property monitorExtendInfo: The extended information. This parameter is required.
+         *                          The parameters vary based on the protocol type.
+         *                          <p>
+         *                          <ul>
+         *                          <li>HTTP or HTTPS</li>
+         *                          <li>port: The health check port.</li>
+         *                          <li>host: The Host header.</li>
+         *                          <li>path: The URL path.</li>
+         *                          <li>code: The health check is considered abnormal if the returned HTTP status code
+         *                          is greater than this value.</li>
+         *                          <li>failureRate: The failure rate.</li>
+         *                          <li>sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+         *                          is used only when the health check protocol is HTTPS. Valid values:</li>
+         *                          <li>true</li>
+         *                          <li>false</li>
+         *                          <li>nodeType: The type of the monitoring node. This parameter is used when the
+         *                          address pool type is DOMAIN. Valid values:</li>
+         *                          <li>IPV4</li>
+         *                          <li>IPV6</li>
+         *                          <li>PING</li>
+         *                          <li>failureRate: The failure rate.</li>
+         *                          <li>packetNum: The number of ping packets.</li>
+         *                          <li>packetLossRate: The packet loss rate.</li>
+         *                          <li>nodeType: The type of the monitoring node. This parameter is used when the
+         *                          address pool type is DOMAIN. Valid values:</li>
+         *                          <li>IPV4</li>
+         *                          <li>IPV6</li>
+         *                          <li>TCP</li>
+         *                          <li>port: The health check port.</li>
+         *                          <li>failureRate: The failure rate.</li>
+         *                          <li>nodeType: The type of the monitoring node. This parameter is used when the
+         *                          address pool type is DOMAIN. Valid values:</li>
+         *                          <li>IPV4</li>
+         *                          <li>IPV6</li>
+         *                          </ul>
+         *                          <p>
+         *                          <blockquote>
+         *                          <p>
+         *                          This parameter must be a JSON string.
+         *                          <p>
+         *                          </blockquote>
          * @return {@code this}
          */
         public Builder monitorExtendInfo(com.aliyun.ros.cdk.core.IResolvable monitorExtendInfo) {
@@ -155,7 +251,47 @@ public interface MonitorConfigProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link MonitorConfigProps#getMonitorExtendInfo}
-         * @param monitorExtendInfo Property monitorExtendInfo: The extend info of the monitor. This parameter is required.
+         * @param monitorExtendInfo Property monitorExtendInfo: The extended information. This parameter is required.
+         *                          The parameters vary based on the protocol type.
+         *                          <p>
+         *                          <ul>
+         *                          <li>HTTP or HTTPS</li>
+         *                          <li>port: The health check port.</li>
+         *                          <li>host: The Host header.</li>
+         *                          <li>path: The URL path.</li>
+         *                          <li>code: The health check is considered abnormal if the returned HTTP status code
+         *                          is greater than this value.</li>
+         *                          <li>failureRate: The failure rate.</li>
+         *                          <li>sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+         *                          is used only when the health check protocol is HTTPS. Valid values:</li>
+         *                          <li>true</li>
+         *                          <li>false</li>
+         *                          <li>nodeType: The type of the monitoring node. This parameter is used when the
+         *                          address pool type is DOMAIN. Valid values:</li>
+         *                          <li>IPV4</li>
+         *                          <li>IPV6</li>
+         *                          <li>PING</li>
+         *                          <li>failureRate: The failure rate.</li>
+         *                          <li>packetNum: The number of ping packets.</li>
+         *                          <li>packetLossRate: The packet loss rate.</li>
+         *                          <li>nodeType: The type of the monitoring node. This parameter is used when the
+         *                          address pool type is DOMAIN. Valid values:</li>
+         *                          <li>IPV4</li>
+         *                          <li>IPV6</li>
+         *                          <li>TCP</li>
+         *                          <li>port: The health check port.</li>
+         *                          <li>failureRate: The failure rate.</li>
+         *                          <li>nodeType: The type of the monitoring node. This parameter is used when the
+         *                          address pool type is DOMAIN. Valid values:</li>
+         *                          <li>IPV4</li>
+         *                          <li>IPV6</li>
+         *                          </ul>
+         *                          <p>
+         *                          <blockquote>
+         *                          <p>
+         *                          This parameter must be a JSON string.
+         *                          <p>
+         *                          </blockquote>
          * @return {@code this}
          */
         public Builder monitorExtendInfo(java.util.Map<java.lang.String, ? extends java.lang.Object> monitorExtendInfo) {
@@ -165,7 +301,15 @@ public interface MonitorConfigProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link MonitorConfigProps#getProtocolType}
-         * @param protocolType Property protocolType: The protocol type of the monitor. This parameter is required.
+         * @param protocolType Property protocolType: The health check protocol. This parameter is required.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>HTTP</li>
+         *                     <li>HTTPS</li>
+         *                     <li>PING</li>
+         *                     <li>TCP</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder protocolType(java.lang.String protocolType) {
@@ -175,7 +319,15 @@ public interface MonitorConfigProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link MonitorConfigProps#getProtocolType}
-         * @param protocolType Property protocolType: The protocol type of the monitor. This parameter is required.
+         * @param protocolType Property protocolType: The health check protocol. This parameter is required.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>HTTP</li>
+         *                     <li>HTTPS</li>
+         *                     <li>PING</li>
+         *                     <li>TCP</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder protocolType(com.aliyun.ros.cdk.core.IResolvable protocolType) {
@@ -185,7 +337,8 @@ public interface MonitorConfigProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link MonitorConfigProps#getTimeout}
-         * @param timeout Property timeout: The timeout of the monitor. This parameter is required.
+         * @param timeout Property timeout: The timeout period. This parameter is required.
+         *                Unit: milliseconds.
          * @return {@code this}
          */
         public Builder timeout(java.lang.Number timeout) {
@@ -195,7 +348,8 @@ public interface MonitorConfigProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link MonitorConfigProps#getTimeout}
-         * @param timeout Property timeout: The timeout of the monitor. This parameter is required.
+         * @param timeout Property timeout: The timeout period. This parameter is required.
+         *                Unit: milliseconds.
          * @return {@code this}
          */
         public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {

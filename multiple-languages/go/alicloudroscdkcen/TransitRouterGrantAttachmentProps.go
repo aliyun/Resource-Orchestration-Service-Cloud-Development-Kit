@@ -19,11 +19,11 @@ type TransitRouterGrantAttachmentProps struct {
 	// - VPN: IPsec connection.
 	// - ECR: ECR instance.
 	InstanceType interface{} `field:"required" json:"instanceType" yaml:"instanceType"`
-	// Property orderType: The billing method for the network instance.
+	// Property orderType: The entity that pays the fees of the network instance.
 	//
 	// Valid values:
-	// - PayByCenOwner: The fees incurred by the network instance are paid by the owner of the CEN instance.
-	// - PayByResourceOwner: The fees incurred by the network instance are paid by the owner of the network instance.
+	// - PayByCenOwner: the account that owns the CEN instance.
+	// - PayByResourceOwner: the account that owns the network instance.
 	OrderType interface{} `field:"optional" json:"orderType" yaml:"orderType"`
 }
 

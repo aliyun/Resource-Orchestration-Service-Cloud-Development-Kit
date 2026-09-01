@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AdditionalCertificateAssociation`, which is used to add additional certificates to a listener.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AdditionalCertificateAssociation`.
 type AdditionalCertificateAssociation interface {
 	alicloudroscdkcore.Resource
 	IAdditionalCertificateAssociation

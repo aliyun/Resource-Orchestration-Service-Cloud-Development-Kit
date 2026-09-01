@@ -51,9 +51,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Property ipVersion: The IP version of the BGP group.</summary>
+        /// <summary>Property ipVersion: The IP version.</summary>
         /// <remarks>
-        /// Valid values: IPv4 and IPv6.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>IPv4: This is the default value.</description>
+        /// <description>IPv6: IPv6 is supported only if the VBR for which you want to create the BGP
+        /// group has IPv6 enabled.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -65,11 +71,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Property isFakeAsn: A router that runs BGP typically belongs to only one AS.</summary>
+        /// <summary>Property isFakeAsn: Specifies whether to use a fake ASN.</summary>
         /// <remarks>
-        /// In some cases, for example,
-        /// the AS needs to be migrated or is merged with another AS, a new AS number replaces
-        /// the original one.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>false (default)</description>
+        /// <description>true</description>
+        /// </list>
+        ///
+        ///     A router that runs BGP typically belongs to only one AS. If you need to
+        ///     replace an existing AS with a new AS and you cannot immediately modify BGP
+        ///     configurations, you can use fake ASNs to ensure service continuity.
         /// </remarks>
         [JsiiProperty(name: "isFakeAsn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -81,7 +94,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Property localAsn: The AS number on the Alibaba Cloud side.</summary>
+        /// <summary>Property localAsn: The custom ASN on the cloud side.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>45104</description>
+        /// <description>64512~65534</description>
+        /// <description>4200000000~4294967294</description>
+        /// </list>
+        ///
+        ///     65025 is reserved by the cloud platform. By default, the system uses 45104 as
+        ///     LocalAsn. If you use custom LocalAsn in multi-line access scenarios, loops in BGP
+        ///     may occur.
+        /// </remarks>
         [JsiiProperty(name: "localAsn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? LocalAsn
@@ -167,9 +193,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property ipVersion: The IP version of the BGP group.</summary>
+            /// <summary>Property ipVersion: The IP version.</summary>
             /// <remarks>
-            /// Valid values: IPv4 and IPv6.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>IPv4: This is the default value.</description>
+            /// <description>IPv6: IPv6 is supported only if the VBR for which you want to create the BGP
+            /// group has IPv6 enabled.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -178,11 +210,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property isFakeAsn: A router that runs BGP typically belongs to only one AS.</summary>
+            /// <summary>Property isFakeAsn: Specifies whether to use a fake ASN.</summary>
             /// <remarks>
-            /// In some cases, for example,
-            /// the AS needs to be migrated or is merged with another AS, a new AS number replaces
-            /// the original one.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>false (default)</description>
+            /// <description>true</description>
+            /// </list>
+            ///
+            ///     A router that runs BGP typically belongs to only one AS. If you need to
+            ///     replace an existing AS with a new AS and you cannot immediately modify BGP
+            ///     configurations, you can use fake ASNs to ensure service continuity.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "isFakeAsn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -191,7 +230,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property localAsn: The AS number on the Alibaba Cloud side.</summary>
+            /// <summary>Property localAsn: The custom ASN on the cloud side.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>45104</description>
+            /// <description>64512~65534</description>
+            /// <description>4200000000~4294967294</description>
+            /// </list>
+            ///
+            ///     65025 is reserved by the cloud platform. By default, the system uses 45104 as
+            ///     LocalAsn. If you use custom LocalAsn in multi-line access scenarios, loops in BGP
+            ///     may occur.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "localAsn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? LocalAsn

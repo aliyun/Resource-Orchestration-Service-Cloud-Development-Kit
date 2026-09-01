@@ -37,9 +37,9 @@ export interface DiskProps {
     readonly diskName?: string | ros.IResolvable;
 
     /**
-     * Property encrypted: Specifies whether to encrypt the new system disk. Valid values:
-     * true
-     * false (default): no
+     * Property encrypted: Specifies whether to encrypt the disk. Valid values:
+     * - true
+     * - false (default)
      */
     readonly encrypted?: boolean | ros.IResolvable;
 
@@ -75,7 +75,7 @@ export interface IDisk extends ros.IResource {
     readonly attrDiskId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Disk`, which is used to create a pay-as-you-go or subscription data disk.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Disk`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDisk`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-disk
  */

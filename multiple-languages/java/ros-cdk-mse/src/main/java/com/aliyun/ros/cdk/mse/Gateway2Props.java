@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mse;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.309Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:13:41.657Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.Gateway2Props")
 @software.amazon.jsii.Jsii.Proxy(Gateway2Props.Jsii$Proxy.class)
 public interface Gateway2Props extends software.amazon.jsii.JsiiSerializable {
@@ -49,7 +49,7 @@ public interface Gateway2Props extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.
+     * Property enableHardwareAcceleration: Specifies whether to enable hardware acceleration.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableHardwareAcceleration() {
         return null;
@@ -70,7 +70,7 @@ public interface Gateway2Props extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.
+     * Property enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnterpriseSecurityGroup() {
         return null;
@@ -99,11 +99,13 @@ public interface Gateway2Props extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property mserVersion: The MSE gateway instance type.
+     * Property mserVersion: The edition of the gateway.
      * <p>
-     * Valid values:
-     * mse_pro: normal instance
-     * mse_premium: professional normal instancemse_serverless: serverless instance
+     * <ul>
+     * <li><code>mse_premium</code>: Professional Edition</li>
+     * <li><code>mse_pro</code>: Standard Edition</li>
+     * <li><code>mse_serverless</code>: Serverless Edition</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMserVersion() {
         return null;
@@ -363,7 +365,7 @@ public interface Gateway2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Gateway2Props#getEnableHardwareAcceleration}
-         * @param enableHardwareAcceleration Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.
+         * @param enableHardwareAcceleration Property enableHardwareAcceleration: Specifies whether to enable hardware acceleration.
          * @return {@code this}
          */
         public Builder enableHardwareAcceleration(java.lang.Boolean enableHardwareAcceleration) {
@@ -373,7 +375,7 @@ public interface Gateway2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Gateway2Props#getEnableHardwareAcceleration}
-         * @param enableHardwareAcceleration Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.
+         * @param enableHardwareAcceleration Property enableHardwareAcceleration: Specifies whether to enable hardware acceleration.
          * @return {@code this}
          */
         public Builder enableHardwareAcceleration(com.aliyun.ros.cdk.core.IResolvable enableHardwareAcceleration) {
@@ -423,7 +425,7 @@ public interface Gateway2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Gateway2Props#getEnterpriseSecurityGroup}
-         * @param enterpriseSecurityGroup Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.
+         * @param enterpriseSecurityGroup Property enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group.
          * @return {@code this}
          */
         public Builder enterpriseSecurityGroup(java.lang.Boolean enterpriseSecurityGroup) {
@@ -433,7 +435,7 @@ public interface Gateway2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Gateway2Props#getEnterpriseSecurityGroup}
-         * @param enterpriseSecurityGroup Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.
+         * @param enterpriseSecurityGroup Property enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group.
          * @return {@code this}
          */
         public Builder enterpriseSecurityGroup(com.aliyun.ros.cdk.core.IResolvable enterpriseSecurityGroup) {
@@ -497,10 +499,12 @@ public interface Gateway2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Gateway2Props#getMserVersion}
-         * @param mserVersion Property mserVersion: The MSE gateway instance type.
-         *                    Valid values:
-         *                    mse_pro: normal instance
-         *                    mse_premium: professional normal instancemse_serverless: serverless instance
+         * @param mserVersion Property mserVersion: The edition of the gateway.
+         *                    <ul>
+         *                    <li><code>mse_premium</code>: Professional Edition</li>
+         *                    <li><code>mse_pro</code>: Standard Edition</li>
+         *                    <li><code>mse_serverless</code>: Serverless Edition</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder mserVersion(java.lang.String mserVersion) {
@@ -510,10 +514,12 @@ public interface Gateway2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Gateway2Props#getMserVersion}
-         * @param mserVersion Property mserVersion: The MSE gateway instance type.
-         *                    Valid values:
-         *                    mse_pro: normal instance
-         *                    mse_premium: professional normal instancemse_serverless: serverless instance
+         * @param mserVersion Property mserVersion: The edition of the gateway.
+         *                    <ul>
+         *                    <li><code>mse_premium</code>: Professional Edition</li>
+         *                    <li><code>mse_pro</code>: Standard Edition</li>
+         *                    <li><code>mse_serverless</code>: Serverless Edition</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder mserVersion(com.aliyun.ros.cdk.core.IResolvable mserVersion) {

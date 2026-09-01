@@ -15,7 +15,9 @@ export interface SecurityGroupCloneProps {
     readonly sourceSecurityGroupId: string | ros.IResolvable;
 
     /**
-     * Property description: Description of the security group, [2, 256] characters. Do not fill or empty, the default is empty.
+     * Property description: The description of the security group. The description must be 2 to 256
+     * characters in length. It cannot start with `http:\/\/` or `https:\/\/`.
+     * By default, this parameter is left empty.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -35,19 +37,25 @@ export interface SecurityGroupCloneProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * Property securityGroupName: The name of the security group. The name must be 2 to 128 characters in length.
+     * The name must start with a letter and cannot start with `http:\/\/` or `https:\/\/`.
+     * The name can contain letters, digits, colons (:), underscores (_), periods (.),
+     * and hyphens (-).
      */
     readonly securityGroupName?: string | ros.IResolvable;
 
     /**
      * Property securityGroupType: The type of the security group. Valid values:
-     * normal: basic security group
-     * enterprise: advanced security group
+     * - normal: basic security group
+     * - enterprise: advanced security group 
+     * Default value: normal.
      */
     readonly securityGroupType?: string | ros.IResolvable;
 
     /**
-     * Property vpcId: Physical ID of the VPC.
+     * Property vpcId: The ID of the VPC in which you want to create the security group.
+     * > The VpcId parameter is required only if you want to create security groups of
+     * the VPC type.
      */
     readonly vpcId?: string | ros.IResolvable;
 }
@@ -64,7 +72,7 @@ export interface ISecurityGroupClone extends ros.IResource {
     readonly attrSecurityGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupClone`, which is used to clone a security group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupClone`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroupClone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupclone
  */

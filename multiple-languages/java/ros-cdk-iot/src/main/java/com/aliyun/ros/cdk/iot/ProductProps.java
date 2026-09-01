@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.iot;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:35:50.710Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:45:11.654Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.ProductProps")
 @software.amazon.jsii.Jsii.Proxy(ProductProps.Jsii$Proxy.class)
 public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,13 +32,15 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getProductName();
 
     /**
-     * Property aliyunCommodityCode: The edition of the product that you want to create.
+     * Property aliyunCommodityCode: The edition of the product.
      * <p>
-     * There are two options:
-     * iothub_senior: Pro Edition.
-     * iothub: Basic Edition.
-     * If you do not input this parameter, the default value is used, which is iothub (Basic
-     * Edition).
+     * <ul>
+     * <li>If you do not configure this parameter, a product of the Basic Edition is
+     * automatically created. You cannot use a TSL model to define the product.</li>
+     * <li>If you want to configure this parameter, set the value to iothub_senior. A
+     * product that supports TSL models is created. You must also configure the
+     * DataFormat parameter.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAliyunCommodityCode() {
         return null;
@@ -263,12 +265,14 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ProductProps#getAliyunCommodityCode}
-         * @param aliyunCommodityCode Property aliyunCommodityCode: The edition of the product that you want to create.
-         *                            There are two options:
-         *                            iothub_senior: Pro Edition.
-         *                            iothub: Basic Edition.
-         *                            If you do not input this parameter, the default value is used, which is iothub (Basic
-         *                            Edition).
+         * @param aliyunCommodityCode Property aliyunCommodityCode: The edition of the product.
+         *                            <ul>
+         *                            <li>If you do not configure this parameter, a product of the Basic Edition is
+         *                            automatically created. You cannot use a TSL model to define the product.</li>
+         *                            <li>If you want to configure this parameter, set the value to iothub_senior. A
+         *                            product that supports TSL models is created. You must also configure the
+         *                            DataFormat parameter.</li>
+         *                            </ul>
          * @return {@code this}
          */
         public Builder aliyunCommodityCode(java.lang.String aliyunCommodityCode) {
@@ -278,12 +282,14 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ProductProps#getAliyunCommodityCode}
-         * @param aliyunCommodityCode Property aliyunCommodityCode: The edition of the product that you want to create.
-         *                            There are two options:
-         *                            iothub_senior: Pro Edition.
-         *                            iothub: Basic Edition.
-         *                            If you do not input this parameter, the default value is used, which is iothub (Basic
-         *                            Edition).
+         * @param aliyunCommodityCode Property aliyunCommodityCode: The edition of the product.
+         *                            <ul>
+         *                            <li>If you do not configure this parameter, a product of the Basic Edition is
+         *                            automatically created. You cannot use a TSL model to define the product.</li>
+         *                            <li>If you want to configure this parameter, set the value to iothub_senior. A
+         *                            product that supports TSL models is created. You must also configure the
+         *                            DataFormat parameter.</li>
+         *                            </ul>
          * @return {@code this}
          */
         public Builder aliyunCommodityCode(com.aliyun.ros.cdk.core.IResolvable aliyunCommodityCode) {

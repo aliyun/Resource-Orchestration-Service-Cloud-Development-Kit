@@ -25,7 +25,9 @@ export interface ProtocolMountTargetProps {
     readonly vpcId: string | ros.IResolvable;
 
     /**
-     * Property vSwitchId: Switch ID exported by the protocol service.
+     * Property vSwitchId: The vSwitch ID of the export directory.
+     * If the storage redundancy type of the file system is not zone-redundant (ZRS) and
+     * the VpcId is set, this field is required.
      */
     readonly vSwitchId: string | ros.IResolvable;
 
@@ -36,11 +38,14 @@ export interface ProtocolMountTargetProps {
     readonly accessGroupName?: string | ros.IResolvable;
 
     /**
-     * Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name.
-     * limit:
-     * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * Property description: The description of the export directory for the protocol service. The name of the
+     * export directory appears in the console.
+     * Limits:
+     * *   The description must be 2 to 128 characters in length.
+     * *   The description must start with a letter but cannot start with `http:\/\/` or
+     * `https:\/\/`.
+     * *   The description can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).
      */
     readonly description?: string | ros.IResolvable;
 
@@ -54,15 +59,16 @@ export interface ProtocolMountTargetProps {
     readonly fsetId?: string | ros.IResolvable;
 
     /**
-     * Property path: The path of the CPFS directory that needs to be exported.
-     * limit:
-     * This directory must be existing directory on CPFS.
-     * The same directory allows only one export.
-     * Fileset and Path can only specify one.
+     * Property path: The path of the CPFS directory that you want to export.
+     * Limits:
+     * *   The directory already exists in the CPFS file system.
+     * *   You can create only one export directory for a directory.
+     * *   You can specify either a fileset or a path.
      * Format:
-     * The length is 1 to 1024 characters.
-     * Use UTF-8 encoding.
-     * It must start with the positive oblique line (\/), and the root directory must be\/.
+     * *   The path must be 1 to 1,024 characters in length.
+     * *   The path must be encoded in UTF-8.
+     * *   The path must start and end with a forward slash (\/). The root directory is
+     * `\/`.
      */
     readonly path?: string | ros.IResolvable;
 }
@@ -94,7 +100,7 @@ export interface IProtocolMountTarget extends ros.IResource {
     readonly attrProtocolServiceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`Creates an export directory for a NAS protocol service.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProtocolMountTarget`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
  */

@@ -7,7 +7,7 @@ package alicloudroscdkcms
 type EventRuleTargetsProps struct {
 	// Property ruleName: The name of the alert rule.
 	RuleName interface{} `field:"required" json:"ruleName" yaml:"ruleName"`
-	// Property contactParameters: CONTACT configuration.A maximum of 5 parameters.
+	// Property contactParameters: The information about the alert contact groups that receive alert notifications.
 	ContactParameters interface{} `field:"optional" json:"contactParameters" yaml:"contactParameters"`
 	// Property fcParameters: FC configuration.A maximum of 5 parameters.
 	FcParameters interface{} `field:"optional" json:"fcParameters" yaml:"fcParameters"`
@@ -17,7 +17,7 @@ type EventRuleTargetsProps struct {
 	OpenApiParameters interface{} `field:"optional" json:"openApiParameters" yaml:"openApiParameters"`
 	// Property slsParameters: SLS configuration.A maximum of 5 parameters.
 	SlsParameters interface{} `field:"optional" json:"slsParameters" yaml:"slsParameters"`
-	// Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
+	// Property webhookParameters: The information about the callback URLs that are used to receive alert notifications.
 	WebhookParameters interface{} `field:"optional" json:"webhookParameters" yaml:"webhookParameters"`
 }
 

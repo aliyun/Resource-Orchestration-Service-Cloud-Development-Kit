@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::AccessControl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.213Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:44:47.017Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.AccessControl")
 public class AccessControl extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.slb.IAccessControl {
 
@@ -120,20 +120,30 @@ public class AccessControl extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property aclName: The name of the access control list.
+         * Property aclName: The name of the ACL.
+         * <p>
+         * The name must be 1 to 80 characters in length, and can
+         * contain letters, digits, periods (.), hyphens (-), forward slashes (/), and
+         * underscores (_). The name of the ACL that you create must be unique within each
+         * region.
          * <p>
          * @return {@code this}
-         * @param aclName Property aclName: The name of the access control list. This parameter is required.
+         * @param aclName Property aclName: The name of the ACL. This parameter is required.
          */
         public Builder aclName(final java.lang.String aclName) {
             this.props.aclName(aclName);
             return this;
         }
         /**
-         * Property aclName: The name of the access control list.
+         * Property aclName: The name of the ACL.
+         * <p>
+         * The name must be 1 to 80 characters in length, and can
+         * contain letters, digits, periods (.), hyphens (-), forward slashes (/), and
+         * underscores (_). The name of the ACL that you create must be unique within each
+         * region.
          * <p>
          * @return {@code this}
-         * @param aclName Property aclName: The name of the access control list. This parameter is required.
+         * @param aclName Property aclName: The name of the ACL. This parameter is required.
          */
         public Builder aclName(final com.aliyun.ros.cdk.core.IResolvable aclName) {
             this.props.aclName(aclName);
@@ -166,24 +176,24 @@ public class AccessControl extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property addressIpVersion: IP version.
+         * Property addressIpVersion: The IP version.
          * <p>
-         * Could be "ipv4" or "ipv6".
+         * Valid values: ipv4 and ipv6.
          * <p>
          * @return {@code this}
-         * @param addressIpVersion Property addressIpVersion: IP version. This parameter is required.
+         * @param addressIpVersion Property addressIpVersion: The IP version. This parameter is required.
          */
         public Builder addressIpVersion(final java.lang.String addressIpVersion) {
             this.props.addressIpVersion(addressIpVersion);
             return this;
         }
         /**
-         * Property addressIpVersion: IP version.
+         * Property addressIpVersion: The IP version.
          * <p>
-         * Could be "ipv4" or "ipv6".
+         * Valid values: ipv4 and ipv6.
          * <p>
          * @return {@code this}
-         * @param addressIpVersion Property addressIpVersion: IP version. This parameter is required.
+         * @param addressIpVersion Property addressIpVersion: The IP version. This parameter is required.
          */
         public Builder addressIpVersion(final com.aliyun.ros.cdk.core.IResolvable addressIpVersion) {
             this.props.addressIpVersion(addressIpVersion);

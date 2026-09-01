@@ -9,16 +9,20 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosAccountProps {
 
     /**
-     * @Property accountName: The name of the account.
+     * @Property accountName: The database account name. The name must meet the following requirements:
+     * - Start with a lowercase letter and end with a lowercase letter or digit.
+     * - Contain only lowercase letters, digits, or underscores (_).
+     * - Be 2 to 16 characters long.
+     * - Not use reserved usernames such as root, admin, or opsadmin.
      */
     readonly accountName: string | ros.IResolvable;
 
     /**
-     * @Property accountPassword: The password of the account.
-     * The password must contain uppercase letters, lowercase letters, digits, and special
-     * characters.
-     * Special characters include ! @ # $ % ^ & * ()  _ + - and =
-     * The password must be 8 to 32 characters in length.
+     * @Property accountPassword: The database account password.
+     * - Use any three of the following character types: uppercase letters, lowercase
+     * letters, digits, and special characters.
+     * - Special characters include the following: `!@#$%^&*()_+-=`
+     * - Be 8 to 32 characters long.
      */
     readonly accountPassword: string | ros.IResolvable;
 
@@ -91,7 +95,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::Account`, which is used to create a database account for an AnalyticDB for MySQL cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::Account`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-account
  */
@@ -120,16 +124,20 @@ export class RosAccount extends ros.RosResource {
 
 
     /**
-     * @Property accountName: The name of the account.
+     * @Property accountName: The database account name. The name must meet the following requirements:
+     * - Start with a lowercase letter and end with a lowercase letter or digit.
+     * - Contain only lowercase letters, digits, or underscores (_).
+     * - Be 2 to 16 characters long.
+     * - Not use reserved usernames such as root, admin, or opsadmin.
      */
     public accountName: string | ros.IResolvable;
 
     /**
-     * @Property accountPassword: The password of the account.
-     * The password must contain uppercase letters, lowercase letters, digits, and special
-     * characters.
-     * Special characters include ! @ # $ % ^ & * ()  _ + - and =
-     * The password must be 8 to 32 characters in length.
+     * @Property accountPassword: The database account password.
+     * - Use any three of the following character types: uppercase letters, lowercase
+     * letters, digits, and special characters.
+     * - Special characters include the following: `!@#$%^&*()_+-=`
+     * - Be 8 to 32 characters long.
      */
     public accountPassword: string | ros.IResolvable;
 
@@ -202,22 +210,29 @@ export interface RosBackupPolicyProps {
     readonly preferredBackupPeriod: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property preferredBackupTime: The preferred backup time. Format: HH:mmZ-HH:mmZ. Example: 02:00Z-03:00Z
+     * @Property preferredBackupTime: The start time of the full backup within a time range. Specify the time range in
+     * the HH:mmZ-HH:mmZ format. The time must be in UTC.
+     * >  The time range is 1 hour.
      */
     readonly preferredBackupTime: string | ros.IResolvable;
 
     /**
-     * @Property backupRetentionPeriod: The number of days for which backup files are retained. Valid values: 7 to 730.
+     * @Property backupRetentionPeriod: The number of days for which to retain full backup files. Valid values: 7 to 730.
+     * >  If you do not specify this parameter, the default value 7 is used.
      */
     readonly backupRetentionPeriod?: number | ros.IResolvable;
 
     /**
-     * @Property enableBackupLog: Whether to enable log backup. Valid values: Enable, Disable.
+     * @Property enableBackupLog: Specifies whether to enable real-time log backup. Valid values:
+     * *   Enable
+     * *   Disable
+     * > If you leave this parameter empty, the default value Enable is used.
      */
     readonly enableBackupLog?: string | ros.IResolvable;
 
     /**
-     * @Property logBackupRetentionPeriod: The number of days for which log backup files are retained. Valid values: 7 to 730.
+     * @Property logBackupRetentionPeriod: The number of days for which to retain log backup files. Valid values: 7 to 730.
+     * >  If you do not specify this parameter, the default value 7 is used.
      */
     readonly logBackupRetentionPeriod?: number | ros.IResolvable;
 }
@@ -313,22 +328,29 @@ export class RosBackupPolicy extends ros.RosResource {
     public preferredBackupPeriod: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property preferredBackupTime: The preferred backup time. Format: HH:mmZ-HH:mmZ. Example: 02:00Z-03:00Z
+     * @Property preferredBackupTime: The start time of the full backup within a time range. Specify the time range in
+     * the HH:mmZ-HH:mmZ format. The time must be in UTC.
+     * >  The time range is 1 hour.
      */
     public preferredBackupTime: string | ros.IResolvable;
 
     /**
-     * @Property backupRetentionPeriod: The number of days for which backup files are retained. Valid values: 7 to 730.
+     * @Property backupRetentionPeriod: The number of days for which to retain full backup files. Valid values: 7 to 730.
+     * >  If you do not specify this parameter, the default value 7 is used.
      */
     public backupRetentionPeriod: number | ros.IResolvable | undefined;
 
     /**
-     * @Property enableBackupLog: Whether to enable log backup. Valid values: Enable, Disable.
+     * @Property enableBackupLog: Specifies whether to enable real-time log backup. Valid values:
+     * *   Enable
+     * *   Disable
+     * > If you leave this parameter empty, the default value Enable is used.
      */
     public enableBackupLog: string | ros.IResolvable | undefined;
 
     /**
-     * @Property logBackupRetentionPeriod: The number of days for which log backup files are retained. Valid values: 7 to 730.
+     * @Property logBackupRetentionPeriod: The number of days for which to retain log backup files. Valid values: 7 to 730.
+     * >  If you do not specify this parameter, the default value 7 is used.
      */
     public logBackupRetentionPeriod: number | ros.IResolvable | undefined;
 
@@ -372,11 +394,15 @@ export class RosBackupPolicy extends ros.RosResource {
 export interface RosDBClusterProps {
 
     /**
-     * @Property dbClusterCategory: The edition of the cluster.
-     * Valid values when the cluster is in reserved mode:
-     * Basic
-     * Cluster
-     * When the cluster is in elastic mode, set the value to MixedStorage.
+     * @Property dbClusterCategory: The cluster edition. Valid values:
+     * - Cluster: reserved cluster.
+     * > Reserved clusters are available only in the Chinese mainland and Singapore
+     * regions. In the Singapore region, you can purchase reserved clusters only with
+     * the pay-as-you-go billing method.
+     * - MixedStorage: elastic cluster (new).
+     * > If you set `DBClusterCategory` to `Cluster`, you must set the `Mode` parameter
+     * to `Reserved`. If you set `DBClusterCategory` to `MixedStorage`, you must set the
+     * `Mode` parameter to `Flexible`. Otherwise, cluster creation will fail.
      */
     readonly dbClusterCategory: string | ros.IResolvable;
 
@@ -386,9 +412,9 @@ export interface RosDBClusterProps {
     readonly dbClusterVersion: string | ros.IResolvable;
 
     /**
-     * @Property mode: The mode of the cluster. Valid values:
-     * Reserver: the reserved mode
-     * Flexible: the elastic mode
+     * @Property mode: The cluster mode. Valid values:
+     * - Reserved: reserved mode.
+     * - Flexible: flexible mode.
      */
     readonly mode: string | ros.IResolvable;
 
@@ -411,7 +437,20 @@ export interface RosDBClusterProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * @Property computeResource: The computing resource of the cluster. This parameter is required in elastic mode.
+     * @Property computeResource: The compute resources for the cluster. Compute resources are used for data
+     * queries. A larger amount of compute resources can provide better query
+     * performance. Compute resources are available in cluster and single-node editions:
+     * - Cluster edition: includes specifications such as 16 cores\/64 GB, 24 cores\/96
+     * GB, and 32 cores or more. The cluster edition supports resource pool isolation,
+     * scheduled scaling, and tiered storage of hot and cold data.
+     * - Single-node edition: includes specifications such as 8 cores\/32 GB and 16
+     * cores\/64 GB. The single-node edition does not provide an SLA guarantee and has a
+     * long recovery time from failures (4 to 8 hours). We do not recommend that you use
+     * the single-node edition in production environments.
+     * > * You can call the [DescribeAvailableResource]() operation to query the compute
+     * resources that are available in a specific region.
+     * >
+     * > * This parameter is required when `Mode` is set to `Flexible` (flexible mode).
      */
     readonly computeResource?: string | ros.IResolvable;
 
@@ -424,13 +463,14 @@ export interface RosDBClusterProps {
 
     /**
      * @Property dbClusterDescription: The description of the cluster.
+     * - The description cannot start with `http:\/\/` or `https:\/\/`.
+     * - The description must be 2 to 256 characters long.
      */
     readonly dbClusterDescription?: string | ros.IResolvable;
 
     /**
-     * @Property dbNodeGroupCount: The number of node groups. This parameter is required in reserved mode. Valid values:
-     * T8, T16, T32, and T52: 1
-     * C8 and C32: 1 to 128
+     * @Property dbNodeGroupCount: The number of node groups. The value must be an integer from 1 to 200.
+     * > This parameter is required when `Mode` is set to `Reserved` (reserved mode).
      */
     readonly dbNodeGroupCount?: number | ros.IResolvable;
 
@@ -454,8 +494,7 @@ export interface RosDBClusterProps {
     readonly diskEncryption?: boolean | ros.IResolvable;
 
     /**
-     * @Property elasticIoResource: Elastic IO Unit
-     * Note the flexible mode cluster will use this parameter.
+     * @Property elasticIoResource: The number of Elastic IO Units (EIUs).
      */
     readonly elasticIoResource?: number | ros.IResolvable;
 
@@ -468,7 +507,7 @@ export interface RosDBClusterProps {
     readonly enableSsl?: boolean | ros.IResolvable;
 
     /**
-     * @Property executorCount: ExecutorCount
+     * @Property executorCount: This parameter is reserved.
      */
     readonly executorCount?: number | ros.IResolvable;
 
@@ -478,8 +517,10 @@ export interface RosDBClusterProps {
     readonly kmsId?: string | ros.IResolvable;
 
     /**
-     * @Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-     * Valid values when the Period parameter is set to Year: 1, 2, and 3.
+     * @Property period: The subscription period unit. Valid values:
+     * - Year
+     * - Month
+     * > This parameter is required when `PayType` is set to `Prepaid` (subscription).
      */
     readonly period?: number | ros.IResolvable;
 
@@ -562,7 +603,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('dbNodeGroupCount', ros.validateRange)({
             data: properties.dbNodeGroupCount,
             min: 1,
-            max: 128,
+            max: 200,
           }));
     }
     errors.collect(ros.propertyValidator('dbNodeGroupCount', ros.validateNumber)(properties.dbNodeGroupCount));
@@ -618,7 +659,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::DBCluster`Use the , which resource type to create an AnalyticDB for MySQL cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::DBCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */
@@ -652,11 +693,15 @@ export class RosDBCluster extends ros.RosResource {
 
 
     /**
-     * @Property dbClusterCategory: The edition of the cluster.
-     * Valid values when the cluster is in reserved mode:
-     * Basic
-     * Cluster
-     * When the cluster is in elastic mode, set the value to MixedStorage.
+     * @Property dbClusterCategory: The cluster edition. Valid values:
+     * - Cluster: reserved cluster.
+     * > Reserved clusters are available only in the Chinese mainland and Singapore
+     * regions. In the Singapore region, you can purchase reserved clusters only with
+     * the pay-as-you-go billing method.
+     * - MixedStorage: elastic cluster (new).
+     * > If you set `DBClusterCategory` to `Cluster`, you must set the `Mode` parameter
+     * to `Reserved`. If you set `DBClusterCategory` to `MixedStorage`, you must set the
+     * `Mode` parameter to `Flexible`. Otherwise, cluster creation will fail.
      */
     public dbClusterCategory: string | ros.IResolvable;
 
@@ -666,9 +711,9 @@ export class RosDBCluster extends ros.RosResource {
     public dbClusterVersion: string | ros.IResolvable;
 
     /**
-     * @Property mode: The mode of the cluster. Valid values:
-     * Reserver: the reserved mode
-     * Flexible: the elastic mode
+     * @Property mode: The cluster mode. Valid values:
+     * - Reserved: reserved mode.
+     * - Flexible: flexible mode.
      */
     public mode: string | ros.IResolvable;
 
@@ -691,7 +736,20 @@ export class RosDBCluster extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable;
 
     /**
-     * @Property computeResource: The computing resource of the cluster. This parameter is required in elastic mode.
+     * @Property computeResource: The compute resources for the cluster. Compute resources are used for data
+     * queries. A larger amount of compute resources can provide better query
+     * performance. Compute resources are available in cluster and single-node editions:
+     * - Cluster edition: includes specifications such as 16 cores\/64 GB, 24 cores\/96
+     * GB, and 32 cores or more. The cluster edition supports resource pool isolation,
+     * scheduled scaling, and tiered storage of hot and cold data.
+     * - Single-node edition: includes specifications such as 8 cores\/32 GB and 16
+     * cores\/64 GB. The single-node edition does not provide an SLA guarantee and has a
+     * long recovery time from failures (4 to 8 hours). We do not recommend that you use
+     * the single-node edition in production environments.
+     * > * You can call the [DescribeAvailableResource]() operation to query the compute
+     * resources that are available in a specific region.
+     * >
+     * > * This parameter is required when `Mode` is set to `Flexible` (flexible mode).
      */
     public computeResource: string | ros.IResolvable | undefined;
 
@@ -704,13 +762,14 @@ export class RosDBCluster extends ros.RosResource {
 
     /**
      * @Property dbClusterDescription: The description of the cluster.
+     * - The description cannot start with `http:\/\/` or `https:\/\/`.
+     * - The description must be 2 to 256 characters long.
      */
     public dbClusterDescription: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dbNodeGroupCount: The number of node groups. This parameter is required in reserved mode. Valid values:
-     * T8, T16, T32, and T52: 1
-     * C8 and C32: 1 to 128
+     * @Property dbNodeGroupCount: The number of node groups. The value must be an integer from 1 to 200.
+     * > This parameter is required when `Mode` is set to `Reserved` (reserved mode).
      */
     public dbNodeGroupCount: number | ros.IResolvable | undefined;
 
@@ -734,8 +793,7 @@ export class RosDBCluster extends ros.RosResource {
     public diskEncryption: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property elasticIoResource: Elastic IO Unit
-     * Note the flexible mode cluster will use this parameter.
+     * @Property elasticIoResource: The number of Elastic IO Units (EIUs).
      */
     public elasticIoResource: number | ros.IResolvable | undefined;
 
@@ -748,7 +806,7 @@ export class RosDBCluster extends ros.RosResource {
     public enableSsl: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property executorCount: ExecutorCount
+     * @Property executorCount: This parameter is reserved.
      */
     public executorCount: number | ros.IResolvable | undefined;
 
@@ -758,8 +816,10 @@ export class RosDBCluster extends ros.RosResource {
     public kmsId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-     * Valid values when the Period parameter is set to Year: 1, 2, and 3.
+     * @Property period: The subscription period unit. Valid values:
+     * - Year
+     * - Month
+     * > This parameter is required when `PayType` is set to `Prepaid` (subscription).
      */
     public period: number | ros.IResolvable | undefined;
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mns;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-queue
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:51:02.108Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:07:59.955Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.QueueProps")
 @software.amazon.jsii.Jsii.Proxy(QueueProps.Jsii$Proxy.class)
 public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,10 +52,12 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property messageRetentionPeriod: Maximum lifetime of the message in the queue, measured in seconds.
+     * Property messageRetentionPeriod: The maximum time to live (TTL) for a message in the queue.
      * <p>
-     * After the time specified by this parameter expires, the message will be deleted no matter whether it has been consumed or not.
-     * An integer between 60 (1 minute) and 1296000 (15 days). The default value is 345600 (4 days)
+     * After the specified
+     * period, the message is deleted, regardless of whether it has been retrieved.
+     * Valid values: 60 to 604800. Unit: seconds.
+     * Default value: 345600.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMessageRetentionPeriod() {
         return null;
@@ -222,9 +224,11 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getMessageRetentionPeriod}
-         * @param messageRetentionPeriod Property messageRetentionPeriod: Maximum lifetime of the message in the queue, measured in seconds.
-         *                               After the time specified by this parameter expires, the message will be deleted no matter whether it has been consumed or not.
-         *                               An integer between 60 (1 minute) and 1296000 (15 days). The default value is 345600 (4 days)
+         * @param messageRetentionPeriod Property messageRetentionPeriod: The maximum time to live (TTL) for a message in the queue.
+         *                               After the specified
+         *                               period, the message is deleted, regardless of whether it has been retrieved.
+         *                               Valid values: 60 to 604800. Unit: seconds.
+         *                               Default value: 345600.
          * @return {@code this}
          */
         public Builder messageRetentionPeriod(java.lang.Number messageRetentionPeriod) {
@@ -234,9 +238,11 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getMessageRetentionPeriod}
-         * @param messageRetentionPeriod Property messageRetentionPeriod: Maximum lifetime of the message in the queue, measured in seconds.
-         *                               After the time specified by this parameter expires, the message will be deleted no matter whether it has been consumed or not.
-         *                               An integer between 60 (1 minute) and 1296000 (15 days). The default value is 345600 (4 days)
+         * @param messageRetentionPeriod Property messageRetentionPeriod: The maximum time to live (TTL) for a message in the queue.
+         *                               After the specified
+         *                               period, the message is deleted, regardless of whether it has been retrieved.
+         *                               Valid values: 60 to 604800. Unit: seconds.
+         *                               Default value: 345600.
          * @return {@code this}
          */
         public Builder messageRetentionPeriod(com.aliyun.ros.cdk.core.IResolvable messageRetentionPeriod) {

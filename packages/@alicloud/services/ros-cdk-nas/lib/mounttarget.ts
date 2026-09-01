@@ -10,12 +10,21 @@ export { RosMountTarget as MountTargetProperty };
 export interface MountTargetProps {
 
     /**
-     * Property accessGroupName: Permission group name. Default to DEFAULT_VPC_GROUP_NAME.
+     * Property accessGroupName: The name of the permission group.
+     * This parameter is required if you create a mount target for a General-purpose NAS
+     * file system or an Extreme NAS file system.
+     * The default permission group for virtual private clouds (VPCs) is named
+     * DEFAULT_VPC_GROUP_NAME.
      */
     readonly accessGroupName: string | ros.IResolvable;
 
     /**
-     * Property fileSystemId: File system ID
+     * Property fileSystemId: The ID of the file system.
+     * *   Sample ID of a General-purpose NAS file system: 31a8e4\*\*\*\*.
+     * *   The IDs of Extreme NAS file systems must start with `extreme-`, for example,
+     * extreme-0015\*\*\*\*.
+     * *   The IDs of CPFS file systems must start with `cpfs-`. Example:
+     * cpfs-125487\*\*\*\*.
      */
     readonly fileSystemId: string | ros.IResolvable;
 

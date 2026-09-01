@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.actiontrail;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACTIONTRAIL::TrailLogging</code>, which is used to enable or disable trail logging.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACTIONTRAIL::TrailLogging</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:13:01.948Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:51:46.217Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.TrailLogging")
 public class TrailLogging extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.actiontrail.ITrailLogging {
 
@@ -165,20 +165,20 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property name: The name of the trail to be enabled.
+         * Property name: The name of the trail.\ The name must be 6 to 36 characters in length and can contain lowercase letters, digits, hyphens (-), and underscores (_). It must start with a lowercase letter. &gt;  The name must be unique within an account.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the trail to be enabled. This parameter is required.
+         * @param name Property name: The name of the trail.\ The name must be 6 to 36 characters in length and can contain lowercase letters, digits, hyphens (-), and underscores (_). It must start with a lowercase letter. &gt;  The name must be unique within an account. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
         /**
-         * Property name: The name of the trail to be enabled.
+         * Property name: The name of the trail.\ The name must be 6 to 36 characters in length and can contain lowercase letters, digits, hyphens (-), and underscores (_). It must start with a lowercase letter. &gt;  The name must be unique within an account.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the trail to be enabled. This parameter is required.
+         * @param name Property name: The name of the trail.\ The name must be 6 to 36 characters in length and can contain lowercase letters, digits, hyphens (-), and underscores (_). It must start with a lowercase letter. &gt;  The name must be unique within an account. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);

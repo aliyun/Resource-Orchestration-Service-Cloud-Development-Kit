@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ram;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytogroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.250Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:56:20.191Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.AttachPolicyToGroupProps")
 @software.amazon.jsii.Jsii.Proxy(AttachPolicyToGroupProps.Jsii$Proxy.class)
 public interface AttachPolicyToGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,10 @@ public interface AttachPolicyToGroupProps extends software.amazon.jsii.JsiiSeria
     @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
     /**
-     * Property policyName: Authorization policy name.
+     * Property policyName: The name of the policy.
+     * <p>
+     * The name must be 1 to 128 characters in length and can contain letters, digits,
+     * and hyphens (-).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPolicyName();
 
@@ -63,7 +66,9 @@ public interface AttachPolicyToGroupProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link AttachPolicyToGroupProps#getPolicyName}
-         * @param policyName Property policyName: Authorization policy name. This parameter is required.
+         * @param policyName Property policyName: The name of the policy. This parameter is required.
+         *                   The name must be 1 to 128 characters in length and can contain letters, digits,
+         *                   and hyphens (-).
          * @return {@code this}
          */
         public Builder policyName(java.lang.String policyName) {
@@ -73,7 +78,9 @@ public interface AttachPolicyToGroupProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link AttachPolicyToGroupProps#getPolicyName}
-         * @param policyName Property policyName: Authorization policy name. This parameter is required.
+         * @param policyName Property policyName: The name of the policy. This parameter is required.
+         *                   The name must be 1 to 128 characters in length and can contain letters, digits,
+         *                   and hyphens (-).
          * @return {@code this}
          */
         public Builder policyName(com.aliyun.ros.cdk.core.IResolvable policyName) {

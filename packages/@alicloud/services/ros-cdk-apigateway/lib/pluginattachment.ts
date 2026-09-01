@@ -45,7 +45,7 @@ export interface IPluginAttachment extends ros.IResource {
     readonly attrPluginId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::PluginAttachment`, which is used to bind a plug-in to an API.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::PluginAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPluginAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-pluginattachment
  */

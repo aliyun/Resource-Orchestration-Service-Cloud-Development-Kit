@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start cloud phones.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`.
 type InstanceGroup interface {
 	alicloudroscdkcore.Resource
 	IInstanceGroup

@@ -10,7 +10,7 @@ export { RosStagingConfig as StagingConfigProperty };
 export interface StagingConfigProps {
 
     /**
-     * Property domainName: The domain name of the CDN.
+     * Property domainName: The accelerated domain name. Only one domain name can be configured at a time.
      */
     readonly domainName: string | ros.IResolvable;
 

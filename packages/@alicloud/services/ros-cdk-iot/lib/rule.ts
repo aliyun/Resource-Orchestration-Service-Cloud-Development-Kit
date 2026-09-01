@@ -10,9 +10,8 @@ export { RosRule as RuleProperty };
 export interface RuleProps {
 
     /**
-     * Property name: The name of the rule. The name must be 1 to 30 characters in length and can contain
-     * English letters, digits, underscores (_), and hyphens (-). Chinese language is also
-     * supported. Each Chinese symbol occupies 2 characters.
+     * Property name: The name of the data forwarding rule. The rule name must be 1 to 30 characters in
+     * length, and can contain letters, digits, underscores (_), and hyphens (-).
      */
     readonly name: string | ros.IResolvable;
 
@@ -39,10 +38,12 @@ export interface RuleProps {
     readonly productKey?: string | ros.IResolvable;
 
     /**
-     * Property resourceGroupId: The ID of the resource group to which the rule is assigned. You can view the resource
-     * group information in the Resource Management console.
-     * If you do not specify this parameter, the rule is assigned to the default resource
-     * group.
+     * Property resourceGroupId: The ID of the resource group to which the rule is assigned. You can view the
+     * resource group information in the Resource Management console.
+     * >You can specify a value for this parameter only if you have activated Resource
+     * Management.
+     * If you do not specify this parameter, the rule is assigned to the default
+     * resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
 
@@ -131,7 +132,7 @@ export interface IRule extends ros.IResource {
     readonly attrRuleId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Rule`, which is used to create a rule for a specific topic.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Rule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-rule
  */

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apigateway;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::TrafficControl</code>, which is used to create a custom throttling policy.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::TrafficControl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.628Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:57.026Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.TrafficControl")
 public class TrafficControl extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apigateway.ITrafficControl {
 
@@ -133,20 +133,28 @@ public class TrafficControl extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+         * Property trafficControlName: The name of the throttling policy.
+         * <p>
+         * The name must be 4 to 50 characters in length
+         * and can contain letters, digits, and underscores (_). It cannot start with an
+         * underscore.
          * <p>
          * @return {@code this}
-         * @param trafficControlName Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
+         * @param trafficControlName Property trafficControlName: The name of the throttling policy. This parameter is required.
          */
         public Builder trafficControlName(final java.lang.String trafficControlName) {
             this.props.trafficControlName(trafficControlName);
             return this;
         }
         /**
-         * Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+         * Property trafficControlName: The name of the throttling policy.
+         * <p>
+         * The name must be 4 to 50 characters in length
+         * and can contain letters, digits, and underscores (_). It cannot start with an
+         * underscore.
          * <p>
          * @return {@code this}
-         * @param trafficControlName Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
+         * @param trafficControlName Property trafficControlName: The name of the throttling policy. This parameter is required.
          */
         public Builder trafficControlName(final com.aliyun.ros.cdk.core.IResolvable trafficControlName) {
             this.props.trafficControlName(trafficControlName);
@@ -154,20 +162,38 @@ public class TrafficControl extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.
+         * Property trafficControlUnit: The unit to be used in the throttling policy.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>SECOND</li>
+         * <li>MINUTE</li>
+         * <li>HOUR</li>
+         * <li>DAY</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param trafficControlUnit Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE. This parameter is required.
+         * @param trafficControlUnit Property trafficControlUnit: The unit to be used in the throttling policy. This parameter is required.
          */
         public Builder trafficControlUnit(final java.lang.String trafficControlUnit) {
             this.props.trafficControlUnit(trafficControlUnit);
             return this;
         }
         /**
-         * Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.
+         * Property trafficControlUnit: The unit to be used in the throttling policy.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>SECOND</li>
+         * <li>MINUTE</li>
+         * <li>HOUR</li>
+         * <li>DAY</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param trafficControlUnit Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE. This parameter is required.
+         * @param trafficControlUnit Property trafficControlUnit: The unit to be used in the throttling policy. This parameter is required.
          */
         public Builder trafficControlUnit(final com.aliyun.ros.cdk.core.IResolvable trafficControlUnit) {
             this.props.trafficControlUnit(trafficControlUnit);

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::DeployGroup`, which is used to create an instance group for an application.
+// This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::DeployGroup`.
 type DeployGroup interface {
 	alicloudroscdkcore.Resource
 	IDeployGroup

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::BgpGroup</code>, which is used to create a Border Gateway Protocol (BGP) (Multi-ISP) group for a virtual border router (VBR).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.344Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.150Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.BgpGroup")
 public class BgpGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IBgpGroup {
 
@@ -210,24 +210,36 @@ public class BgpGroup extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property ipVersion: The IP version of the BGP group.
+         * Property ipVersion: The IP version.
          * <p>
-         * Valid values: IPv4 and IPv6.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>IPv4: This is the default value.</li>
+         * <li>IPv6: IPv6 is supported only if the VBR for which you want to create the BGP
+         * group has IPv6 enabled.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param ipVersion Property ipVersion: The IP version of the BGP group. This parameter is required.
+         * @param ipVersion Property ipVersion: The IP version. This parameter is required.
          */
         public Builder ipVersion(final java.lang.String ipVersion) {
             this.props.ipVersion(ipVersion);
             return this;
         }
         /**
-         * Property ipVersion: The IP version of the BGP group.
+         * Property ipVersion: The IP version.
          * <p>
-         * Valid values: IPv4 and IPv6.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>IPv4: This is the default value.</li>
+         * <li>IPv6: IPv6 is supported only if the VBR for which you want to create the BGP
+         * group has IPv6 enabled.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param ipVersion Property ipVersion: The IP version of the BGP group. This parameter is required.
+         * @param ipVersion Property ipVersion: The IP version. This parameter is required.
          */
         public Builder ipVersion(final com.aliyun.ros.cdk.core.IResolvable ipVersion) {
             this.props.ipVersion(ipVersion);
@@ -235,28 +247,50 @@ public class BgpGroup extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property isFakeAsn: A router that runs BGP typically belongs to only one AS.
+         * Property isFakeAsn: Specifies whether to use a fake ASN.
          * <p>
-         * In some cases, for example,
-         * the AS needs to be migrated or is merged with another AS, a new AS number replaces
-         * the original one.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>false (default)</li>
+         * <li>true</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * A router that runs BGP typically belongs to only one AS. If you need to
+         * replace an existing AS with a new AS and you cannot immediately modify BGP
+         * configurations, you can use fake ASNs to ensure service continuity.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param isFakeAsn Property isFakeAsn: A router that runs BGP typically belongs to only one AS. This parameter is required.
+         * @param isFakeAsn Property isFakeAsn: Specifies whether to use a fake ASN. This parameter is required.
          */
         public Builder isFakeAsn(final java.lang.Boolean isFakeAsn) {
             this.props.isFakeAsn(isFakeAsn);
             return this;
         }
         /**
-         * Property isFakeAsn: A router that runs BGP typically belongs to only one AS.
+         * Property isFakeAsn: Specifies whether to use a fake ASN.
          * <p>
-         * In some cases, for example,
-         * the AS needs to be migrated or is merged with another AS, a new AS number replaces
-         * the original one.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>false (default)</li>
+         * <li>true</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * A router that runs BGP typically belongs to only one AS. If you need to
+         * replace an existing AS with a new AS and you cannot immediately modify BGP
+         * configurations, you can use fake ASNs to ensure service continuity.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param isFakeAsn Property isFakeAsn: A router that runs BGP typically belongs to only one AS. This parameter is required.
+         * @param isFakeAsn Property isFakeAsn: Specifies whether to use a fake ASN. This parameter is required.
          */
         public Builder isFakeAsn(final com.aliyun.ros.cdk.core.IResolvable isFakeAsn) {
             this.props.isFakeAsn(isFakeAsn);
@@ -264,20 +298,52 @@ public class BgpGroup extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property localAsn: The AS number on the Alibaba Cloud side.
+         * Property localAsn: The custom ASN on the cloud side.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>45104</li>
+         * <li>64512~65534</li>
+         * <li>4200000000~4294967294</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * 65025 is reserved by the cloud platform. By default, the system uses 45104 as
+         * LocalAsn. If you use custom LocalAsn in multi-line access scenarios, loops in BGP
+         * may occur.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param localAsn Property localAsn: The AS number on the Alibaba Cloud side. This parameter is required.
+         * @param localAsn Property localAsn: The custom ASN on the cloud side. This parameter is required.
          */
         public Builder localAsn(final java.lang.Number localAsn) {
             this.props.localAsn(localAsn);
             return this;
         }
         /**
-         * Property localAsn: The AS number on the Alibaba Cloud side.
+         * Property localAsn: The custom ASN on the cloud side.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>45104</li>
+         * <li>64512~65534</li>
+         * <li>4200000000~4294967294</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * 65025 is reserved by the cloud platform. By default, the system uses 45104 as
+         * LocalAsn. If you use custom LocalAsn in multi-line access scenarios, loops in BGP
+         * may occur.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param localAsn Property localAsn: The AS number on the Alibaba Cloud side. This parameter is required.
+         * @param localAsn Property localAsn: The custom ASN on the cloud side. This parameter is required.
          */
         public Builder localAsn(final com.aliyun.ros.cdk.core.IResolvable localAsn) {
             this.props.localAsn(localAsn);

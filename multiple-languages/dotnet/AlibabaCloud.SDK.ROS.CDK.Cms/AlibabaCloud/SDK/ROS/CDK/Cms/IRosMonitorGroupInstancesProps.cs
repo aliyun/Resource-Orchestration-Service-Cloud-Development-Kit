@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: instances:
+        /// <strong>Property</strong>: instances: The instances that you want to add to the application group.
         /// </remarks>
         [JsiiProperty(name: "instances", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosMonitorGroupInstances.InstancesProperty\"}]}},\"kind\":\"array\"}}]}}")]
         object Instances
@@ -50,7 +50,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: instances:
+            /// <strong>Property</strong>: instances: The instances that you want to add to the application group.
             /// </remarks>
             [JsiiProperty(name: "instances", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosMonitorGroupInstances.InstancesProperty\"}]}},\"kind\":\"array\"}}]}}")]
             public object Instances

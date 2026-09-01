@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq.datasource;
 /**
  * Represents a <code>Groups</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:39:22.806Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:19:31.346Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.datasource.IGroups")
 @software.amazon.jsii.Jsii.Proxy(IGroups.Jsii$Proxy.class)
 public interface IGroups extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

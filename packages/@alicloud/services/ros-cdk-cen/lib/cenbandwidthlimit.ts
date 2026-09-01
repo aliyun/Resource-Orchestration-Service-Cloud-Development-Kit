@@ -10,7 +10,7 @@ export { RosCenBandwidthLimit as CenBandwidthLimitProperty };
 export interface CenBandwidthLimitProps {
 
     /**
-     * Property bandwidthLimit: The bandwidth configured for the interconnected regions communication. Minimal value: 1
+     * Property bandwidthLimit: The inter-region bandwidth between the two regions. Unit: Mbps.
      */
     readonly bandwidthLimit: number | ros.IResolvable;
 
@@ -30,7 +30,8 @@ export interface CenBandwidthLimitProps {
     readonly oppositeRegionId: string | ros.IResolvable;
 
     /**
-     * Property bandwidthType: Bandwidth allocation mode. Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+     * Property bandwidthType: The method used to allocate bandwidth. Valid value:
+     * - BandwidthPackage (default): allocates bandwidth from a bandwidth plan.
      */
     readonly bandwidthType?: string | ros.IResolvable;
 }
@@ -42,7 +43,7 @@ export interface ICenBandwidthLimit extends ros.IResource {
     readonly props: CenBandwidthLimitProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`, which is used to configure the bandwidth for cross-region interconnection in a bandwidth plan.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenBandwidthLimit`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
  */

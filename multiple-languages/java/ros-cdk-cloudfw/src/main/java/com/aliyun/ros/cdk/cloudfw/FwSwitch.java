@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::FwSwitch</code>, which is used to enable a firewall.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::FwSwitch</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:48:07.060Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:36:02.119Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.FwSwitch")
 public class FwSwitch extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudfw.IFwSwitch {
 
@@ -206,54 +206,82 @@ public class FwSwitch extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property resourceTypeList: The asset type list.
+         * Property resourceTypeList: The list of asset types.
          * <p>
          * Valid values:
          * <p>
          * <ul>
-         * <li>BastionHostIP: Bastion machine exit IP.</li>
-         * <li>BastionHostIngressIP: The entrance IP of the fortress machine.</li>
-         * <li>EcsEIP: ECS EIP.</li>
-         * <li>EcsPublicIP: ECS public network IP.</li>
-         * <li>EIP: Elastic Public IP.</li>
-         * <li>EniEIP: Elastic Network card EIP.</li>
-         * <li>NatEIP: NAT EIP.</li>
-         * <li>SlbEIP: SLB EIP.</li>
-         * <li>SlbPublicIP: SLB public network IP.</li>
-         * <li>NatPublicIP: NAT public IP</li>
-         * <li>HAVIP: High Availability Virtual IP.
-         * <strong>Note</strong>: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.</li>
+         * <li>BastionHostEgressIP: the egress IP address of a bastion host.</li>
+         * <li>BastionHostIngressIP: the ingress IP address of a bastion host.</li>
+         * <li>EcsEIP: the EIP of an ECS instance.</li>
+         * <li>EcsPublicIP: the public IP address of an ECS instance.</li>
+         * <li>EIP: an EIP.</li>
+         * <li>EniEIP: the EIP of an ENI.</li>
+         * <li>NatEIP: the EIP of a NAT gateway.</li>
+         * <li>SlbEIP: the EIP of an SLB instance or a CLB instance.</li>
+         * <li>SlbPublicIP: the public IP address of an SLB instance or a CLB instance.</li>
+         * <li>NatPublicIP: the public IP address of a NAT gateway.</li>
+         * <li>HAVIP: an HAVIP.</li>
+         * <li>NlbEIP: the EIP of an NLB instance.</li>
+         * <li>ApiGatewayEIP: the public IP address of an API gateway.</li>
+         * <li>AlbEIP: the EIP of an ALB instance.</li>
+         * <li>AiGatewayEIP: the public IP address of an AI gateway.</li>
+         * <li>GaEIP: the EIP of a GA instance.</li>
+         * <li>SwasEIP: the public IP address of a Simple Application Server instance.</li>
+         * <li>EcdEIP: the public IP address of an Elastic Desktop Service instance.</li>
+         * <li>BastionHostIP: the IP address of a bastion host.</li>
          * </ul>
          * <p>
+         * <blockquote>
+         * <p>
+         * You must specify at least one of the <code>IpaddrList</code>, <code>RegionList</code>, and
+         * <code>ResourceTypeList</code> parameters.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
-         * @param resourceTypeList Property resourceTypeList: The asset type list. This parameter is required.
+         * @param resourceTypeList Property resourceTypeList: The list of asset types. This parameter is required.
          */
         public Builder resourceTypeList(final java.util.List<? extends java.lang.Object> resourceTypeList) {
             this.props().resourceTypeList(resourceTypeList);
             return this;
         }
         /**
-         * Property resourceTypeList: The asset type list.
+         * Property resourceTypeList: The list of asset types.
          * <p>
          * Valid values:
          * <p>
          * <ul>
-         * <li>BastionHostIP: Bastion machine exit IP.</li>
-         * <li>BastionHostIngressIP: The entrance IP of the fortress machine.</li>
-         * <li>EcsEIP: ECS EIP.</li>
-         * <li>EcsPublicIP: ECS public network IP.</li>
-         * <li>EIP: Elastic Public IP.</li>
-         * <li>EniEIP: Elastic Network card EIP.</li>
-         * <li>NatEIP: NAT EIP.</li>
-         * <li>SlbEIP: SLB EIP.</li>
-         * <li>SlbPublicIP: SLB public network IP.</li>
-         * <li>NatPublicIP: NAT public IP</li>
-         * <li>HAVIP: High Availability Virtual IP.
-         * <strong>Note</strong>: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.</li>
+         * <li>BastionHostEgressIP: the egress IP address of a bastion host.</li>
+         * <li>BastionHostIngressIP: the ingress IP address of a bastion host.</li>
+         * <li>EcsEIP: the EIP of an ECS instance.</li>
+         * <li>EcsPublicIP: the public IP address of an ECS instance.</li>
+         * <li>EIP: an EIP.</li>
+         * <li>EniEIP: the EIP of an ENI.</li>
+         * <li>NatEIP: the EIP of a NAT gateway.</li>
+         * <li>SlbEIP: the EIP of an SLB instance or a CLB instance.</li>
+         * <li>SlbPublicIP: the public IP address of an SLB instance or a CLB instance.</li>
+         * <li>NatPublicIP: the public IP address of a NAT gateway.</li>
+         * <li>HAVIP: an HAVIP.</li>
+         * <li>NlbEIP: the EIP of an NLB instance.</li>
+         * <li>ApiGatewayEIP: the public IP address of an API gateway.</li>
+         * <li>AlbEIP: the EIP of an ALB instance.</li>
+         * <li>AiGatewayEIP: the public IP address of an AI gateway.</li>
+         * <li>GaEIP: the EIP of a GA instance.</li>
+         * <li>SwasEIP: the public IP address of a Simple Application Server instance.</li>
+         * <li>EcdEIP: the public IP address of an Elastic Desktop Service instance.</li>
+         * <li>BastionHostIP: the IP address of a bastion host.</li>
          * </ul>
          * <p>
+         * <blockquote>
+         * <p>
+         * You must specify at least one of the <code>IpaddrList</code>, <code>RegionList</code>, and
+         * <code>ResourceTypeList</code> parameters.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
-         * @param resourceTypeList Property resourceTypeList: The asset type list. This parameter is required.
+         * @param resourceTypeList Property resourceTypeList: The list of asset types. This parameter is required.
          */
         public Builder resourceTypeList(final com.aliyun.ros.cdk.core.IResolvable resourceTypeList) {
             this.props().resourceTypeList(resourceTypeList);

@@ -151,12 +151,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Lindorm
             }
         }
 
-        /// <summary>Property lindormNum: The number of LindormTable nodes in the instance.</summary>
+        /// <summary>Property lindormNum: The number of nodes in the wide table engine.</summary>
         /// <remarks>
-        /// The valid values of this parameter depend on the value of the PayType parameter.
-        /// If the PayType parameter is set to PREPAY, set this parameter to an integer that ranges from 0 to 90.
-        /// If the PayType parameter is set to POSTPAY, set this parameter to an integer that ranges from 0 to 400.
-        /// ** This parameter is required if you want to create a multi-zone instance. ** The valid values of this parameter range from 4 to 400 if you want to create a multi-zone instance.
+        /// For a single-zone instance, the value of this parameter ranges from 0 to 90.
+        /// This parameter is required for multi-zone instances. For an instance that uses
+        /// cloud disks, the value ranges from 4 to 400. For an instance that uses local
+        /// disks, the value ranges from 6 to 400.
         /// </remarks>
         [JsiiProperty(name: "lindormNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -500,12 +500,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Lindorm
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property lindormNum: The number of LindormTable nodes in the instance.</summary>
+            /// <summary>Property lindormNum: The number of nodes in the wide table engine.</summary>
             /// <remarks>
-            /// The valid values of this parameter depend on the value of the PayType parameter.
-            /// If the PayType parameter is set to PREPAY, set this parameter to an integer that ranges from 0 to 90.
-            /// If the PayType parameter is set to POSTPAY, set this parameter to an integer that ranges from 0 to 400.
-            /// ** This parameter is required if you want to create a multi-zone instance. ** The valid values of this parameter range from 4 to 400 if you want to create a multi-zone instance.
+            /// For a single-zone instance, the value of this parameter ranges from 0 to 90.
+            /// This parameter is required for multi-zone instances. For an instance that uses
+            /// cloud disks, the value ranges from 4 to 400. For an instance that uses local
+            /// disks, the value ranges from 6 to 400.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "lindormNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

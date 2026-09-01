@@ -32,7 +32,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             get;
         }
 
-        /// <summary>Property description: Description of the deployment, less than 180 characters.</summary>
+        /// <summary>Property description: The description.</summary>
+        /// <remarks>
+        /// The description can be up to 200 characters in length.
+        /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Description
@@ -86,7 +89,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property description: Description of the deployment, less than 180 characters.</summary>
+            /// <summary>Property description: The description.</summary>
+            /// <remarks>
+            /// The description can be up to 200 characters in length.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description

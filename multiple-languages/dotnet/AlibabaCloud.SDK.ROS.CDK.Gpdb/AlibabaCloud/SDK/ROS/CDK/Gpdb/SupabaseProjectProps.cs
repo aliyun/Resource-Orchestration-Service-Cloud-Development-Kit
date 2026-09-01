@@ -344,7 +344,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 
         private object? _period;
 
-        /// <summary>Property period: The billing period.</summary>
+        /// <summary>Property period: The unit of the subscription duration.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Month</description>
+        /// <description>Year</description>
+        /// </list>
+        ///
+        ///     This parameter is required if you use the subscription billing method.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Period
@@ -426,9 +436,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 
         private object? _usedTime;
 
-        /// <summary>Property usedTime: The subscription period of the instance.</summary>
+        /// <summary>Property usedTime: The subscription duration.</summary>
         /// <remarks>
-        /// Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>If Period is set to Month, the valid values are 1 to 11.</description>
+        /// <description>If Period is set to Year, the valid values are 1 to 3.</description>
+        /// </list>
+        ///
+        ///     This parameter is required if you use the subscription billing method.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

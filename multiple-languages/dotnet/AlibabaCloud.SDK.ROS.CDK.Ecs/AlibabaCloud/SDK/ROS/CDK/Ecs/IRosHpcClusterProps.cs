@@ -12,9 +12,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public interface IRosHpcClusterProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: name: The name of the HPC cluster. The name must be 2 to 128 characters in length. It must
-        /// start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters,
-        /// digits, colons (:), underscores (_), and hyphens (-).
+        /// <strong>Property</strong>: name: The name of the HPC cluster. The name must be 2 to 128 characters in length, and
+        /// can contain letters, digits, underscores (_), and hyphens (-). The name must
+        /// start with a letter but cannot start with `http:\/\/` or `https:\/\/`.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Name
@@ -48,9 +48,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: name: The name of the HPC cluster. The name must be 2 to 128 characters in length. It must
-            /// start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters,
-            /// digits, colons (:), underscores (_), and hyphens (-).
+            /// <strong>Property</strong>: name: The name of the HPC cluster. The name must be 2 to 128 characters in length, and
+            /// can contain letters, digits, underscores (_), and hyphens (-). The name must
+            /// start with a letter but cannot start with `http:\/\/` or `https:\/\/`.
             /// </remarks>
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Name

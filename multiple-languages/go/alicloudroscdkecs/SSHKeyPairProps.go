@@ -5,9 +5,12 @@ package alicloudroscdkecs
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
 type SSHKeyPairProps struct {
-	// Property keyPairName: SSH key pair name.
+	// Property keyPairName: The name of the key pair.
 	//
-	// It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http:\/\/, or https:\/\/. It can contain digits, ".", "_", or "-".
+	// The name must be unique. It must be 2 to 128 characters
+	// in length. It must start with a letter and cannot start with http\:\/\/ or
+	// https\:\/\/. It can contain letters, digits, colons (:), underscores (_), and
+	// hyphens (-).
 	KeyPairName interface{} `field:"required" json:"keyPairName" yaml:"keyPairName"`
 	// Property publicKeyBody: SSH Public key.
 	//

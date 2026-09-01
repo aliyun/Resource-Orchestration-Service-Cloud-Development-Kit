@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cr;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CR::InstanceVpcEndpointLinkedVpc</code>, which is used to associate a virtual private cloud (VPC) with a Container Registry instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CR::InstanceVpcEndpointLinkedVpc</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:03:09.614Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:54:06.908Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.InstanceVpcEndpointLinkedVpc")
 public class InstanceVpcEndpointLinkedVpc extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cr.IInstanceVpcEndpointLinkedVpc {
 

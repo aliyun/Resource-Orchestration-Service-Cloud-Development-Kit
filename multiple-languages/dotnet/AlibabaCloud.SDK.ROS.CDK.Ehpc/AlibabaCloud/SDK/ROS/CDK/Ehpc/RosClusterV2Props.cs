@@ -16,7 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object _clusterName;
 
         /// <remarks>
-        /// <strong>Property</strong>: clusterName: Cluster name. The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+        /// <strong>Property</strong>: clusterName: The cluster name. The name must be 1 to 128 characters in length and can contain
+        /// letters, digits, hyphens (-), and underscores (_).
         /// </remarks>
         [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ClusterName
@@ -395,7 +396,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _clusterDescription;
 
         /// <remarks>
-        /// <strong>Property</strong>: clusterDescription: Cluster description. The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+        /// <strong>Property</strong>: clusterDescription: The cluster description. The description must be 1 to 128 characters in length
+        /// and can contain letters, digits, hyphens (-), and underscores (_).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "clusterDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

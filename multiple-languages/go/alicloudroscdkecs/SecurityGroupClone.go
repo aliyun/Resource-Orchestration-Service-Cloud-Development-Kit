@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupClone`, which is used to clone a security group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupClone`.
 type SecurityGroupClone interface {
 	alicloudroscdkcore.Resource
 	ISecurityGroupClone

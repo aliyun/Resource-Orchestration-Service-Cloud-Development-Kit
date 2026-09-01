@@ -31,9 +31,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// DCDN: Dynamic Route for CDN
         /// EDAS: Enterprise Distributed Application Service
         /// EMAS: Enterprise Mobile Application Studio
+        /// EMR/AICenter: EMR Serverless Spark AI Center
         /// FC: Function Compute
         /// FNF: Serverless Workflow
         /// MaxCompute: MaxCompute
+        /// Milvus/Function: Milvus Function
         /// NAS: Network Attached Storage
         /// MNS: Message Service (MNS)
         /// HBR: Hybrid Backup Recovery
@@ -67,6 +69,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             get;
         }
 
+        /// <summary>Property serviceParameters: The parameters that are required to enable the service.</summary>
+        /// <remarks>
+        /// WorkspaceId is required when ServiceName is EMR/AICenter.
+        /// </remarks>
+        [JsiiProperty(name: "serviceParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ros.RosAutoEnableService.ServiceParametersProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ServiceParameters
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `AutoEnableService`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
@@ -98,9 +114,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// DCDN: Dynamic Route for CDN
             /// EDAS: Enterprise Distributed Application Service
             /// EMAS: Enterprise Mobile Application Studio
+            /// EMR/AICenter: EMR Serverless Spark AI Center
             /// FC: Function Compute
             /// FNF: Serverless Workflow
             /// MaxCompute: MaxCompute
+            /// Milvus/Function: Milvus Function
             /// NAS: Network Attached Storage
             /// MNS: Message Service (MNS)
             /// HBR: Hybrid Backup Recovery
@@ -132,6 +150,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             public object ServiceName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property serviceParameters: The parameters that are required to enable the service.</summary>
+            /// <remarks>
+            /// WorkspaceId is required when ServiceName is EMR/AICenter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "serviceParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ros.RosAutoEnableService.ServiceParametersProperty\"}]}}", isOptional: true)]
+            public object? ServiceParameters
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

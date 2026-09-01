@@ -5,30 +5,79 @@ package com.aliyun.ros.cdk.nas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.483Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:15:39.299Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.DataFlowProps")
 @software.amazon.jsii.Jsii.Proxy(DataFlowProps.Jsii$Proxy.class)
 public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property fileSystemId: File system ID.
+     * Property fileSystemId: The ID of the file system.
+     * <p>
+     * <ul>
+     * <li>The IDs of CPFS file systems must start with <code>cpfs-</code>. Example:
+     * cpfs-125487****.</li>
+     * <li>The IDs of CPFS for Lingjun file systems must start with <code>bmcpfs-</code>. Example:
+     * bmcpfs-0015****.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getFileSystemId();
 
     /**
-     * Property fsetId: Fileset ID.
+     * Property fsetId: The fileset ID.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required for CPFS file systems.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getFsetId();
 
     /**
-     * Property sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>. in: Storage Type: Currently only supports OSS. PATH: OSS's bucket name.Limit the following. Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number. The length is 8 ~ 128 English characters. Use UTF-8 encoding. Can't start with http: // and https: //. Explain that the OSS BUCKET must be the bucket that exists in the region.
+     * Property sourceStorage: The access path of the source storage.
+     * <p>
+     * Format: <code>&lt;storage type&gt;:\/\/[&lt;account id&gt;:]&lt;path&gt;</code>.
+     * Parameters:
+     * <p>
+     * <ul>
+     * <li>storage type: Only OSS is supported.</li>
+     * <li>account id (optional): the UID of the account of the source storage. This
+     * parameter is required when you use OSS buckets across accounts.</li>
+     * <li>path: the name of the OSS bucket. Limits:</li>
+     * <li>The name can contain only lowercase letters, digits, and hyphens (-). The
+     * name must start and end with a lowercase letter or digit.</li>
+     * <li>The name can be up to 128 characters in length.</li>
+     * <li>The name must be encoded in UTF-8.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>The OSS bucket must be an existing bucket in the region.</li>
+     * <li>Only CPFS for LINGJUN V2.6.0 and later support the account id parameter.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSourceStorage();
 
     /**
-     * Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s. Value:  600 1200 1500.
+     * Property throughput: The maximum data flow throughput.
      * <p>
-     * Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
+     * Unit: MB/s. Valid values:
+     * <p>
+     * <ul>
+     * <li>600</li>
+     * <li>1200</li>
+     * <li>1500</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * The data flow throughput must be less than the I/O throughput of the file
+     * system. This parameter is required for CPFS file systems.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getThroughput();
 
@@ -43,10 +92,24 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy.
+     * Property autoRefreshPolicy: The automatic update policy.
      * <p>
-     * None (default): The data update of the source is not automatically imported into CPFS. Users can import data update at the source end of the source through data flow tasks.
-     * Importchanged: The data update at the source automatically imports CPFS.
+     * The updated data in the source storage is imported
+     * into the CPFS file system based on the policy.
+     * <p>
+     * <ul>
+     * <li>None (default): Updated data in the source storage is not automatically
+     * imported into the CPFS file system. You can run a data flow task to import the
+     * updated data from the source storage.</li>
+     * <li>ImportChanged: Updated data in the source storage is automatically imported
+     * into the CPFS file system.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter takes effect only for CPFS file systems.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRefreshPolicy() {
         return null;
@@ -60,12 +123,17 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property description: Description of data flow.
+     * Property description: The description of the dataflow.
      * <p>
-     * limit:
-     * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
-     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * Limits:
+     * <p>
+     * <ul>
+     * <li>The description must be 2 to 128 characters in length.</li>
+     * <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+     * <code>https:\/\/</code>.</li>
+     * <li>The description can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -104,7 +172,13 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DataFlowProps#getFileSystemId}
-         * @param fileSystemId Property fileSystemId: File system ID. This parameter is required.
+         * @param fileSystemId Property fileSystemId: The ID of the file system. This parameter is required.
+         *                     <ul>
+         *                     <li>The IDs of CPFS file systems must start with <code>cpfs-</code>. Example:
+         *                     cpfs-125487****.</li>
+         *                     <li>The IDs of CPFS for Lingjun file systems must start with <code>bmcpfs-</code>. Example:
+         *                     bmcpfs-0015****.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder fileSystemId(java.lang.String fileSystemId) {
@@ -114,7 +188,13 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DataFlowProps#getFileSystemId}
-         * @param fileSystemId Property fileSystemId: File system ID. This parameter is required.
+         * @param fileSystemId Property fileSystemId: The ID of the file system. This parameter is required.
+         *                     <ul>
+         *                     <li>The IDs of CPFS file systems must start with <code>cpfs-</code>. Example:
+         *                     cpfs-125487****.</li>
+         *                     <li>The IDs of CPFS for Lingjun file systems must start with <code>bmcpfs-</code>. Example:
+         *                     bmcpfs-0015****.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder fileSystemId(com.aliyun.ros.cdk.core.IResolvable fileSystemId) {
@@ -124,7 +204,12 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DataFlowProps#getFsetId}
-         * @param fsetId Property fsetId: Fileset ID. This parameter is required.
+         * @param fsetId Property fsetId: The fileset ID. This parameter is required.
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required for CPFS file systems.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder fsetId(java.lang.String fsetId) {
@@ -134,7 +219,12 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DataFlowProps#getFsetId}
-         * @param fsetId Property fsetId: Fileset ID. This parameter is required.
+         * @param fsetId Property fsetId: The fileset ID. This parameter is required.
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required for CPFS file systems.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder fsetId(com.aliyun.ros.cdk.core.IResolvable fsetId) {
@@ -144,7 +234,29 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DataFlowProps#getSourceStorage}
-         * @param sourceStorage Property sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>. in: Storage Type: Currently only supports OSS. PATH: OSS's bucket name.Limit the following. Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number. The length is 8 ~ 128 English characters. Use UTF-8 encoding. Can't start with http: // and https: //. Explain that the OSS BUCKET must be the bucket that exists in the region. This parameter is required.
+         * @param sourceStorage Property sourceStorage: The access path of the source storage. This parameter is required.
+         *                      Format: <code>&lt;storage type&gt;:\/\/[&lt;account id&gt;:]&lt;path&gt;</code>.
+         *                      Parameters:
+         *                      <p>
+         *                      <ul>
+         *                      <li>storage type: Only OSS is supported.</li>
+         *                      <li>account id (optional): the UID of the account of the source storage. This
+         *                      parameter is required when you use OSS buckets across accounts.</li>
+         *                      <li>path: the name of the OSS bucket. Limits:</li>
+         *                      <li>The name can contain only lowercase letters, digits, and hyphens (-). The
+         *                      name must start and end with a lowercase letter or digit.</li>
+         *                      <li>The name can be up to 128 characters in length.</li>
+         *                      <li>The name must be encoded in UTF-8.</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      <ul>
+         *                      <li>The OSS bucket must be an existing bucket in the region.</li>
+         *                      <li>Only CPFS for LINGJUN V2.6.0 and later support the account id parameter.</li>
+         *                      </ul>
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder sourceStorage(java.lang.String sourceStorage) {
@@ -154,7 +266,29 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DataFlowProps#getSourceStorage}
-         * @param sourceStorage Property sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>. in: Storage Type: Currently only supports OSS. PATH: OSS's bucket name.Limit the following. Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number. The length is 8 ~ 128 English characters. Use UTF-8 encoding. Can't start with http: // and https: //. Explain that the OSS BUCKET must be the bucket that exists in the region. This parameter is required.
+         * @param sourceStorage Property sourceStorage: The access path of the source storage. This parameter is required.
+         *                      Format: <code>&lt;storage type&gt;:\/\/[&lt;account id&gt;:]&lt;path&gt;</code>.
+         *                      Parameters:
+         *                      <p>
+         *                      <ul>
+         *                      <li>storage type: Only OSS is supported.</li>
+         *                      <li>account id (optional): the UID of the account of the source storage. This
+         *                      parameter is required when you use OSS buckets across accounts.</li>
+         *                      <li>path: the name of the OSS bucket. Limits:</li>
+         *                      <li>The name can contain only lowercase letters, digits, and hyphens (-). The
+         *                      name must start and end with a lowercase letter or digit.</li>
+         *                      <li>The name can be up to 128 characters in length.</li>
+         *                      <li>The name must be encoded in UTF-8.</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      <ul>
+         *                      <li>The OSS bucket must be an existing bucket in the region.</li>
+         *                      <li>Only CPFS for LINGJUN V2.6.0 and later support the account id parameter.</li>
+         *                      </ul>
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder sourceStorage(com.aliyun.ros.cdk.core.IResolvable sourceStorage) {
@@ -164,8 +298,21 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DataFlowProps#getThroughput}
-         * @param throughput Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s. Value:  600 1200 1500. This parameter is required.
-         *                   Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
+         * @param throughput Property throughput: The maximum data flow throughput. This parameter is required.
+         *                   Unit: MB/s. Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>600</li>
+         *                   <li>1200</li>
+         *                   <li>1500</li>
+         *                   </ul>
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   The data flow throughput must be less than the I/O throughput of the file
+         *                   system. This parameter is required for CPFS file systems.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder throughput(java.lang.Number throughput) {
@@ -175,8 +322,21 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DataFlowProps#getThroughput}
-         * @param throughput Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s. Value:  600 1200 1500. This parameter is required.
-         *                   Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
+         * @param throughput Property throughput: The maximum data flow throughput. This parameter is required.
+         *                   Unit: MB/s. Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>600</li>
+         *                   <li>1200</li>
+         *                   <li>1500</li>
+         *                   </ul>
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   The data flow throughput must be less than the I/O throughput of the file
+         *                   system. This parameter is required for CPFS file systems.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder throughput(com.aliyun.ros.cdk.core.IResolvable throughput) {
@@ -210,9 +370,23 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DataFlowProps#getAutoRefreshPolicy}
-         * @param autoRefreshPolicy Property autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy.
-         *                          None (default): The data update of the source is not automatically imported into CPFS. Users can import data update at the source end of the source through data flow tasks.
-         *                          Importchanged: The data update at the source automatically imports CPFS.
+         * @param autoRefreshPolicy Property autoRefreshPolicy: The automatic update policy.
+         *                          The updated data in the source storage is imported
+         *                          into the CPFS file system based on the policy.
+         *                          <p>
+         *                          <ul>
+         *                          <li>None (default): Updated data in the source storage is not automatically
+         *                          imported into the CPFS file system. You can run a data flow task to import the
+         *                          updated data from the source storage.</li>
+         *                          <li>ImportChanged: Updated data in the source storage is automatically imported
+         *                          into the CPFS file system.</li>
+         *                          </ul>
+         *                          <p>
+         *                          <blockquote>
+         *                          <p>
+         *                          This parameter takes effect only for CPFS file systems.
+         *                          <p>
+         *                          </blockquote>
          * @return {@code this}
          */
         public Builder autoRefreshPolicy(java.lang.String autoRefreshPolicy) {
@@ -222,9 +396,23 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DataFlowProps#getAutoRefreshPolicy}
-         * @param autoRefreshPolicy Property autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy.
-         *                          None (default): The data update of the source is not automatically imported into CPFS. Users can import data update at the source end of the source through data flow tasks.
-         *                          Importchanged: The data update at the source automatically imports CPFS.
+         * @param autoRefreshPolicy Property autoRefreshPolicy: The automatic update policy.
+         *                          The updated data in the source storage is imported
+         *                          into the CPFS file system based on the policy.
+         *                          <p>
+         *                          <ul>
+         *                          <li>None (default): Updated data in the source storage is not automatically
+         *                          imported into the CPFS file system. You can run a data flow task to import the
+         *                          updated data from the source storage.</li>
+         *                          <li>ImportChanged: Updated data in the source storage is automatically imported
+         *                          into the CPFS file system.</li>
+         *                          </ul>
+         *                          <p>
+         *                          <blockquote>
+         *                          <p>
+         *                          This parameter takes effect only for CPFS file systems.
+         *                          <p>
+         *                          </blockquote>
          * @return {@code this}
          */
         public Builder autoRefreshPolicy(com.aliyun.ros.cdk.core.IResolvable autoRefreshPolicy) {
@@ -254,11 +442,16 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DataFlowProps#getDescription}
-         * @param description Property description: Description of data flow.
-         *                    limit:
-         *                    The length is 2 to 128 English or Chinese characters.
-         *                    Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
-         *                    It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * @param description Property description: The description of the dataflow.
+         *                    Limits:
+         *                    <p>
+         *                    <ul>
+         *                    <li>The description must be 2 to 128 characters in length.</li>
+         *                    <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+         *                    <code>https:\/\/</code>.</li>
+         *                    <li>The description can contain letters, digits, colons (:), underscores (_), and
+         *                    hyphens (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -268,11 +461,16 @@ public interface DataFlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DataFlowProps#getDescription}
-         * @param description Property description: Description of data flow.
-         *                    limit:
-         *                    The length is 2 to 128 English or Chinese characters.
-         *                    Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
-         *                    It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * @param description Property description: The description of the dataflow.
+         *                    Limits:
+         *                    <p>
+         *                    <ul>
+         *                    <li>The description must be 2 to 128 characters in length.</li>
+         *                    <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+         *                    <code>https:\/\/</code>.</li>
+         *                    <li>The description can contain letters, digits, colons (:), underscores (_), and
+         *                    hyphens (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {

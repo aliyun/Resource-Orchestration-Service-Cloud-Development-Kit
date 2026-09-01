@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.224Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.413Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
@@ -54,11 +54,23 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property addressAllocatedMode: The mode in which IP addresses are assigned.
+     * Property addressAllocatedMode: Address allocation mode.
      * <p>
      * Valid values:
-     * Fixed: The ALB instance uses a static IP address.
-     * Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
+     * <p>
+     * <ul>
+     * <li>Fixed (Default): A fixed IP address is allocated to each zone.</li>
+     * <li>Dynamic: Dynamic IP mode. IP addresses are dynamically allocated for each zone.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * Starting from , when you create a new instance by using this interface, it is
+     * created as an upgraded ALB instance regardless of the mode you specify. The
+     * distinction between IP modes is removed, and the allocated IP addresses are
+     * automatically elastic. ALB instances created before the upgrade are not affected.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAddressAllocatedMode() {
         return null;
@@ -105,16 +117,18 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property loadBalancerName: The name of the ALB instance.
+     * Property loadBalancerName: The name of the Application Load Balancer (ALB) instance.
      * <p>
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+     * The name must be 2 to 128 characters long, must start with a letter, digit, or
+     * Chinese character, and can contain digits, periods (.), underscores (_), hyphens
+     * (-), and spaces.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerName() {
         return null;
     }
 
     /**
-     * Property modificationProtectionConfig: The configuration of modification protection.
+     * Property modificationProtectionConfig: The modification protection configuration.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getModificationProtectionConfig() {
         return null;
@@ -308,10 +322,22 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAddressAllocatedMode}
-         * @param addressAllocatedMode Property addressAllocatedMode: The mode in which IP addresses are assigned.
+         * @param addressAllocatedMode Property addressAllocatedMode: Address allocation mode.
          *                             Valid values:
-         *                             Fixed: The ALB instance uses a static IP address.
-         *                             Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
+         *                             <p>
+         *                             <ul>
+         *                             <li>Fixed (Default): A fixed IP address is allocated to each zone.</li>
+         *                             <li>Dynamic: Dynamic IP mode. IP addresses are dynamically allocated for each zone.</li>
+         *                             </ul>
+         *                             <p>
+         *                             <blockquote>
+         *                             <p>
+         *                             Starting from , when you create a new instance by using this interface, it is
+         *                             created as an upgraded ALB instance regardless of the mode you specify. The
+         *                             distinction between IP modes is removed, and the allocated IP addresses are
+         *                             automatically elastic. ALB instances created before the upgrade are not affected.
+         *                             <p>
+         *                             </blockquote>
          * @return {@code this}
          */
         public Builder addressAllocatedMode(java.lang.String addressAllocatedMode) {
@@ -321,10 +347,22 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAddressAllocatedMode}
-         * @param addressAllocatedMode Property addressAllocatedMode: The mode in which IP addresses are assigned.
+         * @param addressAllocatedMode Property addressAllocatedMode: Address allocation mode.
          *                             Valid values:
-         *                             Fixed: The ALB instance uses a static IP address.
-         *                             Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
+         *                             <p>
+         *                             <ul>
+         *                             <li>Fixed (Default): A fixed IP address is allocated to each zone.</li>
+         *                             <li>Dynamic: Dynamic IP mode. IP addresses are dynamically allocated for each zone.</li>
+         *                             </ul>
+         *                             <p>
+         *                             <blockquote>
+         *                             <p>
+         *                             Starting from , when you create a new instance by using this interface, it is
+         *                             created as an upgraded ALB instance regardless of the mode you specify. The
+         *                             distinction between IP modes is removed, and the allocated IP addresses are
+         *                             automatically elastic. ALB instances created before the upgrade are not affected.
+         *                             <p>
+         *                             </blockquote>
          * @return {@code this}
          */
         public Builder addressAllocatedMode(com.aliyun.ros.cdk.core.IResolvable addressAllocatedMode) {
@@ -430,8 +468,10 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getLoadBalancerName}
-         * @param loadBalancerName Property loadBalancerName: The name of the ALB instance.
-         *                         The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+         * @param loadBalancerName Property loadBalancerName: The name of the Application Load Balancer (ALB) instance.
+         *                         The name must be 2 to 128 characters long, must start with a letter, digit, or
+         *                         Chinese character, and can contain digits, periods (.), underscores (_), hyphens
+         *                         (-), and spaces.
          * @return {@code this}
          */
         public Builder loadBalancerName(java.lang.String loadBalancerName) {
@@ -441,8 +481,10 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getLoadBalancerName}
-         * @param loadBalancerName Property loadBalancerName: The name of the ALB instance.
-         *                         The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+         * @param loadBalancerName Property loadBalancerName: The name of the Application Load Balancer (ALB) instance.
+         *                         The name must be 2 to 128 characters long, must start with a letter, digit, or
+         *                         Chinese character, and can contain digits, periods (.), underscores (_), hyphens
+         *                         (-), and spaces.
          * @return {@code this}
          */
         public Builder loadBalancerName(com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
@@ -452,7 +494,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getModificationProtectionConfig}
-         * @param modificationProtectionConfig Property modificationProtectionConfig: The configuration of modification protection.
+         * @param modificationProtectionConfig Property modificationProtectionConfig: The modification protection configuration.
          * @return {@code this}
          */
         public Builder modificationProtectionConfig(com.aliyun.ros.cdk.core.IResolvable modificationProtectionConfig) {
@@ -462,7 +504,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getModificationProtectionConfig}
-         * @param modificationProtectionConfig Property modificationProtectionConfig: The configuration of modification protection.
+         * @param modificationProtectionConfig Property modificationProtectionConfig: The modification protection configuration.
          * @return {@code this}
          */
         public Builder modificationProtectionConfig(com.aliyun.ros.cdk.alb.RosLoadBalancer.ModificationProtectionConfigProperty modificationProtectionConfig) {

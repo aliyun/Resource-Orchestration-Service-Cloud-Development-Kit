@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::InstanceClone</code>, which is used to clone an Elastic Compute Service (ECS) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::InstanceClone</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.951Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.318Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceClone")
 public class InstanceClone extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IInstanceClone {
 
@@ -222,20 +222,54 @@ public class InstanceClone extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance.
+         * Property deletionProtection: Specifies whether to enable release protection for the instance.
+         * <p>
+         * This parameter
+         * determines whether you can use the ECS console or call the <a href="">DeleteInstance</a>
+         * operation to release the instance. Valid values:
+         * <p>
+         * <ul>
+         * <li>true: enables release protection for the instance.</li>
+         * <li>false: disables release protection for the instance.
+         * Default value: false.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is applicable to only pay-as-you-go instances. It can protect
+         * instances against manual releases, but not against automatic releases.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param deletionProtection Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance. This parameter is required.
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable release protection for the instance. This parameter is required.
          */
         public Builder deletionProtection(final java.lang.Boolean deletionProtection) {
             this.props.deletionProtection(deletionProtection);
             return this;
         }
         /**
-         * Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance.
+         * Property deletionProtection: Specifies whether to enable release protection for the instance.
+         * <p>
+         * This parameter
+         * determines whether you can use the ECS console or call the <a href="">DeleteInstance</a>
+         * operation to release the instance. Valid values:
+         * <p>
+         * <ul>
+         * <li>true: enables release protection for the instance.</li>
+         * <li>false: disables release protection for the instance.
+         * Default value: false.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is applicable to only pay-as-you-go instances. It can protect
+         * instances against manual releases, but not against automatic releases.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param deletionProtection Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance. This parameter is required.
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable release protection for the instance. This parameter is required.
          */
         public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
             this.props.deletionProtection(deletionProtection);

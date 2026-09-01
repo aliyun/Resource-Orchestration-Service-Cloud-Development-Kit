@@ -15,12 +15,15 @@ type RouterInterfaceProps struct {
 	//
 	// If 'RouterType' is specified as 'VBR', the value is required.
 	AccessPointId interface{} `field:"optional" json:"accessPointId" yaml:"accessPointId"`
-	// Property autoPay: Indicates whether automatic payment is enabled.
+	// Property autoPay: Specifies whether to enable automatic payment.
 	//
 	// Valid values:
-	// false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
-	// true: Automatic payment is enabled. The payment is automatically made.
-	// Default: true.
+	// *   false (default): The automatic payment is disabled. If you select this
+	// option, you must go to the Order Center to complete the payment after an order is
+	// generated.
+	// *   true: The automatic payment is enabled. Payments are automatically complete
+	// after an order is generated.
+	// >  This parameter is required if InstanceChargeType is set to PrePaid.
 	AutoPay interface{} `field:"optional" json:"autoPay" yaml:"autoPay"`
 	// Property autoRenew: Specifies whether auto-renewal is enabled.
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
@@ -43,8 +46,6 @@ type RouterInterfaceProps struct {
 	// It is valid only for a VRouter RouterInterface with a peer on a VBR. Usually you can use the CPE IP address of the leased line user's client (that is, the PeerGatewayIP on the VBR of the peer RouterInterface), you can also specify another IP address of the leased line user's client as the HealthCheck target IP address. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
 	HealthCheckTargetIp interface{} `field:"optional" json:"healthCheckTargetIp" yaml:"healthCheckTargetIp"`
 	// Property instanceChargeType: The billing method of the router interface.
-	//
-	// Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go).
 	InstanceChargeType interface{} `field:"optional" json:"instanceChargeType" yaml:"instanceChargeType"`
 	// Property name: Custom name of the RouterInterface, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
@@ -78,13 +79,31 @@ type RouterInterfaceProps struct {
 	PricingCycle interface{} `field:"optional" json:"pricingCycle" yaml:"pricingCycle"`
 	// Property resourceGroupId: The ID of the resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
-	// Property routerType: Router type.
+	// Property routerType: The type of router that is associated with the router interface.
 	//
-	// Now support 'VRouter|VBR'.
+	// Valid values:
+	// *   VRouter
+	// *   VBR.
 	RouterType interface{} `field:"optional" json:"routerType" yaml:"routerType"`
-	// Property spec: RouterInterface specification.
+	// Property spec: The specification of the router interface and the corresponding bandwidth.
 	//
-	// If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
+	// Valid
+	// values:
+	// *   Mini.2: 2 Mbit\/s
+	// *   Mini.5: 5 Mbit\/s
+	// *   Small.1: 10 Mbit\/s
+	// *   Small.2: 20 Mbit\/s
+	// *   Small.5: 50 Mbit\/s
+	// *   Middle.1: 100 Mbit\/s
+	// *   Middle.2: 200 Mbit\/s
+	// *   Middle.5: 500 Mbit\/s
+	// *   Large.1: 1,000 Mbit\/s
+	// *   Large.2: 2,000 Mbit\/s
+	// *   Large.5: 5,000 Mbit\/s
+	// *   Xlarge.1: 10,000 Mbit\/s
+	// >  If Role is set to AcceptingSide, set Spec to Negative. This indicates that you
+	// do not need to specify the specification when you create an acceptor router
+	// interface.
 	Spec interface{} `field:"optional" json:"spec" yaml:"spec"`
 }
 

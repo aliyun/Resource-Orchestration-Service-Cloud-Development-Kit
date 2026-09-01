@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::AccessConfigurationProvision`, which is used to provision an access configuration for an account in your resource directory.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::AccessConfigurationProvision`.
 type AccessConfigurationProvision interface {
 	alicloudroscdkcore.Resource
 	IAccessConfigurationProvision

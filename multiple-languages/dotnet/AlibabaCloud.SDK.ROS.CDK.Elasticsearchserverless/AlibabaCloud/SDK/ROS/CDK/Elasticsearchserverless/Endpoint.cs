@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearchServerless::Endpoint`The , which is used to create an endpoint.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearchServerless::Endpoint`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEndpoint`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearchserverless-endpoint

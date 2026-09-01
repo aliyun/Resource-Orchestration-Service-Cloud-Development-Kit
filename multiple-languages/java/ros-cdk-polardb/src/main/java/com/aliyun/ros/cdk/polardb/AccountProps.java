@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:28:24.398Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:41:17.494Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.AccountProps")
 @software.amazon.jsii.Jsii.Proxy(AccountProps.Jsii$Proxy.class)
 public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,11 +13,13 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property accountName: The name of the database account.
      * <p>
-     * The name must comply with the following rules:
+     * The name must meet the following requirements:
      * <p>
      * <ul>
-     * <li>It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).</li>
-     * <li>It can be up to 16 characters in length.</li>
+     * <li>It must start with a lowercase letter and end with a letter or a digit.</li>
+     * <li>It can contain lowercase letters, digits, and underscores (_).</li>
+     * <li>It must be 1 to 16 characters in length.</li>
+     * <li>It cannot be a reserved keyword, such as root or admin.</li>
      * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAccountName();
@@ -55,16 +57,33 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property accountPrivilege: The permissions of the database account on the database.
+     * Property accountPrivilege: The privilege level to grant on the specified databases.
      * <p>
      * Valid values:
-     * ReadWrite: has read and write permissions on the database.
-     * ReadOnly: has the read-only permission on the database.
-     * DMLOnly: runs only data manipulation language (DML) statements.
-     * DDLOnly: runs only data definition language (DDL) statements.
-     * ReadIndex: has read and index permissions on the database.
-     * Default value: ReadWrite.
-     * Separate multiple permissions with a comma (,).
+     * <p>
+     * <ul>
+     * <li>ReadWrite: read and write permissions</li>
+     * <li>ReadOnly: read-only permissions</li>
+     * <li>DMLOnly: DML permissions only</li>
+     * <li>DDLOnly: DDL permissions only</li>
+     * <li>ReadIndex: read-only and index permissions</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>This parameter takes effect only when you specify the <code>DBName</code> parameter.</li>
+     * <li>If you specify multiple databases in <code>DBName</code>, you must specify a
+     * corresponding permission for each in <code>AccountPrivilege</code>, separated by commas. The
+     * <code>AccountPrivilege</code> string cannot exceed 900 characters. For example, to grant
+     * read and write permissions to database DB1 and read-only permissions to database
+     * DB2, set <code>DBName</code> to <code>DB1,DB2</code> and set <code>AccountPrivilege</code> to
+     * <code>ReadWrite,ReadOnly</code>.</li>
+     * <li>This parameter applies only to standard accounts on PolarDB for MySQL
+     * clusters.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAccountPrivilege() {
         return null;
@@ -88,9 +107,16 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property dbName: The name of the database whose access permissions are to be granted to the database account.
+     * Property dbName: The name of the database that the account can access.
      * <p>
-     * Separate multiple databases with a comma (,).
+     * To specify multiple
+     * databases, separate the database names with a comma (,).
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter applies only to standard accounts on PolarDB for MySQL clusters.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbName() {
         return null;
@@ -132,11 +158,13 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link AccountProps#getAccountName}
          * @param accountName Property accountName: The name of the database account. This parameter is required.
-         *                    The name must comply with the following rules:
+         *                    The name must meet the following requirements:
          *                    <p>
          *                    <ul>
-         *                    <li>It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).</li>
-         *                    <li>It can be up to 16 characters in length.</li>
+         *                    <li>It must start with a lowercase letter and end with a letter or a digit.</li>
+         *                    <li>It can contain lowercase letters, digits, and underscores (_).</li>
+         *                    <li>It must be 1 to 16 characters in length.</li>
+         *                    <li>It cannot be a reserved keyword, such as root or admin.</li>
          *                    </ul>
          * @return {@code this}
          */
@@ -148,11 +176,13 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link AccountProps#getAccountName}
          * @param accountName Property accountName: The name of the database account. This parameter is required.
-         *                    The name must comply with the following rules:
+         *                    The name must meet the following requirements:
          *                    <p>
          *                    <ul>
-         *                    <li>It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).</li>
-         *                    <li>It can be up to 16 characters in length.</li>
+         *                    <li>It must start with a lowercase letter and end with a letter or a digit.</li>
+         *                    <li>It can contain lowercase letters, digits, and underscores (_).</li>
+         *                    <li>It must be 1 to 16 characters in length.</li>
+         *                    <li>It cannot be a reserved keyword, such as root or admin.</li>
          *                    </ul>
          * @return {@code this}
          */
@@ -249,15 +279,32 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AccountProps#getAccountPrivilege}
-         * @param accountPrivilege Property accountPrivilege: The permissions of the database account on the database.
+         * @param accountPrivilege Property accountPrivilege: The privilege level to grant on the specified databases.
          *                         Valid values:
-         *                         ReadWrite: has read and write permissions on the database.
-         *                         ReadOnly: has the read-only permission on the database.
-         *                         DMLOnly: runs only data manipulation language (DML) statements.
-         *                         DDLOnly: runs only data definition language (DDL) statements.
-         *                         ReadIndex: has read and index permissions on the database.
-         *                         Default value: ReadWrite.
-         *                         Separate multiple permissions with a comma (,).
+         *                         <p>
+         *                         <ul>
+         *                         <li>ReadWrite: read and write permissions</li>
+         *                         <li>ReadOnly: read-only permissions</li>
+         *                         <li>DMLOnly: DML permissions only</li>
+         *                         <li>DDLOnly: DDL permissions only</li>
+         *                         <li>ReadIndex: read-only and index permissions</li>
+         *                         </ul>
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         <ul>
+         *                         <li>This parameter takes effect only when you specify the <code>DBName</code> parameter.</li>
+         *                         <li>If you specify multiple databases in <code>DBName</code>, you must specify a
+         *                         corresponding permission for each in <code>AccountPrivilege</code>, separated by commas. The
+         *                         <code>AccountPrivilege</code> string cannot exceed 900 characters. For example, to grant
+         *                         read and write permissions to database DB1 and read-only permissions to database
+         *                         DB2, set <code>DBName</code> to <code>DB1,DB2</code> and set <code>AccountPrivilege</code> to
+         *                         <code>ReadWrite,ReadOnly</code>.</li>
+         *                         <li>This parameter applies only to standard accounts on PolarDB for MySQL
+         *                         clusters.</li>
+         *                         </ul>
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder accountPrivilege(java.lang.String accountPrivilege) {
@@ -267,15 +314,32 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AccountProps#getAccountPrivilege}
-         * @param accountPrivilege Property accountPrivilege: The permissions of the database account on the database.
+         * @param accountPrivilege Property accountPrivilege: The privilege level to grant on the specified databases.
          *                         Valid values:
-         *                         ReadWrite: has read and write permissions on the database.
-         *                         ReadOnly: has the read-only permission on the database.
-         *                         DMLOnly: runs only data manipulation language (DML) statements.
-         *                         DDLOnly: runs only data definition language (DDL) statements.
-         *                         ReadIndex: has read and index permissions on the database.
-         *                         Default value: ReadWrite.
-         *                         Separate multiple permissions with a comma (,).
+         *                         <p>
+         *                         <ul>
+         *                         <li>ReadWrite: read and write permissions</li>
+         *                         <li>ReadOnly: read-only permissions</li>
+         *                         <li>DMLOnly: DML permissions only</li>
+         *                         <li>DDLOnly: DDL permissions only</li>
+         *                         <li>ReadIndex: read-only and index permissions</li>
+         *                         </ul>
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         <ul>
+         *                         <li>This parameter takes effect only when you specify the <code>DBName</code> parameter.</li>
+         *                         <li>If you specify multiple databases in <code>DBName</code>, you must specify a
+         *                         corresponding permission for each in <code>AccountPrivilege</code>, separated by commas. The
+         *                         <code>AccountPrivilege</code> string cannot exceed 900 characters. For example, to grant
+         *                         read and write permissions to database DB1 and read-only permissions to database
+         *                         DB2, set <code>DBName</code> to <code>DB1,DB2</code> and set <code>AccountPrivilege</code> to
+         *                         <code>ReadWrite,ReadOnly</code>.</li>
+         *                         <li>This parameter applies only to standard accounts on PolarDB for MySQL
+         *                         clusters.</li>
+         *                         </ul>
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder accountPrivilege(com.aliyun.ros.cdk.core.IResolvable accountPrivilege) {
@@ -323,8 +387,15 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AccountProps#getDbName}
-         * @param dbName Property dbName: The name of the database whose access permissions are to be granted to the database account.
-         *               Separate multiple databases with a comma (,).
+         * @param dbName Property dbName: The name of the database that the account can access.
+         *               To specify multiple
+         *               databases, separate the database names with a comma (,).
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter applies only to standard accounts on PolarDB for MySQL clusters.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder dbName(java.lang.String dbName) {
@@ -334,8 +405,15 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AccountProps#getDbName}
-         * @param dbName Property dbName: The name of the database whose access permissions are to be granted to the database account.
-         *               Separate multiple databases with a comma (,).
+         * @param dbName Property dbName: The name of the database that the account can access.
+         *               To specify multiple
+         *               databases, separate the database names with a comma (,).
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter applies only to standard accounts on PolarDB for MySQL clusters.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder dbName(com.aliyun.ros.cdk.core.IResolvable dbName) {

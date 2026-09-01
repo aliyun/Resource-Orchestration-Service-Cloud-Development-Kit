@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::ServerGroup</code>Use , which to create a server group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::ServerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.286Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.483Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ServerGroup")
 public class ServerGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.IServerGroup {
 
@@ -143,9 +143,9 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property serverGroupName: The name of the server group.
          * <p>
-         * The name must be 2 to 128 characters in length, and
-         * can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name
-         * must start with a letter.
+         * The name must be 2 to 128 characters in length,
+         * start with a letter, digit, or Chinese character, and can contain digits, periods
+         * (.), underscores (_), hyphens (-), and spaces.
          * <p>
          * @return {@code this}
          * @param serverGroupName Property serverGroupName: The name of the server group. This parameter is required.
@@ -157,9 +157,9 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property serverGroupName: The name of the server group.
          * <p>
-         * The name must be 2 to 128 characters in length, and
-         * can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name
-         * must start with a letter.
+         * The name must be 2 to 128 characters in length,
+         * start with a letter, digit, or Chinese character, and can contain digits, periods
+         * (.), underscores (_), hyphens (-), and spaces.
          * <p>
          * @return {@code this}
          * @param serverGroupName Property serverGroupName: The name of the server group. This parameter is required.
@@ -191,36 +191,62 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing.
+         * Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing for the server group.
          * <p>
-         * Valid values:
-         * true (default)
-         * false
-         * Note:
-         * Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
-         * Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
-         * When cross-zone load balancing is disabled, session persistence cannot be enabled.
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>true (default): Enables cross-zone load balancing.</li>
+         * <li>false: Disables cross-zone load balancing.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>Basic ALB instances cannot be associated with server groups for which
+         * cross-zone load balancing is disabled. This feature is supported only by standard
+         * and WAF-enabled ALB instances.</li>
+         * <li>You can disable cross-zone load balancing for instance-type and IP-type
+         * server groups, but not for function-type server groups.</li>
+         * <li>You cannot enable sticky sessions if you disable cross-zone load balancing.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param crossZoneEnabled Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing. This parameter is required.
+         * @param crossZoneEnabled Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing for the server group. This parameter is required.
          */
         public Builder crossZoneEnabled(final java.lang.Boolean crossZoneEnabled) {
             this.props.crossZoneEnabled(crossZoneEnabled);
             return this;
         }
         /**
-         * Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing.
+         * Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing for the server group.
          * <p>
-         * Valid values:
-         * true (default)
-         * false
-         * Note:
-         * Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
-         * Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
-         * When cross-zone load balancing is disabled, session persistence cannot be enabled.
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>true (default): Enables cross-zone load balancing.</li>
+         * <li>false: Disables cross-zone load balancing.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>Basic ALB instances cannot be associated with server groups for which
+         * cross-zone load balancing is disabled. This feature is supported only by standard
+         * and WAF-enabled ALB instances.</li>
+         * <li>You can disable cross-zone load balancing for instance-type and IP-type
+         * server groups, but not for function-type server groups.</li>
+         * <li>You cannot enable sticky sessions if you disable cross-zone load balancing.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param crossZoneEnabled Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing. This parameter is required.
+         * @param crossZoneEnabled Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing for the server group. This parameter is required.
          */
         public Builder crossZoneEnabled(final com.aliyun.ros.cdk.core.IResolvable crossZoneEnabled) {
             this.props.crossZoneEnabled(crossZoneEnabled);
@@ -493,30 +519,38 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property vpcId: The ID of the virtual private cloud (VPC).
+         * Property vpcId: The ID of the VPC where the server group is created.
          * <p>
-         * You can add only servers that are deployed
-         * in the specified VPC to the server group.
-         * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-         * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+         * You can add only servers
+         * within this VPC to the server group.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is valid only when ServerGroupType is set to Instance or Ip.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC). This parameter is required.
+         * @param vpcId Property vpcId: The ID of the VPC where the server group is created. This parameter is required.
          */
         public Builder vpcId(final java.lang.String vpcId) {
             this.props.vpcId(vpcId);
             return this;
         }
         /**
-         * Property vpcId: The ID of the virtual private cloud (VPC).
+         * Property vpcId: The ID of the VPC where the server group is created.
          * <p>
-         * You can add only servers that are deployed
-         * in the specified VPC to the server group.
-         * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-         * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+         * You can add only servers
+         * within this VPC to the server group.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is valid only when ServerGroupType is set to Instance or Ip.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC). This parameter is required.
+         * @param vpcId Property vpcId: The ID of the VPC where the server group is created. This parameter is required.
          */
         public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.props.vpcId(vpcId);

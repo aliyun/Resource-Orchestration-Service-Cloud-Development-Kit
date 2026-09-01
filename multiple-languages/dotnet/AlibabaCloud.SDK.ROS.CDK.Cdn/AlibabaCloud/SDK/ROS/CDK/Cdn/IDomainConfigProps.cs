@@ -11,7 +11,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
     [JsiiInterface(nativeType: typeof(IDomainConfigProps), fullyQualifiedName: "@alicloud/ros-cdk-cdn.DomainConfigProps")]
     public interface IDomainConfigProps
     {
-        /// <summary>Property domainNames: Your accelerated domain name, separated by commas in English.</summary>
+        /// <summary>Property domainNames: The domain names to configure for acceleration.</summary>
+        /// <remarks>
+        /// Separate multiple domain names
+        /// with a comma (,). Note the following limits:
+        ///
+        /// <list type="bullet">
+        /// <description>You can specify up to 20 domain names.</description>
+        /// <description>The number of domain names multiplied by the number of features cannot exceed</description>
+        /// </list>
+        ///
+        /// <list type="number">
+        /// <description></description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "domainNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object DomainNames
         {
@@ -43,7 +56,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             {
             }
 
-            /// <summary>Property domainNames: Your accelerated domain name, separated by commas in English.</summary>
+            /// <summary>Property domainNames: The domain names to configure for acceleration.</summary>
+            /// <remarks>
+            /// Separate multiple domain names
+            /// with a comma (,). Note the following limits:
+            ///
+            /// <list type="bullet">
+            /// <description>You can specify up to 20 domain names.</description>
+            /// <description>The number of domain names multiplied by the number of features cannot exceed</description>
+            /// </list>
+            ///
+            /// <list type="number">
+            /// <description></description>
+            /// </list>
+            /// </remarks>
             [JsiiProperty(name: "domainNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DomainNames
             {

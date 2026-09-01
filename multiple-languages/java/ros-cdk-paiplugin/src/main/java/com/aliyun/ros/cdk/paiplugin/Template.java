@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paiplugin;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAIPlugin::Template</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:27:03.663Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:38:51.061Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paiplugin.$Module.class, fqn = "@alicloud/ros-cdk-paiplugin.Template")
 public class Template extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.paiplugin.ITemplate {
 

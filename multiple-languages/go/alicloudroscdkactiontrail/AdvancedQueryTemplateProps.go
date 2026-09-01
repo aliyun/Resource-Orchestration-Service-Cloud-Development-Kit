@@ -9,7 +9,9 @@ type AdvancedQueryTemplateProps struct {
 	SimpleQuery interface{} `field:"required" json:"simpleQuery" yaml:"simpleQuery"`
 	// Property templateSql: The SQL statement of the advanced query template.
 	TemplateSql interface{} `field:"required" json:"templateSql" yaml:"templateSql"`
-	// Property templateName: The name of the advanced query template.
+	// Property templateName: The name of the template, which can contain a maximum of 64 characters.
+	//
+	// Uniqueness is not required.
 	TemplateName interface{} `field:"optional" json:"templateName" yaml:"templateName"`
 }
 

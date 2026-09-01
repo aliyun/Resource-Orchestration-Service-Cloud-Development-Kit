@@ -13,20 +13,34 @@ type LoadBalancerCloneProps struct {
 	//
 	// If select 'clone', it will clone from source load balancer. If select 'empty' it will not attach any backend servers. If select 'append' it will append the new backend server list to source backed servers. If select 'replace' it will only attach new backend server list. Default is 'clone'.
 	BackendServersPolicy interface{} `field:"optional" json:"backendServersPolicy" yaml:"backendServersPolicy"`
-	// Property instanceChargeType: Instance billing method.
+	// Property instanceChargeType: The resource metering method for the CLB instance.
 	//
-	// Value:PayBySpec: Pay by spec.
-	// PayByCLCU: billed by usage.
-	// If not specified, it is same with the source load balancer.
+	// Valid value:
+	// - PayByCLCU: pay-by-data-transfer
+	// > As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+	// no longer available for purchase. For more details, see [](t2857909.xdita#).
 	InstanceChargeType interface{} `field:"optional" json:"instanceChargeType" yaml:"instanceChargeType"`
-	// Property loadBalancerName: Name of created load balancer.
+	// Property loadBalancerName: The CLB instance name.
 	//
-	// Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
+	// The name must be 1 to 80 characters in length, and can contain digits, periods
+	// (.), underscores (_), and hyphens (-). It must start with a letter.
+	// If you do not specify this parameter, the system automatically assigns a name to
+	// the CLB instance.
 	LoadBalancerName interface{} `field:"optional" json:"loadBalancerName" yaml:"loadBalancerName"`
-	// Property loadBalancerSpec: The specification of the load balancer.
+	// Property loadBalancerSpec: The specification of the CLB instance.
 	//
-	// If not specified, it is same with the source load balancer.
-	// Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+	// Valid values:
+	// - slb.s1.small
+	// - slb.s2.small
+	// - slb.s2.medium
+	// - slb.s3.small
+	// - slb.s3.medium
+	// - slb.s3.large
+	// > * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+	// do not need to specify this parameter.
+	// >
+	// > * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+	// are no longer available for purchase. For more details, see [](t2857909.xdita#).
 	LoadBalancerSpec interface{} `field:"optional" json:"loadBalancerSpec" yaml:"loadBalancerSpec"`
 	// Property resourceGroupId: Resource group id.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
@@ -39,9 +53,11 @@ type LoadBalancerCloneProps struct {
 	// If select 'clone', it will clone from source load balancer. If select 'empty' it will not copy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
 	// Default is 'empty'.
 	TagsPolicy interface{} `field:"optional" json:"tagsPolicy" yaml:"tagsPolicy"`
-	// Property vSwitchId: The new VSwitch ID to create load balancer instance.
+	// Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
 	//
-	// For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
+	// If you want to deploy the CLB instance in a VPC, this parameter is required. If
+	// this parameter is specified, AddessType is set to intranet by default.
+	// > The vSwitch must be in the primary zone.
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`
 }
 

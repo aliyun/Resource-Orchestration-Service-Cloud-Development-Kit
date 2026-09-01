@@ -13,6 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
     {
         /// <remarks>
         /// <strong>Property</strong>: instanceId: The ID of the instance.
+        /// > This operation contains both the InstanceId and ClusterId parameters. You must
+        /// specify one of them.
         /// </remarks>
         [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object InstanceId
@@ -96,6 +98,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
 
             /// <remarks>
             /// <strong>Property</strong>: instanceId: The ID of the instance.
+            /// > This operation contains both the InstanceId and ClusterId parameters. You must
+            /// specify one of them.
             /// </remarks>
             [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceId

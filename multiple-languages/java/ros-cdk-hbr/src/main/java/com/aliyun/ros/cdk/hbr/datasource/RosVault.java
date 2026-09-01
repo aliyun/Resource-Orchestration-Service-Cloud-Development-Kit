@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::HBR::Vault</code>, which is used to query the information about a backup vault.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.840Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.236Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.datasource.RosVault")
 public class RosVault extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::Domains`, which is used to query domain names.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::Domains`.
 type RosDomains interface {
 	alicloudroscdkcore.RosResource
 	AttrDomainIds() alicloudroscdkcore.IResolvable

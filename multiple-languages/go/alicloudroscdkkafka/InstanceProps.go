@@ -5,11 +5,14 @@ package alicloudroscdkkafka
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-instance
 type InstanceProps struct {
-	// Property deployType: The deployment mode of the Message Queue for Apache Kafka instance.
+	// Property deployType: The deployment type.
 	//
 	// Valid values:
-	//    4: Instance of the public type
-	// 5: Instance of the VPC type.
+	// - 4: Internet\/VPC instance
+	// - 5: VPC instance
+	// > If you are creating a Confluent series instance, you cannot select the
+	// deployment type. You can only set the value to 5. After the purchase, you can
+	// adjust whether each component is open to the Internet.
 	DeployType interface{} `field:"required" json:"deployType" yaml:"deployType"`
 	// Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance.
 	//
@@ -29,9 +32,13 @@ type InstanceProps struct {
 	//
 	// This parameter must be specified when the DeployType parameter is set to 4.
 	EipMax interface{} `field:"optional" json:"eipMax" yaml:"eipMax"`
-	// Property ioMax: The peak traffic to be configured for the Message Queue for Apache Kafka instance.
+	// Property ioMax: The traffic peak (not recommended).
 	//
-	// For more information about the value range, see Billing.
+	// - You must specify either IoMax or IoMaxSpec. If you specify both parameters,
+	// IoMaxSpec takes precedence. We recommend that you specify only IoMaxSpec.
+	// - For the valid values, see [Billing]().
+	// > If you are creating a Confluent series instance, you do not need to pass this
+	// parameter.
 	IoMax interface{} `field:"optional" json:"ioMax" yaml:"ioMax"`
 	// Property ioMaxSpec: Flow specification (recommended)  The IoMax and IoMaxSpec must be optional.
 	//
@@ -48,7 +55,10 @@ type InstanceProps struct {
 	PartitionNum interface{} `field:"optional" json:"partitionNum" yaml:"partitionNum"`
 	// Property payType: Pay by hour or month.
 	PayType interface{} `field:"optional" json:"payType" yaml:"payType"`
-	// Property serverlessConfig: Serverless instance related settings.
+	// Property serverlessConfig: The settings of the Serverless instance.
+	//
+	// This parameter is required if you create
+	// a Serverless instance.
 	ServerlessConfig interface{} `field:"optional" json:"serverlessConfig" yaml:"serverlessConfig"`
 	// Property specType: The edition of the Message Queue for Apache Kafka instance.
 	//

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::ContactGroup`, which is used to create an alert contact group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::ContactGroup`.
 type ContactGroup interface {
 	alicloudroscdkcore.Resource
 	IContactGroup

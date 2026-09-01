@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::Config::Aggregator`, which is used to create an account group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::Config::Aggregator`.
 type Aggregator interface {
 	alicloudroscdkcore.Resource
 	IAggregator

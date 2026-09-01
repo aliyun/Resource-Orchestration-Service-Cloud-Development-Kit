@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::Rule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.339Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:44:47.160Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.Rule")
 public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.slb.IRule {
 
@@ -164,6 +164,32 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         /**
          * Property ruleList: The forwarding rules to add.
          * <p>
+         * You can add up to 10 forwarding rules in a single
+         * request. Each forwarding rule consists of the following parameters:
+         * <p>
+         * <ul>
+         * <li>RuleName (Required): String. The name of the forwarding rule. The name must be
+         * 1 to 40 characters in length and can contain letters, digits, hyphens (-),
+         * forward slashes (/), periods (.), and underscores (_). Rule names must be unique
+         * within the same listener.</li>
+         * <li>Domain (Optional): String. The domain name to associate with the forwarding
+         * rule. You must specify at least one of this parameter and the Url parameter.</li>
+         * <li>Url (Optional): String. The URL path. The path must be 1 to 80 characters in
+         * length. It can contain Chinese characters, letters, digits, and the following
+         * special characters: <code>- \/ . % ? # &amp;</code>. The URL path must start with a forward slash
+         * (/), but cannot be a single forward slash (/). You must specify at least one of
+         * this parameter and the Domain parameter.</li>
+         * <li>VServerGroupId (Required): String. The ID of the target vServer group for the
+         * forwarding rule.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify the <code>Domain</code> parameter, the <code>Url</code> parameter, or both. The
+         * combination of a <code>Domain</code> and a <code>Url</code> must be unique within the same listener.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
          * @param ruleList Property ruleList: The forwarding rules to add. This parameter is required.
          */
@@ -174,6 +200,32 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         /**
          * Property ruleList: The forwarding rules to add.
          * <p>
+         * You can add up to 10 forwarding rules in a single
+         * request. Each forwarding rule consists of the following parameters:
+         * <p>
+         * <ul>
+         * <li>RuleName (Required): String. The name of the forwarding rule. The name must be
+         * 1 to 40 characters in length and can contain letters, digits, hyphens (-),
+         * forward slashes (/), periods (.), and underscores (_). Rule names must be unique
+         * within the same listener.</li>
+         * <li>Domain (Optional): String. The domain name to associate with the forwarding
+         * rule. You must specify at least one of this parameter and the Url parameter.</li>
+         * <li>Url (Optional): String. The URL path. The path must be 1 to 80 characters in
+         * length. It can contain Chinese characters, letters, digits, and the following
+         * special characters: <code>- \/ . % ? # &amp;</code>. The URL path must start with a forward slash
+         * (/), but cannot be a single forward slash (/). You must specify at least one of
+         * this parameter and the Domain parameter.</li>
+         * <li>VServerGroupId (Required): String. The ID of the target vServer group for the
+         * forwarding rule.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify the <code>Domain</code> parameter, the <code>Url</code> parameter, or both. The
+         * combination of a <code>Domain</code> and a <code>Url</code> must be unique within the same listener.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
          * @param ruleList Property ruleList: The forwarding rules to add. This parameter is required.
          */
@@ -183,20 +235,34 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property listenerProtocol: The frontend protocol that is used by the SLB instance.
+         * Property listenerProtocol: The frontend protocol of the listener.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you configure listeners that use different
+         * protocols on the same port.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param listenerProtocol Property listenerProtocol: The frontend protocol that is used by the SLB instance. This parameter is required.
+         * @param listenerProtocol Property listenerProtocol: The frontend protocol of the listener. This parameter is required.
          */
         public Builder listenerProtocol(final java.lang.String listenerProtocol) {
             this.props.listenerProtocol(listenerProtocol);
             return this;
         }
         /**
-         * Property listenerProtocol: The frontend protocol that is used by the SLB instance.
+         * Property listenerProtocol: The frontend protocol of the listener.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you configure listeners that use different
+         * protocols on the same port.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param listenerProtocol Property listenerProtocol: The frontend protocol that is used by the SLB instance. This parameter is required.
+         * @param listenerProtocol Property listenerProtocol: The frontend protocol of the listener. This parameter is required.
          */
         public Builder listenerProtocol(final com.aliyun.ros.cdk.core.IResolvable listenerProtocol) {
             this.props.listenerProtocol(listenerProtocol);

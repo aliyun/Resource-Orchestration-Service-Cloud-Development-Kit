@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ehpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::EHPC::Cluster</code>, which is used to create an Elastic High Performance Computing (E-HPC) cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::EHPC::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:42:12.652Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:50:32.899Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ehpc.ICluster {
 
@@ -324,20 +324,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property additionalVolumes:.
+         * Property additionalVolumes: The information of the NAS file system.
          * <p>
          * @return {@code this}
-         * @param additionalVolumes Property additionalVolumes:. This parameter is required.
+         * @param additionalVolumes Property additionalVolumes: The information of the NAS file system. This parameter is required.
          */
         public Builder additionalVolumes(final com.aliyun.ros.cdk.core.IResolvable additionalVolumes) {
             this.props.additionalVolumes(additionalVolumes);
             return this;
         }
         /**
-         * Property additionalVolumes:.
+         * Property additionalVolumes: The information of the NAS file system.
          * <p>
          * @return {@code this}
-         * @param additionalVolumes Property additionalVolumes:. This parameter is required.
+         * @param additionalVolumes Property additionalVolumes: The information of the NAS file system. This parameter is required.
          */
         public Builder additionalVolumes(final java.util.List<? extends java.lang.Object> additionalVolumes) {
             this.props.additionalVolumes(additionalVolumes);
@@ -366,24 +366,36 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property autoRenew: true: automatic renewals;
+         * Property autoRenew: Specifies whether to enable auto-renewal.
          * <p>
-         * false: no automatic renewals.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true</li>
+         * <li>false
+         * Default value: false.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoRenew Property autoRenew: true: automatic renewals;. This parameter is required.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal. This parameter is required.
          */
         public Builder autoRenew(final java.lang.Boolean autoRenew) {
             this.props.autoRenew(autoRenew);
             return this;
         }
         /**
-         * Property autoRenew: true: automatic renewals;
+         * Property autoRenew: Specifies whether to enable auto-renewal.
          * <p>
-         * false: no automatic renewals.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true</li>
+         * <li>false
+         * Default value: false.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoRenew Property autoRenew: true: automatic renewals;. This parameter is required.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal. This parameter is required.
          */
         public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
             this.props.autoRenew(autoRenew);
@@ -391,20 +403,26 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property autoRenewPeriod: Duration of each automatic renewals, AutoRenew take effect when AutoRenew is True.
+         * Property autoRenewPeriod: The auto-renewal period of the subscription compute nodes.
+         * <p>
+         * The parameter takes
+         * effect when AutoRenew is set to true.
          * <p>
          * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: Duration of each automatic renewals, AutoRenew take effect when AutoRenew is True. This parameter is required.
+         * @param autoRenewPeriod Property autoRenewPeriod: The auto-renewal period of the subscription compute nodes. This parameter is required.
          */
         public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
             this.props.autoRenewPeriod(autoRenewPeriod);
             return this;
         }
         /**
-         * Property autoRenewPeriod: Duration of each automatic renewals, AutoRenew take effect when AutoRenew is True.
+         * Property autoRenewPeriod: The auto-renewal period of the subscription compute nodes.
+         * <p>
+         * The parameter takes
+         * effect when AutoRenew is set to true.
          * <p>
          * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: Duration of each automatic renewals, AutoRenew take effect when AutoRenew is True. This parameter is required.
+         * @param autoRenewPeriod Property autoRenewPeriod: The auto-renewal period of the subscription compute nodes. This parameter is required.
          */
         public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
             this.props.autoRenewPeriod(autoRenewPeriod);
@@ -470,20 +488,28 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property computeSpotPriceLimit: Set an example of the highest price per hour, are floating-point values, in the range of the current price range.
+         * Property computeSpotPriceLimit: The maximum hourly price of the compute nodes.
+         * <p>
+         * A maximum of three decimal places
+         * can be used in the value of the parameter. The parameter is valid only when the
+         * ComputeSpotStrategy parameter is set to SpotWithPriceLimit.
          * <p>
          * @return {@code this}
-         * @param computeSpotPriceLimit Property computeSpotPriceLimit: Set an example of the highest price per hour, are floating-point values, in the range of the current price range. This parameter is required.
+         * @param computeSpotPriceLimit Property computeSpotPriceLimit: The maximum hourly price of the compute nodes. This parameter is required.
          */
         public Builder computeSpotPriceLimit(final java.lang.String computeSpotPriceLimit) {
             this.props.computeSpotPriceLimit(computeSpotPriceLimit);
             return this;
         }
         /**
-         * Property computeSpotPriceLimit: Set an example of the highest price per hour, are floating-point values, in the range of the current price range.
+         * Property computeSpotPriceLimit: The maximum hourly price of the compute nodes.
+         * <p>
+         * A maximum of three decimal places
+         * can be used in the value of the parameter. The parameter is valid only when the
+         * ComputeSpotStrategy parameter is set to SpotWithPriceLimit.
          * <p>
          * @return {@code this}
-         * @param computeSpotPriceLimit Property computeSpotPriceLimit: Set an example of the highest price per hour, are floating-point values, in the range of the current price range. This parameter is required.
+         * @param computeSpotPriceLimit Property computeSpotPriceLimit: The maximum hourly price of the compute nodes. This parameter is required.
          */
         public Builder computeSpotPriceLimit(final com.aliyun.ros.cdk.core.IResolvable computeSpotPriceLimit) {
             this.props.computeSpotPriceLimit(computeSpotPriceLimit);
@@ -491,20 +517,42 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property computeSpotStrategy: Compute nodes bidding strategy, value NoSpot, SpotWithPriceLimit or SpotAsPriceGo.
+         * Property computeSpotStrategy: The bidding method of the compute nodes.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>NoSpot: The compute nodes are pay-as-you-go instances.</li>
+         * <li>SpotWithPriceLimit: The compute nodes are preemptible instances that have a
+         * user-defined maximum hourly price.</li>
+         * <li>SpotAsPriceGo: The compute nodes are preemptible instances for which the
+         * market price at the time of purchase is used as the bid price.
+         * Default value: NoSpot.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param computeSpotStrategy Property computeSpotStrategy: Compute nodes bidding strategy, value NoSpot, SpotWithPriceLimit or SpotAsPriceGo. This parameter is required.
+         * @param computeSpotStrategy Property computeSpotStrategy: The bidding method of the compute nodes. This parameter is required.
          */
         public Builder computeSpotStrategy(final java.lang.String computeSpotStrategy) {
             this.props.computeSpotStrategy(computeSpotStrategy);
             return this;
         }
         /**
-         * Property computeSpotStrategy: Compute nodes bidding strategy, value NoSpot, SpotWithPriceLimit or SpotAsPriceGo.
+         * Property computeSpotStrategy: The bidding method of the compute nodes.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>NoSpot: The compute nodes are pay-as-you-go instances.</li>
+         * <li>SpotWithPriceLimit: The compute nodes are preemptible instances that have a
+         * user-defined maximum hourly price.</li>
+         * <li>SpotAsPriceGo: The compute nodes are preemptible instances for which the
+         * market price at the time of purchase is used as the bid price.
+         * Default value: NoSpot.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param computeSpotStrategy Property computeSpotStrategy: Compute nodes bidding strategy, value NoSpot, SpotWithPriceLimit or SpotAsPriceGo. This parameter is required.
+         * @param computeSpotStrategy Property computeSpotStrategy: The bidding method of the compute nodes. This parameter is required.
          */
         public Builder computeSpotStrategy(final com.aliyun.ros.cdk.core.IResolvable computeSpotStrategy) {
             this.props.computeSpotStrategy(computeSpotStrategy);
@@ -545,20 +593,26 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property description: Cluster description, 2 to 128 characters.
+         * Property description: The description of the E-HPC cluster.
+         * <p>
+         * The description must be 2 to 256 characters
+         * in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param description Property description: Cluster description, 2 to 128 characters. This parameter is required.
+         * @param description Property description: The description of the E-HPC cluster. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: Cluster description, 2 to 128 characters.
+         * Property description: The description of the E-HPC cluster.
+         * <p>
+         * The description must be 2 to 256 characters
+         * in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param description Property description: Cluster description, 2 to 128 characters. This parameter is required.
+         * @param description Property description: The description of the E-HPC cluster. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
@@ -666,24 +720,26 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property imageId: Mirror Id, if ImageType a system, based on the image ID is determined only according OsTag;
+         * Property imageId: The image IDs.
          * <p>
-         * if self, others, or marketplace, ImageId is mandatory.
+         * You can call the <a href="">ListImages</a> and <a href="">ListCustomImages</a> operations to query the
+         * images that are supported by E-HPC.
          * <p>
          * @return {@code this}
-         * @param imageId Property imageId: Mirror Id, if ImageType a system, based on the image ID is determined only according OsTag;. This parameter is required.
+         * @param imageId Property imageId: The image IDs. This parameter is required.
          */
         public Builder imageId(final java.lang.String imageId) {
             this.props.imageId(imageId);
             return this;
         }
         /**
-         * Property imageId: Mirror Id, if ImageType a system, based on the image ID is determined only according OsTag;
+         * Property imageId: The image IDs.
          * <p>
-         * if self, others, or marketplace, ImageId is mandatory.
+         * You can call the <a href="">ListImages</a> and <a href="">ListCustomImages</a> operations to query the
+         * images that are supported by E-HPC.
          * <p>
          * @return {@code this}
-         * @param imageId Property imageId: Mirror Id, if ImageType a system, based on the image ID is determined only according OsTag;. This parameter is required.
+         * @param imageId Property imageId: The image IDs. This parameter is required.
          */
         public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.props.imageId(imageId);
@@ -866,24 +922,48 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property password: Root password of jump server (login node).
+         * Property password: The root password of the logon node.
          * <p>
-         * 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ &#64; # $% ^ &amp; * - + = | {} []:; '&lt;&gt;, / Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
+         * The password must be 8 to 30 characters in
+         * length and contain at least three of the following items: uppercase letters,
+         * lowercase letters, digits, and special characters. Special characters include:
+         * <code>( ) ~ ! &#64; # $ % ^ &amp; * - + = | { } [ ] : ; ‘ &lt; &gt; , . ? \/</code>
+         * You must specify either Password or KeyPairName. If both are specified, the
+         * Password parameter prevails.
+         * <p>
+         * <blockquote>
+         * <p>
+         * We recommend that you use HTTPS to call the API operation to prevent password
+         * leakage.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param password Property password: Root password of jump server (login node). This parameter is required.
+         * @param password Property password: The root password of the logon node. This parameter is required.
          */
         public Builder password(final java.lang.String password) {
             this.props.password(password);
             return this;
         }
         /**
-         * Property password: Root password of jump server (login node).
+         * Property password: The root password of the logon node.
          * <p>
-         * 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ &#64; # $% ^ &amp; * - + = | {} []:; '&lt;&gt;, / Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
+         * The password must be 8 to 30 characters in
+         * length and contain at least three of the following items: uppercase letters,
+         * lowercase letters, digits, and special characters. Special characters include:
+         * <code>( ) ~ ! &#64; # $ % ^ &amp; * - + = | { } [ ] : ; ‘ &lt; &gt; , . ? \/</code>
+         * You must specify either Password or KeyPairName. If both are specified, the
+         * Password parameter prevails.
+         * <p>
+         * <blockquote>
+         * <p>
+         * We recommend that you use HTTPS to call the API operation to prevent password
+         * leakage.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param password Property password: Root password of jump server (login node). This parameter is required.
+         * @param password Property password: The root password of the logon node. This parameter is required.
          */
         public Builder password(final com.aliyun.ros.cdk.core.IResolvable password) {
             this.props.password(password);
@@ -891,24 +971,40 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property period: The purchase of long resources, units: week / month / year.
+         * Property period: The duration of the subscription.
          * <p>
-         * When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
+         * The unit of the duration is specified by the
+         * <code>PeriodUnit</code> parameter.
+         * <p>
+         * <ul>
+         * <li>Valid values if PriceUnit is set to Year: 1, 2, and 3.</li>
+         * <li>Valid values if PriceUnit is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
+         * <li>Valid value if PriceUnit is set to Hour: 1.
+         * Default value: 1.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param period Property period: The purchase of long resources, units: week / month / year. This parameter is required.
+         * @param period Property period: The duration of the subscription. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The purchase of long resources, units: week / month / year.
+         * Property period: The duration of the subscription.
          * <p>
-         * When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
+         * The unit of the duration is specified by the
+         * <code>PeriodUnit</code> parameter.
+         * <p>
+         * <ul>
+         * <li>Valid values if PriceUnit is set to Year: 1, 2, and 3.</li>
+         * <li>Valid values if PriceUnit is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
+         * <li>Valid value if PriceUnit is set to Hour: 1.
+         * Default value: 1.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param period Property period: The purchase of long resources, units: week / month / year. This parameter is required.
+         * @param period Property period: The duration of the subscription. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
@@ -916,24 +1012,38 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property periodUnit: The purchase of long-resources unit.
+         * Property periodUnit: The unit of the subscription duration.
          * <p>
-         * Alternatively value Week / Month / year.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Year</li>
+         * <li>Month</li>
+         * <li>Hour
+         * Default value: Month.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: The purchase of long-resources unit. This parameter is required.
+         * @param periodUnit Property periodUnit: The unit of the subscription duration. This parameter is required.
          */
         public Builder periodUnit(final java.lang.String periodUnit) {
             this.props.periodUnit(periodUnit);
             return this;
         }
         /**
-         * Property periodUnit: The purchase of long-resources unit.
+         * Property periodUnit: The unit of the subscription duration.
          * <p>
-         * Alternatively value Week / Month / year.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Year</li>
+         * <li>Month</li>
+         * <li>Hour
+         * Default value: Month.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: The purchase of long-resources unit. This parameter is required.
+         * @param periodUnit Property periodUnit: The unit of the subscription duration. This parameter is required.
          */
         public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.props.periodUnit(periodUnit);
@@ -941,20 +1051,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property postInstallScript:.
+         * Property postInstallScript: The information of the post-installation script.
          * <p>
          * @return {@code this}
-         * @param postInstallScript Property postInstallScript:. This parameter is required.
+         * @param postInstallScript Property postInstallScript: The information of the post-installation script. This parameter is required.
          */
         public Builder postInstallScript(final com.aliyun.ros.cdk.core.IResolvable postInstallScript) {
             this.props.postInstallScript(postInstallScript);
             return this;
         }
         /**
-         * Property postInstallScript:.
+         * Property postInstallScript: The information of the post-installation script.
          * <p>
          * @return {@code this}
-         * @param postInstallScript Property postInstallScript:. This parameter is required.
+         * @param postInstallScript Property postInstallScript: The information of the post-installation script. This parameter is required.
          */
         public Builder postInstallScript(final java.util.List<? extends java.lang.Object> postInstallScript) {
             this.props.postInstallScript(postInstallScript);
@@ -1097,20 +1207,24 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property sccClusterId: When SCC models, if you pass this field, then the specified SccCluster create Scc instance, otherwise it will create an instance for the user.
+         * Property sccClusterId: The Super Computing Cluster (SCC) instance ID.
+         * <p>
+         * If you specify the parameter, the SCC instance is moved to a new SCC cluster.
          * <p>
          * @return {@code this}
-         * @param sccClusterId Property sccClusterId: When SCC models, if you pass this field, then the specified SccCluster create Scc instance, otherwise it will create an instance for the user. This parameter is required.
+         * @param sccClusterId Property sccClusterId: The Super Computing Cluster (SCC) instance ID. This parameter is required.
          */
         public Builder sccClusterId(final java.lang.String sccClusterId) {
             this.props.sccClusterId(sccClusterId);
             return this;
         }
         /**
-         * Property sccClusterId: When SCC models, if you pass this field, then the specified SccCluster create Scc instance, otherwise it will create an instance for the user.
+         * Property sccClusterId: The Super Computing Cluster (SCC) instance ID.
+         * <p>
+         * If you specify the parameter, the SCC instance is moved to a new SCC cluster.
          * <p>
          * @return {@code this}
-         * @param sccClusterId Property sccClusterId: When SCC models, if you pass this field, then the specified SccCluster create Scc instance, otherwise it will create an instance for the user. This parameter is required.
+         * @param sccClusterId Property sccClusterId: The Super Computing Cluster (SCC) instance ID. This parameter is required.
          */
         public Builder sccClusterId(final com.aliyun.ros.cdk.core.IResolvable sccClusterId) {
             this.props.sccClusterId(sccClusterId);
@@ -1174,24 +1288,24 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property securityGroupName: If you do not use an existing security group (SecurityGroupId is empty), then use this name to create a new security group, the default policy.
+         * Property securityGroupName: If you do not use an existing security group, set the parameter to the name of a new security group.
          * <p>
-         * Format Requirements Reference ECS security group name.
+         * A default policy is applied to the new security group.
          * <p>
          * @return {@code this}
-         * @param securityGroupName Property securityGroupName: If you do not use an existing security group (SecurityGroupId is empty), then use this name to create a new security group, the default policy. This parameter is required.
+         * @param securityGroupName Property securityGroupName: If you do not use an existing security group, set the parameter to the name of a new security group. This parameter is required.
          */
         public Builder securityGroupName(final java.lang.String securityGroupName) {
             this.props.securityGroupName(securityGroupName);
             return this;
         }
         /**
-         * Property securityGroupName: If you do not use an existing security group (SecurityGroupId is empty), then use this name to create a new security group, the default policy.
+         * Property securityGroupName: If you do not use an existing security group, set the parameter to the name of a new security group.
          * <p>
-         * Format Requirements Reference ECS security group name.
+         * A default policy is applied to the new security group.
          * <p>
          * @return {@code this}
-         * @param securityGroupName Property securityGroupName: If you do not use an existing security group (SecurityGroupId is empty), then use this name to create a new security group, the default policy. This parameter is required.
+         * @param securityGroupName Property securityGroupName: If you do not use an existing security group, set the parameter to the name of a new security group. This parameter is required.
          */
         public Builder securityGroupName(final com.aliyun.ros.cdk.core.IResolvable securityGroupName) {
             this.props.securityGroupName(securityGroupName);

@@ -5,7 +5,9 @@ package alicloudroscdkbastionhost
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-hostaccount
 type HostAccountProps struct {
-	// Property hostAccountName: The name of the host account.
+	// Property hostAccountName: The name of the new host account.
+	//
+	// The name can be up to 128 characters long.
 	HostAccountName interface{} `field:"required" json:"hostAccountName" yaml:"hostAccountName"`
 	// Property hostId: The ID of the host.
 	HostId interface{} `field:"required" json:"hostId" yaml:"hostId"`
@@ -27,17 +29,29 @@ type HostAccountProps struct {
 	//
 	// This parameter is required when the protocol is SSH or RDP.
 	Password interface{} `field:"optional" json:"password" yaml:"password"`
-	// Property privateKey: The private key of the host account.
+	// Property privateKey: The private key of the new host account.
 	//
-	// This parameter is required when the protocol is SSH.
+	// The value is a Base64-encoded string.
+	// > This parameter is used only when ProtocolName is set to SSH. You do not need to
+	// set this parameter if ProtocolName is set to RDP. You can set both a password and
+	// a private key for the host account. When connecting to the asset, Bastionhost
+	// prioritizes the private key for the connection.
 	PrivateKey interface{} `field:"optional" json:"privateKey" yaml:"privateKey"`
-	// Property privilegeType: The privilege type of the host account.
+	// Property privilegeType: The permission type of the account.
 	//
-	// Valid values: Normal, Administrator.
+	// If you do not set this parameter, the default
+	// value is Normal.
+	// - Privileged: privileged account
+	// - Normal: normal account
+	// > This parameter is supported only in Bastionhost V3.2.47 and later.
 	PrivilegeType interface{} `field:"optional" json:"privilegeType" yaml:"privilegeType"`
-	// Property rotationMode: The rotation mode of the host account.
+	// Property rotationMode: The password change mode for the account.
 	//
-	// Valid values: Manual, Automatic.
+	// If you do not set this parameter, the
+	// default value is Self.
+	// - Privileged: Use a privileged account to change the password.
+	// - Self: Do not use a privileged account to change the password.
+	// > This parameter is supported only in Bastionhost V3.2.47 and later.
 	RotationMode interface{} `field:"optional" json:"rotationMode" yaml:"rotationMode"`
 }
 

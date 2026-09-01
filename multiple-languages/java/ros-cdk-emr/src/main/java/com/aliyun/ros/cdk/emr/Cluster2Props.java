@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.emr;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:46:06.327Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:59:08.243Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.Cluster2Props")
 @software.amazon.jsii.Jsii.Proxy(Cluster2Props.Jsii$Proxy.class)
 public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
@@ -21,7 +21,21 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterName();
 
     /**
-     * Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+     * Property clusterType: The cluster type.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>DATALAKE: new data lake.</li>
+     * <li>OLAP: data analytics.</li>
+     * <li>DATAFLOW: real-time data stream.</li>
+     * <li>DATASERVING: data serving.</li>
+     * <li>CUSTOM: custom cluster.</li>
+     * <li>HADOOP: earlier-version data lake. We recommend that you use the new data lake.
+     * If you create an EMR cluster for the first time after 17:00 (UTC+8) on December
+     * 19, 2022, you cannot select HADOOP, DATA_SCIENCE, PRESTO, or ZOOKEEPER as the
+     * cluster type.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterType();
 
@@ -36,7 +50,10 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getNodeGroups();
 
     /**
-     * Property releaseVersion: EMR release version.View EMR distribution versions can be viewed through the EMR cluster.
+     * Property releaseVersion: The EMR release version.
+     * <p>
+     * You can find the EMR release versions on the EMR cluster
+     * purchase page.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getReleaseVersion();
 
@@ -170,7 +187,20 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Cluster2Props#getClusterType}
-         * @param clusterType Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake). This parameter is required.
+         * @param clusterType Property clusterType: The cluster type. This parameter is required.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>DATALAKE: new data lake.</li>
+         *                    <li>OLAP: data analytics.</li>
+         *                    <li>DATAFLOW: real-time data stream.</li>
+         *                    <li>DATASERVING: data serving.</li>
+         *                    <li>CUSTOM: custom cluster.</li>
+         *                    <li>HADOOP: earlier-version data lake. We recommend that you use the new data lake.
+         *                    If you create an EMR cluster for the first time after 17:00 (UTC+8) on December
+         *                    19, 2022, you cannot select HADOOP, DATA_SCIENCE, PRESTO, or ZOOKEEPER as the
+         *                    cluster type.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder clusterType(java.lang.String clusterType) {
@@ -180,7 +210,20 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Cluster2Props#getClusterType}
-         * @param clusterType Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake). This parameter is required.
+         * @param clusterType Property clusterType: The cluster type. This parameter is required.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>DATALAKE: new data lake.</li>
+         *                    <li>OLAP: data analytics.</li>
+         *                    <li>DATAFLOW: real-time data stream.</li>
+         *                    <li>DATASERVING: data serving.</li>
+         *                    <li>CUSTOM: custom cluster.</li>
+         *                    <li>HADOOP: earlier-version data lake. We recommend that you use the new data lake.
+         *                    If you create an EMR cluster for the first time after 17:00 (UTC+8) on December
+         *                    19, 2022, you cannot select HADOOP, DATA_SCIENCE, PRESTO, or ZOOKEEPER as the
+         *                    cluster type.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder clusterType(com.aliyun.ros.cdk.core.IResolvable clusterType) {
@@ -230,7 +273,9 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Cluster2Props#getReleaseVersion}
-         * @param releaseVersion Property releaseVersion: EMR release version.View EMR distribution versions can be viewed through the EMR cluster. This parameter is required.
+         * @param releaseVersion Property releaseVersion: The EMR release version. This parameter is required.
+         *                       You can find the EMR release versions on the EMR cluster
+         *                       purchase page.
          * @return {@code this}
          */
         public Builder releaseVersion(java.lang.String releaseVersion) {
@@ -240,7 +285,9 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Cluster2Props#getReleaseVersion}
-         * @param releaseVersion Property releaseVersion: EMR release version.View EMR distribution versions can be viewed through the EMR cluster. This parameter is required.
+         * @param releaseVersion Property releaseVersion: The EMR release version. This parameter is required.
+         *                       You can find the EMR release versions on the EMR cluster
+         *                       purchase page.
          * @return {@code this}
          */
         public Builder releaseVersion(com.aliyun.ros.cdk.core.IResolvable releaseVersion) {

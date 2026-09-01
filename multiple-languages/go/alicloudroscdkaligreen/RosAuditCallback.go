@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::AuditCallback`, which is used to create an audit callback.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::AuditCallback`.
 type RosAuditCallback interface {
 	alicloudroscdkcore.RosResource
 	AttrAuditCallbackName() alicloudroscdkcore.IResolvable

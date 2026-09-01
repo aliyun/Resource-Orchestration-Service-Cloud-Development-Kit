@@ -17,7 +17,9 @@ type MountPointProps struct {
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	// Property vSwitchId: The vswitch id.
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
-	// Property description: The description of the Mount Point.
+	// Property description: Description of the mount target.
+	//
+	// The length cannot exceed 32 characters.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property status: The status of the Mount Point.
 	//

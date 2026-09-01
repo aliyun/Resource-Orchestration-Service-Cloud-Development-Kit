@@ -9,21 +9,26 @@ type ServerGroupProps struct {
 	HealthCheckConfig interface{} `field:"required" json:"healthCheckConfig" yaml:"healthCheckConfig"`
 	// Property serverGroupName: The name of the server group.
 	//
-	// The name must be 2 to 128 characters in length, and
-	// can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name
-	// must start with a letter.
+	// The name must be 2 to 128 characters in length,
+	// start with a letter, digit, or Chinese character, and can contain digits, periods
+	// (.), underscores (_), hyphens (-), and spaces.
 	ServerGroupName interface{} `field:"required" json:"serverGroupName" yaml:"serverGroupName"`
 	// Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note:  Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.
 	ConnectionDrainConfig interface{} `field:"optional" json:"connectionDrainConfig" yaml:"connectionDrainConfig"`
-	// Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing.
+	// Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing for the server group.
 	//
-	// Valid values:
-	// true (default)
-	// false
-	// Note:
-	// Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
-	// Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
-	// When cross-zone load balancing is disabled, session persistence cannot be enabled.
+	// Valid
+	// values:
+	// - true (default): Enables cross-zone load balancing.
+	// - false: Disables cross-zone load balancing.
+	// > * Basic ALB instances cannot be associated with server groups for which
+	// cross-zone load balancing is disabled. This feature is supported only by standard
+	// and WAF-enabled ALB instances.
+	// >
+	// > * You can disable cross-zone load balancing for instance-type and IP-type
+	// server groups, but not for function-type server groups.
+	// >
+	// > * You cannot enable sticky sessions if you disable cross-zone load balancing.
 	CrossZoneEnabled interface{} `field:"optional" json:"crossZoneEnabled" yaml:"crossZoneEnabled"`
 	// Property ipv6Enabled: Whether to enable IPv6.
 	Ipv6Enabled interface{} `field:"optional" json:"ipv6Enabled" yaml:"ipv6Enabled"`
@@ -70,12 +75,11 @@ type ServerGroupProps struct {
 	UchConfig interface{} `field:"optional" json:"uchConfig" yaml:"uchConfig"`
 	// Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive.
 	UpstreamKeepaliveEnabled interface{} `field:"optional" json:"upstreamKeepaliveEnabled" yaml:"upstreamKeepaliveEnabled"`
-	// Property vpcId: The ID of the virtual private cloud (VPC).
+	// Property vpcId: The ID of the VPC where the server group is created.
 	//
-	// You can add only servers that are deployed
-	// in the specified VPC to the server group.
-	// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-	// Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+	// You can add only servers
+	// within this VPC to the server group.
+	// > This parameter is valid only when ServerGroupType is set to Instance or Ip.
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
 }
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnrouteentry
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.753Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.555Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnRouteEntryProps")
 @software.amazon.jsii.Jsii.Proxy(VpnRouteEntryProps.Jsii$Proxy.class)
 public interface VpnRouteEntryProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,21 +35,32 @@ public interface VpnRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
     @org.jetbrains.annotations.NotNull java.lang.Object getVpnGatewayId();
 
     /**
-     * Property weight: The weight of the destination route.
+     * Property weight: The weight of the destination-based route.
      * <p>
-     * Valid values: 0|100.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>100: a high priority</li>
+     * <li>0: a low priority</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getWeight();
 
     /**
-     * Property description: The description of the VPN destination route.
+     * Property description: The description of the destination-based route.
+     * <p>
+     * The description must be 1 to 100 characters in length, and cannot start with
+     * <code>http:\/\/</code> or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
-     * Property overlayMode: The overlay mode.
+     * Property overlayMode: The tunneling protocol.
+     * <p>
+     * The value is set to Ipsec, which indicates the IPsec
+     * tunneling protocol.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOverlayMode() {
         return null;
@@ -161,8 +172,13 @@ public interface VpnRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnRouteEntryProps#getWeight}
-         * @param weight Property weight: The weight of the destination route. This parameter is required.
-         *               Valid values: 0|100.
+         * @param weight Property weight: The weight of the destination-based route. This parameter is required.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>100: a high priority</li>
+         *               <li>0: a low priority</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder weight(java.lang.Number weight) {
@@ -172,8 +188,13 @@ public interface VpnRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnRouteEntryProps#getWeight}
-         * @param weight Property weight: The weight of the destination route. This parameter is required.
-         *               Valid values: 0|100.
+         * @param weight Property weight: The weight of the destination-based route. This parameter is required.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>100: a high priority</li>
+         *               <li>0: a low priority</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder weight(com.aliyun.ros.cdk.core.IResolvable weight) {
@@ -183,7 +204,9 @@ public interface VpnRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnRouteEntryProps#getDescription}
-         * @param description Property description: The description of the VPN destination route.
+         * @param description Property description: The description of the destination-based route.
+         *                    The description must be 1 to 100 characters in length, and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -193,7 +216,9 @@ public interface VpnRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnRouteEntryProps#getDescription}
-         * @param description Property description: The description of the VPN destination route.
+         * @param description Property description: The description of the destination-based route.
+         *                    The description must be 1 to 100 characters in length, and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -203,7 +228,9 @@ public interface VpnRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnRouteEntryProps#getOverlayMode}
-         * @param overlayMode Property overlayMode: The overlay mode.
+         * @param overlayMode Property overlayMode: The tunneling protocol.
+         *                    The value is set to Ipsec, which indicates the IPsec
+         *                    tunneling protocol.
          * @return {@code this}
          */
         public Builder overlayMode(java.lang.String overlayMode) {
@@ -213,7 +240,9 @@ public interface VpnRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnRouteEntryProps#getOverlayMode}
-         * @param overlayMode Property overlayMode: The overlay mode.
+         * @param overlayMode Property overlayMode: The tunneling protocol.
+         *                    The value is set to Ipsec, which indicates the IPsec
+         *                    tunneling protocol.
          * @return {@code this}
          */
         public Builder overlayMode(com.aliyun.ros.cdk.core.IResolvable overlayMode) {

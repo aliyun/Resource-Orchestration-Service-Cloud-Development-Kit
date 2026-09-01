@@ -15,7 +15,9 @@ export interface RuleProps {
     readonly eventBusName: string | ros.IResolvable;
 
     /**
-     * Property filterPattern: The event pattern, in the JSON format.
+     * Property filterPattern: The event pattern, in JSON format. Supported pattern types are `stringEqual` and
+     * `stringExpression`. Each field can contain a maximum of five expressions in a map
+     * structure.
      */
     readonly filterPattern: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -64,7 +66,7 @@ export interface IRule extends ros.IResource {
     readonly attrRuleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EventBridge::Rule`, which is used to create an event rule for an event bus.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EventBridge::Rule`, which creates an event rule for a specified event bus.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eventbridge-rule
  */

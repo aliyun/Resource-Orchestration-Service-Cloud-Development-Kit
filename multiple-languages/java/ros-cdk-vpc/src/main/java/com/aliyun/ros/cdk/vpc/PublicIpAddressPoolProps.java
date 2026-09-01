@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-publicipaddresspool
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.511Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.312Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.PublicIpAddressPoolProps")
 @software.amazon.jsii.Jsii.Proxy(PublicIpAddressPoolProps.Jsii$Proxy.class)
 public interface PublicIpAddressPoolProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,9 +18,10 @@ public interface PublicIpAddressPoolProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property description: Description of the address pool instance.
+     * Property description: The description of the IP address pool.
      * <p>
-     * The length is 0-256 characters, and you cannot start with http:// or https: //.
+     * The description must be 0 to 256 characters in length and cannot start with
+     * <code>http:\/\/</code> or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -49,9 +50,10 @@ public interface PublicIpAddressPoolProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property name: The name of the address pool instance.
+     * Property name: The name of the IP address pool.
      * <p>
-     * The length is 0-128 characters, and you cannot start with http: // or https: //.
+     * The name must be 0 to 128 characters in length and cannot start with <code>http:\/\/</code> or
+     * <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
@@ -133,8 +135,9 @@ public interface PublicIpAddressPoolProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link PublicIpAddressPoolProps#getDescription}
-         * @param description Property description: Description of the address pool instance.
-         *                    The length is 0-256 characters, and you cannot start with http:// or https: //.
+         * @param description Property description: The description of the IP address pool.
+         *                    The description must be 0 to 256 characters in length and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -144,8 +147,9 @@ public interface PublicIpAddressPoolProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link PublicIpAddressPoolProps#getDescription}
-         * @param description Property description: Description of the address pool instance.
-         *                    The length is 0-256 characters, and you cannot start with http:// or https: //.
+         * @param description Property description: The description of the IP address pool.
+         *                    The description must be 0 to 256 characters in length and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -203,8 +207,9 @@ public interface PublicIpAddressPoolProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link PublicIpAddressPoolProps#getName}
-         * @param name Property name: The name of the address pool instance.
-         *             The length is 0-128 characters, and you cannot start with http: // or https: //.
+         * @param name Property name: The name of the IP address pool.
+         *             The name must be 0 to 128 characters in length and cannot start with <code>http:\/\/</code> or
+         *             <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -214,8 +219,9 @@ public interface PublicIpAddressPoolProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link PublicIpAddressPoolProps#getName}
-         * @param name Property name: The name of the address pool instance.
-         *             The length is 0-128 characters, and you cannot start with http: // or https: //.
+         * @param name Property name: The name of the IP address pool.
+         *             The name must be 0 to 128 characters in length and cannot start with <code>http:\/\/</code> or
+         *             <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

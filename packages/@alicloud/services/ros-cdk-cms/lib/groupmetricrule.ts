@@ -87,7 +87,9 @@ export interface GroupMetricRuleProps {
     readonly contactGroups?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property dimensions: The expended resource dimensions.
+     * Property dimensions: The dimensions that specify the resources to be monitored.
+     * The value is a collection of key-value pairs. Format: `key:value`. For example,
+     * `{"userId":"120886317861**"}` and `{"instanceId":"i-2ze2d6j5uhg20x47**"}`.
      */
     readonly dimensions?: string | ros.IResolvable;
 
@@ -111,7 +113,10 @@ export interface GroupMetricRuleProps {
     readonly extraDimensionJson?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * Property interval: The detection period of alerts.
+     * Property interval: The interval at which the alert rule is triggered. Unit: seconds.
+     * > Set the alert detection interval to the same value as the data reporting
+     * interval. If the alert detection interval is shorter than the data reporting
+     * interval, alerts may not be triggered due to insufficient data.
      */
     readonly interval?: number | ros.IResolvable;
 
@@ -136,7 +141,9 @@ export interface GroupMetricRuleProps {
     readonly options?: string | ros.IResolvable;
 
     /**
-     * Property period: The aggregation period. Unite: second.
+     * Property period: The statistical period of the metric.
+     * The value of `Period` must be an integral multiple of 60. Unit: seconds. Default
+     * value: 300.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -147,7 +154,10 @@ export interface GroupMetricRuleProps {
     readonly silenceTime?: number | ros.IResolvable;
 
     /**
-     * Property webhook: The URL of the callback triggered when an alert occurs.
+     * Property webhook: The callback URL to which alert notifications are sent.
+     * Enter a URL that is accessible over the Internet. CloudMonitor sends alert
+     * notifications to the URL using POST requests. Only the HTTP protocol is
+     * supported.
      */
     readonly webhook?: string | ros.IResolvable;
 }
@@ -164,7 +174,7 @@ export interface IGroupMetricRule extends ros.IResource {
     readonly attrRuleId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::GroupMetricRule`The , which resource creates an alert rule for an application group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::GroupMetricRule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroupMetricRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
  */

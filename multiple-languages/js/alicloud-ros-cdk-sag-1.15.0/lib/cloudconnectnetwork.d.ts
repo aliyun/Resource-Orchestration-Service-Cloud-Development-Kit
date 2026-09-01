@@ -1,0 +1,69 @@
+import * as ros from '@alicloud/ros-cdk-core';
+import { RosCloudConnectNetwork } from './sag.generated';
+export { RosCloudConnectNetwork as CloudConnectNetworkProperty };
+/**
+ * Properties for defining a `CloudConnectNetwork`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
+ */
+export interface CloudConnectNetworkProps {
+    /**
+     * Property description: The description of the CCN instance.
+     * The description must be 2 to 256 characters in length and can contain letters,
+     * digits, underscores (_), and hyphens (-). The description must start with a
+     * letter.
+     */
+    readonly description?: string | ros.IResolvable;
+    /**
+     * Property isDefault: Whether is created by system
+     */
+    readonly isDefault?: boolean | ros.IResolvable;
+    /**
+     * Property name: The name of the CCN instance.
+     * The name must be 2 to 128 characters in length and can contain letters, digits,
+     * periods (.), underscores (_),and hyphens (-). The name must start with a letter.
+     */
+    readonly name?: string | ros.IResolvable;
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCloudConnectNetwork.TagsProperty[];
+}
+/**
+ * Represents a `CloudConnectNetwork`.
+ */
+export interface ICloudConnectNetwork extends ros.IResource {
+    readonly props: CloudConnectNetworkProps;
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+    /**
+     * Attribute CcnId: The ID of the CCN instance.
+     */
+    readonly attrCcnId: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::CloudConnectNetwork`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCloudConnectNetwork`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
+ */
+export declare class CloudConnectNetwork extends ros.Resource implements ICloudConnectNetwork {
+    protected scope: ros.Construct;
+    protected id: string;
+    readonly props: CloudConnectNetworkProps;
+    protected enableResourcePropertyConstraint: boolean;
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+    /**
+     * Attribute CcnId: The ID of the CCN instance.
+     */
+    readonly attrCcnId: ros.IResolvable | string;
+    /**
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props?: CloudConnectNetworkProps, enableResourcePropertyConstraint?: boolean);
+}

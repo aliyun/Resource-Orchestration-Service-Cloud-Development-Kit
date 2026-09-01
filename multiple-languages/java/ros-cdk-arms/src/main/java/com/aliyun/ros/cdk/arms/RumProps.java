@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.arms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-rum
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:31:39.117Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:12:12.760Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RumProps")
 @software.amazon.jsii.Jsii.Proxy(RumProps.Jsii$Proxy.class)
 public interface RumProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,7 +18,9 @@ public interface RumProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getAppName();
 
     /**
-     * Property siteType: The type of the website.
+     * Property siteType: The application type.
+     * <p>
+     * Valid values: web, miniapp, ios, and android.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSiteType();
 
@@ -51,14 +53,20 @@ public interface RumProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property packageName: The package name of the RUM application.
+     * Property packageName: The name of the Android application package.
+     * <p>
+     * This parameter is required if you
+     * create an Android application.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPackageName() {
         return null;
     }
 
     /**
-     * Property realRegionId: The actual region ID for internal use.
+     * Property realRegionId: The region where the application resides.
+     * <p>
+     * You can leave this parameter empty or
+     * set it to China East 2 Finance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRealRegionId() {
         return null;
@@ -72,7 +80,9 @@ public interface RumProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property source: The source of the RUM application.
+     * Property source: The source.
+     * <p>
+     * This is a reserved parameter.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSource() {
         return null;
@@ -133,7 +143,8 @@ public interface RumProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RumProps#getSiteType}
-         * @param siteType Property siteType: The type of the website. This parameter is required.
+         * @param siteType Property siteType: The application type. This parameter is required.
+         *                 Valid values: web, miniapp, ios, and android.
          * @return {@code this}
          */
         public Builder siteType(java.lang.String siteType) {
@@ -143,7 +154,8 @@ public interface RumProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RumProps#getSiteType}
-         * @param siteType Property siteType: The type of the website. This parameter is required.
+         * @param siteType Property siteType: The application type. This parameter is required.
+         *                 Valid values: web, miniapp, ios, and android.
          * @return {@code this}
          */
         public Builder siteType(com.aliyun.ros.cdk.core.IResolvable siteType) {
@@ -233,7 +245,9 @@ public interface RumProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RumProps#getPackageName}
-         * @param packageName Property packageName: The package name of the RUM application.
+         * @param packageName Property packageName: The name of the Android application package.
+         *                    This parameter is required if you
+         *                    create an Android application.
          * @return {@code this}
          */
         public Builder packageName(java.lang.String packageName) {
@@ -243,7 +257,9 @@ public interface RumProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RumProps#getPackageName}
-         * @param packageName Property packageName: The package name of the RUM application.
+         * @param packageName Property packageName: The name of the Android application package.
+         *                    This parameter is required if you
+         *                    create an Android application.
          * @return {@code this}
          */
         public Builder packageName(com.aliyun.ros.cdk.core.IResolvable packageName) {
@@ -253,7 +269,9 @@ public interface RumProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RumProps#getRealRegionId}
-         * @param realRegionId Property realRegionId: The actual region ID for internal use.
+         * @param realRegionId Property realRegionId: The region where the application resides.
+         *                     You can leave this parameter empty or
+         *                     set it to China East 2 Finance.
          * @return {@code this}
          */
         public Builder realRegionId(java.lang.String realRegionId) {
@@ -263,7 +281,9 @@ public interface RumProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RumProps#getRealRegionId}
-         * @param realRegionId Property realRegionId: The actual region ID for internal use.
+         * @param realRegionId Property realRegionId: The region where the application resides.
+         *                     You can leave this parameter empty or
+         *                     set it to China East 2 Finance.
          * @return {@code this}
          */
         public Builder realRegionId(com.aliyun.ros.cdk.core.IResolvable realRegionId) {
@@ -293,7 +313,8 @@ public interface RumProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RumProps#getSource}
-         * @param source Property source: The source of the RUM application.
+         * @param source Property source: The source.
+         *               This is a reserved parameter.
          * @return {@code this}
          */
         public Builder source(java.lang.String source) {
@@ -303,7 +324,8 @@ public interface RumProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RumProps#getSource}
-         * @param source Property source: The source of the RUM application.
+         * @param source Property source: The source.
+         *               This is a reserved parameter.
          * @return {@code this}
          */
         public Builder source(com.aliyun.ros.cdk.core.IResolvable source) {

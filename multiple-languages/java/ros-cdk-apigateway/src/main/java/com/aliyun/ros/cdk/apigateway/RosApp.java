@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.apigateway;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ApiGateway::App</code>, which is used to create an application.
- * <p>
- * Before you call a third-party API, you must create an application and use the application as an identity to call the API.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ApiGateway::App</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.589Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:56.987Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosApp")
 public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
 

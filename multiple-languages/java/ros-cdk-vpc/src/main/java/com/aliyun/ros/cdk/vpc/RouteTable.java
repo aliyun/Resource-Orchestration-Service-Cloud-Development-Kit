@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::RouteTable</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.675Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.469Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RouteTable")
 public class RouteTable extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IRouteTable {
 
@@ -167,6 +167,13 @@ public class RouteTable extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property associateType: The type of the route table.
          * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>VSwitch (default): vSwitch route table</li>
+         * <li>Gateway: gateway route table</li>
+         * </ul>
+         * <p>
          * @return {@code this}
          * @param associateType Property associateType: The type of the route table. This parameter is required.
          */
@@ -176,6 +183,13 @@ public class RouteTable extends com.aliyun.ros.cdk.core.Resource implements com.
         }
         /**
          * Property associateType: The type of the route table.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>VSwitch (default): vSwitch route table</li>
+         * <li>Gateway: gateway route table</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param associateType Property associateType: The type of the route table. This parameter is required.
@@ -188,7 +202,8 @@ public class RouteTable extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property description: The description of the route table.
          * <p>
-         * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
+         * The description must be 1 to 256 characters in length, and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
          * @param description Property description: The description of the route table. This parameter is required.
@@ -200,7 +215,8 @@ public class RouteTable extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property description: The description of the route table.
          * <p>
-         * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
+         * The description must be 1 to 256 characters in length, and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
          * @param description Property description: The description of the route table. This parameter is required.
@@ -213,7 +229,8 @@ public class RouteTable extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property routeTableName: The name of the route table.
          * <p>
-         * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
+         * The name must be 1 to 128 characters in length, and cannot start with <code>http:\/\/</code>
+         * or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
          * @param routeTableName Property routeTableName: The name of the route table. This parameter is required.
@@ -225,7 +242,8 @@ public class RouteTable extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property routeTableName: The name of the route table.
          * <p>
-         * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
+         * The name must be 1 to 128 characters in length, and cannot start with <code>http:\/\/</code>
+         * or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
          * @param routeTableName Property routeTableName: The name of the route table. This parameter is required.

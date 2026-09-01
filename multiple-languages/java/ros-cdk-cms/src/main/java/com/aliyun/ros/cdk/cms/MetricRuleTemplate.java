@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::MetricRuleTemplate</code>, which is used to create an alert template.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::MetricRuleTemplate</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.969Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.257Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MetricRuleTemplate")
 public class MetricRuleTemplate extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IMetricRuleTemplate {
 
@@ -133,20 +133,20 @@ public class MetricRuleTemplate extends com.aliyun.ros.cdk.core.Resource impleme
         }
 
         /**
-         * Property alertTemplates: Valid values of N: 0 to 200.
+         * Property alertTemplates: The details of the alert template.
          * <p>
          * @return {@code this}
-         * @param alertTemplates Property alertTemplates: Valid values of N: 0 to 200. This parameter is required.
+         * @param alertTemplates Property alertTemplates: The details of the alert template. This parameter is required.
          */
         public Builder alertTemplates(final com.aliyun.ros.cdk.core.IResolvable alertTemplates) {
             this.props.alertTemplates(alertTemplates);
             return this;
         }
         /**
-         * Property alertTemplates: Valid values of N: 0 to 200.
+         * Property alertTemplates: The details of the alert template.
          * <p>
          * @return {@code this}
-         * @param alertTemplates Property alertTemplates: Valid values of N: 0 to 200. This parameter is required.
+         * @param alertTemplates Property alertTemplates: The details of the alert template. This parameter is required.
          */
         public Builder alertTemplates(final java.util.List<? extends java.lang.Object> alertTemplates) {
             this.props.alertTemplates(alertTemplates);

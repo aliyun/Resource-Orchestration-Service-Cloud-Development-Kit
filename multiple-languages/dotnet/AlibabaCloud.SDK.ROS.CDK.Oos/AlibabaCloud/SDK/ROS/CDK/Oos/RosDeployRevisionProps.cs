@@ -48,7 +48,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         private object? _deployResourceType;
 
         /// <remarks>
-        /// <strong>Property</strong>: deployResourceType: The type of the deploy resource.
+        /// <strong>Property</strong>: deployResourceType: The type of the deployment resource. Valid values:
+        /// - `Kubernetes`: A Kubernetes cluster.
+        /// - `Ecs`: An ECS instance.
+        /// - `FC`: A Function Compute service.
+        /// - `SWAS`: A Simple Application Server instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "deployResourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -180,7 +184,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         private object? _revisionType;
 
         /// <remarks>
-        /// <strong>Property</strong>: revisionType: The type of the revision.
+        /// <strong>Property</strong>: revisionType: The type of the deployment revision. Valid values:
+        /// - `Command`: A command.
+        /// - `GitRepo`: A Git repository.
+        /// - `HelmChart`: A Helm chart.
+        /// - `Oss`: An object in Object Storage Service (OSS).
+        /// - `EcsImage`: An ECS image.
+        /// - `DockerImage`: A Docker image.
+        /// - `Yaml`: A YAML file.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "revisionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

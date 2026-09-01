@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.selectdb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SELECTDB::DBInstance</code>, which is used to create an ApsaraDB for SelectDB instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:49:12.833Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:32:10.897Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.selectdb.$Module.class, fqn = "@alicloud/ros-cdk-selectdb.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.selectdb.IDBInstance {
 
@@ -187,20 +187,34 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property engineVersion: Database version.
+         * Property engineVersion: The database version.
+         * <p>
+         * The default value is 4.1. Valid values:
+         * <p>
+         * <ul>
+         * <li>4.0</li>
+         * <li>4.1</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param engineVersion Property engineVersion: Database version. This parameter is required.
+         * @param engineVersion Property engineVersion: The database version. This parameter is required.
          */
         public Builder engineVersion(final java.lang.String engineVersion) {
             this.props.engineVersion(engineVersion);
             return this;
         }
         /**
-         * Property engineVersion: Database version.
+         * Property engineVersion: The database version.
+         * <p>
+         * The default value is 4.1. Valid values:
+         * <p>
+         * <ul>
+         * <li>4.0</li>
+         * <li>4.1</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param engineVersion Property engineVersion: Database version. This parameter is required.
+         * @param engineVersion Property engineVersion: The database version. This parameter is required.
          */
         public Builder engineVersion(final com.aliyun.ros.cdk.core.IResolvable engineVersion) {
             this.props.engineVersion(engineVersion);
@@ -431,20 +445,48 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property usedTime: Specifies the purchase duration of the prepaid instance.Value description: When Period is Year, UsedTime values range: 1, 2, 3, 5 (integral). When Period is Month, the UsedTime value range is: 1~9 (integral). Note This parameter takes effect and is required only if ChargeType is Prepaid.
+         * Property usedTime: The subscription duration of the subscription instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>If Period is set to Year, valid values are 1, 2, 3, 4, and 5.</li>
+         * <li>If Period is set to Month, valid values are integers from 1 to 12.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required and takes effect only when ChargeType is set to
+         * Prepaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param usedTime Property usedTime: Specifies the purchase duration of the prepaid instance.Value description: When Period is Year, UsedTime values range: 1, 2, 3, 5 (integral). When Period is Month, the UsedTime value range is: 1~9 (integral). Note This parameter takes effect and is required only if ChargeType is Prepaid. This parameter is required.
+         * @param usedTime Property usedTime: The subscription duration of the subscription instance. This parameter is required.
          */
         public Builder usedTime(final java.lang.Number usedTime) {
             this.props.usedTime(usedTime);
             return this;
         }
         /**
-         * Property usedTime: Specifies the purchase duration of the prepaid instance.Value description: When Period is Year, UsedTime values range: 1, 2, 3, 5 (integral). When Period is Month, the UsedTime value range is: 1~9 (integral). Note This parameter takes effect and is required only if ChargeType is Prepaid.
+         * Property usedTime: The subscription duration of the subscription instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>If Period is set to Year, valid values are 1, 2, 3, 4, and 5.</li>
+         * <li>If Period is set to Month, valid values are integers from 1 to 12.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required and takes effect only when ChargeType is set to
+         * Prepaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param usedTime Property usedTime: Specifies the purchase duration of the prepaid instance.Value description: When Period is Year, UsedTime values range: 1, 2, 3, 5 (integral). When Period is Month, the UsedTime value range is: 1~9 (integral). Note This parameter takes effect and is required only if ChargeType is Prepaid. This parameter is required.
+         * @param usedTime Property usedTime: The subscription duration of the subscription instance. This parameter is required.
          */
         public Builder usedTime(final com.aliyun.ros.cdk.core.IResolvable usedTime) {
             this.props.usedTime(usedTime);

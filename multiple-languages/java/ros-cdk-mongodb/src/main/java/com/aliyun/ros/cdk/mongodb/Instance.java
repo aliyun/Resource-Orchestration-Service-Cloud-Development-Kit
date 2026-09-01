@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MONGODB::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:10:27.843Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:16:24.204Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mongodb.IInstance {
 
@@ -234,20 +234,40 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+         * Property accountPassword: The password of the root account.
+         * <p>
+         * The password must meet the following
+         * requirements:
+         * <p>
+         * <ul>
+         * <li>It must contain at least three of the following character types: uppercase
+         * letters, lowercase letters, digits, and special characters.</li>
+         * <li>Special characters include !&#64;#$%^&amp;*()_+-=</li>
+         * <li>It must be 8 to 32 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accountPassword Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit. This parameter is required.
+         * @param accountPassword Property accountPassword: The password of the root account. This parameter is required.
          */
         public Builder accountPassword(final java.lang.String accountPassword) {
             this.props.accountPassword(accountPassword);
             return this;
         }
         /**
-         * Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+         * Property accountPassword: The password of the root account.
+         * <p>
+         * The password must meet the following
+         * requirements:
+         * <p>
+         * <ul>
+         * <li>It must contain at least three of the following character types: uppercase
+         * letters, lowercase letters, digits, and special characters.</li>
+         * <li>Special characters include !&#64;#$%^&amp;*()_+-=</li>
+         * <li>It must be 8 to 32 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accountPassword Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit. This parameter is required.
+         * @param accountPassword Property accountPassword: The password of the root account. This parameter is required.
          */
         public Builder accountPassword(final com.aliyun.ros.cdk.core.IResolvable accountPassword) {
             this.props.accountPassword(accountPassword);
@@ -276,24 +296,50 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
+         * Property autoRenew: Specifies whether to enable auto-renewal for the instance.
          * <p>
-         * Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: Auto-renewal is enabled.</li>
+         * <li>false: Auto-renewal is disabled. You must manually renew the instance. This is
+         * the default value.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is optional and takes effect only when you set the ChargeType
+         * parameter to PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance. This parameter is required.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal for the instance. This parameter is required.
          */
         public Builder autoRenew(final java.lang.Boolean autoRenew) {
             this.props.autoRenew(autoRenew);
             return this;
         }
         /**
-         * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
+         * Property autoRenew: Specifies whether to enable auto-renewal for the instance.
          * <p>
-         * Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: Auto-renewal is enabled.</li>
+         * <li>false: Auto-renewal is disabled. You must manually renew the instance. This is
+         * the default value.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is optional and takes effect only when you set the ChargeType
+         * parameter to PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance. This parameter is required.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal for the instance. This parameter is required.
          */
         public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
             this.props.autoRenew(autoRenew);
@@ -301,20 +347,40 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property backupId: Specific backup set Id.
+         * Property backupId: The backup point ID.
+         * <p>
+         * To query the backup point ID, call the <a href="">DescribeBackups</a>
+         * operation.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify this parameter and the SrcDBInstanceId parameter only when you
+         * clone an instance based on a backup point.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param backupId Property backupId: Specific backup set Id. This parameter is required.
+         * @param backupId Property backupId: The backup point ID. This parameter is required.
          */
         public Builder backupId(final java.lang.String backupId) {
             this.props.backupId(backupId);
             return this;
         }
         /**
-         * Property backupId: Specific backup set Id.
+         * Property backupId: The backup point ID.
+         * <p>
+         * To query the backup point ID, call the <a href="">DescribeBackups</a>
+         * operation.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify this parameter and the SrcDBInstanceId parameter only when you
+         * clone an instance based on a backup point.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param backupId Property backupId: Specific backup set Id. This parameter is required.
+         * @param backupId Property backupId: The backup point ID. This parameter is required.
          */
         public Builder backupId(final com.aliyun.ros.cdk.core.IResolvable backupId) {
             this.props.backupId(backupId);
@@ -410,24 +476,34 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property couponNo: The coupon code.
+         * Property couponNo: Specifies whether to use a coupon.
          * <p>
-         * Default value:youhuiquan_promotion_option_id_for_blank.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>default or null (default): Uses a coupon.</li>
+         * <li>youhuiquan_promotion_option_id_for_blank: Does not use a coupon.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param couponNo Property couponNo: The coupon code. This parameter is required.
+         * @param couponNo Property couponNo: Specifies whether to use a coupon. This parameter is required.
          */
         public Builder couponNo(final java.lang.String couponNo) {
             this.props.couponNo(couponNo);
             return this;
         }
         /**
-         * Property couponNo: The coupon code.
+         * Property couponNo: Specifies whether to use a coupon.
          * <p>
-         * Default value:youhuiquan_promotion_option_id_for_blank.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>default or null (default): Uses a coupon.</li>
+         * <li>youhuiquan_promotion_option_id_for_blank: Does not use a coupon.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param couponNo Property couponNo: The coupon code. This parameter is required.
+         * @param couponNo Property couponNo: Specifies whether to use a coupon. This parameter is required.
          */
         public Builder couponNo(final com.aliyun.ros.cdk.core.IResolvable couponNo) {
             this.props.couponNo(couponNo);
@@ -435,20 +511,36 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property databaseNames: The name of the database.
+         * Property databaseNames: The database name.
+         * <p>
+         * <blockquote>
+         * <p>
+         * When you clone an instance, you can specify this parameter to clone specific
+         * databases. If you do not specify this parameter, all databases of the instance
+         * are cloned.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param databaseNames Property databaseNames: The name of the database. This parameter is required.
+         * @param databaseNames Property databaseNames: The database name. This parameter is required.
          */
         public Builder databaseNames(final java.lang.String databaseNames) {
             this.props.databaseNames(databaseNames);
             return this;
         }
         /**
-         * Property databaseNames: The name of the database.
+         * Property databaseNames: The database name.
+         * <p>
+         * <blockquote>
+         * <p>
+         * When you clone an instance, you can specify this parameter to clone specific
+         * databases. If you do not specify this parameter, all databases of the instance
+         * are cloned.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param databaseNames Property databaseNames: The name of the database. This parameter is required.
+         * @param databaseNames Property databaseNames: The database name. This parameter is required.
          */
         public Builder databaseNames(final com.aliyun.ros.cdk.core.IResolvable databaseNames) {
             this.props.databaseNames(databaseNames);
@@ -456,20 +548,38 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property dbInstanceDescription: Description of created database instance.
+         * Property dbInstanceDescription: The name of the instance.
+         * <p>
+         * The name must meet the following requirements:
+         * <p>
+         * <ul>
+         * <li>It must start with a Chinese character or a letter.</li>
+         * <li>It can contain digits, Chinese characters, letters, underscores (_), periods
+         * (.), and hyphens (-).</li>
+         * <li>It must be 2 to 256 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance. This parameter is required.
+         * @param dbInstanceDescription Property dbInstanceDescription: The name of the instance. This parameter is required.
          */
         public Builder dbInstanceDescription(final java.lang.String dbInstanceDescription) {
             this.props.dbInstanceDescription(dbInstanceDescription);
             return this;
         }
         /**
-         * Property dbInstanceDescription: Description of created database instance.
+         * Property dbInstanceDescription: The name of the instance.
+         * <p>
+         * The name must meet the following requirements:
+         * <p>
+         * <ul>
+         * <li>It must start with a Chinese character or a letter.</li>
+         * <li>It can contain digits, Chinese characters, letters, underscores (_), periods
+         * (.), and hyphens (-).</li>
+         * <li>It must be 2 to 256 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance. This parameter is required.
+         * @param dbInstanceDescription Property dbInstanceDescription: The name of the instance. This parameter is required.
          */
         public Builder dbInstanceDescription(final com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
             this.props.dbInstanceDescription(dbInstanceDescription);
@@ -554,20 +664,62 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property engineVersion: Database instance version.
+         * Property engineVersion: The database version.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>8.0</li>
+         * <li>7.0</li>
+         * <li>6.0</li>
+         * <li>5.0</li>
+         * <li>4.4</li>
+         * <li>4.2</li>
+         * <li>4.0</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>When you clone an instance by calling this operation, the value of this
+         * parameter must be the same as that of the source instance.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param engineVersion Property engineVersion: Database instance version. This parameter is required.
+         * @param engineVersion Property engineVersion: The database version. This parameter is required.
          */
         public Builder engineVersion(final java.lang.String engineVersion) {
             this.props.engineVersion(engineVersion);
             return this;
         }
         /**
-         * Property engineVersion: Database instance version.
+         * Property engineVersion: The database version.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>8.0</li>
+         * <li>7.0</li>
+         * <li>6.0</li>
+         * <li>5.0</li>
+         * <li>4.4</li>
+         * <li>4.2</li>
+         * <li>4.0</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>When you clone an instance by calling this operation, the value of this
+         * parameter must be the same as that of the source instance.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param engineVersion Property engineVersion: Database instance version. This parameter is required.
+         * @param engineVersion Property engineVersion: The database version. This parameter is required.
          */
         public Builder engineVersion(final com.aliyun.ros.cdk.core.IResolvable engineVersion) {
             this.props.engineVersion(engineVersion);
@@ -602,20 +754,40 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+         * Property period: The subscription duration of the instance.
+         * <p>
+         * Unit: month.
+         * Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required and takes effect only when you set the ChargeType
+         * parameter to PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1. This parameter is required.
+         * @param period Property period: The subscription duration of the instance. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+         * Property period: The subscription duration of the instance.
+         * <p>
+         * Unit: month.
+         * Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required and takes effect only when you set the ChargeType
+         * parameter to PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1. This parameter is required.
+         * @param period Property period: The subscription duration of the instance. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
@@ -669,20 +841,26 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
+         * Property readonlyReplicas: The number of read-only nodes in the replica set instance.
+         * <p>
+         * Valid values are
+         * integers from 0 to 5. The default value is 0.
          * <p>
          * @return {@code this}
-         * @param readonlyReplicas Property readonlyReplicas: Number of read-only nodes, in the range of 1-5. This parameter is required.
+         * @param readonlyReplicas Property readonlyReplicas: The number of read-only nodes in the replica set instance. This parameter is required.
          */
         public Builder readonlyReplicas(final java.lang.Number readonlyReplicas) {
             this.props.readonlyReplicas(readonlyReplicas);
             return this;
         }
         /**
-         * Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
+         * Property readonlyReplicas: The number of read-only nodes in the replica set instance.
+         * <p>
+         * Valid values are
+         * integers from 0 to 5. The default value is 0.
          * <p>
          * @return {@code this}
-         * @param readonlyReplicas Property readonlyReplicas: Number of read-only nodes, in the range of 1-5. This parameter is required.
+         * @param readonlyReplicas Property readonlyReplicas: The number of read-only nodes in the replica set instance. This parameter is required.
          */
         public Builder readonlyReplicas(final com.aliyun.ros.cdk.core.IResolvable readonlyReplicas) {
             this.props.readonlyReplicas(readonlyReplicas);
@@ -761,34 +939,34 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property restoreType: Backup recovery instance.
+         * Property restoreType: The method to restore an instance from a backup.
          * <p>
          * <ul>
-         * <li>0: Restore instance to specified backup set</li>
-         * <li>1: Restore instance to specified point in time</li>
-         * <li>2: Restore released instance to specified backup set</li>
-         * <li>3: Restore instance to specified backup set</li>
+         * <li>0: Restores the instance to a specified backup set.</li>
+         * <li>1: Restores the instance to a specified point in time.</li>
+         * <li>2: Restores a released instance to a specified backup set.</li>
+         * <li>3: Restores the instance to a specified geo-redundant backup set.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param restoreType Property restoreType: Backup recovery instance. This parameter is required.
+         * @param restoreType Property restoreType: The method to restore an instance from a backup. This parameter is required.
          */
         public Builder restoreType(final java.lang.Number restoreType) {
             this.props.restoreType(restoreType);
             return this;
         }
         /**
-         * Property restoreType: Backup recovery instance.
+         * Property restoreType: The method to restore an instance from a backup.
          * <p>
          * <ul>
-         * <li>0: Restore instance to specified backup set</li>
-         * <li>1: Restore instance to specified point in time</li>
-         * <li>2: Restore released instance to specified backup set</li>
-         * <li>3: Restore instance to specified backup set</li>
+         * <li>0: Restores the instance to a specified backup set.</li>
+         * <li>1: Restores the instance to a specified point in time.</li>
+         * <li>2: Restores a released instance to a specified backup set.</li>
+         * <li>3: Restores the instance to a specified geo-redundant backup set.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param restoreType Property restoreType: Backup recovery instance. This parameter is required.
+         * @param restoreType Property restoreType: The method to restore an instance from a backup. This parameter is required.
          */
         public Builder restoreType(final com.aliyun.ros.cdk.core.IResolvable restoreType) {
             this.props.restoreType(restoreType);
@@ -873,20 +1051,34 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property srcDbInstanceId: Create an instance of the backup set based on an instance.
+         * Property srcDbInstanceId: The source instance ID.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only when you clone an instance by calling this
+         * operation. You must also specify the RestoreTime parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param srcDbInstanceId Property srcDbInstanceId: Create an instance of the backup set based on an instance. This parameter is required.
+         * @param srcDbInstanceId Property srcDbInstanceId: The source instance ID. This parameter is required.
          */
         public Builder srcDbInstanceId(final java.lang.String srcDbInstanceId) {
             this.props.srcDbInstanceId(srcDbInstanceId);
             return this;
         }
         /**
-         * Property srcDbInstanceId: Create an instance of the backup set based on an instance.
+         * Property srcDbInstanceId: The source instance ID.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only when you clone an instance by calling this
+         * operation. You must also specify the RestoreTime parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param srcDbInstanceId Property srcDbInstanceId: Create an instance of the backup set based on an instance. This parameter is required.
+         * @param srcDbInstanceId Property srcDbInstanceId: The source instance ID. This parameter is required.
          */
         public Builder srcDbInstanceId(final com.aliyun.ros.cdk.core.IResolvable srcDbInstanceId) {
             this.props.srcDbInstanceId(srcDbInstanceId);

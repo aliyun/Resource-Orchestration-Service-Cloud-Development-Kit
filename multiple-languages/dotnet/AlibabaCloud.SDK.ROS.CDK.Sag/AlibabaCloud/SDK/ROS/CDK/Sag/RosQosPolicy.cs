@@ -174,8 +174,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: priority: The priority of the traffic throttling policy to which the traffic classification
-        /// rule belongs.
+        /// <strong>Property</strong>: priority: The priority of the throttling rule to which the stream classification rule
+        /// belongs.
+        /// Valid values: 1 to 3. A smaller value indicates a higher priority.
         /// </remarks>
         [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Priority
@@ -321,9 +322,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: description: The description of the traffic classification rule.
-        /// The description must be 1 to 512 characters in length and can contain letters, digits,
-        /// underscores (_), and hyphens (-). It must start with a letter.
+        /// <strong>Property</strong>: description: The description of the stream classification rule for the QoS policy.
+        /// The description must be 1 to 512 characters in length. It must start with a
+        /// letter or a Chinese character and can contain digits, underscores (_), and
+        /// hyphens (-).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -487,9 +489,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: name: The name of the traffic classification rule.
-        /// The name must be 2 to 100 characters in length, and can contain digits, underscores
-        /// (_), and hyphens (-). It must start with a letter.
+        /// <strong>Property</strong>: name: The name of the stream classification rule.
+        /// The name must be 2 to 100 characters in length. It must start with a letter or a
+        /// Chinese character and can contain digits, hyphens (-), and underscores (_).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

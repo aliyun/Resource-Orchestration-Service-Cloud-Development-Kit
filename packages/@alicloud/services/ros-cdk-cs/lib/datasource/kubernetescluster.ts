@@ -223,7 +223,7 @@ The RAM role is assigned to the worker nodes of the cluster and allows the worke
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::KubernetesCluster`, which is used to query the information about a Container Service for Kubernetes (ACK) cluster.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::KubernetesCluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKubernetesCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-kubernetescluster
  */

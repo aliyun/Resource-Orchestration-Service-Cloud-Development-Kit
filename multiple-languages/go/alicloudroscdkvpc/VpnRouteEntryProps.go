@@ -17,13 +17,21 @@ type VpnRouteEntryProps struct {
 	RouteDest interface{} `field:"required" json:"routeDest" yaml:"routeDest"`
 	// Property vpnGatewayId: The ID of the VPN Gateway.
 	VpnGatewayId interface{} `field:"required" json:"vpnGatewayId" yaml:"vpnGatewayId"`
-	// Property weight: The weight of the destination route.
+	// Property weight: The weight of the destination-based route.
 	//
-	// Valid values: 0|100.
+	// Valid values:
+	// *   100: a high priority
+	// *   0: a low priority.
 	Weight interface{} `field:"required" json:"weight" yaml:"weight"`
-	// Property description: The description of the VPN destination route.
+	// Property description: The description of the destination-based route.
+	//
+	// The description must be 1 to 100 characters in length, and cannot start with
+	// `http:\/\/` or `https:\/\/`.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
-	// Property overlayMode: The overlay mode.
+	// Property overlayMode: The tunneling protocol.
+	//
+	// The value is set to Ipsec, which indicates the IPsec
+	// tunneling protocol.
 	OverlayMode interface{} `field:"optional" json:"overlayMode" yaml:"overlayMode"`
 }
 

@@ -18,13 +18,18 @@ type RuleProps struct {
 	RuleConditions interface{} `field:"required" json:"ruleConditions" yaml:"ruleConditions"`
 	// Property ruleName: The name of the forwarding rule.
 	//
-	// The name must be 2 to 128 characters in length.
-	// It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It
-	// must start with a letter.
+	// - The length must be 2 to 128 English or Chinese characters.
+	// - The name must start with a letter, a Chinese character, or a number, and can
+	// contain numbers, periods (.), underscores (_), hyphens (-), and spaces.
 	RuleName interface{} `field:"required" json:"ruleName" yaml:"ruleName"`
-	// Property direction: Rule direction.
+	// Property direction: The direction in which the forwarding rule is applied.
 	//
-	// Valid values: Request or Response.
+	// Valid values:
+	// - Request (default): The rule matches and processes requests sent from the client
+	// to the ALB instance.
+	// - Response: The rule matches and processes responses returned from server groups
+	// to the ALB instance.
+	// > Basic ALB instances support only forwarding rules whose Direction is Request.
 	Direction interface{} `field:"optional" json:"direction" yaml:"direction"`
 }
 

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cdt;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDT::ResourcePackage</code>The , which type creates a resource plan.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDT::ResourcePackage</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:43:56.308Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:30:06.568Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdt.$Module.class, fqn = "@alicloud/ros-cdk-cdt.ResourcePackage")
 public class ResourcePackage extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cdt.IResourcePackage {
 

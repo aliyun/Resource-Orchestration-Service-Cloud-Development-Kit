@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Snapshot</code>, which is used to create a snapshot for a disk.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Snapshot</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.264Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.660Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Snapshot")
 public class Snapshot extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.ISnapshot {
 
@@ -141,24 +141,24 @@ public class Snapshot extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://.
+         * Property description: The snapshot description must be 2 to 256 characters in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
-         * The description will appear on the console. By default, the value is zero.
+         * This parameter is empty by default.
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://. This parameter is required.
+         * @param description Property description: The snapshot description must be 2 to 256 characters in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://.
+         * Property description: The snapshot description must be 2 to 256 characters in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
-         * The description will appear on the console. By default, the value is zero.
+         * This parameter is empty by default.
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://. This parameter is required.
+         * @param description Property description: The snapshot description must be 2 to 256 characters in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
@@ -166,34 +166,52 @@ public class Snapshot extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property instantAccess: Specifies whether to enable the instant access feature.
+         * Property instantAccess: Specifies whether to enable the Instant Access feature.
          * <p>
          * Valid values:
-         * true: enables the instant access feature. This feature can be enabled only for enhanced SSDs (ESSDs)
-         * false: disables the instant access feature. If InstantAccess is set to false, normal snapshots are created.
-         * Default value: false.
-         * Note This parameter and the Category parameter cannot be specified at the same time.
-         * For more information, see the "Description" section in this topic.
+         * <p>
+         * <ul>
+         * <li>true: Enables the Instant Access feature. This feature can be enabled only for
+         * snapshots of ESSD cloud disks.</li>
+         * <li>false: Disables the Instant Access feature. A standard snapshot is created.
+         * Default value: false.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is deprecated. standard snapshots for ESSD cloud disks now
+         * include the <a href="">Instant Access</a> feature by default at no additional cost.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param instantAccess Property instantAccess: Specifies whether to enable the instant access feature. This parameter is required.
+         * @param instantAccess Property instantAccess: Specifies whether to enable the Instant Access feature. This parameter is required.
          */
         public Builder instantAccess(final java.lang.Boolean instantAccess) {
             this.props.instantAccess(instantAccess);
             return this;
         }
         /**
-         * Property instantAccess: Specifies whether to enable the instant access feature.
+         * Property instantAccess: Specifies whether to enable the Instant Access feature.
          * <p>
          * Valid values:
-         * true: enables the instant access feature. This feature can be enabled only for enhanced SSDs (ESSDs)
-         * false: disables the instant access feature. If InstantAccess is set to false, normal snapshots are created.
-         * Default value: false.
-         * Note This parameter and the Category parameter cannot be specified at the same time.
-         * For more information, see the "Description" section in this topic.
+         * <p>
+         * <ul>
+         * <li>true: Enables the Instant Access feature. This feature can be enabled only for
+         * snapshots of ESSD cloud disks.</li>
+         * <li>false: Disables the Instant Access feature. A standard snapshot is created.
+         * Default value: false.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is deprecated. standard snapshots for ESSD cloud disks now
+         * include the <a href="">Instant Access</a> feature by default at no additional cost.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param instantAccess Property instantAccess: Specifies whether to enable the instant access feature. This parameter is required.
+         * @param instantAccess Property instantAccess: Specifies whether to enable the Instant Access feature. This parameter is required.
          */
         public Builder instantAccess(final com.aliyun.ros.cdk.core.IResolvable instantAccess) {
             this.props.instantAccess(instantAccess);
@@ -201,32 +219,44 @@ public class Snapshot extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property instantAccessRetentionDays: Specifies the retention period of the instant access feature.
+         * Property instantAccessRetentionDays: The retention period for the Instant Access feature, in days.
          * <p>
-         * After the retention period ends,
-         * the snapshot is automatically released. This parameter takes effect only when InstantAccess
-         * is set to true. Unit: days.
-         * Valid values: 1 to 65535. By default, the value of
-         * this parameter is the same as that of RetentionDays.
+         * The snapshot is
+         * automatically deleted when this retention period expires. This parameter takes
+         * effect only when <code>InstantAccess</code> is set to <code>true</code>. Valid values: 1 to 65,535.
+         * Defaults to the value of <code>RetentionDays</code>.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is deprecated. standard snapshots for ESSD cloud disks now
+         * include the <a href="">Instant Access</a> feature by default at no additional cost.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param instantAccessRetentionDays Property instantAccessRetentionDays: Specifies the retention period of the instant access feature. This parameter is required.
+         * @param instantAccessRetentionDays Property instantAccessRetentionDays: The retention period for the Instant Access feature, in days. This parameter is required.
          */
         public Builder instantAccessRetentionDays(final java.lang.Number instantAccessRetentionDays) {
             this.props.instantAccessRetentionDays(instantAccessRetentionDays);
             return this;
         }
         /**
-         * Property instantAccessRetentionDays: Specifies the retention period of the instant access feature.
+         * Property instantAccessRetentionDays: The retention period for the Instant Access feature, in days.
          * <p>
-         * After the retention period ends,
-         * the snapshot is automatically released. This parameter takes effect only when InstantAccess
-         * is set to true. Unit: days.
-         * Valid values: 1 to 65535. By default, the value of
-         * this parameter is the same as that of RetentionDays.
+         * The snapshot is
+         * automatically deleted when this retention period expires. This parameter takes
+         * effect only when <code>InstantAccess</code> is set to <code>true</code>. Valid values: 1 to 65,535.
+         * Defaults to the value of <code>RetentionDays</code>.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is deprecated. standard snapshots for ESSD cloud disks now
+         * include the <a href="">Instant Access</a> feature by default at no additional cost.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param instantAccessRetentionDays Property instantAccessRetentionDays: Specifies the retention period of the instant access feature. This parameter is required.
+         * @param instantAccessRetentionDays Property instantAccessRetentionDays: The retention period for the Instant Access feature, in days. This parameter is required.
          */
         public Builder instantAccessRetentionDays(final com.aliyun.ros.cdk.core.IResolvable instantAccessRetentionDays) {
             this.props.instantAccessRetentionDays(instantAccessRetentionDays);
@@ -255,26 +285,28 @@ public class Snapshot extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property retentionDays: Set the retention period of a snapshot in days.
+         * Property retentionDays: The retention period of the snapshot, in days.
          * <p>
-         * The snapshot will be automatically released after the retention period expires.
-         * The value ranges from 1 to 65536.
+         * Valid values: 1 to 65,536. The
+         * snapshot is automatically deleted when the retention period expires.
+         * If this parameter is not specified, the snapshot is retained indefinitely.
          * <p>
          * @return {@code this}
-         * @param retentionDays Property retentionDays: Set the retention period of a snapshot in days. This parameter is required.
+         * @param retentionDays Property retentionDays: The retention period of the snapshot, in days. This parameter is required.
          */
         public Builder retentionDays(final java.lang.Number retentionDays) {
             this.props.retentionDays(retentionDays);
             return this;
         }
         /**
-         * Property retentionDays: Set the retention period of a snapshot in days.
+         * Property retentionDays: The retention period of the snapshot, in days.
          * <p>
-         * The snapshot will be automatically released after the retention period expires.
-         * The value ranges from 1 to 65536.
+         * Valid values: 1 to 65,536. The
+         * snapshot is automatically deleted when the retention period expires.
+         * If this parameter is not specified, the snapshot is retained indefinitely.
          * <p>
          * @return {@code this}
-         * @param retentionDays Property retentionDays: Set the retention period of a snapshot in days. This parameter is required.
+         * @param retentionDays Property retentionDays: The retention period of the snapshot, in days. This parameter is required.
          */
         public Builder retentionDays(final com.aliyun.ros.cdk.core.IResolvable retentionDays) {
             this.props.retentionDays(retentionDays);
@@ -282,24 +314,42 @@ public class Snapshot extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters.
+         * Property snapshotName: The snapshot name must be 2 to 128 characters long.
          * <p>
-         * It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+         * It must start with a letter
+         * or a Chinese character and can contain letters, digits, colons (:), underscores
+         * (_), periods (.), and hyphens (-).
+         * <p>
+         * <blockquote>
+         * <p>
+         * The name cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>. To avoid conflicts with
+         * auto snapshot names, the name cannot start with <code>auto</code>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param snapshotName Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. This parameter is required.
+         * @param snapshotName Property snapshotName: The snapshot name must be 2 to 128 characters long. This parameter is required.
          */
         public Builder snapshotName(final java.lang.String snapshotName) {
             this.props.snapshotName(snapshotName);
             return this;
         }
         /**
-         * Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters.
+         * Property snapshotName: The snapshot name must be 2 to 128 characters long.
          * <p>
-         * It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+         * It must start with a letter
+         * or a Chinese character and can contain letters, digits, colons (:), underscores
+         * (_), periods (.), and hyphens (-).
+         * <p>
+         * <blockquote>
+         * <p>
+         * The name cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>. To avoid conflicts with
+         * auto snapshot names, the name cannot start with <code>auto</code>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param snapshotName Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. This parameter is required.
+         * @param snapshotName Property snapshotName: The snapshot name must be 2 to 128 characters long. This parameter is required.
          */
         public Builder snapshotName(final com.aliyun.ros.cdk.core.IResolvable snapshotName) {
             this.props.snapshotName(snapshotName);

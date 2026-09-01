@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AclAssociation`, which is used to associate access control lists (ACLs) with a listener.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AclAssociation`.
 type AclAssociation interface {
 	alicloudroscdkcore.Resource
 	IAclAssociation

@@ -5,7 +5,9 @@ package alicloudroscdktsdb
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-hitsdbinstance
 type HiTSDBInstanceProps struct {
-	// Property instanceClass: The type of the instance.
+	// Property instanceClass: The storage capacity of the instance.
+	//
+	// Unit: GB.
 	InstanceClass interface{} `field:"required" json:"instanceClass" yaml:"instanceClass"`
 	// Property instanceStorage: The storage capacity of the instance.
 	//
@@ -17,7 +19,7 @@ type HiTSDBInstanceProps struct {
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
 	// Property zoneId: The zone ID of the instance.
 	ZoneId interface{} `field:"required" json:"zoneId" yaml:"zoneId"`
-	// Property diskCategory: The category of disk.
+	// Property diskCategory: The ID of the request.
 	DiskCategory interface{} `field:"optional" json:"diskCategory" yaml:"diskCategory"`
 	// Property duration: The validity period of the instance.
 	//
@@ -25,10 +27,7 @@ type HiTSDBInstanceProps struct {
 	Duration interface{} `field:"optional" json:"duration" yaml:"duration"`
 	// Property instanceAlias: The alias of the instance.
 	InstanceAlias interface{} `field:"optional" json:"instanceAlias" yaml:"instanceAlias"`
-	// Property payType: The billing method.
-	//
-	// Valid values:
-	// - **prepay**: The prepay value indicates the subscription method.
+	// Property payType: The ID of the VPC in which the instances reside.
 	PayType interface{} `field:"optional" json:"payType" yaml:"payType"`
 	// Property pricingCycle: The unit of the validity period.
 	//

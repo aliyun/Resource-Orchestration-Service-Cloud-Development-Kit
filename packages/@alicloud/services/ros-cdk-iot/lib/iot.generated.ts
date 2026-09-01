@@ -14,35 +14,44 @@ export interface RosDeviceProps {
     readonly productKey: string | ros.IResolvable;
 
     /**
-     * @Property devEui: DevEUI LoRaWAN equipment.
-     * When you create a LoRaWAN devices, this will pass.
+     * @Property devEui: The DevEUI of the LoRaWAN device.
+     * This parameter is required when you create a LoRaWAN device.
      */
     readonly devEui?: string | ros.IResolvable;
 
     /**
-     * @Property deviceName: The name of the device that you want to register. The device name must consist of
-     * 4 to 32 characters, including English letters, digits, and special characters, for
-     * example, hyphens (-), underscores (_), at signs (@), periods (.) , and colons (:).
-     * DeviceName is used with ProductKey to identify a specified device.
-     * Note If you do not specify this parameter, the system will generate a name for the device.
+     * @Property deviceName: The DeviceName of the device. The name must be 4 to 32 characters in length, and
+     * can contain letters, digits, hyphens (-), underscores (_), at signs (@), periods
+     * (.), and colons (:).
+     * You can use a combination of the DeviceName and ProductKey parameters to identify
+     * a device.
+     * >  If you do not specify this parameter, IoT Platform randomly generates a
+     * DeviceName.
      */
     readonly deviceName?: string | ros.IResolvable;
 
     /**
-     * @Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
+     * @Property iotInstanceId: The ID of the instance. You can view the instance ID on the Overview page in the
+     * IoT Platform console.
+     * >*   If your instance has an ID, you must configure this parameter. If you do not
+     * set this parameter, the call fails.
+     * >*   If your instance has no Overview page or ID, you do not need to set this
+     * parameter.
      */
     readonly iotInstanceId?: string | ros.IResolvable;
 
     /**
-     * @Property nickname: Add a nickname for the device. A nickname can be 4-64 characters in length, and can
-     * contain Chinese characters, English letters, numbers and underscores (_). A Chinese
-     * character counts as two characters.
+     * @Property nickname: The alias of the device. The alias must be 4 to 64 characters in length, and can
+     * contain letters, digits, and underscores (_).
+     * >  If you do not specify this parameter, IoT Platform does not generate an alias
+     * for the device.
      */
     readonly nickname?: string | ros.IResolvable;
 
     /**
-     * @Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
-     * When you create a LoRaWAN devices, this will pass.
+     * @Property pinCode: The PIN code of the LoRaWAN device. This parameter is used to verify the DevEUI.
+     * When you create a LoRaWAN device, set LoraNodeType to CUSTOMDEFINED. This
+     * parameter is required.
      */
     readonly pinCode?: string | ros.IResolvable;
 }
@@ -156,35 +165,44 @@ Description Keep, do not leak.
     public productKey: string | ros.IResolvable;
 
     /**
-     * @Property devEui: DevEUI LoRaWAN equipment.
-     * When you create a LoRaWAN devices, this will pass.
+     * @Property devEui: The DevEUI of the LoRaWAN device.
+     * This parameter is required when you create a LoRaWAN device.
      */
     public devEui: string | ros.IResolvable | undefined;
 
     /**
-     * @Property deviceName: The name of the device that you want to register. The device name must consist of
-     * 4 to 32 characters, including English letters, digits, and special characters, for
-     * example, hyphens (-), underscores (_), at signs (@), periods (.) , and colons (:).
-     * DeviceName is used with ProductKey to identify a specified device.
-     * Note If you do not specify this parameter, the system will generate a name for the device.
+     * @Property deviceName: The DeviceName of the device. The name must be 4 to 32 characters in length, and
+     * can contain letters, digits, hyphens (-), underscores (_), at signs (@), periods
+     * (.), and colons (:).
+     * You can use a combination of the DeviceName and ProductKey parameters to identify
+     * a device.
+     * >  If you do not specify this parameter, IoT Platform randomly generates a
+     * DeviceName.
      */
     public deviceName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
+     * @Property iotInstanceId: The ID of the instance. You can view the instance ID on the Overview page in the
+     * IoT Platform console.
+     * >*   If your instance has an ID, you must configure this parameter. If you do not
+     * set this parameter, the call fails.
+     * >*   If your instance has no Overview page or ID, you do not need to set this
+     * parameter.
      */
     public iotInstanceId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property nickname: Add a nickname for the device. A nickname can be 4-64 characters in length, and can
-     * contain Chinese characters, English letters, numbers and underscores (_). A Chinese
-     * character counts as two characters.
+     * @Property nickname: The alias of the device. The alias must be 4 to 64 characters in length, and can
+     * contain letters, digits, and underscores (_).
+     * >  If you do not specify this parameter, IoT Platform does not generate an alias
+     * for the device.
      */
     public nickname: string | ros.IResolvable | undefined;
 
     /**
-     * @Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
-     * When you create a LoRaWAN devices, this will pass.
+     * @Property pinCode: The PIN code of the LoRaWAN device. This parameter is used to verify the DevEUI.
+     * When you create a LoRaWAN device, set LoraNodeType to CUSTOMDEFINED. This
+     * parameter is required.
      */
     public pinCode: string | ros.IResolvable | undefined;
 
@@ -237,7 +255,8 @@ Description Keep, do not leak.
 export interface RosDeviceGroupProps {
 
     /**
-     * @Property groupName: The name of the group. The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
+     * @Property groupName: The name of the group. The alias must be 4 to 30 characters in length, and can
+     * contain letters, digits, and underscores (_).
      */
     readonly groupName: string | ros.IResolvable;
 
@@ -322,7 +341,8 @@ export class RosDeviceGroup extends ros.RosResource {
 
 
     /**
-     * @Property groupName: The name of the group. The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
+     * @Property groupName: The name of the group. The alias must be 4 to 30 characters in length, and can
+     * contain letters, digits, and underscores (_).
      */
     public groupName: string | ros.IResolvable;
 
@@ -397,11 +417,12 @@ export interface RosProductProps {
     readonly productName: string | ros.IResolvable;
 
     /**
-     * @Property aliyunCommodityCode: The edition of the product that you want to create. There are two options:
-     * iothub_senior: Pro Edition.
-     * iothub: Basic Edition.
-     * If you do not input this parameter, the default value is used, which is iothub (Basic
-     * Edition).
+     * @Property aliyunCommodityCode: The edition of the product.
+     * *   If you do not configure this parameter, a product of the Basic Edition is
+     * automatically created. You cannot use a TSL model to define the product.
+     * *   If you want to configure this parameter, set the value to iothub_senior. A
+     * product that supports TSL models is created. You must also configure the
+     * DataFormat parameter.
      */
     readonly aliyunCommodityCode?: string | ros.IResolvable;
 
@@ -628,11 +649,12 @@ export class RosProduct extends ros.RosResource {
     public productName: string | ros.IResolvable;
 
     /**
-     * @Property aliyunCommodityCode: The edition of the product that you want to create. There are two options:
-     * iothub_senior: Pro Edition.
-     * iothub: Basic Edition.
-     * If you do not input this parameter, the default value is used, which is iothub (Basic
-     * Edition).
+     * @Property aliyunCommodityCode: The edition of the product.
+     * *   If you do not configure this parameter, a product of the Basic Edition is
+     * automatically created. You cannot use a TSL model to define the product.
+     * *   If you want to configure this parameter, set the value to iothub_senior. A
+     * product that supports TSL models is created. You must also configure the
+     * DataFormat parameter.
      */
     public aliyunCommodityCode: string | ros.IResolvable | undefined;
 
@@ -962,9 +984,8 @@ export class RosProductTopic extends ros.RosResource {
 export interface RosRuleProps {
 
     /**
-     * @Property name: The name of the rule. The name must be 1 to 30 characters in length and can contain
-     * English letters, digits, underscores (_), and hyphens (-). Chinese language is also
-     * supported. Each Chinese symbol occupies 2 characters.
+     * @Property name: The name of the data forwarding rule. The rule name must be 1 to 30 characters in
+     * length, and can contain letters, digits, underscores (_), and hyphens (-).
      */
     readonly name: string | ros.IResolvable;
 
@@ -991,10 +1012,12 @@ export interface RosRuleProps {
     readonly productKey?: string | ros.IResolvable;
 
     /**
-     * @Property resourceGroupId: The ID of the resource group to which the rule is assigned. You can view the resource
-     * group information in the Resource Management console.
-     * If you do not specify this parameter, the rule is assigned to the default resource
-     * group.
+     * @Property resourceGroupId: The ID of the resource group to which the rule is assigned. You can view the
+     * resource group information in the Resource Management console.
+     * >You can specify a value for this parameter only if you have activated Resource
+     * Management.
+     * If you do not specify this parameter, the rule is assigned to the default
+     * resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
 
@@ -1135,7 +1158,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Rule`, which is used to create a rule for a specific topic.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Rule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-rule
  */
@@ -1159,9 +1182,8 @@ export class RosRule extends ros.RosResource {
 
 
     /**
-     * @Property name: The name of the rule. The name must be 1 to 30 characters in length and can contain
-     * English letters, digits, underscores (_), and hyphens (-). Chinese language is also
-     * supported. Each Chinese symbol occupies 2 characters.
+     * @Property name: The name of the data forwarding rule. The rule name must be 1 to 30 characters in
+     * length, and can contain letters, digits, underscores (_), and hyphens (-).
      */
     public name: string | ros.IResolvable;
 
@@ -1188,10 +1210,12 @@ export class RosRule extends ros.RosResource {
     public productKey: string | ros.IResolvable | undefined;
 
     /**
-     * @Property resourceGroupId: The ID of the resource group to which the rule is assigned. You can view the resource
-     * group information in the Resource Management console.
-     * If you do not specify this parameter, the rule is assigned to the default resource
-     * group.
+     * @Property resourceGroupId: The ID of the resource group to which the rule is assigned. You can view the
+     * resource group information in the Resource Management console.
+     * >You can specify a value for this parameter only if you have activated Resource
+     * Management.
+     * If you do not specify this parameter, the rule is assigned to the default
+     * resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
 
@@ -1504,7 +1528,7 @@ function rosRuleActionPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::RuleAction`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::RuleAction`, which is used to create a rule action for a specified rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `RuleAction` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-ruleaction
  */

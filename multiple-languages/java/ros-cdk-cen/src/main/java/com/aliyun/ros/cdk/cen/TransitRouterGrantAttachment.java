@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterGrantAttachment</code>The , which resource grants a transit router permissions on a network instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterGrantAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.396Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.739Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterGrantAttachment")
 public class TransitRouterGrantAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ITransitRouterGrantAttachment {
 
@@ -206,34 +206,34 @@ public class TransitRouterGrantAttachment extends com.aliyun.ros.cdk.core.Resour
         }
 
         /**
-         * Property orderType: The billing method for the network instance.
+         * Property orderType: The entity that pays the fees of the network instance.
          * <p>
          * Valid values:
          * <p>
          * <ul>
-         * <li>PayByCenOwner: The fees incurred by the network instance are paid by the owner of the CEN instance.</li>
-         * <li>PayByResourceOwner: The fees incurred by the network instance are paid by the owner of the network instance.</li>
+         * <li>PayByCenOwner: the account that owns the CEN instance.</li>
+         * <li>PayByResourceOwner: the account that owns the network instance.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param orderType Property orderType: The billing method for the network instance. This parameter is required.
+         * @param orderType Property orderType: The entity that pays the fees of the network instance. This parameter is required.
          */
         public Builder orderType(final java.lang.String orderType) {
             this.props.orderType(orderType);
             return this;
         }
         /**
-         * Property orderType: The billing method for the network instance.
+         * Property orderType: The entity that pays the fees of the network instance.
          * <p>
          * Valid values:
          * <p>
          * <ul>
-         * <li>PayByCenOwner: The fees incurred by the network instance are paid by the owner of the CEN instance.</li>
-         * <li>PayByResourceOwner: The fees incurred by the network instance are paid by the owner of the network instance.</li>
+         * <li>PayByCenOwner: the account that owns the CEN instance.</li>
+         * <li>PayByResourceOwner: the account that owns the network instance.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param orderType Property orderType: The billing method for the network instance. This parameter is required.
+         * @param orderType Property orderType: The entity that pays the fees of the network instance. This parameter is required.
          */
         public Builder orderType(final com.aliyun.ros.cdk.core.IResolvable orderType) {
             this.props.orderType(orderType);

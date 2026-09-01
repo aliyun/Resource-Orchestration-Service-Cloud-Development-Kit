@@ -5,13 +5,25 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-route
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.224Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.620Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RouteProps")
 @software.amazon.jsii.Jsii.Proxy(RouteProps.Jsii$Proxy.class)
 public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property destinationCidrBlock: The RouteEntry's target network segment.
+     * Property destinationCidrBlock: The destination CIDR block of the custom route entry.
+     * <p>
+     * IPv4 CIDR blocks, IPv6 CIDR
+     * blocks, and prefix lists are supported. You must specify one of the following
+     * parameters: <code>DestinationCidrBlock</code> and <code>DestinationPrefixListId</code>. The following
+     * requirements apply:
+     * <p>
+     * <ul>
+     * <li>The destination CIDR block cannot be 100.64.0.0/10 or a subset of
+     * 100.64.0.0/10.</li>
+     * <li>The destination CIDR block of a route entry cannot be the same as the
+     * destination CIDR block of another route entry in the same route table.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDestinationCidrBlock();
 
@@ -21,9 +33,16 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getRouteTableId();
 
     /**
-     * Property nextHopId: The route entry's next hop.
+     * Property nextHopId: The ID of the next hop.
      * <p>
-     * When the NextHopList is specified, the value will be ignored.
+     * <blockquote>
+     * <p>
+     * <h2>If <code>NextHopType</code> is set to <code>Ecr</code>, you can obtain the <code>AssociationId</code> by</h2>
+     * <p>
+     * </blockquote>
+     * <p>
+     * calling the DescribeExpressConnectRouterAssociation operation and use the ID
+     * as the next hop ID.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNextHopId() {
         return null;
@@ -80,7 +99,18 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RouteProps#getDestinationCidrBlock}
-         * @param destinationCidrBlock Property destinationCidrBlock: The RouteEntry's target network segment. This parameter is required.
+         * @param destinationCidrBlock Property destinationCidrBlock: The destination CIDR block of the custom route entry. This parameter is required.
+         *                             IPv4 CIDR blocks, IPv6 CIDR
+         *                             blocks, and prefix lists are supported. You must specify one of the following
+         *                             parameters: <code>DestinationCidrBlock</code> and <code>DestinationPrefixListId</code>. The following
+         *                             requirements apply:
+         *                             <p>
+         *                             <ul>
+         *                             <li>The destination CIDR block cannot be 100.64.0.0/10 or a subset of
+         *                             100.64.0.0/10.</li>
+         *                             <li>The destination CIDR block of a route entry cannot be the same as the
+         *                             destination CIDR block of another route entry in the same route table.</li>
+         *                             </ul>
          * @return {@code this}
          */
         public Builder destinationCidrBlock(java.lang.String destinationCidrBlock) {
@@ -90,7 +120,18 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RouteProps#getDestinationCidrBlock}
-         * @param destinationCidrBlock Property destinationCidrBlock: The RouteEntry's target network segment. This parameter is required.
+         * @param destinationCidrBlock Property destinationCidrBlock: The destination CIDR block of the custom route entry. This parameter is required.
+         *                             IPv4 CIDR blocks, IPv6 CIDR
+         *                             blocks, and prefix lists are supported. You must specify one of the following
+         *                             parameters: <code>DestinationCidrBlock</code> and <code>DestinationPrefixListId</code>. The following
+         *                             requirements apply:
+         *                             <p>
+         *                             <ul>
+         *                             <li>The destination CIDR block cannot be 100.64.0.0/10 or a subset of
+         *                             100.64.0.0/10.</li>
+         *                             <li>The destination CIDR block of a route entry cannot be the same as the
+         *                             destination CIDR block of another route entry in the same route table.</li>
+         *                             </ul>
          * @return {@code this}
          */
         public Builder destinationCidrBlock(com.aliyun.ros.cdk.core.IResolvable destinationCidrBlock) {
@@ -120,8 +161,15 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RouteProps#getNextHopId}
-         * @param nextHopId Property nextHopId: The route entry's next hop.
-         *                  When the NextHopList is specified, the value will be ignored.
+         * @param nextHopId Property nextHopId: The ID of the next hop.
+         *                  <blockquote>
+         *                  <p>
+         *                  <h2>If <code>NextHopType</code> is set to <code>Ecr</code>, you can obtain the <code>AssociationId</code> by</h2>
+         *                  <p>
+         *                  </blockquote>
+         *                  <p>
+         *                  calling the DescribeExpressConnectRouterAssociation operation and use the ID
+         *                  as the next hop ID.
          * @return {@code this}
          */
         public Builder nextHopId(java.lang.String nextHopId) {
@@ -131,8 +179,15 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RouteProps#getNextHopId}
-         * @param nextHopId Property nextHopId: The route entry's next hop.
-         *                  When the NextHopList is specified, the value will be ignored.
+         * @param nextHopId Property nextHopId: The ID of the next hop.
+         *                  <blockquote>
+         *                  <p>
+         *                  <h2>If <code>NextHopType</code> is set to <code>Ecr</code>, you can obtain the <code>AssociationId</code> by</h2>
+         *                  <p>
+         *                  </blockquote>
+         *                  <p>
+         *                  calling the DescribeExpressConnectRouterAssociation operation and use the ID
+         *                  as the next hop ID.
          * @return {@code this}
          */
         public Builder nextHopId(com.aliyun.ros.cdk.core.IResolvable nextHopId) {

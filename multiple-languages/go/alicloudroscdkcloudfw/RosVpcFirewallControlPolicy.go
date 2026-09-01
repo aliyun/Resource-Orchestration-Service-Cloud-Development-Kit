@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`The , which resource type adds access control policies to specified VPC firewall policy groups.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.
 type RosVpcFirewallControlPolicy interface {
 	alicloudroscdkcore.RosResource
 	AclAction() interface{}

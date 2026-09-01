@@ -16,7 +16,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         private object _eventPattern;
 
         /// <remarks>
-        /// <strong>Property</strong>: eventPattern: Event pattern configuration.A maximum of 20 event patterns.
+        /// <strong>Property</strong>: eventPattern: The pattern of the event-triggered alert rule.
         /// </remarks>
         [JsiiProperty(name: "eventPattern", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosEventRule.EventPatternProperty\"}]}},\"kind\":\"array\"}}]}}")]
         public object EventPattern
@@ -130,9 +130,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         private object? _eventType;
 
         /// <remarks>
-        /// <strong>Property</strong>: eventType: The type of the event alert. Valid values:
-        /// SYSTEM
-        /// CUSTOM
+        /// <strong>Property</strong>: eventType: The type of the event. Valid values:
+        /// - SYSTEM: a system event.
+        /// - CUSTOM: a custom event.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "eventType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -251,9 +251,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         private object? _state;
 
         /// <remarks>
-        /// <strong>Property</strong>: state: The status of the alert rule. Valid values:
-        /// ENABLED
-        /// DISABLED
+        /// <strong>Property</strong>: state: The status of the event-triggered alert rule. Valid values:
+        /// - ENABLED: The rule is enabled.
+        /// - DISABLED: The rule is disabled.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "state", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

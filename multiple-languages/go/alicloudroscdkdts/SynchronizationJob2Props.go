@@ -44,7 +44,11 @@ type SynchronizationJob2Props struct {
 	DelayPhone interface{} `field:"optional" json:"delayPhone" yaml:"delayPhone"`
 	// Property delayRuleTime: The threshold for latency alerts.
 	//
-	// Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+	// Unit: seconds. The value must be an integer.
+	// You can set the threshold based on your business requirements. To prevent
+	// unstable latency caused by network and database overloads, we recommend that you
+	// set the threshold to more than 10 seconds.
+	// > If DelayNotice is set to true, this parameter is required.
 	DelayRuleTime interface{} `field:"optional" json:"delayRuleTime" yaml:"delayRuleTime"`
 	// Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
 	DestPrimaryVswId interface{} `field:"optional" json:"destPrimaryVswId" yaml:"destPrimaryVswId"`
@@ -73,13 +77,13 @@ type SynchronizationJob2Props struct {
 	ErrorPhone interface{} `field:"optional" json:"errorPhone" yaml:"errorPhone"`
 	// Property fileOssUrl: The URL of the Object Storage Service (OSS) bucket that stores the files related to the DTS task.
 	FileOssUrl interface{} `field:"optional" json:"fileOssUrl" yaml:"fileOssUrl"`
-	// Property maxDu: The upper limit of DU.
+	// Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
 	//
-	// This parameter is supported only for serverless instances.
+	// Currently, this feature is not supported, please do not pass in parameters.
 	MaxDu interface{} `field:"optional" json:"maxDu" yaml:"maxDu"`
-	// Property minDu: The lower limit of DU.
+	// Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.
 	//
-	// This parameter is supported only for serverless instances.
+	// This feature is currently not supported, please do not pass in parameters.
 	MinDu interface{} `field:"optional" json:"minDu" yaml:"minDu"`
 	// Property reserve: The reserved parameter of DTS.
 	//

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::VpcFirewallControlPolicy</code>The , which resource type adds access control policies to specified VPC firewall policy groups.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::VpcFirewallControlPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:48:07.147Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:36:02.207Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicy")
 public class VpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudfw.IVpcFirewallControlPolicy {
 
@@ -588,28 +588,34 @@ public class VpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.Resource i
         }
 
         /**
-         * Property lang: The natural language of the request and response.
+         * Property lang: The language of the request and response.
          * <p>
          * Valid values:
-         * zh: Chinese
-         * en: English
+         * <p>
+         * <ul>
+         * <li>zh (default): Chinese</li>
+         * <li>en: English</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param lang Property lang: The natural language of the request and response. This parameter is required.
+         * @param lang Property lang: The language of the request and response. This parameter is required.
          */
         public Builder lang(final java.lang.String lang) {
             this.props.lang(lang);
             return this;
         }
         /**
-         * Property lang: The natural language of the request and response.
+         * Property lang: The language of the request and response.
          * <p>
          * Valid values:
-         * zh: Chinese
-         * en: English
+         * <p>
+         * <ul>
+         * <li>zh (default): Chinese</li>
+         * <li>en: English</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param lang Property lang: The natural language of the request and response. This parameter is required.
+         * @param lang Property lang: The language of the request and response. This parameter is required.
          */
         public Builder lang(final com.aliyun.ros.cdk.core.IResolvable lang) {
             this.props.lang(lang);

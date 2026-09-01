@@ -78,24 +78,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             get;
         }
 
-        /// <summary>Property instanceCount: Number of instance nodes. Range: 1~15.</summary>
+        /// <summary>Property instanceCount: Number of instance nodes, with a range limit of 1 to 9.</summary>
         /// <remarks>
         /// [Professional Edition]
         ///
         /// <list type="bullet">
-        /// <description>Must be &gt;=3 and odd number.</description>
-        /// </list>
-        ///
-        /// [Development Edition]
-        ///
-        /// <list type="bullet">
-        /// <description>Only 1 allowed.</description>
-        /// </list>
-        ///
+        /// <description>The number of instances must be 3 or more and must be an odd number.
+        /// [Developer Edition]</description>
+        /// <description>The number of instances can only be 1.
         /// [Serverless Edition]
-        ///
-        /// <list type="bullet">
-        /// <description>Ignore this parameter.</description>
+        /// Ignore this parameter.</description>
         /// </list>
         /// </remarks>
         [JsiiProperty(name: "instanceCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -169,7 +161,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Property eipEnabled: Effective when ConnectionType is `single_eni`, indicates whether to enable public access (elastic IP).</summary>
+        /// <summary>Property eipEnabled: Valid when `ConnectionType` is `single_eni`, indicating whether to enable public network access (Elastic IP).</summary>
         [JsiiProperty(name: "eipEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EipEnabled
@@ -236,7 +228,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Property securityGroupType: Effective when ConnectionType is `single_eni`, represents the security group type of the instance.</summary>
+        /// <summary>Property securityGroupType: Valid when `ConnectionType` is `single_eni`, indicating the security group type of the instance.</summary>
         [JsiiProperty(name: "securityGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SecurityGroupType
@@ -361,24 +353,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property instanceCount: Number of instance nodes. Range: 1~15.</summary>
+            /// <summary>Property instanceCount: Number of instance nodes, with a range limit of 1 to 9.</summary>
             /// <remarks>
             /// [Professional Edition]
             ///
             /// <list type="bullet">
-            /// <description>Must be &gt;=3 and odd number.</description>
-            /// </list>
-            ///
-            /// [Development Edition]
-            ///
-            /// <list type="bullet">
-            /// <description>Only 1 allowed.</description>
-            /// </list>
-            ///
+            /// <description>The number of instances must be 3 or more and must be an odd number.
+            /// [Developer Edition]</description>
+            /// <description>The number of instances can only be 1.
             /// [Serverless Edition]
-            ///
-            /// <list type="bullet">
-            /// <description>Ignore this parameter.</description>
+            /// Ignore this parameter.</description>
             /// </list>
             /// </remarks>
             [JsiiProperty(name: "instanceCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -440,7 +424,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property eipEnabled: Effective when ConnectionType is `single_eni`, indicates whether to enable public access (elastic IP).</summary>
+            /// <summary>Property eipEnabled: Valid when `ConnectionType` is `single_eni`, indicating whether to enable public network access (Elastic IP).</summary>
             [JsiiOptional]
             [JsiiProperty(name: "eipEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EipEnabled
@@ -492,7 +476,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property securityGroupType: Effective when ConnectionType is `single_eni`, represents the security group type of the instance.</summary>
+            /// <summary>Property securityGroupType: Valid when `ConnectionType` is `single_eni`, indicating the security group type of the instance.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "securityGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SecurityGroupType

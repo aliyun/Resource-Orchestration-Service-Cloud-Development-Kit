@@ -80,7 +80,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         private object _destPortRange;
 
         /// <remarks>
-        /// <strong>Property</strong>: destPortRange: Destination port range, 80\/80.
+        /// <strong>Property</strong>: destPortRange: The destination port range.
+        /// Valid values: -1 and 1 to 65535.
+        /// Use the format 1\/200 or 80\/80. A value of -1\/-1 means all ports.
         /// </remarks>
         [JsiiProperty(name: "destPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DestPortRange
@@ -112,8 +114,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         private object _direction;
 
         /// <remarks>
-        /// <strong>Property</strong>: direction: Regular direction.
-        /// Value: in|out
+        /// <strong>Property</strong>: direction: The direction of traffic to which the ACL rule applies. Valid values:
+        /// - in: inbound. Traffic from an external network to the local branch where the SAG
+        /// instance is deployed.
+        /// - out: outbound. Traffic from the local branch where the SAG instance is deployed
+        /// to an external network.
         /// </remarks>
         [JsiiProperty(name: "direction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Direction
@@ -241,7 +246,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         private object _sourcePortRange;
 
         /// <remarks>
-        /// <strong>Property</strong>: sourcePortRange: Source port range, 80\/80.
+        /// <strong>Property</strong>: sourcePortRange: The source port range.
+        /// Valid values: -1 and 1 to 65535.
+        /// Use the format 1\/200 or 80\/80. A value of -1\/-1 means all ports.
         /// </remarks>
         [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SourcePortRange
@@ -411,8 +418,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         /// <remarks>
         /// <strong>Property</strong>: name: The name of the ACL rule.
-        /// The name must be 2 to 100 characters in length, and can contain digits, underscores
-        /// (_), and hyphens (-). It must start with a letter.
+        /// The name must be 2 to 100 characters in length, start with a letter, and can
+        /// contain digits, periods (.), underscores (_), and hyphens (-).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -445,8 +452,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         private object? _priority;
 
         /// <remarks>
-        /// <strong>Property</strong>: priority: Priority, ranging from 1 to 100.
-        /// Default: 1
+        /// <strong>Property</strong>: priority: The priority of the ACL rule.
+        /// A smaller value indicates a higher priority. If multiple rules have the same
+        /// priority, the rule that is first delivered to the Smart Access Gateway device
+        /// takes precedence.
+        /// Valid values: 1 to 100. Default value: 1.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

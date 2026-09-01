@@ -176,7 +176,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
 
         private object? _resource;
 
-        /// <summary>Property resource:.</summary>
+        /// <summary>Property resource: A collection of service resources.</summary>
+        /// <remarks>
+        /// You can add up to 10 resources in a single
+        /// request. An endpoint service can have a maximum of 20 service resources.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "resource", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-privatelink.RosVpcEndpointService.ResourceProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? Resource
@@ -286,7 +290,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
 
         private object? _serviceResourceType;
 
-        /// <summary>Property serviceResourceType: Service resource type.</summary>
+        /// <summary>Property serviceResourceType: The type of the service resource.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>slb: a Classic Load Balancer (CLB) instance.</description>
+        /// <description>alb: an Application Load Balancer (ALB) instance.</description>
+        /// <description>nlb: a Network Load Balancer (NLB) instance.</description>
+        /// <description>gwlb: a Gateway Load Balancer (GWLB) instance.</description>
+        /// </list>
+        ///
+        ///     PrivateLink does not support connections to TCPSSL listeners on Network Load
+        ///     Balancer (NLB) instances.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "serviceResourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ServiceResourceType

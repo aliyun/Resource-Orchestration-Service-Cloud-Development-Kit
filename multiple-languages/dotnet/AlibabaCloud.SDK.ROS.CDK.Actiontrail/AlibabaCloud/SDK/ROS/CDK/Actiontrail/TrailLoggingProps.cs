@@ -45,7 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
 
         private object _name;
 
-        /// <summary>Property name: The name of the trail to be enabled.</summary>
+        /// <summary>Property name: The name of the trail.\ The name must be 6 to 36 characters in length and can contain lowercase letters, digits, hyphens (-), and underscores (_). It must start with a lowercase letter. &gt;  The name must be unique within an account.</summary>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Name
         {

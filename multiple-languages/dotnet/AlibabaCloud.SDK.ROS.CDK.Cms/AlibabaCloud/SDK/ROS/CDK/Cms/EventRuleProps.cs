@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
     {
         private object _eventPattern;
 
-        /// <summary>Property eventPattern: Event pattern configuration.A maximum of 20 event patterns.</summary>
+        /// <summary>Property eventPattern: The pattern of the event-triggered alert rule.</summary>
         [JsiiProperty(name: "eventPattern", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosEventRule.EventPatternProperty\"}]}},\"kind\":\"array\"}}]}}")]
         public object EventPattern
         {
@@ -123,11 +123,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 
         private object? _eventType;
 
-        /// <summary>Property eventType: The type of the event alert.</summary>
+        /// <summary>Property eventType: The type of the event.</summary>
         /// <remarks>
         /// Valid values:
-        /// SYSTEM
-        /// CUSTOM
+        ///
+        /// <list type="bullet">
+        /// <description>SYSTEM: a system event.</description>
+        /// <description>CUSTOM: a custom event.</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "eventType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -241,11 +244,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 
         private object? _state;
 
-        /// <summary>Property state: The status of the alert rule.</summary>
+        /// <summary>Property state: The status of the event-triggered alert rule.</summary>
         /// <remarks>
         /// Valid values:
-        /// ENABLED
-        /// DISABLED
+        ///
+        /// <list type="bullet">
+        /// <description>ENABLED: The rule is enabled.</description>
+        /// <description>DISABLED: The rule is disabled.</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "state", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

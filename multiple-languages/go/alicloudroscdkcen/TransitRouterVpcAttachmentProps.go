@@ -11,7 +11,10 @@ type TransitRouterVpcAttachmentProps struct {
 	ZoneMappings interface{} `field:"required" json:"zoneMappings" yaml:"zoneMappings"`
 	// Property autoCreateVpcRoute: undefined.
 	AutoCreateVpcRoute interface{} `field:"optional" json:"autoCreateVpcRoute" yaml:"autoCreateVpcRoute"`
-	// Property autoPublishRouteEnabled: Whether to automatically publish routes.
+	// Property autoPublishRouteEnabled: Specifies whether to enable the Enterprise Edition transit router to automatically advertise routes to the VPC instance.
+	//
+	// - false (default): Do not automatically advertise routes.
+	// - true: Automatically advertise routes.
 	AutoPublishRouteEnabled interface{} `field:"optional" json:"autoPublishRouteEnabled" yaml:"autoPublishRouteEnabled"`
 	// Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
 	CenId interface{} `field:"optional" json:"cenId" yaml:"cenId"`
@@ -23,15 +26,29 @@ type TransitRouterVpcAttachmentProps struct {
 	RouteTableAssociationEnabled interface{} `field:"optional" json:"routeTableAssociationEnabled" yaml:"routeTableAssociationEnabled"`
 	// Property routeTablePropagationEnabled: undefined.
 	RouteTablePropagationEnabled interface{} `field:"optional" json:"routeTablePropagationEnabled" yaml:"routeTablePropagationEnabled"`
-	// Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
+	// Property transitRouterAttachmentDescription: The description of the VPC connection.
+	//
+	// The description can be empty or 1 to 256 characters long, and cannot start with
+	// `http:\/\/` or `https:\/\/`.
 	TransitRouterAttachmentDescription interface{} `field:"optional" json:"transitRouterAttachmentDescription" yaml:"transitRouterAttachmentDescription"`
-	// Property transitRouterAttachmentName: The name of the transit router VPC attachment.
+	// Property transitRouterAttachmentName: The name of the VPC connection.
+	//
+	// The name can be empty or 1 to 128 characters long, and cannot start with
+	// `http:\/\/` or `https:\/\/`.
 	TransitRouterAttachmentName interface{} `field:"optional" json:"transitRouterAttachmentName" yaml:"transitRouterAttachmentName"`
 	// Property transitRouterId: The ID of the transit router.
 	TransitRouterId interface{} `field:"optional" json:"transitRouterId" yaml:"transitRouterId"`
-	// Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+	// Property transitRouterVpcAttachmentOptions: The properties of the VPC connection.
+	//
+	// This parameter is deprecated. We recommend
+	// that you use the `Options` parameter instead.
 	TransitRouterVpcAttachmentOptions interface{} `field:"optional" json:"transitRouterVpcAttachmentOptions" yaml:"transitRouterVpcAttachmentOptions"`
-	// Property vpcOwnerId: The owner ID of the VPC.
+	// Property vpcOwnerId: The ID of the account (root account) that owns the VPC instance.
+	//
+	// By
+	// default, this is the ID of the current account.
+	// > This parameter is required if you want to attach a cross-account network
+	// instance.
 	VpcOwnerId interface{} `field:"optional" json:"vpcOwnerId" yaml:"vpcOwnerId"`
 }
 

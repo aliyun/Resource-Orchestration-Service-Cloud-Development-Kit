@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::Namespace`, which is used to query the information about a namespace and the metric data of the namespace.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::Namespace`.
 type Namespace interface {
 	alicloudroscdkcore.Resource
 	INamespace

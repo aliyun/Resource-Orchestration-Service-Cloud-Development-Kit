@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROS::AutoEnableService</code>, which is used to automatically activate an Alibaba Cloud service or feature.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:42:02.060Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:23:14.426Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableService")
 public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ros.IAutoEnableService {
 
@@ -124,9 +124,11 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource implemen
          * DCDN: Dynamic Route for CDN
          * EDAS: Enterprise Distributed Application Service
          * EMAS: Enterprise Mobile Application Studio
+         * EMR/AICenter: EMR Serverless Spark AI Center
          * FC: Function Compute
          * FNF: Serverless Workflow
          * MaxCompute: MaxCompute
+         * Milvus/Function: Milvus Function
          * NAS: Network Attached Storage
          * MNS: Message Service (MNS)
          * HBR: Hybrid Backup Recovery
@@ -182,9 +184,11 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource implemen
          * DCDN: Dynamic Route for CDN
          * EDAS: Enterprise Distributed Application Service
          * EMAS: Enterprise Mobile Application Studio
+         * EMR/AICenter: EMR Serverless Spark AI Center
          * FC: Function Compute
          * FNF: Serverless Workflow
          * MaxCompute: MaxCompute
+         * Milvus/Function: Milvus Function
          * NAS: Network Attached Storage
          * MNS: Message Service (MNS)
          * HBR: Hybrid Backup Recovery
@@ -217,6 +221,31 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource implemen
          */
         public Builder serviceName(final com.aliyun.ros.cdk.core.IResolvable serviceName) {
             this.props.serviceName(serviceName);
+            return this;
+        }
+
+        /**
+         * Property serviceParameters: The parameters that are required to enable the service.
+         * <p>
+         * WorkspaceId is required when ServiceName is EMR/AICenter.
+         * <p>
+         * @return {@code this}
+         * @param serviceParameters Property serviceParameters: The parameters that are required to enable the service. This parameter is required.
+         */
+        public Builder serviceParameters(final com.aliyun.ros.cdk.core.IResolvable serviceParameters) {
+            this.props.serviceParameters(serviceParameters);
+            return this;
+        }
+        /**
+         * Property serviceParameters: The parameters that are required to enable the service.
+         * <p>
+         * WorkspaceId is required when ServiceName is EMR/AICenter.
+         * <p>
+         * @return {@code this}
+         * @param serviceParameters Property serviceParameters: The parameters that are required to enable the service. This parameter is required.
+         */
+        public Builder serviceParameters(final com.aliyun.ros.cdk.ros.RosAutoEnableService.ServiceParametersProperty serviceParameters) {
+            this.props.serviceParameters(serviceParameters);
             return this;
         }
 

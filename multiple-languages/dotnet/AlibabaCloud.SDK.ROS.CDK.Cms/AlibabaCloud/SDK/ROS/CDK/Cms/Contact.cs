@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::CMS::Contact`, which is used to create an alert contact.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::CMS::Contact`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosContact`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contact

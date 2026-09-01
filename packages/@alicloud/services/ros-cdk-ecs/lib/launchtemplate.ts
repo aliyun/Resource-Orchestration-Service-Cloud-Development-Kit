@@ -267,7 +267,7 @@ export interface ILaunchTemplate extends ros.IResource {
     readonly attrLaunchTemplateName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::LaunchTemplate`, which is used to create a launch template. You can use a launch template to create an Elastic Compute Service (ECS) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::LaunchTemplate`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLaunchTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-launchtemplate
  */

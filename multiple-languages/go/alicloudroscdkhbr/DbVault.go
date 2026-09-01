@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbVault`, which is used to create a mirror vault.
+// This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbVault`.
 type DbVault interface {
 	alicloudroscdkcore.Resource
 	IDbVault

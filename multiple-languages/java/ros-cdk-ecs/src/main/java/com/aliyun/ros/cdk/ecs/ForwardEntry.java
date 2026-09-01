@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::ForwardEntry</code>, which is used to configure the Destination Network Address Translation (DNAT) table of a Network Address Translation (NAT) gateway.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::ForwardEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.883Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.247Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ForwardEntry")
 public class ForwardEntry extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IForwardEntry {
 

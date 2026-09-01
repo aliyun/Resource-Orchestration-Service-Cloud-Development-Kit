@@ -5,30 +5,64 @@ package alicloudroscdkmongodb
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
 type ShardingInstanceProps struct {
-	// Property configServer:.
+	// Property configServer: The information of Configserver nodes.
 	ConfigServer interface{} `field:"required" json:"configServer" yaml:"configServer"`
-	// Property mongos:.
+	// Property mongos: The information of Mongos nodes.
 	Mongos interface{} `field:"required" json:"mongos" yaml:"mongos"`
-	// Property replicaSet:.
+	// Property replicaSet: The information of shard nodes.
 	ReplicaSet interface{} `field:"required" json:"replicaSet" yaml:"replicaSet"`
-	// Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
-	AccountPassword interface{} `field:"optional" json:"accountPassword" yaml:"accountPassword"`
-	// Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
+	// Property accountPassword: The password of the root account.
 	//
-	// Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+	// The password must meet the following
+	// requirements:
+	// - It must contain at least three of the following character types: uppercase
+	// letters, lowercase letters, digits, and special characters.
+	// - Special characters include !@#$%^&\*()_+-=
+	// - It must be 8 to 32 characters in length.
+	AccountPassword interface{} `field:"optional" json:"accountPassword" yaml:"accountPassword"`
+	// Property autoRenew: Specifies whether to enable auto-renewal for the instance.
+	//
+	// Valid values:
+	// - true: Auto-renewal is enabled.
+	// - false: Auto-renewal is disabled. You must manually renew the instance. This is
+	// the default value.
+	// > This parameter is optional and takes effect only when you set the ChargeType
+	// parameter to PrePaid.
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
 	// Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid.
 	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
-	// Property dbInstanceDescription: Description of created database instance.
+	// Property dbInstanceDescription: The name of the instance.
+	//
+	// The name must meet the following requirements:
+	// - It must start with a Chinese character or a letter.
+	// - It can contain digits, Chinese characters, letters, underscores (_), periods
+	// (.), and hyphens (-).
+	// - It must be 2 to 256 characters in length.
 	DbInstanceDescription interface{} `field:"optional" json:"dbInstanceDescription" yaml:"dbInstanceDescription"`
-	// Property engineVersion: Database instance version.
+	// Property engineVersion: The database version.
+	//
+	// Valid values:
+	// - 8.0
+	// - 7.0
+	// - 6.0
+	// - 5.0
+	// - 4.4
+	// - 4.2
+	// - 4.0
+	// > * When you clone an instance by calling this operation, the value of this
+	// parameter must be the same as that of the source instance.
 	EngineVersion interface{} `field:"optional" json:"engineVersion" yaml:"engineVersion"`
 	// Property hiddenZoneId: Configure the zone where the hidden node resides to implement multi-availability zone deployment.
 	//
 	// When the value of the EngineVersion is 4.4 and later, this parameter is available and required.
 	// The value of this parameter cannot be the same as that of ZoneId and SecondaryZoneId.
 	HiddenZoneId interface{} `field:"optional" json:"hiddenZoneId" yaml:"hiddenZoneId"`
-	// Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+	// Property period: The subscription duration of the instance.
+	//
+	// Unit: month.
+	// Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+	// > This parameter is required and takes effect only when you set the ChargeType
+	// parameter to PrePaid.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	// Property protocolType: Protocol type.
 	//
@@ -48,7 +82,10 @@ type ShardingInstanceProps struct {
 	//
 	// Update to this property will cover the current security ips.
 	SecurityIpArray interface{} `field:"optional" json:"securityIpArray" yaml:"securityIpArray"`
-	// Property srcDbInstanceId: Create an instance of the backup set based on an instance.
+	// Property srcDbInstanceId: The source instance ID.
+	//
+	// > This parameter is required only when you clone an instance by calling this
+	// operation. You must also specify the RestoreTime parameter.
 	SrcDbInstanceId interface{} `field:"optional" json:"srcDbInstanceId" yaml:"srcDbInstanceId"`
 	// Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB.
 	StorageEngine interface{} `field:"optional" json:"storageEngine" yaml:"storageEngine"`

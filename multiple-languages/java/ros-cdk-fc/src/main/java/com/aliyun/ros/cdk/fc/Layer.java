@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC::Layer</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC::Layer</code>Releases a layer version in Function Compute.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:13:35.384Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:20:02.173Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.Layer")
 public class Layer extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc.ILayer {
 

@@ -116,12 +116,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         private object? _constraints;
 
         /// <remarks>
-        /// <strong>Property</strong>: constraints: The constraints of the parameter.
-        /// By default, this parameter is null. Valid values:
-        /// AllowedValues: The value that is allowed for the parameter. It must be an array string.
-        /// AllowedPattern: The pattern that is allowed for the parameter. It must be a regular expression.
-        /// MinLength: The minimum length of the parameter.
-        /// MaxLength: The maximum length of the parameter.
+        /// <strong>Property</strong>: constraints: The constraints of the encryption parameter. By default, this parameter is null.
+        /// Valid values:
+        /// *   AllowedValues: The value that is allowed for the encryption parameter. It
+        /// must be an array string.
+        /// *   AllowedPattern: The pattern that is allowed for the encryption parameter. It
+        /// must be a regular expression.
+        /// *   MinLength: The minimum length of the encryption parameter.
+        /// *   MaxLength: The maximum length of the encryption parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "constraints", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

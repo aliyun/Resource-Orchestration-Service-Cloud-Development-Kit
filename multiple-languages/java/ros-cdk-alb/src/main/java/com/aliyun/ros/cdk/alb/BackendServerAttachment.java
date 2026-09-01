@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::BackendServerAttachment</code>Use , which to add backend servers to a server group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::BackendServerAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.180Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.364Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.BackendServerAttachment")
 public class BackendServerAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.IBackendServerAttachment {
 
@@ -133,26 +133,24 @@ public class BackendServerAttachment extends com.aliyun.ros.cdk.core.Resource im
         }
 
         /**
-         * Property servers: The backend servers that you want to add to the server group.
+         * Property servers: A list of backend servers.
          * <p>
-         * You can specify up to
-         * 40 servers in each call.
+         * You can add up to 200 servers in a single call.
          * <p>
          * @return {@code this}
-         * @param servers Property servers: The backend servers that you want to add to the server group. This parameter is required.
+         * @param servers Property servers: A list of backend servers. This parameter is required.
          */
         public Builder servers(final com.aliyun.ros.cdk.core.IResolvable servers) {
             this.props.servers(servers);
             return this;
         }
         /**
-         * Property servers: The backend servers that you want to add to the server group.
+         * Property servers: A list of backend servers.
          * <p>
-         * You can specify up to
-         * 40 servers in each call.
+         * You can add up to 200 servers in a single call.
          * <p>
          * @return {@code this}
-         * @param servers Property servers: The backend servers that you want to add to the server group. This parameter is required.
+         * @param servers Property servers: A list of backend servers. This parameter is required.
          */
         public Builder servers(final java.util.List<? extends java.lang.Object> servers) {
             this.props.servers(servers);

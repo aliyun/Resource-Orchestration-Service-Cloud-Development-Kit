@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dms
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::DMS::Instance2`, which is used to register a database instance in new Data Management (DMS).</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::DMS::Instance2`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance2`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance2

@@ -72,7 +72,7 @@ export interface ICallback extends ros.IResource {
     readonly attrCryptType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::Callback`, which is used to create a callback.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::Callback`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCallback`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-callback
  */

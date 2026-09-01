@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAG::ACLRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:44:50.960Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:26:52.058Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.ACLRule")
 public class ACLRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sag.IACLRule {
 
@@ -154,20 +154,26 @@ public class ACLRule extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property destPortRange: Destination port range, 80/80.
+         * Property destPortRange: The destination port range.
+         * <p>
+         * Valid values: -1 and 1 to 65535.
+         * Use the format 1/200 or 80/80. A value of -1/-1 means all ports.
          * <p>
          * @return {@code this}
-         * @param destPortRange Property destPortRange: Destination port range, 80/80. This parameter is required.
+         * @param destPortRange Property destPortRange: The destination port range. This parameter is required.
          */
         public Builder destPortRange(final java.lang.String destPortRange) {
             this.props.destPortRange(destPortRange);
             return this;
         }
         /**
-         * Property destPortRange: Destination port range, 80/80.
+         * Property destPortRange: The destination port range.
+         * <p>
+         * Valid values: -1 and 1 to 65535.
+         * Use the format 1/200 or 80/80. A value of -1/-1 means all ports.
          * <p>
          * @return {@code this}
-         * @param destPortRange Property destPortRange: Destination port range, 80/80. This parameter is required.
+         * @param destPortRange Property destPortRange: The destination port range. This parameter is required.
          */
         public Builder destPortRange(final com.aliyun.ros.cdk.core.IResolvable destPortRange) {
             this.props.destPortRange(destPortRange);
@@ -175,24 +181,38 @@ public class ACLRule extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property direction: Regular direction.
+         * Property direction: The direction of traffic to which the ACL rule applies.
          * <p>
-         * Value: in|out
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>in: inbound. Traffic from an external network to the local branch where the SAG
+         * instance is deployed.</li>
+         * <li>out: outbound. Traffic from the local branch where the SAG instance is deployed
+         * to an external network.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param direction Property direction: Regular direction. This parameter is required.
+         * @param direction Property direction: The direction of traffic to which the ACL rule applies. This parameter is required.
          */
         public Builder direction(final java.lang.String direction) {
             this.props.direction(direction);
             return this;
         }
         /**
-         * Property direction: Regular direction.
+         * Property direction: The direction of traffic to which the ACL rule applies.
          * <p>
-         * Value: in|out
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>in: inbound. Traffic from an external network to the local branch where the SAG
+         * instance is deployed.</li>
+         * <li>out: outbound. Traffic from the local branch where the SAG instance is deployed
+         * to an external network.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param direction Property direction: Regular direction. This parameter is required.
+         * @param direction Property direction: The direction of traffic to which the ACL rule applies. This parameter is required.
          */
         public Builder direction(final com.aliyun.ros.cdk.core.IResolvable direction) {
             this.props.direction(direction);
@@ -263,20 +283,26 @@ public class ACLRule extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property sourcePortRange: Source port range, 80/80.
+         * Property sourcePortRange: The source port range.
+         * <p>
+         * Valid values: -1 and 1 to 65535.
+         * Use the format 1/200 or 80/80. A value of -1/-1 means all ports.
          * <p>
          * @return {@code this}
-         * @param sourcePortRange Property sourcePortRange: Source port range, 80/80. This parameter is required.
+         * @param sourcePortRange Property sourcePortRange: The source port range. This parameter is required.
          */
         public Builder sourcePortRange(final java.lang.String sourcePortRange) {
             this.props.sourcePortRange(sourcePortRange);
             return this;
         }
         /**
-         * Property sourcePortRange: Source port range, 80/80.
+         * Property sourcePortRange: The source port range.
+         * <p>
+         * Valid values: -1 and 1 to 65535.
+         * Use the format 1/200 or 80/80. A value of -1/-1 means all ports.
          * <p>
          * @return {@code this}
-         * @param sourcePortRange Property sourcePortRange: Source port range, 80/80. This parameter is required.
+         * @param sourcePortRange Property sourcePortRange: The source port range. This parameter is required.
          */
         public Builder sourcePortRange(final com.aliyun.ros.cdk.core.IResolvable sourcePortRange) {
             this.props.sourcePortRange(sourcePortRange);
@@ -361,8 +387,8 @@ public class ACLRule extends com.aliyun.ros.cdk.core.Resource implements com.ali
         /**
          * Property name: The name of the ACL rule.
          * <p>
-         * The name must be 2 to 100 characters in length, and can contain digits, underscores
-         * (_), and hyphens (-). It must start with a letter.
+         * The name must be 2 to 100 characters in length, start with a letter, and can
+         * contain digits, periods (.), underscores (_), and hyphens (-).
          * <p>
          * @return {@code this}
          * @param name Property name: The name of the ACL rule. This parameter is required.
@@ -374,8 +400,8 @@ public class ACLRule extends com.aliyun.ros.cdk.core.Resource implements com.ali
         /**
          * Property name: The name of the ACL rule.
          * <p>
-         * The name must be 2 to 100 characters in length, and can contain digits, underscores
-         * (_), and hyphens (-). It must start with a letter.
+         * The name must be 2 to 100 characters in length, start with a letter, and can
+         * contain digits, periods (.), underscores (_), and hyphens (-).
          * <p>
          * @return {@code this}
          * @param name Property name: The name of the ACL rule. This parameter is required.
@@ -386,24 +412,30 @@ public class ACLRule extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property priority: Priority, ranging from 1 to 100.
+         * Property priority: The priority of the ACL rule.
          * <p>
-         * Default: 1
+         * A smaller value indicates a higher priority. If multiple rules have the same
+         * priority, the rule that is first delivered to the Smart Access Gateway device
+         * takes precedence.
+         * Valid values: 1 to 100. Default value: 1.
          * <p>
          * @return {@code this}
-         * @param priority Property priority: Priority, ranging from 1 to 100. This parameter is required.
+         * @param priority Property priority: The priority of the ACL rule. This parameter is required.
          */
         public Builder priority(final java.lang.Number priority) {
             this.props.priority(priority);
             return this;
         }
         /**
-         * Property priority: Priority, ranging from 1 to 100.
+         * Property priority: The priority of the ACL rule.
          * <p>
-         * Default: 1
+         * A smaller value indicates a higher priority. If multiple rules have the same
+         * priority, the rule that is first delivered to the Smart Access Gateway device
+         * takes precedence.
+         * Valid values: 1 to 100. Default value: 1.
          * <p>
          * @return {@code this}
-         * @param priority Property priority: Priority, ranging from 1 to 100. This parameter is required.
+         * @param priority Property priority: The priority of the ACL rule. This parameter is required.
          */
         public Builder priority(final com.aliyun.ros.cdk.core.IResolvable priority) {
             this.props.priority(priority);

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::HttpApi`, which is used to query the information about an HTTP API.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::HttpApi`.
 type HttpApi interface {
 	alicloudroscdkcore.Resource
 	IHttpApi

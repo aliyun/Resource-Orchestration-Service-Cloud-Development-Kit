@@ -5,13 +5,25 @@ package com.aliyun.ros.cdk.cdn;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domainconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:42:42.230Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:28:08.574Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.DomainConfigProps")
 @software.amazon.jsii.Jsii.Proxy(DomainConfigProps.Jsii$Proxy.class)
 public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property domainNames: Your accelerated domain name, separated by commas in English.
+     * Property domainNames: The domain names to configure for acceleration.
+     * <p>
+     * Separate multiple domain names
+     * with a comma (,). Note the following limits:
+     * <p>
+     * <ul>
+     * <li>You can specify up to 20 domain names.</li>
+     * <li>The number of domain names multiplied by the number of features cannot exceed</li>
+     * </ul>
+     * <p>
+     * <ol>
+     * <li></li>
+     * </ol>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDomainNames();
 
@@ -39,7 +51,18 @@ public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DomainConfigProps#getDomainNames}
-         * @param domainNames Property domainNames: Your accelerated domain name, separated by commas in English. This parameter is required.
+         * @param domainNames Property domainNames: The domain names to configure for acceleration. This parameter is required.
+         *                    Separate multiple domain names
+         *                    with a comma (,). Note the following limits:
+         *                    <p>
+         *                    <ul>
+         *                    <li>You can specify up to 20 domain names.</li>
+         *                    <li>The number of domain names multiplied by the number of features cannot exceed</li>
+         *                    </ul>
+         *                    <p>
+         *                    <ol>
+         *                    <li></li>
+         *                    </ol>
          * @return {@code this}
          */
         public Builder domainNames(java.lang.String domainNames) {
@@ -49,7 +72,18 @@ public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DomainConfigProps#getDomainNames}
-         * @param domainNames Property domainNames: Your accelerated domain name, separated by commas in English. This parameter is required.
+         * @param domainNames Property domainNames: The domain names to configure for acceleration. This parameter is required.
+         *                    Separate multiple domain names
+         *                    with a comma (,). Note the following limits:
+         *                    <p>
+         *                    <ul>
+         *                    <li>You can specify up to 20 domain names.</li>
+         *                    <li>The number of domain names multiplied by the number of features cannot exceed</li>
+         *                    </ul>
+         *                    <p>
+         *                    <ol>
+         *                    <li></li>
+         *                    </ol>
          * @return {@code this}
          */
         public Builder domainNames(com.aliyun.ros.cdk.core.IResolvable domainNames) {

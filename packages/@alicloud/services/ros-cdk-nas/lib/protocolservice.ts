@@ -20,10 +20,8 @@ export interface ProtocolServiceProps {
     readonly protocolSpec: string | ros.IResolvable;
 
     /**
-     * Property protocolType: The protocol type of agreement service.
-     * Ranges:
-     * NFS: Agreement service supports NFS protocol access.
-     * The default value: NFS.
+     * Property protocolType: The protocol type of the protocol service.
+     * Valid value: NFS (default). Only NFSv3 is supported.
      */
     readonly protocolType: string | ros.IResolvable;
 
@@ -38,11 +36,14 @@ export interface ProtocolServiceProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * Property description: Description of protocol service.The console shows the "protocol service name".
-     * limit:
-     * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * Property description: The description of the protocol service. The name of the protocol service appears
+     * in the console.
+     * Limits:
+     * *   The description must be 2 to 128 characters in length.
+     * *   The description must start with a letter but cannot start with `http:\/\/` or
+     * `https:\/\/`.
+     * *   The description can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).
      */
     readonly description?: string | ros.IResolvable;
 

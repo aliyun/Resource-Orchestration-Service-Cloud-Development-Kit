@@ -5,7 +5,7 @@ package alicloudroscdkalb
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
 type ListenerProps struct {
-	// Property defaultActions: The actions of the rule.
+	// Property defaultActions: The default actions for the listener.
 	DefaultActions interface{} `field:"required" json:"defaultActions" yaml:"defaultActions"`
 	// Property listenerPort: The frontend port that is used by the ALB instance.
 	//
@@ -17,13 +17,15 @@ type ListenerProps struct {
 	ListenerProtocol interface{} `field:"required" json:"listenerProtocol" yaml:"listenerProtocol"`
 	// Property loadBalancerId: The ID of the ALB instance.
 	LoadBalancerId interface{} `field:"required" json:"loadBalancerId" yaml:"loadBalancerId"`
-	// Property caCertificates: List of configured CA certificates for listener.
+	// Property caCertificates: A list of CA certificates for the listener.
+	//
+	// Only one CA certificate is supported.
 	CaCertificates interface{} `field:"optional" json:"caCertificates" yaml:"caCertificates"`
 	// Property caEnabled: Specifies whether to enable mutual authentication.
 	//
 	// Default false.
 	CaEnabled interface{} `field:"optional" json:"caEnabled" yaml:"caEnabled"`
-	// Property certificates: The list of SSL certificates for listener.
+	// Property certificates: A list of server certificates.
 	Certificates interface{} `field:"optional" json:"certificates" yaml:"certificates"`
 	// Property gzipEnabled: Specifies whether to enable gzip compression to compress files of a specific type.
 	//
@@ -37,15 +39,20 @@ type ListenerProps struct {
 	// Default value: true.
 	// Note: Only HTTPS listeners support this parameter.
 	Http2Enabled interface{} `field:"optional" json:"http2Enabled" yaml:"http2Enabled"`
-	// Property idleTimeout: The timeout period of idle connections.
+	// Property idleTimeout: The idle timeout in seconds.
 	//
-	// Valid values: 1 to 3600. Unit: seconds.
+	// Valid values: 1 to 600.
 	// Default value: 15.
-	// If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
+	// If no requests are received on a connection within the idle timeout, the load
+	// balancer closes the connection. A new connection is established for the next
+	// request.
+	// > You can request a quota increase to a maximum of 3,600 seconds.
 	IdleTimeout interface{} `field:"optional" json:"idleTimeout" yaml:"idleTimeout"`
-	// Property listenerDescription: The description of the listener.
+	// Property listenerDescription: A custom name for the listener.
 	//
-	// The description must be 2 to 256 characters in length.
+	// The name must be 2 to 256 characters long and can contain letters, digits,
+	// hyphens (-), forward slashes (\/), periods (.), underscores (_), and Chinese
+	// characters.
 	ListenerDescription interface{} `field:"optional" json:"listenerDescription" yaml:"listenerDescription"`
 	// Property listenerStatus: The status of the listener.
 	ListenerStatus interface{} `field:"optional" json:"listenerStatus" yaml:"listenerStatus"`
@@ -53,12 +60,13 @@ type ListenerProps struct {
 	LogConfig interface{} `field:"optional" json:"logConfig" yaml:"logConfig"`
 	// Property quicConfig: Select a QUIC listener and associate it with the ALB instance.
 	QuicConfig interface{} `field:"optional" json:"quicConfig" yaml:"quicConfig"`
-	// Property requestTimeout: The timeout period of the request.
+	// Property requestTimeout: The request timeout in seconds.
 	//
-	// Valid values: 1 to 900. Unit: seconds.
+	// Valid values: 1 to 600.
 	// Default value: 60.
-	// If no response is received from the backend server during the request timeout period,
-	// ALB sends an HTTP 504 error code to the client.
+	// If a backend server does not respond within the timeout period, the load balancer
+	// returns an `HTTP 504` error to the client.
+	// > You can request a quota increase to a maximum of 3,600 seconds.
 	RequestTimeout interface{} `field:"optional" json:"requestTimeout" yaml:"requestTimeout"`
 	// Property securityPolicyId: The ID of the security policy.
 	//
@@ -67,7 +75,7 @@ type ListenerProps struct {
 	// Default value: tls_cipher_policy_1_0. This value indicates a system security policy.
 	// Note: Only HTTPS listeners support this parameter.
 	SecurityPolicyId interface{} `field:"optional" json:"securityPolicyId" yaml:"securityPolicyId"`
-	// Property xForwardedForConfig: The configuration of the XForward field.
+	// Property xForwardedForConfig: The configuration of `X-Forwarded-*` headers.
 	XForwardedForConfig interface{} `field:"optional" json:"xForwardedForConfig" yaml:"xForwardedForConfig"`
 }
 

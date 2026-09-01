@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Represents a <code>RunCommandOfLifespan</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.922Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.285Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.IRunCommandOfLifespan")
 @software.amazon.jsii.Jsii.Proxy(IRunCommandOfLifespan.Jsii$Proxy.class)
 public interface IRunCommandOfLifespan extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

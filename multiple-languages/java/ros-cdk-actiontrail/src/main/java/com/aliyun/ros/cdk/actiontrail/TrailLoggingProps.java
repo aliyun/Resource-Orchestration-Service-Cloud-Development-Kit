@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.actiontrail;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-traillogging
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:13:01.949Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:51:46.218Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.TrailLoggingProps")
 @software.amazon.jsii.Jsii.Proxy(TrailLoggingProps.Jsii$Proxy.class)
 public interface TrailLoggingProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,7 @@ public interface TrailLoggingProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getEnable();
 
     /**
-     * Property name: The name of the trail to be enabled.
+     * Property name: The name of the trail.\ The name must be 6 to 36 characters in length and can contain lowercase letters, digits, hyphens (-), and underscores (_). It must start with a lowercase letter. &gt;  The name must be unique within an account.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
@@ -55,7 +55,7 @@ public interface TrailLoggingProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link TrailLoggingProps#getName}
-         * @param name Property name: The name of the trail to be enabled. This parameter is required.
+         * @param name Property name: The name of the trail.\ The name must be 6 to 36 characters in length and can contain lowercase letters, digits, hyphens (-), and underscores (_). It must start with a lowercase letter. &gt;  The name must be unique within an account. This parameter is required.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -65,7 +65,7 @@ public interface TrailLoggingProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link TrailLoggingProps#getName}
-         * @param name Property name: The name of the trail to be enabled. This parameter is required.
+         * @param name Property name: The name of the trail.\ The name must be 6 to 36 characters in length and can contain lowercase letters, digits, hyphens (-), and underscores (_). It must start with a lowercase letter. &gt;  The name must be unique within an account. This parameter is required.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusteraddons
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:04:30.544Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:56:05.594Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterAddonsProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterAddonsProps.Jsii$Proxy.class)
 public interface ClusterAddonsProps extends software.amazon.jsii.JsiiSerializable {
@@ -31,6 +31,17 @@ public interface ClusterAddonsProps extends software.amazon.jsii.JsiiSerializabl
      * Default false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstalledIgnore() {
+        return null;
+    }
+
+    /**
+     * Property overrideExisting: Whether to override configuration of already installed addons when creating.
+     * <p>
+     * If true, when creating, addons that already exist will have their configuration overridden, and addons that do not exist will be installed. When deleting, only uninstall addons that are installed during the creation stage.
+     * Cannot be used together with InstalledIgnore.
+     * Default false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOverrideExisting() {
         return null;
     }
 
@@ -80,6 +91,7 @@ public interface ClusterAddonsProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object addons;
         java.lang.Object clusterId;
         java.lang.Object installedIgnore;
+        java.lang.Object overrideExisting;
         java.lang.Object rolePolicy;
         java.lang.Object validationMode;
         java.lang.Object waitUntil;
@@ -151,6 +163,32 @@ public interface ClusterAddonsProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder installedIgnore(com.aliyun.ros.cdk.core.IResolvable installedIgnore) {
             this.installedIgnore = installedIgnore;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterAddonsProps#getOverrideExisting}
+         * @param overrideExisting Property overrideExisting: Whether to override configuration of already installed addons when creating.
+         *                         If true, when creating, addons that already exist will have their configuration overridden, and addons that do not exist will be installed. When deleting, only uninstall addons that are installed during the creation stage.
+         *                         Cannot be used together with InstalledIgnore.
+         *                         Default false.
+         * @return {@code this}
+         */
+        public Builder overrideExisting(java.lang.Boolean overrideExisting) {
+            this.overrideExisting = overrideExisting;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterAddonsProps#getOverrideExisting}
+         * @param overrideExisting Property overrideExisting: Whether to override configuration of already installed addons when creating.
+         *                         If true, when creating, addons that already exist will have their configuration overridden, and addons that do not exist will be installed. When deleting, only uninstall addons that are installed during the creation stage.
+         *                         Cannot be used together with InstalledIgnore.
+         *                         Default false.
+         * @return {@code this}
+         */
+        public Builder overrideExisting(com.aliyun.ros.cdk.core.IResolvable overrideExisting) {
+            this.overrideExisting = overrideExisting;
             return this;
         }
 
@@ -253,6 +291,7 @@ public interface ClusterAddonsProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object addons;
         private final java.lang.Object clusterId;
         private final java.lang.Object installedIgnore;
+        private final java.lang.Object overrideExisting;
         private final java.lang.Object rolePolicy;
         private final java.lang.Object validationMode;
         private final java.lang.Object waitUntil;
@@ -266,6 +305,7 @@ public interface ClusterAddonsProps extends software.amazon.jsii.JsiiSerializabl
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.installedIgnore = software.amazon.jsii.Kernel.get(this, "installedIgnore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.overrideExisting = software.amazon.jsii.Kernel.get(this, "overrideExisting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rolePolicy = software.amazon.jsii.Kernel.get(this, "rolePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.validationMode = software.amazon.jsii.Kernel.get(this, "validationMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.waitUntil = software.amazon.jsii.Kernel.get(this, "waitUntil", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -279,6 +319,7 @@ public interface ClusterAddonsProps extends software.amazon.jsii.JsiiSerializabl
             this.addons = java.util.Objects.requireNonNull(builder.addons, "addons is required");
             this.clusterId = java.util.Objects.requireNonNull(builder.clusterId, "clusterId is required");
             this.installedIgnore = builder.installedIgnore;
+            this.overrideExisting = builder.overrideExisting;
             this.rolePolicy = builder.rolePolicy;
             this.validationMode = builder.validationMode;
             this.waitUntil = builder.waitUntil;
@@ -297,6 +338,11 @@ public interface ClusterAddonsProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getInstalledIgnore() {
             return this.installedIgnore;
+        }
+
+        @Override
+        public final java.lang.Object getOverrideExisting() {
+            return this.overrideExisting;
         }
 
         @Override
@@ -324,6 +370,9 @@ public interface ClusterAddonsProps extends software.amazon.jsii.JsiiSerializabl
             data.set("clusterId", om.valueToTree(this.getClusterId()));
             if (this.getInstalledIgnore() != null) {
                 data.set("installedIgnore", om.valueToTree(this.getInstalledIgnore()));
+            }
+            if (this.getOverrideExisting() != null) {
+                data.set("overrideExisting", om.valueToTree(this.getOverrideExisting()));
             }
             if (this.getRolePolicy() != null) {
                 data.set("rolePolicy", om.valueToTree(this.getRolePolicy()));
@@ -355,6 +404,7 @@ public interface ClusterAddonsProps extends software.amazon.jsii.JsiiSerializabl
             if (!addons.equals(that.addons)) return false;
             if (!clusterId.equals(that.clusterId)) return false;
             if (this.installedIgnore != null ? !this.installedIgnore.equals(that.installedIgnore) : that.installedIgnore != null) return false;
+            if (this.overrideExisting != null ? !this.overrideExisting.equals(that.overrideExisting) : that.overrideExisting != null) return false;
             if (this.rolePolicy != null ? !this.rolePolicy.equals(that.rolePolicy) : that.rolePolicy != null) return false;
             if (this.validationMode != null ? !this.validationMode.equals(that.validationMode) : that.validationMode != null) return false;
             return this.waitUntil != null ? this.waitUntil.equals(that.waitUntil) : that.waitUntil == null;
@@ -365,6 +415,7 @@ public interface ClusterAddonsProps extends software.amazon.jsii.JsiiSerializabl
             int result = this.addons.hashCode();
             result = 31 * result + (this.clusterId.hashCode());
             result = 31 * result + (this.installedIgnore != null ? this.installedIgnore.hashCode() : 0);
+            result = 31 * result + (this.overrideExisting != null ? this.overrideExisting.hashCode() : 0);
             result = 31 * result + (this.rolePolicy != null ? this.rolePolicy.hashCode() : 0);
             result = 31 * result + (this.validationMode != null ? this.validationMode.hashCode() : 0);
             result = 31 * result + (this.waitUntil != null ? this.waitUntil.hashCode() : 0);

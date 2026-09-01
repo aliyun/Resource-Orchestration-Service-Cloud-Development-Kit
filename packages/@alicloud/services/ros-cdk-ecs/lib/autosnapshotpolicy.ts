@@ -41,10 +41,13 @@ export interface AutoSnapshotPolicyProps {
     readonly autoSnapshotPolicyName?: string | ros.IResolvable;
 
     /**
-     * Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies. Range:
-     * -1: Permanent storage
-     * 1-65535: Specifies the number of days to save
-     * Default value: -1
+     * Property copiedSnapshotsRetentionDays: The retention period of the snapshot copy in the destination region. Unit: days.
+     * Valid values:
+     * - -1: The snapshot copy is retained until it is deleted.
+     * - 1 to 65535: The snapshot copy is retained for the specified number of days.
+     * After the retention period of the snapshot copy expires, the snapshot copy is
+     * automatically deleted.
+     * Default value: -1.
      */
     readonly copiedSnapshotsRetentionDays?: number | ros.IResolvable;
 
@@ -96,7 +99,7 @@ export interface IAutoSnapshotPolicy extends ros.IResource {
     readonly attrAutoSnapshotPolicyId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AutoSnapshotPolicy`, which is used to create an automatic snapshot policy.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AutoSnapshotPolicy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoSnapshotPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
  */

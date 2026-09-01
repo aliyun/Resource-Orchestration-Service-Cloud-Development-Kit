@@ -105,7 +105,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
             }
         }
 
-        /// <summary>Property desktopName: The name of the cloud desktop.</summary>
+        /// <summary>Property desktopName: The name of the desktop.</summary>
+        /// <remarks>
+        /// The name must meet the following requirements:
+        ///
+        /// <list type="bullet">
+        /// <description>The name cannot exceed 64 characters in length.</description>
+        /// <description>It must start with a letter or a Chinese character. It cannot start
+        /// with<c>http:\/\/</c> or <c>https:\/\/</c>.</description>
+        /// <description>It can contain letters, digits, Chinese characters, colons (:), underscores
+        /// (_), periods (.), and hyphens (-).</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "desktopName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DesktopName
@@ -419,7 +430,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property desktopName: The name of the cloud desktop.</summary>
+            /// <summary>Property desktopName: The name of the desktop.</summary>
+            /// <remarks>
+            /// The name must meet the following requirements:
+            ///
+            /// <list type="bullet">
+            /// <description>The name cannot exceed 64 characters in length.</description>
+            /// <description>It must start with a letter or a Chinese character. It cannot start
+            /// with<c>http:\/\/</c> or <c>https:\/\/</c>.</description>
+            /// <description>It can contain letters, digits, Chinese characters, colons (:), underscores
+            /// (_), periods (.), and hyphens (-).</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "desktopName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DesktopName

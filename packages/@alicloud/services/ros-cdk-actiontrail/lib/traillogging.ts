@@ -15,7 +15,10 @@ export interface TrailLoggingProps {
     readonly enable: boolean | ros.IResolvable;
 
     /**
-     * Property name: The name of the trail to be enabled.
+     * Property name: The name of the trail.\
+     * The name must be 6 to 36 characters in length and can contain lowercase letters,
+     * digits, hyphens (-), and underscores (_). It must start with a lowercase letter.
+     * >  The name must be unique within an account.
      */
     readonly name: string | ros.IResolvable;
 }
@@ -52,7 +55,7 @@ export interface ITrailLogging extends ros.IResource {
     readonly attrStopLoggingTime: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ACTIONTRAIL::TrailLogging`, which is used to enable or disable trail logging.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ACTIONTRAIL::TrailLogging`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrailLogging`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-traillogging
  */

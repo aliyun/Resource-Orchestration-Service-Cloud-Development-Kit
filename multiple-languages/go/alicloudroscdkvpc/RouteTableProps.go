@@ -8,14 +8,20 @@ type RouteTableProps struct {
 	// Property vpcId: The ID of the VPC to which the custom route table belongs.
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	// Property associateType: The type of the route table.
+	//
+	// Valid values:
+	// *   VSwitch (default): vSwitch route table
+	// *   Gateway: gateway route table.
 	AssociateType interface{} `field:"optional" json:"associateType" yaml:"associateType"`
 	// Property description: The description of the route table.
 	//
-	// The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:\/\/ or https:\/\/.
+	// The description must be 1 to 256 characters in length, and cannot start with
+	// `http:\/\/` or `https:\/\/`.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property routeTableName: The name of the route table.
 	//
-	// The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:\/\/ or https:\/\/.
+	// The name must be 1 to 128 characters in length, and cannot start with `http:\/\/`
+	// or `https:\/\/`.
 	RouteTableName interface{} `field:"optional" json:"routeTableName" yaml:"routeTableName"`
 	// Property tags: Tags to attach to routetable.
 	//

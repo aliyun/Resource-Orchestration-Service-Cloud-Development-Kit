@@ -105,12 +105,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
 
         private object _riskLevel;
 
-        /// <summary>Property riskLevel: Compliance package risk level.</summary>
+        /// <summary>Property riskLevel: The risk level of the compliance pack.</summary>
         /// <remarks>
-        /// Value:
-        /// 1: High risk.
-        /// 2: Medium risk.
-        /// 3: Low risk.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>1: High</description>
+        /// <description>2 (default): Medium</description>
+        /// <description>3: Low</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "riskLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object RiskLevel

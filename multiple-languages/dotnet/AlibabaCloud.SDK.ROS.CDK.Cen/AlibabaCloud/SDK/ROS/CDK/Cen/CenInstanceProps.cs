@@ -13,9 +13,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
     {
         private object? _description;
 
-        /// <summary>Property description: The description of the instance.</summary>
+        /// <summary>Property description: The description of the CEN instance.</summary>
         /// <remarks>
-        /// The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+        /// The description can be empty or 1 to 256 characters in length. It cannot start
+        /// with http:// or https://.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -47,9 +48,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         private object? _name;
 
-        /// <summary>Property name: The name of the instance.</summary>
+        /// <summary>Property name: The name of the CEN instance.</summary>
         /// <remarks>
-        /// The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+        /// The name can be empty or 1 to 128 characters in length. It cannot start with
+        /// http:// or https://.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -81,10 +83,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         private object? _protectionLevel;
 
-        /// <summary>Property protectionLevel: The level of CIDR block overlapping.</summary>
+        /// <summary>Property protectionLevel: The level of CIDR block overlap.</summary>
         /// <remarks>
-        /// Set the value to REDUCED. REDUCED indicates that the
-        /// CIDR blocks can overlap with each other but must not be the same.
+        /// Set the value to REDUCED. This is the default value. This value specifies that
+        /// CIDR blocks can overlap but cannot be identical.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "protectionLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

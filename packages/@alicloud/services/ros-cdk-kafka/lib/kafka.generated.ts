@@ -290,10 +290,11 @@ export class RosAcl extends ros.RosResource {
 export interface RosConsumerGroupProps {
 
     /**
-     * @Property consumerId: Group name. Value:
-     * Can only contain letters, numbers, dashes (-), underscores (_), and at least one English or number.
-     * The length is limited to 3 to 128 characters, and more than 128 characters will be automatically intercepted.
-     * Once the group name is created, it cannot be modified.
+     * @Property consumerId: Group name.
+     * - Reserved instance: Supports uppercase and lowercase letters, numbers,
+     * underscores (_), hyphens (-), and periods (.), limited to 3-64 characters.
+     * - Serverless instance: Can only contain letters, numbers, and special characters
+     * "@._\*$#^!&-", limited to 1-249 characters.
      */
     readonly consumerId: string | ros.IResolvable;
 
@@ -385,10 +386,11 @@ export class RosConsumerGroup extends ros.RosResource {
 
 
     /**
-     * @Property consumerId: Group name. Value:
-     * Can only contain letters, numbers, dashes (-), underscores (_), and at least one English or number.
-     * The length is limited to 3 to 128 characters, and more than 128 characters will be automatically intercepted.
-     * Once the group name is created, it cannot be modified.
+     * @Property consumerId: Group name.
+     * - Reserved instance: Supports uppercase and lowercase letters, numbers,
+     * underscores (_), hyphens (-), and periods (.), limited to 3-64 characters.
+     * - Serverless instance: Can only contain letters, numbers, and special characters
+     * "@._\*$#^!&-", limited to 1-249 characters.
      */
     public consumerId: string | ros.IResolvable;
 
@@ -493,9 +495,12 @@ function rosConsumerGroupTagsPropertyToRosTemplate(properties: any): any {
 export interface RosInstanceProps {
 
     /**
-     * @Property deployType: The deployment mode of the Message Queue for Apache Kafka instance. Valid values: 
-     *   4: Instance of the public type 
-     *   5: Instance of the VPC type
+     * @Property deployType: The deployment type. Valid values:
+     * - 4: Internet\/VPC instance
+     * - 5: VPC instance
+     * > If you are creating a Confluent series instance, you cannot select the
+     * deployment type. You can only set the value to 5. After the purchase, you can
+     * adjust whether each component is open to the Internet.
      */
     readonly deployType: number | ros.IResolvable;
 
@@ -528,8 +533,12 @@ export interface RosInstanceProps {
     readonly eipMax?: number | ros.IResolvable;
 
     /**
-     * @Property ioMax: The peak traffic to be configured for the Message Queue for Apache Kafka instance. 
-     * For more information about the value range, see Billing.
+     * @Property ioMax: The traffic peak (not recommended).
+     * - You must specify either IoMax or IoMaxSpec. If you specify both parameters,
+     * IoMaxSpec takes precedence. We recommend that you specify only IoMaxSpec.
+     * - For the valid values, see [Billing]().
+     * > If you are creating a Confluent series instance, you do not need to pass this
+     * parameter.
      */
     readonly ioMax?: number | ros.IResolvable;
 
@@ -562,7 +571,8 @@ export interface RosInstanceProps {
     readonly payType?: string | ros.IResolvable;
 
     /**
-     * @Property serverlessConfig: Serverless instance related settings.
+     * @Property serverlessConfig: The settings of the Serverless instance. This parameter is required if you create
+     * a Serverless instance.
      */
     readonly serverlessConfig?: RosInstance.ServerlessConfigProperty | ros.IResolvable;
 
@@ -745,9 +755,12 @@ export class RosInstance extends ros.RosResource {
 
 
     /**
-     * @Property deployType: The deployment mode of the Message Queue for Apache Kafka instance. Valid values: 
-     *   4: Instance of the public type 
-     *   5: Instance of the VPC type
+     * @Property deployType: The deployment type. Valid values:
+     * - 4: Internet\/VPC instance
+     * - 5: VPC instance
+     * > If you are creating a Confluent series instance, you cannot select the
+     * deployment type. You can only set the value to 5. After the purchase, you can
+     * adjust whether each component is open to the Internet.
      */
     public deployType: number | ros.IResolvable;
 
@@ -780,8 +793,12 @@ export class RosInstance extends ros.RosResource {
     public eipMax: number | ros.IResolvable | undefined;
 
     /**
-     * @Property ioMax: The peak traffic to be configured for the Message Queue for Apache Kafka instance. 
-     * For more information about the value range, see Billing.
+     * @Property ioMax: The traffic peak (not recommended).
+     * - You must specify either IoMax or IoMaxSpec. If you specify both parameters,
+     * IoMaxSpec takes precedence. We recommend that you specify only IoMaxSpec.
+     * - For the valid values, see [Billing]().
+     * > If you are creating a Confluent series instance, you do not need to pass this
+     * parameter.
      */
     public ioMax: number | ros.IResolvable | undefined;
 
@@ -814,7 +831,8 @@ export class RosInstance extends ros.RosResource {
     public payType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property serverlessConfig: Serverless instance related settings.
+     * @Property serverlessConfig: The settings of the Serverless instance. This parameter is required if you create
+     * a Serverless instance.
      */
     public serverlessConfig: RosInstance.ServerlessConfigProperty | ros.IResolvable | undefined;
 
@@ -942,9 +960,9 @@ export namespace RosInstance {
          */
         readonly config?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
         /**
-         * @Property vSwitchId: The ID of the vSwitch associated with the VPC.
+         * @Property vSwitchId: The ID of the vSwitch associated with the VPC. This parameter is not supported for Serverless instances, please use VSwitchIds instead.
          */
-        readonly vSwitchId: string | ros.IResolvable;
+        readonly vSwitchId?: string | ros.IResolvable;
         /**
          * @Property securityGroup: The security group of the instance. 
      * If you do not specify this parameter, Message Queue for Apache Kafka automatically 
@@ -1008,7 +1026,7 @@ export namespace RosInstance {
      * Set this value to vpc if your instance type is VPC. 
      * Set this value to eip if your instance type is Internet and VPC.
          */
-        readonly deployModule: string | ros.IResolvable;
+        readonly deployModule?: string | ros.IResolvable;
         /**
          * @Property password: The new password for the instance. 
      * This parameter is supported only for instances of the Internet and VPC type.
@@ -1051,7 +1069,6 @@ function RosInstance_DeployOptionPropertyValidator(properties: any): ros.Validat
     }
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('config', ros.hashValidator(ros.validateAny))(properties.config));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroup', ros.validateString)(properties.securityGroup));
     errors.collect(ros.propertyValidator('isSetUserAndPassword', ros.validateBoolean)(properties.isSetUserAndPassword));
@@ -1069,7 +1086,6 @@ function RosInstance_DeployOptionPropertyValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('serviceVersion', ros.validateString)(properties.serviceVersion));
     errors.collect(ros.propertyValidator('isForceSelectedZones', ros.validateBoolean)(properties.isForceSelectedZones));
     errors.collect(ros.propertyValidator('userPhoneNum', ros.validateString)(properties.userPhoneNum));
-    errors.collect(ros.propertyValidator('deployModule', ros.requiredValidator)(properties.deployModule));
     if(properties.deployModule && (typeof properties.deployModule) !== 'object') {
         errors.collect(ros.propertyValidator('deployModule', ros.validateAllowedValues)({
           data: properties.deployModule,
@@ -1452,11 +1468,13 @@ export interface RosTopicProps {
     readonly remark: string | ros.IResolvable;
 
     /**
-     * @Property topic: The name of the topic. The value of this parameter must meet the following requirements:
-     * The name can only contain letters, digits, hyphens (-), and underscores (_).
-     * The name must be 3 to 64 characters in length, and will be automatically truncated
-     * if it contains more characters.
-     * The name cannot be modified after being created.
+     * @Property topic: The name of the topic.
+     * - Reserved instance: The name can contain uppercase letters, lowercase letters,
+     * digits, underscores (_), hyphens (-), and periods (.). The name must be 3 to 64
+     * characters in length.
+     * - Serverless instance: The name can contain uppercase letters, lowercase letters,
+     * digits, underscores (_), hyphens (-), and periods (.). The name must be 1 to 249
+     * characters in length.
      */
     readonly topic: string | ros.IResolvable;
 
@@ -1468,10 +1486,31 @@ export interface RosTopicProps {
     readonly compactTopic?: boolean | ros.IResolvable;
 
     /**
-     * @Property config: Supplementary configuration.
-     * Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
-     * This parameter can only be specified if the LocalTopic value is true.
-     * NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+     * @Property config: The advanced configurations of the topic.
+     * - Configure this parameter in the JSON format.
+     * - This parameter is available only if LocalTopic is set to true.
+     * - The following configurations are supported for reserved instances:
+     * - retention.ms: The message retention period. The value must be an integer from
+     * 3,600,000 to 31,536,000,000. Unit: milliseconds.
+     * - max.message.bytes: The maximum size of a message that can be sent. The value
+     * must be an integer from 1,048,576 to 10,485,760. Unit: bytes.
+     * - message.timestamp.type: The timestamp type of a message. Valid values:
+     * CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+     * the time when the producer creates the message. If you do not specify a
+     * timestamp, the client time is used. LogAppendTime indicates that the message
+     * timestamp is the time when the server stores the message. The default value is
+     * CreateTime. We recommend that you set this parameter to LogAppendTime.
+     * - The following configurations are supported for Serverless instances:
+     * - retention.hours: The message retention period. The value is of the string type.
+     * The value must be an integer from 24 to 8,760.
+     * - max.message.bytes: The maximum size of a message that can be sent. The value is
+     * of the string type. The value must be an integer from 1,048,576 to 10,485,760.
+     * - message.timestamp.type: The timestamp type of a message. Valid values:
+     * CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+     * the time when the producer creates the message. If you do not specify a
+     * timestamp, the client time is used. LogAppendTime indicates that the message
+     * timestamp is the time when the server stores the message. The default value is
+     * CreateTime. We recommend that you set this parameter to LogAppendTime.
      */
     readonly config?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -1491,10 +1530,13 @@ export interface RosTopicProps {
     readonly minInsyncReplicas?: number | ros.IResolvable;
 
     /**
-     * @Property partitionNum: The number of partitions in the topic. Valid values:
-     * 1 to 48
-     * We recommend that you set the number of partitions to a multiple of 6 to reduce the
-     * risk of data skew.Note:For special requirements,submit a ticket.
+     * @Property partitionNum: The number of partitions in the topic.
+     * - The value must be an integer from 1 to 360.
+     * - The console suggests a number of partitions based on the instance type. Follow
+     * the suggestion to reduce the risk of data skew.
+     * Default value:
+     * - Reserved instance: 12
+     * - Serverless instance: 3
      */
     readonly partitionNum?: number | ros.IResolvable;
 
@@ -1631,11 +1673,13 @@ You can call the GetInstanceList operation to query instances.
     public remark: string | ros.IResolvable;
 
     /**
-     * @Property topic: The name of the topic. The value of this parameter must meet the following requirements:
-     * The name can only contain letters, digits, hyphens (-), and underscores (_).
-     * The name must be 3 to 64 characters in length, and will be automatically truncated
-     * if it contains more characters.
-     * The name cannot be modified after being created.
+     * @Property topic: The name of the topic.
+     * - Reserved instance: The name can contain uppercase letters, lowercase letters,
+     * digits, underscores (_), hyphens (-), and periods (.). The name must be 3 to 64
+     * characters in length.
+     * - Serverless instance: The name can contain uppercase letters, lowercase letters,
+     * digits, underscores (_), hyphens (-), and periods (.). The name must be 1 to 249
+     * characters in length.
      */
     public topic: string | ros.IResolvable;
 
@@ -1647,10 +1691,31 @@ You can call the GetInstanceList operation to query instances.
     public compactTopic: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property config: Supplementary configuration.
-     * Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
-     * This parameter can only be specified if the LocalTopic value is true.
-     * NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+     * @Property config: The advanced configurations of the topic.
+     * - Configure this parameter in the JSON format.
+     * - This parameter is available only if LocalTopic is set to true.
+     * - The following configurations are supported for reserved instances:
+     * - retention.ms: The message retention period. The value must be an integer from
+     * 3,600,000 to 31,536,000,000. Unit: milliseconds.
+     * - max.message.bytes: The maximum size of a message that can be sent. The value
+     * must be an integer from 1,048,576 to 10,485,760. Unit: bytes.
+     * - message.timestamp.type: The timestamp type of a message. Valid values:
+     * CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+     * the time when the producer creates the message. If you do not specify a
+     * timestamp, the client time is used. LogAppendTime indicates that the message
+     * timestamp is the time when the server stores the message. The default value is
+     * CreateTime. We recommend that you set this parameter to LogAppendTime.
+     * - The following configurations are supported for Serverless instances:
+     * - retention.hours: The message retention period. The value is of the string type.
+     * The value must be an integer from 24 to 8,760.
+     * - max.message.bytes: The maximum size of a message that can be sent. The value is
+     * of the string type. The value must be an integer from 1,048,576 to 10,485,760.
+     * - message.timestamp.type: The timestamp type of a message. Valid values:
+     * CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+     * the time when the producer creates the message. If you do not specify a
+     * timestamp, the client time is used. LogAppendTime indicates that the message
+     * timestamp is the time when the server stores the message. The default value is
+     * CreateTime. We recommend that you set this parameter to LogAppendTime.
      */
     public config: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
@@ -1670,10 +1735,13 @@ You can call the GetInstanceList operation to query instances.
     public minInsyncReplicas: number | ros.IResolvable | undefined;
 
     /**
-     * @Property partitionNum: The number of partitions in the topic. Valid values:
-     * 1 to 48
-     * We recommend that you set the number of partitions to a multiple of 6 to reduce the
-     * risk of data skew.Note:For special requirements,submit a ticket.
+     * @Property partitionNum: The number of partitions in the topic.
+     * - The value must be an integer from 1 to 360.
+     * - The console suggests a number of partitions based on the instance type. Follow
+     * the suggestion to reduce the risk of data skew.
+     * Default value:
+     * - Reserved instance: 12
+     * - Serverless instance: 3
      */
     public partitionNum: number | ros.IResolvable | undefined;
 

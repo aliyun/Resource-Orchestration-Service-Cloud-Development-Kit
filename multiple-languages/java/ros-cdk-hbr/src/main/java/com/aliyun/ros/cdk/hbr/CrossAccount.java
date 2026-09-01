@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::HBR::CrossAccount</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.702Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.083Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.CrossAccount")
 public class CrossAccount extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.hbr.ICrossAccount {
 
@@ -114,20 +114,26 @@ public class CrossAccount extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property alias: The alias of the cross-account authorization.
+         * Property alias: The alias.
+         * <p>
+         * The maximum length is 32 characters. This parameter is not required
+         * for cross-account backups that are configured based on a resource directory.
          * <p>
          * @return {@code this}
-         * @param alias Property alias: The alias of the cross-account authorization. This parameter is required.
+         * @param alias Property alias: The alias. This parameter is required.
          */
         public Builder alias(final java.lang.String alias) {
             this.props().alias(alias);
             return this;
         }
         /**
-         * Property alias: The alias of the cross-account authorization.
+         * Property alias: The alias.
+         * <p>
+         * The maximum length is 32 characters. This parameter is not required
+         * for cross-account backups that are configured based on a resource directory.
          * <p>
          * @return {@code this}
-         * @param alias Property alias: The alias of the cross-account authorization. This parameter is required.
+         * @param alias Property alias: The alias. This parameter is required.
          */
         public Builder alias(final com.aliyun.ros.cdk.core.IResolvable alias) {
             this.props().alias(alias);
@@ -135,20 +141,26 @@ public class CrossAccount extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.
+         * Property crossAccountRoleName: The name of the RAM role for the account to back up.
+         * <p>
+         * This parameter is used when
+         * you configure a cross-account backup by assuming a RAM role.
          * <p>
          * @return {@code this}
-         * @param crossAccountRoleName Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account. This parameter is required.
+         * @param crossAccountRoleName Property crossAccountRoleName: The name of the RAM role for the account to back up. This parameter is required.
          */
         public Builder crossAccountRoleName(final java.lang.String crossAccountRoleName) {
             this.props().crossAccountRoleName(crossAccountRoleName);
             return this;
         }
         /**
-         * Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.
+         * Property crossAccountRoleName: The name of the RAM role for the account to back up.
+         * <p>
+         * This parameter is used when
+         * you configure a cross-account backup by assuming a RAM role.
          * <p>
          * @return {@code this}
-         * @param crossAccountRoleName Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account. This parameter is required.
+         * @param crossAccountRoleName Property crossAccountRoleName: The name of the RAM role for the account to back up. This parameter is required.
          */
         public Builder crossAccountRoleName(final com.aliyun.ros.cdk.core.IResolvable crossAccountRoleName) {
             this.props().crossAccountRoleName(crossAccountRoleName);

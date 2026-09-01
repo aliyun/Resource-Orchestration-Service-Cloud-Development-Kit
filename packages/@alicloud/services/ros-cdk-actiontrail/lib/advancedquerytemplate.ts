@@ -20,7 +20,8 @@ export interface AdvancedQueryTemplateProps {
     readonly templateSql: string | ros.IResolvable;
 
     /**
-     * Property templateName: The name of the advanced query template.
+     * Property templateName: The name of the template, which can contain a maximum of 64 characters.
+     * Uniqueness is not required.
      */
     readonly templateName?: string | ros.IResolvable;
 }

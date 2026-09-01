@@ -15,15 +15,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
     {
         private object _endpoint;
 
-        /// <summary>Property endpoint: Terminal address of the message recipient for the created subscription.</summary>
+        /// <summary>Property endpoint: ## The message delivery endpoint.</summary>
         /// <remarks>
-        /// Currently, four types of endpoints are supported:
+        /// The format varies based on the <c>PushType</c> value:
         ///
-        /// <list type="number">
-        /// <description>HttpEndpoint, which must be prefixed with "http://";</description>
-        /// <description>QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName};</description>
-        /// <description>MailEndpoint, in the format of mail:directmail:{MailAddress};</description>
-        /// <description>SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.</description>
+        /// <list type="bullet">
+        /// <description>If <c>PushType</c> is <c>http</c>: An HTTP/HTTPS callback URL, such as
+        /// <c>http:\/\/example.com\/callback</c> or <c>https:\/\/example.com\/callback</c>.</description>
+        /// <description>If <c>PushType</c> is <c>queue</c>: The ARN of the destination queue, in the format
+        /// <c>acs:mns:{RegionId}:{account ID}:queues\/{QueueName}</c>.</description>
+        /// <description>If <c>PushType</c> is <c>dm</c>: The endpoint for email push, in the fixed format
+        /// <c>smq-ep:dm:{account ID}:__dynamic</c>. Replace <c>{account ID}</c> with your account ID.</description>
+        /// <description>If <c>PushType</c> is <c>dysms</c>: The endpoint for SMS push, in the format
+        /// <c>smq-ep:dysms:{account ID}:{MobileNumber}</c>.</description>
+        /// <description>If <c>PushType</c> is <c>kafka</c>: The Kafka push endpoint.</description>
+        /// <description>If <c>PushType</c> is <c>fc</c>: The endpoint for Function Compute, in the format
+        /// <c>acs:fc:{RegionId}:{account ID}:services\/{ServiceName}\/functions\/{FunctionName}</c>.</description>
+        /// <description>If <c>PushType</c> is <c>eventbus</c>: The endpoint for EventBridge, in the format
+        /// <c>acs:eventbridge:{RegionId}:{account ID}:eventbus\/{EventBusName}</c>.</description>
         /// </list>
         /// </remarks>
         [JsiiProperty(name: "endpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]

@@ -11,10 +11,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     [JsiiInterface(nativeType: typeof(IImagePipelineProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.ImagePipelineProps")]
     public interface IImagePipelineProps
     {
-        /// <summary>Property baseImage: The source image.</summary>
+        /// <summary>Property baseImage: The base image.</summary>
         /// <remarks>
-        /// If you set BaseImageType to IMAGE, set the BaseImage parameter to the ID of a custom image.
-        /// If you set BaseImageType to IMAGE_FAMILY, set the BaseImage parameter to the name of an image family.
+        /// The value of this parameter varies based on the value of
+        /// <c>BaseImageType</c>:
+        ///
+        /// <list type="bullet">
+        /// <description>If <c>BaseImageType</c> is <c>IMAGE</c>, specify the ID of the base image.</description>
+        /// <description>If <c>BaseImageType</c> is <c>IMAGE_FAMILY</c>, specify the name of the base image
+        /// family.</description>
+        /// <description>If <c>BaseImageType</c> is <c>OSS</c>, this parameter is not required.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "baseImage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object BaseImage
@@ -22,11 +29,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
-        /// <summary>Property baseImageType: The type of the source image.</summary>
+        /// <summary>Property baseImageType: The type of the base image.</summary>
         /// <remarks>
         /// Valid values:
-        /// IMAGE: image
-        /// IMAGE_FAMILY: image family
+        ///
+        /// <list type="bullet">
+        /// <description>IMAGE: An ECS image.</description>
+        /// <description>IMAGE_FAMILY: An image family.</description>
+        /// <description>OSS: An OSS object.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "baseImageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object BaseImageType
@@ -108,10 +119,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property imageName: The prefix of the image name.</summary>
+        /// <summary>Property imageName: The prefix of the destination image name.</summary>
         /// <remarks>
-        /// The prefix must be 2 to 64 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (<em>), periods (.), and hyphens (-).
-        /// The system generates the final complete image name that consists of the specified prefix and the ID of the build task (ExecutionId) in the format of {ImageName}</em>{ExecutionId}.
+        ///     <notice xmlns="http://www.w3.org/1999/xhtml"></notice>This parameter is deprecated. Use <c>ImageOptions.ImageName</c>
+        ///     instead.&gt;
         /// </remarks>
         [JsiiProperty(name: "imageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -153,10 +164,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property name: The name of the image template.</summary>
+        /// <summary>Property name: The name of the image pipeline.</summary>
         /// <remarks>
-        /// The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
-        /// Note If you do not specify the Name parameter, the return value of ImagePipelineId is used.
+        /// It must be 2 to 128 characters long, start with a
+        /// letter or a Chinese character, and cannot start with <c>http:\/\/</c> or <c>https:\/\/</c>.
+        /// Allowed characters include letters, digits, Chinese characters, colons (:),
+        /// underscores (_), periods (.), and hyphens (-).
+        ///
+        ///     If you do not specify this parameter, the value of <c>ImagePipelineId</c> is used as
+        ///     the name.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -245,10 +261,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             {
             }
 
-            /// <summary>Property baseImage: The source image.</summary>
+            /// <summary>Property baseImage: The base image.</summary>
             /// <remarks>
-            /// If you set BaseImageType to IMAGE, set the BaseImage parameter to the ID of a custom image.
-            /// If you set BaseImageType to IMAGE_FAMILY, set the BaseImage parameter to the name of an image family.
+            /// The value of this parameter varies based on the value of
+            /// <c>BaseImageType</c>:
+            ///
+            /// <list type="bullet">
+            /// <description>If <c>BaseImageType</c> is <c>IMAGE</c>, specify the ID of the base image.</description>
+            /// <description>If <c>BaseImageType</c> is <c>IMAGE_FAMILY</c>, specify the name of the base image
+            /// family.</description>
+            /// <description>If <c>BaseImageType</c> is <c>OSS</c>, this parameter is not required.</description>
+            /// </list>
             /// </remarks>
             [JsiiProperty(name: "baseImage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object BaseImage
@@ -256,11 +279,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property baseImageType: The type of the source image.</summary>
+            /// <summary>Property baseImageType: The type of the base image.</summary>
             /// <remarks>
             /// Valid values:
-            /// IMAGE: image
-            /// IMAGE_FAMILY: image family
+            ///
+            /// <list type="bullet">
+            /// <description>IMAGE: An ECS image.</description>
+            /// <description>IMAGE_FAMILY: An image family.</description>
+            /// <description>OSS: An OSS object.</description>
+            /// </list>
             /// </remarks>
             [JsiiProperty(name: "baseImageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object BaseImageType
@@ -327,10 +354,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property imageName: The prefix of the image name.</summary>
+            /// <summary>Property imageName: The prefix of the destination image name.</summary>
             /// <remarks>
-            /// The prefix must be 2 to 64 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (<em>), periods (.), and hyphens (-).
-            /// The system generates the final complete image name that consists of the specified prefix and the ID of the build task (ExecutionId) in the format of {ImageName}</em>{ExecutionId}.
+            ///     <notice xmlns="http://www.w3.org/1999/xhtml"></notice>This parameter is deprecated. Use <c>ImageOptions.ImageName</c>
+            ///     instead.&gt;
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "imageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -363,10 +390,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property name: The name of the image template.</summary>
+            /// <summary>Property name: The name of the image pipeline.</summary>
             /// <remarks>
-            /// The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
-            /// Note If you do not specify the Name parameter, the return value of ImagePipelineId is used.
+            /// It must be 2 to 128 characters long, start with a
+            /// letter or a Chinese character, and cannot start with <c>http:\/\/</c> or <c>https:\/\/</c>.
+            /// Allowed characters include letters, digits, Chinese characters, colons (:),
+            /// underscores (_), periods (.), and hyphens (-).
+            ///
+            ///     If you do not specify this parameter, the value of <c>ImagePipelineId</c> is used as
+            ///     the name.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

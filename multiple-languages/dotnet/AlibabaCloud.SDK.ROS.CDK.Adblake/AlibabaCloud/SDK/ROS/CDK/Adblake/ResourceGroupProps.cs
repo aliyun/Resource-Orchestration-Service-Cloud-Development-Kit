@@ -45,9 +45,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
 
         private object _engine;
 
-        /// <summary>Property engine: Database engine, value: AnalyticDB (default): AnalyticDB for mysql engine.</summary>
+        /// <summary>Property engine: The database engine.</summary>
         /// <remarks>
-        /// Sparkwarehouse: Sparkwarehous engine.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>AnalyticDB (default): the AnalyticDB for MySQL engine.</description>
+        /// <description>SparkWarehouse: the SparkWarehouse engine.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "engine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Engine
@@ -180,10 +185,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
 
         private object? _clusterMode;
 
-        /// <summary>Property clusterMode: The mode of cluster.</summary>
-        /// <remarks>
-        /// Default: AutoScale.
-        /// </remarks>
+        /// <summary>Property clusterMode: This parameter is reserved.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "clusterMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ClusterMode

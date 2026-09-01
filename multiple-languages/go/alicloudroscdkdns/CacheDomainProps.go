@@ -17,7 +17,10 @@ type CacheDomainProps struct {
 	SourceDnsServer interface{} `field:"required" json:"sourceDnsServer" yaml:"sourceDnsServer"`
 	// Property sourceEdns: Whether EDNS is enabled for the source DNS server.
 	SourceEdns interface{} `field:"required" json:"sourceEdns" yaml:"sourceEdns"`
-	// Property sourceProtocol: The protocol used by the source DNS server.
+	// Property sourceProtocol: The protocol used for origin fetch.
+	//
+	// Valid values: TCP and UDP. The default value
+	// is UDP.
 	SourceProtocol interface{} `field:"required" json:"sourceProtocol" yaml:"sourceProtocol"`
 	// Property remark: Remark for the DNS cache domain.
 	Remark interface{} `field:"optional" json:"remark" yaml:"remark"`

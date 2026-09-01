@@ -28,11 +28,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             get;
         }
 
-        /// <summary>Property protocolType: The protocol type of agreement service.</summary>
+        /// <summary>Property protocolType: The protocol type of the protocol service.</summary>
         /// <remarks>
-        /// Ranges:
-        /// NFS: Agreement service supports NFS protocol access.
-        /// The default value: NFS.
+        /// Valid value: NFS (default). Only NFSv3 is supported.
         /// </remarks>
         [JsiiProperty(name: "protocolType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ProtocolType
@@ -54,7 +52,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             get;
         }
 
-        /// <summary>Property description: Description of protocol service.The console shows the "protocol service name". limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).</summary>
+        /// <summary>Property description: The description of the protocol service.</summary>
+        /// <remarks>
+        /// The name of the protocol service appears
+        /// in the console.
+        /// Limits:
+        ///
+        /// <list type="bullet">
+        /// <description>The description must be 2 to 128 characters in length.</description>
+        /// <description>The description must start with a letter but cannot start with <c>http:\/\/</c> or
+        /// <c>https:\/\/</c>.</description>
+        /// <description>The description can contain letters, digits, colons (:), underscores (_), and
+        /// hyphens (-).</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Description
@@ -107,11 +118,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property protocolType: The protocol type of agreement service.</summary>
+            /// <summary>Property protocolType: The protocol type of the protocol service.</summary>
             /// <remarks>
-            /// Ranges:
-            /// NFS: Agreement service supports NFS protocol access.
-            /// The default value: NFS.
+            /// Valid value: NFS (default). Only NFSv3 is supported.
             /// </remarks>
             [JsiiProperty(name: "protocolType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ProtocolType
@@ -133,7 +142,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property description: Description of protocol service.The console shows the "protocol service name". limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).</summary>
+            /// <summary>Property description: The description of the protocol service.</summary>
+            /// <remarks>
+            /// The name of the protocol service appears
+            /// in the console.
+            /// Limits:
+            ///
+            /// <list type="bullet">
+            /// <description>The description must be 2 to 128 characters in length.</description>
+            /// <description>The description must start with a letter but cannot start with <c>http:\/\/</c> or
+            /// <c>https:\/\/</c>.</description>
+            /// <description>The description can contain letters, digits, colons (:), underscores (_), and
+            /// hyphens (-).</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description

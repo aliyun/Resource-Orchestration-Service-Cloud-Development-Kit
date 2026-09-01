@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DTS::Instance</code>Use the , which resource to create a new DTS instance.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DTS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:29:50.807Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:27:14.962Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

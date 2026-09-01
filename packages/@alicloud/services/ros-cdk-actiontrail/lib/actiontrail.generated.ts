@@ -19,7 +19,8 @@ export interface RosAdvancedQueryTemplateProps {
     readonly templateSql: string | ros.IResolvable;
 
     /**
-     * @Property templateName: The name of the advanced query template.
+     * @Property templateName: The name of the template, which can contain a maximum of 64 characters.
+     * Uniqueness is not required.
      */
     readonly templateName?: string | ros.IResolvable;
 }
@@ -92,7 +93,8 @@ export class RosAdvancedQueryTemplate extends ros.RosResource {
     public templateSql: string | ros.IResolvable;
 
     /**
-     * @Property templateName: The name of the advanced query template.
+     * @Property templateName: The name of the template, which can contain a maximum of 64 characters.
+     * Uniqueness is not required.
      */
     public templateName: string | ros.IResolvable | undefined;
 
@@ -224,7 +226,10 @@ export class RosHistoryDeliveryJob extends ros.RosResource {
 export interface RosTrailProps {
 
     /**
-     * @Property name: The name of the trail to be created, which must be unique for an account.
+     * @Property name: The name of the trail to be created.
+     * Length should be between 6 and 36 characters, must start with a lowercase letter,
+     * and can include lowercase letters, numbers, hyphens (-), and underscores (_).
+     * > The trail name must be unique within the same account.
      */
     readonly name: string | ros.IResolvable;
 
@@ -234,27 +239,43 @@ export interface RosTrailProps {
     readonly eventRw?: string | ros.IResolvable;
 
     /**
-     * @Property ossBucketName: The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket.
+     * @Property ossBucketName: The OSS bucket for the trail delivery.
+     * Length should be between 3 and 63 characters, must start with a lowercase letter
+     * or number, and can include lowercase letters, numbers, and hyphens (-).
+     * > At least one of OssBucketName and SlsProjectArn must be specified.
      */
     readonly ossBucketName?: string | ros.IResolvable;
 
     /**
-     * @Property ossKeyPrefix: The prefix of the specified OSS bucket name. This parameter can be left empty.
+     * @Property ossKeyPrefix: The prefix for the filenames in the OSS bucket for the trail delivery.
+     * Length should be between 6 and 32 characters, must start with a letter, and can
+     * include letters, numbers, hyphens (-), forward slashes (\/), and underscores (_).
      */
     readonly ossKeyPrefix?: string | ros.IResolvable;
 
     /**
-     * @Property roleName: The RAM role in ActionTrail permitted by the user.
+     * @Property roleName: The name of the associated role for Operation Audit, with a default value of
+     * serviceroleforactiontrail.
      */
     readonly roleName?: string | ros.IResolvable;
 
     /**
-     * @Property slsProjectArn: The unique ARN of the Log Service project.
+     * @Property slsProjectArn: The ARN of the Log Service project for the trail delivery.
+     * > At least one of OssBucketName and SlsProjectArn must be specified.
      */
     readonly slsProjectArn?: string | ros.IResolvable;
 
     /**
-     * @Property slsWriteRoleArn: The unique ARN of the Log Service role.
+     * @Property slsWriteRoleArn: The ARN of the role assumed by Operation Audit when delivering operation events
+     * to the Log Service project.
+     * - If this parameter is not specified, Operation Audit will create the necessary
+     * resources by creating a service-linked role. 
+     * - If this parameter is specified, when you need to deliver events to the current
+     * account, you need to grant the RAM role the permissions of the Operation Audit
+     * service-linked role. When you need to deliver events to another account, you need
+     * to bind the system permission policy for event delivery to the RAM role. For more
+     * information on cross-account delivery, see Deliver Events from Multiple
+     * Accounts to One Account.
      */
     readonly slsWriteRoleArn?: string | ros.IResolvable;
 }
@@ -311,7 +332,7 @@ function rosTrailPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`, which is used to create a trail to deliver events to Simple Log Service or Object Storage Service (OSS).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Trail` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
  */
@@ -330,7 +351,10 @@ export class RosTrail extends ros.RosResource {
 
 
     /**
-     * @Property name: The name of the trail to be created, which must be unique for an account.
+     * @Property name: The name of the trail to be created.
+     * Length should be between 6 and 36 characters, must start with a lowercase letter,
+     * and can include lowercase letters, numbers, hyphens (-), and underscores (_).
+     * > The trail name must be unique within the same account.
      */
     public name: string | ros.IResolvable;
 
@@ -340,27 +364,43 @@ export class RosTrail extends ros.RosResource {
     public eventRw: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ossBucketName: The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket.
+     * @Property ossBucketName: The OSS bucket for the trail delivery.
+     * Length should be between 3 and 63 characters, must start with a lowercase letter
+     * or number, and can include lowercase letters, numbers, and hyphens (-).
+     * > At least one of OssBucketName and SlsProjectArn must be specified.
      */
     public ossBucketName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ossKeyPrefix: The prefix of the specified OSS bucket name. This parameter can be left empty.
+     * @Property ossKeyPrefix: The prefix for the filenames in the OSS bucket for the trail delivery.
+     * Length should be between 6 and 32 characters, must start with a letter, and can
+     * include letters, numbers, hyphens (-), forward slashes (\/), and underscores (_).
      */
     public ossKeyPrefix: string | ros.IResolvable | undefined;
 
     /**
-     * @Property roleName: The RAM role in ActionTrail permitted by the user.
+     * @Property roleName: The name of the associated role for Operation Audit, with a default value of
+     * serviceroleforactiontrail.
      */
     public roleName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property slsProjectArn: The unique ARN of the Log Service project.
+     * @Property slsProjectArn: The ARN of the Log Service project for the trail delivery.
+     * > At least one of OssBucketName and SlsProjectArn must be specified.
      */
     public slsProjectArn: string | ros.IResolvable | undefined;
 
     /**
-     * @Property slsWriteRoleArn: The unique ARN of the Log Service role.
+     * @Property slsWriteRoleArn: The ARN of the role assumed by Operation Audit when delivering operation events
+     * to the Log Service project.
+     * - If this parameter is not specified, Operation Audit will create the necessary
+     * resources by creating a service-linked role. 
+     * - If this parameter is specified, when you need to deliver events to the current
+     * account, you need to grant the RAM role the permissions of the Operation Audit
+     * service-linked role. When you need to deliver events to another account, you need
+     * to bind the system permission policy for event delivery to the RAM role. For more
+     * information on cross-account delivery, see Deliver Events from Multiple
+     * Accounts to One Account.
      */
     public slsWriteRoleArn: string | ros.IResolvable | undefined;
 
@@ -412,7 +452,10 @@ export interface RosTrailLoggingProps {
     readonly enable: boolean | ros.IResolvable;
 
     /**
-     * @Property name: The name of the trail to be enabled.
+     * @Property name: The name of the trail.\
+     * The name must be 6 to 36 characters in length and can contain lowercase letters,
+     * digits, hyphens (-), and underscores (_). It must start with a lowercase letter.
+     * >  The name must be unique within an account.
      */
     readonly name: string | ros.IResolvable;
 }
@@ -454,7 +497,7 @@ function rosTrailLoggingPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::TrailLogging`, which is used to enable or disable trail logging.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::TrailLogging`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrailLogging` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-traillogging
  */
@@ -498,7 +541,10 @@ export class RosTrailLogging extends ros.RosResource {
     public enable: boolean | ros.IResolvable;
 
     /**
-     * @Property name: The name of the trail to be enabled.
+     * @Property name: The name of the trail.\
+     * The name must be 6 to 36 characters in length and can contain lowercase letters,
+     * digits, hyphens (-), and underscores (_). It must start with a lowercase letter.
+     * >  The name must be unique within an account.
      */
     public name: string | ros.IResolvable;
 

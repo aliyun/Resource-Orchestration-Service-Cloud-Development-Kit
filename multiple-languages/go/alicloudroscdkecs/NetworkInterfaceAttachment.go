@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterfaceAttachment`, which is used to bind an elastic network interface (ENI) to an Elastic Compute Service (ECS) instance in a virtual private cloud (VPC).
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterfaceAttachment`.
 type NetworkInterfaceAttachment interface {
 	alicloudroscdkcore.Resource
 	INetworkInterfaceAttachment

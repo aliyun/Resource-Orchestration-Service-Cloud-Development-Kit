@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dcdn;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dcdn-domain
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:13:28.017Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:07:43.323Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dcdn.$Module.class, fqn = "@alicloud/ros-cdk-dcdn.DomainProps")
 @software.amazon.jsii.Jsii.Proxy(DomainProps.Jsii$Proxy.class)
 public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,7 +23,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getSources();
 
     /**
-     * Property checkUrl: The validation of the origin.
+     * Property checkUrl: The health check URL.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCheckUrl() {
         return null;
@@ -125,7 +125,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DomainProps#getCheckUrl}
-         * @param checkUrl Property checkUrl: The validation of the origin.
+         * @param checkUrl Property checkUrl: The health check URL.
          * @return {@code this}
          */
         public Builder checkUrl(java.lang.String checkUrl) {
@@ -135,7 +135,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DomainProps#getCheckUrl}
-         * @param checkUrl Property checkUrl: The validation of the origin.
+         * @param checkUrl Property checkUrl: The health check URL.
          * @return {@code this}
          */
         public Builder checkUrl(com.aliyun.ros.cdk.core.IResolvable checkUrl) {

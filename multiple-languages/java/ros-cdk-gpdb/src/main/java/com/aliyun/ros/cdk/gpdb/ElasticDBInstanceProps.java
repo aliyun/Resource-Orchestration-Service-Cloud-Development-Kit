@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:13:37.721Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:21:33.436Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.ElasticDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ElasticDBInstanceProps.Jsii$Proxy.class)
 public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -47,7 +47,16 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
     @org.jetbrains.annotations.NotNull java.lang.Object getStorageSize();
 
     /**
-     * Property vSwitchId: The vSwitch ID of the instance.
+     * Property vSwitchId: The vSwitch ID.
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>This parameter is required.</li>
+     * <li>The vSwitch must be in the zone specified by <code>ZoneId</code>.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
@@ -69,9 +78,20 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
-     * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+     * Property dbInstanceCategory: The instance edition.
      * <p>
-     * This parameter must be passed in to create a storage reservation mode instance.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>HighAvailability: High-availability Edition</li>
+     * <li>Basic: Basic Edition</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required for instances in elastic storage mode.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceCategory() {
         return null;
@@ -155,17 +175,18 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
-     * Property privateIpAddress: Private IP address.
+     * Property privateIpAddress: This parameter is deprecated.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
         return null;
     }
 
     /**
-     * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
+     * Property securityIpList: The IP address whitelist for the instance.
      * <p>
-     * Default value:
-     * 127.0.0.1.
+     * A value of 127.0.0.1 blocks all external access. After you create the instance,
+     * you can call the <a href="">ModifySecurityIps</a> operation to modify the IP address
+     * whitelist.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityIpList() {
         return null;
@@ -347,7 +368,15 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link ElasticDBInstanceProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The vSwitch ID of the instance. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID. This parameter is required.
+         *                  <blockquote>
+         *                  <p>
+         *                  <ul>
+         *                  <li>This parameter is required.</li>
+         *                  <li>The vSwitch must be in the zone specified by <code>ZoneId</code>.</li>
+         *                  </ul>
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -357,7 +386,15 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link ElasticDBInstanceProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The vSwitch ID of the instance. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID. This parameter is required.
+         *                  <blockquote>
+         *                  <p>
+         *                  <ul>
+         *                  <li>This parameter is required.</li>
+         *                  <li>The vSwitch must be in the zone specified by <code>ZoneId</code>.</li>
+         *                  </ul>
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
@@ -413,8 +450,19 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link ElasticDBInstanceProps#getDbInstanceCategory}
-         * @param dbInstanceCategory Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
-         *                           This parameter must be passed in to create a storage reservation mode instance.
+         * @param dbInstanceCategory Property dbInstanceCategory: The instance edition.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>HighAvailability: High-availability Edition</li>
+         *                           <li>Basic: Basic Edition</li>
+         *                           </ul>
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           This parameter is required for instances in elastic storage mode.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder dbInstanceCategory(java.lang.String dbInstanceCategory) {
@@ -424,8 +472,19 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link ElasticDBInstanceProps#getDbInstanceCategory}
-         * @param dbInstanceCategory Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
-         *                           This parameter must be passed in to create a storage reservation mode instance.
+         * @param dbInstanceCategory Property dbInstanceCategory: The instance edition.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>HighAvailability: High-availability Edition</li>
+         *                           <li>Basic: Basic Edition</li>
+         *                           </ul>
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           This parameter is required for instances in elastic storage mode.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder dbInstanceCategory(com.aliyun.ros.cdk.core.IResolvable dbInstanceCategory) {
@@ -621,7 +680,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link ElasticDBInstanceProps#getPrivateIpAddress}
-         * @param privateIpAddress Property privateIpAddress: Private IP address.
+         * @param privateIpAddress Property privateIpAddress: This parameter is deprecated.
          * @return {@code this}
          */
         public Builder privateIpAddress(java.lang.String privateIpAddress) {
@@ -631,7 +690,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link ElasticDBInstanceProps#getPrivateIpAddress}
-         * @param privateIpAddress Property privateIpAddress: Private IP address.
+         * @param privateIpAddress Property privateIpAddress: This parameter is deprecated.
          * @return {@code this}
          */
         public Builder privateIpAddress(com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
@@ -641,9 +700,10 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link ElasticDBInstanceProps#getSecurityIpList}
-         * @param securityIpList Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
-         *                       Default value:
-         *                       127.0.0.1.
+         * @param securityIpList Property securityIpList: The IP address whitelist for the instance.
+         *                       A value of 127.0.0.1 blocks all external access. After you create the instance,
+         *                       you can call the <a href="">ModifySecurityIps</a> operation to modify the IP address
+         *                       whitelist.
          * @return {@code this}
          */
         public Builder securityIpList(java.lang.String securityIpList) {
@@ -653,9 +713,10 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link ElasticDBInstanceProps#getSecurityIpList}
-         * @param securityIpList Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
-         *                       Default value:
-         *                       127.0.0.1.
+         * @param securityIpList Property securityIpList: The IP address whitelist for the instance.
+         *                       A value of 127.0.0.1 blocks all external access. After you create the instance,
+         *                       you can call the <a href="">ModifySecurityIps</a> operation to modify the IP address
+         *                       whitelist.
          * @return {@code this}
          */
         public Builder securityIpList(com.aliyun.ros.cdk.core.IResolvable securityIpList) {

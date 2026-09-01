@@ -25,11 +25,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudsso
             get;
         }
 
-        /// <summary>Property permissionPolicyName: The name of the permission policy.</summary>
+        /// <summary>Property permissionPolicyName: The name of the policy.</summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <description>If you set PermissionPolicyType to System, you must set this parameter to the name of the system policy. You can obtain the name of the system policy from RAM.</description>
-        /// <description>If you set PermissionPolicyType to Inline, you must set this parameter to the name of the inline policy. A custom value is supported.</description>
+        /// <description>If you set <c>PermissionPolicyType</c> to <c>System</c>, you must set
+        /// PermissionPolicyName to the name of a system policy. You can obtain the name of
+        /// the system policy from RAM.</description>
+        /// <description>If you set <c>PermissionPolicyType</c> to <c>Inline</c>, you must set
+        /// PermissionPolicyName to the name of an inline policy. A custom value is
+        /// supported. The value can be up to 32 characters in length.</description>
         /// </list>
         /// </remarks>
         [JsiiProperty(name: "permissionPolicyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -93,11 +97,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudsso
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property permissionPolicyName: The name of the permission policy.</summary>
+            /// <summary>Property permissionPolicyName: The name of the policy.</summary>
             /// <remarks>
             /// <list type="bullet">
-            /// <description>If you set PermissionPolicyType to System, you must set this parameter to the name of the system policy. You can obtain the name of the system policy from RAM.</description>
-            /// <description>If you set PermissionPolicyType to Inline, you must set this parameter to the name of the inline policy. A custom value is supported.</description>
+            /// <description>If you set <c>PermissionPolicyType</c> to <c>System</c>, you must set
+            /// PermissionPolicyName to the name of a system policy. You can obtain the name of
+            /// the system policy from RAM.</description>
+            /// <description>If you set <c>PermissionPolicyType</c> to <c>Inline</c>, you must set
+            /// PermissionPolicyName to the name of an inline policy. A custom value is
+            /// supported. The value can be up to 32 characters in length.</description>
             /// </list>
             /// </remarks>
             [JsiiProperty(name: "permissionPolicyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]

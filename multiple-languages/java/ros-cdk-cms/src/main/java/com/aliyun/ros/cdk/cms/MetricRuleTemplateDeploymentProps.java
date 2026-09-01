@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplatedeployment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.971Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.261Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MetricRuleTemplateDeploymentProps")
 @software.amazon.jsii.Jsii.Proxy(MetricRuleTemplateDeploymentProps.Jsii$Proxy.class)
 public interface MetricRuleTemplateDeploymentProps extends software.amazon.jsii.JsiiSerializable {
@@ -53,7 +53,11 @@ public interface MetricRuleTemplateDeploymentProps extends software.amazon.jsii.
     }
 
     /**
-     * Property notifyLevel: Alarm notification method.Value: 2: Phone + SMS + Email + Wangwang + DingTalk Robot. 3: SMS + Email + Wangwang + DingTalk Robot. 4: Wangwang + Dingding Robot.
+     * Property notifyLevel: The alert notification method.
+     * <p>
+     * Valid values:
+     * Set the value to 4. A value of 4 indicates that alert notifications are sent by
+     * using TradeManager and DingTalk chatbots.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNotifyLevel() {
         return null;
@@ -219,7 +223,10 @@ public interface MetricRuleTemplateDeploymentProps extends software.amazon.jsii.
 
         /**
          * Sets the value of {@link MetricRuleTemplateDeploymentProps#getNotifyLevel}
-         * @param notifyLevel Property notifyLevel: Alarm notification method.Value: 2: Phone + SMS + Email + Wangwang + DingTalk Robot. 3: SMS + Email + Wangwang + DingTalk Robot. 4: Wangwang + Dingding Robot.
+         * @param notifyLevel Property notifyLevel: The alert notification method.
+         *                    Valid values:
+         *                    Set the value to 4. A value of 4 indicates that alert notifications are sent by
+         *                    using TradeManager and DingTalk chatbots.
          * @return {@code this}
          */
         public Builder notifyLevel(java.lang.Number notifyLevel) {
@@ -229,7 +236,10 @@ public interface MetricRuleTemplateDeploymentProps extends software.amazon.jsii.
 
         /**
          * Sets the value of {@link MetricRuleTemplateDeploymentProps#getNotifyLevel}
-         * @param notifyLevel Property notifyLevel: Alarm notification method.Value: 2: Phone + SMS + Email + Wangwang + DingTalk Robot. 3: SMS + Email + Wangwang + DingTalk Robot. 4: Wangwang + Dingding Robot.
+         * @param notifyLevel Property notifyLevel: The alert notification method.
+         *                    Valid values:
+         *                    Set the value to 4. A value of 4 indicates that alert notifications are sent by
+         *                    using TradeManager and DingTalk chatbots.
          * @return {@code this}
          */
         public Builder notifyLevel(com.aliyun.ros.cdk.core.IResolvable notifyLevel) {

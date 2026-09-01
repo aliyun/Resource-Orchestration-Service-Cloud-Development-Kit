@@ -5,15 +5,15 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.226Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.562Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthLimitProps")
 @software.amazon.jsii.Jsii.Proxy(CenBandwidthLimitProps.Jsii$Proxy.class)
 public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property bandwidthLimit: The bandwidth configured for the interconnected regions communication.
+     * Property bandwidthLimit: The inter-region bandwidth between the two regions.
      * <p>
-     * Minimal value: 1
+     * Unit: Mbps.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getBandwidthLimit();
 
@@ -33,9 +33,13 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
     @org.jetbrains.annotations.NotNull java.lang.Object getOppositeRegionId();
 
     /**
-     * Property bandwidthType: Bandwidth allocation mode.
+     * Property bandwidthType: The method used to allocate bandwidth.
      * <p>
-     * Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+     * Valid value:
+     * <p>
+     * <ul>
+     * <li>BandwidthPackage (default): allocates bandwidth from a bandwidth plan.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidthType() {
         return null;
@@ -59,8 +63,8 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link CenBandwidthLimitProps#getBandwidthLimit}
-         * @param bandwidthLimit Property bandwidthLimit: The bandwidth configured for the interconnected regions communication. This parameter is required.
-         *                       Minimal value: 1
+         * @param bandwidthLimit Property bandwidthLimit: The inter-region bandwidth between the two regions. This parameter is required.
+         *                       Unit: Mbps.
          * @return {@code this}
          */
         public Builder bandwidthLimit(java.lang.Number bandwidthLimit) {
@@ -70,8 +74,8 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link CenBandwidthLimitProps#getBandwidthLimit}
-         * @param bandwidthLimit Property bandwidthLimit: The bandwidth configured for the interconnected regions communication. This parameter is required.
-         *                       Minimal value: 1
+         * @param bandwidthLimit Property bandwidthLimit: The inter-region bandwidth between the two regions. This parameter is required.
+         *                       Unit: Mbps.
          * @return {@code this}
          */
         public Builder bandwidthLimit(com.aliyun.ros.cdk.core.IResolvable bandwidthLimit) {
@@ -141,8 +145,12 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link CenBandwidthLimitProps#getBandwidthType}
-         * @param bandwidthType Property bandwidthType: Bandwidth allocation mode.
-         *                      Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+         * @param bandwidthType Property bandwidthType: The method used to allocate bandwidth.
+         *                      Valid value:
+         *                      <p>
+         *                      <ul>
+         *                      <li>BandwidthPackage (default): allocates bandwidth from a bandwidth plan.</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder bandwidthType(java.lang.String bandwidthType) {
@@ -152,8 +160,12 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link CenBandwidthLimitProps#getBandwidthType}
-         * @param bandwidthType Property bandwidthType: Bandwidth allocation mode.
-         *                      Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+         * @param bandwidthType Property bandwidthType: The method used to allocate bandwidth.
+         *                      Valid value:
+         *                      <p>
+         *                      <ul>
+         *                      <li>BandwidthPackage (default): allocates bandwidth from a bandwidth plan.</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder bandwidthType(com.aliyun.ros.cdk.core.IResolvable bandwidthType) {

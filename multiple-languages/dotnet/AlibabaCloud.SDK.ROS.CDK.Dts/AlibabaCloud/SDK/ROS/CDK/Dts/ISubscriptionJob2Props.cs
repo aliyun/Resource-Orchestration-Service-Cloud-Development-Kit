@@ -95,7 +95,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
 
         /// <summary>Property delayRuleTime: The threshold for latency alerts.</summary>
         /// <remarks>
-        /// Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+        /// Unit: seconds. The value must be an integer.
+        /// You can set the threshold based on your business requirements. To prevent
+        /// unstable latency caused by network and database overloads, we recommend that you
+        /// set the threshold to more than 10 seconds.
+        ///
+        ///     If DelayNotice is set to true, this parameter is required.
         /// </remarks>
         [JsiiProperty(name: "delayRuleTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -194,9 +199,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             }
         }
 
-        /// <summary>Property maxDu: The upper limit of DU.</summary>
+        /// <summary>Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.</summary>
         /// <remarks>
-        /// This parameter is supported only for serverless instances.
+        /// Currently, this feature is not supported, please do not pass in parameters.
         /// </remarks>
         [JsiiProperty(name: "maxDu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -208,9 +213,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             }
         }
 
-        /// <summary>Property minDu: The lower limit of DU.</summary>
+        /// <summary>Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.</summary>
         /// <remarks>
-        /// This parameter is supported only for serverless instances.
+        /// This feature is currently not supported, please do not pass in parameters.
         /// </remarks>
         [JsiiProperty(name: "minDu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -224,7 +229,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
 
         /// <summary>Property reserve: The reserved parameter of DTS.</summary>
         /// <remarks>
-        /// You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+        /// The value is a JSON string. You can specify this
+        /// parameter to add more configurations of the source or destination instance to the
+        /// DTS task. For example, you can specify the data storage format of the destination
+        /// Kafka database and the CEN instance ID.
         /// </remarks>
         [JsiiProperty(name: "reserve", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -383,7 +391,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
 
             /// <summary>Property delayRuleTime: The threshold for latency alerts.</summary>
             /// <remarks>
-            /// Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+            /// Unit: seconds. The value must be an integer.
+            /// You can set the threshold based on your business requirements. To prevent
+            /// unstable latency caused by network and database overloads, we recommend that you
+            /// set the threshold to more than 10 seconds.
+            ///
+            ///     If DelayNotice is set to true, this parameter is required.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "delayRuleTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -458,9 +471,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property maxDu: The upper limit of DU.</summary>
+            /// <summary>Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.</summary>
             /// <remarks>
-            /// This parameter is supported only for serverless instances.
+            /// Currently, this feature is not supported, please do not pass in parameters.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "maxDu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -469,9 +482,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property minDu: The lower limit of DU.</summary>
+            /// <summary>Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.</summary>
             /// <remarks>
-            /// This parameter is supported only for serverless instances.
+            /// This feature is currently not supported, please do not pass in parameters.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "minDu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -482,7 +495,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
 
             /// <summary>Property reserve: The reserved parameter of DTS.</summary>
             /// <remarks>
-            /// You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+            /// The value is a JSON string. You can specify this
+            /// parameter to add more configurations of the source or destination instance to the
+            /// DTS task. For example, you can specify the data storage format of the destination
+            /// Kafka database and the CEN instance ID.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "reserve", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]

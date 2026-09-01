@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.imm;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::IMM::Project2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:33:54.522Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:43:10.690Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.imm.$Module.class, fqn = "@alicloud/ros-cdk-imm.Project2")
 public class Project2 extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.imm.IProject2 {
 
@@ -112,20 +112,36 @@ public class Project2 extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property projectName: The name of project.
+         * Property projectName: The project name.
+         * <p>
+         * The naming convention is as follows:
+         * <p>
+         * <ul>
+         * <li>The name must be 1 to 128 characters in length.</li>
+         * <li>It can contain only letters, digits, hyphens (-), and underscores (_).</li>
+         * <li>It must start with a letter or an underscore (_).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param projectName Property projectName: The name of project. This parameter is required.
+         * @param projectName Property projectName: The project name. This parameter is required.
          */
         public Builder projectName(final java.lang.String projectName) {
             this.props.projectName(projectName);
             return this;
         }
         /**
-         * Property projectName: The name of project.
+         * Property projectName: The project name.
+         * <p>
+         * The naming convention is as follows:
+         * <p>
+         * <ul>
+         * <li>The name must be 1 to 128 characters in length.</li>
+         * <li>It can contain only letters, digits, hyphens (-), and underscores (_).</li>
+         * <li>It must start with a letter or an underscore (_).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param projectName Property projectName: The name of project. This parameter is required.
+         * @param projectName Property projectName: The project name. This parameter is required.
          */
         public Builder projectName(final com.aliyun.ros.cdk.core.IResolvable projectName) {
             this.props.projectName(projectName);
@@ -160,7 +176,14 @@ public class Project2 extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property datasetMaxEntityCount: The maximum number of metadata entities in each dataset.
          * <p>
-         * Default value: 10000000000.
+         * The default value is
+         * 10,000,000,000.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This configuration is reserved and is not currently enforced.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param datasetMaxEntityCount Property datasetMaxEntityCount: The maximum number of metadata entities in each dataset. This parameter is required.
@@ -172,7 +195,14 @@ public class Project2 extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property datasetMaxEntityCount: The maximum number of metadata entities in each dataset.
          * <p>
-         * Default value: 10000000000.
+         * The default value is
+         * 10,000,000,000.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This configuration is reserved and is not currently enforced.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param datasetMaxEntityCount Property datasetMaxEntityCount: The maximum number of metadata entities in each dataset. This parameter is required.
@@ -208,24 +238,38 @@ public class Project2 extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property datasetMaxRelationCount: The maximum number of metadata entities in each dataset.
+         * Property datasetMaxRelationCount: The maximum number of metadata relations in each dataset.
          * <p>
-         * Default value: 100000000000.
+         * The default value is
+         * 100,000,000,000.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This configuration is reserved and is not currently enforced.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param datasetMaxRelationCount Property datasetMaxRelationCount: The maximum number of metadata entities in each dataset. This parameter is required.
+         * @param datasetMaxRelationCount Property datasetMaxRelationCount: The maximum number of metadata relations in each dataset. This parameter is required.
          */
         public Builder datasetMaxRelationCount(final java.lang.Number datasetMaxRelationCount) {
             this.props.datasetMaxRelationCount(datasetMaxRelationCount);
             return this;
         }
         /**
-         * Property datasetMaxRelationCount: The maximum number of metadata entities in each dataset.
+         * Property datasetMaxRelationCount: The maximum number of metadata relations in each dataset.
          * <p>
-         * Default value: 100000000000.
+         * The default value is
+         * 100,000,000,000.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This configuration is reserved and is not currently enforced.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param datasetMaxRelationCount Property datasetMaxRelationCount: The maximum number of metadata entities in each dataset. This parameter is required.
+         * @param datasetMaxRelationCount Property datasetMaxRelationCount: The maximum number of metadata relations in each dataset. This parameter is required.
          */
         public Builder datasetMaxRelationCount(final com.aliyun.ros.cdk.core.IResolvable datasetMaxRelationCount) {
             this.props.datasetMaxRelationCount(datasetMaxRelationCount);

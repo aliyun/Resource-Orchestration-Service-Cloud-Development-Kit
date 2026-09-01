@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::LoadBalancer</code>The , which type is used to create an Application Load Balancer (ALB) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::LoadBalancer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.221Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.409Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.ILoadBalancer {
 
@@ -308,28 +308,52 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property addressAllocatedMode: The mode in which IP addresses are assigned.
+         * Property addressAllocatedMode: Address allocation mode.
          * <p>
          * Valid values:
-         * Fixed: The ALB instance uses a static IP address.
-         * Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
+         * <p>
+         * <ul>
+         * <li>Fixed (Default): A fixed IP address is allocated to each zone.</li>
+         * <li>Dynamic: Dynamic IP mode. IP addresses are dynamically allocated for each zone.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Starting from , when you create a new instance by using this interface, it is
+         * created as an upgraded ALB instance regardless of the mode you specify. The
+         * distinction between IP modes is removed, and the allocated IP addresses are
+         * automatically elastic. ALB instances created before the upgrade are not affected.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param addressAllocatedMode Property addressAllocatedMode: The mode in which IP addresses are assigned. This parameter is required.
+         * @param addressAllocatedMode Property addressAllocatedMode: Address allocation mode. This parameter is required.
          */
         public Builder addressAllocatedMode(final java.lang.String addressAllocatedMode) {
             this.props.addressAllocatedMode(addressAllocatedMode);
             return this;
         }
         /**
-         * Property addressAllocatedMode: The mode in which IP addresses are assigned.
+         * Property addressAllocatedMode: Address allocation mode.
          * <p>
          * Valid values:
-         * Fixed: The ALB instance uses a static IP address.
-         * Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
+         * <p>
+         * <ul>
+         * <li>Fixed (Default): A fixed IP address is allocated to each zone.</li>
+         * <li>Dynamic: Dynamic IP mode. IP addresses are dynamically allocated for each zone.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Starting from , when you create a new instance by using this interface, it is
+         * created as an upgraded ALB instance regardless of the mode you specify. The
+         * distinction between IP modes is removed, and the allocated IP addresses are
+         * automatically elastic. ALB instances created before the upgrade are not affected.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param addressAllocatedMode Property addressAllocatedMode: The mode in which IP addresses are assigned. This parameter is required.
+         * @param addressAllocatedMode Property addressAllocatedMode: Address allocation mode. This parameter is required.
          */
         public Builder addressAllocatedMode(final com.aliyun.ros.cdk.core.IResolvable addressAllocatedMode) {
             this.props.addressAllocatedMode(addressAllocatedMode);
@@ -445,24 +469,28 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property loadBalancerName: The name of the ALB instance.
+         * Property loadBalancerName: The name of the Application Load Balancer (ALB) instance.
          * <p>
-         * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+         * The name must be 2 to 128 characters long, must start with a letter, digit, or
+         * Chinese character, and can contain digits, periods (.), underscores (_), hyphens
+         * (-), and spaces.
          * <p>
          * @return {@code this}
-         * @param loadBalancerName Property loadBalancerName: The name of the ALB instance. This parameter is required.
+         * @param loadBalancerName Property loadBalancerName: The name of the Application Load Balancer (ALB) instance. This parameter is required.
          */
         public Builder loadBalancerName(final java.lang.String loadBalancerName) {
             this.props.loadBalancerName(loadBalancerName);
             return this;
         }
         /**
-         * Property loadBalancerName: The name of the ALB instance.
+         * Property loadBalancerName: The name of the Application Load Balancer (ALB) instance.
          * <p>
-         * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+         * The name must be 2 to 128 characters long, must start with a letter, digit, or
+         * Chinese character, and can contain digits, periods (.), underscores (_), hyphens
+         * (-), and spaces.
          * <p>
          * @return {@code this}
-         * @param loadBalancerName Property loadBalancerName: The name of the ALB instance. This parameter is required.
+         * @param loadBalancerName Property loadBalancerName: The name of the Application Load Balancer (ALB) instance. This parameter is required.
          */
         public Builder loadBalancerName(final com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
             this.props.loadBalancerName(loadBalancerName);
@@ -470,20 +498,20 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property modificationProtectionConfig: The configuration of modification protection.
+         * Property modificationProtectionConfig: The modification protection configuration.
          * <p>
          * @return {@code this}
-         * @param modificationProtectionConfig Property modificationProtectionConfig: The configuration of modification protection. This parameter is required.
+         * @param modificationProtectionConfig Property modificationProtectionConfig: The modification protection configuration. This parameter is required.
          */
         public Builder modificationProtectionConfig(final com.aliyun.ros.cdk.core.IResolvable modificationProtectionConfig) {
             this.props.modificationProtectionConfig(modificationProtectionConfig);
             return this;
         }
         /**
-         * Property modificationProtectionConfig: The configuration of modification protection.
+         * Property modificationProtectionConfig: The modification protection configuration.
          * <p>
          * @return {@code this}
-         * @param modificationProtectionConfig Property modificationProtectionConfig: The configuration of modification protection. This parameter is required.
+         * @param modificationProtectionConfig Property modificationProtectionConfig: The modification protection configuration. This parameter is required.
          */
         public Builder modificationProtectionConfig(final com.aliyun.ros.cdk.alb.RosLoadBalancer.ModificationProtectionConfigProperty modificationProtectionConfig) {
             this.props.modificationProtectionConfig(modificationProtectionConfig);

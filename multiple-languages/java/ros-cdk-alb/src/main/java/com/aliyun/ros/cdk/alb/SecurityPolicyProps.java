@@ -5,24 +5,21 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitypolicy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.285Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.483Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.SecurityPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityPolicyProps.Jsii$Proxy.class)
 public interface SecurityPolicyProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property ciphers: The supported cipher suites, which are determined by the TLS protocol version.
-     * <p>
-     * The specified cipher suites must be supported by at least one TLS protocol version that you specify.
-     * Note For example, if you set the TLSVersions parameter to TLSv1.3, you must specify cipher suites that are supported by TLS 1.3.
+     * Property ciphers: The supported cipher suites.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getCiphers();
 
     /**
      * Property securityPolicyName: The name of the security policy.
      * <p>
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). The name must start with a letter.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits,
+     * Chinese characters, periods (.), underscores (_), hyphens (-), and spaces.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSecurityPolicyName();
 
@@ -57,9 +54,7 @@ public interface SecurityPolicyProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link SecurityPolicyProps#getCiphers}
-         * @param ciphers Property ciphers: The supported cipher suites, which are determined by the TLS protocol version. This parameter is required.
-         *                The specified cipher suites must be supported by at least one TLS protocol version that you specify.
-         *                Note For example, if you set the TLSVersions parameter to TLSv1.3, you must specify cipher suites that are supported by TLS 1.3.
+         * @param ciphers Property ciphers: The supported cipher suites. This parameter is required.
          * @return {@code this}
          */
         public Builder ciphers(com.aliyun.ros.cdk.core.IResolvable ciphers) {
@@ -69,9 +64,7 @@ public interface SecurityPolicyProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link SecurityPolicyProps#getCiphers}
-         * @param ciphers Property ciphers: The supported cipher suites, which are determined by the TLS protocol version. This parameter is required.
-         *                The specified cipher suites must be supported by at least one TLS protocol version that you specify.
-         *                Note For example, if you set the TLSVersions parameter to TLSv1.3, you must specify cipher suites that are supported by TLS 1.3.
+         * @param ciphers Property ciphers: The supported cipher suites. This parameter is required.
          * @return {@code this}
          */
         public Builder ciphers(java.util.List<? extends java.lang.Object> ciphers) {
@@ -82,8 +75,8 @@ public interface SecurityPolicyProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link SecurityPolicyProps#getSecurityPolicyName}
          * @param securityPolicyName Property securityPolicyName: The name of the security policy. This parameter is required.
-         *                           The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-         *                           (.), underscores (_), and hyphens (-). The name must start with a letter.
+         *                           The name must be 2 to 128 characters in length, and can contain letters, digits,
+         *                           Chinese characters, periods (.), underscores (_), hyphens (-), and spaces.
          * @return {@code this}
          */
         public Builder securityPolicyName(java.lang.String securityPolicyName) {
@@ -94,8 +87,8 @@ public interface SecurityPolicyProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link SecurityPolicyProps#getSecurityPolicyName}
          * @param securityPolicyName Property securityPolicyName: The name of the security policy. This parameter is required.
-         *                           The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-         *                           (.), underscores (_), and hyphens (-). The name must start with a letter.
+         *                           The name must be 2 to 128 characters in length, and can contain letters, digits,
+         *                           Chinese characters, periods (.), underscores (_), hyphens (-), and spaces.
          * @return {@code this}
          */
         public Builder securityPolicyName(com.aliyun.ros.cdk.core.IResolvable securityPolicyName) {

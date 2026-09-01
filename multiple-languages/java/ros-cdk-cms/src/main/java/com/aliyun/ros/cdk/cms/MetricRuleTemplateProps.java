@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplate
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.973Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.264Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MetricRuleTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(MetricRuleTemplateProps.Jsii$Proxy.class)
 public interface MetricRuleTemplateProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,7 @@ public interface MetricRuleTemplateProps extends software.amazon.jsii.JsiiSerial
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
-     * Property alertTemplates: Valid values of N: 0 to 200.
+     * Property alertTemplates: The details of the alert template.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAlertTemplates() {
         return null;
@@ -85,7 +85,7 @@ public interface MetricRuleTemplateProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link MetricRuleTemplateProps#getAlertTemplates}
-         * @param alertTemplates Property alertTemplates: Valid values of N: 0 to 200.
+         * @param alertTemplates Property alertTemplates: The details of the alert template.
          * @return {@code this}
          */
         public Builder alertTemplates(com.aliyun.ros.cdk.core.IResolvable alertTemplates) {
@@ -95,7 +95,7 @@ public interface MetricRuleTemplateProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link MetricRuleTemplateProps#getAlertTemplates}
-         * @param alertTemplates Property alertTemplates: Valid values of N: 0 to 200.
+         * @param alertTemplates Property alertTemplates: The details of the alert template.
          * @return {@code this}
          */
         public Builder alertTemplates(java.util.List<? extends java.lang.Object> alertTemplates) {

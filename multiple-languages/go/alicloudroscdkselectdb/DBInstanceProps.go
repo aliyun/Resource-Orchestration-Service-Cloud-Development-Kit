@@ -13,7 +13,11 @@ type DBInstanceProps struct {
 	//
 	// Call DescribeAllDBInstanceClass API to check the latest class list.
 	DbInstanceClass interface{} `field:"required" json:"dbInstanceClass" yaml:"dbInstanceClass"`
-	// Property engineVersion: Database version.
+	// Property engineVersion: The database version.
+	//
+	// The default value is 4.1. Valid values:
+	// - 4.0
+	// - 4.1
 	EngineVersion interface{} `field:"required" json:"engineVersion" yaml:"engineVersion"`
 	// Property vpcId: VPC id.
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
@@ -39,7 +43,13 @@ type DBInstanceProps struct {
 	//
 	// You can define a maximum of 20 tags.
 	Tags *[]*RosDBInstance_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
-	// Property usedTime: Specifies the purchase duration of the prepaid instance.Value description: When Period is Year, UsedTime values range: 1, 2, 3, 5 (integral). When Period is Month, the UsedTime value range is: 1~9 (integral). Note This parameter takes effect and is required only if ChargeType is Prepaid.
+	// Property usedTime: The subscription duration of the subscription instance.
+	//
+	// Valid values:
+	// - If Period is set to Year, valid values are 1, 2, 3, 4, and 5.
+	// - If Period is set to Month, valid values are integers from 1 to 12.
+	// > This parameter is required and takes effect only when ChargeType is set to
+	// Prepaid.
 	UsedTime interface{} `field:"optional" json:"usedTime" yaml:"usedTime"`
 }
 

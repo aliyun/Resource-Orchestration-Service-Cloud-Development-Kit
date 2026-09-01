@@ -128,7 +128,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Selectdb
 
         private object _engineVersion;
 
-        /// <summary>Property engineVersion: Database version.</summary>
+        /// <summary>Property engineVersion: The database version.</summary>
+        /// <remarks>
+        /// The default value is 4.1. Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>4.0</description>
+        /// <description>4.1</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object EngineVersion
         {
@@ -494,7 +502,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Selectdb
 
         private object? _usedTime;
 
-        /// <summary>Property usedTime: Specifies the purchase duration of the prepaid instance.Value description: When Period is Year, UsedTime values range: 1, 2, 3, 5 (integral). When Period is Month, the UsedTime value range is: 1~9 (integral). Note This parameter takes effect and is required only if ChargeType is Prepaid.</summary>
+        /// <summary>Property usedTime: The subscription duration of the subscription instance.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>If Period is set to Year, valid values are 1, 2, 3, 4, and 5.</description>
+        /// <description>If Period is set to Month, valid values are integers from 1 to 12.</description>
+        /// </list>
+        ///
+        ///     This parameter is required and takes effect only when ChargeType is set to
+        ///     Prepaid.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? UsedTime

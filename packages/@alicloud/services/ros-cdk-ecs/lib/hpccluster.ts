@@ -10,9 +10,9 @@ export { RosHpcCluster as HpcClusterProperty };
 export interface HpcClusterProps {
 
     /**
-     * Property name: The name of the HPC cluster. The name must be 2 to 128 characters in length. It must
-     * start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters,
-     * digits, colons (:), underscores (_), and hyphens (-).
+     * Property name: The name of the HPC cluster. The name must be 2 to 128 characters in length, and
+     * can contain letters, digits, underscores (_), and hyphens (-). The name must
+     * start with a letter but cannot start with `http:\/\/` or `https:\/\/`.
      */
     readonly name: string | ros.IResolvable;
 
@@ -40,7 +40,7 @@ export interface IHpcCluster extends ros.IResource {
     readonly attrName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::HpcCluster`, which is used to create a High Performance Computing (HPC) cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::HpcCluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHpcCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-hpccluster
  */

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::SNatEntry</code>, which is used to configure the Source Network Address Translation (SNAT) table of a NAT gateway.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::SNatEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.237Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.634Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SNatEntry")
 public class SNatEntry extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.ISNatEntry {
 
@@ -154,20 +154,26 @@ public class SNatEntry extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+         * Property snatEntryName: The name of the SNAT entry.
+         * <p>
+         * The name must be 2 to 128 characters in length. It must start with a letter but
+         * cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param snatEntryName Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://. This parameter is required.
+         * @param snatEntryName Property snatEntryName: The name of the SNAT entry. This parameter is required.
          */
         public Builder snatEntryName(final java.lang.String snatEntryName) {
             this.props.snatEntryName(snatEntryName);
             return this;
         }
         /**
-         * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+         * Property snatEntryName: The name of the SNAT entry.
+         * <p>
+         * The name must be 2 to 128 characters in length. It must start with a letter but
+         * cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param snatEntryName Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://. This parameter is required.
+         * @param snatEntryName Property snatEntryName: The name of the SNAT entry. This parameter is required.
          */
         public Builder snatEntryName(final com.aliyun.ros.cdk.core.IResolvable snatEntryName) {
             this.props.snatEntryName(snatEntryName);
@@ -175,24 +181,66 @@ public class SNatEntry extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property sourceCidr: Specifies the network segment of the switch.
+         * Property sourceCidr: You can specify the CIDR block of a VPC, a vSwitch, or an ECS instance or enter a custom CIDR block.
          * <p>
-         * For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+         * You can specify an SNAT entry in the following ways:
+         * <p>
+         * <ul>
+         * <li>You can specify the CIDR block of the VPC where the NAT gateway is deployed.
+         * Then, all ECS instances in the VPC can access the Internet or external networks
+         * by using SNAT.</li>
+         * <li>You can specify the CIDR block of a vSwitch, for example, 192.168.1.0/24.
+         * Then, the ECS instances in the vSwitch can access the Internet or external
+         * networks by using SNAT.</li>
+         * <li>You can specify the IP address of an ECS instance, for example,
+         * 192.168.1.1/32. Then, the ECS instance can access the Internet or external
+         * networks by using SNAT.</li>
+         * <li>You can specify a custom CIDR block. Then, all ECS instances within the
+         * specified CIDR block can access the Internet or external networks by using SNAT.
+         * When you add an SNAT entry to an Internet NAT gateway, if SnatIp is set to an
+         * EIP, the ECS instance uses the specified EIP to access the Internet.
+         * If SnatIp is set to multiple EIPs, the ECS instance randomly selects an EIP
+         * specified in the SnatIp parameter to access the Internet.
+         * You cannot specify this parameter and SourceVSwtichId at the same time. If
+         * SourceVSwitchId is specified, you cannot specify SourceCIDR. If SourceCIDR is
+         * specified, you cannot specify SourceVSwitchId.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param sourceCidr Property sourceCidr: Specifies the network segment of the switch. This parameter is required.
+         * @param sourceCidr Property sourceCidr: You can specify the CIDR block of a VPC, a vSwitch, or an ECS instance or enter a custom CIDR block. This parameter is required.
          */
         public Builder sourceCidr(final java.lang.String sourceCidr) {
             this.props.sourceCidr(sourceCidr);
             return this;
         }
         /**
-         * Property sourceCidr: Specifies the network segment of the switch.
+         * Property sourceCidr: You can specify the CIDR block of a VPC, a vSwitch, or an ECS instance or enter a custom CIDR block.
          * <p>
-         * For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+         * You can specify an SNAT entry in the following ways:
+         * <p>
+         * <ul>
+         * <li>You can specify the CIDR block of the VPC where the NAT gateway is deployed.
+         * Then, all ECS instances in the VPC can access the Internet or external networks
+         * by using SNAT.</li>
+         * <li>You can specify the CIDR block of a vSwitch, for example, 192.168.1.0/24.
+         * Then, the ECS instances in the vSwitch can access the Internet or external
+         * networks by using SNAT.</li>
+         * <li>You can specify the IP address of an ECS instance, for example,
+         * 192.168.1.1/32. Then, the ECS instance can access the Internet or external
+         * networks by using SNAT.</li>
+         * <li>You can specify a custom CIDR block. Then, all ECS instances within the
+         * specified CIDR block can access the Internet or external networks by using SNAT.
+         * When you add an SNAT entry to an Internet NAT gateway, if SnatIp is set to an
+         * EIP, the ECS instance uses the specified EIP to access the Internet.
+         * If SnatIp is set to multiple EIPs, the ECS instance randomly selects an EIP
+         * specified in the SnatIp parameter to access the Internet.
+         * You cannot specify this parameter and SourceVSwtichId at the same time. If
+         * SourceVSwitchId is specified, you cannot specify SourceCIDR. If SourceCIDR is
+         * specified, you cannot specify SourceVSwitchId.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param sourceCidr Property sourceCidr: Specifies the network segment of the switch. This parameter is required.
+         * @param sourceCidr Property sourceCidr: You can specify the CIDR block of a VPC, a vSwitch, or an ECS instance or enter a custom CIDR block. This parameter is required.
          */
         public Builder sourceCidr(final com.aliyun.ros.cdk.core.IResolvable sourceCidr) {
             this.props.sourceCidr(sourceCidr);
@@ -200,20 +248,48 @@ public class SNatEntry extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property sourceVSwitchId: Allow which switch can access internet.
+         * Property sourceVSwitchId: The ID of the vSwitch.
+         * <p>
+         * <ul>
+         * <li>When you add an SNAT entry to an Internet NAT gateway, this parameter
+         * specifies that ECS instances in the vSwitch can use the SNAT entry to access the
+         * Internet. If you select multiple elastic IP addresses (EIPs) to create an SNAT
+         * address pool, connections are hashed to these EIPs. Network traffic may not be
+         * evenly distributed to the EIPs because the amount of traffic that passes through
+         * each connection varies. We recommend that you associate these EIPs with the same
+         * EIP bandwidth plan to prevent service interruptions due to the bandwidth limits
+         * on individual EIPs.</li>
+         * <li>When you add an SNAT entry to a VPC NAT gateway, this parameter specifies
+         * that ECS instances in the vSwitch can use the SNAT entry to access external
+         * networks.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param sourceVSwitchId Property sourceVSwitchId: Allow which switch can access internet. This parameter is required.
+         * @param sourceVSwitchId Property sourceVSwitchId: The ID of the vSwitch. This parameter is required.
          */
         public Builder sourceVSwitchId(final java.lang.String sourceVSwitchId) {
             this.props.sourceVSwitchId(sourceVSwitchId);
             return this;
         }
         /**
-         * Property sourceVSwitchId: Allow which switch can access internet.
+         * Property sourceVSwitchId: The ID of the vSwitch.
+         * <p>
+         * <ul>
+         * <li>When you add an SNAT entry to an Internet NAT gateway, this parameter
+         * specifies that ECS instances in the vSwitch can use the SNAT entry to access the
+         * Internet. If you select multiple elastic IP addresses (EIPs) to create an SNAT
+         * address pool, connections are hashed to these EIPs. Network traffic may not be
+         * evenly distributed to the EIPs because the amount of traffic that passes through
+         * each connection varies. We recommend that you associate these EIPs with the same
+         * EIP bandwidth plan to prevent service interruptions due to the bandwidth limits
+         * on individual EIPs.</li>
+         * <li>When you add an SNAT entry to a VPC NAT gateway, this parameter specifies
+         * that ECS instances in the vSwitch can use the SNAT entry to access external
+         * networks.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param sourceVSwitchId Property sourceVSwitchId: Allow which switch can access internet. This parameter is required.
+         * @param sourceVSwitchId Property sourceVSwitchId: The ID of the vSwitch. This parameter is required.
          */
         public Builder sourceVSwitchId(final com.aliyun.ros.cdk.core.IResolvable sourceVSwitchId) {
             this.props.sourceVSwitchId(sourceVSwitchId);

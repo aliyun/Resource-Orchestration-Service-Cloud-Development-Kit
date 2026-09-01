@@ -21,7 +21,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudsiem
             get;
         }
 
-        /// <summary>Property sourceLogInfo: The info of log to be added.</summary>
+        /// <summary>Property sourceLogInfo: The detailed information about the Simple Log Service (SLS) log to be collected.</summary>
+        /// <remarks>
+        /// The value is a JSON string.
+        /// </remarks>
         [JsiiProperty(name: "sourceLogInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cloudsiem.RosUserSourceLogConfig.SourceLogInfoProperty\"}]}}")]
         object SourceLogInfo
         {
@@ -66,7 +69,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudsiem
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property sourceLogInfo: The info of log to be added.</summary>
+            /// <summary>Property sourceLogInfo: The detailed information about the Simple Log Service (SLS) log to be collected.</summary>
+            /// <remarks>
+            /// The value is a JSON string.
+            /// </remarks>
             [JsiiProperty(name: "sourceLogInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cloudsiem.RosUserSourceLogConfig.SourceLogInfoProperty\"}]}}")]
             public object SourceLogInfo
             {

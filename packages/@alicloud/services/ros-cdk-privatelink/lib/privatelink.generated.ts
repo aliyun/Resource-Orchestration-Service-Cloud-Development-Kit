@@ -21,13 +21,23 @@ export interface RosVpcEndpointProps {
 
     /**
      * @Property endpointName: The name of the endpoint.
-     * The name must be 2 to 128 characters in length and can contain digits, underscores
-     * (_), and hyphens (-). The name must start with a letter.
+     * The name must be 2 to 128 characters long, start with a letter or a Chinese
+     * character, and can contain digits, hyphens (-), and underscores (_).
      */
     readonly endpointName?: string | ros.IResolvable;
 
     /**
-     * @Property endpointType: Endpoint type.
+     * @Property endpointType: The type of the endpoint. Valid values:
+     * - Interface: an interface endpoint. You can add Application Load Balancer (ALB),
+     *  CLB, and Network Load Balancer (NLB) instances as service
+     * resources.
+     * - Reverse: a reverse endpoint. You can add a VPC NAT Gateway as a service
+     * resource.
+     * - GatewayLoadBalancer: a Gateway Load Balancer endpoint. You can add a Gateway
+     * Load Balancer (GWLB) as a service resource.
+     * > Services that support reverse endpoints are provided exclusively by the cloud
+     * platform and its partners. You cannot create them by default. To request access,
+     * contact your account manager.
      */
     readonly endpointType?: string | ros.IResolvable;
 
@@ -59,7 +69,7 @@ export interface RosVpcEndpointProps {
     readonly tags?: RosVpcEndpoint.TagsProperty[];
 
     /**
-     * @Property zone:
+     * @Property zone: The list of zones for the endpoint.
      */
     readonly zone?: Array<RosVpcEndpoint.ZoneProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -229,13 +239,23 @@ export class RosVpcEndpoint extends ros.RosResource {
 
     /**
      * @Property endpointName: The name of the endpoint.
-     * The name must be 2 to 128 characters in length and can contain digits, underscores
-     * (_), and hyphens (-). The name must start with a letter.
+     * The name must be 2 to 128 characters long, start with a letter or a Chinese
+     * character, and can contain digits, hyphens (-), and underscores (_).
      */
     public endpointName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property endpointType: Endpoint type.
+     * @Property endpointType: The type of the endpoint. Valid values:
+     * - Interface: an interface endpoint. You can add Application Load Balancer (ALB),
+     *  CLB, and Network Load Balancer (NLB) instances as service
+     * resources.
+     * - Reverse: a reverse endpoint. You can add a VPC NAT Gateway as a service
+     * resource.
+     * - GatewayLoadBalancer: a Gateway Load Balancer endpoint. You can add a Gateway
+     * Load Balancer (GWLB) as a service resource.
+     * > Services that support reverse endpoints are provided exclusively by the cloud
+     * platform and its partners. You cannot create them by default. To request access,
+     * contact your account manager.
      */
     public endpointType: string | ros.IResolvable | undefined;
 
@@ -267,7 +287,7 @@ export class RosVpcEndpoint extends ros.RosResource {
     public tags: RosVpcEndpoint.TagsProperty[] | undefined;
 
     /**
-     * @Property zone:
+     * @Property zone: The list of zones for the endpoint.
      */
     public zone: Array<RosVpcEndpoint.ZoneProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -462,7 +482,8 @@ export interface RosVpcEndpointServiceProps {
     readonly payer?: string | ros.IResolvable;
 
     /**
-     * @Property resource:
+     * @Property resource: A collection of service resources. You can add up to 10 resources in a single
+     * request. An endpoint service can have a maximum of 20 service resources.
      */
     readonly resource?: Array<RosVpcEndpointService.ResourceProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -477,7 +498,13 @@ export interface RosVpcEndpointServiceProps {
     readonly serviceDescription?: string | ros.IResolvable;
 
     /**
-     * @Property serviceResourceType: Service resource type.
+     * @Property serviceResourceType: The type of the service resource. Valid values:
+     * - slb: a Classic Load Balancer (CLB) instance.
+     * - alb: an Application Load Balancer (ALB) instance.
+     * - nlb: a Network Load Balancer (NLB) instance.
+     * - gwlb: a Gateway Load Balancer (GWLB) instance.
+     * > PrivateLink does not support connections to TCPSSL listeners on Network Load
+     * Balancer (NLB) instances.
      */
     readonly serviceResourceType?: string | ros.IResolvable;
 
@@ -668,7 +695,8 @@ export class RosVpcEndpointService extends ros.RosResource {
     public payer: string | ros.IResolvable | undefined;
 
     /**
-     * @Property resource:
+     * @Property resource: A collection of service resources. You can add up to 10 resources in a single
+     * request. An endpoint service can have a maximum of 20 service resources.
      */
     public resource: Array<RosVpcEndpointService.ResourceProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -683,7 +711,13 @@ export class RosVpcEndpointService extends ros.RosResource {
     public serviceDescription: string | ros.IResolvable | undefined;
 
     /**
-     * @Property serviceResourceType: Service resource type.
+     * @Property serviceResourceType: The type of the service resource. Valid values:
+     * - slb: a Classic Load Balancer (CLB) instance.
+     * - alb: an Application Load Balancer (ALB) instance.
+     * - nlb: a Network Load Balancer (NLB) instance.
+     * - gwlb: a Gateway Load Balancer (GWLB) instance.
+     * > PrivateLink does not support connections to TCPSSL listeners on Network Load
+     * Balancer (NLB) instances.
      */
     public serviceResourceType: string | ros.IResolvable | undefined;
 
@@ -870,10 +904,11 @@ export interface RosVpcEndpointServiceAttachmentProps {
     readonly resourceId: string | ros.IResolvable;
 
     /**
-     * @Property resourceType: The resource type. Allowed values:
-     * - slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.
-     * - alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.
-     * - nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.
+     * @Property resourceType: The type of the service resource. Valid values:
+     * - slb: Classic Load Balancer (CLB).
+     * - alb: Application Load Balancer (ALB).
+     * - nlb: Network Load Balancer (NLB).
+     * - gwlb: Gateway Load Balancer (GWLB).
      */
     readonly resourceType: string | ros.IResolvable;
 
@@ -883,7 +918,8 @@ export interface RosVpcEndpointServiceAttachmentProps {
     readonly serviceId: string | ros.IResolvable;
 
     /**
-     * @Property zoneId: Zone id of the service resource.
+     * @Property zoneId: The zone where the service resource is located. This parameter is required if the
+     * service resource is an ALB, NLB, or GWLB instance.
      */
     readonly zoneId?: string | ros.IResolvable;
 }
@@ -964,10 +1000,11 @@ export class RosVpcEndpointServiceAttachment extends ros.RosResource {
     public resourceId: string | ros.IResolvable;
 
     /**
-     * @Property resourceType: The resource type. Allowed values:
-     * - slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.
-     * - alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.
-     * - nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.
+     * @Property resourceType: The type of the service resource. Valid values:
+     * - slb: Classic Load Balancer (CLB).
+     * - alb: Application Load Balancer (ALB).
+     * - nlb: Network Load Balancer (NLB).
+     * - gwlb: Gateway Load Balancer (GWLB).
      */
     public resourceType: string | ros.IResolvable;
 
@@ -977,7 +1014,8 @@ export class RosVpcEndpointServiceAttachment extends ros.RosResource {
     public serviceId: string | ros.IResolvable;
 
     /**
-     * @Property zoneId: Zone id of the service resource.
+     * @Property zoneId: The zone where the service resource is located. This parameter is required if the
+     * service resource is an ALB, NLB, or GWLB instance.
      */
     public zoneId: string | ros.IResolvable | undefined;
 

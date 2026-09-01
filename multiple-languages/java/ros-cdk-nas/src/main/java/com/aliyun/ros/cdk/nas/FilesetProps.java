@@ -5,31 +5,59 @@ package com.aliyun.ros.cdk.nas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.495Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:15:39.314Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.FilesetProps")
 @software.amazon.jsii.Jsii.Proxy(FilesetProps.Jsii$Proxy.class)
 public interface FilesetProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property fileSystemId: File system ID.
+     * Property fileSystemId: The ID of the file system.
+     * <p>
+     * <ul>
+     * <li>The IDs of CPFS file systems must start with <code>cpfs-</code>. Example:
+     * cpfs-099394bd928c****.</li>
+     * <li>The IDs of CPFS for Lingjun file systems must start with <code>bmcpfs-</code>. Example:
+     * bmcpfs-290w65p03ok64ya****.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getFileSystemId();
 
     /**
-     * Property fileSystemPath: The absolute path of Fileset to be created.
+     * Property fileSystemPath: The absolute path of the fileset.
      * <p>
-     * The parent catalog of specified the directory must be a directory in the file system.
-     * The length is 2 to 1024 characters.
-     * Specify the directory must start with positive (/).
+     * <ul>
+     * <li>CPFS path limits.</li>
+     * <li>The parent directory of the path that you specify must be an existing
+     * directory in the file system.</li>
+     * <li>The path must be 2 to 1024 characters in length.</li>
+     * <li>The path must start and end with a forward slash (/).</li>
+     * <li>Path limit of CPFS for Lingjun</li>
+     * <li>The path must be 2 to 1024 characters in length.</li>
+     * <li>The path must start and end with a forward slash (/).</li>
+     * <li>The fileset path must be a new path and cannot be an existing path. Fileset
+     * paths cannot be renamed and cannot be symbolic links.</li>
+     * <li>The maximum depth supported by a fileset path is eight levels. The depth of
+     * the root directory / is 0 levels. For example, the fileset path /test/aaa/ccc/
+     * has three levels.</li>
+     * <li>If the fileset path is a multi-level path, the parent directory must be an
+     * existing directory.</li>
+     * <li>Nested filesets are not supported. If a fileset is specified as a parent
+     * directory, its subdirectory cannot be a fileset. A fileset path supports only one
+     * quota.</li>
+     * <li>The path cannot exceed 990 characters in length.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getFileSystemPath();
 
     /**
-     * Property description: Fileset description information.
+     * Property description: The description of the fileset.
      * <p>
-     * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
-     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * <ul>
+     * <li>The description must be 2 to 128 characters in length.</li>
+     * <li>The name must start with a letter and cannot start with http:// or https://.</li>
+     * <li>The description can contain letters, digits, colons (:), underscores (_),
+     * periods (.), and hyphens (-).</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -51,7 +79,13 @@ public interface FilesetProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FilesetProps#getFileSystemId}
-         * @param fileSystemId Property fileSystemId: File system ID. This parameter is required.
+         * @param fileSystemId Property fileSystemId: The ID of the file system. This parameter is required.
+         *                     <ul>
+         *                     <li>The IDs of CPFS file systems must start with <code>cpfs-</code>. Example:
+         *                     cpfs-099394bd928c****.</li>
+         *                     <li>The IDs of CPFS for Lingjun file systems must start with <code>bmcpfs-</code>. Example:
+         *                     bmcpfs-290w65p03ok64ya****.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder fileSystemId(java.lang.String fileSystemId) {
@@ -61,7 +95,13 @@ public interface FilesetProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FilesetProps#getFileSystemId}
-         * @param fileSystemId Property fileSystemId: File system ID. This parameter is required.
+         * @param fileSystemId Property fileSystemId: The ID of the file system. This parameter is required.
+         *                     <ul>
+         *                     <li>The IDs of CPFS file systems must start with <code>cpfs-</code>. Example:
+         *                     cpfs-099394bd928c****.</li>
+         *                     <li>The IDs of CPFS for Lingjun file systems must start with <code>bmcpfs-</code>. Example:
+         *                     bmcpfs-290w65p03ok64ya****.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder fileSystemId(com.aliyun.ros.cdk.core.IResolvable fileSystemId) {
@@ -71,10 +111,28 @@ public interface FilesetProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FilesetProps#getFileSystemPath}
-         * @param fileSystemPath Property fileSystemPath: The absolute path of Fileset to be created. This parameter is required.
-         *                       The parent catalog of specified the directory must be a directory in the file system.
-         *                       The length is 2 to 1024 characters.
-         *                       Specify the directory must start with positive (/).
+         * @param fileSystemPath Property fileSystemPath: The absolute path of the fileset. This parameter is required.
+         *                       <ul>
+         *                       <li>CPFS path limits.</li>
+         *                       <li>The parent directory of the path that you specify must be an existing
+         *                       directory in the file system.</li>
+         *                       <li>The path must be 2 to 1024 characters in length.</li>
+         *                       <li>The path must start and end with a forward slash (/).</li>
+         *                       <li>Path limit of CPFS for Lingjun</li>
+         *                       <li>The path must be 2 to 1024 characters in length.</li>
+         *                       <li>The path must start and end with a forward slash (/).</li>
+         *                       <li>The fileset path must be a new path and cannot be an existing path. Fileset
+         *                       paths cannot be renamed and cannot be symbolic links.</li>
+         *                       <li>The maximum depth supported by a fileset path is eight levels. The depth of
+         *                       the root directory / is 0 levels. For example, the fileset path /test/aaa/ccc/
+         *                       has three levels.</li>
+         *                       <li>If the fileset path is a multi-level path, the parent directory must be an
+         *                       existing directory.</li>
+         *                       <li>Nested filesets are not supported. If a fileset is specified as a parent
+         *                       directory, its subdirectory cannot be a fileset. A fileset path supports only one
+         *                       quota.</li>
+         *                       <li>The path cannot exceed 990 characters in length.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder fileSystemPath(java.lang.String fileSystemPath) {
@@ -84,10 +142,28 @@ public interface FilesetProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FilesetProps#getFileSystemPath}
-         * @param fileSystemPath Property fileSystemPath: The absolute path of Fileset to be created. This parameter is required.
-         *                       The parent catalog of specified the directory must be a directory in the file system.
-         *                       The length is 2 to 1024 characters.
-         *                       Specify the directory must start with positive (/).
+         * @param fileSystemPath Property fileSystemPath: The absolute path of the fileset. This parameter is required.
+         *                       <ul>
+         *                       <li>CPFS path limits.</li>
+         *                       <li>The parent directory of the path that you specify must be an existing
+         *                       directory in the file system.</li>
+         *                       <li>The path must be 2 to 1024 characters in length.</li>
+         *                       <li>The path must start and end with a forward slash (/).</li>
+         *                       <li>Path limit of CPFS for Lingjun</li>
+         *                       <li>The path must be 2 to 1024 characters in length.</li>
+         *                       <li>The path must start and end with a forward slash (/).</li>
+         *                       <li>The fileset path must be a new path and cannot be an existing path. Fileset
+         *                       paths cannot be renamed and cannot be symbolic links.</li>
+         *                       <li>The maximum depth supported by a fileset path is eight levels. The depth of
+         *                       the root directory / is 0 levels. For example, the fileset path /test/aaa/ccc/
+         *                       has three levels.</li>
+         *                       <li>If the fileset path is a multi-level path, the parent directory must be an
+         *                       existing directory.</li>
+         *                       <li>Nested filesets are not supported. If a fileset is specified as a parent
+         *                       directory, its subdirectory cannot be a fileset. A fileset path supports only one
+         *                       quota.</li>
+         *                       <li>The path cannot exceed 990 characters in length.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder fileSystemPath(com.aliyun.ros.cdk.core.IResolvable fileSystemPath) {
@@ -97,10 +173,13 @@ public interface FilesetProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FilesetProps#getDescription}
-         * @param description Property description: Fileset description information.
-         *                    The length is 2 to 128 English or Chinese characters.
-         *                    Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
-         *                    It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * @param description Property description: The description of the fileset.
+         *                    <ul>
+         *                    <li>The description must be 2 to 128 characters in length.</li>
+         *                    <li>The name must start with a letter and cannot start with http:// or https://.</li>
+         *                    <li>The description can contain letters, digits, colons (:), underscores (_),
+         *                    periods (.), and hyphens (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -110,10 +189,13 @@ public interface FilesetProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FilesetProps#getDescription}
-         * @param description Property description: Fileset description information.
-         *                    The length is 2 to 128 English or Chinese characters.
-         *                    Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
-         *                    It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * @param description Property description: The description of the fileset.
+         *                    <ul>
+         *                    <li>The description must be 2 to 128 characters in length.</li>
+         *                    <li>The name must start with a letter and cannot start with http:// or https://.</li>
+         *                    <li>The description can contain letters, digits, colons (:), underscores (_),
+         *                    periods (.), and hyphens (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {

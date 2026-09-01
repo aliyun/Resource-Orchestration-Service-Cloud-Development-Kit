@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paifeaturestore;
 /**
  * Represents a <code>Datasource</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:25:42.654Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:36:56.782Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paifeaturestore.$Module.class, fqn = "@alicloud/ros-cdk-paifeaturestore.IDatasource")
 @software.amazon.jsii.Jsii.Proxy(IDatasource.Jsii$Proxy.class)
 public interface IDatasource extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

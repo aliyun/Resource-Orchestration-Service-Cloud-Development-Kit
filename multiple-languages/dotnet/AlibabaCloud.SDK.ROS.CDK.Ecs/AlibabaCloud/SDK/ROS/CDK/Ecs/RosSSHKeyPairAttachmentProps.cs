@@ -16,7 +16,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object _instanceIds;
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceIds: The comma delimited ECS instance id list. Only support Linux.
+        /// <strong>Property</strong>: instanceIds: The IDs of instances to which you want to bind the SSH key pair. The value can be
+        /// a JSON array that consists of up to 50 instance IDs. Separate multiple instance
+        /// IDs with commas (,).
         /// </remarks>
         [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object InstanceIds

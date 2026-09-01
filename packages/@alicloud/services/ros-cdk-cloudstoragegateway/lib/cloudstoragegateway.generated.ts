@@ -9,7 +9,11 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosExpressSyncProps {
 
     /**
-     * @Property bucketName: The name of the OSS bucket.
+     * @Property bucketName: The name of the bucket. Note:
+     * - You can specify only one OSS bucket for a synchronization group. All data
+     * changes in the bucket are synchronized to your on-premises environment.
+     * - If you have not created a share for the OSS bucket, you must first create a
+     * share between the file gateway and the OSS bucket.
      */
     readonly bucketName: string | ros.IResolvable;
 
@@ -19,7 +23,10 @@ export interface RosExpressSyncProps {
     readonly bucketRegion: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the ExpressSync.
+     * @Property name: The name of the express synchronization group. The name must be 1 to 128
+     * characters in length and can contain letters, Chinese characters, digits, periods
+     * (.), underscores (_), and hyphens (-). The name must start with a letter or a
+     * Chinese character.
      */
     readonly name: string | ros.IResolvable;
 
@@ -29,7 +36,8 @@ export interface RosExpressSyncProps {
     readonly bucketPrefix?: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of the ExpressSync.
+     * @Property description: The description of the express synchronization group. The description can be up
+     * to 255 characters in length.
      */
     readonly description?: string | ros.IResolvable;
 }
@@ -97,7 +105,11 @@ export class RosExpressSync extends ros.RosResource {
 
 
     /**
-     * @Property bucketName: The name of the OSS bucket.
+     * @Property bucketName: The name of the bucket. Note:
+     * - You can specify only one OSS bucket for a synchronization group. All data
+     * changes in the bucket are synchronized to your on-premises environment.
+     * - If you have not created a share for the OSS bucket, you must first create a
+     * share between the file gateway and the OSS bucket.
      */
     public bucketName: string | ros.IResolvable;
 
@@ -107,7 +119,10 @@ export class RosExpressSync extends ros.RosResource {
     public bucketRegion: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the ExpressSync.
+     * @Property name: The name of the express synchronization group. The name must be 1 to 128
+     * characters in length and can contain letters, Chinese characters, digits, periods
+     * (.), underscores (_), and hyphens (-). The name must start with a letter or a
+     * Chinese character.
      */
     public name: string | ros.IResolvable;
 
@@ -117,7 +132,8 @@ export class RosExpressSync extends ros.RosResource {
     public bucketPrefix: string | ros.IResolvable | undefined;
 
     /**
-     * @Property description: The description of the ExpressSync.
+     * @Property description: The description of the express synchronization group. The description can be up
+     * to 255 characters in length.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -160,7 +176,7 @@ export class RosExpressSync extends ros.RosResource {
 export interface RosGatewayProps {
 
     /**
-     * @Property category: The category of the gateway.
+     * @Property category: The category of the gateway. The default value is `Cloud`.
      */
     readonly category: string | ros.IResolvable;
 
@@ -170,7 +186,9 @@ export interface RosGatewayProps {
     readonly location: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the gateway.
+     * @Property name: The name of the gateway. The name must be 60 characters in length. The name must
+     * start with a letter or a Chinese character. The name can contain letters, Chinese
+     * characters, digits, underscores (_), hyphens (-), and periods (.).
      */
     readonly name: string | ros.IResolvable;
 
@@ -185,22 +203,40 @@ export interface RosGatewayProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property gatewayClass: The class of the gateway.
+     * @Property gatewayClass: If your gateway is deployed in a data center, which is an on-premises gateway,
+     * you can ignore this parameter.
+     * If your gateway is deployed on the cloud, which is a cloud gateway, valid
+     * values are:
+     * - Basic: Basic
+     * - Standard: Medium
+     * - Enhanced: Enhanced
+     * - Advanced: Performance
      */
     readonly gatewayClass?: string | ros.IResolvable;
 
     /**
-     * @Property postPaid: Whether the gateway is pay-as-you-go.
+     * @Property postPaid: Valid values:
+     * - true: pay-as-you-go.
+     * - false: subscription.
+     * Default value: false (subscription).
      */
     readonly postPaid?: boolean | ros.IResolvable;
 
     /**
-     * @Property publicNetworkBandwidth: The public network bandwidth of the gateway.
+     * @Property publicNetworkBandwidth: > - This parameter is supported only for cloud gateways. You can ignore this
+     * parameter for on-premises gateways.
+     * > - Configure this parameter only when you need to mount an OSS bucket across
+     * regions.
+     * > - If you specify 0 or do not specify this parameter, the default value is 5.
      */
     readonly publicNetworkBandwidth?: number | ros.IResolvable;
 
     /**
-     * @Property releaseAfterExpiration: Whether to release the gateway after expiration.
+     * @Property releaseAfterExpiration: Specifies whether to release the gateway when the subscription expires. Valid
+     * values:
+     * true: The gateway is automatically released.
+     * false: The billing method of the gateway is automatically changed to
+     * pay-as-you-go after the subscription expires.
      */
     readonly releaseAfterExpiration?: boolean | ros.IResolvable;
 
@@ -215,7 +251,8 @@ export interface RosGatewayProps {
     readonly secondaryVSwitchId?: string | ros.IResolvable;
 
     /**
-     * @Property storageBundleId: The ID of the storage bundle.
+     * @Property storageBundleId: The ID of the gateway cluster. You must specify this parameter if you do not
+     * specify ResourceRegionId.
      */
     readonly storageBundleId?: string | ros.IResolvable;
 
@@ -230,7 +267,12 @@ export interface RosGatewayProps {
     readonly untrustedEnvInstanceType?: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The ID of the VSwitch.
+     * @Property vSwitchId: The ID of the virtual switch. If your gateway is deployed in a data center, you
+     * can ignore this parameter.
+     * - The vSwitch must be in the same VPC as the ECS instance that you want to
+     * attach.
+     * - If no gateway resources can be allocated in the zone where the vSwitch resides,
+     * create a vSwitch in another zone.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 }
@@ -345,7 +387,7 @@ export class RosGateway extends ros.RosResource {
 
 
     /**
-     * @Property category: The category of the gateway.
+     * @Property category: The category of the gateway. The default value is `Cloud`.
      */
     public category: string | ros.IResolvable;
 
@@ -355,7 +397,9 @@ export class RosGateway extends ros.RosResource {
     public location: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the gateway.
+     * @Property name: The name of the gateway. The name must be 60 characters in length. The name must
+     * start with a letter or a Chinese character. The name can contain letters, Chinese
+     * characters, digits, underscores (_), hyphens (-), and periods (.).
      */
     public name: string | ros.IResolvable;
 
@@ -370,22 +414,40 @@ export class RosGateway extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property gatewayClass: The class of the gateway.
+     * @Property gatewayClass: If your gateway is deployed in a data center, which is an on-premises gateway,
+     * you can ignore this parameter.
+     * If your gateway is deployed on the cloud, which is a cloud gateway, valid
+     * values are:
+     * - Basic: Basic
+     * - Standard: Medium
+     * - Enhanced: Enhanced
+     * - Advanced: Performance
      */
     public gatewayClass: string | ros.IResolvable | undefined;
 
     /**
-     * @Property postPaid: Whether the gateway is pay-as-you-go.
+     * @Property postPaid: Valid values:
+     * - true: pay-as-you-go.
+     * - false: subscription.
+     * Default value: false (subscription).
      */
     public postPaid: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property publicNetworkBandwidth: The public network bandwidth of the gateway.
+     * @Property publicNetworkBandwidth: > - This parameter is supported only for cloud gateways. You can ignore this
+     * parameter for on-premises gateways.
+     * > - Configure this parameter only when you need to mount an OSS bucket across
+     * regions.
+     * > - If you specify 0 or do not specify this parameter, the default value is 5.
      */
     public publicNetworkBandwidth: number | ros.IResolvable | undefined;
 
     /**
-     * @Property releaseAfterExpiration: Whether to release the gateway after expiration.
+     * @Property releaseAfterExpiration: Specifies whether to release the gateway when the subscription expires. Valid
+     * values:
+     * true: The gateway is automatically released.
+     * false: The billing method of the gateway is automatically changed to
+     * pay-as-you-go after the subscription expires.
      */
     public releaseAfterExpiration: boolean | ros.IResolvable | undefined;
 
@@ -400,7 +462,8 @@ export class RosGateway extends ros.RosResource {
     public secondaryVSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property storageBundleId: The ID of the storage bundle.
+     * @Property storageBundleId: The ID of the gateway cluster. You must specify this parameter if you do not
+     * specify ResourceRegionId.
      */
     public storageBundleId: string | ros.IResolvable | undefined;
 
@@ -415,7 +478,12 @@ export class RosGateway extends ros.RosResource {
     public untrustedEnvInstanceType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vSwitchId: The ID of the VSwitch.
+     * @Property vSwitchId: The ID of the virtual switch. If your gateway is deployed in a data center, you
+     * can ignore this parameter.
+     * - The vSwitch must be in the same VPC as the ECS instance that you want to
+     * attach.
+     * - If no gateway resources can be allocated in the zone where the vSwitch resides,
+     * create a vSwitch in another zone.
      */
     public vSwitchId: string | ros.IResolvable | undefined;
 
@@ -641,7 +709,7 @@ function rosStorageBundlePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudStorageGateway::StorageBundle`, which is used to create a gateway cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudStorageGateway::StorageBundle`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StorageBundle` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudstoragegateway-storagebundle
  */

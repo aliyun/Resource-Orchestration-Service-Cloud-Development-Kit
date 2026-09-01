@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.appflow;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::AppFlow::UserAuthConfig</code>, which is used to create configurations for a user credential.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::AppFlow::UserAuthConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:30:09.461Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:10:07.400Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.UserAuthConfig")
 public class UserAuthConfig extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.appflow.IUserAuthConfig {
 
@@ -120,20 +120,24 @@ public class UserAuthConfig extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property authConfig: AuthConfig.
+         * Property authConfig: The details of the authentication configuration.
+         * <p>
+         * The value is a JSON string.
          * <p>
          * @return {@code this}
-         * @param authConfig Property authConfig: AuthConfig. This parameter is required.
+         * @param authConfig Property authConfig: The details of the authentication configuration. This parameter is required.
          */
         public Builder authConfig(final com.aliyun.ros.cdk.core.IResolvable authConfig) {
             this.props.authConfig(authConfig);
             return this;
         }
         /**
-         * Property authConfig: AuthConfig.
+         * Property authConfig: The details of the authentication configuration.
+         * <p>
+         * The value is a JSON string.
          * <p>
          * @return {@code this}
-         * @param authConfig Property authConfig: AuthConfig. This parameter is required.
+         * @param authConfig Property authConfig: The details of the authentication configuration. This parameter is required.
          */
         public Builder authConfig(final java.util.Map<java.lang.String, ? extends java.lang.Object> authConfig) {
             this.props.authConfig(authConfig);

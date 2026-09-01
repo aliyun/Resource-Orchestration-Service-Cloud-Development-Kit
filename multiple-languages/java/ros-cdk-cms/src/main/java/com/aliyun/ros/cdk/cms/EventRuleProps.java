@@ -5,13 +5,13 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.926Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.197Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.EventRuleProps")
 @software.amazon.jsii.Jsii.Proxy(EventRuleProps.Jsii$Proxy.class)
 public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property eventPattern: Event pattern configuration.A maximum of 20 event patterns.
+     * Property eventPattern: The pattern of the event-triggered alert rule.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEventPattern();
 
@@ -28,11 +28,14 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property eventType: The type of the event alert.
+     * Property eventType: The type of the event.
      * <p>
      * Valid values:
-     * SYSTEM
-     * CUSTOM
+     * <p>
+     * <ul>
+     * <li>SYSTEM: a system event.</li>
+     * <li>CUSTOM: a custom event.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEventType() {
         return null;
@@ -53,11 +56,14 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property state: The status of the alert rule.
+     * Property state: The status of the event-triggered alert rule.
      * <p>
      * Valid values:
-     * ENABLED
-     * DISABLED
+     * <p>
+     * <ul>
+     * <li>ENABLED: The rule is enabled.</li>
+     * <li>DISABLED: The rule is disabled.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getState() {
         return null;
@@ -83,7 +89,7 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EventRuleProps#getEventPattern}
-         * @param eventPattern Property eventPattern: Event pattern configuration.A maximum of 20 event patterns. This parameter is required.
+         * @param eventPattern Property eventPattern: The pattern of the event-triggered alert rule. This parameter is required.
          * @return {@code this}
          */
         public Builder eventPattern(com.aliyun.ros.cdk.core.IResolvable eventPattern) {
@@ -93,7 +99,7 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EventRuleProps#getEventPattern}
-         * @param eventPattern Property eventPattern: Event pattern configuration.A maximum of 20 event patterns. This parameter is required.
+         * @param eventPattern Property eventPattern: The pattern of the event-triggered alert rule. This parameter is required.
          * @return {@code this}
          */
         public Builder eventPattern(java.util.List<? extends java.lang.Object> eventPattern) {
@@ -143,10 +149,13 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EventRuleProps#getEventType}
-         * @param eventType Property eventType: The type of the event alert.
+         * @param eventType Property eventType: The type of the event.
          *                  Valid values:
-         *                  SYSTEM
-         *                  CUSTOM
+         *                  <p>
+         *                  <ul>
+         *                  <li>SYSTEM: a system event.</li>
+         *                  <li>CUSTOM: a custom event.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder eventType(java.lang.String eventType) {
@@ -156,10 +165,13 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EventRuleProps#getEventType}
-         * @param eventType Property eventType: The type of the event alert.
+         * @param eventType Property eventType: The type of the event.
          *                  Valid values:
-         *                  SYSTEM
-         *                  CUSTOM
+         *                  <p>
+         *                  <ul>
+         *                  <li>SYSTEM: a system event.</li>
+         *                  <li>CUSTOM: a custom event.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder eventType(com.aliyun.ros.cdk.core.IResolvable eventType) {
@@ -209,10 +221,13 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EventRuleProps#getState}
-         * @param state Property state: The status of the alert rule.
+         * @param state Property state: The status of the event-triggered alert rule.
          *              Valid values:
-         *              ENABLED
-         *              DISABLED
+         *              <p>
+         *              <ul>
+         *              <li>ENABLED: The rule is enabled.</li>
+         *              <li>DISABLED: The rule is disabled.</li>
+         *              </ul>
          * @return {@code this}
          */
         public Builder state(java.lang.String state) {
@@ -222,10 +237,13 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EventRuleProps#getState}
-         * @param state Property state: The status of the alert rule.
+         * @param state Property state: The status of the event-triggered alert rule.
          *              Valid values:
-         *              ENABLED
-         *              DISABLED
+         *              <p>
+         *              <ul>
+         *              <li>ENABLED: The rule is enabled.</li>
+         *              <li>DISABLED: The rule is disabled.</li>
+         *              </ul>
          * @return {@code this}
          */
         public Builder state(com.aliyun.ros.cdk.core.IResolvable state) {

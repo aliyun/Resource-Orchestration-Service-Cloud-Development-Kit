@@ -5,15 +5,23 @@ package alicloudroscdkecs
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
 type NetworkInterfaceProps struct {
-	// Property vSwitchId: VSwitch ID of the specified VPC.
+	// Property vSwitchId: The ID of the VSwitch for the elastic network interface.
 	//
-	// Specifies the switch ID for the VPC.
+	// The private IP addresses
+	// for the elastic network interface are assigned from the available CIDR block of
+	// the VSwitch.
+	// ><notice>
+	// The elastic network interface and the instance to be attached must be in the same
+	// availability zone but can belong to different VSwitches.
+	// ><\/notice>.
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
 	// Property deleteOnRelease: Specifies whether to delete the ENI when the instance is released.
 	DeleteOnRelease interface{} `field:"optional" json:"deleteOnRelease" yaml:"deleteOnRelease"`
-	// Property description: Description of your ENI.
+	// Property description: The description of the elastic network interface.
 	//
-	// It is a string of [2, 256] English or Chinese characters.
+	// The description must be 2 to
+	// 256 characters long and cannot start with `http:\/\/` or `https:\/\/`.
+	// Default value: empty.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property ipv4PrefixCount: Specifies one or more IPv4 prefixes for the elastic network interface.
 	//
@@ -22,7 +30,11 @@ type NetworkInterfaceProps struct {
 	Ipv4PrefixCount interface{} `field:"optional" json:"ipv4PrefixCount" yaml:"ipv4PrefixCount"`
 	// Property ipv4Prefixes: Specifies one or more IPv4 prefixes for the elastic network interface.
 	Ipv4Prefixes interface{} `field:"optional" json:"ipv4Prefixes" yaml:"ipv4Prefixes"`
-	// Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+	// Property ipv6AddressCount: The number of random IPv6 addresses to assign to the elastic network interface.
+	//
+	// Valid values: 1 to 10.
+	// > You must specify either `Ipv6Address.N` or `Ipv6AddressCount`, but not both, to
+	// assign IPv6 addresses.
 	Ipv6AddressCount interface{} `field:"optional" json:"ipv6AddressCount" yaml:"ipv6AddressCount"`
 	// Property ipv6Addresses: The IPv6 address N to assign to the ENI.
 	Ipv6Addresses interface{} `field:"optional" json:"ipv6Addresses" yaml:"ipv6Addresses"`
@@ -37,11 +49,15 @@ type NetworkInterfaceProps struct {
 	//
 	// It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
 	NetworkInterfaceName interface{} `field:"optional" json:"networkInterfaceName" yaml:"networkInterfaceName"`
-	// Property networkInterfaceTrafficMode: The communication mode of the ENI.
+	// Property networkInterfaceTrafficMode: The traffic mode of the elastic network interface.
 	//
 	// Valid values:
-	// Standard: uses the TCP communication mode.
-	// HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+	// - `Standard`: uses the TCP traffic mode.
+	// - `HighPerformance`: enables the Elastic RDMA Interface (ERI) and uses the RDMA
+	// traffic mode.
+	// > An elastic network interface in RDMA traffic mode can be attached only to an
+	// ERI-supported instance type. The number of these elastic network interfaces that
+	// can be attached is limited by the instance family. Default value: `Standard`.
 	NetworkInterfaceTrafficMode interface{} `field:"optional" json:"networkInterfaceTrafficMode" yaml:"networkInterfaceTrafficMode"`
 	// Property primaryIpAddress: The primary private IP address of the ENI.
 	//
@@ -66,13 +82,20 @@ type NetworkInterfaceProps struct {
 	RxQueueSize interface{} `field:"optional" json:"rxQueueSize" yaml:"rxQueueSize"`
 	// Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.
 	SecondaryPrivateIpAddressCount interface{} `field:"optional" json:"secondaryPrivateIpAddressCount" yaml:"secondaryPrivateIpAddressCount"`
-	// Property securityGroupId: The ID of the security group that the ENI joins.
+	// Property securityGroupId: The ID of the security group for the elastic network interface.
 	//
-	// The security group and the ENI must be in a same VPC.
+	// The security
+	// group and the elastic network interface must be in the same VPC.
+	// > You must specify either `SecurityGroupId` or `SecurityGroupIds.N`, but not
+	// both.
 	SecurityGroupId interface{} `field:"optional" json:"securityGroupId" yaml:"securityGroupId"`
-	// Property securityGroupIds: The IDs of the security groups that the ENI joins.
+	// Property securityGroupIds: The IDs of one or more security groups to which to add the elastic network interface.
 	//
-	// The security groups and the ENI must belong to the same VPC.
+	// The security groups and the elastic network interface must be in the
+	// same VPC. The valid values of N depend on the maximum number of security groups
+	// to which an elastic network interface can be added.
+	// > You must specify either `SecurityGroupId` or `SecurityGroupIds.N`, but not
+	// both.
 	SecurityGroupIds interface{} `field:"optional" json:"securityGroupIds" yaml:"securityGroupIds"`
 	// Property tags: Tags to attach to instance.
 	//

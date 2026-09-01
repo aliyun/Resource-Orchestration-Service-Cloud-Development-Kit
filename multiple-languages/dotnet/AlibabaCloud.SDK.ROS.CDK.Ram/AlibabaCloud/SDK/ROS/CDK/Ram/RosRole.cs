@@ -87,7 +87,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: assumeRolePolicyDocument: The RAM assume role policy that is associated with this role.
+        /// <strong>Property</strong>: assumeRolePolicyDocument: The trust policy that specifies one or more trusted entities allowed to assume
+        /// the RAM role. Trusted entities can be cloud accounts, cloud
+        /// services, or identity providers (IdPs).
+        /// > RAM users cannot assume RAM roles whose trusted entity is a cloud
+        /// service.
         /// </remarks>
         [JsiiProperty(name: "assumeRolePolicyDocument", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.AssumeRolePolicyDocumentProperty\"}]}}")]
         public virtual object AssumeRolePolicyDocument
@@ -2287,6 +2291,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: notAction: What actions are exceptions to the allow or deny effect.
+            /// </remarks>
+            [JsiiProperty(name: "notAction", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? NotAction
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: resource: Which resources you allow the action on.
             /// </remarks>
             [JsiiProperty(name: "resource", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2332,6 +2349,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
                 [JsiiOptional]
                 [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? Effect
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: notAction: What actions are exceptions to the allow or deny effect.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "notAction", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? NotAction
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -2446,6 +2473,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
                         }
                     }
                     _effect = value;
+                }
+            }
+
+            private object? _notAction;
+
+            /// <remarks>
+            /// <strong>Property</strong>: notAction: What actions are exceptions to the allow or deny effect.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "notAction", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NotAction
+            {
+                get => _notAction;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case object[] cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: object[], {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _notAction = value;
                 }
             }
 

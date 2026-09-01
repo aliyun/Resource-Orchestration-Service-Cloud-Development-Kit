@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Represents a <code>SAMLProvider</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.280Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:56:20.224Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.ISAMLProvider")
 @software.amazon.jsii.Jsii.Proxy(ISAMLProvider.Jsii$Proxy.class)
 public interface ISAMLProvider extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

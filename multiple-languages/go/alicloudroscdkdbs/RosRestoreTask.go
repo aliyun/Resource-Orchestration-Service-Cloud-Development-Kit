@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::RestoreTask`, which is used to create a restoration task of Data Disaster Recovery.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::RestoreTask`.
 type RosRestoreTask interface {
 	alicloudroscdkcore.RosResource
 	AttrRestoreTaskId() alicloudroscdkcore.IResolvable

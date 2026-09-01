@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::SCIMServerCredential`, which is used to create a System for Cross-domain Identity Management (SCIM) credential.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::SCIMServerCredential`.
 type RosSCIMServerCredential interface {
 	alicloudroscdkcore.RosResource
 	AttrCredentialId() alicloudroscdkcore.IResolvable

@@ -19,7 +19,7 @@ type ServiceSettingsProps struct {
 	DeliverySlsEnabled interface{} `field:"optional" json:"deliverySlsEnabled" yaml:"deliverySlsEnabled"`
 	// Property deliverySlsProjectName: SLS project name.
 	DeliverySlsProjectName interface{} `field:"optional" json:"deliverySlsProjectName" yaml:"deliverySlsProjectName"`
-	// Property rdcEnterpriseId: Enterprise ID.
+	// Property rdcEnterpriseId: The Apsara DevOps enterprise ID.
 	RdcEnterpriseId interface{} `field:"optional" json:"rdcEnterpriseId" yaml:"rdcEnterpriseId"`
 }
 

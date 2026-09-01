@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.emr.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::EMR::FlowProjects</code>, which is used to query projects.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::EMR::FlowProjects</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:46:06.418Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:59:08.369Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.datasource.FlowProjects")
 public class FlowProjects extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.emr.datasource.IFlowProjects {
 

@@ -16,6 +16,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Servicecatalog
         private object _config;
 
         /// <summary>Property config: The configuration of the constraint.</summary>
+        /// <remarks>
+        /// Format: { "LocalRoleName": "&lt;role_name&gt;" }.
+        /// </remarks>
         [JsiiProperty(name: "config", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Config
         {
@@ -46,6 +49,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Servicecatalog
         private object _constraintType;
 
         /// <summary>Property constraintType: The type of the constraint.</summary>
+        /// <remarks>
+        /// The value is fixed as Launch, which specifies the launch constraint.
+        /// </remarks>
         [JsiiProperty(name: "constraintType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ConstraintType
         {
@@ -136,6 +142,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Servicecatalog
         private object? _description;
 
         /// <summary>Property description: The description of the constraint.</summary>
+        /// <remarks>
+        /// The value must be 1 to 128 characters in length.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Description

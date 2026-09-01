@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paidswapi.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::PaiDswApi::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:24:21.751Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:35:06.764Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidswapi.$Module.class, fqn = "@alicloud/ros-cdk-paidswapi.datasource.Instances")
 public class Instances extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.paidswapi.datasource.IInstances {
 

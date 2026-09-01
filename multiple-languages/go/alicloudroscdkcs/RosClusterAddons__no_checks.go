@@ -100,6 +100,10 @@ func (j *jsiiProxy_RosClusterAddons) validateSetInstalledIgnoreParameters(val in
 	return nil
 }
 
+func (j *jsiiProxy_RosClusterAddons) validateSetOverrideExistingParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosClusterAddons) validateSetRolePolicyParameters(val interface{}) error {
 	return nil
 }

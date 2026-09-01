@@ -147,10 +147,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
             }
         }
 
-        /// <summary>Property period: Prepaid time period.</summary>
+        /// <summary>Property period: The subscription duration.</summary>
         /// <remarks>
-        /// While PeriodUnit is month, it could be 1, 2, 3, 6.
-        /// While PeriodUnit is year, it could be from 1 to 5Default value is 1.
+        /// Default value: 1.
+        ///
+        /// <list type="bullet">
+        /// <description>Valid values if you set PeriodUnit to Month: 1, 2, 3, and 6.</description>
+        /// <description>Valid values if you set PeriodUnit to Year: 1, 2, 3, 4, and 5.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -339,10 +343,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property period: Prepaid time period.</summary>
+            /// <summary>Property period: The subscription duration.</summary>
             /// <remarks>
-            /// While PeriodUnit is month, it could be 1, 2, 3, 6.
-            /// While PeriodUnit is year, it could be from 1 to 5Default value is 1.
+            /// Default value: 1.
+            ///
+            /// <list type="bullet">
+            /// <description>Valid values if you set PeriodUnit to Month: 1, 2, 3, and 6.</description>
+            /// <description>Valid values if you set PeriodUnit to Year: 1, 2, 3, 4, and 5.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

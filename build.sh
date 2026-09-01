@@ -11,7 +11,7 @@ ARG1=$2
 python3 -V
 
 usage() {
-    echo "Usage: $PROG_NAME {setup-dependency|clear-dependency|generate-tsconfig|build|generate-webs|spec2ts|jsii-pack|copy-js|convert-maven-project}"
+    echo "Usage: $PROG_NAME {setup-dependency|clear-dependency|generate-tsconfig|build|generate-webs|spec2ts|jsii-pack|copy-js|convert-maven-project|publish-reference}"
     exit 1;
 }
 
@@ -69,7 +69,8 @@ generate_tsconfig() {
 
 
 build() {
-    lerna run build
+    export NODE_OPTIONS="--max-old-space-size=4096 ${NODE_OPTIONS:-}"
+    lerna run build --concurrency 4 --stream
 }
 
 
@@ -97,10 +98,11 @@ spec2ts() {
 
 generate_webs() {
     root=$PWD
-
+    TMPDIR="$PWD/temp"
     REFDIR="$PWD/references"
     DOCDIR="$REFDIR/docs"
-
+    rm -fr ${TMPDIR}
+    mkdir -p ${TMPDIR}
     rm -fr ${REFDIR}/site
     rm -fr ${DOCDIR}/python
     mkdir -p ${DOCDIR}/python
@@ -144,7 +146,7 @@ generate_webs() {
     zip -r python.zip python/*
     zip -r typescript.zip typescript/*
     zip -r go.zip go/*
-    zip -r search.zip search/*
+    rm -rf $REFDIR/tmp
 }
 
 generate_htmls() {
@@ -298,7 +300,7 @@ jsii_pack() {
         echo "[DEBUG] Running in --source-code mode" >&2
         echo "[DEBUG] Reading package list from $TMPDIR/jsii.txt" >&2
         echo "[DEBUG] Total packages to process: $(wc -l < $TMPDIR/jsii.txt)" >&2
-        batch_size=3
+        batch_size=1
         batch_count=0
         batch_args=""
         total_count=0
@@ -403,6 +405,15 @@ set_dependency_jsii_packages() {
 }
 
 
+publish_reference() {
+    root=$PWD
+    # 透传 publish-reference 之后的全部参数，例如：
+    # sh build.sh publish-reference --folder_path=/dir_path --destination_bucket=bucket_name --ak=xxx --sk=xxx --region=cn-hangzhou
+    shift 1
+    python3 $root/tools/publish_reference.py "$@"
+}
+
+
 case "$ACTION" in
     setup-dependency)
         setup_dependency
@@ -451,6 +462,9 @@ case "$ACTION" in
     ;;
     set-dependency-jsii-packages)
           set_dependency_jsii_packages
+    ;;
+    publish-reference)
+          publish_reference "$@"
     ;;
     *)
         usage

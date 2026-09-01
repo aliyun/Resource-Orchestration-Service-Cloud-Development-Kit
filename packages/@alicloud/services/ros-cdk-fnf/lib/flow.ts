@@ -15,7 +15,14 @@ export interface FlowProps {
     readonly definition: string | ros.IResolvable;
 
     /**
-     * Property name: The name of the flow created. This name is unique under the account.
+     * Property name: The name of the flow. The name must be unique within the same region and cannot
+     * be changed after the flow is created. The name must meet the following
+     * requirements:
+     * - It can contain letters (a to z and A to Z), digits (0 to 9), underscores (_),
+     * and hyphens (-).
+     * - It must start with a letter or an underscore (_).
+     * - It is case-sensitive.
+     * - It must be 1 to 128 characters in length.
      */
     readonly name: string | ros.IResolvable;
 
@@ -72,7 +79,7 @@ export interface IFlow extends ros.IResource {
     readonly attrName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FNF::Flow`, which is used to create a flow.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FNF::Flow`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlow`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
  */

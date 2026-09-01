@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterVpcAttachment</code>, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterVpcAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.409Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.769Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVpcAttachment")
 public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ITransitRouterVpcAttachment {
 
@@ -231,20 +231,30 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property autoPublishRouteEnabled: Whether to automatically publish routes.
+         * Property autoPublishRouteEnabled: Specifies whether to enable the Enterprise Edition transit router to automatically advertise routes to the VPC instance.
+         * <p>
+         * <ul>
+         * <li>false (default): Do not automatically advertise routes.</li>
+         * <li>true: Automatically advertise routes.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: Whether to automatically publish routes. This parameter is required.
+         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: Specifies whether to enable the Enterprise Edition transit router to automatically advertise routes to the VPC instance. This parameter is required.
          */
         public Builder autoPublishRouteEnabled(final java.lang.Boolean autoPublishRouteEnabled) {
             this.props.autoPublishRouteEnabled(autoPublishRouteEnabled);
             return this;
         }
         /**
-         * Property autoPublishRouteEnabled: Whether to automatically publish routes.
+         * Property autoPublishRouteEnabled: Specifies whether to enable the Enterprise Edition transit router to automatically advertise routes to the VPC instance.
+         * <p>
+         * <ul>
+         * <li>false (default): Do not automatically advertise routes.</li>
+         * <li>true: Automatically advertise routes.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: Whether to automatically publish routes. This parameter is required.
+         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: Specifies whether to enable the Enterprise Edition transit router to automatically advertise routes to the VPC instance. This parameter is required.
          */
         public Builder autoPublishRouteEnabled(final com.aliyun.ros.cdk.core.IResolvable autoPublishRouteEnabled) {
             this.props.autoPublishRouteEnabled(autoPublishRouteEnabled);
@@ -357,20 +367,26 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
+         * Property transitRouterAttachmentDescription: The description of the VPC connection.
+         * <p>
+         * The description can be empty or 1 to 256 characters long, and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the transit router VPC attachment. This parameter is required.
+         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the VPC connection. This parameter is required.
          */
         public Builder transitRouterAttachmentDescription(final java.lang.String transitRouterAttachmentDescription) {
             this.props.transitRouterAttachmentDescription(transitRouterAttachmentDescription);
             return this;
         }
         /**
-         * Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
+         * Property transitRouterAttachmentDescription: The description of the VPC connection.
+         * <p>
+         * The description can be empty or 1 to 256 characters long, and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the transit router VPC attachment. This parameter is required.
+         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the VPC connection. This parameter is required.
          */
         public Builder transitRouterAttachmentDescription(final com.aliyun.ros.cdk.core.IResolvable transitRouterAttachmentDescription) {
             this.props.transitRouterAttachmentDescription(transitRouterAttachmentDescription);
@@ -378,20 +394,26 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property transitRouterAttachmentName: The name of the transit router VPC attachment.
+         * Property transitRouterAttachmentName: The name of the VPC connection.
+         * <p>
+         * The name can be empty or 1 to 128 characters long, and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the transit router VPC attachment. This parameter is required.
+         * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the VPC connection. This parameter is required.
          */
         public Builder transitRouterAttachmentName(final java.lang.String transitRouterAttachmentName) {
             this.props.transitRouterAttachmentName(transitRouterAttachmentName);
             return this;
         }
         /**
-         * Property transitRouterAttachmentName: The name of the transit router VPC attachment.
+         * Property transitRouterAttachmentName: The name of the VPC connection.
+         * <p>
+         * The name can be empty or 1 to 128 characters long, and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the transit router VPC attachment. This parameter is required.
+         * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the VPC connection. This parameter is required.
          */
         public Builder transitRouterAttachmentName(final com.aliyun.ros.cdk.core.IResolvable transitRouterAttachmentName) {
             this.props.transitRouterAttachmentName(transitRouterAttachmentName);
@@ -420,20 +442,26 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+         * Property transitRouterVpcAttachmentOptions: The properties of the VPC connection.
+         * <p>
+         * This parameter is deprecated. We recommend
+         * that you use the <code>Options</code> parameter instead.
          * <p>
          * @return {@code this}
-         * @param transitRouterVpcAttachmentOptions Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment. This parameter is required.
+         * @param transitRouterVpcAttachmentOptions Property transitRouterVpcAttachmentOptions: The properties of the VPC connection. This parameter is required.
          */
         public Builder transitRouterVpcAttachmentOptions(final com.aliyun.ros.cdk.core.IResolvable transitRouterVpcAttachmentOptions) {
             this.props.transitRouterVpcAttachmentOptions(transitRouterVpcAttachmentOptions);
             return this;
         }
         /**
-         * Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+         * Property transitRouterVpcAttachmentOptions: The properties of the VPC connection.
+         * <p>
+         * This parameter is deprecated. We recommend
+         * that you use the <code>Options</code> parameter instead.
          * <p>
          * @return {@code this}
-         * @param transitRouterVpcAttachmentOptions Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment. This parameter is required.
+         * @param transitRouterVpcAttachmentOptions Property transitRouterVpcAttachmentOptions: The properties of the VPC connection. This parameter is required.
          */
         public Builder transitRouterVpcAttachmentOptions(final java.util.Map<java.lang.String, ? extends java.lang.Object> transitRouterVpcAttachmentOptions) {
             this.props.transitRouterVpcAttachmentOptions(transitRouterVpcAttachmentOptions);
@@ -441,20 +469,40 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property vpcOwnerId: The owner ID of the VPC.
+         * Property vpcOwnerId: The ID of the account (root account) that owns the VPC instance.
+         * <p>
+         * By
+         * default, this is the ID of the current account.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you want to attach a cross-account network
+         * instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vpcOwnerId Property vpcOwnerId: The owner ID of the VPC. This parameter is required.
+         * @param vpcOwnerId Property vpcOwnerId: The ID of the account (root account) that owns the VPC instance. This parameter is required.
          */
         public Builder vpcOwnerId(final java.lang.Number vpcOwnerId) {
             this.props.vpcOwnerId(vpcOwnerId);
             return this;
         }
         /**
-         * Property vpcOwnerId: The owner ID of the VPC.
+         * Property vpcOwnerId: The ID of the account (root account) that owns the VPC instance.
+         * <p>
+         * By
+         * default, this is the ID of the current account.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you want to attach a cross-account network
+         * instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vpcOwnerId Property vpcOwnerId: The owner ID of the VPC. This parameter is required.
+         * @param vpcOwnerId Property vpcOwnerId: The ID of the account (root account) that owns the VPC instance. This parameter is required.
          */
         public Builder vpcOwnerId(final com.aliyun.ros.cdk.core.IResolvable vpcOwnerId) {
             this.props.vpcOwnerId(vpcOwnerId);

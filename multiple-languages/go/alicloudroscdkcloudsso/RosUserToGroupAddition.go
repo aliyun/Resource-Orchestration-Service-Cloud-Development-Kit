@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::UserToGroupAddition`, which is used to add a user to a group.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::UserToGroupAddition`.
 type RosUserToGroupAddition interface {
 	alicloudroscdkcore.RosResource
 	// Returns: the stack trace of the point where this Resource was created from, sourced

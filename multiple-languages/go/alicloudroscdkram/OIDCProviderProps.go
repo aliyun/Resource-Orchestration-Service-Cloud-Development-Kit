@@ -18,7 +18,14 @@ type OIDCProviderProps struct {
 	// The name can contain letters, digits, and special characters and cannot start or end with the special characters. The special characters are periods, (.), hyphens (-), and underscores (_).``
 	// The name can be up to 128 characters in length.
 	OidcProviderName interface{} `field:"required" json:"oidcProviderName" yaml:"oidcProviderName"`
-	// Property clientIds: The list of the client IDs, max length is 20.
+	// Property clientIds: The ID of the client, which is provided by the external IdP.
+	//
+	// If you want to
+	// specify multiple client IDs, separate the client IDs with commas (,).
+	// The client ID can contain letters, digits, and special characters and cannot
+	// start with the special characters. The special characters are `periods (.),
+	// hyphens (-), underscores (_), colons (:), and forward slashes (\/)`.\`\`
+	// The client ID can be up to 128 characters in length.
 	ClientIds interface{} `field:"optional" json:"clientIds" yaml:"clientIds"`
 	// Property description: The description of the OIDC IdP.
 	//

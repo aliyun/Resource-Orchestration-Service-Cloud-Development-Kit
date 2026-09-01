@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.config;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::Config::AggregateCompliancePack</code>, which is used to create a compliance package for an account group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::Config::AggregateCompliancePack</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:01:48.301Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:52:04.547Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.AggregateCompliancePack")
 public class AggregateCompliancePack extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.config.IAggregateCompliancePack {
 
@@ -175,30 +175,36 @@ public class AggregateCompliancePack extends com.aliyun.ros.cdk.core.Resource im
         }
 
         /**
-         * Property riskLevel: Compliance package risk level.
+         * Property riskLevel: The risk level of the compliance pack.
          * <p>
-         * Value:
-         * 1: High risk.
-         * 2: Medium risk.
-         * 3: Low risk.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>1: High</li>
+         * <li>2 (default): Medium</li>
+         * <li>3: Low</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param riskLevel Property riskLevel: Compliance package risk level. This parameter is required.
+         * @param riskLevel Property riskLevel: The risk level of the compliance pack. This parameter is required.
          */
         public Builder riskLevel(final java.lang.Number riskLevel) {
             this.props.riskLevel(riskLevel);
             return this;
         }
         /**
-         * Property riskLevel: Compliance package risk level.
+         * Property riskLevel: The risk level of the compliance pack.
          * <p>
-         * Value:
-         * 1: High risk.
-         * 2: Medium risk.
-         * 3: Low risk.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>1: High</li>
+         * <li>2 (default): Medium</li>
+         * <li>3: Low</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param riskLevel Property riskLevel: Compliance package risk level. This parameter is required.
+         * @param riskLevel Property riskLevel: The risk level of the compliance pack. This parameter is required.
          */
         public Builder riskLevel(final com.aliyun.ros.cdk.core.IResolvable riskLevel) {
             this.props.riskLevel(riskLevel);

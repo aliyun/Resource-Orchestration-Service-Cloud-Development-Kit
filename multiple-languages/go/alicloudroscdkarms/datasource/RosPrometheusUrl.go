@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::PrometheusUrl`, which is used to query all URLs of a cluster, including the URLs for remote read, remote write, Pushgateway, and Grafana.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::PrometheusUrl`.
 type RosPrometheusUrl interface {
 	alicloudroscdkcore.RosResource
 	AttrClusterId() alicloudroscdkcore.IResolvable

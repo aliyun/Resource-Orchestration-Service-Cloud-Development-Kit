@@ -10,9 +10,12 @@ export { RosInstance as InstanceProperty };
 export interface InstanceProps {
 
     /**
-     * Property deployType: The deployment mode of the Message Queue for Apache Kafka instance. Valid values: 
-     *   4: Instance of the public type 
-     *   5: Instance of the VPC type
+     * Property deployType: The deployment type. Valid values:
+     * - 4: Internet\/VPC instance
+     * - 5: VPC instance
+     * > If you are creating a Confluent series instance, you cannot select the
+     * deployment type. You can only set the value to 5. After the purchase, you can
+     * adjust whether each component is open to the Internet.
      */
     readonly deployType: number | ros.IResolvable;
 
@@ -45,8 +48,12 @@ export interface InstanceProps {
     readonly eipMax?: number | ros.IResolvable;
 
     /**
-     * Property ioMax: The peak traffic to be configured for the Message Queue for Apache Kafka instance. 
-     * For more information about the value range, see Billing.
+     * Property ioMax: The traffic peak (not recommended).
+     * - You must specify either IoMax or IoMaxSpec. If you specify both parameters,
+     * IoMaxSpec takes precedence. We recommend that you specify only IoMaxSpec.
+     * - For the valid values, see [Billing]().
+     * > If you are creating a Confluent series instance, you do not need to pass this
+     * parameter.
      */
     readonly ioMax?: number | ros.IResolvable;
 
@@ -79,7 +86,8 @@ export interface InstanceProps {
     readonly payType?: string | ros.IResolvable;
 
     /**
-     * Property serverlessConfig: Serverless instance related settings.
+     * Property serverlessConfig: The settings of the Serverless instance. This parameter is required if you create
+     * a Serverless instance.
      */
     readonly serverlessConfig?: RosInstance.ServerlessConfigProperty | ros.IResolvable;
 

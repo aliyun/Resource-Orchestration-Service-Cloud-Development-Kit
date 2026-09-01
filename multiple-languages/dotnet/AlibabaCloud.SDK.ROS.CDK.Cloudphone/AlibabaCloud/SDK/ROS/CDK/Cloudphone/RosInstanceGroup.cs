@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start cloud phones.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `InstanceGroup` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
@@ -522,8 +522,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: period: Prepaid time period. While PeriodUnit is month, it could be 1, 2, 3, 6.
-        /// While PeriodUnit is year, it could be from 1 to 5Default value is 1.
+        /// <strong>Property</strong>: period: The subscription duration. Default value: 1.
+        /// *   Valid values if you set PeriodUnit to Month: 1, 2, 3, and 6.
+        /// *   Valid values if you set PeriodUnit to Year: 1, 2, 3, 4, and 5.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

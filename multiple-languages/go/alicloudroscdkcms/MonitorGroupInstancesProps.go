@@ -7,7 +7,7 @@ package alicloudroscdkcms
 type MonitorGroupInstancesProps struct {
 	// Property groupId: The ID of the application group.
 	GroupId interface{} `field:"required" json:"groupId" yaml:"groupId"`
-	// Property instances:.
+	// Property instances: The instances that you want to add to the application group.
 	Instances interface{} `field:"required" json:"instances" yaml:"instances"`
 }
 

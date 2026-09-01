@@ -5,11 +5,13 @@ package alicloudroscdkpolardbx
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-dbinstance
 type DBInstanceProps struct {
-	// Property dbNodeClass: The specification of the nodes in the instance you want to create.
+	// Property dbNodeClass: Node specifications: - polarx.x4.medium.2e: 2 vCPUs, 8 GB - polarx.x4.large.2e: 4 vCPUs, 16 GB - polarx.x8.large.2e: 4 vCPUs, 32 GB - polarx.x4.xlarge.2e: 8 vCPUs, 32 GB - polarx.x8.xlarge.2e: 8 vCPUs, 64 GB - polarx.x4.2xlarge.2e: 16 vCPUs, 64 GB - polarx.x8.2xlarge.2e: 16 vCPUs, 128 GB - polarx.x4.4xlarge.2e: 32 vCPUs, 128 GB - polarx.x8.4xlarge.2e: 32 vCPUs, 256 GB - polarx.st.8xlarge.2e: 60 vCPUs, 470 GB - polarx.st.12xlarge.2e: 90 vCPUs, 720 GB.
 	DbNodeClass interface{} `field:"required" json:"dbNodeClass" yaml:"dbNodeClass"`
-	// Property dbNodeCount: The number of nodes in the instance you want to create.
+	// Property dbNodeCount: Number of instance nodes.
+	//
+	// Minimum value is 2.
 	DbNodeCount interface{} `field:"required" json:"dbNodeCount" yaml:"dbNodeCount"`
-	// Property engineVersion: The version of the database engine.
+	// Property engineVersion: MySQL engine version, either 5.7 or 8.0.
 	EngineVersion interface{} `field:"required" json:"engineVersion" yaml:"engineVersion"`
 	// Property primaryZone: The primary zone.
 	PrimaryZone interface{} `field:"required" json:"primaryZone" yaml:"primaryZone"`
@@ -35,7 +37,9 @@ type DBInstanceProps struct {
 	//
 	// The valid values vary based on the billing method. If you use the subscription billing method, set the value to Year or Month. If you use the pay-as-you-go billing method, the value is automatically set to Hour.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
-	// Property resourceGroupId: The ID of resource group.
+	// Property resourceGroupId: Can be empty.
+	//
+	// Resource group ID. Not supported for now.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property secondaryZone: The secondary zone.
 	SecondaryZone interface{} `field:"optional" json:"secondaryZone" yaml:"secondaryZone"`

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::InstanceGroupClone</code>Use , which to clone a group of ECS instances.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::InstanceGroupClone</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.125Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.505Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupClone")
 public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -1140,6 +1140,13 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNestedVirtualization() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getThreadsPerCore() {
             return null;
         }
@@ -1157,6 +1164,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CpuOptionsProperty> {
             java.lang.Object core;
+            java.lang.Object nestedVirtualization;
             java.lang.Object threadsPerCore;
 
             /**
@@ -1178,6 +1186,28 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder core(com.aliyun.ros.cdk.core.IResolvable core) {
                 this.core = core;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CpuOptionsProperty#getNestedVirtualization}
+             * @param nestedVirtualization the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder nestedVirtualization(java.lang.String nestedVirtualization) {
+                this.nestedVirtualization = nestedVirtualization;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CpuOptionsProperty#getNestedVirtualization}
+             * @param nestedVirtualization the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder nestedVirtualization(com.aliyun.ros.cdk.core.IResolvable nestedVirtualization) {
+                this.nestedVirtualization = nestedVirtualization;
                 return this;
             }
 
@@ -1222,6 +1252,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CpuOptionsProperty {
             private final java.lang.Object core;
+            private final java.lang.Object nestedVirtualization;
             private final java.lang.Object threadsPerCore;
 
             /**
@@ -1231,6 +1262,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.core = software.amazon.jsii.Kernel.get(this, "core", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.nestedVirtualization = software.amazon.jsii.Kernel.get(this, "nestedVirtualization", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.threadsPerCore = software.amazon.jsii.Kernel.get(this, "threadsPerCore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -1240,12 +1272,18 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.core = builder.core;
+                this.nestedVirtualization = builder.nestedVirtualization;
                 this.threadsPerCore = builder.threadsPerCore;
             }
 
             @Override
             public final java.lang.Object getCore() {
                 return this.core;
+            }
+
+            @Override
+            public final java.lang.Object getNestedVirtualization() {
+                return this.nestedVirtualization;
             }
 
             @Override
@@ -1261,6 +1299,9 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (this.getCore() != null) {
                     data.set("core", om.valueToTree(this.getCore()));
+                }
+                if (this.getNestedVirtualization() != null) {
+                    data.set("nestedVirtualization", om.valueToTree(this.getNestedVirtualization()));
                 }
                 if (this.getThreadsPerCore() != null) {
                     data.set("threadsPerCore", om.valueToTree(this.getThreadsPerCore()));
@@ -1284,12 +1325,14 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 CpuOptionsProperty.Jsii$Proxy that = (CpuOptionsProperty.Jsii$Proxy) o;
 
                 if (this.core != null ? !this.core.equals(that.core) : that.core != null) return false;
+                if (this.nestedVirtualization != null ? !this.nestedVirtualization.equals(that.nestedVirtualization) : that.nestedVirtualization != null) return false;
                 return this.threadsPerCore != null ? this.threadsPerCore.equals(that.threadsPerCore) : that.threadsPerCore == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.core != null ? this.core.hashCode() : 0;
+                result = 31 * result + (this.nestedVirtualization != null ? this.nestedVirtualization.hashCode() : 0);
                 result = 31 * result + (this.threadsPerCore != null ? this.threadsPerCore.hashCode() : 0);
                 return result;
             }

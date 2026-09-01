@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::Config::Rule`, which is used to create or modify a rule.
+// This class encapsulates and extends the ROS resource type `ALIYUN::Config::Rule`.
 type Rule interface {
 	alicloudroscdkcore.Resource
 	IRule

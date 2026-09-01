@@ -5,33 +5,75 @@ package com.aliyun.ros.cdk.drds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:28:31.238Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:25:12.237Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.DrdsInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DrdsInstanceProps.Jsii$Proxy.class)
 public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property description: Description of the DRDS instance, 2-128 characters.
+     * Property description: Specifies the description of the instance.
+     * <p>
+     * The description must meet the
+     * following requirements:
+     * <p>
+     * <ul>
+     * <li>The description cannot contain the prefix http:// or https://.</li>
+     * <li>The description must start with a letter or a Chinese character, and can
+     * contain uppercase and lowercase letters, Chinese characters, digits, underscores
+     * (_), and hyphens (-).</li>
+     * <li>The description must be 2 to 256 characters in length.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDescription();
 
     /**
-     * Property instanceSeries: drds.sn1.4c8g Starter Edition; drds.sn1.8c16g Standard Edition; drds.sn1.16c32g Business Edition; drds.sn1.32c64g Ultimate Edition.
+     * Property instanceSeries: Specifies the instance type of the instance.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>drds.sn2.4c16g: The instance is of the Starter Edition.</li>
+     * <li>drds.sn2.8c32g: The instance is of the Standard Edition</li>
+     * <li>drds.sn2.16c64g: The instance is of the Enterprise Edition.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceSeries();
 
     /**
-     * Property payType: For the type of payment, see "Payment Type Parameter Table".
+     * Property payType: Specifies the billing method of the instance.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>drdsPre: The instance uses the subscription billing method.</li>
+     * <li>drdsPost: The instance uses the pay-as-you-go billing method.</li>
+     * <li>drdsRo: By default, the pay-as-you-go billing method is used when you create
+     * read-only instances.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPayType();
 
     /**
-     * Property specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing.
+     * Property specification: Specifies the specification code of the instance.
+     * <p>
+     * The value consists of the
+     * instance type and the specified instance specification. For example, you can set
+     * the value to drds.sn2.4c16g.8c32g.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSpecification();
 
     /**
-     * Property type: Instance type, instance type 0 - shared instance 1 - exclusive instance, in addition, this parameter can also pass PRIVATE and PUBLIC to represent exclusive instance and shared instance respectively.
+     * Property type: Specifies the type of the instance.
+     * <p>
+     * Set the value to PRIVATE. The value PRIVATE
+     * specifies that the instance is a dedicated instance.
+     * <p>
+     * <blockquote>
+     * <p>
+     * You can also set the value to 1 to specify that the instance is a dedicated
+     * instance.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
@@ -50,27 +92,65 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property isAutoRenew: Whether to renew the fee automatically, if it is purchased on a monthly basis, it will automatically renew for one month, and if it is purchased on an annual basis, it will automatically renew for one year.
+     * Property isAutoRenew: Specifies whether to enable automatic renewal.
      * <p>
-     * The parameter takes effect when the payment type is drdsPre.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true: If the PricingCycle parameter is set to month, the subscription is
+     * automatically renewed for one month. If the PricingCycle parameter is set to
+     * year, the subscription is automatically renewed for one year.</li>
+     * <li>false: The auto-renewal feature is disabled for the instance.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter only takes effect when the PayType parameter is set to drdsPre.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIsAutoRenew() {
         return null;
     }
 
     /**
-     * Property mySqlVersion: The MySQL protocol version supported by DRDS.
+     * Property mySqlVersion: Specifies the MySQL version that is supported by the instance.
      * <p>
-     * Valid values: 5 and 8. Default value: 5. This parameter is valid only when the primary instance is created. The read-only instance is the same as the primary instance by default.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>5: The instance is fully compatible with MySQL 5.x. This value is the default
+     * value.</li>
+     * <li>8: The instance is fully compatible with MySQL 8.0.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter only takes effect when you create a primary instance. By
+     * default, the MySQL version of the read-only instance is the same as that of the
+     * primary instance.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMySqlVersion() {
         return null;
     }
 
     /**
-     * Property pricingCycle: The unit of the order period, year: year, month: month.
+     * Property pricingCycle: Specifies the unit of the subscription duration of the subscription instance.
      * <p>
-     * The parameter takes effect when the payment type is drdsPre.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>year: The unit of the subscription duration is year.</li>
+     * <li>month: The unit of the subscription duration is month.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required if you set the PayType parameter to drdsPre.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
         return null;
@@ -133,7 +213,17 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getDescription}
-         * @param description Property description: Description of the DRDS instance, 2-128 characters. This parameter is required.
+         * @param description Property description: Specifies the description of the instance. This parameter is required.
+         *                    The description must meet the
+         *                    following requirements:
+         *                    <p>
+         *                    <ul>
+         *                    <li>The description cannot contain the prefix http:// or https://.</li>
+         *                    <li>The description must start with a letter or a Chinese character, and can
+         *                    contain uppercase and lowercase letters, Chinese characters, digits, underscores
+         *                    (_), and hyphens (-).</li>
+         *                    <li>The description must be 2 to 256 characters in length.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -143,7 +233,17 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getDescription}
-         * @param description Property description: Description of the DRDS instance, 2-128 characters. This parameter is required.
+         * @param description Property description: Specifies the description of the instance. This parameter is required.
+         *                    The description must meet the
+         *                    following requirements:
+         *                    <p>
+         *                    <ul>
+         *                    <li>The description cannot contain the prefix http:// or https://.</li>
+         *                    <li>The description must start with a letter or a Chinese character, and can
+         *                    contain uppercase and lowercase letters, Chinese characters, digits, underscores
+         *                    (_), and hyphens (-).</li>
+         *                    <li>The description must be 2 to 256 characters in length.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -153,7 +253,14 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getInstanceSeries}
-         * @param instanceSeries Property instanceSeries: drds.sn1.4c8g Starter Edition; drds.sn1.8c16g Standard Edition; drds.sn1.16c32g Business Edition; drds.sn1.32c64g Ultimate Edition. This parameter is required.
+         * @param instanceSeries Property instanceSeries: Specifies the instance type of the instance. This parameter is required.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>drds.sn2.4c16g: The instance is of the Starter Edition.</li>
+         *                       <li>drds.sn2.8c32g: The instance is of the Standard Edition</li>
+         *                       <li>drds.sn2.16c64g: The instance is of the Enterprise Edition.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder instanceSeries(java.lang.String instanceSeries) {
@@ -163,7 +270,14 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getInstanceSeries}
-         * @param instanceSeries Property instanceSeries: drds.sn1.4c8g Starter Edition; drds.sn1.8c16g Standard Edition; drds.sn1.16c32g Business Edition; drds.sn1.32c64g Ultimate Edition. This parameter is required.
+         * @param instanceSeries Property instanceSeries: Specifies the instance type of the instance. This parameter is required.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>drds.sn2.4c16g: The instance is of the Starter Edition.</li>
+         *                       <li>drds.sn2.8c32g: The instance is of the Standard Edition</li>
+         *                       <li>drds.sn2.16c64g: The instance is of the Enterprise Edition.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder instanceSeries(com.aliyun.ros.cdk.core.IResolvable instanceSeries) {
@@ -173,7 +287,15 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getPayType}
-         * @param payType Property payType: For the type of payment, see "Payment Type Parameter Table". This parameter is required.
+         * @param payType Property payType: Specifies the billing method of the instance. This parameter is required.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li>drdsPre: The instance uses the subscription billing method.</li>
+         *                <li>drdsPost: The instance uses the pay-as-you-go billing method.</li>
+         *                <li>drdsRo: By default, the pay-as-you-go billing method is used when you create
+         *                read-only instances.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder payType(java.lang.String payType) {
@@ -183,7 +305,15 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getPayType}
-         * @param payType Property payType: For the type of payment, see "Payment Type Parameter Table". This parameter is required.
+         * @param payType Property payType: Specifies the billing method of the instance. This parameter is required.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li>drdsPre: The instance uses the subscription billing method.</li>
+         *                <li>drdsPost: The instance uses the pay-as-you-go billing method.</li>
+         *                <li>drdsRo: By default, the pay-as-you-go billing method is used when you create
+         *                read-only instances.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
@@ -193,7 +323,10 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getSpecification}
-         * @param specification Property specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing. This parameter is required.
+         * @param specification Property specification: Specifies the specification code of the instance. This parameter is required.
+         *                      The value consists of the
+         *                      instance type and the specified instance specification. For example, you can set
+         *                      the value to drds.sn2.4c16g.8c32g.
          * @return {@code this}
          */
         public Builder specification(java.lang.String specification) {
@@ -203,7 +336,10 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getSpecification}
-         * @param specification Property specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing. This parameter is required.
+         * @param specification Property specification: Specifies the specification code of the instance. This parameter is required.
+         *                      The value consists of the
+         *                      instance type and the specified instance specification. For example, you can set
+         *                      the value to drds.sn2.4c16g.8c32g.
          * @return {@code this}
          */
         public Builder specification(com.aliyun.ros.cdk.core.IResolvable specification) {
@@ -213,7 +349,16 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getType}
-         * @param type Property type: Instance type, instance type 0 - shared instance 1 - exclusive instance, in addition, this parameter can also pass PRIVATE and PUBLIC to represent exclusive instance and shared instance respectively. This parameter is required.
+         * @param type Property type: Specifies the type of the instance. This parameter is required.
+         *             Set the value to PRIVATE. The value PRIVATE
+         *             specifies that the instance is a dedicated instance.
+         *             <p>
+         *             <blockquote>
+         *             <p>
+         *             You can also set the value to 1 to specify that the instance is a dedicated
+         *             instance.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder type(java.lang.String type) {
@@ -223,7 +368,16 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getType}
-         * @param type Property type: Instance type, instance type 0 - shared instance 1 - exclusive instance, in addition, this parameter can also pass PRIVATE and PUBLIC to represent exclusive instance and shared instance respectively. This parameter is required.
+         * @param type Property type: Specifies the type of the instance. This parameter is required.
+         *             Set the value to PRIVATE. The value PRIVATE
+         *             specifies that the instance is a dedicated instance.
+         *             <p>
+         *             <blockquote>
+         *             <p>
+         *             You can also set the value to 1 to specify that the instance is a dedicated
+         *             instance.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
@@ -275,8 +429,21 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getIsAutoRenew}
-         * @param isAutoRenew Property isAutoRenew: Whether to renew the fee automatically, if it is purchased on a monthly basis, it will automatically renew for one month, and if it is purchased on an annual basis, it will automatically renew for one year.
-         *                    The parameter takes effect when the payment type is drdsPre.
+         * @param isAutoRenew Property isAutoRenew: Specifies whether to enable automatic renewal.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>true: If the PricingCycle parameter is set to month, the subscription is
+         *                    automatically renewed for one month. If the PricingCycle parameter is set to
+         *                    year, the subscription is automatically renewed for one year.</li>
+         *                    <li>false: The auto-renewal feature is disabled for the instance.</li>
+         *                    </ul>
+         *                    <p>
+         *                    <blockquote>
+         *                    <p>
+         *                    This parameter only takes effect when the PayType parameter is set to drdsPre.
+         *                    <p>
+         *                    </blockquote>
          * @return {@code this}
          */
         public Builder isAutoRenew(java.lang.Boolean isAutoRenew) {
@@ -286,8 +453,21 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getIsAutoRenew}
-         * @param isAutoRenew Property isAutoRenew: Whether to renew the fee automatically, if it is purchased on a monthly basis, it will automatically renew for one month, and if it is purchased on an annual basis, it will automatically renew for one year.
-         *                    The parameter takes effect when the payment type is drdsPre.
+         * @param isAutoRenew Property isAutoRenew: Specifies whether to enable automatic renewal.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>true: If the PricingCycle parameter is set to month, the subscription is
+         *                    automatically renewed for one month. If the PricingCycle parameter is set to
+         *                    year, the subscription is automatically renewed for one year.</li>
+         *                    <li>false: The auto-renewal feature is disabled for the instance.</li>
+         *                    </ul>
+         *                    <p>
+         *                    <blockquote>
+         *                    <p>
+         *                    This parameter only takes effect when the PayType parameter is set to drdsPre.
+         *                    <p>
+         *                    </blockquote>
          * @return {@code this}
          */
         public Builder isAutoRenew(com.aliyun.ros.cdk.core.IResolvable isAutoRenew) {
@@ -297,8 +477,22 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getMySqlVersion}
-         * @param mySqlVersion Property mySqlVersion: The MySQL protocol version supported by DRDS.
-         *                     Valid values: 5 and 8. Default value: 5. This parameter is valid only when the primary instance is created. The read-only instance is the same as the primary instance by default.
+         * @param mySqlVersion Property mySqlVersion: Specifies the MySQL version that is supported by the instance.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>5: The instance is fully compatible with MySQL 5.x. This value is the default
+         *                     value.</li>
+         *                     <li>8: The instance is fully compatible with MySQL 8.0.</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     This parameter only takes effect when you create a primary instance. By
+         *                     default, the MySQL version of the read-only instance is the same as that of the
+         *                     primary instance.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder mySqlVersion(java.lang.String mySqlVersion) {
@@ -308,8 +502,22 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getMySqlVersion}
-         * @param mySqlVersion Property mySqlVersion: The MySQL protocol version supported by DRDS.
-         *                     Valid values: 5 and 8. Default value: 5. This parameter is valid only when the primary instance is created. The read-only instance is the same as the primary instance by default.
+         * @param mySqlVersion Property mySqlVersion: Specifies the MySQL version that is supported by the instance.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>5: The instance is fully compatible with MySQL 5.x. This value is the default
+         *                     value.</li>
+         *                     <li>8: The instance is fully compatible with MySQL 8.0.</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     This parameter only takes effect when you create a primary instance. By
+         *                     default, the MySQL version of the read-only instance is the same as that of the
+         *                     primary instance.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder mySqlVersion(com.aliyun.ros.cdk.core.IResolvable mySqlVersion) {
@@ -319,8 +527,19 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getPricingCycle}
-         * @param pricingCycle Property pricingCycle: The unit of the order period, year: year, month: month.
-         *                     The parameter takes effect when the payment type is drdsPre.
+         * @param pricingCycle Property pricingCycle: Specifies the unit of the subscription duration of the subscription instance.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>year: The unit of the subscription duration is year.</li>
+         *                     <li>month: The unit of the subscription duration is month.</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     This parameter is required if you set the PayType parameter to drdsPre.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder pricingCycle(java.lang.String pricingCycle) {
@@ -330,8 +549,19 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getPricingCycle}
-         * @param pricingCycle Property pricingCycle: The unit of the order period, year: year, month: month.
-         *                     The parameter takes effect when the payment type is drdsPre.
+         * @param pricingCycle Property pricingCycle: Specifies the unit of the subscription duration of the subscription instance.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>year: The unit of the subscription duration is year.</li>
+         *                     <li>month: The unit of the subscription duration is month.</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     This parameter is required if you set the PayType parameter to drdsPre.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {

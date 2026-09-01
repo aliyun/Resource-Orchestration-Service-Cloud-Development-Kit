@@ -54,13 +54,19 @@ type MultiZoneClusterProps struct {
 	// local_hdd_pro
 	// local_ssd_pro.
 	LogDiskType interface{} `field:"required" json:"logDiskType" yaml:"logDiskType"`
-	// Property logInstanceType: Log instance type.
+	// Property logInstanceType: The node specifications for log nodes.
+	//
+	// You can query available specifications by
+	// calling the [DescribeInstanceType]() API.
 	LogInstanceType interface{} `field:"required" json:"logInstanceType" yaml:"logInstanceType"`
 	// Property logNodeCount: Log number of nodes.
 	//
 	// The value of log nodes ranges from 4 to 400 and is a multiple of 4.
 	LogNodeCount interface{} `field:"required" json:"logNodeCount" yaml:"logNodeCount"`
-	// Property multiZoneCombination: Availability zone combination.
+	// Property multiZoneCombination: The zone combination.
+	//
+	// You can check the supported zone combinations on the buy
+	// page or by calling the [DescribeMultiZoneAvailableRegions]() API.
 	MultiZoneCombination interface{} `field:"required" json:"multiZoneCombination" yaml:"multiZoneCombination"`
 	// Property payType: The billing method.
 	//
@@ -83,10 +89,13 @@ type MultiZoneClusterProps struct {
 	// If this parameter is set to 2, the instance is automatically renewed for a two-month
 	// subscription after the instance expires.
 	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
-	// Property clusterName: The name of the instance.
+	// Property clusterName: Instance name.
 	//
-	// The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-	// (.), underscores (_), and hyphens (-). It must start with a letter.
+	// The naming convention is as follows:
+	// - Length must be 2 to 128 characters.
+	// - Must start with a letter (uppercase or lowercase) or a Chinese character.
+	// - Can contain digits or special characters. Valid special characters include the
+	// period (.), hyphen (-), and underscore (_).
 	ClusterName interface{} `field:"optional" json:"clusterName" yaml:"clusterName"`
 	// Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
 	//
@@ -96,19 +105,21 @@ type MultiZoneClusterProps struct {
 	//
 	// You can call the DescribeAvailableResource operation to obtain the value of this parameter.
 	MasterInstanceType interface{} `field:"optional" json:"masterInstanceType" yaml:"masterInstanceType"`
-	// Property period: The subscription period.
-	//
-	// This parameter only takes effect when the PayType parameter is set to Prepaid.
-	// When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-	// from 1 to 5.
-	// When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-	// from 1 to 9.
-	Period interface{} `field:"optional" json:"period" yaml:"period"`
-	// Property periodUnit: The unit of the subscription period.
+	// Property period: The subscription duration of a subscription instance.
 	//
 	// Valid values:
-	// year
-	// month.
+	// - When PeriodUnit is year, the value range is 1 to 3.
+	// - When PeriodUnit is month, the value range is 1 to 9.
+	// > This parameter is required only when the payment type of the instance is
+	// Prepaid.
+	Period interface{} `field:"optional" json:"period" yaml:"period"`
+	// Property periodUnit: The purchase unit for subscription instances.
+	//
+	// Valid values:
+	// - year: Year.
+	// - month: Month.
+	// > This parameter is required only when the payment type of the instance is
+	// Prepaid.
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
 	// Property resourceGroupId: The ID of the resource group.
 	//
@@ -116,10 +127,13 @@ type MultiZoneClusterProps struct {
 	// If you leave this parameter empty, the instance is allocated to the default resource
 	// group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
-	// Property securityIpList: The IP addresses in the whitelist.
+	// Property securityIpList: The IP addresses to add to the instance whitelist.
 	//
-	// Example: 192.168.*.*\/24. The 0.0.0.0\/0 value cannot
-	// be added to the whitelist. Separate multiple IP addresses with commas (,).
+	// Separate multiple IP addresses
+	// with commas (,).
+	// > If the IP address is set to 127.0.0.1, access to the instance from all IP
+	// addresses is denied. For example, if the IP address is set to 192.168.0.0\/24, all
+	// IP addresses in the range 192.168.0.XX are allowed to access the instance.
 	SecurityIpList interface{} `field:"optional" json:"securityIpList" yaml:"securityIpList"`
 	// Property vpcId: The ID of the virtual private cloud (VPC).
 	//

@@ -50,16 +50,13 @@ export interface RosClusterProps {
     readonly clusterVersion: string | ros.IResolvable;
 
     /**
-     * @Property instanceCount: Number of instance nodes. Range: 1~15.
-     * 
+     * @Property instanceCount: Number of instance nodes, with a range limit of 1 to 9.
      * [Professional Edition]
-     * - Must be >=3 and odd number.
-     * 
-     * [Development Edition]
-     * - Only 1 allowed.
-     * 
+     * - The number of instances must be 3 or more and must be an odd number.
+     * [Developer Edition]
+     * - The number of instances can only be 1.
      * [Serverless Edition]
-     * - Ignore this parameter.
+     * Ignore this parameter.
      */
     readonly instanceCount: number | ros.IResolvable;
 
@@ -92,7 +89,8 @@ export interface RosClusterProps {
     readonly connectionType?: string | ros.IResolvable;
 
     /**
-     * @Property eipEnabled: Effective when ConnectionType is `single_eni`, indicates whether to enable public access (elastic IP).
+     * @Property eipEnabled: Valid when `ConnectionType` is `single_eni`, indicating whether to enable public
+     * network access (Elastic IP).
      */
     readonly eipEnabled?: boolean | ros.IResolvable;
 
@@ -120,7 +118,8 @@ export interface RosClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property securityGroupType: Effective when ConnectionType is `single_eni`, represents the security group type of the instance.
+     * @Property securityGroupType: Valid when `ConnectionType` is `single_eni`, indicating the security group type
+     * of the instance.
      */
     readonly securityGroupType?: string | ros.IResolvable;
 
@@ -245,7 +244,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`Use , which to create a cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
@@ -465,16 +464,13 @@ export class RosCluster extends ros.RosResource {
     public clusterVersion: string | ros.IResolvable;
 
     /**
-     * @Property instanceCount: Number of instance nodes. Range: 1~15.
-     * 
+     * @Property instanceCount: Number of instance nodes, with a range limit of 1 to 9.
      * [Professional Edition]
-     * - Must be >=3 and odd number.
-     * 
-     * [Development Edition]
-     * - Only 1 allowed.
-     * 
+     * - The number of instances must be 3 or more and must be an odd number.
+     * [Developer Edition]
+     * - The number of instances can only be 1.
      * [Serverless Edition]
-     * - Ignore this parameter.
+     * Ignore this parameter.
      */
     public instanceCount: number | ros.IResolvable;
 
@@ -507,7 +503,8 @@ export class RosCluster extends ros.RosResource {
     public connectionType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property eipEnabled: Effective when ConnectionType is `single_eni`, indicates whether to enable public access (elastic IP).
+     * @Property eipEnabled: Valid when `ConnectionType` is `single_eni`, indicating whether to enable public
+     * network access (Elastic IP).
      */
     public eipEnabled: boolean | ros.IResolvable | undefined;
 
@@ -535,7 +532,8 @@ export class RosCluster extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityGroupType: Effective when ConnectionType is `single_eni`, represents the security group type of the instance.
+     * @Property securityGroupType: Valid when `ConnectionType` is `single_eni`, indicating the security group type
+     * of the instance.
      */
     public securityGroupType: string | ros.IResolvable | undefined;
 
@@ -1113,7 +1111,7 @@ export interface RosGateway2Props {
     readonly clbNetworkType?: string | ros.IResolvable;
 
     /**
-     * @Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.
+     * @Property enableHardwareAcceleration: Specifies whether to enable hardware acceleration.
      */
     readonly enableHardwareAcceleration?: boolean | ros.IResolvable;
 
@@ -1128,7 +1126,7 @@ export interface RosGateway2Props {
     readonly enableXtrace?: boolean | ros.IResolvable;
 
     /**
-     * @Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.
+     * @Property enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group.
      */
     readonly enterpriseSecurityGroup?: boolean | ros.IResolvable;
 
@@ -1153,9 +1151,10 @@ export interface RosGateway2Props {
     readonly managedEntryNetworkType?: string | ros.IResolvable;
 
     /**
-     * @Property mserVersion: The MSE gateway instance type. Valid values:
-     * mse_pro: normal instance
-     * mse_premium: professional normal instancemse_serverless: serverless instance
+     * @Property mserVersion: The edition of the gateway.
+     * - `mse_premium`: Professional Edition
+     * - `mse_pro`: Standard Edition
+     * - `mse_serverless`: Serverless Edition
      */
     readonly mserVersion?: string | ros.IResolvable;
 
@@ -1442,7 +1441,7 @@ export class RosGateway2 extends ros.RosResource {
     public clbNetworkType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.
+     * @Property enableHardwareAcceleration: Specifies whether to enable hardware acceleration.
      */
     public enableHardwareAcceleration: boolean | ros.IResolvable | undefined;
 
@@ -1457,7 +1456,7 @@ export class RosGateway2 extends ros.RosResource {
     public enableXtrace: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.
+     * @Property enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group.
      */
     public enterpriseSecurityGroup: boolean | ros.IResolvable | undefined;
 
@@ -1482,9 +1481,10 @@ export class RosGateway2 extends ros.RosResource {
     public managedEntryNetworkType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property mserVersion: The MSE gateway instance type. Valid values:
-     * mse_pro: normal instance
-     * mse_premium: professional normal instancemse_serverless: serverless instance
+     * @Property mserVersion: The edition of the gateway.
+     * - `mse_premium`: Professional Edition
+     * - `mse_pro`: Standard Edition
+     * - `mse_serverless`: Serverless Edition
      */
     public mserVersion: string | ros.IResolvable | undefined;
 
@@ -3147,7 +3147,12 @@ export interface RosGatewayServiceProps {
     readonly sourceId?: number | ros.IResolvable;
 
     /**
-     * @Property tlsSetting: TLS settings for the service.
+     * @Property tlsSetting: The TLS settings, specified as a JSON string. The following fields are supported:
+     * - `mode`: The TLS mode.
+     * - `certId`: The certificate ID.
+     * - `caCertId`: The CA certificate ID.
+     * - `caCertContent`: The public key of the CA certificate.
+     * - `sni`: The Server Name Indication (SNI).
      */
     readonly tlsSetting?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 }
@@ -3345,7 +3350,12 @@ export class RosGatewayService extends ros.RosResource {
     public sourceId: number | ros.IResolvable | undefined;
 
     /**
-     * @Property tlsSetting: TLS settings for the service.
+     * @Property tlsSetting: The TLS settings, specified as a JSON string. The following fields are supported:
+     * - `mode`: The TLS mode.
+     * - `certId`: The certificate ID.
+     * - `caCertId`: The CA certificate ID.
+     * - `caCertContent`: The public key of the CA certificate.
+     * - `sni`: The Server Name Indication (SNI).
      */
     public tlsSetting: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
@@ -3625,6 +3635,8 @@ export interface RosNacosServiceProps {
 
     /**
      * @Property instanceId: The ID of the instance.
+     * > This operation contains both the InstanceId and ClusterId parameters. You must
+     * specify one of them.
      */
     readonly instanceId: string | ros.IResolvable;
 
@@ -3716,6 +3728,8 @@ export class RosNacosService extends ros.RosResource {
 
     /**
      * @Property instanceId: The ID of the instance.
+     * > This operation contains both the InstanceId and ClusterId parameters. You must
+     * specify one of them.
      */
     public instanceId: string | ros.IResolvable;
 

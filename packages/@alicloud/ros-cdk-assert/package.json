@@ -1,6 +1,6 @@
 {
   "name": "@alicloud/ros-cdk-assert",
-  "version": "1.14.0",
+  "version": "1.15.0",
   "description": "Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com",
   "author": "ROS Development Team",
   "license": "Apache-2.0",
@@ -27,9 +27,9 @@
   },
   "dependencies": {
     "colors": "^1.4.0",
-    "@alicloud/ros-cdk-core": "^1.14.0",
-    "@alicloud/ros-cdk-assembly-schema": "^1.14.0",
-    "@alicloud/ros-cdk-cxapi": "^1.14.0",
-    "@alicloud/ros-cdk-template-diff": "^1.14.0"
+    "@alicloud/ros-cdk-core": "^1.15.0",
+    "@alicloud/ros-cdk-assembly-schema": "^1.15.0",
+    "@alicloud/ros-cdk-cxapi": "^1.15.0",
+    "@alicloud/ros-cdk-template-diff": "^1.15.0"
   }
 }

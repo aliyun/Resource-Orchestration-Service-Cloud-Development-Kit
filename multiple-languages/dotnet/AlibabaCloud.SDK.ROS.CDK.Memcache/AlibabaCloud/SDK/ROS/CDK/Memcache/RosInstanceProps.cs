@@ -50,13 +50,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         private object? _autoRenewPeriod;
 
         /// <remarks>
-        /// <strong>Property</strong>: autoRenewPeriod: The period of the auto renewal. Unit: months. Valid values:
-        /// 1
-        /// 2
-        /// 3
-        /// 6
-        /// 12
-        /// Note You must specify this parameter if the value of the AutoRenew parameter is true.
+        /// <strong>Property</strong>: autoRenewPeriod: The auto-renewal duration, in months. Valid values: 1, 2, 3, 6, and 12.
+        /// > This parameter is required when AutoRenew is set to true.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -283,7 +278,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         private object? _couponNo;
 
         /// <remarks>
-        /// <strong>Property</strong>: couponNo: The coupon number. Default value: youhuiquan_promotion_option_id_for_blank.
+        /// <strong>Property</strong>: couponNo: The coupon code. Default value: `default`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "couponNo", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -351,11 +346,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         private object? _instanceName;
 
         /// <remarks>
-        /// <strong></strong>: ), forward slashes (\/), colons (:), equal signs (=), double quotation marks
-        /// ("), angle brackets (<>), braces ([]), curly brackets ({}) and spaces.
-        ///
-        /// <strong>Property</strong>: instanceName: The name of the instance. The name can be 2 to 128 characters in length and must start
-        /// with a letter. The following characters are not supported: at signs (
+        /// <strong>Property</strong>: instanceName: The name of the instance. The name must be 2 to 80 characters long, start with a
+        /// letter (uppercase or lowercase) or a Chinese character, and not contain spaces or
+        /// the characters `@\/:=”<>{[]}`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -424,13 +417,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         private object? _password;
 
         /// <remarks>
-        /// <strong></strong>: ), number signs (#), dollar signs ($), percent signs (%), carets (^),
-        /// ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+),
-        /// hyphens (-), and equal signs (=).
-        ///
-        /// <strong>Property</strong>: password: The password of the instance. The password can be 8 to 32 characters in length and
-        /// must contain at least three types of the following characters: uppercase letters,
-        /// lowercase letters, digits, and special characters. Special characters include ! at signs (
+        /// <strong>Property</strong>: password: The password for the instance. The password must be 8 to 32 characters long and
+        /// contain at least three of the following character types: uppercase letters,
+        /// lowercase letters, digits, and special characters. The allowed special characters
+        /// are `!@#$%^&*()_+-=`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -463,10 +453,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         private object? _period;
 
         /// <remarks>
-        /// <strong>Property</strong>: period: The subscription period. You must specify this parameter if the value of the ChargeType
-        /// parameter is PrePaid. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24,
-        /// and 36.
-        /// Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
+        /// <strong>Property</strong>: period: The subscription duration, in months. Valid values: 1 to 9, 12, 24, 36, and 60.
+        /// > This parameter is available and required only when ChargeType is set to
+        /// PrePaid.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -668,7 +657,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         private object? _zoneId;
 
         /// <remarks>
-        /// <strong>Property</strong>: zoneId: The ID of the zone in which the instance is created. You can call the DescribeRegions operation to query the latest region list.
+        /// <strong>Property</strong>: zoneId: The ID of the primary zone for the instance. You can call the [DescribeZones]()
+        /// operation to query available zones.
+        /// > You can also specify a secondary zone by using the `SecondaryZoneId` parameter.
+        /// The primary and replica nodes are then deployed in the specified primary and
+        /// secondary zones to create a dual-zone architecture for in-city disaster recovery.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

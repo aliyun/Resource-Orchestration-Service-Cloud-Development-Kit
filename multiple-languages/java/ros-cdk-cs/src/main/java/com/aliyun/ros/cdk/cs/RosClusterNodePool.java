@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ClusterNodePool</code>The , which resource type creates a node pool for a cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ClusterNodePool</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:04:30.644Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:56:05.677Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterNodePool")
 public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -2719,6 +2719,13 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskEncrypted() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskPerformanceLevel() {
             return null;
         }
@@ -2780,6 +2787,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object spotPriceLimit;
             java.lang.Object spotStrategy;
             java.lang.Object systemDiskCategory;
+            java.lang.Object systemDiskEncrypted;
             java.lang.Object systemDiskPerformanceLevel;
             java.util.List<com.aliyun.ros.cdk.cs.RosClusterNodePool.TagsProperty> tags;
             java.lang.Object zoneIds;
@@ -3467,6 +3475,28 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ScalingGroupProperty#getSystemDiskEncrypted}
+             * @param systemDiskEncrypted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskEncrypted(java.lang.Boolean systemDiskEncrypted) {
+                this.systemDiskEncrypted = systemDiskEncrypted;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getSystemDiskEncrypted}
+             * @param systemDiskEncrypted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskEncrypted(com.aliyun.ros.cdk.core.IResolvable systemDiskEncrypted) {
+                this.systemDiskEncrypted = systemDiskEncrypted;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ScalingGroupProperty#getSystemDiskPerformanceLevel}
              * @param systemDiskPerformanceLevel the value to be set.
              * @return {@code this}
@@ -3571,6 +3601,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object spotPriceLimit;
             private final java.lang.Object spotStrategy;
             private final java.lang.Object systemDiskCategory;
+            private final java.lang.Object systemDiskEncrypted;
             private final java.lang.Object systemDiskPerformanceLevel;
             private final java.util.List<com.aliyun.ros.cdk.cs.RosClusterNodePool.TagsProperty> tags;
             private final java.lang.Object zoneIds;
@@ -3612,6 +3643,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
                 this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.systemDiskEncrypted = software.amazon.jsii.Kernel.get(this, "systemDiskEncrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosClusterNodePool.TagsProperty.class)));
                 this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -3654,6 +3686,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
                 this.spotPriceLimit = builder.spotPriceLimit;
                 this.spotStrategy = builder.spotStrategy;
                 this.systemDiskCategory = builder.systemDiskCategory;
+                this.systemDiskEncrypted = builder.systemDiskEncrypted;
                 this.systemDiskPerformanceLevel = builder.systemDiskPerformanceLevel;
                 this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosClusterNodePool.TagsProperty>)builder.tags;
                 this.zoneIds = builder.zoneIds;
@@ -3815,6 +3848,11 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getSystemDiskEncrypted() {
+                return this.systemDiskEncrypted;
+            }
+
+            @Override
             public final java.lang.Object getSystemDiskPerformanceLevel() {
                 return this.systemDiskPerformanceLevel;
             }
@@ -3924,6 +3962,9 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getSystemDiskCategory() != null) {
                     data.set("systemDiskCategory", om.valueToTree(this.getSystemDiskCategory()));
                 }
+                if (this.getSystemDiskEncrypted() != null) {
+                    data.set("systemDiskEncrypted", om.valueToTree(this.getSystemDiskEncrypted()));
+                }
                 if (this.getSystemDiskPerformanceLevel() != null) {
                     data.set("systemDiskPerformanceLevel", om.valueToTree(this.getSystemDiskPerformanceLevel()));
                 }
@@ -3982,6 +4023,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.spotPriceLimit != null ? !this.spotPriceLimit.equals(that.spotPriceLimit) : that.spotPriceLimit != null) return false;
                 if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
                 if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
+                if (this.systemDiskEncrypted != null ? !this.systemDiskEncrypted.equals(that.systemDiskEncrypted) : that.systemDiskEncrypted != null) return false;
                 if (this.systemDiskPerformanceLevel != null ? !this.systemDiskPerformanceLevel.equals(that.systemDiskPerformanceLevel) : that.systemDiskPerformanceLevel != null) return false;
                 if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
                 return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
@@ -4020,6 +4062,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.spotPriceLimit != null ? this.spotPriceLimit.hashCode() : 0);
                 result = 31 * result + (this.spotStrategy != null ? this.spotStrategy.hashCode() : 0);
                 result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
+                result = 31 * result + (this.systemDiskEncrypted != null ? this.systemDiskEncrypted.hashCode() : 0);
                 result = 31 * result + (this.systemDiskPerformanceLevel != null ? this.systemDiskPerformanceLevel.hashCode() : 0);
                 result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
                 result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);

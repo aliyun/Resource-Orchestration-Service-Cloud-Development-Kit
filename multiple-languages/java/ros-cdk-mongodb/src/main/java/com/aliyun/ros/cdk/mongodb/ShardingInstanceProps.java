@@ -5,37 +5,60 @@ package com.aliyun.ros.cdk.mongodb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:10:27.895Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:16:24.262Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.ShardingInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ShardingInstanceProps.Jsii$Proxy.class)
 public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property configServer:.
+     * Property configServer: The information of Configserver nodes.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getConfigServer();
 
     /**
-     * Property mongos:.
+     * Property mongos: The information of Mongos nodes.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getMongos();
 
     /**
-     * Property replicaSet:.
+     * Property replicaSet: The information of shard nodes.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getReplicaSet();
 
     /**
-     * Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+     * Property accountPassword: The password of the root account.
+     * <p>
+     * The password must meet the following
+     * requirements:
+     * <p>
+     * <ul>
+     * <li>It must contain at least three of the following character types: uppercase
+     * letters, lowercase letters, digits, and special characters.</li>
+     * <li>Special characters include !&#64;#$%^&amp;*()_+-=</li>
+     * <li>It must be 8 to 32 characters in length.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAccountPassword() {
         return null;
     }
 
     /**
-     * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
+     * Property autoRenew: Specifies whether to enable auto-renewal for the instance.
      * <p>
-     * Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true: Auto-renewal is enabled.</li>
+     * <li>false: Auto-renewal is disabled. You must manually renew the instance. This is
+     * the default value.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is optional and takes effect only when you set the ChargeType
+     * parameter to PrePaid.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return null;
@@ -49,14 +72,44 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
-     * Property dbInstanceDescription: Description of created database instance.
+     * Property dbInstanceDescription: The name of the instance.
+     * <p>
+     * The name must meet the following requirements:
+     * <p>
+     * <ul>
+     * <li>It must start with a Chinese character or a letter.</li>
+     * <li>It can contain digits, Chinese characters, letters, underscores (_), periods
+     * (.), and hyphens (-).</li>
+     * <li>It must be 2 to 256 characters in length.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceDescription() {
         return null;
     }
 
     /**
-     * Property engineVersion: Database instance version.
+     * Property engineVersion: The database version.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>8.0</li>
+     * <li>7.0</li>
+     * <li>6.0</li>
+     * <li>5.0</li>
+     * <li>4.4</li>
+     * <li>4.2</li>
+     * <li>4.0</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>When you clone an instance by calling this operation, the value of this
+     * parameter must be the same as that of the source instance.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEngineVersion() {
         return null;
@@ -73,7 +126,17 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
-     * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+     * Property period: The subscription duration of the instance.
+     * <p>
+     * Unit: month.
+     * Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required and takes effect only when you set the ChargeType
+     * parameter to PrePaid.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -123,7 +186,14 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
-     * Property srcDbInstanceId: Create an instance of the backup set based on an instance.
+     * Property srcDbInstanceId: The source instance ID.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required only when you clone an instance by calling this
+     * operation. You must also specify the RestoreTime parameter.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSrcDbInstanceId() {
         return null;
@@ -226,7 +296,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getConfigServer}
-         * @param configServer Property configServer:. This parameter is required.
+         * @param configServer Property configServer: The information of Configserver nodes. This parameter is required.
          * @return {@code this}
          */
         public Builder configServer(com.aliyun.ros.cdk.core.IResolvable configServer) {
@@ -236,7 +306,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getConfigServer}
-         * @param configServer Property configServer:. This parameter is required.
+         * @param configServer Property configServer: The information of Configserver nodes. This parameter is required.
          * @return {@code this}
          */
         public Builder configServer(java.util.List<? extends java.lang.Object> configServer) {
@@ -246,7 +316,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getMongos}
-         * @param mongos Property mongos:. This parameter is required.
+         * @param mongos Property mongos: The information of Mongos nodes. This parameter is required.
          * @return {@code this}
          */
         public Builder mongos(com.aliyun.ros.cdk.core.IResolvable mongos) {
@@ -256,7 +326,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getMongos}
-         * @param mongos Property mongos:. This parameter is required.
+         * @param mongos Property mongos: The information of Mongos nodes. This parameter is required.
          * @return {@code this}
          */
         public Builder mongos(java.util.List<? extends java.lang.Object> mongos) {
@@ -266,7 +336,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getReplicaSet}
-         * @param replicaSet Property replicaSet:. This parameter is required.
+         * @param replicaSet Property replicaSet: The information of shard nodes. This parameter is required.
          * @return {@code this}
          */
         public Builder replicaSet(com.aliyun.ros.cdk.core.IResolvable replicaSet) {
@@ -276,7 +346,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getReplicaSet}
-         * @param replicaSet Property replicaSet:. This parameter is required.
+         * @param replicaSet Property replicaSet: The information of shard nodes. This parameter is required.
          * @return {@code this}
          */
         public Builder replicaSet(java.util.List<? extends java.lang.Object> replicaSet) {
@@ -286,7 +356,16 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getAccountPassword}
-         * @param accountPassword Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+         * @param accountPassword Property accountPassword: The password of the root account.
+         *                        The password must meet the following
+         *                        requirements:
+         *                        <p>
+         *                        <ul>
+         *                        <li>It must contain at least three of the following character types: uppercase
+         *                        letters, lowercase letters, digits, and special characters.</li>
+         *                        <li>Special characters include !&#64;#$%^&amp;*()_+-=</li>
+         *                        <li>It must be 8 to 32 characters in length.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder accountPassword(java.lang.String accountPassword) {
@@ -296,7 +375,16 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getAccountPassword}
-         * @param accountPassword Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+         * @param accountPassword Property accountPassword: The password of the root account.
+         *                        The password must meet the following
+         *                        requirements:
+         *                        <p>
+         *                        <ul>
+         *                        <li>It must contain at least three of the following character types: uppercase
+         *                        letters, lowercase letters, digits, and special characters.</li>
+         *                        <li>Special characters include !&#64;#$%^&amp;*()_+-=</li>
+         *                        <li>It must be 8 to 32 characters in length.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder accountPassword(com.aliyun.ros.cdk.core.IResolvable accountPassword) {
@@ -306,8 +394,21 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getAutoRenew}
-         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
-         *                  Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal for the instance.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>true: Auto-renewal is enabled.</li>
+         *                  <li>false: Auto-renewal is disabled. You must manually renew the instance. This is
+         *                  the default value.</li>
+         *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  This parameter is optional and takes effect only when you set the ChargeType
+         *                  parameter to PrePaid.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder autoRenew(java.lang.Boolean autoRenew) {
@@ -317,8 +418,21 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getAutoRenew}
-         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
-         *                  Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal for the instance.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>true: Auto-renewal is enabled.</li>
+         *                  <li>false: Auto-renewal is disabled. You must manually renew the instance. This is
+         *                  the default value.</li>
+         *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  This parameter is optional and takes effect only when you set the ChargeType
+         *                  parameter to PrePaid.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
@@ -348,7 +462,15 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getDbInstanceDescription}
-         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance.
+         * @param dbInstanceDescription Property dbInstanceDescription: The name of the instance.
+         *                              The name must meet the following requirements:
+         *                              <p>
+         *                              <ul>
+         *                              <li>It must start with a Chinese character or a letter.</li>
+         *                              <li>It can contain digits, Chinese characters, letters, underscores (_), periods
+         *                              (.), and hyphens (-).</li>
+         *                              <li>It must be 2 to 256 characters in length.</li>
+         *                              </ul>
          * @return {@code this}
          */
         public Builder dbInstanceDescription(java.lang.String dbInstanceDescription) {
@@ -358,7 +480,15 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getDbInstanceDescription}
-         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance.
+         * @param dbInstanceDescription Property dbInstanceDescription: The name of the instance.
+         *                              The name must meet the following requirements:
+         *                              <p>
+         *                              <ul>
+         *                              <li>It must start with a Chinese character or a letter.</li>
+         *                              <li>It can contain digits, Chinese characters, letters, underscores (_), periods
+         *                              (.), and hyphens (-).</li>
+         *                              <li>It must be 2 to 256 characters in length.</li>
+         *                              </ul>
          * @return {@code this}
          */
         public Builder dbInstanceDescription(com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
@@ -368,7 +498,27 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getEngineVersion}
-         * @param engineVersion Property engineVersion: Database instance version.
+         * @param engineVersion Property engineVersion: The database version.
+         *                      Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>8.0</li>
+         *                      <li>7.0</li>
+         *                      <li>6.0</li>
+         *                      <li>5.0</li>
+         *                      <li>4.4</li>
+         *                      <li>4.2</li>
+         *                      <li>4.0</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      <ul>
+         *                      <li>When you clone an instance by calling this operation, the value of this
+         *                      parameter must be the same as that of the source instance.</li>
+         *                      </ul>
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder engineVersion(java.lang.String engineVersion) {
@@ -378,7 +528,27 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getEngineVersion}
-         * @param engineVersion Property engineVersion: Database instance version.
+         * @param engineVersion Property engineVersion: The database version.
+         *                      Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>8.0</li>
+         *                      <li>7.0</li>
+         *                      <li>6.0</li>
+         *                      <li>5.0</li>
+         *                      <li>4.4</li>
+         *                      <li>4.2</li>
+         *                      <li>4.0</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      <ul>
+         *                      <li>When you clone an instance by calling this operation, the value of this
+         *                      parameter must be the same as that of the source instance.</li>
+         *                      </ul>
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder engineVersion(com.aliyun.ros.cdk.core.IResolvable engineVersion) {
@@ -412,7 +582,16 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getPeriod}
-         * @param period Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+         * @param period Property period: The subscription duration of the instance.
+         *               Unit: month.
+         *               Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required and takes effect only when you set the ChargeType
+         *               parameter to PrePaid.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -422,7 +601,16 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getPeriod}
-         * @param period Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+         * @param period Property period: The subscription duration of the instance.
+         *               Unit: month.
+         *               Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required and takes effect only when you set the ChargeType
+         *               parameter to PrePaid.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
@@ -540,7 +728,13 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getSrcDbInstanceId}
-         * @param srcDbInstanceId Property srcDbInstanceId: Create an instance of the backup set based on an instance.
+         * @param srcDbInstanceId Property srcDbInstanceId: The source instance ID.
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is required only when you clone an instance by calling this
+         *                        operation. You must also specify the RestoreTime parameter.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder srcDbInstanceId(java.lang.String srcDbInstanceId) {
@@ -550,7 +744,13 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ShardingInstanceProps#getSrcDbInstanceId}
-         * @param srcDbInstanceId Property srcDbInstanceId: Create an instance of the backup set based on an instance.
+         * @param srcDbInstanceId Property srcDbInstanceId: The source instance ID.
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is required only when you clone an instance by calling this
+         *                        operation. You must also specify the RestoreTime parameter.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder srcDbInstanceId(com.aliyun.ros.cdk.core.IResolvable srcDbInstanceId) {

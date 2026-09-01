@@ -7,22 +7,22 @@ package alicloudroscdkcms
 type SiteMonitorProps struct {
 	// Property address: The URL or IP address monitored by the monitoring task.
 	Address interface{} `field:"required" json:"address" yaml:"address"`
-	// Property taskName: The name of the site monitoring task.
+	// Property taskName: The name of the monitoring task.
 	//
-	// The name must be 4 to 100 characters in length.
-	// It can contain letters, digits, and underscores (_).
+	// The name must be 4 to 100 characters long and can contain letters, digits,
+	// underscores (_), and Chinese characters.
 	TaskName interface{} `field:"required" json:"taskName" yaml:"taskName"`
-	// Property taskType: The protocol used by the site monitoring task.
+	// Property taskType: The type of monitoring task.
 	//
-	// Valid values: HTTP, HTTPS, PING, TCP,
-	// UDP, DNS, SMTP, POP3, and FTP.
+	// Valid protocols include HTTP(S), PING, TCP, UDP, DNS, SMTP, POP3, FTP, and
+	// WEBSOCKET.
 	TaskType interface{} `field:"required" json:"taskType" yaml:"taskType"`
 	// Property alertIds:.
 	AlertIds interface{} `field:"optional" json:"alertIds" yaml:"alertIds"`
-	// Property interval: The interval at which detection requests are sent.
+	// Property interval: The monitoring frequency in minutes.
 	//
-	// Valid values: 1, 5, and 15. Unit:
-	// minutes. Default value: 1.
+	// Valid values: 1, 5, 15, 30, and 60.
+	// Default: 1.
 	Interval interface{} `field:"optional" json:"interval" yaml:"interval"`
 	// Property ispCities: The information about detection points, which is specified in a JSON array.
 	//

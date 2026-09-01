@@ -75,7 +75,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
 
         private object _scheduleName;
 
-        /// <summary>Property scheduleName: Schedule name.</summary>
+        /// <summary>Property scheduleName: The name of the timed schedule.</summary>
+        /// <remarks>
+        /// The name must meet the following requirements:
+        ///
+        /// <list type="bullet">
+        /// <description>It can contain letters (a-z and A-Z), digits (0-9), underscores (_), and
+        /// hyphens (-).</description>
+        /// <description>It is case-sensitive.</description>
+        /// <description>It must be 1 to 128 characters in length.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "scheduleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ScheduleName
         {
@@ -167,7 +177,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
 
         private object? _payload;
 
-        /// <summary>Property payload: Payload.</summary>
+        /// <summary>Property payload: The trigger message of the timed schedule.</summary>
+        /// <remarks>
+        /// The message must be in the JSON
+        /// format.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "payload", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Payload

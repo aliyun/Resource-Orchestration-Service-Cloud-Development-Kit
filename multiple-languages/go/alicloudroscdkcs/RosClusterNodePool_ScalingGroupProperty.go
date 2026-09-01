@@ -33,6 +33,7 @@ type RosClusterNodePool_ScalingGroupProperty struct {
 	SpotPriceLimit interface{} `field:"optional" json:"spotPriceLimit" yaml:"spotPriceLimit"`
 	SpotStrategy interface{} `field:"optional" json:"spotStrategy" yaml:"spotStrategy"`
 	SystemDiskCategory interface{} `field:"optional" json:"systemDiskCategory" yaml:"systemDiskCategory"`
+	SystemDiskEncrypted interface{} `field:"optional" json:"systemDiskEncrypted" yaml:"systemDiskEncrypted"`
 	SystemDiskPerformanceLevel interface{} `field:"optional" json:"systemDiskPerformanceLevel" yaml:"systemDiskPerformanceLevel"`
 	Tags *[]*RosClusterNodePool_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	ZoneIds interface{} `field:"optional" json:"zoneIds" yaml:"zoneIds"`

@@ -53,7 +53,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
             get;
         }
 
-        /// <summary>Property sourceProtocol: The protocol used by the source DNS server.</summary>
+        /// <summary>Property sourceProtocol: The protocol used for origin fetch.</summary>
+        /// <remarks>
+        /// Valid values: TCP and UDP. The default value
+        /// is UDP.
+        /// </remarks>
         [JsiiProperty(name: "sourceProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object SourceProtocol
         {
@@ -124,7 +128,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property sourceProtocol: The protocol used by the source DNS server.</summary>
+            /// <summary>Property sourceProtocol: The protocol used for origin fetch.</summary>
+            /// <remarks>
+            /// Valid values: TCP and UDP. The default value
+            /// is UDP.
+            /// </remarks>
             [JsiiProperty(name: "sourceProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SourceProtocol
             {

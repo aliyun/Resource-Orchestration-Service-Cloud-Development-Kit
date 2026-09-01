@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`, which is used to create an auto provisioning group.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`.
 type RosAutoProvisioningGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrAutoProvisioningGroupId() alicloudroscdkcore.IResolvable

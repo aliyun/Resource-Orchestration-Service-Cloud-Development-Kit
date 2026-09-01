@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Adblake
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroup`, which is used to create a resource group for an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroup`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ResourceGroup` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-resourcegroup
@@ -124,9 +124,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: engine: Database engine, value:
-        /// AnalyticDB (default): AnalyticDB for mysql engine.
-        /// Sparkwarehouse: Sparkwarehous engine.
+        /// <strong>Property</strong>: engine: The database engine. Valid values:
+        /// - AnalyticDB (default): the AnalyticDB for MySQL engine.
+        /// - SparkWarehouse: the SparkWarehouse engine.
         /// </remarks>
         [JsiiProperty(name: "engine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Engine
@@ -253,7 +253,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: clusterMode: The mode of cluster. Default: AutoScale.
+        /// <strong>Property</strong>: clusterMode: This parameter is reserved.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "clusterMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -33,7 +33,7 @@ export interface IMonitorGroup extends ros.IResource {
     readonly attrGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MonitorGroup`, which is used to create an application group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MonitorGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMonitorGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroup
  */

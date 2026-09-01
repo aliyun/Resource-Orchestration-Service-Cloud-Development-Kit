@@ -16,7 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         private object _groupName;
 
         /// <remarks>
-        /// <strong>Property</strong>: groupName: The name of the group. The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
+        /// <strong>Property</strong>: groupName: The name of the group. The alias must be 4 to 30 characters in length, and can
+        /// contain letters, digits, and underscores (_).
         /// </remarks>
         [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object GroupName

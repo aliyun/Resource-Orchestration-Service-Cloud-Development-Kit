@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ice;
 /**
  * Represents a <code>InsertMediaToSearchLib</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:31:54.374Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:41:15.842Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ice.$Module.class, fqn = "@alicloud/ros-cdk-ice.IInsertMediaToSearchLib")
 @software.amazon.jsii.Jsii.Proxy(IInsertMediaToSearchLib.Jsii$Proxy.class)
 public interface IInsertMediaToSearchLib extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

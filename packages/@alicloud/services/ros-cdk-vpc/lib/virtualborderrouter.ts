@@ -10,7 +10,10 @@ export { RosVirtualBorderRouter as VirtualBorderRouterProperty };
 export interface VirtualBorderRouterProps {
 
     /**
-     * Property localGatewayIp: The IP address of the VBR on the Alibaba Cloud side.
+     * Property localGatewayIp: The IP address of the VBR. Only the owner of the VBR can set or modify this
+     * parameter.
+     * When you create a VBR for the owner of the Express Connect circuit, this
+     * parameter is required.
      */
     readonly localGatewayIp: string | ros.IResolvable;
 
@@ -64,8 +67,8 @@ export interface VirtualBorderRouterProps {
 
     /**
      * Property name: The name of the VBR.
-     * The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
-     * underscores (_), and hyphens (-). The name cannot start with http:\/\/ or https:\/\/.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits,
+     * underscores (_), and hyphens (-). The name must start with a letter.
      */
     readonly name?: string | ros.IResolvable;
 

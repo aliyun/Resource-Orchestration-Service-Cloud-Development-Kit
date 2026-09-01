@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ots;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-instancev2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:18:52.627Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:26:08.320Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosInstanceV2Props")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceV2Props.Jsii$Proxy.class)
 public interface RosInstanceV2Props extends software.amazon.jsii.JsiiSerializable {

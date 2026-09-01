@@ -9,7 +9,9 @@ type UserSourceLogConfigProps struct {
 	//
 	// For all available log codes of a product, query the Cloud Siem ListImportedLogsByProd API with a specific product code.
 	SourceLogCode interface{} `field:"required" json:"sourceLogCode" yaml:"sourceLogCode"`
-	// Property sourceLogInfo: The info of log to be added.
+	// Property sourceLogInfo: The detailed information about the Simple Log Service (SLS) log to be collected.
+	//
+	// The value is a JSON string.
 	SourceLogInfo interface{} `field:"required" json:"sourceLogInfo" yaml:"sourceLogInfo"`
 	// Property sourceProdCode: The product code.
 	//

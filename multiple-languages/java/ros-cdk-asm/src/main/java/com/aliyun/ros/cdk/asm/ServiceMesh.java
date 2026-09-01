@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.asm;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ASM::ServiceMesh</code>, which is used to create a Service Mesh (ASM) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ASM::ServiceMesh</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:33:01.842Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:14:20.500Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.asm.$Module.class, fqn = "@alicloud/ros-cdk-asm.ServiceMesh")
 public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.asm.IServiceMesh {
 
@@ -154,20 +154,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property accessLogEnabled: Specifies whether to enable access logging.
+         * Property accessLogEnabled: Specifies whether to enable access log.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables access log.</li>
+         * <li><code>false</code>: Disables access log.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accessLogEnabled Property accessLogEnabled: Specifies whether to enable access logging. This parameter is required.
+         * @param accessLogEnabled Property accessLogEnabled: Specifies whether to enable access log. This parameter is required.
          */
         public Builder accessLogEnabled(final java.lang.Boolean accessLogEnabled) {
             this.props.accessLogEnabled(accessLogEnabled);
             return this;
         }
         /**
-         * Property accessLogEnabled: Specifies whether to enable access logging.
+         * Property accessLogEnabled: Specifies whether to enable access log.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables access log.</li>
+         * <li><code>false</code>: Disables access log.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accessLogEnabled Property accessLogEnabled: Specifies whether to enable access logging. This parameter is required.
+         * @param accessLogEnabled Property accessLogEnabled: Specifies whether to enable access log. This parameter is required.
          */
         public Builder accessLogEnabled(final com.aliyun.ros.cdk.core.IResolvable accessLogEnabled) {
             this.props.accessLogEnabled(accessLogEnabled);
@@ -210,20 +226,38 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property accessLogFormat: The format of access logs.
+         * Property accessLogFormat: The custom format of access logs.
+         * <p>
+         * This parameter is available only if you enable
+         * access log. The value must be a JSON string that contains the following keys:
+         * authority_for, bytes_received, bytes_sent, downstream_local_address,
+         * downstream_remote_address, duration, istio_policy_status, method, path, protocol,
+         * requested_server_name, response_code, response_flags, route_name, start_time,
+         * trace_id, upstream_cluster, upstream_host, upstream_local_address,
+         * upstream_service_time, upstream_transport_failure_reason, user_agent, and
+         * x_forwarded_for.
          * <p>
          * @return {@code this}
-         * @param accessLogFormat Property accessLogFormat: The format of access logs. This parameter is required.
+         * @param accessLogFormat Property accessLogFormat: The custom format of access logs. This parameter is required.
          */
         public Builder accessLogFormat(final java.lang.String accessLogFormat) {
             this.props.accessLogFormat(accessLogFormat);
             return this;
         }
         /**
-         * Property accessLogFormat: The format of access logs.
+         * Property accessLogFormat: The custom format of access logs.
+         * <p>
+         * This parameter is available only if you enable
+         * access log. The value must be a JSON string that contains the following keys:
+         * authority_for, bytes_received, bytes_sent, downstream_local_address,
+         * downstream_remote_address, duration, istio_policy_status, method, path, protocol,
+         * requested_server_name, response_code, response_flags, route_name, start_time,
+         * trace_id, upstream_cluster, upstream_host, upstream_local_address,
+         * upstream_service_time, upstream_transport_failure_reason, user_agent, and
+         * x_forwarded_for.
          * <p>
          * @return {@code this}
-         * @param accessLogFormat Property accessLogFormat: The format of access logs. This parameter is required.
+         * @param accessLogFormat Property accessLogFormat: The custom format of access logs. This parameter is required.
          */
         public Builder accessLogFormat(final com.aliyun.ros.cdk.core.IResolvable accessLogFormat) {
             this.props.accessLogFormat(accessLogFormat);
@@ -445,24 +479,34 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property autoRenewPeriod: ChargeType is a PrePay.
+         * Property autoRenewPeriod: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>.
          * <p>
-         * Indicates the automatic renewal time when purchasing a CLB of the year and month type. If the purchase is less than 1 year old, this parameter indicates how many months the auto-renewal will take. If the purchase is longer than 1 year, this parameter indicates how many years the automatic renewal will be made.
+         * The
+         * auto-renewal period. If the subscription duration is less than one year, the
+         * value of this parameter indicates the number of months for which you want to
+         * renew the instance. If the subscription duration is more than one year, the value
+         * of this parameter indicates the number of years for which you want to renew the
+         * instance.
          * <p>
          * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: ChargeType is a PrePay. This parameter is required.
+         * @param autoRenewPeriod Property autoRenewPeriod: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>. This parameter is required.
          */
         public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
             this.props.autoRenewPeriod(autoRenewPeriod);
             return this;
         }
         /**
-         * Property autoRenewPeriod: ChargeType is a PrePay.
+         * Property autoRenewPeriod: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>.
          * <p>
-         * Indicates the automatic renewal time when purchasing a CLB of the year and month type. If the purchase is less than 1 year old, this parameter indicates how many months the auto-renewal will take. If the purchase is longer than 1 year, this parameter indicates how many years the automatic renewal will be made.
+         * The
+         * auto-renewal period. If the subscription duration is less than one year, the
+         * value of this parameter indicates the number of months for which you want to
+         * renew the instance. If the subscription duration is more than one year, the value
+         * of this parameter indicates the number of years for which you want to renew the
+         * instance.
          * <p>
          * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: ChargeType is a PrePay. This parameter is required.
+         * @param autoRenewPeriod Property autoRenewPeriod: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>. This parameter is required.
          */
         public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
             this.props.autoRenewPeriod(autoRenewPeriod);
@@ -615,20 +659,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property controlPlaneLogEnabled: Specifies whether to enable control plane logging.
+         * Property controlPlaneLogEnabled: Specifies whether to enable control plane log collection.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables control plane log collection.</li>
+         * <li><code>false</code>: Disables control plane log collection.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param controlPlaneLogEnabled Property controlPlaneLogEnabled: Specifies whether to enable control plane logging. This parameter is required.
+         * @param controlPlaneLogEnabled Property controlPlaneLogEnabled: Specifies whether to enable control plane log collection. This parameter is required.
          */
         public Builder controlPlaneLogEnabled(final java.lang.Boolean controlPlaneLogEnabled) {
             this.props.controlPlaneLogEnabled(controlPlaneLogEnabled);
             return this;
         }
         /**
-         * Property controlPlaneLogEnabled: Specifies whether to enable control plane logging.
+         * Property controlPlaneLogEnabled: Specifies whether to enable control plane log collection.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables control plane log collection.</li>
+         * <li><code>false</code>: Disables control plane log collection.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param controlPlaneLogEnabled Property controlPlaneLogEnabled: Specifies whether to enable control plane logging. This parameter is required.
+         * @param controlPlaneLogEnabled Property controlPlaneLogEnabled: Specifies whether to enable control plane log collection. This parameter is required.
          */
         public Builder controlPlaneLogEnabled(final com.aliyun.ros.cdk.core.IResolvable controlPlaneLogEnabled) {
             this.props.controlPlaneLogEnabled(controlPlaneLogEnabled);
@@ -678,20 +738,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property customizedPrometheus: Specifies whether to use a customized Prometheus system.
+         * Property customizedPrometheus: Specifies whether to use a self-managed Prometheus system.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Uses a self-managed Prometheus system.</li>
+         * <li><code>false</code>: Does not use a self-managed Prometheus system.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param customizedPrometheus Property customizedPrometheus: Specifies whether to use a customized Prometheus system. This parameter is required.
+         * @param customizedPrometheus Property customizedPrometheus: Specifies whether to use a self-managed Prometheus system. This parameter is required.
          */
         public Builder customizedPrometheus(final java.lang.Boolean customizedPrometheus) {
             this.props.customizedPrometheus(customizedPrometheus);
             return this;
         }
         /**
-         * Property customizedPrometheus: Specifies whether to use a customized Prometheus system.
+         * Property customizedPrometheus: Specifies whether to use a self-managed Prometheus system.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Uses a self-managed Prometheus system.</li>
+         * <li><code>false</code>: Does not use a self-managed Prometheus system.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param customizedPrometheus Property customizedPrometheus: Specifies whether to use a customized Prometheus system. This parameter is required.
+         * @param customizedPrometheus Property customizedPrometheus: Specifies whether to use a self-managed Prometheus system. This parameter is required.
          */
         public Builder customizedPrometheus(final com.aliyun.ros.cdk.core.IResolvable customizedPrometheus) {
             this.props.customizedPrometheus(customizedPrometheus);
@@ -699,20 +775,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property customizedZipkin: Specifies whether to use a user-created Zipkin system.
+         * Property customizedZipkin: Specifies whether to use a self-managed Zipkin system.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Uses a self-managed Zipkin system.</li>
+         * <li><code>false</code>: Uses Tracing Analysis.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param customizedZipkin Property customizedZipkin: Specifies whether to use a user-created Zipkin system. This parameter is required.
+         * @param customizedZipkin Property customizedZipkin: Specifies whether to use a self-managed Zipkin system. This parameter is required.
          */
         public Builder customizedZipkin(final java.lang.Boolean customizedZipkin) {
             this.props.customizedZipkin(customizedZipkin);
             return this;
         }
         /**
-         * Property customizedZipkin: Specifies whether to use a user-created Zipkin system.
+         * Property customizedZipkin: Specifies whether to use a self-managed Zipkin system.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Uses a self-managed Zipkin system.</li>
+         * <li><code>false</code>: Uses Tracing Analysis.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param customizedZipkin Property customizedZipkin: Specifies whether to use a user-created Zipkin system. This parameter is required.
+         * @param customizedZipkin Property customizedZipkin: Specifies whether to use a self-managed Zipkin system. This parameter is required.
          */
         public Builder customizedZipkin(final com.aliyun.ros.cdk.core.IResolvable customizedZipkin) {
             this.props.customizedZipkin(customizedZipkin);
@@ -720,20 +812,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property dnsProxyingEnabled: Specifies whether to enable DNS proxying.
+         * Property dnsProxyingEnabled: Specifies whether to enable DNS proxy.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables DNS proxy.</li>
+         * <li><code>false</code>: Disables DNS proxy.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param dnsProxyingEnabled Property dnsProxyingEnabled: Specifies whether to enable DNS proxying. This parameter is required.
+         * @param dnsProxyingEnabled Property dnsProxyingEnabled: Specifies whether to enable DNS proxy. This parameter is required.
          */
         public Builder dnsProxyingEnabled(final java.lang.Boolean dnsProxyingEnabled) {
             this.props.dnsProxyingEnabled(dnsProxyingEnabled);
             return this;
         }
         /**
-         * Property dnsProxyingEnabled: Specifies whether to enable DNS proxying.
+         * Property dnsProxyingEnabled: Specifies whether to enable DNS proxy.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables DNS proxy.</li>
+         * <li><code>false</code>: Disables DNS proxy.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param dnsProxyingEnabled Property dnsProxyingEnabled: Specifies whether to enable DNS proxying. This parameter is required.
+         * @param dnsProxyingEnabled Property dnsProxyingEnabled: Specifies whether to enable DNS proxy. This parameter is required.
          */
         public Builder dnsProxyingEnabled(final com.aliyun.ros.cdk.core.IResolvable dnsProxyingEnabled) {
             this.props.dnsProxyingEnabled(dnsProxyingEnabled);
@@ -741,20 +849,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property dubboFilterEnabled: Specifies whether to enable Dubbo filter.
+         * Property dubboFilterEnabled: Specifies whether to enable the Dubbo filter.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the Dubbo filter.</li>
+         * <li><code>false</code>: Disables the Dubbo filter.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param dubboFilterEnabled Property dubboFilterEnabled: Specifies whether to enable Dubbo filter. This parameter is required.
+         * @param dubboFilterEnabled Property dubboFilterEnabled: Specifies whether to enable the Dubbo filter. This parameter is required.
          */
         public Builder dubboFilterEnabled(final java.lang.Boolean dubboFilterEnabled) {
             this.props.dubboFilterEnabled(dubboFilterEnabled);
             return this;
         }
         /**
-         * Property dubboFilterEnabled: Specifies whether to enable Dubbo filter.
+         * Property dubboFilterEnabled: Specifies whether to enable the Dubbo filter.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the Dubbo filter.</li>
+         * <li><code>false</code>: Disables the Dubbo filter.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param dubboFilterEnabled Property dubboFilterEnabled: Specifies whether to enable Dubbo filter. This parameter is required.
+         * @param dubboFilterEnabled Property dubboFilterEnabled: Specifies whether to enable the Dubbo filter. This parameter is required.
          */
         public Builder dubboFilterEnabled(final com.aliyun.ros.cdk.core.IResolvable dubboFilterEnabled) {
             this.props.dubboFilterEnabled(dubboFilterEnabled);
@@ -854,20 +978,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property enableCrHistory: Specifies whether to enable CR history.
+         * Property enableCrHistory: Specifies whether to enable the history version management feature for Istio resources in ASM.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the history version management feature.</li>
+         * <li><code>false</code>: Disables the history version management feature.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param enableCrHistory Property enableCrHistory: Specifies whether to enable CR history. This parameter is required.
+         * @param enableCrHistory Property enableCrHistory: Specifies whether to enable the history version management feature for Istio resources in ASM. This parameter is required.
          */
         public Builder enableCrHistory(final java.lang.Boolean enableCrHistory) {
             this.props.enableCrHistory(enableCrHistory);
             return this;
         }
         /**
-         * Property enableCrHistory: Specifies whether to enable CR history.
+         * Property enableCrHistory: Specifies whether to enable the history version management feature for Istio resources in ASM.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the history version management feature.</li>
+         * <li><code>false</code>: Disables the history version management feature.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param enableCrHistory Property enableCrHistory: Specifies whether to enable CR history. This parameter is required.
+         * @param enableCrHistory Property enableCrHistory: Specifies whether to enable the history version management feature for Istio resources in ASM. This parameter is required.
          */
         public Builder enableCrHistory(final com.aliyun.ros.cdk.core.IResolvable enableCrHistory) {
             this.props.enableCrHistory(enableCrHistory);
@@ -875,20 +1015,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property enableSdsServer: Specifies whether to enable SDS server.
+         * Property enableSdsServer: Specifies whether to enable the Secret Discovery Service (SDS).
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables SDS.</li>
+         * <li><code>false</code>: Disables SDS.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param enableSdsServer Property enableSdsServer: Specifies whether to enable SDS server. This parameter is required.
+         * @param enableSdsServer Property enableSdsServer: Specifies whether to enable the Secret Discovery Service (SDS). This parameter is required.
          */
         public Builder enableSdsServer(final java.lang.Boolean enableSdsServer) {
             this.props.enableSdsServer(enableSdsServer);
             return this;
         }
         /**
-         * Property enableSdsServer: Specifies whether to enable SDS server.
+         * Property enableSdsServer: Specifies whether to enable the Secret Discovery Service (SDS).
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables SDS.</li>
+         * <li><code>false</code>: Disables SDS.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param enableSdsServer Property enableSdsServer: Specifies whether to enable SDS server. This parameter is required.
+         * @param enableSdsServer Property enableSdsServer: Specifies whether to enable the Secret Discovery Service (SDS). This parameter is required.
          */
         public Builder enableSdsServer(final com.aliyun.ros.cdk.core.IResolvable enableSdsServer) {
             this.props.enableSdsServer(enableSdsServer);
@@ -1001,20 +1157,42 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property existingCaType: The type of existing CA.
+         * Property existingCaType: The type of the existing certificate: - 1: A self-signed certificate of Istiod.
+         * <p>
+         * This corresponds to the istio-ca-secret
+         * secret in the istio-system namespace. If you use this type, you must also provide
+         * the <code>ExistingCaCert</code> and <code>ExsitingCaKey</code> parameters.
+         * <p>
+         * <ul>
+         * <li>2: An external certificate of Istiod. For more information, see plugin ca cert.
+         * This generally corresponds to the cacerts secret in the istio-system namespace.
+         * If you use this type, you must also provide the <code>ExisingRootCaCert</code> and
+         * <code>ExisingRootCaKey</code> parameters.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param existingCaType Property existingCaType: The type of existing CA. This parameter is required.
+         * @param existingCaType Property existingCaType: The type of the existing certificate: - 1: A self-signed certificate of Istiod. This parameter is required.
          */
         public Builder existingCaType(final java.lang.String existingCaType) {
             this.props.existingCaType(existingCaType);
             return this;
         }
         /**
-         * Property existingCaType: The type of existing CA.
+         * Property existingCaType: The type of the existing certificate: - 1: A self-signed certificate of Istiod.
+         * <p>
+         * This corresponds to the istio-ca-secret
+         * secret in the istio-system namespace. If you use this type, you must also provide
+         * the <code>ExistingCaCert</code> and <code>ExsitingCaKey</code> parameters.
+         * <p>
+         * <ul>
+         * <li>2: An external certificate of Istiod. For more information, see plugin ca cert.
+         * This generally corresponds to the cacerts secret in the istio-system namespace.
+         * If you use this type, you must also provide the <code>ExisingRootCaCert</code> and
+         * <code>ExisingRootCaKey</code> parameters.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param existingCaType Property existingCaType: The type of existing CA. This parameter is required.
+         * @param existingCaType Property existingCaType: The type of the existing certificate: - 1: A self-signed certificate of Istiod. This parameter is required.
          */
         public Builder existingCaType(final com.aliyun.ros.cdk.core.IResolvable existingCaType) {
             this.props.existingCaType(existingCaType);
@@ -1064,20 +1242,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property filterGatewayClusterConfig: Specifies whether to filter gateway cluster configuration.
+         * Property filterGatewayClusterConfig: Specifies whether to enable gateway configuration filtering.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables gateway configuration filtering.</li>
+         * <li><code>false</code>: Disables gateway configuration filtering.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param filterGatewayClusterConfig Property filterGatewayClusterConfig: Specifies whether to filter gateway cluster configuration. This parameter is required.
+         * @param filterGatewayClusterConfig Property filterGatewayClusterConfig: Specifies whether to enable gateway configuration filtering. This parameter is required.
          */
         public Builder filterGatewayClusterConfig(final java.lang.Boolean filterGatewayClusterConfig) {
             this.props.filterGatewayClusterConfig(filterGatewayClusterConfig);
             return this;
         }
         /**
-         * Property filterGatewayClusterConfig: Specifies whether to filter gateway cluster configuration.
+         * Property filterGatewayClusterConfig: Specifies whether to enable gateway configuration filtering.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables gateway configuration filtering.</li>
+         * <li><code>false</code>: Disables gateway configuration filtering.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param filterGatewayClusterConfig Property filterGatewayClusterConfig: Specifies whether to filter gateway cluster configuration. This parameter is required.
+         * @param filterGatewayClusterConfig Property filterGatewayClusterConfig: Specifies whether to enable gateway configuration filtering. This parameter is required.
          */
         public Builder filterGatewayClusterConfig(final com.aliyun.ros.cdk.core.IResolvable filterGatewayClusterConfig) {
             this.props.filterGatewayClusterConfig(filterGatewayClusterConfig);
@@ -1085,20 +1279,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property gatewayApiEnabled: Specifies whether to enable Gateway API.
+         * Property gatewayApiEnabled: Specifies whether to enable the Gateway API.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the Gateway API.</li>
+         * <li><code>false</code>: Disables the Gateway API.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param gatewayApiEnabled Property gatewayApiEnabled: Specifies whether to enable Gateway API. This parameter is required.
+         * @param gatewayApiEnabled Property gatewayApiEnabled: Specifies whether to enable the Gateway API. This parameter is required.
          */
         public Builder gatewayApiEnabled(final java.lang.Boolean gatewayApiEnabled) {
             this.props.gatewayApiEnabled(gatewayApiEnabled);
             return this;
         }
         /**
-         * Property gatewayApiEnabled: Specifies whether to enable Gateway API.
+         * Property gatewayApiEnabled: Specifies whether to enable the Gateway API.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the Gateway API.</li>
+         * <li><code>false</code>: Disables the Gateway API.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param gatewayApiEnabled Property gatewayApiEnabled: Specifies whether to enable Gateway API. This parameter is required.
+         * @param gatewayApiEnabled Property gatewayApiEnabled: Specifies whether to enable the Gateway API. This parameter is required.
          */
         public Builder gatewayApiEnabled(final com.aliyun.ros.cdk.core.IResolvable gatewayApiEnabled) {
             this.props.gatewayApiEnabled(gatewayApiEnabled);
@@ -1106,20 +1316,28 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property guestCluster: The guest cluster configuration.
+         * Property guestCluster: When you create a Service Mesh instance, you can add a cluster to the instance.
+         * <p>
+         * If you do not specify this parameter, no cluster is added. The cluster must be in
+         * the same VPC and vSwitch as the Service Mesh instance, and must have the same
+         * domain name.
          * <p>
          * @return {@code this}
-         * @param guestCluster Property guestCluster: The guest cluster configuration. This parameter is required.
+         * @param guestCluster Property guestCluster: When you create a Service Mesh instance, you can add a cluster to the instance. This parameter is required.
          */
         public Builder guestCluster(final java.lang.String guestCluster) {
             this.props.guestCluster(guestCluster);
             return this;
         }
         /**
-         * Property guestCluster: The guest cluster configuration.
+         * Property guestCluster: When you create a Service Mesh instance, you can add a cluster to the instance.
+         * <p>
+         * If you do not specify this parameter, no cluster is added. The cluster must be in
+         * the same VPC and vSwitch as the Service Mesh instance, and must have the same
+         * domain name.
          * <p>
          * @return {@code this}
-         * @param guestCluster Property guestCluster: The guest cluster configuration. This parameter is required.
+         * @param guestCluster Property guestCluster: When you create a Service Mesh instance, you can add a cluster to the instance. This parameter is required.
          */
         public Builder guestCluster(final com.aliyun.ros.cdk.core.IResolvable guestCluster) {
             this.props.guestCluster(guestCluster);
@@ -1127,20 +1345,20 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property includeIpRanges: The Classless Inter-Domain Routing (CIDR) block in the ASM instance that are denied to access external services.
+         * Property includeIpRanges: The IP address ranges that are allowed to access the proxy.
          * <p>
          * @return {@code this}
-         * @param includeIpRanges Property includeIpRanges: The Classless Inter-Domain Routing (CIDR) block in the ASM instance that are denied to access external services. This parameter is required.
+         * @param includeIpRanges Property includeIpRanges: The IP address ranges that are allowed to access the proxy. This parameter is required.
          */
         public Builder includeIpRanges(final java.lang.String includeIpRanges) {
             this.props.includeIpRanges(includeIpRanges);
             return this;
         }
         /**
-         * Property includeIpRanges: The Classless Inter-Domain Routing (CIDR) block in the ASM instance that are denied to access external services.
+         * Property includeIpRanges: The IP address ranges that are allowed to access the proxy.
          * <p>
          * @return {@code this}
-         * @param includeIpRanges Property includeIpRanges: The Classless Inter-Domain Routing (CIDR) block in the ASM instance that are denied to access external services. This parameter is required.
+         * @param includeIpRanges Property includeIpRanges: The IP address ranges that are allowed to access the proxy. This parameter is required.
          */
         public Builder includeIpRanges(final com.aliyun.ros.cdk.core.IResolvable includeIpRanges) {
             this.props.includeIpRanges(includeIpRanges);
@@ -1169,20 +1387,40 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property kialiEnabled: Specifies whether to enable Kiali.
+         * Property kialiEnabled: Specifies whether to enable the mesh topology feature.
+         * <p>
+         * To enable this feature,
+         * you must first enable Prometheus monitoring. If Prometheus monitoring is
+         * disabled, this feature is forcibly disabled. Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the mesh topology feature.</li>
+         * <li><code>false</code>: Disables the mesh topology feature.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param kialiEnabled Property kialiEnabled: Specifies whether to enable Kiali. This parameter is required.
+         * @param kialiEnabled Property kialiEnabled: Specifies whether to enable the mesh topology feature. This parameter is required.
          */
         public Builder kialiEnabled(final java.lang.Boolean kialiEnabled) {
             this.props.kialiEnabled(kialiEnabled);
             return this;
         }
         /**
-         * Property kialiEnabled: Specifies whether to enable Kiali.
+         * Property kialiEnabled: Specifies whether to enable the mesh topology feature.
+         * <p>
+         * To enable this feature,
+         * you must first enable Prometheus monitoring. If Prometheus monitoring is
+         * disabled, this feature is forcibly disabled. Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the mesh topology feature.</li>
+         * <li><code>false</code>: Disables the mesh topology feature.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param kialiEnabled Property kialiEnabled: Specifies whether to enable Kiali. This parameter is required.
+         * @param kialiEnabled Property kialiEnabled: Specifies whether to enable the mesh topology feature. This parameter is required.
          */
         public Builder kialiEnabled(final com.aliyun.ros.cdk.core.IResolvable kialiEnabled) {
             this.props.kialiEnabled(kialiEnabled);
@@ -1236,20 +1474,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property mseEnabled: Specifies whether to enable MSE.
+         * Property mseEnabled: Specifies whether to enable Microservices Engine (MSE).
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables MSE.</li>
+         * <li><code>false</code>: Disables MSE.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param mseEnabled Property mseEnabled: Specifies whether to enable MSE. This parameter is required.
+         * @param mseEnabled Property mseEnabled: Specifies whether to enable Microservices Engine (MSE). This parameter is required.
          */
         public Builder mseEnabled(final java.lang.Boolean mseEnabled) {
             this.props.mseEnabled(mseEnabled);
             return this;
         }
         /**
-         * Property mseEnabled: Specifies whether to enable MSE.
+         * Property mseEnabled: Specifies whether to enable Microservices Engine (MSE).
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables MSE.</li>
+         * <li><code>false</code>: Disables MSE.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param mseEnabled Property mseEnabled: Specifies whether to enable MSE. This parameter is required.
+         * @param mseEnabled Property mseEnabled: Specifies whether to enable Microservices Engine (MSE). This parameter is required.
          */
         public Builder mseEnabled(final com.aliyun.ros.cdk.core.IResolvable mseEnabled) {
             this.props.mseEnabled(mseEnabled);
@@ -1257,20 +1511,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property multiBufferEnabled: Specifies whether to enable multi-buffer.
+         * Property multiBufferEnabled: Specifies whether to enable TLS performance optimization that is based on MultiBuffer.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the feature.</li>
+         * <li><code>false</code>: Disables the feature.
+         * Default value: <code>true</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param multiBufferEnabled Property multiBufferEnabled: Specifies whether to enable multi-buffer. This parameter is required.
+         * @param multiBufferEnabled Property multiBufferEnabled: Specifies whether to enable TLS performance optimization that is based on MultiBuffer. This parameter is required.
          */
         public Builder multiBufferEnabled(final java.lang.Boolean multiBufferEnabled) {
             this.props.multiBufferEnabled(multiBufferEnabled);
             return this;
         }
         /**
-         * Property multiBufferEnabled: Specifies whether to enable multi-buffer.
+         * Property multiBufferEnabled: Specifies whether to enable TLS performance optimization that is based on MultiBuffer.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the feature.</li>
+         * <li><code>false</code>: Disables the feature.
+         * Default value: <code>true</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param multiBufferEnabled Property multiBufferEnabled: Specifies whether to enable multi-buffer. This parameter is required.
+         * @param multiBufferEnabled Property multiBufferEnabled: Specifies whether to enable TLS performance optimization that is based on MultiBuffer. This parameter is required.
          */
         public Builder multiBufferEnabled(final com.aliyun.ros.cdk.core.IResolvable multiBufferEnabled) {
             this.props.multiBufferEnabled(multiBufferEnabled);
@@ -1278,20 +1548,26 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property multiBufferPollDelay: The poll delay for multi-buffer.
+         * Property multiBufferPollDelay: The synchronization period of the MultiBuffer enabling status.
+         * <p>
+         * Default value:
+         * <code>30s</code>.
          * <p>
          * @return {@code this}
-         * @param multiBufferPollDelay Property multiBufferPollDelay: The poll delay for multi-buffer. This parameter is required.
+         * @param multiBufferPollDelay Property multiBufferPollDelay: The synchronization period of the MultiBuffer enabling status. This parameter is required.
          */
         public Builder multiBufferPollDelay(final java.lang.String multiBufferPollDelay) {
             this.props.multiBufferPollDelay(multiBufferPollDelay);
             return this;
         }
         /**
-         * Property multiBufferPollDelay: The poll delay for multi-buffer.
+         * Property multiBufferPollDelay: The synchronization period of the MultiBuffer enabling status.
+         * <p>
+         * Default value:
+         * <code>30s</code>.
          * <p>
          * @return {@code this}
-         * @param multiBufferPollDelay Property multiBufferPollDelay: The poll delay for multi-buffer. This parameter is required.
+         * @param multiBufferPollDelay Property multiBufferPollDelay: The synchronization period of the MultiBuffer enabling status. This parameter is required.
          */
         public Builder multiBufferPollDelay(final com.aliyun.ros.cdk.core.IResolvable multiBufferPollDelay) {
             this.props.multiBufferPollDelay(multiBufferPollDelay);
@@ -1299,20 +1575,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property mysqlFilterEnabled: Specifies whether to enable MySQL filter.
+         * Property mysqlFilterEnabled: Specifies whether to enable the MySQL filter.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the MySQL filter.</li>
+         * <li><code>false</code>: Disables the MySQL filter.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param mysqlFilterEnabled Property mysqlFilterEnabled: Specifies whether to enable MySQL filter. This parameter is required.
+         * @param mysqlFilterEnabled Property mysqlFilterEnabled: Specifies whether to enable the MySQL filter. This parameter is required.
          */
         public Builder mysqlFilterEnabled(final java.lang.Boolean mysqlFilterEnabled) {
             this.props.mysqlFilterEnabled(mysqlFilterEnabled);
             return this;
         }
         /**
-         * Property mysqlFilterEnabled: Specifies whether to enable MySQL filter.
+         * Property mysqlFilterEnabled: Specifies whether to enable the MySQL filter.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the MySQL filter.</li>
+         * <li><code>false</code>: Disables the MySQL filter.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param mysqlFilterEnabled Property mysqlFilterEnabled: Specifies whether to enable MySQL filter. This parameter is required.
+         * @param mysqlFilterEnabled Property mysqlFilterEnabled: Specifies whether to enable the MySQL filter. This parameter is required.
          */
         public Builder mysqlFilterEnabled(final com.aliyun.ros.cdk.core.IResolvable mysqlFilterEnabled) {
             this.props.mysqlFilterEnabled(mysqlFilterEnabled);
@@ -1364,6 +1656,14 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property opaEnabled: Specifies whether to enable OPA.
          * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables OPA.</li>
+         * <li><code>false</code>: Disables OPA.
+         * Default value: <code>false</code>.</li>
+         * </ul>
+         * <p>
          * @return {@code this}
          * @param opaEnabled Property opaEnabled: Specifies whether to enable OPA. This parameter is required.
          */
@@ -1373,6 +1673,14 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
         /**
          * Property opaEnabled: Specifies whether to enable OPA.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables OPA.</li>
+         * <li><code>false</code>: Disables OPA.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param opaEnabled Property opaEnabled: Specifies whether to enable OPA. This parameter is required.
@@ -1404,20 +1712,28 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property period: The subscription period.
+         * Property period: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>.
+         * <p>
+         * The
+         * subscription duration of the SLB instance. Unit: months. If you want to purchase
+         * the instance for one year, enter 12.
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription period. This parameter is required.
+         * @param period Property period: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The subscription period.
+         * Property period: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>.
+         * <p>
+         * The
+         * subscription duration of the SLB instance. Unit: months. If you want to purchase
+         * the instance for one year, enter 12.
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription period. This parameter is required.
+         * @param period Property period: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
@@ -1425,20 +1741,26 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property pilotLoadBalancerSpec: The specification for the pilot load balancer.
+         * Property pilotLoadBalancerSpec: The specification of the SLB instance that is bound to Istio Pilot of the control plane.
+         * <p>
+         * Valid values: <code>slb.s1.small</code>, <code>slb.s2.small</code>, <code>slb.s2.medium</code>,
+         * <code>slb.s3.small</code>, <code>slb.s3.medium</code>, and <code>slb.s3.large</code>.
          * <p>
          * @return {@code this}
-         * @param pilotLoadBalancerSpec Property pilotLoadBalancerSpec: The specification for the pilot load balancer. This parameter is required.
+         * @param pilotLoadBalancerSpec Property pilotLoadBalancerSpec: The specification of the SLB instance that is bound to Istio Pilot of the control plane. This parameter is required.
          */
         public Builder pilotLoadBalancerSpec(final java.lang.String pilotLoadBalancerSpec) {
             this.props.pilotLoadBalancerSpec(pilotLoadBalancerSpec);
             return this;
         }
         /**
-         * Property pilotLoadBalancerSpec: The specification for the pilot load balancer.
+         * Property pilotLoadBalancerSpec: The specification of the SLB instance that is bound to Istio Pilot of the control plane.
+         * <p>
+         * Valid values: <code>slb.s1.small</code>, <code>slb.s2.small</code>, <code>slb.s2.medium</code>,
+         * <code>slb.s3.small</code>, <code>slb.s3.medium</code>, and <code>slb.s3.large</code>.
          * <p>
          * @return {@code this}
-         * @param pilotLoadBalancerSpec Property pilotLoadBalancerSpec: The specification for the pilot load balancer. This parameter is required.
+         * @param pilotLoadBalancerSpec Property pilotLoadBalancerSpec: The specification of the SLB instance that is bound to Istio Pilot of the control plane. This parameter is required.
          */
         public Builder pilotLoadBalancerSpec(final com.aliyun.ros.cdk.core.IResolvable pilotLoadBalancerSpec) {
             this.props.pilotLoadBalancerSpec(pilotLoadBalancerSpec);
@@ -1475,20 +1797,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property playgroundScene: The playground scene configuration.
+         * Property playgroundScene: The playground scenario.
+         * <p>
+         * If you specify this parameter, an ASM playground
+         * instance is created. Valid value:
+         * <p>
+         * <ul>
+         * <li>ewmaLb: the exponentially weighted moving average (EWMA) load balancing
+         * scenario</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param playgroundScene Property playgroundScene: The playground scene configuration. This parameter is required.
+         * @param playgroundScene Property playgroundScene: The playground scenario. This parameter is required.
          */
         public Builder playgroundScene(final java.lang.String playgroundScene) {
             this.props.playgroundScene(playgroundScene);
             return this;
         }
         /**
-         * Property playgroundScene: The playground scene configuration.
+         * Property playgroundScene: The playground scenario.
+         * <p>
+         * If you specify this parameter, an ASM playground
+         * instance is created. Valid value:
+         * <p>
+         * <ul>
+         * <li>ewmaLb: the exponentially weighted moving average (EWMA) load balancing
+         * scenario</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param playgroundScene Property playgroundScene: The playground scene configuration. This parameter is required.
+         * @param playgroundScene Property playgroundScene: The playground scenario. This parameter is required.
          */
         public Builder playgroundScene(final com.aliyun.ros.cdk.core.IResolvable playgroundScene) {
             this.props.playgroundScene(playgroundScene);
@@ -1540,7 +1878,14 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property telemetry: Specifies whether to enable Prometheus monitoring.
          * <p>
-         * We recommend that you use Application Real-Time Monitoring Service (ARMS).
+         * We recommend that you use
+         * Managed Service for Prometheus. Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables Prometheus monitoring.</li>
+         * <li><code>false</code>: Disables Prometheus monitoring.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param telemetry Property telemetry: Specifies whether to enable Prometheus monitoring. This parameter is required.
@@ -1552,7 +1897,14 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property telemetry: Specifies whether to enable Prometheus monitoring.
          * <p>
-         * We recommend that you use Application Real-Time Monitoring Service (ARMS).
+         * We recommend that you use
+         * Managed Service for Prometheus. Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables Prometheus monitoring.</li>
+         * <li><code>false</code>: Disables Prometheus monitoring.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param telemetry Property telemetry: Specifies whether to enable Prometheus monitoring. This parameter is required.
@@ -1634,20 +1986,36 @@ public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property webAssemblyFilterEnabled: Specifies whether to enable WebAssembly filter.
+         * Property webAssemblyFilterEnabled: Specifies whether to enable the WebAssembly filter.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the WebAssembly filter.</li>
+         * <li><code>false</code>: Disables the WebAssembly filter.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param webAssemblyFilterEnabled Property webAssemblyFilterEnabled: Specifies whether to enable WebAssembly filter. This parameter is required.
+         * @param webAssemblyFilterEnabled Property webAssemblyFilterEnabled: Specifies whether to enable the WebAssembly filter. This parameter is required.
          */
         public Builder webAssemblyFilterEnabled(final java.lang.Boolean webAssemblyFilterEnabled) {
             this.props.webAssemblyFilterEnabled(webAssemblyFilterEnabled);
             return this;
         }
         /**
-         * Property webAssemblyFilterEnabled: Specifies whether to enable WebAssembly filter.
+         * Property webAssemblyFilterEnabled: Specifies whether to enable the WebAssembly filter.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the WebAssembly filter.</li>
+         * <li><code>false</code>: Disables the WebAssembly filter.
+         * Default value: <code>false</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param webAssemblyFilterEnabled Property webAssemblyFilterEnabled: Specifies whether to enable WebAssembly filter. This parameter is required.
+         * @param webAssemblyFilterEnabled Property webAssemblyFilterEnabled: Specifies whether to enable the WebAssembly filter. This parameter is required.
          */
         public Builder webAssemblyFilterEnabled(final com.aliyun.ros.cdk.core.IResolvable webAssemblyFilterEnabled) {
             this.props.webAssemblyFilterEnabled(webAssemblyFilterEnabled);

@@ -5,29 +5,71 @@ package com.aliyun.ros.cdk.kms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:39:52.905Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:55:06.371Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.SecretProps")
 @software.amazon.jsii.Jsii.Proxy(SecretProps.Jsii$Proxy.class)
 public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property secretData: The value of the secret that you want to create.
+     * Property secretData: The value of the secret.
      * <p>
-     * Secrets Manager encrypts the secret
-     * value and stores it in the initial version.
+     * The value can be up to 30,720 bytes (30 KB) in length.
+     * KMS encrypts the secret value with the specified key and stores the encrypted
+     * value in the initial version.
+     * <p>
+     * <ul>
+     * <li>If SecretType is set to Generic, you can specify a custom secret value.</li>
+     * <li>If SecretType is set to Rds, the secret value must be in the following format:
+     * <code>{"Accounts":[{"AccountName":"","AccountPassword":""}]}</code>. In the format,
+     * <code>AccountName</code> specifies the username of the account for the RDS instance and
+     * <code>AccountPassword</code> specifies the password of the account.</li>
+     * <li>If SecretType is set to Redis, set this parameter to <code>$Auto</code>.</li>
+     * <li>If SecretType is set to RAMCredentials, the secret value must be in the
+     * following format: <code>{"AccessKeys":[{"AccessKeyId":"","AccessKeySecret":""}]}</code>. In
+     * the format, <code>AccessKeyId</code> specifies the AccessKey ID and <code>AccessKeySecret</code>
+     * specifies the AccessKey secret. You must specify all AccessKey pairs of the RAM
+     * user.</li>
+     * <li>If SecretType is set to PolarDB, set this parameter to <code>$Auto</code>.</li>
+     * <li>If SecretType is set to ECS, the secret value must be in one of the following
+     * formats:</li>
+     * <li>If SecretSubType in the ExtendedConfig parameter is set to Password:
+     * <code>{"UserName":"","Password": ""}</code>. In the format, <code>UserName</code> specifies the
+     * username used to log on to the ECS instance and <code>Password</code> specifies the password
+     * used to log on to the ECS instance.</li>
+     * <li>If SecretSubType in the ExtendedConfig parameter is set to SSHKey:
+     * <code>{"UserName":"","PublicKey": "", "PrivateKey": ""}</code>. In the format, <code>PublicKey</code>
+     * specifies the SSH-formatted public key used to log on to the ECS instance and
+     * <code>PrivateKey</code> specifies the private key used to log on to the ECS instance.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSecretData();
 
     /**
      * Property secretName: The name of the secret.
+     * <p>
+     * The name must be unique in the same region.
+     * The name can be up to 192 characters in length and can contain letters, digits,
+     * underscores (_), forward slashes (/), plus signs (+), equal signs (=), periods
+     * (.), hyphens (-), and at signs (&#64;). The following limits apply to secret names
+     * for different types of secrets:
+     * <p>
+     * <ul>
+     * <li>If SecretType is set to Generic, Rds, or Redis, the name cannot start with
+     * <code>acs\/</code>.</li>
+     * <li>If SecretType is set to RAMCredentials, set this parameter to the fixed value
+     * <code>$Auto</code>. In this case, KMS automatically generates a secret name that starts with
+     * <code>acs\/ram\/user\/</code> and contains the display name of the RAM user.</li>
+     * <li>If SecretType is set to ECS, the name must start with <code>acs\/ecs\/</code>.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSecretName();
 
     /**
      * Property versionId: The version number of the initial version.
      * <p>
-     * Version numbers are unique in each secret
-     * object.
+     * The version number must be unique
+     * within the secret.
+     * The version number can be up to 64 characters in length.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVersionId();
 
@@ -49,19 +91,34 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
      * Property enableAutomaticRotation: Specifies whether to enable automatic rotation.
      * <p>
      * Valid values:
-     * true: specifies to enable automatic rotation.
-     * false: specifies to disable automatic rotation. This is the default value.
+     * <p>
+     * <ul>
+     * <li>true: enables automatic rotation.</li>
+     * <li>false (default): disables automatic rotation.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is valid only if SecretType is set to Rds, PolarDB, Redis,
+     * RAMCredentials, or ECS. If SecretType is set to Generic, automatic rotation is
+     * not supported. You can call the <a href="">PutSecretValue</a> operation to manually rotate
+     * the secret.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableAutomaticRotation() {
         return null;
     }
 
     /**
-     * Property encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.
+     * Property encryptionKeyId: The ID of the key used to encrypt the secret value.
      * <p>
-     * If you do not specify this parameter, Secrets Manager automatically creates an encryption
-     * key to encrypt the secret.
-     * Note The KMS CMK must be a symmetric key.
+     * <blockquote>
+     * <p>
+     * The key and the secret must be in the same KMS instance. The key must be a
+     * symmetric key.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionKeyId() {
         return null;
@@ -70,7 +127,88 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property extendedConfig: The extended configuration of the secret.
      * <p>
-     * This parameter specifies the properties of the secret of the specific type.
+     * This parameter specifies the properties
+     * of the secret of a specific type. The value can be up to 1,024 characters in
+     * length.
+     * <p>
+     * <ul>
+     * <li>If SecretType is set to Generic, this parameter is ignored.</li>
+     * <li>If SecretType is set to Rds, you must specify the following parameters in
+     * ExtendedConfig:</li>
+     * <li>SecretSubType (Required): The subtype of the secret. Valid values:</li>
+     * <li>SingleUser: Secrets Manager manages the RDS secret in single-account mode. When
+     * the secret is rotated, the password of the specified account is reset to a new
+     * random password.</li>
+     * <li>DoubleUsers: Secrets Manager manages the RDS secret in double-account mode.
+     * ACSCurrent and ACSPrevious point to one of the accounts. When the secret is
+     * rotated, the password of the account pointed to by ACSPrevious is reset to a new
+     * random password. Then, Secrets Manager swaps the accounts that ACSCurrent and
+     * ACSPrevious point to.</li>
+     * <li>DBInstanceId (Required): The ID of the RDS instance to which the account
+     * belongs.</li>
+     * <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). Example: <code>{"Key1": "v1", "fds":"fdsf"}</code>. The
+     * default value is <code>{}</code>.</li>
+     * <li>If SecretType is set to Redis, you must specify the following parameters in
+     * ExtendedConfig:</li>
+     * <li>SecretSubType (Required): The subtype of the secret. Valid values:</li>
+     * <li>DoubleUsers: Secrets Manager manages the Redis secret in double-account mode.
+     * ACSCurrent and ACSPrevious point to one of the accounts. When the secret is
+     * rotated, the password of the account pointed to by ACSPrevious is reset to a new
+     * random password. Then, Secrets Manager swaps the accounts that ACSCurrent and
+     * ACSPrevious point to.</li>
+     * <li>AccountName (Required): The database username.</li>
+     * <li>CloneAccountName (Required): The database username, which is the value of
+     * AccountName with the <code>_clone</code> suffix.</li>
+     * <li>AccountPrivilege (Required): The permissions to access the database.</li>
+     * <li>InstanceId (Required): The ID of the Redis instance.</li>
+     * <li>RegionId (Required): The ID of the region where the Redis instance resides.</li>
+     * <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). Example: <code>{"Key1": "v1", "fds":"fdsf"}</code>. The
+     * default value is <code>{}</code>.</li>
+     * <li>If SecretType is set to RAMCredentials, you must specify the following
+     * parameters in ExtendedConfig:</li>
+     * <li>SecretSubType (Required): The subtype of the secret. The value is
+     * RamUserAccessKey.</li>
+     * <li>UserName (Required): The name of the RAM user.</li>
+     * <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). The default value is <code>{}</code>.</li>
+     * <li>If SecretType is set to ECS, you must specify the following parameters in
+     * ExtendedConfig:</li>
+     * <li>SecretSubType (Required): The subtype of the secret. Valid values:</li>
+     * <li>Password: an ECS password.</li>
+     * <li>SSHKey: an ECS SSH key pair.</li>
+     * <li>RegionId (Required): The ID of the region where the ECS instance resides.</li>
+     * <li>InstanceId (Required): The ID of the ECS instance.</li>
+     * <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). The default value is <code>{}</code>.</li>
+     * <li>If SecretType is set to PolarDB, you must specify the following parameters in
+     * ExtendedConfig:</li>
+     * <li>SecretSubType (Required): The fixed value is DoubleUsers.</li>
+     * <li>RegionId (Required): The region.</li>
+     * <li>DBClusterId (Required): The ID of the PolarDB instance.</li>
+     * <li>DBType (Required): MySQL or PostgreSQL.</li>
+     * <li>AccountName (Required): The account name.</li>
+     * <li>CloneAccountName: The value is AccountName_clone.</li>
+     * <li>AccountType: Only Normal is supported.</li>
+     * <li>AccountPrivilege: This parameter is available only for MySQL.</li>
+     * <li>DBName: This parameter is available only for MySQL.</li>
+     * <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). Example: {"Key1": "v1", "fds":"fdsf"}. The
+     * default value is {}.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * If SecretType is set to Rds, Redis, PolarDB, RAMCredentials, or ECS, you must
+     * configure this parameter.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getExtendedConfig() {
         return null;
@@ -129,9 +267,20 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property rotationInterval: The interval for automatic rotation.
      * <p>
-     * Valid values: 6 hours to 8,760 hours (365 days).
-     * The value is in the integer[unit] format.
-     * The unit can be d (day), h (hour), m (minute), or s (second). For example, both 7d and 604800s indicate a seven-day interval.
+     * The value is in the range of 6 hours to
+     * 8,760 hours (365 days).<br>
+     * The value is in the <code>integer[unit]</code> format. <code>integer</code> indicates the interval.
+     * <code>unit</code> indicates the unit of time.<br>
+     * Valid values for unit: d (day), h (hour), m (minute), and s (second). For
+     * example, both 7d and 604,800s indicate a rotation interval of 7 days.<br><br>
+     * <p>
+     * <blockquote>
+     * <p>
+     * You must specify this parameter if you set EnableAutomaticRotation to true. You
+     * do not need to specify this parameter if you set EnableAutomaticRotation to
+     * false.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRotationInterval() {
         return null;
@@ -141,8 +290,18 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
      * Property secretDataType: The type of the secret value.
      * <p>
      * Valid values:
-     * text (default value)
-     * binary
+     * <p>
+     * <ul>
+     * <li>text (default): The secret value is a text string.</li>
+     * <li>binary: The secret value is a binary string.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * If SecretType is set to Rds, Redis, PolarDB, RAMCredentials, or ECS,
+     * SecretDataType must be set to text.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecretDataType() {
         return null;
@@ -152,10 +311,15 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
      * Property secretType: The type of the secret.
      * <p>
      * Valid values:
-     * Generic: specifies a generic secret.
-     * Rds: specifies a managed ApsaraDB RDS secret.
-     * RAMCredentials: specifies a managed RAM secret.
-     * ECS: specifies a managed ECS secret.
+     * <p>
+     * <ul>
+     * <li>Generic (default): a generic secret.</li>
+     * <li>Rds: an RDS secret.</li>
+     * <li>Redis: a Redis secret.</li>
+     * <li>RAMCredentials: a RAM secret.</li>
+     * <li>ECS: an ECS secret.</li>
+     * <li>PolarDB: a PolarDB secret.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecretType() {
         return null;
@@ -208,9 +372,35 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SecretProps#getSecretData}
-         * @param secretData Property secretData: The value of the secret that you want to create. This parameter is required.
-         *                   Secrets Manager encrypts the secret
-         *                   value and stores it in the initial version.
+         * @param secretData Property secretData: The value of the secret. This parameter is required.
+         *                   The value can be up to 30,720 bytes (30 KB) in length.
+         *                   KMS encrypts the secret value with the specified key and stores the encrypted
+         *                   value in the initial version.
+         *                   <p>
+         *                   <ul>
+         *                   <li>If SecretType is set to Generic, you can specify a custom secret value.</li>
+         *                   <li>If SecretType is set to Rds, the secret value must be in the following format:
+         *                   <code>{"Accounts":[{"AccountName":"","AccountPassword":""}]}</code>. In the format,
+         *                   <code>AccountName</code> specifies the username of the account for the RDS instance and
+         *                   <code>AccountPassword</code> specifies the password of the account.</li>
+         *                   <li>If SecretType is set to Redis, set this parameter to <code>$Auto</code>.</li>
+         *                   <li>If SecretType is set to RAMCredentials, the secret value must be in the
+         *                   following format: <code>{"AccessKeys":[{"AccessKeyId":"","AccessKeySecret":""}]}</code>. In
+         *                   the format, <code>AccessKeyId</code> specifies the AccessKey ID and <code>AccessKeySecret</code>
+         *                   specifies the AccessKey secret. You must specify all AccessKey pairs of the RAM
+         *                   user.</li>
+         *                   <li>If SecretType is set to PolarDB, set this parameter to <code>$Auto</code>.</li>
+         *                   <li>If SecretType is set to ECS, the secret value must be in one of the following
+         *                   formats:</li>
+         *                   <li>If SecretSubType in the ExtendedConfig parameter is set to Password:
+         *                   <code>{"UserName":"","Password": ""}</code>. In the format, <code>UserName</code> specifies the
+         *                   username used to log on to the ECS instance and <code>Password</code> specifies the password
+         *                   used to log on to the ECS instance.</li>
+         *                   <li>If SecretSubType in the ExtendedConfig parameter is set to SSHKey:
+         *                   <code>{"UserName":"","PublicKey": "", "PrivateKey": ""}</code>. In the format, <code>PublicKey</code>
+         *                   specifies the SSH-formatted public key used to log on to the ECS instance and
+         *                   <code>PrivateKey</code> specifies the private key used to log on to the ECS instance.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder secretData(java.lang.String secretData) {
@@ -220,9 +410,35 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SecretProps#getSecretData}
-         * @param secretData Property secretData: The value of the secret that you want to create. This parameter is required.
-         *                   Secrets Manager encrypts the secret
-         *                   value and stores it in the initial version.
+         * @param secretData Property secretData: The value of the secret. This parameter is required.
+         *                   The value can be up to 30,720 bytes (30 KB) in length.
+         *                   KMS encrypts the secret value with the specified key and stores the encrypted
+         *                   value in the initial version.
+         *                   <p>
+         *                   <ul>
+         *                   <li>If SecretType is set to Generic, you can specify a custom secret value.</li>
+         *                   <li>If SecretType is set to Rds, the secret value must be in the following format:
+         *                   <code>{"Accounts":[{"AccountName":"","AccountPassword":""}]}</code>. In the format,
+         *                   <code>AccountName</code> specifies the username of the account for the RDS instance and
+         *                   <code>AccountPassword</code> specifies the password of the account.</li>
+         *                   <li>If SecretType is set to Redis, set this parameter to <code>$Auto</code>.</li>
+         *                   <li>If SecretType is set to RAMCredentials, the secret value must be in the
+         *                   following format: <code>{"AccessKeys":[{"AccessKeyId":"","AccessKeySecret":""}]}</code>. In
+         *                   the format, <code>AccessKeyId</code> specifies the AccessKey ID and <code>AccessKeySecret</code>
+         *                   specifies the AccessKey secret. You must specify all AccessKey pairs of the RAM
+         *                   user.</li>
+         *                   <li>If SecretType is set to PolarDB, set this parameter to <code>$Auto</code>.</li>
+         *                   <li>If SecretType is set to ECS, the secret value must be in one of the following
+         *                   formats:</li>
+         *                   <li>If SecretSubType in the ExtendedConfig parameter is set to Password:
+         *                   <code>{"UserName":"","Password": ""}</code>. In the format, <code>UserName</code> specifies the
+         *                   username used to log on to the ECS instance and <code>Password</code> specifies the password
+         *                   used to log on to the ECS instance.</li>
+         *                   <li>If SecretSubType in the ExtendedConfig parameter is set to SSHKey:
+         *                   <code>{"UserName":"","PublicKey": "", "PrivateKey": ""}</code>. In the format, <code>PublicKey</code>
+         *                   specifies the SSH-formatted public key used to log on to the ECS instance and
+         *                   <code>PrivateKey</code> specifies the private key used to log on to the ECS instance.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder secretData(com.aliyun.ros.cdk.core.IResolvable secretData) {
@@ -233,6 +449,20 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SecretProps#getSecretName}
          * @param secretName Property secretName: The name of the secret. This parameter is required.
+         *                   The name must be unique in the same region.
+         *                   The name can be up to 192 characters in length and can contain letters, digits,
+         *                   underscores (_), forward slashes (/), plus signs (+), equal signs (=), periods
+         *                   (.), hyphens (-), and at signs (&#64;). The following limits apply to secret names
+         *                   for different types of secrets:
+         *                   <p>
+         *                   <ul>
+         *                   <li>If SecretType is set to Generic, Rds, or Redis, the name cannot start with
+         *                   <code>acs\/</code>.</li>
+         *                   <li>If SecretType is set to RAMCredentials, set this parameter to the fixed value
+         *                   <code>$Auto</code>. In this case, KMS automatically generates a secret name that starts with
+         *                   <code>acs\/ram\/user\/</code> and contains the display name of the RAM user.</li>
+         *                   <li>If SecretType is set to ECS, the name must start with <code>acs\/ecs\/</code>.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder secretName(java.lang.String secretName) {
@@ -243,6 +473,20 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SecretProps#getSecretName}
          * @param secretName Property secretName: The name of the secret. This parameter is required.
+         *                   The name must be unique in the same region.
+         *                   The name can be up to 192 characters in length and can contain letters, digits,
+         *                   underscores (_), forward slashes (/), plus signs (+), equal signs (=), periods
+         *                   (.), hyphens (-), and at signs (&#64;). The following limits apply to secret names
+         *                   for different types of secrets:
+         *                   <p>
+         *                   <ul>
+         *                   <li>If SecretType is set to Generic, Rds, or Redis, the name cannot start with
+         *                   <code>acs\/</code>.</li>
+         *                   <li>If SecretType is set to RAMCredentials, set this parameter to the fixed value
+         *                   <code>$Auto</code>. In this case, KMS automatically generates a secret name that starts with
+         *                   <code>acs\/ram\/user\/</code> and contains the display name of the RAM user.</li>
+         *                   <li>If SecretType is set to ECS, the name must start with <code>acs\/ecs\/</code>.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder secretName(com.aliyun.ros.cdk.core.IResolvable secretName) {
@@ -253,8 +497,9 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SecretProps#getVersionId}
          * @param versionId Property versionId: The version number of the initial version. This parameter is required.
-         *                  Version numbers are unique in each secret
-         *                  object.
+         *                  The version number must be unique
+         *                  within the secret.
+         *                  The version number can be up to 64 characters in length.
          * @return {@code this}
          */
         public Builder versionId(java.lang.String versionId) {
@@ -265,8 +510,9 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SecretProps#getVersionId}
          * @param versionId Property versionId: The version number of the initial version. This parameter is required.
-         *                  Version numbers are unique in each secret
-         *                  object.
+         *                  The version number must be unique
+         *                  within the secret.
+         *                  The version number can be up to 64 characters in length.
          * @return {@code this}
          */
         public Builder versionId(com.aliyun.ros.cdk.core.IResolvable versionId) {
@@ -318,8 +564,20 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link SecretProps#getEnableAutomaticRotation}
          * @param enableAutomaticRotation Property enableAutomaticRotation: Specifies whether to enable automatic rotation.
          *                                Valid values:
-         *                                true: specifies to enable automatic rotation.
-         *                                false: specifies to disable automatic rotation. This is the default value.
+         *                                <p>
+         *                                <ul>
+         *                                <li>true: enables automatic rotation.</li>
+         *                                <li>false (default): disables automatic rotation.</li>
+         *                                </ul>
+         *                                <p>
+         *                                <blockquote>
+         *                                <p>
+         *                                This parameter is valid only if SecretType is set to Rds, PolarDB, Redis,
+         *                                RAMCredentials, or ECS. If SecretType is set to Generic, automatic rotation is
+         *                                not supported. You can call the <a href="">PutSecretValue</a> operation to manually rotate
+         *                                the secret.
+         *                                <p>
+         *                                </blockquote>
          * @return {@code this}
          */
         public Builder enableAutomaticRotation(java.lang.Boolean enableAutomaticRotation) {
@@ -331,8 +589,20 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link SecretProps#getEnableAutomaticRotation}
          * @param enableAutomaticRotation Property enableAutomaticRotation: Specifies whether to enable automatic rotation.
          *                                Valid values:
-         *                                true: specifies to enable automatic rotation.
-         *                                false: specifies to disable automatic rotation. This is the default value.
+         *                                <p>
+         *                                <ul>
+         *                                <li>true: enables automatic rotation.</li>
+         *                                <li>false (default): disables automatic rotation.</li>
+         *                                </ul>
+         *                                <p>
+         *                                <blockquote>
+         *                                <p>
+         *                                This parameter is valid only if SecretType is set to Rds, PolarDB, Redis,
+         *                                RAMCredentials, or ECS. If SecretType is set to Generic, automatic rotation is
+         *                                not supported. You can call the <a href="">PutSecretValue</a> operation to manually rotate
+         *                                the secret.
+         *                                <p>
+         *                                </blockquote>
          * @return {@code this}
          */
         public Builder enableAutomaticRotation(com.aliyun.ros.cdk.core.IResolvable enableAutomaticRotation) {
@@ -342,10 +612,13 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SecretProps#getEncryptionKeyId}
-         * @param encryptionKeyId Property encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.
-         *                        If you do not specify this parameter, Secrets Manager automatically creates an encryption
-         *                        key to encrypt the secret.
-         *                        Note The KMS CMK must be a symmetric key.
+         * @param encryptionKeyId Property encryptionKeyId: The ID of the key used to encrypt the secret value.
+         *                        <blockquote>
+         *                        <p>
+         *                        The key and the secret must be in the same KMS instance. The key must be a
+         *                        symmetric key.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder encryptionKeyId(java.lang.String encryptionKeyId) {
@@ -355,10 +628,13 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SecretProps#getEncryptionKeyId}
-         * @param encryptionKeyId Property encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.
-         *                        If you do not specify this parameter, Secrets Manager automatically creates an encryption
-         *                        key to encrypt the secret.
-         *                        Note The KMS CMK must be a symmetric key.
+         * @param encryptionKeyId Property encryptionKeyId: The ID of the key used to encrypt the secret value.
+         *                        <blockquote>
+         *                        <p>
+         *                        The key and the secret must be in the same KMS instance. The key must be a
+         *                        symmetric key.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder encryptionKeyId(com.aliyun.ros.cdk.core.IResolvable encryptionKeyId) {
@@ -369,7 +645,88 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SecretProps#getExtendedConfig}
          * @param extendedConfig Property extendedConfig: The extended configuration of the secret.
-         *                       This parameter specifies the properties of the secret of the specific type.
+         *                       This parameter specifies the properties
+         *                       of the secret of a specific type. The value can be up to 1,024 characters in
+         *                       length.
+         *                       <p>
+         *                       <ul>
+         *                       <li>If SecretType is set to Generic, this parameter is ignored.</li>
+         *                       <li>If SecretType is set to Rds, you must specify the following parameters in
+         *                       ExtendedConfig:</li>
+         *                       <li>SecretSubType (Required): The subtype of the secret. Valid values:</li>
+         *                       <li>SingleUser: Secrets Manager manages the RDS secret in single-account mode. When
+         *                       the secret is rotated, the password of the specified account is reset to a new
+         *                       random password.</li>
+         *                       <li>DoubleUsers: Secrets Manager manages the RDS secret in double-account mode.
+         *                       ACSCurrent and ACSPrevious point to one of the accounts. When the secret is
+         *                       rotated, the password of the account pointed to by ACSPrevious is reset to a new
+         *                       random password. Then, Secrets Manager swaps the accounts that ACSCurrent and
+         *                       ACSPrevious point to.</li>
+         *                       <li>DBInstanceId (Required): The ID of the RDS instance to which the account
+         *                       belongs.</li>
+         *                       <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+         *                       JSON format. You can specify up to 10 key-value pairs. Separate multiple
+         *                       key-value pairs with commas (,). Example: <code>{"Key1": "v1", "fds":"fdsf"}</code>. The
+         *                       default value is <code>{}</code>.</li>
+         *                       <li>If SecretType is set to Redis, you must specify the following parameters in
+         *                       ExtendedConfig:</li>
+         *                       <li>SecretSubType (Required): The subtype of the secret. Valid values:</li>
+         *                       <li>DoubleUsers: Secrets Manager manages the Redis secret in double-account mode.
+         *                       ACSCurrent and ACSPrevious point to one of the accounts. When the secret is
+         *                       rotated, the password of the account pointed to by ACSPrevious is reset to a new
+         *                       random password. Then, Secrets Manager swaps the accounts that ACSCurrent and
+         *                       ACSPrevious point to.</li>
+         *                       <li>AccountName (Required): The database username.</li>
+         *                       <li>CloneAccountName (Required): The database username, which is the value of
+         *                       AccountName with the <code>_clone</code> suffix.</li>
+         *                       <li>AccountPrivilege (Required): The permissions to access the database.</li>
+         *                       <li>InstanceId (Required): The ID of the Redis instance.</li>
+         *                       <li>RegionId (Required): The ID of the region where the Redis instance resides.</li>
+         *                       <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+         *                       JSON format. You can specify up to 10 key-value pairs. Separate multiple
+         *                       key-value pairs with commas (,). Example: <code>{"Key1": "v1", "fds":"fdsf"}</code>. The
+         *                       default value is <code>{}</code>.</li>
+         *                       <li>If SecretType is set to RAMCredentials, you must specify the following
+         *                       parameters in ExtendedConfig:</li>
+         *                       <li>SecretSubType (Required): The subtype of the secret. The value is
+         *                       RamUserAccessKey.</li>
+         *                       <li>UserName (Required): The name of the RAM user.</li>
+         *                       <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+         *                       JSON format. You can specify up to 10 key-value pairs. Separate multiple
+         *                       key-value pairs with commas (,). The default value is <code>{}</code>.</li>
+         *                       <li>If SecretType is set to ECS, you must specify the following parameters in
+         *                       ExtendedConfig:</li>
+         *                       <li>SecretSubType (Required): The subtype of the secret. Valid values:</li>
+         *                       <li>Password: an ECS password.</li>
+         *                       <li>SSHKey: an ECS SSH key pair.</li>
+         *                       <li>RegionId (Required): The ID of the region where the ECS instance resides.</li>
+         *                       <li>InstanceId (Required): The ID of the ECS instance.</li>
+         *                       <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+         *                       JSON format. You can specify up to 10 key-value pairs. Separate multiple
+         *                       key-value pairs with commas (,). The default value is <code>{}</code>.</li>
+         *                       <li>If SecretType is set to PolarDB, you must specify the following parameters in
+         *                       ExtendedConfig:</li>
+         *                       <li>SecretSubType (Required): The fixed value is DoubleUsers.</li>
+         *                       <li>RegionId (Required): The region.</li>
+         *                       <li>DBClusterId (Required): The ID of the PolarDB instance.</li>
+         *                       <li>DBType (Required): MySQL or PostgreSQL.</li>
+         *                       <li>AccountName (Required): The account name.</li>
+         *                       <li>CloneAccountName: The value is AccountName_clone.</li>
+         *                       <li>AccountType: Only Normal is supported.</li>
+         *                       <li>AccountPrivilege: This parameter is available only for MySQL.</li>
+         *                       <li>DBName: This parameter is available only for MySQL.</li>
+         *                       <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+         *                       JSON format. You can specify up to 10 key-value pairs. Separate multiple
+         *                       key-value pairs with commas (,). Example: {"Key1": "v1", "fds":"fdsf"}. The
+         *                       default value is {}.</li>
+         *                       </ul>
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       If SecretType is set to Rds, Redis, PolarDB, RAMCredentials, or ECS, you must
+         *                       configure this parameter.
+         *                       <p>
+         *                       </blockquote>
          * @return {@code this}
          */
         public Builder extendedConfig(com.aliyun.ros.cdk.core.IResolvable extendedConfig) {
@@ -380,7 +737,88 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SecretProps#getExtendedConfig}
          * @param extendedConfig Property extendedConfig: The extended configuration of the secret.
-         *                       This parameter specifies the properties of the secret of the specific type.
+         *                       This parameter specifies the properties
+         *                       of the secret of a specific type. The value can be up to 1,024 characters in
+         *                       length.
+         *                       <p>
+         *                       <ul>
+         *                       <li>If SecretType is set to Generic, this parameter is ignored.</li>
+         *                       <li>If SecretType is set to Rds, you must specify the following parameters in
+         *                       ExtendedConfig:</li>
+         *                       <li>SecretSubType (Required): The subtype of the secret. Valid values:</li>
+         *                       <li>SingleUser: Secrets Manager manages the RDS secret in single-account mode. When
+         *                       the secret is rotated, the password of the specified account is reset to a new
+         *                       random password.</li>
+         *                       <li>DoubleUsers: Secrets Manager manages the RDS secret in double-account mode.
+         *                       ACSCurrent and ACSPrevious point to one of the accounts. When the secret is
+         *                       rotated, the password of the account pointed to by ACSPrevious is reset to a new
+         *                       random password. Then, Secrets Manager swaps the accounts that ACSCurrent and
+         *                       ACSPrevious point to.</li>
+         *                       <li>DBInstanceId (Required): The ID of the RDS instance to which the account
+         *                       belongs.</li>
+         *                       <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+         *                       JSON format. You can specify up to 10 key-value pairs. Separate multiple
+         *                       key-value pairs with commas (,). Example: <code>{"Key1": "v1", "fds":"fdsf"}</code>. The
+         *                       default value is <code>{}</code>.</li>
+         *                       <li>If SecretType is set to Redis, you must specify the following parameters in
+         *                       ExtendedConfig:</li>
+         *                       <li>SecretSubType (Required): The subtype of the secret. Valid values:</li>
+         *                       <li>DoubleUsers: Secrets Manager manages the Redis secret in double-account mode.
+         *                       ACSCurrent and ACSPrevious point to one of the accounts. When the secret is
+         *                       rotated, the password of the account pointed to by ACSPrevious is reset to a new
+         *                       random password. Then, Secrets Manager swaps the accounts that ACSCurrent and
+         *                       ACSPrevious point to.</li>
+         *                       <li>AccountName (Required): The database username.</li>
+         *                       <li>CloneAccountName (Required): The database username, which is the value of
+         *                       AccountName with the <code>_clone</code> suffix.</li>
+         *                       <li>AccountPrivilege (Required): The permissions to access the database.</li>
+         *                       <li>InstanceId (Required): The ID of the Redis instance.</li>
+         *                       <li>RegionId (Required): The ID of the region where the Redis instance resides.</li>
+         *                       <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+         *                       JSON format. You can specify up to 10 key-value pairs. Separate multiple
+         *                       key-value pairs with commas (,). Example: <code>{"Key1": "v1", "fds":"fdsf"}</code>. The
+         *                       default value is <code>{}</code>.</li>
+         *                       <li>If SecretType is set to RAMCredentials, you must specify the following
+         *                       parameters in ExtendedConfig:</li>
+         *                       <li>SecretSubType (Required): The subtype of the secret. The value is
+         *                       RamUserAccessKey.</li>
+         *                       <li>UserName (Required): The name of the RAM user.</li>
+         *                       <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+         *                       JSON format. You can specify up to 10 key-value pairs. Separate multiple
+         *                       key-value pairs with commas (,). The default value is <code>{}</code>.</li>
+         *                       <li>If SecretType is set to ECS, you must specify the following parameters in
+         *                       ExtendedConfig:</li>
+         *                       <li>SecretSubType (Required): The subtype of the secret. Valid values:</li>
+         *                       <li>Password: an ECS password.</li>
+         *                       <li>SSHKey: an ECS SSH key pair.</li>
+         *                       <li>RegionId (Required): The ID of the region where the ECS instance resides.</li>
+         *                       <li>InstanceId (Required): The ID of the ECS instance.</li>
+         *                       <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+         *                       JSON format. You can specify up to 10 key-value pairs. Separate multiple
+         *                       key-value pairs with commas (,). The default value is <code>{}</code>.</li>
+         *                       <li>If SecretType is set to PolarDB, you must specify the following parameters in
+         *                       ExtendedConfig:</li>
+         *                       <li>SecretSubType (Required): The fixed value is DoubleUsers.</li>
+         *                       <li>RegionId (Required): The region.</li>
+         *                       <li>DBClusterId (Required): The ID of the PolarDB instance.</li>
+         *                       <li>DBType (Required): MySQL or PostgreSQL.</li>
+         *                       <li>AccountName (Required): The account name.</li>
+         *                       <li>CloneAccountName: The value is AccountName_clone.</li>
+         *                       <li>AccountType: Only Normal is supported.</li>
+         *                       <li>AccountPrivilege: This parameter is available only for MySQL.</li>
+         *                       <li>DBName: This parameter is available only for MySQL.</li>
+         *                       <li>CustomData (Optional): The custom data. The value is a key-value pair in the
+         *                       JSON format. You can specify up to 10 key-value pairs. Separate multiple
+         *                       key-value pairs with commas (,). Example: {"Key1": "v1", "fds":"fdsf"}. The
+         *                       default value is {}.</li>
+         *                       </ul>
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       If SecretType is set to Rds, Redis, PolarDB, RAMCredentials, or ECS, you must
+         *                       configure this parameter.
+         *                       <p>
+         *                       </blockquote>
          * @return {@code this}
          */
         public Builder extendedConfig(java.util.Map<java.lang.String, ? extends java.lang.Object> extendedConfig) {
@@ -503,9 +941,20 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SecretProps#getRotationInterval}
          * @param rotationInterval Property rotationInterval: The interval for automatic rotation.
-         *                         Valid values: 6 hours to 8,760 hours (365 days).
-         *                         The value is in the integer[unit] format.
-         *                         The unit can be d (day), h (hour), m (minute), or s (second). For example, both 7d and 604800s indicate a seven-day interval.
+         *                         The value is in the range of 6 hours to
+         *                         8,760 hours (365 days).<br>
+         *                         The value is in the <code>integer[unit]</code> format. <code>integer</code> indicates the interval.
+         *                         <code>unit</code> indicates the unit of time.<br>
+         *                         Valid values for unit: d (day), h (hour), m (minute), and s (second). For
+         *                         example, both 7d and 604,800s indicate a rotation interval of 7 days.<br><br>
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         You must specify this parameter if you set EnableAutomaticRotation to true. You
+         *                         do not need to specify this parameter if you set EnableAutomaticRotation to
+         *                         false.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder rotationInterval(java.lang.String rotationInterval) {
@@ -516,9 +965,20 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SecretProps#getRotationInterval}
          * @param rotationInterval Property rotationInterval: The interval for automatic rotation.
-         *                         Valid values: 6 hours to 8,760 hours (365 days).
-         *                         The value is in the integer[unit] format.
-         *                         The unit can be d (day), h (hour), m (minute), or s (second). For example, both 7d and 604800s indicate a seven-day interval.
+         *                         The value is in the range of 6 hours to
+         *                         8,760 hours (365 days).<br>
+         *                         The value is in the <code>integer[unit]</code> format. <code>integer</code> indicates the interval.
+         *                         <code>unit</code> indicates the unit of time.<br>
+         *                         Valid values for unit: d (day), h (hour), m (minute), and s (second). For
+         *                         example, both 7d and 604,800s indicate a rotation interval of 7 days.<br><br>
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         You must specify this parameter if you set EnableAutomaticRotation to true. You
+         *                         do not need to specify this parameter if you set EnableAutomaticRotation to
+         *                         false.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder rotationInterval(com.aliyun.ros.cdk.core.IResolvable rotationInterval) {
@@ -530,8 +990,18 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link SecretProps#getSecretDataType}
          * @param secretDataType Property secretDataType: The type of the secret value.
          *                       Valid values:
-         *                       text (default value)
-         *                       binary
+         *                       <p>
+         *                       <ul>
+         *                       <li>text (default): The secret value is a text string.</li>
+         *                       <li>binary: The secret value is a binary string.</li>
+         *                       </ul>
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       If SecretType is set to Rds, Redis, PolarDB, RAMCredentials, or ECS,
+         *                       SecretDataType must be set to text.
+         *                       <p>
+         *                       </blockquote>
          * @return {@code this}
          */
         public Builder secretDataType(java.lang.String secretDataType) {
@@ -543,8 +1013,18 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link SecretProps#getSecretDataType}
          * @param secretDataType Property secretDataType: The type of the secret value.
          *                       Valid values:
-         *                       text (default value)
-         *                       binary
+         *                       <p>
+         *                       <ul>
+         *                       <li>text (default): The secret value is a text string.</li>
+         *                       <li>binary: The secret value is a binary string.</li>
+         *                       </ul>
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       If SecretType is set to Rds, Redis, PolarDB, RAMCredentials, or ECS,
+         *                       SecretDataType must be set to text.
+         *                       <p>
+         *                       </blockquote>
          * @return {@code this}
          */
         public Builder secretDataType(com.aliyun.ros.cdk.core.IResolvable secretDataType) {
@@ -556,10 +1036,15 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link SecretProps#getSecretType}
          * @param secretType Property secretType: The type of the secret.
          *                   Valid values:
-         *                   Generic: specifies a generic secret.
-         *                   Rds: specifies a managed ApsaraDB RDS secret.
-         *                   RAMCredentials: specifies a managed RAM secret.
-         *                   ECS: specifies a managed ECS secret.
+         *                   <p>
+         *                   <ul>
+         *                   <li>Generic (default): a generic secret.</li>
+         *                   <li>Rds: an RDS secret.</li>
+         *                   <li>Redis: a Redis secret.</li>
+         *                   <li>RAMCredentials: a RAM secret.</li>
+         *                   <li>ECS: an ECS secret.</li>
+         *                   <li>PolarDB: a PolarDB secret.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder secretType(java.lang.String secretType) {
@@ -571,10 +1056,15 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link SecretProps#getSecretType}
          * @param secretType Property secretType: The type of the secret.
          *                   Valid values:
-         *                   Generic: specifies a generic secret.
-         *                   Rds: specifies a managed ApsaraDB RDS secret.
-         *                   RAMCredentials: specifies a managed RAM secret.
-         *                   ECS: specifies a managed ECS secret.
+         *                   <p>
+         *                   <ul>
+         *                   <li>Generic (default): a generic secret.</li>
+         *                   <li>Rds: an RDS secret.</li>
+         *                   <li>Redis: a Redis secret.</li>
+         *                   <li>RAMCredentials: a RAM secret.</li>
+         *                   <li>ECS: an ECS secret.</li>
+         *                   <li>PolarDB: a PolarDB secret.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder secretType(com.aliyun.ros.cdk.core.IResolvable secretType) {

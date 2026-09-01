@@ -25,7 +25,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             get;
         }
 
-        /// <summary>Property host: The domain or IP address of the cloud service.</summary>
+        /// <summary>Property host: The IP addresses or CIDR blocks of the cloud service.</summary>
+        /// <remarks>
+        ///     In most cases, multiple IP addresses or CIDR blocks are assigned to a cloud
+        ///     service. We recommend that you call this operation multiple times to add all IP
+        ///     addresses and CIDR blocks of the cloud service.
+        /// </remarks>
         [JsiiProperty(name: "host", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Host
         {
@@ -66,6 +71,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <summary>Property description: The description of the cloud service.</summary>
+        /// <remarks>
+        /// This parameter is optional. If you enter a description, it must be 1 to 256
+        /// characters in length and cannot start with http:// or https://.
+        /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Description
@@ -101,7 +110,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property host: The domain or IP address of the cloud service.</summary>
+            /// <summary>Property host: The IP addresses or CIDR blocks of the cloud service.</summary>
+            /// <remarks>
+            ///     In most cases, multiple IP addresses or CIDR blocks are assigned to a cloud
+            ///     service. We recommend that you call this operation multiple times to add all IP
+            ///     addresses and CIDR blocks of the cloud service.
+            /// </remarks>
             [JsiiProperty(name: "host", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Host
             {
@@ -139,6 +153,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
 
             /// <summary>Property description: The description of the cloud service.</summary>
+            /// <remarks>
+            /// This parameter is optional. If you enter a description, it must be 1 to 256
+            /// characters in length and cannot start with http:// or https://.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description

@@ -11,7 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Imm
     [JsiiInterface(nativeType: typeof(IProject2Props), fullyQualifiedName: "@alicloud/ros-cdk-imm.Project2Props")]
     public interface IProject2Props
     {
-        /// <summary>Property projectName: The name of project.</summary>
+        /// <summary>Property projectName: The project name.</summary>
+        /// <remarks>
+        /// The naming convention is as follows:
+        ///
+        /// <list type="bullet">
+        /// <description>The name must be 1 to 128 characters in length.</description>
+        /// <description>It can contain only letters, digits, hyphens (-), and underscores (_).</description>
+        /// <description>It must start with a letter or an underscore (_).</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ProjectName
         {
@@ -34,7 +43,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Imm
 
         /// <summary>Property datasetMaxEntityCount: The maximum number of metadata entities in each dataset.</summary>
         /// <remarks>
-        /// Default value: 10000000000.
+        /// The default value is
+        /// 10,000,000,000.
+        ///
+        ///     This configuration is reserved and is not currently enforced.
         /// </remarks>
         [JsiiProperty(name: "datasetMaxEntityCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -60,9 +72,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Imm
             }
         }
 
-        /// <summary>Property datasetMaxRelationCount: The maximum number of metadata entities in each dataset.</summary>
+        /// <summary>Property datasetMaxRelationCount: The maximum number of metadata relations in each dataset.</summary>
         /// <remarks>
-        /// Default value: 100000000000.
+        /// The default value is
+        /// 100,000,000,000.
+        ///
+        ///     This configuration is reserved and is not currently enforced.
         /// </remarks>
         [JsiiProperty(name: "datasetMaxRelationCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -152,7 +167,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Imm
             {
             }
 
-            /// <summary>Property projectName: The name of project.</summary>
+            /// <summary>Property projectName: The project name.</summary>
+            /// <remarks>
+            /// The naming convention is as follows:
+            ///
+            /// <list type="bullet">
+            /// <description>The name must be 1 to 128 characters in length.</description>
+            /// <description>It can contain only letters, digits, hyphens (-), and underscores (_).</description>
+            /// <description>It must start with a letter or an underscore (_).</description>
+            /// </list>
+            /// </remarks>
             [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ProjectName
             {
@@ -172,7 +196,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Imm
 
             /// <summary>Property datasetMaxEntityCount: The maximum number of metadata entities in each dataset.</summary>
             /// <remarks>
-            /// Default value: 10000000000.
+            /// The default value is
+            /// 10,000,000,000.
+            ///
+            ///     This configuration is reserved and is not currently enforced.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "datasetMaxEntityCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -192,9 +219,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Imm
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property datasetMaxRelationCount: The maximum number of metadata entities in each dataset.</summary>
+            /// <summary>Property datasetMaxRelationCount: The maximum number of metadata relations in each dataset.</summary>
             /// <remarks>
-            /// Default value: 100000000000.
+            /// The default value is
+            /// 100,000,000,000.
+            ///
+            ///     This configuration is reserved and is not currently enforced.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "datasetMaxRelationCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

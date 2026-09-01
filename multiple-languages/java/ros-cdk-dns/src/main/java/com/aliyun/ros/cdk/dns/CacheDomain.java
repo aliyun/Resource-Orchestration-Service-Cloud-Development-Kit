@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DNS::CacheDomain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.844Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:23:04.439Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.CacheDomain")
 public class CacheDomain extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dns.ICacheDomain {
 
@@ -238,20 +238,26 @@ public class CacheDomain extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property sourceProtocol: The protocol used by the source DNS server.
+         * Property sourceProtocol: The protocol used for origin fetch.
+         * <p>
+         * Valid values: TCP and UDP. The default value
+         * is UDP.
          * <p>
          * @return {@code this}
-         * @param sourceProtocol Property sourceProtocol: The protocol used by the source DNS server. This parameter is required.
+         * @param sourceProtocol Property sourceProtocol: The protocol used for origin fetch. This parameter is required.
          */
         public Builder sourceProtocol(final java.lang.String sourceProtocol) {
             this.props.sourceProtocol(sourceProtocol);
             return this;
         }
         /**
-         * Property sourceProtocol: The protocol used by the source DNS server.
+         * Property sourceProtocol: The protocol used for origin fetch.
+         * <p>
+         * Valid values: TCP and UDP. The default value
+         * is UDP.
          * <p>
          * @return {@code this}
-         * @param sourceProtocol Property sourceProtocol: The protocol used by the source DNS server. This parameter is required.
+         * @param sourceProtocol Property sourceProtocol: The protocol used for origin fetch. This parameter is required.
          */
         public Builder sourceProtocol(final com.aliyun.ros.cdk.core.IResolvable sourceProtocol) {
             this.props.sourceProtocol(sourceProtocol);

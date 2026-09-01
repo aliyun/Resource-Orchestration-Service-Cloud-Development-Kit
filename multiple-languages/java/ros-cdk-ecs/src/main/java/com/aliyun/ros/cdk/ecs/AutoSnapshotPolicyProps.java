@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.838Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.184Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AutoSnapshotPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(AutoSnapshotPolicyProps.Jsii$Proxy.class)
 public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -51,12 +51,18 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
-     * Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies.
+     * Property copiedSnapshotsRetentionDays: The retention period of the snapshot copy in the destination region.
      * <p>
-     * Range:
-     * -1: Permanent storage
-     * 1-65535: Specifies the number of days to save
-     * Default value: -1
+     * Unit: days.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>-1: The snapshot copy is retained until it is deleted.</li>
+     * <li>1 to 65535: The snapshot copy is retained for the specified number of days.
+     * After the retention period of the snapshot copy expires, the snapshot copy is
+     * automatically deleted.
+     * Default value: -1.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCopiedSnapshotsRetentionDays() {
         return null;
@@ -242,11 +248,17 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link AutoSnapshotPolicyProps#getCopiedSnapshotsRetentionDays}
-         * @param copiedSnapshotsRetentionDays Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies.
-         *                                     Range:
-         *                                     -1: Permanent storage
-         *                                     1-65535: Specifies the number of days to save
-         *                                     Default value: -1
+         * @param copiedSnapshotsRetentionDays Property copiedSnapshotsRetentionDays: The retention period of the snapshot copy in the destination region.
+         *                                     Unit: days.
+         *                                     Valid values:
+         *                                     <p>
+         *                                     <ul>
+         *                                     <li>-1: The snapshot copy is retained until it is deleted.</li>
+         *                                     <li>1 to 65535: The snapshot copy is retained for the specified number of days.
+         *                                     After the retention period of the snapshot copy expires, the snapshot copy is
+         *                                     automatically deleted.
+         *                                     Default value: -1.</li>
+         *                                     </ul>
          * @return {@code this}
          */
         public Builder copiedSnapshotsRetentionDays(java.lang.Number copiedSnapshotsRetentionDays) {
@@ -256,11 +268,17 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link AutoSnapshotPolicyProps#getCopiedSnapshotsRetentionDays}
-         * @param copiedSnapshotsRetentionDays Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies.
-         *                                     Range:
-         *                                     -1: Permanent storage
-         *                                     1-65535: Specifies the number of days to save
-         *                                     Default value: -1
+         * @param copiedSnapshotsRetentionDays Property copiedSnapshotsRetentionDays: The retention period of the snapshot copy in the destination region.
+         *                                     Unit: days.
+         *                                     Valid values:
+         *                                     <p>
+         *                                     <ul>
+         *                                     <li>-1: The snapshot copy is retained until it is deleted.</li>
+         *                                     <li>1 to 65535: The snapshot copy is retained for the specified number of days.
+         *                                     After the retention period of the snapshot copy expires, the snapshot copy is
+         *                                     automatically deleted.
+         *                                     Default value: -1.</li>
+         *                                     </ul>
          * @return {@code this}
          */
         public Builder copiedSnapshotsRetentionDays(com.aliyun.ros.cdk.core.IResolvable copiedSnapshotsRetentionDays) {

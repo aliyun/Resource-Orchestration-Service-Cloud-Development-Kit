@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::Application</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:28:24.401Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:41:17.497Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.Application")
 public class Application extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.polardb.IApplication {
 
@@ -114,7 +114,13 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property applicationType: The type of the application.
          * <p>
-         * This parameter is required.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>supabase: Creates a managed Supabase application.</li>
+         * <li>raycluster: Creates a managed Ray Cluster application.</li>
+         * <li>polarclaw: Creates a managed PolarClaw application.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param applicationType Property applicationType: The type of the application. This parameter is required.
@@ -126,7 +132,13 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property applicationType: The type of the application.
          * <p>
-         * This parameter is required.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>supabase: Creates a managed Supabase application.</li>
+         * <li>raycluster: Creates a managed Ray Cluster application.</li>
+         * <li>polarclaw: Creates a managed PolarClaw application.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param applicationType Property applicationType: The type of the application. This parameter is required.
@@ -183,20 +195,36 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property autoCreatePolarFs: Whether to auto create PolarFS.
+         * Property autoCreatePolarFs: Specifies whether to automatically create a PolarFS cold storage instance.
+         * <p>
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>false (default): Does not automatically create the instance.</li>
+         * <li>true: Automatically creates the instance.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoCreatePolarFs Property autoCreatePolarFs: Whether to auto create PolarFS. This parameter is required.
+         * @param autoCreatePolarFs Property autoCreatePolarFs: Specifies whether to automatically create a PolarFS cold storage instance. This parameter is required.
          */
         public Builder autoCreatePolarFs(final java.lang.Boolean autoCreatePolarFs) {
             this.props.autoCreatePolarFs(autoCreatePolarFs);
             return this;
         }
         /**
-         * Property autoCreatePolarFs: Whether to auto create PolarFS.
+         * Property autoCreatePolarFs: Specifies whether to automatically create a PolarFS cold storage instance.
+         * <p>
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>false (default): Does not automatically create the instance.</li>
+         * <li>true: Automatically creates the instance.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoCreatePolarFs Property autoCreatePolarFs: Whether to auto create PolarFS. This parameter is required.
+         * @param autoCreatePolarFs Property autoCreatePolarFs: Specifies whether to automatically create a PolarFS cold storage instance. This parameter is required.
          */
         public Builder autoCreatePolarFs(final com.aliyun.ros.cdk.core.IResolvable autoCreatePolarFs) {
             this.props.autoCreatePolarFs(autoCreatePolarFs);
@@ -204,20 +232,20 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property components: The list of components.
+         * Property components: A list of custom child components for the application.
          * <p>
          * @return {@code this}
-         * @param components Property components: The list of components. This parameter is required.
+         * @param components Property components: A list of custom child components for the application. This parameter is required.
          */
         public Builder components(final com.aliyun.ros.cdk.core.IResolvable components) {
             this.props.components(components);
             return this;
         }
         /**
-         * Property components: The list of components.
+         * Property components: A list of custom child components for the application.
          * <p>
          * @return {@code this}
-         * @param components Property components: The list of components. This parameter is required.
+         * @param components Property components: A list of custom child components for the application. This parameter is required.
          */
         public Builder components(final java.util.List<? extends java.lang.Object> components) {
             this.props.components(components);
@@ -275,20 +303,20 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property period: The period of the application.
+         * Property period: The subscription period type.
          * <p>
          * @return {@code this}
-         * @param period Property period: The period of the application. This parameter is required.
+         * @param period Property period: The subscription period type. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The period of the application.
+         * Property period: The subscription period type.
          * <p>
          * @return {@code this}
-         * @param period Property period: The period of the application. This parameter is required.
+         * @param period Property period: The subscription period type. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
@@ -296,20 +324,38 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property polarFsInstanceId: The ID of the PolarFS instance.
+         * Property polarFsInstanceId: The ID of the PolarFileSystem (PolarFS) cold storage or high-performance instance.
+         * <p>
+         * This parameter is empty by default. If you specify this parameter, the
+         * corresponding storage is mounted to the application.
+         * This feature is currently supported only by the following applications:
+         * <p>
+         * <ul>
+         * <li>supabase</li>
+         * <li>raycluster</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param polarFsInstanceId Property polarFsInstanceId: The ID of the PolarFS instance. This parameter is required.
+         * @param polarFsInstanceId Property polarFsInstanceId: The ID of the PolarFileSystem (PolarFS) cold storage or high-performance instance. This parameter is required.
          */
         public Builder polarFsInstanceId(final java.lang.String polarFsInstanceId) {
             this.props.polarFsInstanceId(polarFsInstanceId);
             return this;
         }
         /**
-         * Property polarFsInstanceId: The ID of the PolarFS instance.
+         * Property polarFsInstanceId: The ID of the PolarFileSystem (PolarFS) cold storage or high-performance instance.
+         * <p>
+         * This parameter is empty by default. If you specify this parameter, the
+         * corresponding storage is mounted to the application.
+         * This feature is currently supported only by the following applications:
+         * <p>
+         * <ul>
+         * <li>supabase</li>
+         * <li>raycluster</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param polarFsInstanceId Property polarFsInstanceId: The ID of the PolarFS instance. This parameter is required.
+         * @param polarFsInstanceId Property polarFsInstanceId: The ID of the PolarFileSystem (PolarFS) cold storage or high-performance instance. This parameter is required.
          */
         public Builder polarFsInstanceId(final com.aliyun.ros.cdk.core.IResolvable polarFsInstanceId) {
             this.props.polarFsInstanceId(polarFsInstanceId);
@@ -338,20 +384,26 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property securityIpList: The security IP list of the component.
+         * Property securityIpList: The IP address whitelist.
+         * <p>
+         * If you do not specify this parameter, the default value
+         * <code>127.0.0.1</code> is used.
          * <p>
          * @return {@code this}
-         * @param securityIpList Property securityIpList: The security IP list of the component. This parameter is required.
+         * @param securityIpList Property securityIpList: The IP address whitelist. This parameter is required.
          */
         public Builder securityIpList(final java.lang.String securityIpList) {
             this.props.securityIpList(securityIpList);
             return this;
         }
         /**
-         * Property securityIpList: The security IP list of the component.
+         * Property securityIpList: The IP address whitelist.
+         * <p>
+         * If you do not specify this parameter, the default value
+         * <code>127.0.0.1</code> is used.
          * <p>
          * @return {@code this}
-         * @param securityIpList Property securityIpList: The security IP list of the component. This parameter is required.
+         * @param securityIpList Property securityIpList: The IP address whitelist. This parameter is required.
          */
         public Builder securityIpList(final com.aliyun.ros.cdk.core.IResolvable securityIpList) {
             this.props.securityIpList(securityIpList);
@@ -380,20 +432,26 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property vSwitchId: The ID of the VSwitch.
+         * Property vSwitchId: The vSwitch.
+         * <p>
+         * The default value is the current vSwitch in the primary zone of the
+         * instance.
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: The ID of the VSwitch.
+         * Property vSwitchId: The vSwitch.
+         * <p>
+         * The default value is the current vSwitch in the primary zone of the
+         * instance.
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
@@ -401,20 +459,24 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property zoneId: The ID of the zone.
+         * Property zoneId: The zone.
+         * <p>
+         * The default value is the primary zone of the instance.
          * <p>
          * @return {@code this}
-         * @param zoneId Property zoneId: The ID of the zone. This parameter is required.
+         * @param zoneId Property zoneId: The zone. This parameter is required.
          */
         public Builder zoneId(final java.lang.String zoneId) {
             this.props.zoneId(zoneId);
             return this;
         }
         /**
-         * Property zoneId: The ID of the zone.
+         * Property zoneId: The zone.
+         * <p>
+         * The default value is the primary zone of the instance.
          * <p>
          * @return {@code this}
-         * @param zoneId Property zoneId: The ID of the zone. This parameter is required.
+         * @param zoneId Property zoneId: The zone. This parameter is required.
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);

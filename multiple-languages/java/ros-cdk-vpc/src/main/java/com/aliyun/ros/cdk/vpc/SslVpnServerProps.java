@@ -5,24 +5,48 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnserver
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.690Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.495Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.SslVpnServerProps")
 @software.amazon.jsii.Jsii.Proxy(SslVpnServerProps.Jsii$Proxy.class)
 public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property clientIpPool: It is the address segment that assigns the access address to the client virtual NIC.
+     * Property clientIpPool: The client CIDR block.
      * <p>
-     * It does not refer to the existing intranet segment of the client.
-     * When the client accesses the local end through an SSL-VPN connection, the VPN gateway allocates an IP address to the client from the specified client network segment.
-     * The network segment cannot conflict with the LocalSubnet address segment.
+     * The CIDR block from which an IP address is allocated to the virtual network
+     * interface controller (NIC) of the client, rather than the private CIDR block.
+     * If the client accesses the SSL server over an SSL-VPN connection, the VPN gateway
+     * assigns an IP address from the specified client CIDR block for the client to
+     * access cloud resources.
+     * Make sure that the number of IP addresses in the client CIDR block is at least
+     * four times the maximum number of SSL-VPN connections supported by the VPN
+     * gateway.
+     * ... (omitted for brevity; see metadata URL) ...
+     * <p>
+     * <ul>
+     * <li>The subnet mask of the client CIDR block must be 16 to 29 bits in length.</li>
+     * <li>Make sure that the client CIDR block does not overlap with the local CIDR
+     * block, the VPC CIDR block, or route CIDR blocks associated with the client.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getClientIpPool();
 
     /**
-     * Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection.
+     * Property localSubnet: The local CIDR block.
      * <p>
-     * The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS/OSS.
+     * The CIDR block that your client needs to access by using the SSL-VPN connection.
+     * This value can be the CIDR block of a VPC, a vSwitch, a data center that is
+     * connected to a VPC by using an Express Connect circuit, or a cloud
+     * service such as Object Storage Service (OSS).
+     * The subnet mask of the specified local CIDR block must be 8 to 32 bits in length.
+     * You cannot specify the following CIDR blocks as the local CIDR blocks:
+     * <p>
+     * <ul>
+     * <li>127.0.0.0~127.255.255.255</li>
+     * <li>169.254.0.0~169.254.255.255</li>
+     * <li>224.0.0.0~239.255.255.255</li>
+     * <li>255.0.0.0~255.255.255.255</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getLocalSubnet();
 
@@ -79,10 +103,10 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property name: The name of the SSL-VPN server.
+     * Property name: The SSL server name.
      * <p>
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
-     * But it can't start with http:// or https://.
+     * The name must be 1 to 100 characters in length and cannot start with <code>http:\/\/</code> or
+     * <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
@@ -99,9 +123,14 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property proto: The protocol used by the SSL-VPN server.
+     * Property proto: The protocol that is used by the SSL server.
      * <p>
-     * Allowed values: UDP (default) | TCP.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>TCP (default)</li>
+     * <li>UDP</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProto() {
         return null;
@@ -132,10 +161,22 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link SslVpnServerProps#getClientIpPool}
-         * @param clientIpPool Property clientIpPool: It is the address segment that assigns the access address to the client virtual NIC. This parameter is required.
-         *                     It does not refer to the existing intranet segment of the client.
-         *                     When the client accesses the local end through an SSL-VPN connection, the VPN gateway allocates an IP address to the client from the specified client network segment.
-         *                     The network segment cannot conflict with the LocalSubnet address segment.
+         * @param clientIpPool Property clientIpPool: The client CIDR block. This parameter is required.
+         *                     The CIDR block from which an IP address is allocated to the virtual network
+         *                     interface controller (NIC) of the client, rather than the private CIDR block.
+         *                     If the client accesses the SSL server over an SSL-VPN connection, the VPN gateway
+         *                     assigns an IP address from the specified client CIDR block for the client to
+         *                     access cloud resources.
+         *                     Make sure that the number of IP addresses in the client CIDR block is at least
+         *                     four times the maximum number of SSL-VPN connections supported by the VPN
+         *                     gateway.
+         *                     ... (omitted for brevity; see metadata URL) ...
+         *                     <p>
+         *                     <ul>
+         *                     <li>The subnet mask of the client CIDR block must be 16 to 29 bits in length.</li>
+         *                     <li>Make sure that the client CIDR block does not overlap with the local CIDR
+         *                     block, the VPC CIDR block, or route CIDR blocks associated with the client.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder clientIpPool(java.lang.String clientIpPool) {
@@ -145,10 +186,22 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link SslVpnServerProps#getClientIpPool}
-         * @param clientIpPool Property clientIpPool: It is the address segment that assigns the access address to the client virtual NIC. This parameter is required.
-         *                     It does not refer to the existing intranet segment of the client.
-         *                     When the client accesses the local end through an SSL-VPN connection, the VPN gateway allocates an IP address to the client from the specified client network segment.
-         *                     The network segment cannot conflict with the LocalSubnet address segment.
+         * @param clientIpPool Property clientIpPool: The client CIDR block. This parameter is required.
+         *                     The CIDR block from which an IP address is allocated to the virtual network
+         *                     interface controller (NIC) of the client, rather than the private CIDR block.
+         *                     If the client accesses the SSL server over an SSL-VPN connection, the VPN gateway
+         *                     assigns an IP address from the specified client CIDR block for the client to
+         *                     access cloud resources.
+         *                     Make sure that the number of IP addresses in the client CIDR block is at least
+         *                     four times the maximum number of SSL-VPN connections supported by the VPN
+         *                     gateway.
+         *                     ... (omitted for brevity; see metadata URL) ...
+         *                     <p>
+         *                     <ul>
+         *                     <li>The subnet mask of the client CIDR block must be 16 to 29 bits in length.</li>
+         *                     <li>Make sure that the client CIDR block does not overlap with the local CIDR
+         *                     block, the VPC CIDR block, or route CIDR blocks associated with the client.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder clientIpPool(com.aliyun.ros.cdk.core.IResolvable clientIpPool) {
@@ -158,8 +211,20 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link SslVpnServerProps#getLocalSubnet}
-         * @param localSubnet Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection. This parameter is required.
-         *                    The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS/OSS.
+         * @param localSubnet Property localSubnet: The local CIDR block. This parameter is required.
+         *                    The CIDR block that your client needs to access by using the SSL-VPN connection.
+         *                    This value can be the CIDR block of a VPC, a vSwitch, a data center that is
+         *                    connected to a VPC by using an Express Connect circuit, or a cloud
+         *                    service such as Object Storage Service (OSS).
+         *                    The subnet mask of the specified local CIDR block must be 8 to 32 bits in length.
+         *                    You cannot specify the following CIDR blocks as the local CIDR blocks:
+         *                    <p>
+         *                    <ul>
+         *                    <li>127.0.0.0~127.255.255.255</li>
+         *                    <li>169.254.0.0~169.254.255.255</li>
+         *                    <li>224.0.0.0~239.255.255.255</li>
+         *                    <li>255.0.0.0~255.255.255.255</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder localSubnet(java.lang.String localSubnet) {
@@ -169,8 +234,20 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link SslVpnServerProps#getLocalSubnet}
-         * @param localSubnet Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection. This parameter is required.
-         *                    The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS/OSS.
+         * @param localSubnet Property localSubnet: The local CIDR block. This parameter is required.
+         *                    The CIDR block that your client needs to access by using the SSL-VPN connection.
+         *                    This value can be the CIDR block of a VPC, a vSwitch, a data center that is
+         *                    connected to a VPC by using an Express Connect circuit, or a cloud
+         *                    service such as Object Storage Service (OSS).
+         *                    The subnet mask of the specified local CIDR block must be 8 to 32 bits in length.
+         *                    You cannot specify the following CIDR blocks as the local CIDR blocks:
+         *                    <p>
+         *                    <ul>
+         *                    <li>127.0.0.0~127.255.255.255</li>
+         *                    <li>169.254.0.0~169.254.255.255</li>
+         *                    <li>224.0.0.0~239.255.255.255</li>
+         *                    <li>255.0.0.0~255.255.255.255</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder localSubnet(com.aliyun.ros.cdk.core.IResolvable localSubnet) {
@@ -326,9 +403,9 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link SslVpnServerProps#getName}
-         * @param name Property name: The name of the SSL-VPN server.
-         *             The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
-         *             But it can't start with http:// or https://.
+         * @param name Property name: The SSL server name.
+         *             The name must be 1 to 100 characters in length and cannot start with <code>http:\/\/</code> or
+         *             <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -338,9 +415,9 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link SslVpnServerProps#getName}
-         * @param name Property name: The name of the SSL-VPN server.
-         *             The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
-         *             But it can't start with http:// or https://.
+         * @param name Property name: The SSL server name.
+         *             The name must be 1 to 100 characters in length and cannot start with <code>http:\/\/</code> or
+         *             <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
@@ -374,8 +451,13 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link SslVpnServerProps#getProto}
-         * @param proto Property proto: The protocol used by the SSL-VPN server.
-         *              Allowed values: UDP (default) | TCP.
+         * @param proto Property proto: The protocol that is used by the SSL server.
+         *              Valid values:
+         *              <p>
+         *              <ul>
+         *              <li>TCP (default)</li>
+         *              <li>UDP</li>
+         *              </ul>
          * @return {@code this}
          */
         public Builder proto(java.lang.String proto) {
@@ -385,8 +467,13 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link SslVpnServerProps#getProto}
-         * @param proto Property proto: The protocol used by the SSL-VPN server.
-         *              Allowed values: UDP (default) | TCP.
+         * @param proto Property proto: The protocol that is used by the SSL server.
+         *              Valid values:
+         *              <p>
+         *              <ul>
+         *              <li>TCP (default)</li>
+         *              <li>UDP</li>
+         *              </ul>
          * @return {@code this}
          */
         public Builder proto(com.aliyun.ros.cdk.core.IResolvable proto) {

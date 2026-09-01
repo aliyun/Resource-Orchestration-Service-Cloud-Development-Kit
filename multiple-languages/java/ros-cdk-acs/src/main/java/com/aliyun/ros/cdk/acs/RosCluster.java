@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.acs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ACS::Cluster</code>The , which resource creates a Container Service for Kubernetes (ACK) cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ACS::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:11:47.745Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:43:11.151Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 

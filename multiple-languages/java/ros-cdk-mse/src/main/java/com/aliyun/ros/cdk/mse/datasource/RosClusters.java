@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::MSE::Clusters</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.412Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:13:41.788Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.datasource.RosClusters")
 public class RosClusters extends com.aliyun.ros.cdk.core.RosResource {
 

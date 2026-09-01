@@ -11,9 +11,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     [JsiiInterface(nativeType: typeof(IVpnAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.VpnAttachmentProps")]
     public interface IVpnAttachmentProps
     {
-        /// <summary>Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.</summary>
+        /// <summary>Property localSubnet: The CIDR block on the VPC side.</summary>
         /// <remarks>
-        /// Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+        /// The CIDR block is used in Phase 2 negotiations.
+        /// Separate multiple CIDR blocks with commas (,). Example:
+        /// 192.168.1.0/24,192.168.2.0/24.
+        /// The following routing modes are supported:
+        ///
+        /// <list type="bullet">
+        /// <description>If you set LocalSubnet and RemoteSubnet to 0.0.0.0/0, the routing mode of the
+        /// IPsec-VPN connection is set to Destination Routing Mode.</description>
+        /// <description>If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+        /// mode of the IPsec-VPN connection is set to Protected Data Flows.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "localSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object LocalSubnet
@@ -21,9 +31,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
-        /// <summary>Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.</summary>
+        /// <summary>Property remoteSubnet: The CIDR block on the data center side.</summary>
         /// <remarks>
-        /// Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+        /// This CIDR block is used in Phase 2
+        /// negotiations.
+        /// Separate multiple CIDR blocks with commas (,). Example:
+        /// 192.168.3.0/24,192.168.4.0/24.
+        /// The following routing modes are supported:
+        ///
+        /// <list type="bullet">
+        /// <description>If you set LocalSubnet and RemoteSubnet to 0.0.0.0/0, the routing mode of the
+        /// IPsec-VPN connection is set to Destination Routing Mode.</description>
+        /// <description>If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+        /// mode of the IPsec-VPN connection is set to Protected Data Flows.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "remoteSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object RemoteSubnet
@@ -139,7 +160,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Property healthCheckConfig: Whether to enable the health check configuration.</summary>
+        /// <summary>Property healthCheckConfig: This parameter is supported if you create an IPsec-VPN connection in single-tunnel mode.</summary>
+        /// <remarks>
+        /// The health check configurations:
+        ///
+        /// <list type="bullet">
+        /// <description>HealthCheckConfig.enable: indicates whether the health check is enabled.
+        /// Valid values: true and false (default).</description>
+        /// <description>HealthCheckConfig.dip: the destination IP address configured for health
+        /// checks. Enter the IP address of the on-premises data center that the VPC can
+        /// access through the IPsec connection.</description>
+        /// <description>HealthCheckConfig.sip: the source IP address configured for health checks.
+        /// Enter the IP address of the VPC that the on-premises data center can access
+        /// through the IPsec connection.</description>
+        /// <description>HealthCheckConfig.interval: the time interval of health check retries. Unit:
+        /// seconds. Default value: 3.</description>
+        /// <description>HealthCheckConfig.retry: the maximum number of health check retries. Default
+        /// value: 3.</description>
+        /// <description>HealthCheckConfig.Policy: specifies whether to withdraw published routes when
+        /// health checks fail. Valid values:</description>
+        /// <description>revoke_route (default): withdraws published routes.</description>
+        /// <description>reserve_route: does not withdraw published routes.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "healthCheckConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.HealthCheckConfigProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? HealthCheckConfig
@@ -172,9 +215,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Property name: The name of the IPsec connection.</summary>
+        /// <summary>Property name: The name of the IPsec-VPN connection.</summary>
         /// <remarks>
-        /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+        /// The name must be 1 to 100 characters in length and cannot start with <c>http:\/\/</c> or
+        /// <c>https:\/\/</c>.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -271,9 +315,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             {
             }
 
-            /// <summary>Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.</summary>
+            /// <summary>Property localSubnet: The CIDR block on the VPC side.</summary>
             /// <remarks>
-            /// Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+            /// The CIDR block is used in Phase 2 negotiations.
+            /// Separate multiple CIDR blocks with commas (,). Example:
+            /// 192.168.1.0/24,192.168.2.0/24.
+            /// The following routing modes are supported:
+            ///
+            /// <list type="bullet">
+            /// <description>If you set LocalSubnet and RemoteSubnet to 0.0.0.0/0, the routing mode of the
+            /// IPsec-VPN connection is set to Destination Routing Mode.</description>
+            /// <description>If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+            /// mode of the IPsec-VPN connection is set to Protected Data Flows.</description>
+            /// </list>
             /// </remarks>
             [JsiiProperty(name: "localSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object LocalSubnet
@@ -281,9 +335,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.</summary>
+            /// <summary>Property remoteSubnet: The CIDR block on the data center side.</summary>
             /// <remarks>
-            /// Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+            /// This CIDR block is used in Phase 2
+            /// negotiations.
+            /// Separate multiple CIDR blocks with commas (,). Example:
+            /// 192.168.3.0/24,192.168.4.0/24.
+            /// The following routing modes are supported:
+            ///
+            /// <list type="bullet">
+            /// <description>If you set LocalSubnet and RemoteSubnet to 0.0.0.0/0, the routing mode of the
+            /// IPsec-VPN connection is set to Destination Routing Mode.</description>
+            /// <description>If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+            /// mode of the IPsec-VPN connection is set to Protected Data Flows.</description>
+            /// </list>
             /// </remarks>
             [JsiiProperty(name: "remoteSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object RemoteSubnet
@@ -378,7 +443,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property healthCheckConfig: Whether to enable the health check configuration.</summary>
+            /// <summary>Property healthCheckConfig: This parameter is supported if you create an IPsec-VPN connection in single-tunnel mode.</summary>
+            /// <remarks>
+            /// The health check configurations:
+            ///
+            /// <list type="bullet">
+            /// <description>HealthCheckConfig.enable: indicates whether the health check is enabled.
+            /// Valid values: true and false (default).</description>
+            /// <description>HealthCheckConfig.dip: the destination IP address configured for health
+            /// checks. Enter the IP address of the on-premises data center that the VPC can
+            /// access through the IPsec connection.</description>
+            /// <description>HealthCheckConfig.sip: the source IP address configured for health checks.
+            /// Enter the IP address of the VPC that the on-premises data center can access
+            /// through the IPsec connection.</description>
+            /// <description>HealthCheckConfig.interval: the time interval of health check retries. Unit:
+            /// seconds. Default value: 3.</description>
+            /// <description>HealthCheckConfig.retry: the maximum number of health check retries. Default
+            /// value: 3.</description>
+            /// <description>HealthCheckConfig.Policy: specifies whether to withdraw published routes when
+            /// health checks fail. Valid values:</description>
+            /// <description>revoke_route (default): withdraws published routes.</description>
+            /// <description>reserve_route: does not withdraw published routes.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "healthCheckConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.HealthCheckConfigProperty\"}]}}", isOptional: true)]
             public object? HealthCheckConfig
@@ -402,9 +489,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property name: The name of the IPsec connection.</summary>
+            /// <summary>Property name: The name of the IPsec-VPN connection.</summary>
             /// <remarks>
-            /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+            /// The name must be 1 to 100 characters in length and cannot start with <c>http:\/\/</c> or
+            /// <c>https:\/\/</c>.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

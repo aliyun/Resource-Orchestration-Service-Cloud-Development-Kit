@@ -18,7 +18,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
             get;
         }
 
-        /// <summary>Property groupId: Domain name grouping, the default is the "default grouping" GroupId.</summary>
+        /// <summary>Property groupId: The ID of the domain name group.</summary>
+        /// <remarks>
+        /// If you do not specify this parameter, pass an
+        /// empty string, or pass defaultGroup, the domain name is added to the default
+        /// group. You can call the AddDomainGroup operation to obtain the group ID.
+        /// </remarks>
         [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? GroupId
@@ -72,7 +77,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property groupId: Domain name grouping, the default is the "default grouping" GroupId.</summary>
+            /// <summary>Property groupId: The ID of the domain name group.</summary>
+            /// <remarks>
+            /// If you do not specify this parameter, pass an
+            /// empty string, or pass defaultGroup, the domain name is added to the default
+            /// group. You can call the AddDomainGroup operation to obtain the group ID.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? GroupId

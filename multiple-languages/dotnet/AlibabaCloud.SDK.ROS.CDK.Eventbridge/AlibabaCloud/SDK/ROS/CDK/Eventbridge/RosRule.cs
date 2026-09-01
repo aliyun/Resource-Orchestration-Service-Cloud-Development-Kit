@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::EventBridge::Rule`, which is used to create an event rule for an event bus.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::EventBridge::Rule`, which creates an event rule for a specified event bus.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eventbridge-rule
@@ -124,7 +124,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: filterPattern: The event pattern, in the JSON format.
+        /// <strong>Property</strong>: filterPattern: The event pattern, in JSON format. Supported pattern types are `stringEqual` and
+        /// `stringExpression`. Each field can contain a maximum of five expressions in a map
+        /// structure.
         /// </remarks>
         [JsiiProperty(name: "filterPattern", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}")]
         public virtual object FilterPattern

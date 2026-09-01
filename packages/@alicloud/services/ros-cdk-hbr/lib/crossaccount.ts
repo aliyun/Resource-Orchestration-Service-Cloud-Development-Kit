@@ -10,12 +10,14 @@ export { RosCrossAccount as CrossAccountProperty };
 export interface CrossAccountProps {
 
     /**
-     * Property alias: The alias of the cross-account authorization.
+     * Property alias: The alias. The maximum length is 32 characters. This parameter is not required
+     * for cross-account backups that are configured based on a resource directory.
      */
     readonly alias?: string | ros.IResolvable;
 
     /**
-     * Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.
+     * Property crossAccountRoleName: The name of the RAM role for the account to back up. This parameter is used when
+     * you configure a cross-account backup by assuming a RAM role.
      */
     readonly crossAccountRoleName?: string | ros.IResolvable;
 

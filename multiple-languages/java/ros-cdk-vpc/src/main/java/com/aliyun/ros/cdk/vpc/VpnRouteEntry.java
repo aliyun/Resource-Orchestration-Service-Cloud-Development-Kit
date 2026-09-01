@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VpnRouteEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.752Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.553Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnRouteEntry")
 public class VpnRouteEntry extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IVpnRouteEntry {
 
@@ -220,24 +220,34 @@ public class VpnRouteEntry extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property weight: The weight of the destination route.
+         * Property weight: The weight of the destination-based route.
          * <p>
-         * Valid values: 0|100.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>100: a high priority</li>
+         * <li>0: a low priority</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param weight Property weight: The weight of the destination route. This parameter is required.
+         * @param weight Property weight: The weight of the destination-based route. This parameter is required.
          */
         public Builder weight(final java.lang.Number weight) {
             this.props.weight(weight);
             return this;
         }
         /**
-         * Property weight: The weight of the destination route.
+         * Property weight: The weight of the destination-based route.
          * <p>
-         * Valid values: 0|100.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>100: a high priority</li>
+         * <li>0: a low priority</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param weight Property weight: The weight of the destination route. This parameter is required.
+         * @param weight Property weight: The weight of the destination-based route. This parameter is required.
          */
         public Builder weight(final com.aliyun.ros.cdk.core.IResolvable weight) {
             this.props.weight(weight);
@@ -245,20 +255,26 @@ public class VpnRouteEntry extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property description: The description of the VPN destination route.
+         * Property description: The description of the destination-based route.
+         * <p>
+         * The description must be 1 to 100 characters in length, and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of the VPN destination route. This parameter is required.
+         * @param description Property description: The description of the destination-based route. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: The description of the VPN destination route.
+         * Property description: The description of the destination-based route.
+         * <p>
+         * The description must be 1 to 100 characters in length, and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of the VPN destination route. This parameter is required.
+         * @param description Property description: The description of the destination-based route. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
@@ -266,20 +282,26 @@ public class VpnRouteEntry extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property overlayMode: The overlay mode.
+         * Property overlayMode: The tunneling protocol.
+         * <p>
+         * The value is set to Ipsec, which indicates the IPsec
+         * tunneling protocol.
          * <p>
          * @return {@code this}
-         * @param overlayMode Property overlayMode: The overlay mode. This parameter is required.
+         * @param overlayMode Property overlayMode: The tunneling protocol. This parameter is required.
          */
         public Builder overlayMode(final java.lang.String overlayMode) {
             this.props.overlayMode(overlayMode);
             return this;
         }
         /**
-         * Property overlayMode: The overlay mode.
+         * Property overlayMode: The tunneling protocol.
+         * <p>
+         * The value is set to Ipsec, which indicates the IPsec
+         * tunneling protocol.
          * <p>
          * @return {@code this}
-         * @param overlayMode Property overlayMode: The overlay mode. This parameter is required.
+         * @param overlayMode Property overlayMode: The tunneling protocol. This parameter is required.
          */
         public Builder overlayMode(final com.aliyun.ros.cdk.core.IResolvable overlayMode) {
             this.props.overlayMode(overlayMode);

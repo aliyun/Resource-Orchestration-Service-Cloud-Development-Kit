@@ -95,7 +95,7 @@ export interface IImage extends ros.IResource {
     readonly attrUsage: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CloudPhone::Image`, which is used to query the information about an image.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CloudPhone::Image`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-image
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::SupabaseProject`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::SupabaseProject`The , which resource creates a Supabase project.
 type SupabaseProject interface {
 	alicloudroscdkcore.Resource
 	ISupabaseProject

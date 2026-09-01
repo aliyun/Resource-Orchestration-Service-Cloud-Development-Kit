@@ -10,7 +10,9 @@ export { RosPrefixList as PrefixListProperty };
 export interface PrefixListProps {
 
     /**
-     * Property addressFamily: The IP address family. Valid values: IPv4 IPv6
+     * Property addressFamily: The IP address family. Valid values:
+     * - IPv4
+     * - IPv6
      */
     readonly addressFamily: string | ros.IResolvable;
 
@@ -47,7 +49,7 @@ export interface IPrefixList extends ros.IResource {
     readonly attrPrefixListId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::PrefixList`, which is used to create a prefix list.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::PrefixList`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrefixList`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-prefixlist
  */

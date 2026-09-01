@@ -361,7 +361,7 @@ export interface IOssStockTask extends ros.IResource {
     readonly attrVideoVoiceAntispamFreezeConfig: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::OssStockTask`, which is used to create a full scan task for Object Storage Service (OSS) buckets.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::OssStockTask`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosOssStockTask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-ossstocktask
  */

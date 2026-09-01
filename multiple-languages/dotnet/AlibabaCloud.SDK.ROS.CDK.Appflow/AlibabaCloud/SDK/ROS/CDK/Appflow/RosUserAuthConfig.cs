@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Appflow
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::UserAuthConfig`, which is used to create configurations for a user credential.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::UserAuthConfig`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `UserAuthConfig` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-userauthconfig
@@ -78,7 +78,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Appflow
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: authConfig: AuthConfig
+        /// <strong>Property</strong>: authConfig: The details of the authentication configuration. The value is a JSON string.
         /// </remarks>
         [JsiiProperty(name: "authConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}")]
         public virtual object AuthConfig

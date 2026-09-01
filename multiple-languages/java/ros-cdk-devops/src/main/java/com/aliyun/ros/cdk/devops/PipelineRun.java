@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.devops;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DEVOPS::PipelineRun</code>, which is used to run a pipeline.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DEVOPS::PipelineRun</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:19:02.051Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:13:17.454Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.devops.$Module.class, fqn = "@alicloud/ros-cdk-devops.PipelineRun")
 public class PipelineRun extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.devops.IPipelineRun {
 

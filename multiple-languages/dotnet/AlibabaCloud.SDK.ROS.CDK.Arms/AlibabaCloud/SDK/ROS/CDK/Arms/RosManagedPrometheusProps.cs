@@ -16,7 +16,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         private object _clusterType;
 
         /// <remarks>
-        /// <strong>Property</strong>: clusterType: The type of the cluster. Currently, only ask, ecs and one clusters are supported. Default is ecs.
+        /// <strong>Property</strong>: clusterType: The cluster type.
+        /// Valid values:
+        /// *   ecs: ECS
+        /// *   one: ACK One
+        /// *   ask: ASK
+        /// *   pro: Container Monitoring Pro
         /// </remarks>
         [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ClusterType
@@ -210,7 +215,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         private object? _grafanaInstanceId;
 
         /// <remarks>
-        /// <strong>Property</strong>: grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster. When empty or "free", binds to the shared version of Grafana.
+        /// <strong>Property</strong>: grafanaInstanceId: The ID of the managed Grafana workspace that is associated with the cluster. If
+        /// you set this parameter to free or leave this parameter empty, the cluster is
+        /// associated with a shared Grafana workspace.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "grafanaInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

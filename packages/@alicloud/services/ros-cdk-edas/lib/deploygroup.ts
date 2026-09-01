@@ -42,7 +42,7 @@ export interface IDeployGroup extends ros.IResource {
     readonly attrId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::DeployGroup`, which is used to create an instance group for an application.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::DeployGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeployGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-deploygroup
  */

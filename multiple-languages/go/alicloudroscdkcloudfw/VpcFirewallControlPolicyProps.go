@@ -104,11 +104,11 @@ type VpcFirewallControlPolicyProps struct {
 	// It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
 	// Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must have a value, and you need to set the end time.
 	EndTime interface{} `field:"optional" json:"endTime" yaml:"endTime"`
-	// Property lang: The natural language of the request and response.
+	// Property lang: The language of the request and response.
 	//
 	// Valid values:
-	// zh: Chinese
-	// en: English.
+	// - zh (default): Chinese
+	// - en: English.
 	Lang interface{} `field:"optional" json:"lang" yaml:"lang"`
 	// Property memberUid: Member account UID of current Alibaba Cloud account.
 	MemberUid interface{} `field:"optional" json:"memberUid" yaml:"memberUid"`

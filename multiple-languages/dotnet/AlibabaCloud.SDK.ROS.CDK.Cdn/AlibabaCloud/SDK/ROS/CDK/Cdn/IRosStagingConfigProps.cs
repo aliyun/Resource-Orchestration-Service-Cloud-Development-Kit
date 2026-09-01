@@ -12,7 +12,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
     public interface IRosStagingConfigProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: domainName: The domain name of the CDN.
+        /// <strong>Property</strong>: domainName: The accelerated domain name. Only one domain name can be configured at a time.
         /// </remarks>
         [JsiiProperty(name: "domainName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object DomainName
@@ -41,7 +41,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: domainName: The domain name of the CDN.
+            /// <strong>Property</strong>: domainName: The accelerated domain name. Only one domain name can be configured at a time.
             /// </remarks>
             [JsiiProperty(name: "domainName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DomainName

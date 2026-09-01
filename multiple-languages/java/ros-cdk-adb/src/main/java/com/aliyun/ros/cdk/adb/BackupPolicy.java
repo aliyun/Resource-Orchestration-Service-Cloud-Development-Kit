@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.adb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADB::BackupPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:14:30.205Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:53:53.086Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.BackupPolicy")
 public class BackupPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.adb.IBackupPolicy {
 
@@ -150,24 +150,38 @@ public class BackupPolicy extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property preferredBackupTime: The preferred backup time.
+         * Property preferredBackupTime: The start time of the full backup within a time range.
          * <p>
-         * Format: HH:mmZ-HH:mmZ. Example: 02:00Z-03:00Z
+         * Specify the time range in
+         * the HH:mmZ-HH:mmZ format. The time must be in UTC.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The time range is 1 hour.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param preferredBackupTime Property preferredBackupTime: The preferred backup time. This parameter is required.
+         * @param preferredBackupTime Property preferredBackupTime: The start time of the full backup within a time range. This parameter is required.
          */
         public Builder preferredBackupTime(final java.lang.String preferredBackupTime) {
             this.props.preferredBackupTime(preferredBackupTime);
             return this;
         }
         /**
-         * Property preferredBackupTime: The preferred backup time.
+         * Property preferredBackupTime: The start time of the full backup within a time range.
          * <p>
-         * Format: HH:mmZ-HH:mmZ. Example: 02:00Z-03:00Z
+         * Specify the time range in
+         * the HH:mmZ-HH:mmZ format. The time must be in UTC.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The time range is 1 hour.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param preferredBackupTime Property preferredBackupTime: The preferred backup time. This parameter is required.
+         * @param preferredBackupTime Property preferredBackupTime: The start time of the full backup within a time range. This parameter is required.
          */
         public Builder preferredBackupTime(final com.aliyun.ros.cdk.core.IResolvable preferredBackupTime) {
             this.props.preferredBackupTime(preferredBackupTime);
@@ -175,24 +189,36 @@ public class BackupPolicy extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property backupRetentionPeriod: The number of days for which backup files are retained.
+         * Property backupRetentionPeriod: The number of days for which to retain full backup files.
          * <p>
          * Valid values: 7 to 730.
          * <p>
+         * <blockquote>
+         * <p>
+         * If you do not specify this parameter, the default value 7 is used.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
-         * @param backupRetentionPeriod Property backupRetentionPeriod: The number of days for which backup files are retained. This parameter is required.
+         * @param backupRetentionPeriod Property backupRetentionPeriod: The number of days for which to retain full backup files. This parameter is required.
          */
         public Builder backupRetentionPeriod(final java.lang.Number backupRetentionPeriod) {
             this.props.backupRetentionPeriod(backupRetentionPeriod);
             return this;
         }
         /**
-         * Property backupRetentionPeriod: The number of days for which backup files are retained.
+         * Property backupRetentionPeriod: The number of days for which to retain full backup files.
          * <p>
          * Valid values: 7 to 730.
          * <p>
+         * <blockquote>
+         * <p>
+         * If you do not specify this parameter, the default value 7 is used.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
-         * @param backupRetentionPeriod Property backupRetentionPeriod: The number of days for which backup files are retained. This parameter is required.
+         * @param backupRetentionPeriod Property backupRetentionPeriod: The number of days for which to retain full backup files. This parameter is required.
          */
         public Builder backupRetentionPeriod(final com.aliyun.ros.cdk.core.IResolvable backupRetentionPeriod) {
             this.props.backupRetentionPeriod(backupRetentionPeriod);
@@ -200,24 +226,46 @@ public class BackupPolicy extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property enableBackupLog: Whether to enable log backup.
+         * Property enableBackupLog: Specifies whether to enable real-time log backup.
          * <p>
-         * Valid values: Enable, Disable.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Enable</li>
+         * <li>Disable</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you leave this parameter empty, the default value Enable is used.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param enableBackupLog Property enableBackupLog: Whether to enable log backup. This parameter is required.
+         * @param enableBackupLog Property enableBackupLog: Specifies whether to enable real-time log backup. This parameter is required.
          */
         public Builder enableBackupLog(final java.lang.String enableBackupLog) {
             this.props.enableBackupLog(enableBackupLog);
             return this;
         }
         /**
-         * Property enableBackupLog: Whether to enable log backup.
+         * Property enableBackupLog: Specifies whether to enable real-time log backup.
          * <p>
-         * Valid values: Enable, Disable.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Enable</li>
+         * <li>Disable</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you leave this parameter empty, the default value Enable is used.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param enableBackupLog Property enableBackupLog: Whether to enable log backup. This parameter is required.
+         * @param enableBackupLog Property enableBackupLog: Specifies whether to enable real-time log backup. This parameter is required.
          */
         public Builder enableBackupLog(final com.aliyun.ros.cdk.core.IResolvable enableBackupLog) {
             this.props.enableBackupLog(enableBackupLog);
@@ -225,24 +273,36 @@ public class BackupPolicy extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property logBackupRetentionPeriod: The number of days for which log backup files are retained.
+         * Property logBackupRetentionPeriod: The number of days for which to retain log backup files.
          * <p>
          * Valid values: 7 to 730.
          * <p>
+         * <blockquote>
+         * <p>
+         * If you do not specify this parameter, the default value 7 is used.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
-         * @param logBackupRetentionPeriod Property logBackupRetentionPeriod: The number of days for which log backup files are retained. This parameter is required.
+         * @param logBackupRetentionPeriod Property logBackupRetentionPeriod: The number of days for which to retain log backup files. This parameter is required.
          */
         public Builder logBackupRetentionPeriod(final java.lang.Number logBackupRetentionPeriod) {
             this.props.logBackupRetentionPeriod(logBackupRetentionPeriod);
             return this;
         }
         /**
-         * Property logBackupRetentionPeriod: The number of days for which log backup files are retained.
+         * Property logBackupRetentionPeriod: The number of days for which to retain log backup files.
          * <p>
          * Valid values: 7 to 730.
          * <p>
+         * <blockquote>
+         * <p>
+         * If you do not specify this parameter, the default value 7 is used.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
-         * @param logBackupRetentionPeriod Property logBackupRetentionPeriod: The number of days for which log backup files are retained. This parameter is required.
+         * @param logBackupRetentionPeriod Property logBackupRetentionPeriod: The number of days for which to retain log backup files. This parameter is required.
          */
         public Builder logBackupRetentionPeriod(final com.aliyun.ros.cdk.core.IResolvable logBackupRetentionPeriod) {
             this.props.logBackupRetentionPeriod(logBackupRetentionPeriod);

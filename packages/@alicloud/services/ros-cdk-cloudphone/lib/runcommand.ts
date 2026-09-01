@@ -10,8 +10,9 @@ export { RosRunCommand as RunCommandProperty };
 export interface RunCommandProps {
 
     /**
-     * Property command: The command to be executed.
-     * The maximum length of a command is 1024 bytes, and only supports lowercase letters, numbers, downline (_), points (.), Slanting (\/), colon (:), medium line (-).
+     * Property command: The command that you want to run.\
+     * The name can be up to 1024 bytes in length and can contain only letters, digits,
+     * underscores (_), periods (.), slashes (\/), colons (:), and hyphens (-).
      */
     readonly command: string | ros.IResolvable;
 
@@ -34,7 +35,7 @@ export interface IRunCommand extends ros.IResource {
     readonly props: RunCommandProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::RunCommand`, which is used to run a command on cloud phones.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::RunCommand`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRunCommand`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-runcommand
  */

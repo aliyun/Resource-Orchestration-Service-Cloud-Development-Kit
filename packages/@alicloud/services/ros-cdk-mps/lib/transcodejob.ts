@@ -10,7 +10,10 @@ export { RosTranscodeJob as TranscodeJobProperty };
 export interface TranscodeJobProps {
 
     /**
-     * Property input: The input configuration of the job. For more information, see Input details.
+     * Property input: Job input.
+     * > - In ApsaraVideo Media Processing APIs, the Object value must be URL-encoded
+     * using UTF-8 encoding.
+     * - The OSS region must match the region where MPS is deployed.
      */
     readonly input: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -30,7 +33,10 @@ export interface TranscodeJobProps {
     readonly pipelineId: string | ros.IResolvable;
 
     /**
-     * Property outputLocation: The region of the OSS bucket where the output files are stored.
+     * Property outputLocation: The OSS region (OSS Region) where the output bucket resides.
+     * - The OSS bucket must be in the same region as the ApsaraVideo Media Processing
+     * service.
+     * - Follows the OSS bucket definition.
      */
     readonly outputLocation?: string | ros.IResolvable;
 }

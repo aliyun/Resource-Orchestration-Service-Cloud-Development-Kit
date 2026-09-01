@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudsiem
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSiem::UserSourceLogConfig`, which is used to add logs of a cloud service within an account.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSiem::UserSourceLogConfig`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `UserSourceLogConfig` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsiem-usersourcelogconfig
@@ -97,7 +97,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudsiem
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: sourceLogInfo: The info of log to be added.
+        /// <strong>Property</strong>: sourceLogInfo: The detailed information about the Simple Log Service (SLS) log to be collected.
+        /// The value is a JSON string.
         /// </remarks>
         [JsiiProperty(name: "sourceLogInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cloudsiem.RosUserSourceLogConfig.SourceLogInfoProperty\"}]}}")]
         public virtual object SourceLogInfo

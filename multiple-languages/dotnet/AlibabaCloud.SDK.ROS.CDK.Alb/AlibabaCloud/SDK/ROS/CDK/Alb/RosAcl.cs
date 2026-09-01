@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Acl`, which is used to create an access control list (ACL).</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Acl`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Acl` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-acl
@@ -124,8 +124,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: aclName: The name of the ACL. The name must be 2 to 128 characters in length, and can contain
-        /// letters, digits, hyphens (-) and underscores (_). It must start with a letter.
+        /// <strong>Property</strong>: aclName: The name of the ACL. The name must be 2 to 128 characters in length, and can
+        /// contain digits, periods (.), underscores (_), hyphens (-), letters, and Chinese
+        /// characters. The name must start with a letter, a Chinese character, or a digit.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "aclName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

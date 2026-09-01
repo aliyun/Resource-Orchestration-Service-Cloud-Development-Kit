@@ -439,7 +439,10 @@ function rosSyncEcsHostRegionsPropertyToRosTemplate(properties: any): any {
 export interface RosUserVpcAuthorizationProps {
 
     /**
-     * @Property authorizedUserId: The account ID of the user who authorizes the resource.
+     * @Property authorizedUserId: The ID of the account that owns the authorized resources.
+     * > Only cloud accounts are supported. RAM users are not supported. You can
+     * associate accounts only if they are on the same site. Cross-site association
+     * is not supported.
      */
     readonly authorizedUserId: string | ros.IResolvable;
 
@@ -456,7 +459,9 @@ export interface RosUserVpcAuthorizationProps {
     readonly authCode?: string | ros.IResolvable;
 
     /**
-     * @Property authType: Authorization type.
+     * @Property authType: The authorization type. Valid values:
+     * - NORMAL: standard authorization.
+     * - CLOUD_PRODUCT: cloud product authorization.
      */
     readonly authType?: string | ros.IResolvable;
 
@@ -532,7 +537,10 @@ export class RosUserVpcAuthorization extends ros.RosResource {
 
 
     /**
-     * @Property authorizedUserId: The account ID of the user who authorizes the resource.
+     * @Property authorizedUserId: The ID of the account that owns the authorized resources.
+     * > Only cloud accounts are supported. RAM users are not supported. You can
+     * associate accounts only if they are on the same site. Cross-site association
+     * is not supported.
      */
     public authorizedUserId: string | ros.IResolvable;
 
@@ -549,7 +557,9 @@ export class RosUserVpcAuthorization extends ros.RosResource {
     public authCode: string | ros.IResolvable | undefined;
 
     /**
-     * @Property authType: Authorization type.
+     * @Property authType: The authorization type. Valid values:
+     * - NORMAL: standard authorization.
+     * - CLOUD_PRODUCT: cloud product authorization.
      */
     public authType: string | ros.IResolvable | undefined;
 
@@ -603,9 +613,20 @@ export interface RosZoneProps {
     readonly zoneName: string | ros.IResolvable;
 
     /**
-     * @Property dnsGroup: Built-in authority location area. Valid values:
-     * - NORMAL_ZONE: Default. normal zone (The parsing response result will be cached, and only back to the built-in authority normal zone if the cache is missed, the effect of parsing changes is affected by TTL time; Cannot use custom line analysis, weight analysis function.
-     * - FAST_ZONE: Fast zone (Recommended: directly reply to the parsing request, the parsing delay is the lowest, and the record changes take effect in real time; Support custom line analysis, weight analysis.
+     * @Property dnsGroup: The location of the built-in authoritative zone. Valid values:
+     * - NORMAL_ZONE: Standard zone. DNS responses are cached. If a cache miss occurs,
+     * the query is sent to the built-in authoritative standard zone. The time to live
+     * (TTL) value affects the time when a DNS record change takes effect. You cannot
+     * use custom DNS lines or weighted round-robin.
+     * - FAST_ZONE: Accelerated zone (recommended). DNS queries are directly responded
+     * to with the lowest latency. DNS record changes take effect in real time. You can
+     * use custom DNS lines and weighted round-robin.
+     * Default value: NORMAL_ZONE.
+     * > The built-in authoritative accelerated zone is located before the cache module.
+     * DNS responses are not cached. This may increase the number of DNS queries and
+     * your costs.
+     * > Starting from April 30, 2025 (UTC+8), when new users activate Cloud DNS
+     * PrivateZone, added zones are set as accelerated zones by default.
      */
     readonly dnsGroup?: string | ros.IResolvable;
 
@@ -615,9 +636,14 @@ export interface RosZoneProps {
     readonly ignoredStackTagKeys?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property proxyPattern: ZONE: completely hijack the entire zone.
-     * RECORD: Incomplete hijacking, recursive resolution agent.
-     * Default to ZONE.
+     * @Property proxyPattern: Specifies whether to enable subdomain recursive proxy. Valid values:
+     * - ZONE: Disables the feature. If a DNS query for a subdomain that does not exist
+     * under the current domain name is received, an NXDOMAIN error is returned.
+     * - RECORD: Enables the feature. If a DNS query for a subdomain that does not exist
+     * under the current domain name is received, the query is processed by the
+     * forwarding and recursion modules in sequence. The final result is used to respond
+     * to the DNS query.
+     * Default value: ZONE.
      */
     readonly proxyPattern?: string | ros.IResolvable;
 
@@ -766,9 +792,20 @@ export class RosZone extends ros.RosResource {
     public zoneName: string | ros.IResolvable;
 
     /**
-     * @Property dnsGroup: Built-in authority location area. Valid values:
-     * - NORMAL_ZONE: Default. normal zone (The parsing response result will be cached, and only back to the built-in authority normal zone if the cache is missed, the effect of parsing changes is affected by TTL time; Cannot use custom line analysis, weight analysis function.
-     * - FAST_ZONE: Fast zone (Recommended: directly reply to the parsing request, the parsing delay is the lowest, and the record changes take effect in real time; Support custom line analysis, weight analysis.
+     * @Property dnsGroup: The location of the built-in authoritative zone. Valid values:
+     * - NORMAL_ZONE: Standard zone. DNS responses are cached. If a cache miss occurs,
+     * the query is sent to the built-in authoritative standard zone. The time to live
+     * (TTL) value affects the time when a DNS record change takes effect. You cannot
+     * use custom DNS lines or weighted round-robin.
+     * - FAST_ZONE: Accelerated zone (recommended). DNS queries are directly responded
+     * to with the lowest latency. DNS record changes take effect in real time. You can
+     * use custom DNS lines and weighted round-robin.
+     * Default value: NORMAL_ZONE.
+     * > The built-in authoritative accelerated zone is located before the cache module.
+     * DNS responses are not cached. This may increase the number of DNS queries and
+     * your costs.
+     * > Starting from April 30, 2025 (UTC+8), when new users activate Cloud DNS
+     * PrivateZone, added zones are set as accelerated zones by default.
      */
     public dnsGroup: string | ros.IResolvable | undefined;
 
@@ -778,9 +815,14 @@ export class RosZone extends ros.RosResource {
     public ignoredStackTagKeys: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property proxyPattern: ZONE: completely hijack the entire zone.
-     * RECORD: Incomplete hijacking, recursive resolution agent.
-     * Default to ZONE.
+     * @Property proxyPattern: Specifies whether to enable subdomain recursive proxy. Valid values:
+     * - ZONE: Disables the feature. If a DNS query for a subdomain that does not exist
+     * under the current domain name is received, an NXDOMAIN error is returned.
+     * - RECORD: Enables the feature. If a DNS query for a subdomain that does not exist
+     * under the current domain name is received, the query is processed by the
+     * forwarding and recursion modules in sequence. The final result is used to respond
+     * to the DNS query.
+     * Default value: ZONE.
      */
     public proxyPattern: string | ros.IResolvable | undefined;
 
@@ -894,17 +936,33 @@ function rosZoneTagsPropertyToRosTemplate(properties: any): any {
 export interface RosZoneRecordProps {
 
     /**
-     * @Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
+     * @Property rr: The host record. A host record is the prefix of a domain name. Common host
+     * records include www, @, \* (for wildcard DNS), and mail (for mailboxes).
+     * For example, to resolve @.example.com, set the host record to "@", not an empty
+     * string.
      */
     readonly rr: string | ros.IResolvable;
 
     /**
-     * @Property status: Allowed values: [ENABLE, DISABLE]
+     * @Property status: The status of the DNS record. Valid values:
+     * - ENABLE: Enables DNS resolution.
+     * - DISABLE: Pauses DNS resolution.
      */
     readonly status: string | ros.IResolvable;
 
     /**
-     * @Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV
+     * @Property type: The type of the DNS record. The following types are supported:
+     * - A: Maps a domain name to an IPv4 address in dotted decimal notation.
+     * - AAAA: Maps a domain name to an IPv6 address.
+     * - CNAME: Maps a domain name to another domain name.
+     * - TXT: A text record. The text can be up to 255 characters in length. TXT records
+     * are often used for Sender Policy Framework (SPF) records to prevent spam.
+     * - MX: Maps a domain name to the domain name of a mail server.
+     * - PTR: Maps an IP address to a domain name.
+     * - SRV: Specifies the server for a specific service. The format is: Priority
+     * Weight Port Target. Separate each value with a space.
+     * > Before adding a PTR record, configure a reverse lookup zone. For more
+     * information, see [Reverse DNS lookups and PTR records]().
      */
     readonly type: string | ros.IResolvable;
 
@@ -919,12 +977,14 @@ export interface RosZoneRecordProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
-     * @Property priority: MX record priority, value range [1,99]. Default to 10.
+     * @Property priority: The priority of the MX record. A smaller value indicates a higher priority. Valid
+     * values: \[1, 99].
      */
     readonly priority?: number | ros.IResolvable;
 
     /**
-     * @Property ttl: Survival time, default is 60
+     * @Property ttl: The time to live (TTL). The unit is seconds (s). Valid values are 5, 30, 60, 3600
+     * (1 hour), 43200 (12 hours), and 86400 (1 day). The default value is 60.
      */
     readonly ttl?: number | ros.IResolvable;
 }
@@ -969,6 +1029,13 @@ function RosZoneRecordPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
     errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
     errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    if(properties.ttl && (typeof properties.ttl) !== 'object') {
+        errors.collect(ros.propertyValidator('ttl', ros.validateRange)({
+            data: properties.ttl,
+            min: 5,
+            max: 86400,
+          }));
+    }
     errors.collect(ros.propertyValidator('ttl', ros.validateNumber)(properties.ttl));
     return errors.wrap('supplied properties not correct for "RosZoneRecordProps"');
 }
@@ -1027,17 +1094,33 @@ export class RosZoneRecord extends ros.RosResource {
 
 
     /**
-     * @Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
+     * @Property rr: The host record. A host record is the prefix of a domain name. Common host
+     * records include www, @, \* (for wildcard DNS), and mail (for mailboxes).
+     * For example, to resolve @.example.com, set the host record to "@", not an empty
+     * string.
      */
     public rr: string | ros.IResolvable;
 
     /**
-     * @Property status: Allowed values: [ENABLE, DISABLE]
+     * @Property status: The status of the DNS record. Valid values:
+     * - ENABLE: Enables DNS resolution.
+     * - DISABLE: Pauses DNS resolution.
      */
     public status: string | ros.IResolvable;
 
     /**
-     * @Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV
+     * @Property type: The type of the DNS record. The following types are supported:
+     * - A: Maps a domain name to an IPv4 address in dotted decimal notation.
+     * - AAAA: Maps a domain name to an IPv6 address.
+     * - CNAME: Maps a domain name to another domain name.
+     * - TXT: A text record. The text can be up to 255 characters in length. TXT records
+     * are often used for Sender Policy Framework (SPF) records to prevent spam.
+     * - MX: Maps a domain name to the domain name of a mail server.
+     * - PTR: Maps an IP address to a domain name.
+     * - SRV: Specifies the server for a specific service. The format is: Priority
+     * Weight Port Target. Separate each value with a space.
+     * > Before adding a PTR record, configure a reverse lookup zone. For more
+     * information, see [Reverse DNS lookups and PTR records]().
      */
     public type: string | ros.IResolvable;
 
@@ -1052,12 +1135,14 @@ export class RosZoneRecord extends ros.RosResource {
     public zoneId: string | ros.IResolvable;
 
     /**
-     * @Property priority: MX record priority, value range [1,99]. Default to 10.
+     * @Property priority: The priority of the MX record. A smaller value indicates a higher priority. Valid
+     * values: \[1, 99].
      */
     public priority: number | ros.IResolvable | undefined;
 
     /**
-     * @Property ttl: Survival time, default is 60
+     * @Property ttl: The time to live (TTL). The unit is seconds (s). Valid values are 5, 30, 60, 3600
+     * (1 hour), 43200 (12 hours), and 86400 (1 day). The default value is 60.
      */
     public ttl: number | ros.IResolvable | undefined;
 
@@ -1106,7 +1191,8 @@ export class RosZoneRecord extends ros.RosResource {
 export interface RosZoneVpcBinderProps {
 
     /**
-     * @Property vpcs:
+     * @Property vpcs: The VPCs.
+     * > If you leave this parameter empty, all VPCs bound to the zone are unbound.
      */
     readonly vpcs: Array<RosZoneVpcBinder.VpcsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -1184,7 +1270,8 @@ export class RosZoneVpcBinder extends ros.RosResource {
 
 
     /**
-     * @Property vpcs:
+     * @Property vpcs: The VPCs.
+     * > If you leave this parameter empty, all VPCs bound to the zone are unbound.
      */
     public vpcs: Array<RosZoneVpcBinder.VpcsProperty | ros.IResolvable> | ros.IResolvable;
 

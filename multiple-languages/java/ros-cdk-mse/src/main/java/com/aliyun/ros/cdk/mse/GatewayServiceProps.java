@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mse;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gatewayservice
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.332Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:13:41.690Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.GatewayServiceProps")
 @software.amazon.jsii.Jsii.Proxy(GatewayServiceProps.Jsii$Proxy.class)
 public interface GatewayServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -124,7 +124,17 @@ public interface GatewayServiceProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
-     * Property tlsSetting: TLS settings for the service.
+     * Property tlsSetting: The TLS settings, specified as a JSON string.
+     * <p>
+     * The following fields are supported:
+     * <p>
+     * <ul>
+     * <li><code>mode</code>: The TLS mode.</li>
+     * <li><code>certId</code>: The certificate ID.</li>
+     * <li><code>caCertId</code>: The CA certificate ID.</li>
+     * <li><code>caCertContent</code>: The public key of the CA certificate.</li>
+     * <li><code>sni</code>: The Server Name Indication (SNI).</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTlsSetting() {
         return null;
@@ -470,7 +480,16 @@ public interface GatewayServiceProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link GatewayServiceProps#getTlsSetting}
-         * @param tlsSetting Property tlsSetting: TLS settings for the service.
+         * @param tlsSetting Property tlsSetting: The TLS settings, specified as a JSON string.
+         *                   The following fields are supported:
+         *                   <p>
+         *                   <ul>
+         *                   <li><code>mode</code>: The TLS mode.</li>
+         *                   <li><code>certId</code>: The certificate ID.</li>
+         *                   <li><code>caCertId</code>: The CA certificate ID.</li>
+         *                   <li><code>caCertContent</code>: The public key of the CA certificate.</li>
+         *                   <li><code>sni</code>: The Server Name Indication (SNI).</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder tlsSetting(com.aliyun.ros.cdk.core.IResolvable tlsSetting) {
@@ -480,7 +499,16 @@ public interface GatewayServiceProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link GatewayServiceProps#getTlsSetting}
-         * @param tlsSetting Property tlsSetting: TLS settings for the service.
+         * @param tlsSetting Property tlsSetting: The TLS settings, specified as a JSON string.
+         *                   The following fields are supported:
+         *                   <p>
+         *                   <ul>
+         *                   <li><code>mode</code>: The TLS mode.</li>
+         *                   <li><code>certId</code>: The certificate ID.</li>
+         *                   <li><code>caCertId</code>: The CA certificate ID.</li>
+         *                   <li><code>caCertContent</code>: The public key of the CA certificate.</li>
+         *                   <li><code>sni</code>: The Server Name Indication (SNI).</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder tlsSetting(java.util.Map<java.lang.String, ? extends java.lang.Object> tlsSetting) {

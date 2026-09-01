@@ -7,11 +7,21 @@ package alicloudroscdkecs
 type ImageComponentProps struct {
 	// Property content: The content of the image component.
 	//
-	// The content consists of up to 127 commands.
+	// The image component consists of multiple
+	// commands. The command content cannot exceed 16 KB in size. For information about
+	// the commands supported by Image Builder and the formats of the commands, see
+	// [Commands supported by Image Builder]().
 	Content interface{} `field:"required" json:"content" yaml:"content"`
 	// Property componentType: The type of the image component.
 	//
-	// Only image build components are supported. Set the value to Build.Default value: Build.
+	// Only image building components and image test
+	// components are supported.
+	// Valid values:
+	// - Build
+	// - Test
+	// Default value: Build.
+	// > Image building components can be used only in image building templates. Image
+	// test components can be used only in image test templates.
 	ComponentType interface{} `field:"optional" json:"componentType" yaml:"componentType"`
 	// Property description: The description.
 	//
@@ -24,9 +34,12 @@ type ImageComponentProps struct {
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	// Property resourceGroupId: The ID of the resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
-	// Property systemType: The operating system type supported by the image component.
+	// Property systemType: The type of the operating system supported by the image component.
 	//
-	// Only Linux is supported. Set the value to Linux.Default value: Linux.
+	// Valid values:
+	// - Linux
+	// - Windows
+	// Default value: Linux.
 	SystemType interface{} `field:"optional" json:"systemType" yaml:"systemType"`
 	// Property tags:.
 	Tags *[]*RosImageComponent_TagsProperty `field:"optional" json:"tags" yaml:"tags"`

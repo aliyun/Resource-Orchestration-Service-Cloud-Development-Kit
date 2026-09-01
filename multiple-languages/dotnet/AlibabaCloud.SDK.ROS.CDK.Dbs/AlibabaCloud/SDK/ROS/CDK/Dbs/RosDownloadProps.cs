@@ -16,8 +16,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         private object _formatType;
 
         /// <remarks>
-        /// <strong>Property</strong>: formatType: The format to which the downloaded backup set is converted.
-        /// Valid values: CSV|SQL|Parquet
+        /// <strong>Property</strong>: formatType: The target format of the downloaded data. Valid values:
+        /// - CSV
+        /// - SQL
+        /// - Parquet
+        /// - Bson
+        /// - qp.xb
+        /// > This parameter is required. The `Bson` format is available only for MongoDB
+        /// instances. The `qp.xb` format is available only for ApsaraDB RDS for MySQL
+        /// instances.
         /// </remarks>
         [JsiiProperty(name: "formatType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object FormatType

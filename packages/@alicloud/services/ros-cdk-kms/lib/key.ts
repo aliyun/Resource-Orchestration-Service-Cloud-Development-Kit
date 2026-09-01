@@ -20,7 +20,9 @@ export interface KeyProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property dkmsInstanceId: The ID of the dedicated KMS instance.
+     * Property dkmsInstanceId: The ID of the KMS instance.
+     * > This parameter is required when you create a key for a KMS instance. This
+     * parameter is not required when you create a default key (master key).
      */
     readonly dkmsInstanceId?: string | ros.IResolvable;
 
@@ -58,14 +60,30 @@ export interface KeyProps {
     readonly policy?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * Property protectionLevel: The protection level of the CMK to create. Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
-     * If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
-     * If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
+     * Property protectionLevel: You do not need to specify this parameter. KMS automatically sets an appropriate
+     * protection level for your key.
+     * The protection level of the key. Valid values:
+     * - SOFTWARE
+     * - HSM
+     * > * If you specify DKMSInstanceId, this parameter is ignored. If the instance is
+     * a software key management instance, the protection level is SOFTWARE. If the
+     * instance is a hardware key management instance, the protection level is HSM.
+     * - If you do not specify DKMSInstanceId, leave this parameter empty. KMS sets the
+     * protection level. If a managed HSM is available in the region, KMS sets this
+     * parameter to HSM. Otherwise, KMS sets this parameter to SOFTWARE. For more
+     * information, see [Managed HSM overview]().
      */
     readonly protectionLevel?: string | ros.IResolvable;
 
     /**
-     * Property rotationInterval: The time period for automatic rotation. The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
+     * Property rotationInterval: The automatic rotation period. The format is \`integer\[unit]\`. \`integer\`
+     * indicates the length of the period. \`unit\` indicates the unit of time. Valid
+     * units: d (day), h (hour), m (minute), and s (second). For example, both 7d and
+     * 604800s represent a period of 7 days.
+     * - If the key is a default key, the value is 365d.
+     * - If the key is a software-protected key, the value can be from 7d to 365d.
+     * - If the key is a hardware-protected key, automatic rotation is not supported.
+     * > This parameter is required if you set EnableAutomaticRotation to true.
      */
     readonly rotationInterval?: string | ros.IResolvable;
 

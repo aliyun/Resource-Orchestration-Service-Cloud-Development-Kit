@@ -44,7 +44,14 @@ type DesktopsProps struct {
 	// PrePaid: subscription
 	// Default value: PostPaid.
 	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
-	// Property desktopName: The name of the cloud desktop.
+	// Property desktopName: The name of the desktop.
+	//
+	// The name must meet the following requirements:
+	// - The name cannot exceed 64 characters in length.
+	// - It must start with a letter or a Chinese character. It cannot start
+	// with`http:\/\/` or `https:\/\/`.
+	// - It can contain letters, digits, Chinese characters, colons (:), underscores
+	// (_), periods (.), and hyphens (-).
 	DesktopName interface{} `field:"optional" json:"desktopName" yaml:"desktopName"`
 	// Property desktopNameSuffix: Specifies whether to automatically add a suffix to the cloud desktop name when you create multiple cloud desktops at a time.
 	//

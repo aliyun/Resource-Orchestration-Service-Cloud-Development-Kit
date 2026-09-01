@@ -130,6 +130,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        private object? _overrideExisting;
+
+        /// <summary>Property overrideExisting: Whether to override configuration of already installed addons when creating.</summary>
+        /// <remarks>
+        /// If true, when creating, addons that already exist will have their configuration overridden, and addons that do not exist will be installed. When deleting, only uninstall addons that are installed during the creation stage.
+        /// Cannot be used together with InstalledIgnore.
+        /// Default false.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "overrideExisting", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? OverrideExisting
+        {
+            get => _overrideExisting;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _overrideExisting = value;
+            }
+        }
+
         private object? _rolePolicy;
 
         /// <summary>Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.</summary>

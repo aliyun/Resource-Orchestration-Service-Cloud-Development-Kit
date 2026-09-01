@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAG::AppUser</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:44:50.970Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:26:52.072Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.AppUser")
 public class AppUser extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sag.IAppUser {
 
@@ -120,24 +120,26 @@ public class AppUser extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property bandwidth: The bandwidth.
+         * Property bandwidth: The maximum bandwidth value.
          * <p>
-         * Unit: Kbit/s. Maximum bandwidth: 2,000 Kbit/s.
+         * Unit: Kbit/s. Valid values: 1 to 20000. Default
+         * value: 2000.
          * <p>
          * @return {@code this}
-         * @param bandwidth Property bandwidth: The bandwidth. This parameter is required.
+         * @param bandwidth Property bandwidth: The maximum bandwidth value. This parameter is required.
          */
         public Builder bandwidth(final java.lang.Number bandwidth) {
             this.props.bandwidth(bandwidth);
             return this;
         }
         /**
-         * Property bandwidth: The bandwidth.
+         * Property bandwidth: The maximum bandwidth value.
          * <p>
-         * Unit: Kbit/s. Maximum bandwidth: 2,000 Kbit/s.
+         * Unit: Kbit/s. Valid values: 1 to 20000. Default
+         * value: 2000.
          * <p>
          * @return {@code this}
-         * @param bandwidth Property bandwidth: The bandwidth. This parameter is required.
+         * @param bandwidth Property bandwidth: The maximum bandwidth value. This parameter is required.
          */
         public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
             this.props.bandwidth(bandwidth);
@@ -249,24 +251,28 @@ public class AppUser extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property password: The password used to log on to SAG APP.
+         * Property password: The password that is used to log on to the SAG app.
          * <p>
-         * For a client account, if you specify the username, you must also specify the password.
+         * The password must be 8 to 32 characters in length. It can contain letters,
+         * digits, underscores (_), at signs (&#64;), and hyphens (-). It must start with a
+         * letter or a digit.
          * <p>
          * @return {@code this}
-         * @param password Property password: The password used to log on to SAG APP. This parameter is required.
+         * @param password Property password: The password that is used to log on to the SAG app. This parameter is required.
          */
         public Builder password(final java.lang.String password) {
             this.props.password(password);
             return this;
         }
         /**
-         * Property password: The password used to log on to SAG APP.
+         * Property password: The password that is used to log on to the SAG app.
          * <p>
-         * For a client account, if you specify the username, you must also specify the password.
+         * The password must be 8 to 32 characters in length. It can contain letters,
+         * digits, underscores (_), at signs (&#64;), and hyphens (-). It must start with a
+         * letter or a digit.
          * <p>
          * @return {@code this}
-         * @param password Property password: The password used to log on to SAG APP. This parameter is required.
+         * @param password Property password: The password that is used to log on to the SAG app. This parameter is required.
          */
         public Builder password(final com.aliyun.ros.cdk.core.IResolvable password) {
             this.props.password(password);
@@ -276,9 +282,18 @@ public class AppUser extends com.aliyun.ros.cdk.core.Resource implements com.ali
         /**
          * Property userName: The username of the client account.
          * <p>
-         * Usernames of client accounts added to the same
-         * SAG APP instance must be unique.
-         * For a client account, if you specify the username, you must also specify the password.
+         * The usernames of client accounts added to the
+         * same SAG app instance must be unique.
+         * The username must be 7 to 33 characters in length, and can contain letters,
+         * digits, underscores (_), at signs (&#64;), periods (.), and hyphens (-). It must
+         * start with a letter or a digit.
+         * <p>
+         * <blockquote>
+         * <p>
+         * For a client account, if you specify the username, you must also specify the
+         * password. If you specify the password, you must specify the username.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param userName Property userName: The username of the client account. This parameter is required.
@@ -290,9 +305,18 @@ public class AppUser extends com.aliyun.ros.cdk.core.Resource implements com.ali
         /**
          * Property userName: The username of the client account.
          * <p>
-         * Usernames of client accounts added to the same
-         * SAG APP instance must be unique.
-         * For a client account, if you specify the username, you must also specify the password.
+         * The usernames of client accounts added to the
+         * same SAG app instance must be unique.
+         * The username must be 7 to 33 characters in length, and can contain letters,
+         * digits, underscores (_), at signs (&#64;), periods (.), and hyphens (-). It must
+         * start with a letter or a digit.
+         * <p>
+         * <blockquote>
+         * <p>
+         * For a client account, if you specify the username, you must also specify the
+         * password. If you specify the password, you must specify the username.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param userName Property userName: The username of the client account. This parameter is required.

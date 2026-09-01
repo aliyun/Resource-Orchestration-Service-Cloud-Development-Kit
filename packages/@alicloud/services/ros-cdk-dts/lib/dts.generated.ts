@@ -247,7 +247,7 @@ function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::ConsumerGroup`, which is used to create a consumer group for a change tracking instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::ConsumerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumergroup
  */
@@ -343,16 +343,18 @@ export interface RosInstanceProps {
 
     /**
      * @Property payType: The billing method. Valid values:
-     * - **PrePaid**: subscription
-     * - **PostPaid**: pay-as-you-go
+     * *   PrePaid: subscription
+     * *   PostPaid: pay-as-you-go
+     * >  This parameter must be specified.
      */
     readonly payType: string | ros.IResolvable;
 
     /**
      * @Property type: The type of the DTS instance. Valid values:
-     * - **MIGRATION*: data migration instance
-     * - **SYNC**: data synchronization instance
-     * - **SUBSCRIBE**: change tracking instance
+     * *   MIGRATION: data migration instance
+     * *   SYNC: data synchronization instance
+     * *   SUBSCRIBE: change tracking instance
+     * > You must specify one of this parameter and the JobId parameter.
      */
     readonly type: string | ros.IResolvable;
 
@@ -364,14 +366,19 @@ export interface RosInstanceProps {
     readonly autoPay?: boolean | ros.IResolvable;
 
     /**
-     * @Property autoStart: Specifies whether to automatically start the task after the DTS instance is purchased. Valid values:
-     * - **false**: does not automatically start the task after the DTS instance is purchased. This is the default value.
-     * - **true**: automatically starts the task after the DTS instance is purchased.
+     * @Property autoStart: Specifies whether to automatically start the task after the DTS instance is
+     * purchased. Valid values:
+     * *   false (default)
+     * *   true
+     * >  This parameter can be set to true and take effect only if you specify a valid
+     * value for JobId.
      */
     readonly autoStart?: boolean | ros.IResolvable;
 
     /**
-     * @Property computeUnit: The specifications of the extract, transform, and load (ETL) instance. The unit is compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of this parameter must be an integer greater than or equal to 2.
+     * @Property computeUnit: The specification of the extract, transform, and load (ETL) instance. The unit is
+     * compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of
+     * this parameter must be an integer greater than or equal to 2.
      */
     readonly computeUnit?: number | ros.IResolvable;
 
@@ -438,14 +445,14 @@ export interface RosInstanceProps {
     readonly jobId?: string | ros.IResolvable;
 
     /**
-     * @Property maxDu: The upper limit of DU.
-     * > Only Serverless instances are supported.
+     * @Property maxDu: Upper limit of DU.
+     * > Only supported by Serverless instances.
      */
     readonly maxDu?: number | ros.IResolvable;
 
     /**
-     * @Property minDu: The lower limit of DU.
-     * > Only Serverless instances are supported.
+     * @Property minDu: Lower limit of DU.
+     * > Only supported by Serverless instances.
      */
     readonly minDu?: number | ros.IResolvable;
 
@@ -501,9 +508,11 @@ export interface RosInstanceProps {
 
     /**
      * @Property usedTime: The subscription duration.
-     * - Valid values if the **Period** parameter is set to **Month**: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-     * - Valid values if the **Period** parameter is set to **Year**: 1, 2, 3, and 5.
-     * **Note**: You must specify this parameter only if the **PayType** parameter is set to **PrePaid**. You can set the **Period** parameter to specify the unit of the subscription duration.
+     * *   Valid values if Period is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+     * *   Valid values if Period is set to Year: 1, 2, 3, and 5.
+     * >
+     * *   This parameter is valid and required only if PayType is set to PrePaid.
+     * *   You can configure Period to specify the unit of the subscription duration.
      */
     readonly usedTime?: number | ros.IResolvable;
 }
@@ -639,7 +648,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`Use the , which resource to create a new DTS instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
  */
@@ -672,16 +681,18 @@ export class RosInstance extends ros.RosResource {
 
     /**
      * @Property payType: The billing method. Valid values:
-     * - **PrePaid**: subscription
-     * - **PostPaid**: pay-as-you-go
+     * *   PrePaid: subscription
+     * *   PostPaid: pay-as-you-go
+     * >  This parameter must be specified.
      */
     public payType: string | ros.IResolvable;
 
     /**
      * @Property type: The type of the DTS instance. Valid values:
-     * - **MIGRATION*: data migration instance
-     * - **SYNC**: data synchronization instance
-     * - **SUBSCRIBE**: change tracking instance
+     * *   MIGRATION: data migration instance
+     * *   SYNC: data synchronization instance
+     * *   SUBSCRIBE: change tracking instance
+     * > You must specify one of this parameter and the JobId parameter.
      */
     public type: string | ros.IResolvable;
 
@@ -693,14 +704,19 @@ export class RosInstance extends ros.RosResource {
     public autoPay: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property autoStart: Specifies whether to automatically start the task after the DTS instance is purchased. Valid values:
-     * - **false**: does not automatically start the task after the DTS instance is purchased. This is the default value.
-     * - **true**: automatically starts the task after the DTS instance is purchased.
+     * @Property autoStart: Specifies whether to automatically start the task after the DTS instance is
+     * purchased. Valid values:
+     * *   false (default)
+     * *   true
+     * >  This parameter can be set to true and take effect only if you specify a valid
+     * value for JobId.
      */
     public autoStart: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property computeUnit: The specifications of the extract, transform, and load (ETL) instance. The unit is compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of this parameter must be an integer greater than or equal to 2.
+     * @Property computeUnit: The specification of the extract, transform, and load (ETL) instance. The unit is
+     * compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of
+     * this parameter must be an integer greater than or equal to 2.
      */
     public computeUnit: number | ros.IResolvable | undefined;
 
@@ -767,14 +783,14 @@ export class RosInstance extends ros.RosResource {
     public jobId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property maxDu: The upper limit of DU.
-     * > Only Serverless instances are supported.
+     * @Property maxDu: Upper limit of DU.
+     * > Only supported by Serverless instances.
      */
     public maxDu: number | ros.IResolvable | undefined;
 
     /**
-     * @Property minDu: The lower limit of DU.
-     * > Only Serverless instances are supported.
+     * @Property minDu: Lower limit of DU.
+     * > Only supported by Serverless instances.
      */
     public minDu: number | ros.IResolvable | undefined;
 
@@ -830,9 +846,11 @@ export class RosInstance extends ros.RosResource {
 
     /**
      * @Property usedTime: The subscription duration.
-     * - Valid values if the **Period** parameter is set to **Month**: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-     * - Valid values if the **Period** parameter is set to **Year**: 1, 2, 3, and 5.
-     * **Note**: You must specify this parameter only if the **PayType** parameter is set to **PrePaid**. You can set the **Period** parameter to specify the unit of the subscription duration.
+     * *   Valid values if Period is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+     * *   Valid values if Period is set to Year: 1, 2, 3, and 5.
+     * >
+     * *   This parameter is valid and required only if PayType is set to PrePaid.
+     * *   You can configure Period to specify the unit of the subscription duration.
      */
     public usedTime: number | ros.IResolvable | undefined;
 
@@ -1157,17 +1175,25 @@ export class RosJobMonitorRule extends ros.RosResource {
 export interface RosMigrationJob2Props {
 
     /**
-     * @Property dataInitialization: Specifies whether to perform full data migration or full data synchronization. Default value: **true**. Valid values: **true** and **false**.
+     * @Property dataInitialization: Specifies whether to perform full data migration or full data synchronization.
+     * Valid values:
+     * *   true (default)
+     * *   false
+     * > If JobType is set to CHECK, set this parameter to false.
      */
     readonly dataInitialization: boolean | ros.IResolvable;
 
     /**
-     * @Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization. Default value: **false**. Valid values: **true** and **false**.
+     * @Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data
+     * synchronization. Valid values:
+     * *   false (default)
+     * *   true
+     * > If JobType is set to CHECK, set this parameter to false.
      */
     readonly dataSynchronization: boolean | ros.IResolvable;
 
     /**
-     * @Property dbList: The objects that you want to migrate or synchronize.
+     * @Property dbList: The objects that you want to migrate or synchronize. The value is a JSON string.
      */
     readonly dbList: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -1187,7 +1213,11 @@ export interface RosMigrationJob2Props {
     readonly sourceEndpoint: RosMigrationJob2.SourceEndpointProperty | ros.IResolvable;
 
     /**
-     * @Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. Default value: true. Valid values: **true** and **false**.
+     * @Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. Valid
+     * values:
+     * *   true (default)
+     * *   false
+     * > If JobType is set to CHECK, set this parameter to false.
      */
     readonly structureInitialization: boolean | ros.IResolvable;
 
@@ -1218,7 +1248,11 @@ export interface RosMigrationJob2Props {
     readonly delayPhone?: string | ros.IResolvable;
 
     /**
-     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. The value must be an integer.
+     * You can set the threshold based on your business requirements. To prevent
+     * unstable latency caused by network and database overloads, we recommend that you
+     * set the threshold to more than 10 seconds.
+     * > If DelayNotice is set to true, this parameter is required.
      */
     readonly delayRuleTime?: number | ros.IResolvable;
 
@@ -1269,17 +1303,23 @@ export interface RosMigrationJob2Props {
     readonly fileOssUrl?: string | ros.IResolvable;
 
     /**
-     * @Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     * @Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
+     * Currently, this feature is not supported, please do not pass in parameters.
      */
     readonly maxDu?: number | ros.IResolvable;
 
     /**
-     * @Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     * @Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8,
+     * 16.
+     * This feature is currently not supported, please do not pass in parameters.
      */
     readonly minDu?: number | ros.IResolvable;
 
     /**
-     * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+     * @Property reserve: The reserved parameter of DTS. The value is a JSON string. You can specify this
+     * parameter to add more configurations of the source or destination instance to the
+     * DTS task. For example, you can specify the data storage format of the destination
+     * Kafka database and the CEN instance ID.
      */
     readonly reserve?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -1421,7 +1461,7 @@ function rosMigrationJob2PropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::MigrationJob2`, which is used to purchase a data migration instance and configure a data migration task of the new version.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::MigrationJob2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MigrationJob2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-migrationjob2
  */
@@ -1450,17 +1490,25 @@ export class RosMigrationJob2 extends ros.RosResource {
 
 
     /**
-     * @Property dataInitialization: Specifies whether to perform full data migration or full data synchronization. Default value: **true**. Valid values: **true** and **false**.
+     * @Property dataInitialization: Specifies whether to perform full data migration or full data synchronization.
+     * Valid values:
+     * *   true (default)
+     * *   false
+     * > If JobType is set to CHECK, set this parameter to false.
      */
     public dataInitialization: boolean | ros.IResolvable;
 
     /**
-     * @Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization. Default value: **false**. Valid values: **true** and **false**.
+     * @Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data
+     * synchronization. Valid values:
+     * *   false (default)
+     * *   true
+     * > If JobType is set to CHECK, set this parameter to false.
      */
     public dataSynchronization: boolean | ros.IResolvable;
 
     /**
-     * @Property dbList: The objects that you want to migrate or synchronize.
+     * @Property dbList: The objects that you want to migrate or synchronize. The value is a JSON string.
      */
     public dbList: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -1480,7 +1528,11 @@ export class RosMigrationJob2 extends ros.RosResource {
     public sourceEndpoint: RosMigrationJob2.SourceEndpointProperty | ros.IResolvable;
 
     /**
-     * @Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. Default value: true. Valid values: **true** and **false**.
+     * @Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. Valid
+     * values:
+     * *   true (default)
+     * *   false
+     * > If JobType is set to CHECK, set this parameter to false.
      */
     public structureInitialization: boolean | ros.IResolvable;
 
@@ -1511,7 +1563,11 @@ export class RosMigrationJob2 extends ros.RosResource {
     public delayPhone: string | ros.IResolvable | undefined;
 
     /**
-     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. The value must be an integer.
+     * You can set the threshold based on your business requirements. To prevent
+     * unstable latency caused by network and database overloads, we recommend that you
+     * set the threshold to more than 10 seconds.
+     * > If DelayNotice is set to true, this parameter is required.
      */
     public delayRuleTime: number | ros.IResolvable | undefined;
 
@@ -1562,17 +1618,23 @@ export class RosMigrationJob2 extends ros.RosResource {
     public fileOssUrl: string | ros.IResolvable | undefined;
 
     /**
-     * @Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     * @Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
+     * Currently, this feature is not supported, please do not pass in parameters.
      */
     public maxDu: number | ros.IResolvable | undefined;
 
     /**
-     * @Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     * @Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8,
+     * 16.
+     * This feature is currently not supported, please do not pass in parameters.
      */
     public minDu: number | ros.IResolvable | undefined;
 
     /**
-     * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+     * @Property reserve: The reserved parameter of DTS. The value is a JSON string. You can specify this
+     * parameter to add more configurations of the source or destination instance to the
+     * DTS task. For example, you can specify the data storage format of the destination
+     * Kafka database and the CEN instance ID.
      */
     public reserve: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
@@ -2317,7 +2379,11 @@ export interface RosSubscriptionJob2Props {
     readonly delayPhone?: string | ros.IResolvable;
 
     /**
-     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. The value must be an integer.
+     * You can set the threshold based on your business requirements. To prevent
+     * unstable latency caused by network and database overloads, we recommend that you
+     * set the threshold to more than 10 seconds.
+     * > If DelayNotice is set to true, this parameter is required.
      */
     readonly delayRuleTime?: number | ros.IResolvable;
 
@@ -2358,17 +2424,23 @@ export interface RosSubscriptionJob2Props {
     readonly errorPhone?: string | ros.IResolvable;
 
     /**
-     * @Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     * @Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
+     * Currently, this feature is not supported, please do not pass in parameters.
      */
     readonly maxDu?: number | ros.IResolvable;
 
     /**
-     * @Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     * @Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8,
+     * 16.
+     * This feature is currently not supported, please do not pass in parameters.
      */
     readonly minDu?: number | ros.IResolvable;
 
     /**
-     * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+     * @Property reserve: The reserved parameter of DTS. The value is a JSON string. You can specify this
+     * parameter to add more configurations of the source or destination instance to the
+     * DTS task. For example, you can specify the data storage format of the destination
+     * Kafka database and the CEN instance ID.
      */
     readonly reserve?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -2502,7 +2574,7 @@ function rosSubscriptionJob2PropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SubscriptionJob2`, which is used to configure a change tracking task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SubscriptionJob2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SubscriptionJob2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-subscriptionjob2
  */
@@ -2572,7 +2644,11 @@ export class RosSubscriptionJob2 extends ros.RosResource {
     public delayPhone: string | ros.IResolvable | undefined;
 
     /**
-     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. The value must be an integer.
+     * You can set the threshold based on your business requirements. To prevent
+     * unstable latency caused by network and database overloads, we recommend that you
+     * set the threshold to more than 10 seconds.
+     * > If DelayNotice is set to true, this parameter is required.
      */
     public delayRuleTime: number | ros.IResolvable | undefined;
 
@@ -2613,17 +2689,23 @@ export class RosSubscriptionJob2 extends ros.RosResource {
     public errorPhone: string | ros.IResolvable | undefined;
 
     /**
-     * @Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     * @Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
+     * Currently, this feature is not supported, please do not pass in parameters.
      */
     public maxDu: number | ros.IResolvable | undefined;
 
     /**
-     * @Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     * @Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8,
+     * 16.
+     * This feature is currently not supported, please do not pass in parameters.
      */
     public minDu: number | ros.IResolvable | undefined;
 
     /**
-     * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+     * @Property reserve: The reserved parameter of DTS. The value is a JSON string. You can specify this
+     * parameter to add more configurations of the source or destination instance to the
+     * DTS task. For example, you can specify the data storage format of the destination
+     * Kafka database and the CEN instance ID.
      */
     public reserve: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
@@ -3040,7 +3122,11 @@ export interface RosSynchronizationJob2Props {
     readonly delayPhone?: string | ros.IResolvable;
 
     /**
-     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. The value must be an integer.
+     * You can set the threshold based on your business requirements. To prevent
+     * unstable latency caused by network and database overloads, we recommend that you
+     * set the threshold to more than 10 seconds.
+     * > If DelayNotice is set to true, this parameter is required.
      */
     readonly delayRuleTime?: number | ros.IResolvable;
 
@@ -3091,12 +3177,15 @@ export interface RosSynchronizationJob2Props {
     readonly fileOssUrl?: string | ros.IResolvable;
 
     /**
-     * @Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     * @Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
+     * Currently, this feature is not supported, please do not pass in parameters.
      */
     readonly maxDu?: number | ros.IResolvable;
 
     /**
-     * @Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     * @Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8,
+     * 16.
+     * This feature is currently not supported, please do not pass in parameters.
      */
     readonly minDu?: number | ros.IResolvable;
 
@@ -3254,7 +3343,7 @@ function rosSynchronizationJob2PropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SynchronizationJob2`, which is used to configure a data synchronization task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SynchronizationJob2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SynchronizationJob2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-synchronizationjob2
  */
@@ -3344,7 +3433,11 @@ export class RosSynchronizationJob2 extends ros.RosResource {
     public delayPhone: string | ros.IResolvable | undefined;
 
     /**
-     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. The value must be an integer.
+     * You can set the threshold based on your business requirements. To prevent
+     * unstable latency caused by network and database overloads, we recommend that you
+     * set the threshold to more than 10 seconds.
+     * > If DelayNotice is set to true, this parameter is required.
      */
     public delayRuleTime: number | ros.IResolvable | undefined;
 
@@ -3395,12 +3488,15 @@ export class RosSynchronizationJob2 extends ros.RosResource {
     public fileOssUrl: string | ros.IResolvable | undefined;
 
     /**
-     * @Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     * @Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
+     * Currently, this feature is not supported, please do not pass in parameters.
      */
     public maxDu: number | ros.IResolvable | undefined;
 
     /**
-     * @Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     * @Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8,
+     * 16.
+     * This feature is currently not supported, please do not pass in parameters.
      */
     public minDu: number | ros.IResolvable | undefined;
 

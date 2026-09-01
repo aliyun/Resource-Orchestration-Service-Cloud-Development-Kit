@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancerclone
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.288Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:44:47.092Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancerCloneProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerCloneProps.Jsii$Proxy.class)
 public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,30 +32,61 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
-     * Property instanceChargeType: Instance billing method.
+     * Property instanceChargeType: The resource metering method for the CLB instance.
      * <p>
-     * Value:PayBySpec: Pay by spec.
-     * PayByCLCU: billed by usage.
-     * If not specified, it is same with the source load balancer.
+     * Valid value:
+     * <p>
+     * <ul>
+     * <li>PayByCLCU: pay-by-data-transfer</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+     * no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
 
     /**
-     * Property loadBalancerName: Name of created load balancer.
+     * Property loadBalancerName: The CLB instance name.
      * <p>
-     * Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+     * The name must be 1 to 80 characters in length, and can contain digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     * If you do not specify this parameter, the system automatically assigns a name to
+     * the CLB instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerName() {
         return null;
     }
 
     /**
-     * Property loadBalancerSpec: The specification of the load balancer.
+     * Property loadBalancerSpec: The specification of the CLB instance.
      * <p>
-     * If not specified, it is same with the source load balancer.
-     * Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>slb.s1.small</li>
+     * <li>slb.s2.small</li>
+     * <li>slb.s2.medium</li>
+     * <li>slb.s3.small</li>
+     * <li>slb.s3.medium</li>
+     * <li>slb.s3.large</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+     * do not need to specify this parameter.</li>
+     * <li>As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+     * are no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerSpec() {
         return null;
@@ -88,9 +119,16 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
-     * Property vSwitchId: The new VSwitch ID to create load balancer instance.
+     * Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
      * <p>
-     * For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
+     * If you want to deploy the CLB instance in a VPC, this parameter is required. If
+     * this parameter is specified, AddessType is set to intranet by default.
+     * <p>
+     * <blockquote>
+     * <p>
+     * The vSwitch must be in the primary zone.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
@@ -181,10 +219,19 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link LoadBalancerCloneProps#getInstanceChargeType}
-         * @param instanceChargeType Property instanceChargeType: Instance billing method.
-         *                           Value:PayBySpec: Pay by spec.
-         *                           PayByCLCU: billed by usage.
-         *                           If not specified, it is same with the source load balancer.
+         * @param instanceChargeType Property instanceChargeType: The resource metering method for the CLB instance.
+         *                           Valid value:
+         *                           <p>
+         *                           <ul>
+         *                           <li>PayByCLCU: pay-by-data-transfer</li>
+         *                           </ul>
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+         *                           no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder instanceChargeType(java.lang.String instanceChargeType) {
@@ -194,10 +241,19 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link LoadBalancerCloneProps#getInstanceChargeType}
-         * @param instanceChargeType Property instanceChargeType: Instance billing method.
-         *                           Value:PayBySpec: Pay by spec.
-         *                           PayByCLCU: billed by usage.
-         *                           If not specified, it is same with the source load balancer.
+         * @param instanceChargeType Property instanceChargeType: The resource metering method for the CLB instance.
+         *                           Valid value:
+         *                           <p>
+         *                           <ul>
+         *                           <li>PayByCLCU: pay-by-data-transfer</li>
+         *                           </ul>
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+         *                           no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
@@ -207,8 +263,11 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link LoadBalancerCloneProps#getLoadBalancerName}
-         * @param loadBalancerName Property loadBalancerName: Name of created load balancer.
-         *                         Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+         * @param loadBalancerName Property loadBalancerName: The CLB instance name.
+         *                         The name must be 1 to 80 characters in length, and can contain digits, periods
+         *                         (.), underscores (_), and hyphens (-). It must start with a letter.
+         *                         If you do not specify this parameter, the system automatically assigns a name to
+         *                         the CLB instance.
          * @return {@code this}
          */
         public Builder loadBalancerName(java.lang.String loadBalancerName) {
@@ -218,8 +277,11 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link LoadBalancerCloneProps#getLoadBalancerName}
-         * @param loadBalancerName Property loadBalancerName: Name of created load balancer.
-         *                         Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+         * @param loadBalancerName Property loadBalancerName: The CLB instance name.
+         *                         The name must be 1 to 80 characters in length, and can contain digits, periods
+         *                         (.), underscores (_), and hyphens (-). It must start with a letter.
+         *                         If you do not specify this parameter, the system automatically assigns a name to
+         *                         the CLB instance.
          * @return {@code this}
          */
         public Builder loadBalancerName(com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
@@ -229,9 +291,28 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link LoadBalancerCloneProps#getLoadBalancerSpec}
-         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the load balancer.
-         *                         If not specified, it is same with the source load balancer.
-         *                         Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the CLB instance.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li>slb.s1.small</li>
+         *                         <li>slb.s2.small</li>
+         *                         <li>slb.s2.medium</li>
+         *                         <li>slb.s3.small</li>
+         *                         <li>slb.s3.medium</li>
+         *                         <li>slb.s3.large</li>
+         *                         </ul>
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         <ul>
+         *                         <li>If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+         *                         do not need to specify this parameter.</li>
+         *                         <li>As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+         *                         are no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.</li>
+         *                         </ul>
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder loadBalancerSpec(java.lang.String loadBalancerSpec) {
@@ -241,9 +322,28 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link LoadBalancerCloneProps#getLoadBalancerSpec}
-         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the load balancer.
-         *                         If not specified, it is same with the source load balancer.
-         *                         Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the CLB instance.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li>slb.s1.small</li>
+         *                         <li>slb.s2.small</li>
+         *                         <li>slb.s2.medium</li>
+         *                         <li>slb.s3.small</li>
+         *                         <li>slb.s3.medium</li>
+         *                         <li>slb.s3.large</li>
+         *                         </ul>
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         <ul>
+         *                         <li>If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+         *                         do not need to specify this parameter.</li>
+         *                         <li>As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+         *                         are no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.</li>
+         *                         </ul>
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder loadBalancerSpec(com.aliyun.ros.cdk.core.IResolvable loadBalancerSpec) {
@@ -309,8 +409,15 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link LoadBalancerCloneProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The new VSwitch ID to create load balancer instance.
-         *                  For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
+         *                  If you want to deploy the CLB instance in a VPC, this parameter is required. If
+         *                  this parameter is specified, AddessType is set to intranet by default.
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  The vSwitch must be in the primary zone.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -320,8 +427,15 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link LoadBalancerCloneProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The new VSwitch ID to create load balancer instance.
-         *                  For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
+         *                  If you want to deploy the CLB instance in a VPC, this parameter is required. If
+         *                  this parameter is specified, AddessType is set to intranet by default.
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  The vSwitch must be in the primary zone.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {

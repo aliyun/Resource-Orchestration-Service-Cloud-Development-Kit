@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudsso;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-permissionpolicytoaccessconfigurationaddition
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:53:18.930Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:42:02.337Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.PermissionPolicyToAccessConfigurationAdditionProps")
 @software.amazon.jsii.Jsii.Proxy(PermissionPolicyToAccessConfigurationAdditionProps.Jsii$Proxy.class)
 public interface PermissionPolicyToAccessConfigurationAdditionProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,11 +21,15 @@ public interface PermissionPolicyToAccessConfigurationAdditionProps extends soft
     @org.jetbrains.annotations.NotNull java.lang.Object getDirectoryId();
 
     /**
-     * Property permissionPolicyName: The name of the permission policy.
+     * Property permissionPolicyName: The name of the policy.
      * <p>
      * <ul>
-     * <li>If you set PermissionPolicyType to System, you must set this parameter to the name of the system policy. You can obtain the name of the system policy from RAM.</li>
-     * <li>If you set PermissionPolicyType to Inline, you must set this parameter to the name of the inline policy. A custom value is supported.</li>
+     * <li>If you set <code>PermissionPolicyType</code> to <code>System</code>, you must set
+     * PermissionPolicyName to the name of a system policy. You can obtain the name of
+     * the system policy from RAM.</li>
+     * <li>If you set <code>PermissionPolicyType</code> to <code>Inline</code>, you must set
+     * PermissionPolicyName to the name of an inline policy. A custom value is
+     * supported. The value can be up to 32 characters in length.</li>
      * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPermissionPolicyName();
@@ -110,10 +114,14 @@ public interface PermissionPolicyToAccessConfigurationAdditionProps extends soft
 
         /**
          * Sets the value of {@link PermissionPolicyToAccessConfigurationAdditionProps#getPermissionPolicyName}
-         * @param permissionPolicyName Property permissionPolicyName: The name of the permission policy. This parameter is required.
+         * @param permissionPolicyName Property permissionPolicyName: The name of the policy. This parameter is required.
          *                             <ul>
-         *                             <li>If you set PermissionPolicyType to System, you must set this parameter to the name of the system policy. You can obtain the name of the system policy from RAM.</li>
-         *                             <li>If you set PermissionPolicyType to Inline, you must set this parameter to the name of the inline policy. A custom value is supported.</li>
+         *                             <li>If you set <code>PermissionPolicyType</code> to <code>System</code>, you must set
+         *                             PermissionPolicyName to the name of a system policy. You can obtain the name of
+         *                             the system policy from RAM.</li>
+         *                             <li>If you set <code>PermissionPolicyType</code> to <code>Inline</code>, you must set
+         *                             PermissionPolicyName to the name of an inline policy. A custom value is
+         *                             supported. The value can be up to 32 characters in length.</li>
          *                             </ul>
          * @return {@code this}
          */
@@ -124,10 +132,14 @@ public interface PermissionPolicyToAccessConfigurationAdditionProps extends soft
 
         /**
          * Sets the value of {@link PermissionPolicyToAccessConfigurationAdditionProps#getPermissionPolicyName}
-         * @param permissionPolicyName Property permissionPolicyName: The name of the permission policy. This parameter is required.
+         * @param permissionPolicyName Property permissionPolicyName: The name of the policy. This parameter is required.
          *                             <ul>
-         *                             <li>If you set PermissionPolicyType to System, you must set this parameter to the name of the system policy. You can obtain the name of the system policy from RAM.</li>
-         *                             <li>If you set PermissionPolicyType to Inline, you must set this parameter to the name of the inline policy. A custom value is supported.</li>
+         *                             <li>If you set <code>PermissionPolicyType</code> to <code>System</code>, you must set
+         *                             PermissionPolicyName to the name of a system policy. You can obtain the name of
+         *                             the system policy from RAM.</li>
+         *                             <li>If you set <code>PermissionPolicyType</code> to <code>Inline</code>, you must set
+         *                             PermissionPolicyName to the name of an inline policy. A custom value is
+         *                             supported. The value can be up to 32 characters in length.</li>
          *                             </ul>
          * @return {@code this}
          */

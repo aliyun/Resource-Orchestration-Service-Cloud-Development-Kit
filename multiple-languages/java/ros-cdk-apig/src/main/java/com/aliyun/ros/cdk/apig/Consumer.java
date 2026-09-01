@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::Consumer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.534Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:05:26.136Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.Consumer")
 public class Consumer extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apig.IConsumer {
 

@@ -20,13 +20,13 @@ type ProductProps struct {
 	// contain Chinese characters, English letters, digits, and underscores (_).
 	// Note A product name must be unique in an account.
 	ProductName interface{} `field:"required" json:"productName" yaml:"productName"`
-	// Property aliyunCommodityCode: The edition of the product that you want to create.
+	// Property aliyunCommodityCode: The edition of the product.
 	//
-	// There are two options:
-	// iothub_senior: Pro Edition.
-	// iothub: Basic Edition.
-	// If you do not input this parameter, the default value is used, which is iothub (Basic
-	// Edition).
+	// *   If you do not configure this parameter, a product of the Basic Edition is
+	// automatically created. You cannot use a TSL model to define the product.
+	// *   If you want to configure this parameter, set the value to iothub_senior. A
+	// product that supports TSL models is created. You must also configure the
+	// DataFormat parameter.
 	AliyunCommodityCode interface{} `field:"optional" json:"aliyunCommodityCode" yaml:"aliyunCommodityCode"`
 	// Property authType: Authentication device to access the Internet of Things platform under the product.
 	//

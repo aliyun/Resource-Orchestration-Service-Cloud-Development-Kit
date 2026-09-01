@@ -7,9 +7,11 @@ package alicloudroscdkadblake
 type ResourceGroupProps struct {
 	// Property dbClusterId: The ID of the AnalyticDB for MySQL Data Lakehouse Edition cluster.
 	DbClusterId interface{} `field:"required" json:"dbClusterId" yaml:"dbClusterId"`
-	// Property engine: Database engine, value: AnalyticDB (default): AnalyticDB for mysql engine.
+	// Property engine: The database engine.
 	//
-	// Sparkwarehouse: Sparkwarehous engine.
+	// Valid values:
+	// - AnalyticDB (default): the AnalyticDB for MySQL engine.
+	// - SparkWarehouse: the SparkWarehouse engine.
 	Engine interface{} `field:"required" json:"engine" yaml:"engine"`
 	// Property groupName: The name of the resource group.
 	//
@@ -26,9 +28,7 @@ type ResourceGroupProps struct {
 	GroupType interface{} `field:"required" json:"groupType" yaml:"groupType"`
 	// Property autoStopInterval: Automatically stop time, the unit is minutes (m).
 	AutoStopInterval interface{} `field:"optional" json:"autoStopInterval" yaml:"autoStopInterval"`
-	// Property clusterMode: The mode of cluster.
-	//
-	// Default: AutoScale.
+	// Property clusterMode: This parameter is reserved.
 	ClusterMode interface{} `field:"optional" json:"clusterMode" yaml:"clusterMode"`
 	// Property clusterSizeResource: A reserved parameter.
 	ClusterSizeResource interface{} `field:"optional" json:"clusterSizeResource" yaml:"clusterSizeResource"`

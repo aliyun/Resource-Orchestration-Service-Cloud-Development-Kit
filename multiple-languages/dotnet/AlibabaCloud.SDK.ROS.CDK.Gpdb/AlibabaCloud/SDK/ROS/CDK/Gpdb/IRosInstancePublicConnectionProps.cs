@@ -12,7 +12,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
     public interface IRosInstancePublicConnectionProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: connectionStringPrefix: The endpoint that is used to connect to the specified database.
+        /// <strong>Property</strong>: connectionStringPrefix: The prefix of the endpoint.
+        /// Specify a prefix for the endpoint. Example: `gp-bp12ga6v69h86**`. In this
+        /// example, the endpoint is `gp-bp12ga6v69h86**.gpdb.rds.example.com`.
         /// </remarks>
         [JsiiProperty(name: "connectionStringPrefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ConnectionStringPrefix
@@ -68,7 +70,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: connectionStringPrefix: The endpoint that is used to connect to the specified database.
+            /// <strong>Property</strong>: connectionStringPrefix: The prefix of the endpoint.
+            /// Specify a prefix for the endpoint. Example: `gp-bp12ga6v69h86**`. In this
+            /// example, the endpoint is `gp-bp12ga6v69h86**.gpdb.rds.example.com`.
             /// </remarks>
             [JsiiProperty(name: "connectionStringPrefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ConnectionStringPrefix

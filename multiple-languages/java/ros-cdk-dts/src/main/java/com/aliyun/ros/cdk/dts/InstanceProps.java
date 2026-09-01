@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dts;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:29:50.775Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:27:14.929Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,9 +27,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Valid values:
      * <p>
      * <ul>
-     * <li><strong>PrePaid</strong>: subscription</li>
-     * <li><strong>PostPaid</strong>: pay-as-you-go</li>
+     * <li>PrePaid: subscription</li>
+     * <li>PostPaid: pay-as-you-go</li>
      * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter must be specified.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPayType();
 
@@ -39,10 +45,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Valid values:
      * <p>
      * <ul>
-     * <li>*<em>MIGRATION</em>: data migration instance</li>
-     * <li><strong>SYNC</strong>: data synchronization instance</li>
-     * <li><strong>SUBSCRIBE</strong>: change tracking instance</li>
+     * <li>MIGRATION: data migration instance</li>
+     * <li>SYNC: data synchronization instance</li>
+     * <li>SUBSCRIBE: change tracking instance</li>
      * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * You must specify one of this parameter and the JobId parameter.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
@@ -66,18 +78,27 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Valid values:
      * <p>
      * <ul>
-     * <li><strong>false</strong>: does not automatically start the task after the DTS instance is purchased. This is the default value.</li>
-     * <li><strong>true</strong>: automatically starts the task after the DTS instance is purchased.</li>
+     * <li>false (default)</li>
+     * <li>true</li>
      * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter can be set to true and take effect only if you specify a valid
+     * value for JobId.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoStart() {
         return null;
     }
 
     /**
-     * Property computeUnit: The specifications of the extract, transform, and load (ETL) instance.
+     * Property computeUnit: The specification of the extract, transform, and load (ETL) instance.
      * <p>
-     * The unit is compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of this parameter must be an integer greater than or equal to 2.
+     * The unit is
+     * compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of
+     * this parameter must be an integer greater than or equal to 2.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getComputeUnit() {
         return null;
@@ -176,11 +197,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property maxDu: The upper limit of DU.
+     * Property maxDu: Upper limit of DU.
      * <p>
      * <blockquote>
      * <p>
-     * Only Serverless instances are supported.
+     * Only supported by Serverless instances.
      * <p>
      * </blockquote>
      */
@@ -189,11 +210,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property minDu: The lower limit of DU.
+     * Property minDu: Lower limit of DU.
      * <p>
      * <blockquote>
      * <p>
-     * Only Serverless instances are supported.
+     * Only supported by Serverless instances.
      * <p>
      * </blockquote>
      */
@@ -278,9 +299,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Property usedTime: The subscription duration.
      * <p>
      * <ul>
-     * <li>Valid values if the <strong>Period</strong> parameter is set to <strong>Month</strong>: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
-     * <li>Valid values if the <strong>Period</strong> parameter is set to <strong>Year</strong>: 1, 2, 3, and 5.
-     * <strong>Note</strong>: You must specify this parameter only if the <strong>PayType</strong> parameter is set to <strong>PrePaid</strong>. You can set the <strong>Period</strong> parameter to specify the unit of the subscription duration.</li>
+     * <li>Valid values if Period is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
+     * <li>Valid values if Period is set to Year: 1, 2, 3, and 5.</li>
+     * </ul>
+     * <p>
+     * <blockquote></blockquote>
+     * <p>
+     * <ul>
+     * <li>This parameter is valid and required only if PayType is set to PrePaid.</li>
+     * <li>You can configure Period to specify the unit of the subscription duration.</li>
      * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUsedTime() {
@@ -355,9 +382,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          *                Valid values:
          *                <p>
          *                <ul>
-         *                <li><strong>PrePaid</strong>: subscription</li>
-         *                <li><strong>PostPaid</strong>: pay-as-you-go</li>
+         *                <li>PrePaid: subscription</li>
+         *                <li>PostPaid: pay-as-you-go</li>
          *                </ul>
+         *                <p>
+         *                <blockquote>
+         *                <p>
+         *                This parameter must be specified.
+         *                <p>
+         *                </blockquote>
          * @return {@code this}
          */
         public Builder payType(java.lang.String payType) {
@@ -371,9 +404,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          *                Valid values:
          *                <p>
          *                <ul>
-         *                <li><strong>PrePaid</strong>: subscription</li>
-         *                <li><strong>PostPaid</strong>: pay-as-you-go</li>
+         *                <li>PrePaid: subscription</li>
+         *                <li>PostPaid: pay-as-you-go</li>
          *                </ul>
+         *                <p>
+         *                <blockquote>
+         *                <p>
+         *                This parameter must be specified.
+         *                <p>
+         *                </blockquote>
          * @return {@code this}
          */
         public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
@@ -387,10 +426,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          *             Valid values:
          *             <p>
          *             <ul>
-         *             <li>*<em>MIGRATION</em>: data migration instance</li>
-         *             <li><strong>SYNC</strong>: data synchronization instance</li>
-         *             <li><strong>SUBSCRIBE</strong>: change tracking instance</li>
+         *             <li>MIGRATION: data migration instance</li>
+         *             <li>SYNC: data synchronization instance</li>
+         *             <li>SUBSCRIBE: change tracking instance</li>
          *             </ul>
+         *             <p>
+         *             <blockquote>
+         *             <p>
+         *             You must specify one of this parameter and the JobId parameter.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder type(java.lang.String type) {
@@ -404,10 +449,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          *             Valid values:
          *             <p>
          *             <ul>
-         *             <li>*<em>MIGRATION</em>: data migration instance</li>
-         *             <li><strong>SYNC</strong>: data synchronization instance</li>
-         *             <li><strong>SUBSCRIBE</strong>: change tracking instance</li>
+         *             <li>MIGRATION: data migration instance</li>
+         *             <li>SYNC: data synchronization instance</li>
+         *             <li>SUBSCRIBE: change tracking instance</li>
          *             </ul>
+         *             <p>
+         *             <blockquote>
+         *             <p>
+         *             You must specify one of this parameter and the JobId parameter.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
@@ -453,9 +504,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          *                  Valid values:
          *                  <p>
          *                  <ul>
-         *                  <li><strong>false</strong>: does not automatically start the task after the DTS instance is purchased. This is the default value.</li>
-         *                  <li><strong>true</strong>: automatically starts the task after the DTS instance is purchased.</li>
+         *                  <li>false (default)</li>
+         *                  <li>true</li>
          *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  This parameter can be set to true and take effect only if you specify a valid
+         *                  value for JobId.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder autoStart(java.lang.Boolean autoStart) {
@@ -469,9 +527,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          *                  Valid values:
          *                  <p>
          *                  <ul>
-         *                  <li><strong>false</strong>: does not automatically start the task after the DTS instance is purchased. This is the default value.</li>
-         *                  <li><strong>true</strong>: automatically starts the task after the DTS instance is purchased.</li>
+         *                  <li>false (default)</li>
+         *                  <li>true</li>
          *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  This parameter can be set to true and take effect only if you specify a valid
+         *                  value for JobId.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder autoStart(com.aliyun.ros.cdk.core.IResolvable autoStart) {
@@ -481,8 +546,10 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getComputeUnit}
-         * @param computeUnit Property computeUnit: The specifications of the extract, transform, and load (ETL) instance.
-         *                    The unit is compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of this parameter must be an integer greater than or equal to 2.
+         * @param computeUnit Property computeUnit: The specification of the extract, transform, and load (ETL) instance.
+         *                    The unit is
+         *                    compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of
+         *                    this parameter must be an integer greater than or equal to 2.
          * @return {@code this}
          */
         public Builder computeUnit(java.lang.Number computeUnit) {
@@ -492,8 +559,10 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getComputeUnit}
-         * @param computeUnit Property computeUnit: The specifications of the extract, transform, and load (ETL) instance.
-         *                    The unit is compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of this parameter must be an integer greater than or equal to 2.
+         * @param computeUnit Property computeUnit: The specification of the extract, transform, and load (ETL) instance.
+         *                    The unit is
+         *                    compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of
+         *                    this parameter must be an integer greater than or equal to 2.
          * @return {@code this}
          */
         public Builder computeUnit(com.aliyun.ros.cdk.core.IResolvable computeUnit) {
@@ -717,10 +786,10 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getMaxDu}
-         * @param maxDu Property maxDu: The upper limit of DU.
+         * @param maxDu Property maxDu: Upper limit of DU.
          *              <blockquote>
          *              <p>
-         *              Only Serverless instances are supported.
+         *              Only supported by Serverless instances.
          *              <p>
          *              </blockquote>
          * @return {@code this}
@@ -732,10 +801,10 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getMaxDu}
-         * @param maxDu Property maxDu: The upper limit of DU.
+         * @param maxDu Property maxDu: Upper limit of DU.
          *              <blockquote>
          *              <p>
-         *              Only Serverless instances are supported.
+         *              Only supported by Serverless instances.
          *              <p>
          *              </blockquote>
          * @return {@code this}
@@ -747,10 +816,10 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getMinDu}
-         * @param minDu Property minDu: The lower limit of DU.
+         * @param minDu Property minDu: Lower limit of DU.
          *              <blockquote>
          *              <p>
-         *              Only Serverless instances are supported.
+         *              Only supported by Serverless instances.
          *              <p>
          *              </blockquote>
          * @return {@code this}
@@ -762,10 +831,10 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getMinDu}
-         * @param minDu Property minDu: The lower limit of DU.
+         * @param minDu Property minDu: Lower limit of DU.
          *              <blockquote>
          *              <p>
-         *              Only Serverless instances are supported.
+         *              Only supported by Serverless instances.
          *              <p>
          *              </blockquote>
          * @return {@code this}
@@ -947,9 +1016,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link InstanceProps#getUsedTime}
          * @param usedTime Property usedTime: The subscription duration.
          *                 <ul>
-         *                 <li>Valid values if the <strong>Period</strong> parameter is set to <strong>Month</strong>: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
-         *                 <li>Valid values if the <strong>Period</strong> parameter is set to <strong>Year</strong>: 1, 2, 3, and 5.
-         *                 <strong>Note</strong>: You must specify this parameter only if the <strong>PayType</strong> parameter is set to <strong>PrePaid</strong>. You can set the <strong>Period</strong> parameter to specify the unit of the subscription duration.</li>
+         *                 <li>Valid values if Period is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
+         *                 <li>Valid values if Period is set to Year: 1, 2, 3, and 5.</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote></blockquote>
+         *                 <p>
+         *                 <ul>
+         *                 <li>This parameter is valid and required only if PayType is set to PrePaid.</li>
+         *                 <li>You can configure Period to specify the unit of the subscription duration.</li>
          *                 </ul>
          * @return {@code this}
          */
@@ -962,9 +1037,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link InstanceProps#getUsedTime}
          * @param usedTime Property usedTime: The subscription duration.
          *                 <ul>
-         *                 <li>Valid values if the <strong>Period</strong> parameter is set to <strong>Month</strong>: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
-         *                 <li>Valid values if the <strong>Period</strong> parameter is set to <strong>Year</strong>: 1, 2, 3, and 5.
-         *                 <strong>Note</strong>: You must specify this parameter only if the <strong>PayType</strong> parameter is set to <strong>PrePaid</strong>. You can set the <strong>Period</strong> parameter to specify the unit of the subscription duration.</li>
+         *                 <li>Valid values if Period is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
+         *                 <li>Valid values if Period is set to Year: 1, 2, 3, and 5.</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote></blockquote>
+         *                 <p>
+         *                 <ul>
+         *                 <li>This parameter is valid and required only if PayType is set to PrePaid.</li>
+         *                 <li>You can configure Period to specify the unit of the subscription duration.</li>
          *                 </ul>
          * @return {@code this}
          */

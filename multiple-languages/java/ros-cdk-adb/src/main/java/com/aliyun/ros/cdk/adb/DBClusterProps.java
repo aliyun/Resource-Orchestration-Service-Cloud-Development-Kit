@@ -5,18 +5,39 @@ package com.aliyun.ros.cdk.adb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:14:30.217Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:53:53.098Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property dbClusterCategory: The edition of the cluster.
+     * Property dbClusterCategory: The cluster edition.
      * <p>
-     * Valid values when the cluster is in reserved mode:
-     * Basic
-     * Cluster
-     * When the cluster is in elastic mode, set the value to MixedStorage.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Cluster: reserved cluster.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * Reserved clusters are available only in the Chinese mainland and Singapore
+     * regions. In the Singapore region, you can purchase reserved clusters only with
+     * the pay-as-you-go billing method.
+     * <p>
+     * </blockquote>
+     * <p>
+     * <ul>
+     * <li>MixedStorage: elastic cluster (new).</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you set <code>DBClusterCategory</code> to <code>Cluster</code>, you must set the <code>Mode</code> parameter
+     * to <code>Reserved</code>. If you set <code>DBClusterCategory</code> to <code>MixedStorage</code>, you must set the
+     * <code>Mode</code> parameter to <code>Flexible</code>. Otherwise, cluster creation will fail.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterCategory();
 
@@ -28,11 +49,14 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterVersion();
 
     /**
-     * Property mode: The mode of the cluster.
+     * Property mode: The cluster mode.
      * <p>
      * Valid values:
-     * Reserver: the reserved mode
-     * Flexible: the elastic mode
+     * <p>
+     * <ul>
+     * <li>Reserved: reserved mode.</li>
+     * <li>Flexible: flexible mode.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getMode();
 
@@ -56,9 +80,31 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
     /**
-     * Property computeResource: The computing resource of the cluster.
+     * Property computeResource: The compute resources for the cluster.
      * <p>
-     * This parameter is required in elastic mode.
+     * Compute resources are used for data
+     * queries. A larger amount of compute resources can provide better query
+     * performance. Compute resources are available in cluster and single-node editions:
+     * <p>
+     * <ul>
+     * <li>Cluster edition: includes specifications such as 16 cores/64 GB, 24 cores/96
+     * GB, and 32 cores or more. The cluster edition supports resource pool isolation,
+     * scheduled scaling, and tiered storage of hot and cold data.</li>
+     * <li>Single-node edition: includes specifications such as 8 cores/32 GB and 16
+     * cores/64 GB. The single-node edition does not provide an SLA guarantee and has a
+     * long recovery time from failures (4 to 8 hours). We do not recommend that you use
+     * the single-node edition in production environments.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>You can call the <a href="">DescribeAvailableResource</a> operation to query the compute
+     * resources that are available in a specific region.</li>
+     * <li>This parameter is required when <code>Mode</code> is set to <code>Flexible</code> (flexible mode).</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getComputeResource() {
         return null;
@@ -77,6 +123,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property dbClusterDescription: The description of the cluster.
+     * <p>
+     * <ul>
+     * <li>The description cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+     * <li>The description must be 2 to 256 characters long.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbClusterDescription() {
         return null;
@@ -85,9 +136,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property dbNodeGroupCount: The number of node groups.
      * <p>
-     * This parameter is required in reserved mode. Valid values:
-     * T8, T16, T32, and T52: 1
-     * C8 and C32: 1 to 128
+     * The value must be an integer from 1 to 200.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required when <code>Mode</code> is set to <code>Reserved</code> (reserved mode).
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbNodeGroupCount() {
         return null;
@@ -121,7 +176,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.
+     * Property elasticIoResource: The number of Elastic IO Units (EIUs).
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getElasticIoResource() {
         return null;
@@ -140,7 +195,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property executorCount: ExecutorCount.
+     * Property executorCount: This parameter is reserved.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getExecutorCount() {
         return null;
@@ -154,9 +209,20 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+     * Property period: The subscription period unit.
      * <p>
-     * Valid values when the Period parameter is set to Year: 1, 2, and 3.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Year</li>
+     * <li>Month</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required when <code>PayType</code> is set to <code>Prepaid</code> (subscription).
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -232,11 +298,32 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getDbClusterCategory}
-         * @param dbClusterCategory Property dbClusterCategory: The edition of the cluster. This parameter is required.
-         *                          Valid values when the cluster is in reserved mode:
-         *                          Basic
-         *                          Cluster
-         *                          When the cluster is in elastic mode, set the value to MixedStorage.
+         * @param dbClusterCategory Property dbClusterCategory: The cluster edition. This parameter is required.
+         *                          Valid values:
+         *                          <p>
+         *                          <ul>
+         *                          <li>Cluster: reserved cluster.</li>
+         *                          </ul>
+         *                          <p>
+         *                          <blockquote>
+         *                          <p>
+         *                          Reserved clusters are available only in the Chinese mainland and Singapore
+         *                          regions. In the Singapore region, you can purchase reserved clusters only with
+         *                          the pay-as-you-go billing method.
+         *                          <p>
+         *                          </blockquote>
+         *                          <p>
+         *                          <ul>
+         *                          <li>MixedStorage: elastic cluster (new).</li>
+         *                          </ul>
+         *                          <p>
+         *                          <blockquote>
+         *                          <p>
+         *                          If you set <code>DBClusterCategory</code> to <code>Cluster</code>, you must set the <code>Mode</code> parameter
+         *                          to <code>Reserved</code>. If you set <code>DBClusterCategory</code> to <code>MixedStorage</code>, you must set the
+         *                          <code>Mode</code> parameter to <code>Flexible</code>. Otherwise, cluster creation will fail.
+         *                          <p>
+         *                          </blockquote>
          * @return {@code this}
          */
         public Builder dbClusterCategory(java.lang.String dbClusterCategory) {
@@ -246,11 +333,32 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getDbClusterCategory}
-         * @param dbClusterCategory Property dbClusterCategory: The edition of the cluster. This parameter is required.
-         *                          Valid values when the cluster is in reserved mode:
-         *                          Basic
-         *                          Cluster
-         *                          When the cluster is in elastic mode, set the value to MixedStorage.
+         * @param dbClusterCategory Property dbClusterCategory: The cluster edition. This parameter is required.
+         *                          Valid values:
+         *                          <p>
+         *                          <ul>
+         *                          <li>Cluster: reserved cluster.</li>
+         *                          </ul>
+         *                          <p>
+         *                          <blockquote>
+         *                          <p>
+         *                          Reserved clusters are available only in the Chinese mainland and Singapore
+         *                          regions. In the Singapore region, you can purchase reserved clusters only with
+         *                          the pay-as-you-go billing method.
+         *                          <p>
+         *                          </blockquote>
+         *                          <p>
+         *                          <ul>
+         *                          <li>MixedStorage: elastic cluster (new).</li>
+         *                          </ul>
+         *                          <p>
+         *                          <blockquote>
+         *                          <p>
+         *                          If you set <code>DBClusterCategory</code> to <code>Cluster</code>, you must set the <code>Mode</code> parameter
+         *                          to <code>Reserved</code>. If you set <code>DBClusterCategory</code> to <code>MixedStorage</code>, you must set the
+         *                          <code>Mode</code> parameter to <code>Flexible</code>. Otherwise, cluster creation will fail.
+         *                          <p>
+         *                          </blockquote>
          * @return {@code this}
          */
         public Builder dbClusterCategory(com.aliyun.ros.cdk.core.IResolvable dbClusterCategory) {
@@ -282,10 +390,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getMode}
-         * @param mode Property mode: The mode of the cluster. This parameter is required.
+         * @param mode Property mode: The cluster mode. This parameter is required.
          *             Valid values:
-         *             Reserver: the reserved mode
-         *             Flexible: the elastic mode
+         *             <p>
+         *             <ul>
+         *             <li>Reserved: reserved mode.</li>
+         *             <li>Flexible: flexible mode.</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder mode(java.lang.String mode) {
@@ -295,10 +406,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getMode}
-         * @param mode Property mode: The mode of the cluster. This parameter is required.
+         * @param mode Property mode: The cluster mode. This parameter is required.
          *             Valid values:
-         *             Reserver: the reserved mode
-         *             Flexible: the elastic mode
+         *             <p>
+         *             <ul>
+         *             <li>Reserved: reserved mode.</li>
+         *             <li>Flexible: flexible mode.</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder mode(com.aliyun.ros.cdk.core.IResolvable mode) {
@@ -374,8 +488,30 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getComputeResource}
-         * @param computeResource Property computeResource: The computing resource of the cluster.
-         *                        This parameter is required in elastic mode.
+         * @param computeResource Property computeResource: The compute resources for the cluster.
+         *                        Compute resources are used for data
+         *                        queries. A larger amount of compute resources can provide better query
+         *                        performance. Compute resources are available in cluster and single-node editions:
+         *                        <p>
+         *                        <ul>
+         *                        <li>Cluster edition: includes specifications such as 16 cores/64 GB, 24 cores/96
+         *                        GB, and 32 cores or more. The cluster edition supports resource pool isolation,
+         *                        scheduled scaling, and tiered storage of hot and cold data.</li>
+         *                        <li>Single-node edition: includes specifications such as 8 cores/32 GB and 16
+         *                        cores/64 GB. The single-node edition does not provide an SLA guarantee and has a
+         *                        long recovery time from failures (4 to 8 hours). We do not recommend that you use
+         *                        the single-node edition in production environments.</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        <ul>
+         *                        <li>You can call the <a href="">DescribeAvailableResource</a> operation to query the compute
+         *                        resources that are available in a specific region.</li>
+         *                        <li>This parameter is required when <code>Mode</code> is set to <code>Flexible</code> (flexible mode).</li>
+         *                        </ul>
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder computeResource(java.lang.String computeResource) {
@@ -385,8 +521,30 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getComputeResource}
-         * @param computeResource Property computeResource: The computing resource of the cluster.
-         *                        This parameter is required in elastic mode.
+         * @param computeResource Property computeResource: The compute resources for the cluster.
+         *                        Compute resources are used for data
+         *                        queries. A larger amount of compute resources can provide better query
+         *                        performance. Compute resources are available in cluster and single-node editions:
+         *                        <p>
+         *                        <ul>
+         *                        <li>Cluster edition: includes specifications such as 16 cores/64 GB, 24 cores/96
+         *                        GB, and 32 cores or more. The cluster edition supports resource pool isolation,
+         *                        scheduled scaling, and tiered storage of hot and cold data.</li>
+         *                        <li>Single-node edition: includes specifications such as 8 cores/32 GB and 16
+         *                        cores/64 GB. The single-node edition does not provide an SLA guarantee and has a
+         *                        long recovery time from failures (4 to 8 hours). We do not recommend that you use
+         *                        the single-node edition in production environments.</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        <ul>
+         *                        <li>You can call the <a href="">DescribeAvailableResource</a> operation to query the compute
+         *                        resources that are available in a specific region.</li>
+         *                        <li>This parameter is required when <code>Mode</code> is set to <code>Flexible</code> (flexible mode).</li>
+         *                        </ul>
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder computeResource(com.aliyun.ros.cdk.core.IResolvable computeResource) {
@@ -423,6 +581,10 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBClusterProps#getDbClusterDescription}
          * @param dbClusterDescription Property dbClusterDescription: The description of the cluster.
+         *                             <ul>
+         *                             <li>The description cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         *                             <li>The description must be 2 to 256 characters long.</li>
+         *                             </ul>
          * @return {@code this}
          */
         public Builder dbClusterDescription(java.lang.String dbClusterDescription) {
@@ -433,6 +595,10 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBClusterProps#getDbClusterDescription}
          * @param dbClusterDescription Property dbClusterDescription: The description of the cluster.
+         *                             <ul>
+         *                             <li>The description cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         *                             <li>The description must be 2 to 256 characters long.</li>
+         *                             </ul>
          * @return {@code this}
          */
         public Builder dbClusterDescription(com.aliyun.ros.cdk.core.IResolvable dbClusterDescription) {
@@ -443,9 +609,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBClusterProps#getDbNodeGroupCount}
          * @param dbNodeGroupCount Property dbNodeGroupCount: The number of node groups.
-         *                         This parameter is required in reserved mode. Valid values:
-         *                         T8, T16, T32, and T52: 1
-         *                         C8 and C32: 1 to 128
+         *                         The value must be an integer from 1 to 200.
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         This parameter is required when <code>Mode</code> is set to <code>Reserved</code> (reserved mode).
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder dbNodeGroupCount(java.lang.Number dbNodeGroupCount) {
@@ -456,9 +626,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBClusterProps#getDbNodeGroupCount}
          * @param dbNodeGroupCount Property dbNodeGroupCount: The number of node groups.
-         *                         This parameter is required in reserved mode. Valid values:
-         *                         T8, T16, T32, and T52: 1
-         *                         C8 and C32: 1 to 128
+         *                         The value must be an integer from 1 to 200.
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         This parameter is required when <code>Mode</code> is set to <code>Reserved</code> (reserved mode).
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder dbNodeGroupCount(com.aliyun.ros.cdk.core.IResolvable dbNodeGroupCount) {
@@ -530,7 +704,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getElasticIoResource}
-         * @param elasticIoResource Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.
+         * @param elasticIoResource Property elasticIoResource: The number of Elastic IO Units (EIUs).
          * @return {@code this}
          */
         public Builder elasticIoResource(java.lang.Number elasticIoResource) {
@@ -540,7 +714,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getElasticIoResource}
-         * @param elasticIoResource Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.
+         * @param elasticIoResource Property elasticIoResource: The number of Elastic IO Units (EIUs).
          * @return {@code this}
          */
         public Builder elasticIoResource(com.aliyun.ros.cdk.core.IResolvable elasticIoResource) {
@@ -578,7 +752,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getExecutorCount}
-         * @param executorCount Property executorCount: ExecutorCount.
+         * @param executorCount Property executorCount: This parameter is reserved.
          * @return {@code this}
          */
         public Builder executorCount(java.lang.Number executorCount) {
@@ -588,7 +762,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getExecutorCount}
-         * @param executorCount Property executorCount: ExecutorCount.
+         * @param executorCount Property executorCount: This parameter is reserved.
          * @return {@code this}
          */
         public Builder executorCount(com.aliyun.ros.cdk.core.IResolvable executorCount) {
@@ -618,8 +792,19 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getPeriod}
-         * @param period Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-         *               Valid values when the Period parameter is set to Year: 1, 2, and 3.
+         * @param period Property period: The subscription period unit.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>Year</li>
+         *               <li>Month</li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required when <code>PayType</code> is set to <code>Prepaid</code> (subscription).
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -629,8 +814,19 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getPeriod}
-         * @param period Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-         *               Valid values when the Period parameter is set to Year: 1, 2, and 3.
+         * @param period Property period: The subscription period unit.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>Year</li>
+         *               <li>Month</li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required when <code>PayType</code> is set to <code>Prepaid</code> (subscription).
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {

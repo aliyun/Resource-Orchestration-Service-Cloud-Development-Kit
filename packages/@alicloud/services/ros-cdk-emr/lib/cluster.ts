@@ -266,7 +266,7 @@ export interface ICluster extends ros.IResource {
     readonly attrMasterNodePubIps: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::Cluster`, which is used to create an E-MapReduce (EMR) cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::Cluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster
  */

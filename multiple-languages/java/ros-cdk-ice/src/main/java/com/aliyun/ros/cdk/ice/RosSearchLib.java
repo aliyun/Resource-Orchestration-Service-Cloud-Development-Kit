@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ice;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ICE::SearchLib</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:31:54.411Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:41:15.873Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ice.$Module.class, fqn = "@alicloud/ros-cdk-ice.RosSearchLib")
 public class RosSearchLib extends com.aliyun.ros.cdk.core.RosResource {
 

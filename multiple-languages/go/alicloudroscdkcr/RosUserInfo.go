@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CR::UserInfo`, which is used to create the information about a user.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CR::UserInfo`.
 type RosUserInfo interface {
 	alicloudroscdkcore.RosResource
 	AttrLoginName() alicloudroscdkcore.IResolvable

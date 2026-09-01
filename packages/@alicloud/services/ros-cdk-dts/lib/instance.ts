@@ -19,16 +19,18 @@ export interface InstanceProps {
 
     /**
      * Property payType: The billing method. Valid values:
-     * - **PrePaid**: subscription
-     * - **PostPaid**: pay-as-you-go
+     * *   PrePaid: subscription
+     * *   PostPaid: pay-as-you-go
+     * >  This parameter must be specified.
      */
     readonly payType: string | ros.IResolvable;
 
     /**
      * Property type: The type of the DTS instance. Valid values:
-     * - **MIGRATION*: data migration instance
-     * - **SYNC**: data synchronization instance
-     * - **SUBSCRIBE**: change tracking instance
+     * *   MIGRATION: data migration instance
+     * *   SYNC: data synchronization instance
+     * *   SUBSCRIBE: change tracking instance
+     * > You must specify one of this parameter and the JobId parameter.
      */
     readonly type: string | ros.IResolvable;
 
@@ -40,14 +42,19 @@ export interface InstanceProps {
     readonly autoPay?: boolean | ros.IResolvable;
 
     /**
-     * Property autoStart: Specifies whether to automatically start the task after the DTS instance is purchased. Valid values:
-     * - **false**: does not automatically start the task after the DTS instance is purchased. This is the default value.
-     * - **true**: automatically starts the task after the DTS instance is purchased.
+     * Property autoStart: Specifies whether to automatically start the task after the DTS instance is
+     * purchased. Valid values:
+     * *   false (default)
+     * *   true
+     * >  This parameter can be set to true and take effect only if you specify a valid
+     * value for JobId.
      */
     readonly autoStart?: boolean | ros.IResolvable;
 
     /**
-     * Property computeUnit: The specifications of the extract, transform, and load (ETL) instance. The unit is compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of this parameter must be an integer greater than or equal to 2.
+     * Property computeUnit: The specification of the extract, transform, and load (ETL) instance. The unit is
+     * compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of
+     * this parameter must be an integer greater than or equal to 2.
      */
     readonly computeUnit?: number | ros.IResolvable;
 
@@ -114,14 +121,14 @@ export interface InstanceProps {
     readonly jobId?: string | ros.IResolvable;
 
     /**
-     * Property maxDu: The upper limit of DU.
-     * > Only Serverless instances are supported.
+     * Property maxDu: Upper limit of DU.
+     * > Only supported by Serverless instances.
      */
     readonly maxDu?: number | ros.IResolvable;
 
     /**
-     * Property minDu: The lower limit of DU.
-     * > Only Serverless instances are supported.
+     * Property minDu: Lower limit of DU.
+     * > Only supported by Serverless instances.
      */
     readonly minDu?: number | ros.IResolvable;
 
@@ -177,9 +184,11 @@ export interface InstanceProps {
 
     /**
      * Property usedTime: The subscription duration.
-     * - Valid values if the **Period** parameter is set to **Month**: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-     * - Valid values if the **Period** parameter is set to **Year**: 1, 2, 3, and 5.
-     * **Note**: You must specify this parameter only if the **PayType** parameter is set to **PrePaid**. You can set the **Period** parameter to specify the unit of the subscription duration.
+     * *   Valid values if Period is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+     * *   Valid values if Period is set to Year: 1, 2, 3, and 5.
+     * >
+     * *   This parameter is valid and required only if PayType is set to PrePaid.
+     * *   You can configure Period to specify the unit of the subscription duration.
      */
     readonly usedTime?: number | ros.IResolvable;
 }
@@ -201,7 +210,7 @@ export interface IInstance extends ros.IResource {
     readonly attrJobId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::Instance`Use the , which resource to create a new DTS instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::Instance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
  */

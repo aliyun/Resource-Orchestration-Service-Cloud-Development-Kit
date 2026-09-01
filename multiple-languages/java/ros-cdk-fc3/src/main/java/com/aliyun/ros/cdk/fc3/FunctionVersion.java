@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc3;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC3::FunctionVersion</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:03:30.850Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:11:11.724Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.FunctionVersion")
 public class FunctionVersion extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc3.IFunctionVersion {
 

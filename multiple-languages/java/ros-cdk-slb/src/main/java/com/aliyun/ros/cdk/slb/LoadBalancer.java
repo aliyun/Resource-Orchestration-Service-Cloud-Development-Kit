@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::LoadBalancer</code>Use the , which resource type to create an SLB instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.282Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:44:47.077Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.slb.ILoadBalancer {
 
@@ -238,24 +238,24 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'.
+         * Property addressIpVersion: The IP version of the CLB instance.
          * <p>
-         * If 'ipv6' is selected, please note that the zone and the specification are supported.
+         * Valid values: ipv4 and ipv6.
          * <p>
          * @return {@code this}
-         * @param addressIpVersion Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'. This parameter is required.
+         * @param addressIpVersion Property addressIpVersion: The IP version of the CLB instance. This parameter is required.
          */
         public Builder addressIpVersion(final java.lang.String addressIpVersion) {
             this.props().addressIpVersion(addressIpVersion);
             return this;
         }
         /**
-         * Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'.
+         * Property addressIpVersion: The IP version of the CLB instance.
          * <p>
-         * If 'ipv6' is selected, please note that the zone and the specification are supported.
+         * Valid values: ipv4 and ipv6.
          * <p>
          * @return {@code this}
-         * @param addressIpVersion Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'. This parameter is required.
+         * @param addressIpVersion Property addressIpVersion: The IP version of the CLB instance. This parameter is required.
          */
         public Builder addressIpVersion(final com.aliyun.ros.cdk.core.IResolvable addressIpVersion) {
             this.props().addressIpVersion(addressIpVersion);
@@ -344,34 +344,46 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property instanceChargeType: Instance billing method.
+         * Property instanceChargeType: The resource metering method for the CLB instance.
          * <p>
          * Valid value:
          * <p>
          * <ul>
-         * <li><strong>PayBySpec</strong> (default): Pay by spec.</li>
-         * <li><strong>PayByCLCU</strong>: billed by usage.</li>
+         * <li>PayByCLCU: pay-by-data-transfer</li>
          * </ul>
          * <p>
+         * <blockquote>
+         * <p>
+         * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+         * no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
-         * @param instanceChargeType Property instanceChargeType: Instance billing method. This parameter is required.
+         * @param instanceChargeType Property instanceChargeType: The resource metering method for the CLB instance. This parameter is required.
          */
         public Builder instanceChargeType(final java.lang.String instanceChargeType) {
             this.props().instanceChargeType(instanceChargeType);
             return this;
         }
         /**
-         * Property instanceChargeType: Instance billing method.
+         * Property instanceChargeType: The resource metering method for the CLB instance.
          * <p>
          * Valid value:
          * <p>
          * <ul>
-         * <li><strong>PayBySpec</strong> (default): Pay by spec.</li>
-         * <li><strong>PayByCLCU</strong>: billed by usage.</li>
+         * <li>PayByCLCU: pay-by-data-transfer</li>
          * </ul>
          * <p>
+         * <blockquote>
+         * <p>
+         * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+         * no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
-         * @param instanceChargeType Property instanceChargeType: Instance billing method. This parameter is required.
+         * @param instanceChargeType Property instanceChargeType: The resource metering method for the CLB instance. This parameter is required.
          */
         public Builder instanceChargeType(final com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
             this.props().instanceChargeType(instanceChargeType);
@@ -416,24 +428,30 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property loadBalancerName: Name of created load balancer.
+         * Property loadBalancerName: The CLB instance name.
          * <p>
-         * Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+         * The name must be 1 to 80 characters in length, and can contain digits, periods
+         * (.), underscores (_), and hyphens (-). It must start with a letter.
+         * If you do not specify this parameter, the system automatically assigns a name to
+         * the CLB instance.
          * <p>
          * @return {@code this}
-         * @param loadBalancerName Property loadBalancerName: Name of created load balancer. This parameter is required.
+         * @param loadBalancerName Property loadBalancerName: The CLB instance name. This parameter is required.
          */
         public Builder loadBalancerName(final java.lang.String loadBalancerName) {
             this.props().loadBalancerName(loadBalancerName);
             return this;
         }
         /**
-         * Property loadBalancerName: Name of created load balancer.
+         * Property loadBalancerName: The CLB instance name.
          * <p>
-         * Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+         * The name must be 1 to 80 characters in length, and can contain digits, periods
+         * (.), underscores (_), and hyphens (-). It must start with a letter.
+         * If you do not specify this parameter, the system automatically assigns a name to
+         * the CLB instance.
          * <p>
          * @return {@code this}
-         * @param loadBalancerName Property loadBalancerName: Name of created load balancer. This parameter is required.
+         * @param loadBalancerName Property loadBalancerName: The CLB instance name. This parameter is required.
          */
         public Builder loadBalancerName(final com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
             this.props().loadBalancerName(loadBalancerName);
@@ -446,15 +464,24 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
          * Valid values:
          * <p>
          * <ul>
-         * <li><strong>slb.s1.small</strong></li>
-         * <li><strong>slb.s2.small</strong></li>
-         * <li><strong>slb.s2.medium</strong></li>
-         * <li><strong>slb.s3.small</strong></li>
-         * <li><strong>slb.s3.medium</strong></li>
-         * <li><strong>slb.s3.large</strong>
-         * <strong>Note</strong> If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
-         * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.</li>
+         * <li>slb.s1.small</li>
+         * <li>slb.s2.small</li>
+         * <li>slb.s2.medium</li>
+         * <li>slb.s3.small</li>
+         * <li>slb.s3.medium</li>
+         * <li>slb.s3.large</li>
          * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+         * do not need to specify this parameter.</li>
+         * <li>As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+         * are no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param loadBalancerSpec Property loadBalancerSpec: The specification of the CLB instance. This parameter is required.
@@ -469,15 +496,24 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
          * Valid values:
          * <p>
          * <ul>
-         * <li><strong>slb.s1.small</strong></li>
-         * <li><strong>slb.s2.small</strong></li>
-         * <li><strong>slb.s2.medium</strong></li>
-         * <li><strong>slb.s3.small</strong></li>
-         * <li><strong>slb.s3.medium</strong></li>
-         * <li><strong>slb.s3.large</strong>
-         * <strong>Note</strong> If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
-         * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.</li>
+         * <li>slb.s1.small</li>
+         * <li>slb.s2.small</li>
+         * <li>slb.s2.medium</li>
+         * <li>slb.s3.small</li>
+         * <li>slb.s3.medium</li>
+         * <li>slb.s3.large</li>
          * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+         * do not need to specify this parameter.</li>
+         * <li>As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+         * are no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param loadBalancerSpec Property loadBalancerSpec: The specification of the CLB instance. This parameter is required.
@@ -509,26 +545,42 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property modificationProtectionReason: Set the reason for modifying the protection status.
+         * Property modificationProtectionReason: The reason for enabling the configuration read-only mode.
          * <p>
-         * The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
-         * Only valid when ModificationProtectionStatus is ConsoleProtection.
+         * The reason must be 1 to
+         * 80 characters in length. It must start with a letter and can contain letters,
+         * digits, periods (.), underscores (_), and hyphens (-).
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter takes effect only when ModificationProtectionStatus is set to
+         * ConsoleProtection.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param modificationProtectionReason Property modificationProtectionReason: Set the reason for modifying the protection status. This parameter is required.
+         * @param modificationProtectionReason Property modificationProtectionReason: The reason for enabling the configuration read-only mode. This parameter is required.
          */
         public Builder modificationProtectionReason(final java.lang.String modificationProtectionReason) {
             this.props().modificationProtectionReason(modificationProtectionReason);
             return this;
         }
         /**
-         * Property modificationProtectionReason: Set the reason for modifying the protection status.
+         * Property modificationProtectionReason: The reason for enabling the configuration read-only mode.
          * <p>
-         * The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
-         * Only valid when ModificationProtectionStatus is ConsoleProtection.
+         * The reason must be 1 to
+         * 80 characters in length. It must start with a letter and can contain letters,
+         * digits, periods (.), underscores (_), and hyphens (-).
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter takes effect only when ModificationProtectionStatus is set to
+         * ConsoleProtection.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param modificationProtectionReason Property modificationProtectionReason: Set the reason for modifying the protection status. This parameter is required.
+         * @param modificationProtectionReason Property modificationProtectionReason: The reason for enabling the configuration read-only mode. This parameter is required.
          */
         public Builder modificationProtectionReason(final com.aliyun.ros.cdk.core.IResolvable modificationProtectionReason) {
             this.props().modificationProtectionReason(modificationProtectionReason);
@@ -536,20 +588,54 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection ConsoleProtection: Modify instance protection status by console Default value is empty.
+         * Property modificationProtectionStatus: Specifies whether to enable the configuration read-only mode.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>NonProtection: disables the configuration read-only mode. After you disable the
+         * configuration read-only mode, the value of ModificationProtectionReason is
+         * cleared.</li>
+         * <li>ConsoleProtection: enables the configuration read-only mode.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you set this parameter to ConsoleProtection, you cannot modify instance
+         * configurations in the CLB console. However, you can modify instance
+         * configurations by calling API operations.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param modificationProtectionStatus Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection ConsoleProtection: Modify instance protection status by console Default value is empty. This parameter is required.
+         * @param modificationProtectionStatus Property modificationProtectionStatus: Specifies whether to enable the configuration read-only mode. This parameter is required.
          */
         public Builder modificationProtectionStatus(final java.lang.String modificationProtectionStatus) {
             this.props().modificationProtectionStatus(modificationProtectionStatus);
             return this;
         }
         /**
-         * Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection ConsoleProtection: Modify instance protection status by console Default value is empty.
+         * Property modificationProtectionStatus: Specifies whether to enable the configuration read-only mode.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>NonProtection: disables the configuration read-only mode. After you disable the
+         * configuration read-only mode, the value of ModificationProtectionReason is
+         * cleared.</li>
+         * <li>ConsoleProtection: enables the configuration read-only mode.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you set this parameter to ConsoleProtection, you cannot modify instance
+         * configurations in the CLB console. However, you can modify instance
+         * configurations by calling API operations.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param modificationProtectionStatus Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection ConsoleProtection: Modify instance protection status by console Default value is empty. This parameter is required.
+         * @param modificationProtectionStatus Property modificationProtectionStatus: Specifies whether to enable the configuration read-only mode. This parameter is required.
          */
         public Builder modificationProtectionStatus(final com.aliyun.ros.cdk.core.IResolvable modificationProtectionStatus) {
             this.props().modificationProtectionStatus(modificationProtectionStatus);
@@ -637,24 +723,38 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property vSwitchId: The VSwitch id to create load balancer instance.
+         * Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
          * <p>
-         * For VPC network only.
+         * If you want to deploy the CLB instance in a VPC, this parameter is required. If
+         * this parameter is specified, AddessType is set to intranet by default.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The vSwitch must be in the primary zone.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The VSwitch id to create load balancer instance. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props().vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: The VSwitch id to create load balancer instance.
+         * Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
          * <p>
-         * For VPC network only.
+         * If you want to deploy the CLB instance in a VPC, this parameter is required. If
+         * this parameter is specified, AddessType is set to intranet by default.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The vSwitch must be in the primary zone.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The VSwitch id to create load balancer instance. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props().vSwitchId(vSwitchId);

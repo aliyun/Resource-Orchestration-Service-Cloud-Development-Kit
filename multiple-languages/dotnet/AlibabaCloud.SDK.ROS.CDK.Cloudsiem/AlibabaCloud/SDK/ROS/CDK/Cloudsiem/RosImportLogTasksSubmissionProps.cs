@@ -16,7 +16,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudsiem
         private object _accounts;
 
         /// <remarks>
-        /// <strong>Property</strong>: accounts: The list of accounts to be submitted.
+        /// <strong>Property</strong>: accounts: The list of accounts for log ingestion. The value must be a JSON array. Valid
+        /// values:
+        /// - AccountId: The ID of the account.
+        /// - Imported: Specifies whether to enable or disable log ingestion for the account.
+        /// Valid values:
+        /// - 0: Disable ingestion.
+        /// - 1: Enable ingestion.
         /// </remarks>
         [JsiiProperty(name: "accounts", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         public object Accounts

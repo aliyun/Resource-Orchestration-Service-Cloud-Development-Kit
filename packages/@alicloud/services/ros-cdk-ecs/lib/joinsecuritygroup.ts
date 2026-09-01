@@ -37,7 +37,7 @@ export interface IJoinSecurityGroup extends ros.IResource {
     readonly props: JoinSecurityGroupProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::JoinSecurityGroup`, which is used to add one or more ECS instances to a specified security group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::JoinSecurityGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosJoinSecurityGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-joinsecuritygroup
  */

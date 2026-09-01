@@ -5,15 +5,27 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpngateway
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.748Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.547Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(VpnGatewayProps.Jsii$Proxy.class)
 public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps.
+     * Property bandwidth: The maximum bandwidth of the VPN gateway.
      * <p>
-     * Value: 5|10|20|50|100|200.
+     * Unit: Mbit/s.
+     * <p>
+     * <ul>
+     * <li>If you want to create a public VPN gateway, valid values are 10, 100, 200,
+     * 500, and 1000.</li>
+     * <li>If you want to create a private VPN gateway, valid values are 200 and 1000.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * The maximum bandwidth supported by VPN gateways in some regions is 500 Mbit/s.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getBandwidth();
 
@@ -23,10 +35,22 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
 
     /**
-     * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.
+     * Property autoPay: Specifies whether to enable automatic payment.
      * <p>
-     * false: Does not automatically pay the bill for the VPN gateway.
-     * Default true.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true</li>
+     * <li>false (default)</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * To create a VPN gateway, we recommend that you enable automatic payment. If you
+     * disable automatic payment, you must manually pay the bill to create the VPN
+     * gateway.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
@@ -76,7 +100,10 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property instanceChargeType: Accounting type of the VPN gateway, the value is: PREPAY, POSTPAY.
+     * Property instanceChargeType: The billing method of the VPN gateway.
+     * <p>
+     * Set the value to POSTPAY, which specifies
+     * the pay-as-you-go billing method.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
@@ -95,7 +122,12 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property networkType: The network type of the VPN gateway.
      * <p>
-     * Valid values: public|private
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>public (default)</li>
+     * <li>private</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
         return null;
@@ -125,7 +157,10 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property sslConnections: The maximum number of clients allowed to connect at the same time.
+     * Property sslConnections: The maximum number of clients that can be connected at the same time.
+     * <p>
+     * Valid
+     * values: 5 (default), 10, 20, 50, 100, 200, 500, and 1000.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSslConnections() {
         return null;
@@ -141,14 +176,26 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property vpnType: VPN gateway type.
+     * Property vpnType: The type of the VPN gateway.
+     * <p>
+     * Valid values:
+     * Set the value to Normal (default), which specifies a standard NAT gateway.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpnType() {
         return null;
     }
 
     /**
-     * Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
+     * Property vSwitchId: The vSwitch with which you want to associate the VPN gateway.
+     * <p>
+     * <ul>
+     * <li>If you call this operation in a region that supports the IPsec-VPN
+     * connections in dual-tunnel mode, this parameter is required. You must specify a
+     * vSwitch and specify DisasterRecoveryVSwitchId.</li>
+     * <li>If you call this operation in a region that supports the IPsec-VPN
+     * connections in single-tunnel mode and do not specify a vSwitch, the system
+     * automatically specifies a vSwitch.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
@@ -183,8 +230,20 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpnGatewayProps#getBandwidth}
-         * @param bandwidth Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps. This parameter is required.
-         *                  Value: 5|10|20|50|100|200.
+         * @param bandwidth Property bandwidth: The maximum bandwidth of the VPN gateway. This parameter is required.
+         *                  Unit: Mbit/s.
+         *                  <p>
+         *                  <ul>
+         *                  <li>If you want to create a public VPN gateway, valid values are 10, 100, 200,
+         *                  500, and 1000.</li>
+         *                  <li>If you want to create a private VPN gateway, valid values are 200 and 1000.</li>
+         *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  The maximum bandwidth supported by VPN gateways in some regions is 500 Mbit/s.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
@@ -194,8 +253,20 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpnGatewayProps#getBandwidth}
-         * @param bandwidth Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps. This parameter is required.
-         *                  Value: 5|10|20|50|100|200.
+         * @param bandwidth Property bandwidth: The maximum bandwidth of the VPN gateway. This parameter is required.
+         *                  Unit: Mbit/s.
+         *                  <p>
+         *                  <ul>
+         *                  <li>If you want to create a public VPN gateway, valid values are 10, 100, 200,
+         *                  500, and 1000.</li>
+         *                  <li>If you want to create a private VPN gateway, valid values are 200 and 1000.</li>
+         *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  The maximum bandwidth supported by VPN gateways in some regions is 500 Mbit/s.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
@@ -225,9 +296,21 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpnGatewayProps#getAutoPay}
-         * @param autoPay Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.
-         *                false: Does not automatically pay the bill for the VPN gateway.
-         *                Default true.
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li>true</li>
+         *                <li>false (default)</li>
+         *                </ul>
+         *                <p>
+         *                <blockquote>
+         *                <p>
+         *                To create a VPN gateway, we recommend that you enable automatic payment. If you
+         *                disable automatic payment, you must manually pay the bill to create the VPN
+         *                gateway.
+         *                <p>
+         *                </blockquote>
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -237,9 +320,21 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpnGatewayProps#getAutoPay}
-         * @param autoPay Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.
-         *                false: Does not automatically pay the bill for the VPN gateway.
-         *                Default true.
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li>true</li>
+         *                <li>false (default)</li>
+         *                </ul>
+         *                <p>
+         *                <blockquote>
+         *                <p>
+         *                To create a VPN gateway, we recommend that you enable automatic payment. If you
+         *                disable automatic payment, you must manually pay the bill to create the VPN
+         *                gateway.
+         *                <p>
+         *                </blockquote>
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
@@ -351,7 +446,9 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpnGatewayProps#getInstanceChargeType}
-         * @param instanceChargeType Property instanceChargeType: Accounting type of the VPN gateway, the value is: PREPAY, POSTPAY.
+         * @param instanceChargeType Property instanceChargeType: The billing method of the VPN gateway.
+         *                           Set the value to POSTPAY, which specifies
+         *                           the pay-as-you-go billing method.
          * @return {@code this}
          */
         public Builder instanceChargeType(java.lang.String instanceChargeType) {
@@ -361,7 +458,9 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpnGatewayProps#getInstanceChargeType}
-         * @param instanceChargeType Property instanceChargeType: Accounting type of the VPN gateway, the value is: PREPAY, POSTPAY.
+         * @param instanceChargeType Property instanceChargeType: The billing method of the VPN gateway.
+         *                           Set the value to POSTPAY, which specifies
+         *                           the pay-as-you-go billing method.
          * @return {@code this}
          */
         public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
@@ -396,7 +495,12 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link VpnGatewayProps#getNetworkType}
          * @param networkType Property networkType: The network type of the VPN gateway.
-         *                    Valid values: public|private
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>public (default)</li>
+         *                    <li>private</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder networkType(java.lang.String networkType) {
@@ -407,7 +511,12 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link VpnGatewayProps#getNetworkType}
          * @param networkType Property networkType: The network type of the VPN gateway.
-         *                    Valid values: public|private
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>public (default)</li>
+         *                    <li>private</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
@@ -471,7 +580,9 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpnGatewayProps#getSslConnections}
-         * @param sslConnections Property sslConnections: The maximum number of clients allowed to connect at the same time.
+         * @param sslConnections Property sslConnections: The maximum number of clients that can be connected at the same time.
+         *                       Valid
+         *                       values: 5 (default), 10, 20, 50, 100, 200, 500, and 1000.
          * @return {@code this}
          */
         public Builder sslConnections(java.lang.Number sslConnections) {
@@ -481,7 +592,9 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpnGatewayProps#getSslConnections}
-         * @param sslConnections Property sslConnections: The maximum number of clients allowed to connect at the same time.
+         * @param sslConnections Property sslConnections: The maximum number of clients that can be connected at the same time.
+         *                       Valid
+         *                       values: 5 (default), 10, 20, 50, 100, 200, 500, and 1000.
          * @return {@code this}
          */
         public Builder sslConnections(com.aliyun.ros.cdk.core.IResolvable sslConnections) {
@@ -503,7 +616,9 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpnGatewayProps#getVpnType}
-         * @param vpnType Property vpnType: VPN gateway type.
+         * @param vpnType Property vpnType: The type of the VPN gateway.
+         *                Valid values:
+         *                Set the value to Normal (default), which specifies a standard NAT gateway.
          * @return {@code this}
          */
         public Builder vpnType(java.lang.String vpnType) {
@@ -513,7 +628,9 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpnGatewayProps#getVpnType}
-         * @param vpnType Property vpnType: VPN gateway type.
+         * @param vpnType Property vpnType: The type of the VPN gateway.
+         *                Valid values:
+         *                Set the value to Normal (default), which specifies a standard NAT gateway.
          * @return {@code this}
          */
         public Builder vpnType(com.aliyun.ros.cdk.core.IResolvable vpnType) {
@@ -523,7 +640,15 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpnGatewayProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
+         * @param vSwitchId Property vSwitchId: The vSwitch with which you want to associate the VPN gateway.
+         *                  <ul>
+         *                  <li>If you call this operation in a region that supports the IPsec-VPN
+         *                  connections in dual-tunnel mode, this parameter is required. You must specify a
+         *                  vSwitch and specify DisasterRecoveryVSwitchId.</li>
+         *                  <li>If you call this operation in a region that supports the IPsec-VPN
+         *                  connections in single-tunnel mode and do not specify a vSwitch, the system
+         *                  automatically specifies a vSwitch.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -533,7 +658,15 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpnGatewayProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
+         * @param vSwitchId Property vSwitchId: The vSwitch with which you want to associate the VPN gateway.
+         *                  <ul>
+         *                  <li>If you call this operation in a region that supports the IPsec-VPN
+         *                  connections in dual-tunnel mode, this parameter is required. You must specify a
+         *                  vSwitch and specify DisasterRecoveryVSwitchId.</li>
+         *                  <li>If you call this operation in a region that supports the IPsec-VPN
+         *                  connections in single-tunnel mode and do not specify a vSwitch, the system
+         *                  automatically specifies a vSwitch.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {

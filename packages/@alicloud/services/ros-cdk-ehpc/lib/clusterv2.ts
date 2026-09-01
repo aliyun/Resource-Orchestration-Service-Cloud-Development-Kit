@@ -10,7 +10,8 @@ export { RosClusterV2 as ClusterV2Property };
 export interface ClusterV2Props {
 
     /**
-     * Property clusterName: Cluster name. The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+     * Property clusterName: The cluster name. The name must be 1 to 128 characters in length and can contain
+     * letters, digits, hyphens (-), and underscores (_).
      */
     readonly clusterName: string | ros.IResolvable;
 
@@ -62,7 +63,8 @@ export interface ClusterV2Props {
     readonly clusterCustomConfiguration?: RosClusterV2.ClusterCustomConfigurationProperty | ros.IResolvable;
 
     /**
-     * Property clusterDescription: Cluster description. The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+     * Property clusterDescription: The cluster description. The description must be 1 to 128 characters in length
+     * and can contain letters, digits, hyphens (-), and underscores (_).
      */
     readonly clusterDescription?: string | ros.IResolvable;
 

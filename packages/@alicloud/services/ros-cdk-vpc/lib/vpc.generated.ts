@@ -9,27 +9,38 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosAnycastEIPProps {
 
     /**
-     * @Property bandwidth: Anycast EIP instance bandwidth
+     * @Property bandwidth: The peak bandwidth of the Anycast EIP instance. Unit: Mbps.
+     * Valid values: 200 to 1000.
+     * Default value: 1000.
+     * > The peak bandwidth is for reference only and is not a guaranteed value. It
+     * serves as the upper limit for bandwidth.
      */
     readonly bandwidth?: number | ros.IResolvable;
 
     /**
-     * @Property description: Anycast EIP instance description
+     * @Property description: The description of the Anycast EIP instance.
+     * The description must be 0 to 256 characters in length and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property instanceChargeType: Anycast EIP instance charge type
+     * @Property instanceChargeType: The billing method of the Anycast EIP instance.
+     * Set the value to PostPaid. This value specifies the pay-as-you-go billing method.
      */
     readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property internetChargeType: Anycast EIP instance access public network billing method
+     * @Property internetChargeType: The metering method for Internet data transfer.
+     * Set the value to PayByTraffic. This value specifies the pay-by-data-transfer
+     * metering method.
      */
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property name: Anycast EIP instance name
+     * @Property name: The name of the Anycast EIP instance.
+     * The name must be 0 to 128 characters in length. It must start with a letter or a
+     * Chinese character and can contain digits, underscores (_), and hyphens (-).
      */
     readonly name?: string | ros.IResolvable;
 
@@ -141,27 +152,38 @@ export class RosAnycastEIP extends ros.RosResource {
 
 
     /**
-     * @Property bandwidth: Anycast EIP instance bandwidth
+     * @Property bandwidth: The peak bandwidth of the Anycast EIP instance. Unit: Mbps.
+     * Valid values: 200 to 1000.
+     * Default value: 1000.
+     * > The peak bandwidth is for reference only and is not a guaranteed value. It
+     * serves as the upper limit for bandwidth.
      */
     public bandwidth: number | ros.IResolvable | undefined;
 
     /**
-     * @Property description: Anycast EIP instance description
+     * @Property description: The description of the Anycast EIP instance.
+     * The description must be 0 to 256 characters in length and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceChargeType: Anycast EIP instance charge type
+     * @Property instanceChargeType: The billing method of the Anycast EIP instance.
+     * Set the value to PostPaid. This value specifies the pay-as-you-go billing method.
      */
     public instanceChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetChargeType: Anycast EIP instance access public network billing method
+     * @Property internetChargeType: The metering method for Internet data transfer.
+     * Set the value to PayByTraffic. This value specifies the pay-by-data-transfer
+     * metering method.
      */
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property name: Anycast EIP instance name
+     * @Property name: The name of the Anycast EIP instance.
+     * The name must be 0 to 128 characters in length. It must start with a letter or a
+     * Chinese character and can contain digits, underscores (_), and hyphens (-).
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -236,12 +258,31 @@ export interface RosAnycastEIPAssociationProps {
     readonly bindInstanceRegionId: string | ros.IResolvable;
 
     /**
-     * @Property bindInstanceType: The cloud resource instance type to be bound. Valid value: SlbInstance, SLB instance of private network type.
+     * @Property bindInstanceType: The type of the cloud resource with which you want to associate the Anycast EIP.
+     * Valid values:
+     * - SlbInstance: CLB instance in a virtual private cloud (VPC).
+     * - NetworkInterface: ENI.
      */
     readonly bindInstanceType: string | ros.IResolvable;
 
     /**
-     * @Property associationMode: The association mode.
+     * @Property associationMode: The association mode. Valid values:
+     * - Default: the default mode. In this mode, the associated cloud resource is the
+     * default origin server.
+     * - Normal: the normal mode. In this mode, the associated cloud resource is a
+     * normal origin server.
+     * > An Anycast EIP can be associated with cloud resources in multiple regions.
+     * However, you can specify only one default origin server and multiple normal
+     * origin servers. When you do not specify an access point or add a new access
+     * point, requests are forwarded to the default origin server by default.
+     * >
+     * > - If this is your first time to associate a cloud resource with the Anycast
+     * EIP, the association mode is Default by default.
+     * >
+     * > - If this is not your first time to associate a cloud resource with the Anycast
+     * EIP, you can set the association mode to Default. This makes the new cloud
+     * resource the default origin server, and the original default origin server
+     * becomes a normal origin server.
      */
     readonly associationMode?: string | ros.IResolvable;
 
@@ -251,7 +292,10 @@ export interface RosAnycastEIPAssociationProps {
     readonly popLocations?: Array<RosAnycastEIPAssociation.PopLocationsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property privateIpAddress: The private IP address.
+     * @Property privateIpAddress: The secondary private IP address of the ENI.
+     * This parameter is required when BindInstanceType is set to NetworkInterface. If
+     * you do not specify this parameter, the primary private IP address of the ENI is
+     * used.
      */
     readonly privateIpAddress?: string | ros.IResolvable;
 }
@@ -361,12 +405,31 @@ export class RosAnycastEIPAssociation extends ros.RosResource {
     public bindInstanceRegionId: string | ros.IResolvable;
 
     /**
-     * @Property bindInstanceType: The cloud resource instance type to be bound. Valid value: SlbInstance, SLB instance of private network type.
+     * @Property bindInstanceType: The type of the cloud resource with which you want to associate the Anycast EIP.
+     * Valid values:
+     * - SlbInstance: CLB instance in a virtual private cloud (VPC).
+     * - NetworkInterface: ENI.
      */
     public bindInstanceType: string | ros.IResolvable;
 
     /**
-     * @Property associationMode: The association mode.
+     * @Property associationMode: The association mode. Valid values:
+     * - Default: the default mode. In this mode, the associated cloud resource is the
+     * default origin server.
+     * - Normal: the normal mode. In this mode, the associated cloud resource is a
+     * normal origin server.
+     * > An Anycast EIP can be associated with cloud resources in multiple regions.
+     * However, you can specify only one default origin server and multiple normal
+     * origin servers. When you do not specify an access point or add a new access
+     * point, requests are forwarded to the default origin server by default.
+     * >
+     * > - If this is your first time to associate a cloud resource with the Anycast
+     * EIP, the association mode is Default by default.
+     * >
+     * > - If this is not your first time to associate a cloud resource with the Anycast
+     * EIP, you can set the association mode to Default. This makes the new cloud
+     * resource the default origin server, and the original default origin server
+     * becomes a normal origin server.
      */
     public associationMode: string | ros.IResolvable | undefined;
 
@@ -376,7 +439,10 @@ export class RosAnycastEIPAssociation extends ros.RosResource {
     public popLocations: Array<RosAnycastEIPAssociation.PopLocationsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property privateIpAddress: The private IP address.
+     * @Property privateIpAddress: The secondary private IP address of the ENI.
+     * This parameter is required when BindInstanceType is set to NetworkInterface. If
+     * you do not specify this parameter, the primary private IP address of the ENI is
+     * used.
      */
     public privateIpAddress: string | ros.IResolvable | undefined;
 
@@ -489,19 +555,31 @@ export interface RosBgpGroupProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property ipVersion: The IP version of the BGP group. Valid values: IPv4 and IPv6.
+     * @Property ipVersion: The IP version. Valid values:
+     * *   IPv4: This is the default value.
+     * *   IPv6: IPv6 is supported only if the VBR for which you want to create the BGP
+     * group has IPv6 enabled.
      */
     readonly ipVersion?: string | ros.IResolvable;
 
     /**
-     * @Property isFakeAsn: A router that runs BGP typically belongs to only one AS. In some cases, for example,
-     * the AS needs to be migrated or is merged with another AS, a new AS number replaces
-     * the original one.
+     * @Property isFakeAsn: Specifies whether to use a fake ASN. Valid values:
+     * *   false (default)
+     * *   true
+     * >  A router that runs BGP typically belongs to only one AS. If you need to
+     * replace an existing AS with a new AS and you cannot immediately modify BGP
+     * configurations, you can use fake ASNs to ensure service continuity.
      */
     readonly isFakeAsn?: boolean | ros.IResolvable;
 
     /**
-     * @Property localAsn: The AS number on the Alibaba Cloud side.
+     * @Property localAsn: The custom ASN on the cloud side. Valid values:
+     * *   45104
+     * *   64512~65534
+     * *   4200000000~4294967294
+     * >  65025 is reserved by the cloud platform. By default, the system uses 45104 as
+     * LocalAsn. If you use custom LocalAsn in multi-line access scenarios, loops in BGP
+     * may occur.
      */
     readonly localAsn?: number | ros.IResolvable;
 
@@ -627,19 +705,31 @@ export class RosBgpGroup extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ipVersion: The IP version of the BGP group. Valid values: IPv4 and IPv6.
+     * @Property ipVersion: The IP version. Valid values:
+     * *   IPv4: This is the default value.
+     * *   IPv6: IPv6 is supported only if the VBR for which you want to create the BGP
+     * group has IPv6 enabled.
      */
     public ipVersion: string | ros.IResolvable | undefined;
 
     /**
-     * @Property isFakeAsn: A router that runs BGP typically belongs to only one AS. In some cases, for example,
-     * the AS needs to be migrated or is merged with another AS, a new AS number replaces
-     * the original one.
+     * @Property isFakeAsn: Specifies whether to use a fake ASN. Valid values:
+     * *   false (default)
+     * *   true
+     * >  A router that runs BGP typically belongs to only one AS. If you need to
+     * replace an existing AS with a new AS and you cannot immediately modify BGP
+     * configurations, you can use fake ASNs to ensure service continuity.
      */
     public isFakeAsn: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property localAsn: The AS number on the Alibaba Cloud side.
+     * @Property localAsn: The custom ASN on the cloud side. Valid values:
+     * *   45104
+     * *   64512~65534
+     * *   4200000000~4294967294
+     * >  65025 is reserved by the cloud platform. By default, the system uses 45104 as
+     * LocalAsn. If you use custom LocalAsn in multi-line access scenarios, loops in BGP
+     * may occur.
      */
     public localAsn: number | ros.IResolvable | undefined;
 
@@ -1012,7 +1102,8 @@ export class RosBgpPeer extends ros.RosResource {
 export interface RosCommonBandwidthPackageProps {
 
     /**
-     * @Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit\/s.
+     * @Property bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit\/s.
+     * Valid values: 1 to 1000. Default value: 1.
      */
     readonly bandwidth: number | ros.IResolvable;
 
@@ -1024,34 +1115,45 @@ export interface RosCommonBandwidthPackageProps {
 
     /**
      * @Property description: The description of the Internet Shared Bandwidth instance.
-     * The description must be 2 to 256 characters in length. It must start with a letter,
-     * and cannot start with http:\/\/ or https:\/\/.
+     * The description must be 0 to 256 characters in length and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property internetChargeType: The billing model of the Internet Shared Bandwidth instance. Allowed values:
-     * PayByBandwidth (default): Billed by bandwidth.
-     * PayBy95: Charged at Enhanced 95.
+     * @Property internetChargeType: The billing method of the Internet Shared Bandwidth instance. Set the value to
+     * PayByTraffic, which specifies the pay-by-data-transfer billing method.
      */
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property isp: Line type of EIP, value: BGP (multi-line).
+     * @Property isp: The line type. Valid values:
+     * *   BGP (default) All regions support BGP (Multi-ISP).
+     * *   BGP_PRO BGP (Multi-ISP) Pro lines are available in the China (Hong Kong),
+     * Singapore, Japan (Tokyo), Philippines (Manila), Malaysia (Kuala Lumpur),
+     * Indonesia (Jakarta), and Thailand (Bangkok) regions.
+     * If you are allowed to use single-ISP bandwidth, you can also use one of the
+     * following values:
+     * *   ChinaTelecom
+     * *   ChinaUnicom
+     * *   ChinaMobile
+     * *   ChinaTelecom_L2
+     * *   ChinaUnicom_L2
+     * *   ChinaMobile_L2
+     * If your services are deployed in China East 1 Finance, this parameter is required
+     * and you must set the value to BGP_FinanceCloud.
      */
     readonly isp?: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the Internet Shared Bandwidth instance.
-     * The name must be 2 to 128 characters in length and can contain letters, numbers, periods
-     * (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
-     * start with http:\/\/ or https:\/\/.
+     * The name must be 0 to 128 characters in length and cannot start with `http:\/\/` or
+     * `https:\/\/`.
      */
     readonly name?: string | ros.IResolvable;
 
     /**
-     * @Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance. Default to 100.
-     * Note This parameter is only supported on the China site.
+     * @Property ratio: The percentage of the minimum bandwidth commitment. Set the parameter to 20.
      */
     readonly ratio?: number | ros.IResolvable;
 
@@ -1066,7 +1168,8 @@ export interface RosCommonBandwidthPackageProps {
     readonly tags?: RosCommonBandwidthPackage.TagsProperty[];
 
     /**
-     * @Property zone: Zone Id.
+     * @Property zone: The zone of the Internet Shared Bandwidth instance. This parameter is required if
+     * you create an Internet Shared Bandwidth instance for a cloud box.
      */
     readonly zone?: string | ros.IResolvable;
 }
@@ -1084,7 +1187,7 @@ function RosCommonBandwidthPackagePropsValidator(properties: any): ros.Validatio
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
-            min: 2,
+            min: 0,
             max: 256,
           }));
     }
@@ -1096,7 +1199,7 @@ function RosCommonBandwidthPackagePropsValidator(properties: any): ros.Validatio
     if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
         errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
             data: properties.bandwidth,
-            min: 2,
+            min: 1,
             max: undefined,
           }));
     }
@@ -1122,7 +1225,7 @@ function RosCommonBandwidthPackagePropsValidator(properties: any): ros.Validatio
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
             data: properties.name.length,
-            min: 2,
+            min: 0,
             max: 128,
           }));
     }
@@ -1182,7 +1285,8 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
 
 
     /**
-     * @Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit\/s.
+     * @Property bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit\/s.
+     * Valid values: 1 to 1000. Default value: 1.
      */
     public bandwidth: number | ros.IResolvable;
 
@@ -1194,34 +1298,45 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
 
     /**
      * @Property description: The description of the Internet Shared Bandwidth instance.
-     * The description must be 2 to 256 characters in length. It must start with a letter,
-     * and cannot start with http:\/\/ or https:\/\/.
+     * The description must be 0 to 256 characters in length and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetChargeType: The billing model of the Internet Shared Bandwidth instance. Allowed values:
-     * PayByBandwidth (default): Billed by bandwidth.
-     * PayBy95: Charged at Enhanced 95.
+     * @Property internetChargeType: The billing method of the Internet Shared Bandwidth instance. Set the value to
+     * PayByTraffic, which specifies the pay-by-data-transfer billing method.
      */
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property isp: Line type of EIP, value: BGP (multi-line).
+     * @Property isp: The line type. Valid values:
+     * *   BGP (default) All regions support BGP (Multi-ISP).
+     * *   BGP_PRO BGP (Multi-ISP) Pro lines are available in the China (Hong Kong),
+     * Singapore, Japan (Tokyo), Philippines (Manila), Malaysia (Kuala Lumpur),
+     * Indonesia (Jakarta), and Thailand (Bangkok) regions.
+     * If you are allowed to use single-ISP bandwidth, you can also use one of the
+     * following values:
+     * *   ChinaTelecom
+     * *   ChinaUnicom
+     * *   ChinaMobile
+     * *   ChinaTelecom_L2
+     * *   ChinaUnicom_L2
+     * *   ChinaMobile_L2
+     * If your services are deployed in China East 1 Finance, this parameter is required
+     * and you must set the value to BGP_FinanceCloud.
      */
     public isp: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: The name of the Internet Shared Bandwidth instance.
-     * The name must be 2 to 128 characters in length and can contain letters, numbers, periods
-     * (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
-     * start with http:\/\/ or https:\/\/.
+     * The name must be 0 to 128 characters in length and cannot start with `http:\/\/` or
+     * `https:\/\/`.
      */
     public name: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance. Default to 100.
-     * Note This parameter is only supported on the China site.
+     * @Property ratio: The percentage of the minimum bandwidth commitment. Set the parameter to 20.
      */
     public ratio: number | ros.IResolvable | undefined;
 
@@ -1236,7 +1351,8 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
     public tags: RosCommonBandwidthPackage.TagsProperty[] | undefined;
 
     /**
-     * @Property zone: Zone Id.
+     * @Property zone: The zone of the Internet Shared Bandwidth instance. This parameter is required if
+     * you create an Internet Shared Bandwidth instance for a cloud box.
      */
     public zone: string | ros.IResolvable | undefined;
 
@@ -1521,24 +1637,50 @@ function rosCommonBandwidthPackageIpEipsPropertyToRosTemplate(properties: any): 
 export interface RosCustomerGatewayProps {
 
     /**
-     * @Property ipAddress: The IP address of the user gateway.
+     * @Property ipAddress: The static IP address of the gateway device in the data center.
+     * *   If you want to create a public IPsec-VPN connection, enter a public IP
+     * address.
+     * *   If you want to create a private IPsec-VPN connection, enter a private IP
+     * address.
+     * You cannot use the following IP addresses. Otherwise, a IPsec-VPN connection
+     * cannot be established:
+     * *   100.64.0.0~100.127.255.255
+     * *   127.0.0.0~127.255.255.255
+     * *   169.254.0.0~169.254.255.255
+     * *   224.0.0.0~239.255.255.255
+     * *   255.0.0.0~255.255.255.255
      */
     readonly ipAddress: string | ros.IResolvable;
 
     /**
-     * @Property asn: The autonomous system number of the local data center gateway device.
+     * @Property asn: The autonomous system number (ASN) of the gateway device in your data center.
+     * This parameter is required If you want to use Border Gateway Protocol (BGP) for
+     * the IPsec-VPN connection. Valid values: 1 to 4294967295. 45104 is not supported.
+     * Asn is a 4-byte number. You can enter it in two segments and separate the first
+     * 16 bits from the following 16 bits with a period (.). Enter the number in each
+     * segment in decimal format.
+     * For example, if you enter 123.456, the ASN is 8061384. The ASN is calculated by
+     * using the following formula: 123 × 65536 + 456 = 8061384.
+     * > - We recommend that you use a private ASN to establish BGP connections to
+     * the cloud platform. For information about the range of private ASNs, see the relevant
+     * documentation.
+     * > - 45104 is a unique identifier assigned by IANA to the cloud platform. It is used to
+     * identify the cloud platform during route selection and data transmission over the
+     * Internet.
      */
     readonly asn?: number | ros.IResolvable;
 
     /**
-     * @Property description: Description of the user gateway.
-     * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:\/\/ or https:\/\/.
+     * @Property description: The description of the customer gateway.
+     * The description must be 1 to 100 characters in length, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the user gateway.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
+     * @Property name: The name of the customer gateway.
+     * The name must be 1 to 100 characters in length, and cannot start with `http:\/\/`
+     * or `https:\/\/`.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -1564,7 +1706,7 @@ function RosCustomerGatewayPropsValidator(properties: any): ros.ValidationResult
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
-            min: 2,
+            min: 1,
             max: 256,
           }));
     }
@@ -1583,7 +1725,7 @@ function RosCustomerGatewayPropsValidator(properties: any): ros.ValidationResult
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
             data: properties.name.length,
-            min: 2,
+            min: 1,
             max: 128,
           }));
     }
@@ -1633,24 +1775,50 @@ export class RosCustomerGateway extends ros.RosResource {
 
 
     /**
-     * @Property ipAddress: The IP address of the user gateway.
+     * @Property ipAddress: The static IP address of the gateway device in the data center.
+     * *   If you want to create a public IPsec-VPN connection, enter a public IP
+     * address.
+     * *   If you want to create a private IPsec-VPN connection, enter a private IP
+     * address.
+     * You cannot use the following IP addresses. Otherwise, a IPsec-VPN connection
+     * cannot be established:
+     * *   100.64.0.0~100.127.255.255
+     * *   127.0.0.0~127.255.255.255
+     * *   169.254.0.0~169.254.255.255
+     * *   224.0.0.0~239.255.255.255
+     * *   255.0.0.0~255.255.255.255
      */
     public ipAddress: string | ros.IResolvable;
 
     /**
-     * @Property asn: The autonomous system number of the local data center gateway device.
+     * @Property asn: The autonomous system number (ASN) of the gateway device in your data center.
+     * This parameter is required If you want to use Border Gateway Protocol (BGP) for
+     * the IPsec-VPN connection. Valid values: 1 to 4294967295. 45104 is not supported.
+     * Asn is a 4-byte number. You can enter it in two segments and separate the first
+     * 16 bits from the following 16 bits with a period (.). Enter the number in each
+     * segment in decimal format.
+     * For example, if you enter 123.456, the ASN is 8061384. The ASN is calculated by
+     * using the following formula: 123 × 65536 + 456 = 8061384.
+     * > - We recommend that you use a private ASN to establish BGP connections to
+     * the cloud platform. For information about the range of private ASNs, see the relevant
+     * documentation.
+     * > - 45104 is a unique identifier assigned by IANA to the cloud platform. It is used to
+     * identify the cloud platform during route selection and data transmission over the
+     * Internet.
      */
     public asn: number | ros.IResolvable | undefined;
 
     /**
-     * @Property description: Description of the user gateway.
-     * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:\/\/ or https:\/\/.
+     * @Property description: The description of the customer gateway.
+     * The description must be 1 to 100 characters in length, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property name: The name of the user gateway.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
+     * @Property name: The name of the customer gateway.
+     * The name must be 1 to 100 characters in length, and cannot start with `http:\/\/`
+     * or `https:\/\/`.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -1702,13 +1870,15 @@ export interface RosDhcpOptionsSetProps {
 
     /**
      * @Property dhcpOptionsSetDescription: The description of the DHCP options set.
-     * The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
+     * The description must be 1 to 256 characters in length. It must start with a
+     * letter and cannot start with `http:\/\/` or `https:\/\/`.
      */
     readonly dhcpOptionsSetDescription?: string | ros.IResolvable;
 
     /**
      * @Property dhcpOptionsSetName: The name of the DHCP options set.
-     * The name must be 2 to 128 characters in length and can contain letters, Chinese characters, digits, underscores (_), and hyphens (-). It must start with a letter or a Chinese character.
+     * The name must be 1 to 128 characters in length and can contain letters, digits,
+     * underscores (_), and hyphens (-). It must start with a letter.
      */
     readonly dhcpOptionsSetName?: string | ros.IResolvable;
 
@@ -1724,13 +1894,12 @@ export interface RosDhcpOptionsSetProps {
     readonly domainNameServers?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.
-     * 
-     * - When setting lease time in hours: unit: h. Valid values: **24h~1176h**, **87600h~175200h**. Default value: **24h**.
-     * 
-     * - When setting lease time in days: unit: d. Valid values: **1d~49d**, **3650d~7300d**. Default value: **1d**.
-     * 
-     * When specifying parameter values, you must include the unit.
+     * @Property ipv6LeaseTime: The lease time of the IPv6 addresses for the DHCP options set.
+     * *   If you use hours as the unit, valid values are 24h to 1176h and 87600h to
+     * 175200h. Default value: 87600h.
+     * *   If you use days as the unit, valid values are 1d to 49d and 3650d to 7300d.
+     * Default value: 3650d.
+     * >  When you enter a value, you must also specify the unit.
      */
     readonly ipv6LeaseTime?: string | ros.IResolvable;
 
@@ -1823,13 +1992,15 @@ export class RosDhcpOptionsSet extends ros.RosResource {
 
     /**
      * @Property dhcpOptionsSetDescription: The description of the DHCP options set.
-     * The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
+     * The description must be 1 to 256 characters in length. It must start with a
+     * letter and cannot start with `http:\/\/` or `https:\/\/`.
      */
     public dhcpOptionsSetDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property dhcpOptionsSetName: The name of the DHCP options set.
-     * The name must be 2 to 128 characters in length and can contain letters, Chinese characters, digits, underscores (_), and hyphens (-). It must start with a letter or a Chinese character.
+     * The name must be 1 to 128 characters in length and can contain letters, digits,
+     * underscores (_), and hyphens (-). It must start with a letter.
      */
     public dhcpOptionsSetName: string | ros.IResolvable | undefined;
 
@@ -1845,13 +2016,12 @@ export class RosDhcpOptionsSet extends ros.RosResource {
     public domainNameServers: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.
-     * 
-     * - When setting lease time in hours: unit: h. Valid values: **24h~1176h**, **87600h~175200h**. Default value: **24h**.
-     * 
-     * - When setting lease time in days: unit: d. Valid values: **1d~49d**, **3650d~7300d**. Default value: **1d**.
-     * 
-     * When specifying parameter values, you must include the unit.
+     * @Property ipv6LeaseTime: The lease time of the IPv6 addresses for the DHCP options set.
+     * *   If you use hours as the unit, valid values are 24h to 1176h and 87600h to
+     * 175200h. Default value: 87600h.
+     * *   If you use days as the unit, valid values are 1d to 49d and 3650d to 7300d.
+     * Default value: 3650d.
+     * >  When you enter a value, you must also specify the unit.
      */
     public ipv6LeaseTime: string | ros.IResolvable | undefined;
 
@@ -3116,10 +3286,6 @@ export interface RosEIPSegmentProps {
      * - **BGP_PRO**: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
      *   Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
      *   India (Jakarta), and Thailand (Bangkok).
-     * 
-     * For more information about BGP (multi-line) and BGP (multi-line)_Premium,
-     * see [EIP Line Type](~~32321~~).
-     * 
      * If you are a single-bandwidth whitelist user, you can also choose:
      * - **ChinaTelecom**: China Telecom
      * - **ChinaUnicom**: China Unicom
@@ -3272,10 +3438,6 @@ export class RosEIPSegment extends ros.RosResource {
      * - **BGP_PRO**: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
      *   Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
      *   India (Jakarta), and Thailand (Bangkok).
-     * 
-     * For more information about BGP (multi-line) and BGP (multi-line)_Premium,
-     * see [EIP Line Type](~~32321~~).
-     * 
      * If you are a single-bandwidth whitelist user, you can also choose:
      * - **ChinaTelecom**: China Telecom
      * - **ChinaUnicom**: China Unicom
@@ -7881,13 +8043,21 @@ export interface RosNetworkAclProps {
 
     /**
      * @Property vpcId: The ID of the virtual private cloud (VPC) to which the network ACL belongs.
+     * If the VPC contains Elastic Compute Service (ECS) instances of the following
+     * instance families, you must upgrade the ECS instances or release the ECS
+     * instances. Otherwise, you cannot create a network ACL for the VPC.
+     * ecs.c1, ecs.c2, ecs.c4, ecs.c5, ecs.ce4, ecs.cm4, ecs.d1, ecs.e3, ecs.e4,
+     * ecs.ga1, ecs.gn4, ecs.gn5, ecs.i1, ecs.m1, ecs.m2, ecs.mn4, ecs.n1, ecs.n2,
+     * ecs.n4, ecs.s1, ecs.s2, ecs.s3, ecs.se1, ecs.sn1, ecs.sn2, ecs.t1, and ecs.xn4.
+     * >  If the VPC contains an ECS instance that does not support network ACLs,
+     * upgrade the ECS instance.
      */
     readonly vpcId: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the network ACL.
-     * The description must be 2 to 256 characters in length. The description must start
-     * with a letter but cannot start with http:\/\/ or https:\/\/.
+     * The description must be 1 to 256 characters in length, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -7903,9 +8073,8 @@ export interface RosNetworkAclProps {
 
     /**
      * @Property networkAclName: The name of the network ACL.
-     * The name must be 2 to 128 characters in length and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). The name must start with a letter and cannot
-     * start with http:\/\/ or https:\/\/.
+     * The name must be 1 to 128 characters in length, and cannot start with `http:\/\/`
+     * or `https:\/\/`.
      */
     readonly networkAclName?: string | ros.IResolvable;
 }
@@ -7991,13 +8160,21 @@ export class RosNetworkAcl extends ros.RosResource {
 
     /**
      * @Property vpcId: The ID of the virtual private cloud (VPC) to which the network ACL belongs.
+     * If the VPC contains Elastic Compute Service (ECS) instances of the following
+     * instance families, you must upgrade the ECS instances or release the ECS
+     * instances. Otherwise, you cannot create a network ACL for the VPC.
+     * ecs.c1, ecs.c2, ecs.c4, ecs.c5, ecs.ce4, ecs.cm4, ecs.d1, ecs.e3, ecs.e4,
+     * ecs.ga1, ecs.gn4, ecs.gn5, ecs.i1, ecs.m1, ecs.m2, ecs.mn4, ecs.n1, ecs.n2,
+     * ecs.n4, ecs.s1, ecs.s2, ecs.s3, ecs.se1, ecs.sn1, ecs.sn2, ecs.t1, and ecs.xn4.
+     * >  If the VPC contains an ECS instance that does not support network ACLs,
+     * upgrade the ECS instance.
      */
     public vpcId: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the network ACL.
-     * The description must be 2 to 256 characters in length. The description must start
-     * with a letter but cannot start with http:\/\/ or https:\/\/.
+     * The description must be 1 to 256 characters in length, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -8013,9 +8190,8 @@ export class RosNetworkAcl extends ros.RosResource {
 
     /**
      * @Property networkAclName: The name of the network ACL.
-     * The name must be 2 to 128 characters in length and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). The name must start with a letter and cannot
-     * start with http:\/\/ or https:\/\/.
+     * The name must be 1 to 128 characters in length, and cannot start with `http:\/\/`
+     * or `https:\/\/`.
      */
     public networkAclName: string | ros.IResolvable | undefined;
 
@@ -8447,7 +8623,7 @@ export interface RosPeeringRouterInterfaceBindingProps {
     readonly oppositeInterfaceId: string | ros.IResolvable;
 
     /**
-     * @Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface.
+     * @Property routerInterfaceId: The ID of the router interface.
      */
     readonly routerInterfaceId: string | ros.IResolvable;
 
@@ -8527,7 +8703,7 @@ export class RosPeeringRouterInterfaceBinding extends ros.RosResource {
     public oppositeInterfaceId: string | ros.IResolvable;
 
     /**
-     * @Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface.
+     * @Property routerInterfaceId: The ID of the router interface.
      */
     public routerInterfaceId: string | ros.IResolvable;
 
@@ -9057,8 +9233,9 @@ export interface RosPublicIpAddressPoolProps {
     readonly bizType?: string | ros.IResolvable;
 
     /**
-     * @Property description: Description of the address pool instance.
-     * The length is 0-256 characters, and you cannot start with http:\/\/ or https: \/\/.
+     * @Property description: The description of the IP address pool.
+     * The description must be 0 to 256 characters in length and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -9081,8 +9258,9 @@ export interface RosPublicIpAddressPoolProps {
     readonly isp?: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the address pool instance.
-     * The length is 0-128 characters, and you cannot start with http: \/\/ or https: \/\/.
+     * @Property name: The name of the IP address pool.
+     * The name must be 0 to 128 characters in length and cannot start with `http:\/\/` or
+     * `https:\/\/`.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -9216,8 +9394,9 @@ export class RosPublicIpAddressPool extends ros.RosResource {
     public bizType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property description: Description of the address pool instance.
-     * The length is 0-256 characters, and you cannot start with http:\/\/ or https: \/\/.
+     * @Property description: The description of the IP address pool.
+     * The description must be 0 to 256 characters in length and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -9240,8 +9419,9 @@ export class RosPublicIpAddressPool extends ros.RosResource {
     public isp: string | ros.IResolvable | undefined;
 
     /**
-     * @Property name: The name of the address pool instance.
-     * The length is 0-128 characters, and you cannot start with http: \/\/ or https: \/\/.
+     * @Property name: The name of the IP address pool.
+     * The name must be 0 to 128 characters in length and cannot start with `http:\/\/` or
+     * `https:\/\/`.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -9366,19 +9546,23 @@ export interface RosRouteTableProps {
     readonly vpcId: string | ros.IResolvable;
 
     /**
-     * @Property associateType: The type of the route table.
+     * @Property associateType: The type of the route table. Valid values:
+     * *   VSwitch (default): vSwitch route table
+     * *   Gateway: gateway route table
      */
     readonly associateType?: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the route table.
-     * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:\/\/ or https:\/\/.
+     * The description must be 1 to 256 characters in length, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
      * @Property routeTableName: The name of the route table.
-     * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:\/\/ or https:\/\/.
+     * The name must be 1 to 128 characters in length, and cannot start with `http:\/\/`
+     * or `https:\/\/`.
      */
     readonly routeTableName?: string | ros.IResolvable;
 
@@ -9487,19 +9671,23 @@ export class RosRouteTable extends ros.RosResource {
     public vpcId: string | ros.IResolvable;
 
     /**
-     * @Property associateType: The type of the route table.
+     * @Property associateType: The type of the route table. Valid values:
+     * *   VSwitch (default): vSwitch route table
+     * *   Gateway: gateway route table
      */
     public associateType: string | ros.IResolvable | undefined;
 
     /**
      * @Property description: The description of the route table.
-     * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:\/\/ or https:\/\/.
+     * The description must be 1 to 256 characters in length, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property routeTableName: The name of the route table.
-     * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:\/\/ or https:\/\/.
+     * The name must be 1 to 128 characters in length, and cannot start with `http:\/\/`
+     * or `https:\/\/`.
      */
     public routeTableName: string | ros.IResolvable | undefined;
 
@@ -9979,10 +10167,13 @@ export interface RosRouterInterfaceProps {
     readonly accessPointId?: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:
-     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
-     * true: Automatic payment is enabled. The payment is automatically made.
-     * Default: true.
+     * @Property autoPay: Specifies whether to enable automatic payment. Valid values:
+     * *   false (default): The automatic payment is disabled. If you select this
+     * option, you must go to the Order Center to complete the payment after an order is
+     * generated.
+     * *   true: The automatic payment is enabled. Payments are automatically complete
+     * after an order is generated.
+     * >  This parameter is required if InstanceChargeType is set to PrePaid.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -10014,7 +10205,7 @@ export interface RosRouterInterfaceProps {
     readonly healthCheckTargetIp?: string | ros.IResolvable;
 
     /**
-     * @Property instanceChargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go)
+     * @Property instanceChargeType: The billing method of the router interface.
      */
     readonly instanceChargeType?: string | ros.IResolvable;
 
@@ -10069,12 +10260,30 @@ export interface RosRouterInterfaceProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property routerType: Router type. Now support 'VRouter|VBR'
+     * @Property routerType: The type of router that is associated with the router interface. Valid values:
+     * *   VRouter
+     * *   VBR
      */
     readonly routerType?: string | ros.IResolvable;
 
     /**
-     * @Property spec: RouterInterface specification. If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
+     * @Property spec: The specification of the router interface and the corresponding bandwidth. Valid
+     * values:
+     * *   Mini.2: 2 Mbit\/s
+     * *   Mini.5: 5 Mbit\/s
+     * *   Small.1: 10 Mbit\/s
+     * *   Small.2: 20 Mbit\/s
+     * *   Small.5: 50 Mbit\/s
+     * *   Middle.1: 100 Mbit\/s
+     * *   Middle.2: 200 Mbit\/s
+     * *   Middle.5: 500 Mbit\/s
+     * *   Large.1: 1,000 Mbit\/s
+     * *   Large.2: 2,000 Mbit\/s
+     * *   Large.5: 5,000 Mbit\/s
+     * *   Xlarge.1: 10,000 Mbit\/s
+     * >  If Role is set to AcceptingSide, set Spec to Negative. This indicates that you
+     * do not need to specify the specification when you create an acceptor router
+     * interface.
      */
     readonly spec?: string | ros.IResolvable;
 }
@@ -10226,10 +10435,13 @@ export class RosRouterInterface extends ros.RosResource {
     public accessPointId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:
-     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
-     * true: Automatic payment is enabled. The payment is automatically made.
-     * Default: true.
+     * @Property autoPay: Specifies whether to enable automatic payment. Valid values:
+     * *   false (default): The automatic payment is disabled. If you select this
+     * option, you must go to the Order Center to complete the payment after an order is
+     * generated.
+     * *   true: The automatic payment is enabled. Payments are automatically complete
+     * after an order is generated.
+     * >  This parameter is required if InstanceChargeType is set to PrePaid.
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 
@@ -10261,7 +10473,7 @@ export class RosRouterInterface extends ros.RosResource {
     public healthCheckTargetIp: string | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceChargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go)
+     * @Property instanceChargeType: The billing method of the router interface.
      */
     public instanceChargeType: string | ros.IResolvable | undefined;
 
@@ -10316,12 +10528,30 @@ export class RosRouterInterface extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property routerType: Router type. Now support 'VRouter|VBR'
+     * @Property routerType: The type of router that is associated with the router interface. Valid values:
+     * *   VRouter
+     * *   VBR
      */
     public routerType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property spec: RouterInterface specification. If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
+     * @Property spec: The specification of the router interface and the corresponding bandwidth. Valid
+     * values:
+     * *   Mini.2: 2 Mbit\/s
+     * *   Mini.5: 5 Mbit\/s
+     * *   Small.1: 10 Mbit\/s
+     * *   Small.2: 20 Mbit\/s
+     * *   Small.5: 50 Mbit\/s
+     * *   Middle.1: 100 Mbit\/s
+     * *   Middle.2: 200 Mbit\/s
+     * *   Middle.5: 500 Mbit\/s
+     * *   Large.1: 1,000 Mbit\/s
+     * *   Large.2: 2,000 Mbit\/s
+     * *   Large.5: 5,000 Mbit\/s
+     * *   Xlarge.1: 10,000 Mbit\/s
+     * >  If Role is set to AcceptingSide, set Spec to Negative. This indicates that you
+     * do not need to specify the specification when you create an acceptor router
+     * interface.
      */
     public spec: string | ros.IResolvable | undefined;
 
@@ -10422,12 +10652,34 @@ export interface RosSnatEntryProps {
     readonly networkInterfaceId?: string | ros.IResolvable;
 
     /**
-     * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
+     * @Property snatEntryName: The name of the SNAT entry.
+     * The name must be 2 to 128 characters in length. It must start with a letter but
+     * cannot start with `http:\/\/` or `https:\/\/`.
      */
     readonly snatEntryName?: string | ros.IResolvable;
 
     /**
-     * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1\/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+     * @Property sourceCidr: You can specify the CIDR block of a VPC, a vSwitch, or an ECS instance or enter a
+     * custom CIDR block.
+     * You can specify an SNAT entry in the following ways:
+     * *   You can specify the CIDR block of the VPC where the NAT gateway is deployed.
+     * Then, all ECS instances in the VPC can access the Internet or external networks
+     * by using SNAT.
+     * *   You can specify the CIDR block of a vSwitch, for example, 192.168.1.0\/24.
+     * Then, the ECS instances in the vSwitch can access the Internet or external
+     * networks by using SNAT.
+     * *   You can specify the IP address of an ECS instance, for example,
+     * 192.168.1.1\/32. Then, the ECS instance can access the Internet or external
+     * networks by using SNAT.
+     * *   You can specify a custom CIDR block. Then, all ECS instances within the
+     * specified CIDR block can access the Internet or external networks by using SNAT.
+     * When you add an SNAT entry to an Internet NAT gateway, if SnatIp is set to an
+     * EIP, the ECS instance uses the specified EIP to access the Internet.
+     * If SnatIp is set to multiple EIPs, the ECS instance randomly selects an EIP
+     * specified in the SnatIp parameter to access the Internet.
+     * You cannot specify this parameter and SourceVSwtichId at the same time. If
+     * SourceVSwitchId is specified, you cannot specify SourceCIDR. If SourceCIDR is
+     * specified, you cannot specify SourceVSwitchId.
      */
     readonly sourceCidr?: string | ros.IResolvable;
 
@@ -10533,12 +10785,34 @@ export class RosSnatEntry extends ros.RosResource {
     public networkInterfaceId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
+     * @Property snatEntryName: The name of the SNAT entry.
+     * The name must be 2 to 128 characters in length. It must start with a letter but
+     * cannot start with `http:\/\/` or `https:\/\/`.
      */
     public snatEntryName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1\/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+     * @Property sourceCidr: You can specify the CIDR block of a VPC, a vSwitch, or an ECS instance or enter a
+     * custom CIDR block.
+     * You can specify an SNAT entry in the following ways:
+     * *   You can specify the CIDR block of the VPC where the NAT gateway is deployed.
+     * Then, all ECS instances in the VPC can access the Internet or external networks
+     * by using SNAT.
+     * *   You can specify the CIDR block of a vSwitch, for example, 192.168.1.0\/24.
+     * Then, the ECS instances in the vSwitch can access the Internet or external
+     * networks by using SNAT.
+     * *   You can specify the IP address of an ECS instance, for example,
+     * 192.168.1.1\/32. Then, the ECS instance can access the Internet or external
+     * networks by using SNAT.
+     * *   You can specify a custom CIDR block. Then, all ECS instances within the
+     * specified CIDR block can access the Internet or external networks by using SNAT.
+     * When you add an SNAT entry to an Internet NAT gateway, if SnatIp is set to an
+     * EIP, the ECS instance uses the specified EIP to access the Internet.
+     * If SnatIp is set to multiple EIPs, the ECS instance randomly selects an EIP
+     * specified in the SnatIp parameter to access the Internet.
+     * You cannot specify this parameter and SourceVSwtichId at the same time. If
+     * SourceVSwitchId is specified, you cannot specify SourceCIDR. If SourceCIDR is
+     * specified, you cannot specify SourceVSwitchId.
      */
     public sourceCidr: string | ros.IResolvable | undefined;
 
@@ -10595,8 +10869,9 @@ export interface RosSslVpnClientCertProps {
     readonly sslVpnServerId: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the client certificate.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
+     * @Property name: The name of the SSL client certificate.
+     * The name must be 1 to 100 characters in length, and cannot start with `http:\/\/`
+     * or `https:\/\/`.
      */
     readonly name?: string | ros.IResolvable;
 }
@@ -10616,7 +10891,7 @@ function RosSslVpnClientCertPropsValidator(properties: any): ros.ValidationResul
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
             data: properties.name.length,
-            min: 2,
+            min: 1,
             max: 128,
           }));
     }
@@ -10668,8 +10943,9 @@ export class RosSslVpnClientCert extends ros.RosResource {
     public sslVpnServerId: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the client certificate.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
+     * @Property name: The name of the SSL client certificate.
+     * The name must be 1 to 100 characters in length, and cannot start with `http:\/\/`
+     * or `https:\/\/`.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -10706,15 +10982,34 @@ export class RosSslVpnClientCert extends ros.RosResource {
 export interface RosSslVpnServerProps {
 
     /**
-     * @Property clientIpPool: It is the address segment that assigns the access address to the client virtual NIC. It does not refer to the existing intranet segment of the client.
-     * When the client accesses the local end through an SSL-VPN connection, the VPN gateway allocates an IP address to the client from the specified client network segment.
-     * The network segment cannot conflict with the LocalSubnet address segment.
+     * @Property clientIpPool: The client CIDR block.
+     * The CIDR block from which an IP address is allocated to the virtual network
+     * interface controller (NIC) of the client, rather than the private CIDR block.
+     * If the client accesses the SSL server over an SSL-VPN connection, the VPN gateway
+     * assigns an IP address from the specified client CIDR block for the client to
+     * access cloud resources.
+     * Make sure that the number of IP addresses in the client CIDR block is at least
+     * four times the maximum number of SSL-VPN connections supported by the VPN
+     * gateway.
+     * ... (omitted for brevity; see metadata URL) ...
+     * *   The subnet mask of the client CIDR block must be 16 to 29 bits in length.
+     * *   Make sure that the client CIDR block does not overlap with the local CIDR
+     * block, the VPC CIDR block, or route CIDR blocks associated with the client.
      */
     readonly clientIpPool: string | ros.IResolvable;
 
     /**
-     * @Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection.
-     * The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS\/OSS.
+     * @Property localSubnet: The local CIDR block.
+     * The CIDR block that your client needs to access by using the SSL-VPN connection.
+     * This value can be the CIDR block of a VPC, a vSwitch, a data center that is
+     * connected to a VPC by using an Express Connect circuit, or a cloud
+     * service such as Object Storage Service (OSS).
+     * The subnet mask of the specified local CIDR block must be 8 to 32 bits in length.
+     * You cannot specify the following CIDR blocks as the local CIDR blocks:
+     * *   127.0.0.0~127.255.255.255
+     * *   169.254.0.0~169.254.255.255
+     * *   224.0.0.0~239.255.255.255
+     * *   255.0.0.0~255.255.255.255
      */
     readonly localSubnet: string | ros.IResolvable;
 
@@ -10755,8 +11050,9 @@ export interface RosSslVpnServerProps {
     readonly iDaaSRegionId?: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the SSL-VPN server. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
-     * But it can't start with http:\/\/ or https:\/\/.
+     * @Property name: The SSL server name.
+     * The name must be 1 to 100 characters in length and cannot start with `http:\/\/` or
+     * `https:\/\/`.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -10767,7 +11063,9 @@ export interface RosSslVpnServerProps {
     readonly port?: number | ros.IResolvable;
 
     /**
-     * @Property proto: The protocol used by the SSL-VPN server. Allowed values: UDP (default) | TCP.
+     * @Property proto: The protocol that is used by the SSL server. Valid values:
+     * *   TCP (default)
+     * *   UDP
      */
     readonly proto?: string | ros.IResolvable;
 }
@@ -10811,7 +11109,7 @@ function RosSslVpnServerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
             data: properties.name.length,
-            min: 2,
+            min: 1,
             max: 128,
           }));
     }
@@ -10868,15 +11166,34 @@ export class RosSslVpnServer extends ros.RosResource {
 
 
     /**
-     * @Property clientIpPool: It is the address segment that assigns the access address to the client virtual NIC. It does not refer to the existing intranet segment of the client.
-     * When the client accesses the local end through an SSL-VPN connection, the VPN gateway allocates an IP address to the client from the specified client network segment.
-     * The network segment cannot conflict with the LocalSubnet address segment.
+     * @Property clientIpPool: The client CIDR block.
+     * The CIDR block from which an IP address is allocated to the virtual network
+     * interface controller (NIC) of the client, rather than the private CIDR block.
+     * If the client accesses the SSL server over an SSL-VPN connection, the VPN gateway
+     * assigns an IP address from the specified client CIDR block for the client to
+     * access cloud resources.
+     * Make sure that the number of IP addresses in the client CIDR block is at least
+     * four times the maximum number of SSL-VPN connections supported by the VPN
+     * gateway.
+     * ... (omitted for brevity; see metadata URL) ...
+     * *   The subnet mask of the client CIDR block must be 16 to 29 bits in length.
+     * *   Make sure that the client CIDR block does not overlap with the local CIDR
+     * block, the VPC CIDR block, or route CIDR blocks associated with the client.
      */
     public clientIpPool: string | ros.IResolvable;
 
     /**
-     * @Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection.
-     * The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS\/OSS.
+     * @Property localSubnet: The local CIDR block.
+     * The CIDR block that your client needs to access by using the SSL-VPN connection.
+     * This value can be the CIDR block of a VPC, a vSwitch, a data center that is
+     * connected to a VPC by using an Express Connect circuit, or a cloud
+     * service such as Object Storage Service (OSS).
+     * The subnet mask of the specified local CIDR block must be 8 to 32 bits in length.
+     * You cannot specify the following CIDR blocks as the local CIDR blocks:
+     * *   127.0.0.0~127.255.255.255
+     * *   169.254.0.0~169.254.255.255
+     * *   224.0.0.0~239.255.255.255
+     * *   255.0.0.0~255.255.255.255
      */
     public localSubnet: string | ros.IResolvable;
 
@@ -10917,8 +11234,9 @@ export class RosSslVpnServer extends ros.RosResource {
     public iDaaSRegionId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property name: The name of the SSL-VPN server. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
-     * But it can't start with http:\/\/ or https:\/\/.
+     * @Property name: The SSL server name.
+     * The name must be 1 to 100 characters in length and cannot start with `http:\/\/` or
+     * `https:\/\/`.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -10929,7 +11247,9 @@ export class RosSslVpnServer extends ros.RosResource {
     public port: number | ros.IResolvable | undefined;
 
     /**
-     * @Property proto: The protocol used by the SSL-VPN server. Allowed values: UDP (default) | TCP.
+     * @Property proto: The protocol that is used by the SSL server. Valid values:
+     * *   TCP (default)
+     * *   UDP
      */
     public proto: string | ros.IResolvable | undefined;
 
@@ -11387,7 +11707,8 @@ export interface RosTrafficMirrorSessionProps {
     readonly enabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property packetLength: The maximum transmission unit (MTU). Default value: **1500**.
+     * @Property packetLength: The maximum transmission unit.
+     * Valid values: 64 to 9600. Default value: 1500.
      */
     readonly packetLength?: number | ros.IResolvable;
 
@@ -11562,7 +11883,8 @@ export class RosTrafficMirrorSession extends ros.RosResource {
     public enabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property packetLength: The maximum transmission unit (MTU). Default value: **1500**.
+     * @Property packetLength: The maximum transmission unit.
+     * Valid values: 64 to 9600. Default value: 1500.
      */
     public packetLength: number | ros.IResolvable | undefined;
 
@@ -13189,7 +13511,10 @@ export class RosVcoRouteEntry extends ros.RosResource {
 export interface RosVirtualBorderRouterProps {
 
     /**
-     * @Property localGatewayIp: The IP address of the VBR on the Alibaba Cloud side.
+     * @Property localGatewayIp: The IP address of the VBR. Only the owner of the VBR can set or modify this
+     * parameter.
+     * When you create a VBR for the owner of the Express Connect circuit, this
+     * parameter is required.
      */
     readonly localGatewayIp: string | ros.IResolvable;
 
@@ -13243,8 +13568,8 @@ export interface RosVirtualBorderRouterProps {
 
     /**
      * @Property name: The name of the VBR.
-     * The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
-     * underscores (_), and hyphens (-). The name cannot start with http:\/\/ or https:\/\/.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits,
+     * underscores (_), and hyphens (-). The name must start with a letter.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -13357,7 +13682,10 @@ export class RosVirtualBorderRouter extends ros.RosResource {
 
 
     /**
-     * @Property localGatewayIp: The IP address of the VBR on the Alibaba Cloud side.
+     * @Property localGatewayIp: The IP address of the VBR. Only the owner of the VBR can set or modify this
+     * parameter.
+     * When you create a VBR for the owner of the Express Connect circuit, this
+     * parameter is required.
      */
     public localGatewayIp: string | ros.IResolvable;
 
@@ -13411,8 +13739,8 @@ export class RosVirtualBorderRouter extends ros.RosResource {
 
     /**
      * @Property name: The name of the VBR.
-     * The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
-     * underscores (_), and hyphens (-). The name cannot start with http:\/\/ or https:\/\/.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits,
+     * underscores (_), and hyphens (-). The name must start with a letter.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -14303,8 +14631,6 @@ export interface RosVpcPeerConnectionProps {
 
     /**
      * @Property resourceGroupId: The ID of the resource group.
-     * 
-     * For more information about resource groups, see [What is Resource Group](~~94475~~).
      */
     readonly resourceGroupId?: string | ros.IResolvable;
 }
@@ -14454,8 +14780,6 @@ export class RosVpcPeerConnection extends ros.RosResource {
 
     /**
      * @Property resourceGroupId: The ID of the resource group.
-     * 
-     * For more information about resource groups, see [What is Resource Group](~~94475~~).
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
 
@@ -14508,14 +14832,27 @@ export class RosVpcPeerConnection extends ros.RosResource {
 export interface RosVpnAttachmentProps {
 
     /**
-     * @Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.1.0\/24, 192.168.2.0\/24.
+     * @Property localSubnet: The CIDR block on the VPC side. The CIDR block is used in Phase 2 negotiations.
+     * Separate multiple CIDR blocks with commas (,). Example:
+     * 192.168.1.0\/24,192.168.2.0\/24.
+     * The following routing modes are supported:
+     * *   If you set LocalSubnet and RemoteSubnet to 0.0.0.0\/0, the routing mode of the
+     * IPsec-VPN connection is set to Destination Routing Mode.
+     * *   If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+     * mode of the IPsec-VPN connection is set to Protected Data Flows.
      */
     readonly localSubnet: string | ros.IResolvable;
 
     /**
-     * @Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.3.0\/24, 192.168.4.0\/24.
+     * @Property remoteSubnet: The CIDR block on the data center side. This CIDR block is used in Phase 2
+     * negotiations.
+     * Separate multiple CIDR blocks with commas (,). Example:
+     * 192.168.3.0\/24,192.168.4.0\/24.
+     * The following routing modes are supported:
+     * *   If you set LocalSubnet and RemoteSubnet to 0.0.0.0\/0, the routing mode of the
+     * IPsec-VPN connection is set to Destination Routing Mode.
+     * *   If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+     * mode of the IPsec-VPN connection is set to Protected Data Flows.
      */
     readonly remoteSubnet: string | ros.IResolvable;
 
@@ -14569,7 +14906,25 @@ export interface RosVpnAttachmentProps {
     readonly enableTunnelsBgp?: boolean | ros.IResolvable;
 
     /**
-     * @Property healthCheckConfig: Whether to enable the health check configuration.
+     * @Property healthCheckConfig: This parameter is supported if you create an IPsec-VPN connection in
+     * single-tunnel mode.
+     * The health check configurations:
+     * *   HealthCheckConfig.enable: indicates whether the health check is enabled.
+     * Valid values: true and false (default).
+     * *   HealthCheckConfig.dip: the destination IP address configured for health
+     * checks. Enter the IP address of the on-premises data center that the VPC can
+     * access through the IPsec connection.
+     * *   HealthCheckConfig.sip: the source IP address configured for health checks.
+     * Enter the IP address of the VPC that the on-premises data center can access
+     * through the IPsec connection.
+     * *   HealthCheckConfig.interval: the time interval of health check retries. Unit:
+     * seconds. Default value: 3.
+     * *   HealthCheckConfig.retry: the maximum number of health check retries. Default
+     * value: 3.
+     * *   HealthCheckConfig.Policy: specifies whether to withdraw published routes when
+     * health checks fail. Valid values:
+     * *   revoke_route (default): withdraws published routes.
+     * *   reserve_route: does not withdraw published routes.
      */
     readonly healthCheckConfig?: RosVpnAttachment.HealthCheckConfigProperty | ros.IResolvable;
 
@@ -14584,8 +14939,9 @@ export interface RosVpnAttachmentProps {
     readonly ipsecConfig?: RosVpnAttachment.IpsecConfigProperty | ros.IResolvable;
 
     /**
-     * @Property name: The name of the IPsec connection.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:\/\/ or https:\/\/ .
+     * @Property name: The name of the IPsec-VPN connection.
+     * The name must be 1 to 100 characters in length and cannot start with `http:\/\/` or
+     * `https:\/\/`.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -14734,14 +15090,27 @@ export class RosVpnAttachment extends ros.RosResource {
 
 
     /**
-     * @Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.1.0\/24, 192.168.2.0\/24.
+     * @Property localSubnet: The CIDR block on the VPC side. The CIDR block is used in Phase 2 negotiations.
+     * Separate multiple CIDR blocks with commas (,). Example:
+     * 192.168.1.0\/24,192.168.2.0\/24.
+     * The following routing modes are supported:
+     * *   If you set LocalSubnet and RemoteSubnet to 0.0.0.0\/0, the routing mode of the
+     * IPsec-VPN connection is set to Destination Routing Mode.
+     * *   If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+     * mode of the IPsec-VPN connection is set to Protected Data Flows.
      */
     public localSubnet: string | ros.IResolvable;
 
     /**
-     * @Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.3.0\/24, 192.168.4.0\/24.
+     * @Property remoteSubnet: The CIDR block on the data center side. This CIDR block is used in Phase 2
+     * negotiations.
+     * Separate multiple CIDR blocks with commas (,). Example:
+     * 192.168.3.0\/24,192.168.4.0\/24.
+     * The following routing modes are supported:
+     * *   If you set LocalSubnet and RemoteSubnet to 0.0.0.0\/0, the routing mode of the
+     * IPsec-VPN connection is set to Destination Routing Mode.
+     * *   If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+     * mode of the IPsec-VPN connection is set to Protected Data Flows.
      */
     public remoteSubnet: string | ros.IResolvable;
 
@@ -14795,7 +15164,25 @@ export class RosVpnAttachment extends ros.RosResource {
     public enableTunnelsBgp: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property healthCheckConfig: Whether to enable the health check configuration.
+     * @Property healthCheckConfig: This parameter is supported if you create an IPsec-VPN connection in
+     * single-tunnel mode.
+     * The health check configurations:
+     * *   HealthCheckConfig.enable: indicates whether the health check is enabled.
+     * Valid values: true and false (default).
+     * *   HealthCheckConfig.dip: the destination IP address configured for health
+     * checks. Enter the IP address of the on-premises data center that the VPC can
+     * access through the IPsec connection.
+     * *   HealthCheckConfig.sip: the source IP address configured for health checks.
+     * Enter the IP address of the VPC that the on-premises data center can access
+     * through the IPsec connection.
+     * *   HealthCheckConfig.interval: the time interval of health check retries. Unit:
+     * seconds. Default value: 3.
+     * *   HealthCheckConfig.retry: the maximum number of health check retries. Default
+     * value: 3.
+     * *   HealthCheckConfig.Policy: specifies whether to withdraw published routes when
+     * health checks fail. Valid values:
+     * *   revoke_route (default): withdraws published routes.
+     * *   reserve_route: does not withdraw published routes.
      */
     public healthCheckConfig: RosVpnAttachment.HealthCheckConfigProperty | ros.IResolvable | undefined;
 
@@ -14810,8 +15197,9 @@ export class RosVpnAttachment extends ros.RosResource {
     public ipsecConfig: RosVpnAttachment.IpsecConfigProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property name: The name of the IPsec connection.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:\/\/ or https:\/\/ .
+     * @Property name: The name of the IPsec-VPN connection.
+     * The name must be 1 to 100 characters in length and cannot start with `http:\/\/` or
+     * `https:\/\/`.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -15674,14 +16062,25 @@ function rosVpnAttachmentTunnelOptionsSpecificationPropertyToRosTemplate(propert
 export interface RosVpnConnectionProps {
 
     /**
-     * @Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.1.0\/24, 192.168.2.0\/24.
+     * @Property localSubnet: The CIDR block of the virtual private cloud (VPC) that needs to communicate with
+     * the on-premises database. The CIDR block is used in Phase 2 negotiations.
+     * Separate multiple CIDR blocks with commas (,). Example:
+     * 192.168.1.0\/24,192.168.2.0\/24.
+     * The following routing modes are supported:
+     * *   If you set LocalSubnet and RemoteSubnet to 0.0.0.0\/0, the routing mode of the
+     * IPsec-VPN connection is set to Destination Routing Mode.
+     * *   If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+     * mode of the IPsec-VPN connection is set to Protected Data Flows.
      */
     readonly localSubnet: string | ros.IResolvable;
 
     /**
-     * @Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.3.0\/24, 192.168.4.0\/24.
+     * @Property remoteSubnet: The CIDR block of the on-premises database that needs to communicate with the
+     * VPC. The CIDR block is used in Phase 2 negotiations.
+     * Separate multiple CIDR blocks with commas (,). Example:
+     * 192.168.3.0\/24,192.168.4.0\/24.
+     * The following routing modes are supported:
+     * *   If you set LocalSubnet and RemoteSubnet to 0.0.0.0\/0...
      */
     readonly remoteSubnet: string | ros.IResolvable;
 
@@ -15739,7 +16138,12 @@ export interface RosVpnConnectionProps {
     readonly enableTunnelsBgp?: boolean | ros.IResolvable;
 
     /**
-     * @Property healthCheckConfig: Whether to enable the health check configuration.
+     * @Property healthCheckConfig: This parameter is available if you create an IPsec-VPN connection in
+     * single-tunnel mode.
+     * The health check configuration:
+     * *   HealthCheckConfig.enable: ... Default value: false.
+     * *   HealthCheckConfig.dip \/ sip \/ interval (Default: 3) \/ retry (Default: 3) \/
+     * Policy (revoke_route default \/ reserve_route).
      */
     readonly healthCheckConfig?: RosVpnConnection.HealthCheckConfigProperty | ros.IResolvable;
 
@@ -15754,8 +16158,9 @@ export interface RosVpnConnectionProps {
     readonly ipsecConfig?: RosVpnConnection.IpsecConfigProperty | ros.IResolvable;
 
     /**
-     * @Property name: The name of the IPsec connection.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:\/\/ or https:\/\/ .
+     * @Property name: The name of the IPsec-VPN connection.
+     * The name must be 1 to 100 characters in length and cannot start with `http:\/\/` or
+     * `https:\/\/`.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -15791,7 +16196,7 @@ function RosVpnConnectionPropsValidator(properties: any): ros.ValidationResult {
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
             data: properties.name.length,
-            min: 2,
+            min: 1,
             max: 128,
           }));
     }
@@ -15875,14 +16280,25 @@ export class RosVpnConnection extends ros.RosResource {
 
 
     /**
-     * @Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.1.0\/24, 192.168.2.0\/24.
+     * @Property localSubnet: The CIDR block of the virtual private cloud (VPC) that needs to communicate with
+     * the on-premises database. The CIDR block is used in Phase 2 negotiations.
+     * Separate multiple CIDR blocks with commas (,). Example:
+     * 192.168.1.0\/24,192.168.2.0\/24.
+     * The following routing modes are supported:
+     * *   If you set LocalSubnet and RemoteSubnet to 0.0.0.0\/0, the routing mode of the
+     * IPsec-VPN connection is set to Destination Routing Mode.
+     * *   If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+     * mode of the IPsec-VPN connection is set to Protected Data Flows.
      */
     public localSubnet: string | ros.IResolvable;
 
     /**
-     * @Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.3.0\/24, 192.168.4.0\/24.
+     * @Property remoteSubnet: The CIDR block of the on-premises database that needs to communicate with the
+     * VPC. The CIDR block is used in Phase 2 negotiations.
+     * Separate multiple CIDR blocks with commas (,). Example:
+     * 192.168.3.0\/24,192.168.4.0\/24.
+     * The following routing modes are supported:
+     * *   If you set LocalSubnet and RemoteSubnet to 0.0.0.0\/0...
      */
     public remoteSubnet: string | ros.IResolvable;
 
@@ -15940,7 +16356,12 @@ export class RosVpnConnection extends ros.RosResource {
     public enableTunnelsBgp: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property healthCheckConfig: Whether to enable the health check configuration.
+     * @Property healthCheckConfig: This parameter is available if you create an IPsec-VPN connection in
+     * single-tunnel mode.
+     * The health check configuration:
+     * *   HealthCheckConfig.enable: ... Default value: false.
+     * *   HealthCheckConfig.dip \/ sip \/ interval (Default: 3) \/ retry (Default: 3) \/
+     * Policy (revoke_route default \/ reserve_route).
      */
     public healthCheckConfig: RosVpnConnection.HealthCheckConfigProperty | ros.IResolvable | undefined;
 
@@ -15955,8 +16376,9 @@ export class RosVpnConnection extends ros.RosResource {
     public ipsecConfig: RosVpnConnection.IpsecConfigProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property name: The name of the IPsec connection.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:\/\/ or https:\/\/ .
+     * @Property name: The name of the IPsec-VPN connection.
+     * The name must be 1 to 100 characters in length and cannot start with `http:\/\/` or
+     * `https:\/\/`.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -16809,8 +17231,11 @@ function rosVpnConnectionTunnelOptionsSpecificationPropertyToRosTemplate(propert
 export interface RosVpnGatewayProps {
 
     /**
-     * @Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps.
-     * Value: 5|10|20|50|100|200.
+     * @Property bandwidth: The maximum bandwidth of the VPN gateway. Unit: Mbit\/s.
+     * *   If you want to create a public VPN gateway, valid values are 10, 100, 200,
+     * 500, and 1000.
+     * *   If you want to create a private VPN gateway, valid values are 200 and 1000.
+     * >  The maximum bandwidth supported by VPN gateways in some regions is 500 Mbit\/s.
      */
     readonly bandwidth: number | ros.IResolvable;
 
@@ -16820,10 +17245,12 @@ export interface RosVpnGatewayProps {
     readonly vpcId: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value:
-     * true: Automatically pays the bill for the VPN gateway.
-     * false: Does not automatically pay the bill for the VPN gateway.
-     * Default true.
+     * @Property autoPay: Specifies whether to enable automatic payment. Valid values:
+     * *   true
+     * *   false (default)
+     * > To create a VPN gateway, we recommend that you enable automatic payment. If you
+     * disable automatic payment, you must manually pay the bill to create the VPN
+     * gateway.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -16857,8 +17284,8 @@ export interface RosVpnGatewayProps {
     readonly enableSsl?: boolean | ros.IResolvable;
 
     /**
-     * @Property instanceChargeType: Accounting type of the VPN gateway, the value is:
-     * PREPAY, POSTPAY
+     * @Property instanceChargeType: The billing method of the VPN gateway. Set the value to POSTPAY, which specifies
+     * the pay-as-you-go billing method.
      */
     readonly instanceChargeType?: string | ros.IResolvable;
 
@@ -16869,7 +17296,9 @@ export interface RosVpnGatewayProps {
     readonly name?: string | ros.IResolvable;
 
     /**
-     * @Property networkType: The network type of the VPN gateway. Valid values: public|private
+     * @Property networkType: The network type of the VPN gateway. Valid values:
+     * *   public (default)
+     * *   private
      */
     readonly networkType?: string | ros.IResolvable;
 
@@ -16889,7 +17318,8 @@ export interface RosVpnGatewayProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property sslConnections: The maximum number of clients allowed to connect at the same time.
+     * @Property sslConnections: The maximum number of clients that can be connected at the same time. Valid
+     * values: 5 (default), 10, 20, 50, 100, 200, 500, and 1000.
      */
     readonly sslConnections?: number | ros.IResolvable;
 
@@ -16899,12 +17329,19 @@ export interface RosVpnGatewayProps {
     readonly tags?: RosVpnGateway.TagsProperty[];
 
     /**
-     * @Property vpnType: VPN gateway type.
+     * @Property vpnType: The type of the VPN gateway. Valid values:
+     * Set the value to Normal (default), which specifies a standard NAT gateway.
      */
     readonly vpnType?: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
+     * @Property vSwitchId: The vSwitch with which you want to associate the VPN gateway.
+     * *   If you call this operation in a region that supports the IPsec-VPN
+     * connections in dual-tunnel mode, this parameter is required. You must specify a
+     * vSwitch and specify DisasterRecoveryVSwitchId.
+     * *   If you call this operation in a region that supports the IPsec-VPN
+     * connections in single-tunnel mode and do not specify a vSwitch, the system
+     * automatically specifies a vSwitch.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 }
@@ -17093,8 +17530,11 @@ export class RosVpnGateway extends ros.RosResource {
 
 
     /**
-     * @Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps.
-     * Value: 5|10|20|50|100|200.
+     * @Property bandwidth: The maximum bandwidth of the VPN gateway. Unit: Mbit\/s.
+     * *   If you want to create a public VPN gateway, valid values are 10, 100, 200,
+     * 500, and 1000.
+     * *   If you want to create a private VPN gateway, valid values are 200 and 1000.
+     * >  The maximum bandwidth supported by VPN gateways in some regions is 500 Mbit\/s.
      */
     public bandwidth: number | ros.IResolvable;
 
@@ -17104,10 +17544,12 @@ export class RosVpnGateway extends ros.RosResource {
     public vpcId: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value:
-     * true: Automatically pays the bill for the VPN gateway.
-     * false: Does not automatically pay the bill for the VPN gateway.
-     * Default true.
+     * @Property autoPay: Specifies whether to enable automatic payment. Valid values:
+     * *   true
+     * *   false (default)
+     * > To create a VPN gateway, we recommend that you enable automatic payment. If you
+     * disable automatic payment, you must manually pay the bill to create the VPN
+     * gateway.
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 
@@ -17141,8 +17583,8 @@ export class RosVpnGateway extends ros.RosResource {
     public enableSsl: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceChargeType: Accounting type of the VPN gateway, the value is:
-     * PREPAY, POSTPAY
+     * @Property instanceChargeType: The billing method of the VPN gateway. Set the value to POSTPAY, which specifies
+     * the pay-as-you-go billing method.
      */
     public instanceChargeType: string | ros.IResolvable | undefined;
 
@@ -17153,7 +17595,9 @@ export class RosVpnGateway extends ros.RosResource {
     public name: string | ros.IResolvable | undefined;
 
     /**
-     * @Property networkType: The network type of the VPN gateway. Valid values: public|private
+     * @Property networkType: The network type of the VPN gateway. Valid values:
+     * *   public (default)
+     * *   private
      */
     public networkType: string | ros.IResolvable | undefined;
 
@@ -17173,7 +17617,8 @@ export class RosVpnGateway extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property sslConnections: The maximum number of clients allowed to connect at the same time.
+     * @Property sslConnections: The maximum number of clients that can be connected at the same time. Valid
+     * values: 5 (default), 10, 20, 50, 100, 200, 500, and 1000.
      */
     public sslConnections: number | ros.IResolvable | undefined;
 
@@ -17183,12 +17628,19 @@ export class RosVpnGateway extends ros.RosResource {
     public tags: RosVpnGateway.TagsProperty[] | undefined;
 
     /**
-     * @Property vpnType: VPN gateway type.
+     * @Property vpnType: The type of the VPN gateway. Valid values:
+     * Set the value to Normal (default), which specifies a standard NAT gateway.
      */
     public vpnType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
+     * @Property vSwitchId: The vSwitch with which you want to associate the VPN gateway.
+     * *   If you call this operation in a region that supports the IPsec-VPN
+     * connections in dual-tunnel mode, this parameter is required. You must specify a
+     * vSwitch and specify DisasterRecoveryVSwitchId.
+     * *   If you call this operation in a region that supports the IPsec-VPN
+     * connections in single-tunnel mode and do not specify a vSwitch, the system
+     * automatically specifies a vSwitch.
      */
     public vSwitchId: string | ros.IResolvable | undefined;
 
@@ -17339,17 +17791,22 @@ export interface RosVpnPbrRouteEntryProps {
     readonly vpnGatewayId: string | ros.IResolvable;
 
     /**
-     * @Property weight: The weight of the destination route. Valid values: 0|100.
+     * @Property weight: The weight of the destination-based route. Valid values:
+     * *   100: a high priority
+     * *   0: a low priority
      */
     readonly weight: number | ros.IResolvable;
 
     /**
-     * @Property description: The description of the VPN destination route.
+     * @Property description: The description of the destination-based route.
+     * The description must be 1 to 100 characters in length, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property overlayMode: The overlay mode.
+     * @Property overlayMode: The tunneling protocol. The value is set to Ipsec, which indicates the IPsec
+     * tunneling protocol.
      */
     readonly overlayMode?: string | ros.IResolvable;
 
@@ -17483,17 +17940,22 @@ export class RosVpnPbrRouteEntry extends ros.RosResource {
     public vpnGatewayId: string | ros.IResolvable;
 
     /**
-     * @Property weight: The weight of the destination route. Valid values: 0|100.
+     * @Property weight: The weight of the destination-based route. Valid values:
+     * *   100: a high priority
+     * *   0: a low priority
      */
     public weight: number | ros.IResolvable;
 
     /**
-     * @Property description: The description of the VPN destination route.
+     * @Property description: The description of the destination-based route.
+     * The description must be 1 to 100 characters in length, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property overlayMode: The overlay mode.
+     * @Property overlayMode: The tunneling protocol. The value is set to Ipsec, which indicates the IPsec
+     * tunneling protocol.
      */
     public overlayMode: string | ros.IResolvable | undefined;
 
@@ -17575,17 +18037,22 @@ export interface RosVpnRouteEntryProps {
     readonly vpnGatewayId: string | ros.IResolvable;
 
     /**
-     * @Property weight: The weight of the destination route. Valid values: 0|100.
+     * @Property weight: The weight of the destination-based route. Valid values:
+     * *   100: a high priority
+     * *   0: a low priority
      */
     readonly weight: number | ros.IResolvable;
 
     /**
-     * @Property description: The description of the VPN destination route.
+     * @Property description: The description of the destination-based route.
+     * The description must be 1 to 100 characters in length, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property overlayMode: The overlay mode.
+     * @Property overlayMode: The tunneling protocol. The value is set to Ipsec, which indicates the IPsec
+     * tunneling protocol.
      */
     readonly overlayMode?: string | ros.IResolvable;
 }
@@ -17691,17 +18158,22 @@ export class RosVpnRouteEntry extends ros.RosResource {
     public vpnGatewayId: string | ros.IResolvable;
 
     /**
-     * @Property weight: The weight of the destination route. Valid values: 0|100.
+     * @Property weight: The weight of the destination-based route. Valid values:
+     * *   100: a high priority
+     * *   0: a low priority
      */
     public weight: number | ros.IResolvable;
 
     /**
-     * @Property description: The description of the VPN destination route.
+     * @Property description: The description of the destination-based route.
+     * The description must be 1 to 100 characters in length, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property overlayMode: The overlay mode.
+     * @Property overlayMode: The tunneling protocol. The value is set to Ipsec, which indicates the IPsec
+     * tunneling protocol.
      */
     public overlayMode: string | ros.IResolvable | undefined;
 

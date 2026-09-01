@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CEN::CenRouteMaps</code>, which is used to query the information about routing policies.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CEN::CenRouteMaps</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.438Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.789Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.RosCenRouteMaps")
 public class RosCenRouteMaps extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.swas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SWAS::RunCommand</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:58:36.015Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:51:38.083Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.swas.$Module.class, fqn = "@alicloud/ros-cdk-swas.RunCommand")
 public class RunCommand extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.swas.IRunCommand {
 
@@ -120,20 +120,48 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property commandContent: The plaintext content of the command to run.
+         * Property commandContent: The content of the command.
+         * <p>
+         * Take note of the following items:
+         * <p>
+         * <ul>
+         * <li>If you set <code>EnableParameter</code> to true, the custom parameter feature is enabled
+         * in the command content and you can configure custom parameters based on the
+         * following rules:</li>
+         * <li>Define custom parameters in the {{}} format. Within <code>{{}}</code>, the spaces and
+         * line feeds before and after the parameter names are ignored.</li>
+         * <li>The number of custom parameters cannot be greater than 20.</li>
+         * <li>A custom parameter name can contain only letters, digits, underscores (_),
+         * and hyphens (-). The name is case-insensitive.</li>
+         * <li>Each custom parameter name cannot exceed 64 bytes in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param commandContent Property commandContent: The plaintext content of the command to run. This parameter is required.
+         * @param commandContent Property commandContent: The content of the command. This parameter is required.
          */
         public Builder commandContent(final java.lang.String commandContent) {
             this.props.commandContent(commandContent);
             return this;
         }
         /**
-         * Property commandContent: The plaintext content of the command to run.
+         * Property commandContent: The content of the command.
+         * <p>
+         * Take note of the following items:
+         * <p>
+         * <ul>
+         * <li>If you set <code>EnableParameter</code> to true, the custom parameter feature is enabled
+         * in the command content and you can configure custom parameters based on the
+         * following rules:</li>
+         * <li>Define custom parameters in the {{}} format. Within <code>{{}}</code>, the spaces and
+         * line feeds before and after the parameter names are ignored.</li>
+         * <li>The number of custom parameters cannot be greater than 20.</li>
+         * <li>A custom parameter name can contain only letters, digits, underscores (_),
+         * and hyphens (-). The name is case-insensitive.</li>
+         * <li>Each custom parameter name cannot exceed 64 bytes in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param commandContent Property commandContent: The plaintext content of the command to run. This parameter is required.
+         * @param commandContent Property commandContent: The content of the command. This parameter is required.
          */
         public Builder commandContent(final com.aliyun.ros.cdk.core.IResolvable commandContent) {
             this.props.commandContent(commandContent);
@@ -382,28 +410,36 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property workingDir: The directory in which to run the command on the instance.
+         * Property workingDir: The execution path of the command.
          * <p>
-         * Default value:
-         * Linux instances: /root
-         * Windows instances: C:\ProgramData\aliyun\assist$(version)
+         * Custom paths are supported. Default execution
+         * paths vary based on the operating systems of the servers.
+         * <p>
+         * <ul>
+         * <li>For Linux servers, the default path is /root of the root user.</li>
+         * <li>For Windows servers, the default path is C:\Windows\system32.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param workingDir Property workingDir: The directory in which to run the command on the instance. This parameter is required.
+         * @param workingDir Property workingDir: The execution path of the command. This parameter is required.
          */
         public Builder workingDir(final java.lang.String workingDir) {
             this.props.workingDir(workingDir);
             return this;
         }
         /**
-         * Property workingDir: The directory in which to run the command on the instance.
+         * Property workingDir: The execution path of the command.
          * <p>
-         * Default value:
-         * Linux instances: /root
-         * Windows instances: C:\ProgramData\aliyun\assist$(version)
+         * Custom paths are supported. Default execution
+         * paths vary based on the operating systems of the servers.
+         * <p>
+         * <ul>
+         * <li>For Linux servers, the default path is /root of the root user.</li>
+         * <li>For Windows servers, the default path is C:\Windows\system32.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param workingDir Property workingDir: The directory in which to run the command on the instance. This parameter is required.
+         * @param workingDir Property workingDir: The execution path of the command. This parameter is required.
          */
         public Builder workingDir(final com.aliyun.ros.cdk.core.IResolvable workingDir) {
             this.props.workingDir(workingDir);

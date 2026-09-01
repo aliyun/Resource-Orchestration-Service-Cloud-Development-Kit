@@ -52,11 +52,13 @@ export interface ApplicationProps {
     readonly redirectUris?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property refreshTokenValidity: The validity period of the refreshed token.
+     * Property refreshTokenValidity: The validity period of the refresh token.
      * Valid values: 7200 to 31536000. Unit: seconds.
      * Default value:
-     * - For applications of the WebApp and ServerApp types, if this parameter is left empty, the value 2592000 is used. The value 2592000 indicates that the validity period of the refreshed token is 30 days.
-     * - For applications of the NativeApp type, if this parameter is left empty, the value 7776000 is used. The value 7776000 indicates that the validity period of the refreshed token is 90 days.
+     * - If not specified, the default value is 2,592,000 seconds (30 days) for
+     * NativeApp and ServerApp applications.
+     * - If not specified, the default value is 7,776,000 seconds (90 days) for WebApp
+     * applications.
      */
     readonly refreshTokenValidity?: number | ros.IResolvable;
 

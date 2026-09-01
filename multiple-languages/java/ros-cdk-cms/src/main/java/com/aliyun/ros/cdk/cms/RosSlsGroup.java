@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::SlsGroup</code>, which is used to create a Logstore group for the metrics of Simple Log Service logs.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::SlsGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:29.054Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.364Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosSlsGroup")
 public class RosSlsGroup extends com.aliyun.ros.cdk.core.RosResource {
 

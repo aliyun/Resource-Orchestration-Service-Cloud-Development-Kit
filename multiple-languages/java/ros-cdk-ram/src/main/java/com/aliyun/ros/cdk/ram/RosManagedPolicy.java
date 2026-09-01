@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RAM::ManagedPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.317Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:56:20.261Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosManagedPolicy")
 public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -424,6 +424,13 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNotAction() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getResource() {
             return null;
         }
@@ -443,6 +450,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object action;
             java.lang.Object condition;
             java.lang.Object effect;
+            java.lang.Object notAction;
             java.lang.Object resource;
 
             /**
@@ -512,6 +520,28 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link StatementProperty#getNotAction}
+             * @param notAction the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder notAction(java.util.List<? extends java.lang.Object> notAction) {
+                this.notAction = notAction;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link StatementProperty#getNotAction}
+             * @param notAction the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder notAction(com.aliyun.ros.cdk.core.IResolvable notAction) {
+                this.notAction = notAction;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link StatementProperty#getResource}
              * @param resource the value to be set.
              * @return {@code this}
@@ -554,6 +584,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object action;
             private final java.lang.Object condition;
             private final java.lang.Object effect;
+            private final java.lang.Object notAction;
             private final java.lang.Object resource;
 
             /**
@@ -565,6 +596,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
                 this.action = software.amazon.jsii.Kernel.get(this, "action", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.condition = software.amazon.jsii.Kernel.get(this, "condition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.effect = software.amazon.jsii.Kernel.get(this, "effect", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.notAction = software.amazon.jsii.Kernel.get(this, "notAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.resource = software.amazon.jsii.Kernel.get(this, "resource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -576,6 +608,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
                 this.action = builder.action;
                 this.condition = builder.condition;
                 this.effect = builder.effect;
+                this.notAction = builder.notAction;
                 this.resource = builder.resource;
             }
 
@@ -592,6 +625,11 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getEffect() {
                 return this.effect;
+            }
+
+            @Override
+            public final java.lang.Object getNotAction() {
+                return this.notAction;
             }
 
             @Override
@@ -613,6 +651,9 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getEffect() != null) {
                     data.set("effect", om.valueToTree(this.getEffect()));
+                }
+                if (this.getNotAction() != null) {
+                    data.set("notAction", om.valueToTree(this.getNotAction()));
                 }
                 if (this.getResource() != null) {
                     data.set("resource", om.valueToTree(this.getResource()));
@@ -638,6 +679,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.action != null ? !this.action.equals(that.action) : that.action != null) return false;
                 if (this.condition != null ? !this.condition.equals(that.condition) : that.condition != null) return false;
                 if (this.effect != null ? !this.effect.equals(that.effect) : that.effect != null) return false;
+                if (this.notAction != null ? !this.notAction.equals(that.notAction) : that.notAction != null) return false;
                 return this.resource != null ? this.resource.equals(that.resource) : that.resource == null;
             }
 
@@ -646,6 +688,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.action != null ? this.action.hashCode() : 0;
                 result = 31 * result + (this.condition != null ? this.condition.hashCode() : 0);
                 result = 31 * result + (this.effect != null ? this.effect.hashCode() : 0);
+                result = 31 * result + (this.notAction != null ? this.notAction.hashCode() : 0);
                 result = 31 * result + (this.resource != null ? this.resource.hashCode() : 0);
                 return result;
             }

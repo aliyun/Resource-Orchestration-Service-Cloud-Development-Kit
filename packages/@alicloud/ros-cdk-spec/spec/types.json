@@ -94,6 +94,7 @@
 	"ALIYUN::MarketPlace",
 	"ALIYUN::MaxCompute",
 	"ALIYUN::Memcache",
+	"ALIYUN::Milvus",
 	"ALIYUN::NAS",
 	"ALIYUN::NLB",
 	"ALIYUN::NLS",

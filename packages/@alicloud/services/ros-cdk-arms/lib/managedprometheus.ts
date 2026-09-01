@@ -10,7 +10,12 @@ export { RosManagedPrometheus as ManagedPrometheusProperty };
 export interface ManagedPrometheusProps {
 
     /**
-     * Property clusterType: The type of the cluster. Currently, only ask, ecs and one clusters are supported. Default is ecs.
+     * Property clusterType: The cluster type.
+     * Valid values:
+     * *   ecs: ECS
+     * *   one: ACK One
+     * *   ask: ASK
+     * *   pro: Container Monitoring Pro
      */
     readonly clusterType: string | ros.IResolvable;
 
@@ -40,7 +45,9 @@ export interface ManagedPrometheusProps {
     readonly clusterName?: string | ros.IResolvable;
 
     /**
-     * Property grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster. When empty or "free", binds to the shared version of Grafana.
+     * Property grafanaInstanceId: The ID of the managed Grafana workspace that is associated with the cluster. If
+     * you set this parameter to free or leave this parameter empty, the cluster is
+     * associated with a shared Grafana workspace.
      */
     readonly grafanaInstanceId?: string | ros.IResolvable;
 }
@@ -62,7 +69,7 @@ export interface IManagedPrometheus extends ros.IResource {
     readonly attrVpcId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`, which is used to install a Prometheus instance to monitor a serverless Kubernetes (ASK) cluster or an Elastic Compute Service (ECS) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedPrometheus`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */

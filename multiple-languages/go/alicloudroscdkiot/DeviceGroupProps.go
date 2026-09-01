@@ -7,7 +7,8 @@ package alicloudroscdkiot
 type DeviceGroupProps struct {
 	// Property groupName: The name of the group.
 	//
-	// The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
+	// The alias must be 4 to 30 characters in length, and can
+	// contain letters, digits, and underscores (_).
 	GroupName interface{} `field:"required" json:"groupName" yaml:"groupName"`
 	// Property groupDesc: The description of the group.
 	//

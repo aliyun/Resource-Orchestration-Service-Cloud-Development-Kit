@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Accelerator`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Accelerator`, which is used to create a Global Accelerator (GA) instance.
 type RosAccelerator interface {
 	alicloudroscdkcore.RosResource
 	AcceleratorName() interface{}
@@ -28,12 +28,18 @@ type RosAccelerator interface {
 	SetAutoPay(val interface{})
 	AutoUseCoupon() interface{}
 	SetAutoUseCoupon(val interface{})
+	Bandwidth() interface{}
+	SetBandwidth(val interface{})
 	BandwidthBillingType() interface{}
 	SetBandwidthBillingType(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	CrossBorderMode() interface{}
+	SetCrossBorderMode(val interface{})
+	DdosConfigList() interface{}
+	SetDdosConfigList(val interface{})
 	Duration() interface{}
 	SetDuration(val interface{})
 	EnableCrossBorder() interface{}
@@ -76,6 +82,8 @@ type RosAccelerator interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Tags() *[]*RosAccelerator_TagsProperty
+	SetTags(val *[]*RosAccelerator_TagsProperty)
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -330,6 +338,16 @@ func (j *jsiiProxy_RosAccelerator) AutoUseCoupon() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosAccelerator) Bandwidth() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"bandwidth",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosAccelerator) BandwidthBillingType() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -345,6 +363,26 @@ func (j *jsiiProxy_RosAccelerator) CreationStack() *[]*string {
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAccelerator) CrossBorderMode() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"crossBorderMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAccelerator) DdosConfigList() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ddosConfigList",
 		&returns,
 	)
 	return returns
@@ -500,6 +538,16 @@ func (j *jsiiProxy_RosAccelerator) Stack() alicloudroscdkcore.Stack {
 	return returns
 }
 
+func (j *jsiiProxy_RosAccelerator) Tags() *[]*RosAccelerator_TagsProperty {
+	var returns *[]*RosAccelerator_TagsProperty
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosAccelerator) UpdatedProperites() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -571,6 +619,17 @@ func (j *jsiiProxy_RosAccelerator)SetAutoUseCoupon(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosAccelerator)SetBandwidth(val interface{}) {
+	if err := j.validateSetBandwidthParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"bandwidth",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosAccelerator)SetBandwidthBillingType(val interface{}) {
 	if err := j.validateSetBandwidthBillingTypeParameters(val); err != nil {
 		panic(err)
@@ -578,6 +637,28 @@ func (j *jsiiProxy_RosAccelerator)SetBandwidthBillingType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"bandwidthBillingType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAccelerator)SetCrossBorderMode(val interface{}) {
+	if err := j.validateSetCrossBorderModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"crossBorderMode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAccelerator)SetDdosConfigList(val interface{}) {
+	if err := j.validateSetDdosConfigListParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ddosConfigList",
 		val,
 	)
 }
@@ -666,6 +747,17 @@ func (j *jsiiProxy_RosAccelerator)SetSpec(val interface{}) {
 	_jsii_.Set(
 		j,
 		"spec",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAccelerator)SetTags(val *[]*RosAccelerator_TagsProperty) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }

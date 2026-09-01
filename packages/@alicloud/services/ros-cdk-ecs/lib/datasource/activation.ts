@@ -80,7 +80,7 @@ export interface IActivation extends ros.IResource {
     readonly attrTimeToLiveInHours: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Activation`, which is used to query the information about an activation code.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Activation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosActivation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-activation
  */

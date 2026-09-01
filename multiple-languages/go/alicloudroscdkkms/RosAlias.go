@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Alias`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Alias`Creates an alias for a customer master key (CMK) in Key Management Service (KMS).
 type RosAlias interface {
 	alicloudroscdkcore.RosResource
 	AliasName() interface{}

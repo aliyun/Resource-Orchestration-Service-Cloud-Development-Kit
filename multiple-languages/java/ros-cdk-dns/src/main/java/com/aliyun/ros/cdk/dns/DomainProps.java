@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dns;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domain
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.856Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:23:04.459Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.DomainProps")
 @software.amazon.jsii.Jsii.Proxy(DomainProps.Jsii$Proxy.class)
 public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,11 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDomainName();
 
     /**
-     * Property groupId: Domain name grouping, the default is the "default grouping" GroupId.
+     * Property groupId: The ID of the domain name group.
+     * <p>
+     * If you do not specify this parameter, pass an
+     * empty string, or pass defaultGroup, the domain name is added to the default
+     * group. You can call the AddDomainGroup operation to obtain the group ID.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGroupId() {
         return null;
@@ -75,7 +79,10 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DomainProps#getGroupId}
-         * @param groupId Property groupId: Domain name grouping, the default is the "default grouping" GroupId.
+         * @param groupId Property groupId: The ID of the domain name group.
+         *                If you do not specify this parameter, pass an
+         *                empty string, or pass defaultGroup, the domain name is added to the default
+         *                group. You can call the AddDomainGroup operation to obtain the group ID.
          * @return {@code this}
          */
         public Builder groupId(java.lang.String groupId) {
@@ -85,7 +92,10 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DomainProps#getGroupId}
-         * @param groupId Property groupId: Domain name grouping, the default is the "default grouping" GroupId.
+         * @param groupId Property groupId: The ID of the domain name group.
+         *                If you do not specify this parameter, pass an
+         *                empty string, or pass defaultGroup, the domain name is added to the default
+         *                group. You can call the AddDomainGroup operation to obtain the group ID.
          * @return {@code this}
          */
         public Builder groupId(com.aliyun.ros.cdk.core.IResolvable groupId) {

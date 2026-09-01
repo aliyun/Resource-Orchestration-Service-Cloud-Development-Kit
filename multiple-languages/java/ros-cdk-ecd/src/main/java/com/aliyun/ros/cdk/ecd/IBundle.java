@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecd;
 /**
  * Represents a <code>Bundle</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:33:58.425Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:33:34.834Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.IBundle")
 @software.amazon.jsii.Jsii.Proxy(IBundle.Jsii$Proxy.class)
 public interface IBundle extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

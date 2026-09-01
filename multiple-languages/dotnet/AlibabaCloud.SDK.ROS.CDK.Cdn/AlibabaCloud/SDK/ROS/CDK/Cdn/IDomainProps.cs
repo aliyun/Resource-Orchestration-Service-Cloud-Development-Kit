@@ -11,9 +11,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
     [JsiiInterface(nativeType: typeof(IDomainProps), fullyQualifiedName: "@alicloud/ros-cdk-cdn.DomainProps")]
     public interface IDomainProps
     {
-        /// <summary>Property cdnType: The business type.</summary>
+        /// <summary>Property cdnType: The business type of the domain name.</summary>
         /// <remarks>
-        /// Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>web: images and small files.</description>
+        /// <description>download: large files.</description>
+        /// <description>video: on-demand video and audio streaming.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "cdnType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object CdnType
@@ -31,7 +37,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             get;
         }
 
-        /// <summary>Property checkUrl: The validation of the origin.</summary>
+        /// <summary>Property checkUrl: The health check URL.</summary>
         [JsiiProperty(name: "checkUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? CheckUrl
@@ -70,9 +76,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             }
         }
 
-        /// <summary>Property scope: Valid values: domestic, overseas, and global.</summary>
+        /// <summary>Property scope: The acceleration region.</summary>
         /// <remarks>
-        /// Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>domestic (default): Chinese mainland only.</description>
+        /// <description>overseas: global (excluding the Chinese mainland).</description>
+        /// <description>global: global.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "scope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -131,9 +143,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             {
             }
 
-            /// <summary>Property cdnType: The business type.</summary>
+            /// <summary>Property cdnType: The business type of the domain name.</summary>
             /// <remarks>
-            /// Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>web: images and small files.</description>
+            /// <description>download: large files.</description>
+            /// <description>video: on-demand video and audio streaming.</description>
+            /// </list>
             /// </remarks>
             [JsiiProperty(name: "cdnType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object CdnType
@@ -151,7 +169,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property checkUrl: The validation of the origin.</summary>
+            /// <summary>Property checkUrl: The health check URL.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "checkUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CheckUrl
@@ -181,9 +199,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property scope: Valid values: domestic, overseas, and global.</summary>
+            /// <summary>Property scope: The acceleration region.</summary>
             /// <remarks>
-            /// Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>domestic (default): Chinese mainland only.</description>
+            /// <description>overseas: global (excluding the Chinese mainland).</description>
+            /// <description>global: global.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "scope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

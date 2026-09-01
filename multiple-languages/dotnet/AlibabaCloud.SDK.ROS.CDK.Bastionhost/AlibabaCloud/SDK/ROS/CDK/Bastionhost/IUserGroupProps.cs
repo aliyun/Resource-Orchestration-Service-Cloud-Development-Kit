@@ -18,14 +18,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bastionhost
             get;
         }
 
-        /// <summary>Property userGroupName: The name of the user group.</summary>
+        /// <summary>Property userGroupName: The name of the user group that you want to create.</summary>
+        /// <remarks>
+        /// This name can be a up to 128
+        /// characters in length.
+        /// </remarks>
         [JsiiProperty(name: "userGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object UserGroupName
         {
             get;
         }
 
-        /// <summary>Property comment: The comment of the user group.</summary>
+        /// <summary>Property comment: The description of the user group.</summary>
+        /// <remarks>
+        /// The description can be up to 500 characters in
+        /// length.
+        /// </remarks>
         [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Comment
@@ -54,14 +62,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bastionhost
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property userGroupName: The name of the user group.</summary>
+            /// <summary>Property userGroupName: The name of the user group that you want to create.</summary>
+            /// <remarks>
+            /// This name can be a up to 128
+            /// characters in length.
+            /// </remarks>
             [JsiiProperty(name: "userGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object UserGroupName
             {
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property comment: The comment of the user group.</summary>
+            /// <summary>Property comment: The description of the user group.</summary>
+            /// <remarks>
+            /// The description can be up to 500 characters in
+            /// length.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Comment

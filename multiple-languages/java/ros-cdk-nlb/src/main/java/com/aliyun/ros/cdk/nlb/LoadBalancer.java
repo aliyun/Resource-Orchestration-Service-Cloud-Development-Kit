@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLB::LoadBalancer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:01:45.062Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:17:42.331Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nlb.ILoadBalancer {
 
@@ -243,20 +243,34 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property addressIpVersion: The version of IP address that the NLB instance uses to provide services.
+         * Property addressIpVersion: The version of IP addresses used for the NLB instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ipv4 (default)</li>
+         * <li>DualStack</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param addressIpVersion Property addressIpVersion: The version of IP address that the NLB instance uses to provide services. This parameter is required.
+         * @param addressIpVersion Property addressIpVersion: The version of IP addresses used for the NLB instance. This parameter is required.
          */
         public Builder addressIpVersion(final java.lang.String addressIpVersion) {
             this.props.addressIpVersion(addressIpVersion);
             return this;
         }
         /**
-         * Property addressIpVersion: The version of IP address that the NLB instance uses to provide services.
+         * Property addressIpVersion: The version of IP addresses used for the NLB instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ipv4 (default)</li>
+         * <li>DualStack</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param addressIpVersion Property addressIpVersion: The version of IP address that the NLB instance uses to provide services. This parameter is required.
+         * @param addressIpVersion Property addressIpVersion: The version of IP addresses used for the NLB instance. This parameter is required.
          */
         public Builder addressIpVersion(final com.aliyun.ros.cdk.core.IResolvable addressIpVersion) {
             this.props.addressIpVersion(addressIpVersion);
@@ -264,20 +278,20 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+         * Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance that is associated with the Internet-facing NLB instance.
          * <p>
          * @return {@code this}
-         * @param bandwidthPackageId Property bandwidthPackageId: Attach common bandwidth package to load balancer. This parameter is required.
+         * @param bandwidthPackageId Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance that is associated with the Internet-facing NLB instance. This parameter is required.
          */
         public Builder bandwidthPackageId(final java.lang.String bandwidthPackageId) {
             this.props.bandwidthPackageId(bandwidthPackageId);
             return this;
         }
         /**
-         * Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+         * Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance that is associated with the Internet-facing NLB instance.
          * <p>
          * @return {@code this}
-         * @param bandwidthPackageId Property bandwidthPackageId: Attach common bandwidth package to load balancer. This parameter is required.
+         * @param bandwidthPackageId Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance that is associated with the Internet-facing NLB instance. This parameter is required.
          */
         public Builder bandwidthPackageId(final com.aliyun.ros.cdk.core.IResolvable bandwidthPackageId) {
             this.props.bandwidthPackageId(bandwidthPackageId);
@@ -377,20 +391,26 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property loadBalancerType: The type of the NLB instance.
+         * Property loadBalancerType: The type of the Server Load Balancer (SLB) instance.
+         * <p>
+         * Set the value to network,
+         * which indicates an NLB instance.
          * <p>
          * @return {@code this}
-         * @param loadBalancerType Property loadBalancerType: The type of the NLB instance. This parameter is required.
+         * @param loadBalancerType Property loadBalancerType: The type of the Server Load Balancer (SLB) instance. This parameter is required.
          */
         public Builder loadBalancerType(final java.lang.String loadBalancerType) {
             this.props.loadBalancerType(loadBalancerType);
             return this;
         }
         /**
-         * Property loadBalancerType: The type of the NLB instance.
+         * Property loadBalancerType: The type of the Server Load Balancer (SLB) instance.
+         * <p>
+         * Set the value to network,
+         * which indicates an NLB instance.
          * <p>
          * @return {@code this}
-         * @param loadBalancerType Property loadBalancerType: The type of the NLB instance. This parameter is required.
+         * @param loadBalancerType Property loadBalancerType: The type of the Server Load Balancer (SLB) instance. This parameter is required.
          */
         public Builder loadBalancerType(final com.aliyun.ros.cdk.core.IResolvable loadBalancerType) {
             this.props.loadBalancerType(loadBalancerType);

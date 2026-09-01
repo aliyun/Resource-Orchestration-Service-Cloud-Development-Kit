@@ -244,7 +244,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: description: The description of the security group. The description must be 2 to 256 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
+            /// <strong>Property</strong>: description: The rules of the security group. Valid values of N: 0 to 200.
             /// </remarks>
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -362,7 +362,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: description: The description of the security group. The description must be 2 to 256 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
+                /// <strong>Property</strong>: description: The rules of the security group. Valid values of N: 0 to 200.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -604,7 +604,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             private object? _description;
 
             /// <remarks>
-            /// <strong>Property</strong>: description: The description of the security group. The description must be 2 to 256 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
+            /// <strong>Property</strong>: description: The rules of the security group. Valid values of N: 0 to 200.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

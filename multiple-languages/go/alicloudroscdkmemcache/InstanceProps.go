@@ -12,15 +12,10 @@ type InstanceProps struct {
 	// false
 	// Note Default value: false.
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
-	// Property autoRenewPeriod: The period of the auto renewal.
+	// Property autoRenewPeriod: The auto-renewal duration, in months.
 	//
-	// Unit: months. Valid values:
-	// 1
-	// 2
-	// 3
-	// 6
-	// 12
-	// Note You must specify this parameter if the value of the AutoRenew parameter is true.
+	// Valid values: 1, 2, 3, 6, and 12.
+	// > This parameter is required when AutoRenew is set to true.
 	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
 	// Property autoUseCoupon: Specifies whether to use a coupon.
 	//
@@ -49,9 +44,9 @@ type InstanceProps struct {
 	// For more information,
 	// see Set parameters.
 	Config interface{} `field:"optional" json:"config" yaml:"config"`
-	// Property couponNo: The coupon number.
+	// Property couponNo: The coupon code.
 	//
-	// Default value: youhuiquan_promotion_option_id_for_blank.
+	// Default value: `default`.
 	CouponNo interface{} `field:"optional" json:"couponNo" yaml:"couponNo"`
 	// Property instanceClass: The instance type.
 	//
@@ -61,9 +56,9 @@ type InstanceProps struct {
 	InstanceClass interface{} `field:"optional" json:"instanceClass" yaml:"instanceClass"`
 	// Property instanceName: The name of the instance.
 	//
-	// The name can be 2 to 128 characters in length and must start
-	// with a letter. The following characters are not supported: at signs (@), forward slashes (\/), colons (:), equal signs (=), double quotation marks
-	// ("), angle brackets (<>), braces ([]), curly brackets ({}) and spaces.
+	// The name must be 2 to 80 characters long, start with a
+	// letter (uppercase or lowercase) or a Chinese character, and not contain spaces or
+	// the characters `@\/:=”<>{[]}`.
 	InstanceName interface{} `field:"optional" json:"instanceName" yaml:"instanceName"`
 	// Property networkType: The network type of the instance.
 	//
@@ -72,20 +67,18 @@ type InstanceProps struct {
 	// VPC
 	// Note Default value: CLASSIC.
 	NetworkType interface{} `field:"optional" json:"networkType" yaml:"networkType"`
-	// Property password: The password of the instance.
+	// Property password: The password for the instance.
 	//
-	// The password can be 8 to 32 characters in length and
-	// must contain at least three types of the following characters: uppercase letters,
-	// lowercase letters, digits, and special characters. Special characters include ! at signs (@), number signs (#), dollar signs ($), percent signs (%), carets (^),
-	// ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+),
-	// hyphens (-), and equal signs (=).
+	// The password must be 8 to 32 characters long and
+	// contain at least three of the following character types: uppercase letters,
+	// lowercase letters, digits, and special characters. The allowed special characters
+	// are `!@#$%^&*()_+-=`.
 	Password interface{} `field:"optional" json:"password" yaml:"password"`
-	// Property period: The subscription period.
+	// Property period: The subscription duration, in months.
 	//
-	// You must specify this parameter if the value of the ChargeType
-	// parameter is PrePaid. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24,
-	// and 36.
-	// Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
+	// Valid values: 1 to 9, 12, 24, 36, and 60.
+	// > This parameter is available and required only when ChargeType is set to
+	// PrePaid.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	// Property privateIpAddress: The internal IP address of the instance.
 	//
@@ -104,9 +97,13 @@ type InstanceProps struct {
 	VpcPasswordFree interface{} `field:"optional" json:"vpcPasswordFree" yaml:"vpcPasswordFree"`
 	// Property vSwitchId: The ID of the VSwitch.
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`
-	// Property zoneId: The ID of the zone in which the instance is created.
+	// Property zoneId: The ID of the primary zone for the instance.
 	//
-	// You can call the DescribeRegions operation to query the latest region list.
+	// You can call the [DescribeZones]()
+	// operation to query available zones.
+	// > You can also specify a secondary zone by using the `SecondaryZoneId` parameter.
+	// The primary and replica nodes are then deployed in the specified primary and
+	// secondary zones to create a dual-zone architecture for in-city disaster recovery.
 	ZoneId interface{} `field:"optional" json:"zoneId" yaml:"zoneId"`
 }
 

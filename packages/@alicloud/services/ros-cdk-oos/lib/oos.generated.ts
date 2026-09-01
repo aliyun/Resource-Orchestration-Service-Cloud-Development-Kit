@@ -40,12 +40,6 @@ function RosApplicationConnectionPropsValidator(properties: any): ros.Validation
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('connectionCategory', ros.requiredValidator)(properties.connectionCategory));
-    if(properties.connectionCategory && (typeof properties.connectionCategory) !== 'object') {
-        errors.collect(ros.propertyValidator('connectionCategory', ros.validateAllowedValues)({
-          data: properties.connectionCategory,
-          allowedValues: ["Sandbox","Memory","RAG","Gateway","MCP"],
-        }));
-    }
     errors.collect(ros.propertyValidator('connectionCategory', ros.validateString)(properties.connectionCategory));
     errors.collect(ros.propertyValidator('envVars', ros.requiredValidator)(properties.envVars));
     if(properties.envVars && (Array.isArray(properties.envVars) || (typeof properties.envVars) === 'string')) {
@@ -57,12 +51,6 @@ function RosApplicationConnectionPropsValidator(properties: any): ros.Validation
     }
     errors.collect(ros.propertyValidator('envVars', ros.listValidator(RosApplicationConnection_EnvVarsPropertyValidator))(properties.envVars));
     errors.collect(ros.propertyValidator('connectionType', ros.requiredValidator)(properties.connectionType));
-    if(properties.connectionType && (typeof properties.connectionType) !== 'object') {
-        errors.collect(ros.propertyValidator('connectionType', ros.validateAllowedValues)({
-          data: properties.connectionType,
-          allowedValues: ["AgentRun","AgentScopeRuntime"],
-        }));
-    }
     errors.collect(ros.propertyValidator('connectionType', ros.validateString)(properties.connectionType));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -727,7 +715,11 @@ export interface RosDeployRevisionProps {
     readonly applicationName: string | ros.IResolvable;
 
     /**
-     * @Property deployResourceType: The type of the deploy resource.
+     * @Property deployResourceType: The type of the deployment resource. Valid values:
+     * - `Kubernetes`: A Kubernetes cluster.
+     * - `Ecs`: An ECS instance.
+     * - `FC`: A Function Compute service.
+     * - `SWAS`: A Simple Application Server instance.
      */
     readonly deployResourceType?: string | ros.IResolvable;
 
@@ -747,7 +739,14 @@ export interface RosDeployRevisionProps {
     readonly location?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property revisionType: The type of the revision.
+     * @Property revisionType: The type of the deployment revision. Valid values:
+     * - `Command`: A command.
+     * - `GitRepo`: A Git repository.
+     * - `HelmChart`: A Helm chart.
+     * - `Oss`: An object in Object Storage Service (OSS).
+     * - `EcsImage`: An ECS image.
+     * - `DockerImage`: A Docker image.
+     * - `Yaml`: A YAML file.
      */
     readonly revisionType?: string | ros.IResolvable;
 }
@@ -839,7 +838,11 @@ export class RosDeployRevision extends ros.RosResource {
     public applicationName: string | ros.IResolvable;
 
     /**
-     * @Property deployResourceType: The type of the deploy resource.
+     * @Property deployResourceType: The type of the deployment resource. Valid values:
+     * - `Kubernetes`: A Kubernetes cluster.
+     * - `Ecs`: An ECS instance.
+     * - `FC`: A Function Compute service.
+     * - `SWAS`: A Simple Application Server instance.
      */
     public deployResourceType: string | ros.IResolvable | undefined;
 
@@ -859,7 +862,14 @@ export class RosDeployRevision extends ros.RosResource {
     public location: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
-     * @Property revisionType: The type of the revision.
+     * @Property revisionType: The type of the deployment revision. Valid values:
+     * - `Command`: A command.
+     * - `GitRepo`: A Git repository.
+     * - `HelmChart`: A Helm chart.
+     * - `Oss`: An object in Object Storage Service (OSS).
+     * - `EcsImage`: An ECS image.
+     * - `DockerImage`: A Docker image.
+     * - `Yaml`: A YAML file.
      */
     public revisionType: string | ros.IResolvable | undefined;
 
@@ -917,17 +927,21 @@ export interface RosExecutionProps {
     readonly loopMode?: string | ros.IResolvable;
 
     /**
-     * @Property mode: Execution mode.
+     * @Property mode: The execution mode. Valid values:
+     * - Automatic (default): The execution is automatically run.
+     * - FailurePause: The execution is paused if a task fails.
+     * - Debug: The execution is run in single-step mode.
      */
     readonly mode?: string | ros.IResolvable;
 
     /**
-     * @Property parameters: Parameters for the execution of template.
+     * @Property parameters: The JSON string that consists of a collection of parameters. The default value is
+     * {}.
      */
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property parentExecutionId: Parent execution ID.
+     * @Property parentExecutionId: The ID of the parent execution.
      */
     readonly parentExecutionId?: string | ros.IResolvable;
 
@@ -959,7 +973,8 @@ export interface RosExecutionProps {
     readonly templateContent?: string | ros.IResolvable;
 
     /**
-     * @Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+     * @Property templateName: The name of the template. The name can contain letters, digits, hyphens (-), and
+     * underscores (_). The name can be up to 200 characters in length.
      */
     readonly templateName?: string | ros.IResolvable;
 
@@ -1007,7 +1022,7 @@ function RosExecutionPropsValidator(properties: any): ros.ValidationResult {
     if(properties.mode && (typeof properties.mode) !== 'object') {
         errors.collect(ros.propertyValidator('mode', ros.validateAllowedValues)({
           data: properties.mode,
-          allowedValues: ["Automatic","Debug"],
+          allowedValues: ["Automatic","Debug","FailurePause"],
         }));
     }
     errors.collect(ros.propertyValidator('mode', ros.validateString)(properties.mode));
@@ -1137,17 +1152,21 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
     public loopMode: string | ros.IResolvable | undefined;
 
     /**
-     * @Property mode: Execution mode.
+     * @Property mode: The execution mode. Valid values:
+     * - Automatic (default): The execution is automatically run.
+     * - FailurePause: The execution is paused if a task fails.
+     * - Debug: The execution is run in single-step mode.
      */
     public mode: string | ros.IResolvable | undefined;
 
     /**
-     * @Property parameters: Parameters for the execution of template.
+     * @Property parameters: The JSON string that consists of a collection of parameters. The default value is
+     * {}.
      */
     public parameters: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
-     * @Property parentExecutionId: Parent execution ID.
+     * @Property parentExecutionId: The ID of the parent execution.
      */
     public parentExecutionId: string | ros.IResolvable | undefined;
 
@@ -1179,7 +1198,8 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
     public templateContent: string | ros.IResolvable | undefined;
 
     /**
-     * @Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+     * @Property templateName: The name of the template. The name can contain letters, digits, hyphens (-), and
+     * underscores (_). The name can be up to 200 characters in length.
      */
     public templateName: string | ros.IResolvable | undefined;
 
@@ -1347,12 +1367,14 @@ export interface RosParameterProps {
     readonly value: string | ros.IResolvable;
 
     /**
-     * @Property constraints: The constraints of the parameter. 
-     * By default, this parameter is null. Valid values:
-     * AllowedValues: The value that is allowed for the parameter. It must be an array string.
-     * AllowedPattern: The pattern that is allowed for the parameter. It must be a regular expression.
-     * MinLength: The minimum length of the parameter.
-     * MaxLength: The maximum length of the parameter.
+     * @Property constraints: The constraints of the encryption parameter. By default, this parameter is null.
+     * Valid values:
+     * *   AllowedValues: The value that is allowed for the encryption parameter. It
+     * must be an array string.
+     * *   AllowedPattern: The pattern that is allowed for the encryption parameter. It
+     * must be a regular expression.
+     * *   MinLength: The minimum length of the encryption parameter.
+     * *   MaxLength: The maximum length of the encryption parameter.
      */
     readonly constraints?: string | ros.IResolvable;
 
@@ -1463,12 +1485,14 @@ export class RosParameter extends ros.RosResource {
     public value: string | ros.IResolvable;
 
     /**
-     * @Property constraints: The constraints of the parameter. 
-     * By default, this parameter is null. Valid values:
-     * AllowedValues: The value that is allowed for the parameter. It must be an array string.
-     * AllowedPattern: The pattern that is allowed for the parameter. It must be a regular expression.
-     * MinLength: The minimum length of the parameter.
-     * MaxLength: The maximum length of the parameter.
+     * @Property constraints: The constraints of the encryption parameter. By default, this parameter is null.
+     * Valid values:
+     * *   AllowedValues: The value that is allowed for the encryption parameter. It
+     * must be an array string.
+     * *   AllowedPattern: The pattern that is allowed for the encryption parameter. It
+     * must be a regular expression.
+     * *   MinLength: The minimum length of the encryption parameter.
+     * *   MaxLength: The maximum length of the encryption parameter.
      */
     public constraints: string | ros.IResolvable | undefined;
 
@@ -2253,7 +2277,7 @@ export interface RosServiceSettingsProps {
     readonly deliverySlsProjectName?: string | ros.IResolvable;
 
     /**
-     * @Property rdcEnterpriseId: Enterprise ID.
+     * @Property rdcEnterpriseId: The Apsara DevOps enterprise ID.
      */
     readonly rdcEnterpriseId?: string | ros.IResolvable;
 }
@@ -2340,7 +2364,7 @@ export class RosServiceSettings extends ros.RosResource {
     public deliverySlsProjectName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property rdcEnterpriseId: Enterprise ID.
+     * @Property rdcEnterpriseId: The Apsara DevOps enterprise ID.
      */
     public rdcEnterpriseId: string | ros.IResolvable | undefined;
 

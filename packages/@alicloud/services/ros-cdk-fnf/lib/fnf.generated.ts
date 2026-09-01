@@ -14,7 +14,14 @@ export interface RosFlowProps {
     readonly definition: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the flow created. This name is unique under the account.
+     * @Property name: The name of the flow. The name must be unique within the same region and cannot
+     * be changed after the flow is created. The name must meet the following
+     * requirements:
+     * - It can contain letters (a to z and A to Z), digits (0 to 9), underscores (_),
+     * and hyphens (-).
+     * - It must start with a letter or an underscore (_).
+     * - It is case-sensitive.
+     * - It must be 1 to 128 characters in length.
      */
     readonly name: string | ros.IResolvable;
 
@@ -97,7 +104,7 @@ function rosFlowPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Flow`, which is used to create a flow.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Flow`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Flow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
  */
@@ -136,7 +143,14 @@ export class RosFlow extends ros.RosResource {
     public definition: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the flow created. This name is unique under the account.
+     * @Property name: The name of the flow. The name must be unique within the same region and cannot
+     * be changed after the flow is created. The name must meet the following
+     * requirements:
+     * - It can contain letters (a to z and A to Z), digits (0 to 9), underscores (_),
+     * and hyphens (-).
+     * - It must start with a letter or an underscore (_).
+     * - It is case-sensitive.
+     * - It must be 1 to 128 characters in length.
      */
     public name: string | ros.IResolvable;
 
@@ -221,7 +235,11 @@ export interface RosScheduleProps {
     readonly flowName: string | ros.IResolvable;
 
     /**
-     * @Property scheduleName: Schedule name.
+     * @Property scheduleName: The name of the timed schedule. The name must meet the following requirements:
+     * - It can contain letters (a-z and A-Z), digits (0-9), underscores (_), and
+     * hyphens (-).
+     * - It is case-sensitive.
+     * - It must be 1 to 128 characters in length.
      */
     readonly scheduleName: string | ros.IResolvable;
 
@@ -236,7 +254,8 @@ export interface RosScheduleProps {
     readonly enable?: boolean | ros.IResolvable;
 
     /**
-     * @Property payload: Payload.
+     * @Property payload: The trigger message of the timed schedule. The message must be in the JSON
+     * format.
      */
     readonly payload?: string | ros.IResolvable;
 }
@@ -326,7 +345,11 @@ export class RosSchedule extends ros.RosResource {
     public flowName: string | ros.IResolvable;
 
     /**
-     * @Property scheduleName: Schedule name.
+     * @Property scheduleName: The name of the timed schedule. The name must meet the following requirements:
+     * - It can contain letters (a-z and A-Z), digits (0-9), underscores (_), and
+     * hyphens (-).
+     * - It is case-sensitive.
+     * - It must be 1 to 128 characters in length.
      */
     public scheduleName: string | ros.IResolvable;
 
@@ -341,7 +364,8 @@ export class RosSchedule extends ros.RosResource {
     public enable: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property payload: Payload.
+     * @Property payload: The trigger message of the timed schedule. The message must be in the JSON
+     * format.
      */
     public payload: string | ros.IResolvable | undefined;
 

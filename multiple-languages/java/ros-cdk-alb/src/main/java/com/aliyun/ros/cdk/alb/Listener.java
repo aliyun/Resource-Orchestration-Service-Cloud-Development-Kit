@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::Listener</code>The , which resource type creates an HTTP, HTTPS, or QUIC listener for an Application Load Balancer (ALB) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::Listener</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.214Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.402Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.IListener {
 
@@ -120,20 +120,20 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property defaultActions: The actions of the rule.
+         * Property defaultActions: The default actions for the listener.
          * <p>
          * @return {@code this}
-         * @param defaultActions Property defaultActions: The actions of the rule. This parameter is required.
+         * @param defaultActions Property defaultActions: The default actions for the listener. This parameter is required.
          */
         public Builder defaultActions(final com.aliyun.ros.cdk.core.IResolvable defaultActions) {
             this.props.defaultActions(defaultActions);
             return this;
         }
         /**
-         * Property defaultActions: The actions of the rule.
+         * Property defaultActions: The default actions for the listener.
          * <p>
          * @return {@code this}
-         * @param defaultActions Property defaultActions: The actions of the rule. This parameter is required.
+         * @param defaultActions Property defaultActions: The default actions for the listener. This parameter is required.
          */
         public Builder defaultActions(final java.util.List<? extends java.lang.Object> defaultActions) {
             this.props.defaultActions(defaultActions);
@@ -212,20 +212,24 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property caCertificates: List of configured CA certificates for listener.
+         * Property caCertificates: A list of CA certificates for the listener.
+         * <p>
+         * Only one CA certificate is supported.
          * <p>
          * @return {@code this}
-         * @param caCertificates Property caCertificates: List of configured CA certificates for listener. This parameter is required.
+         * @param caCertificates Property caCertificates: A list of CA certificates for the listener. This parameter is required.
          */
         public Builder caCertificates(final com.aliyun.ros.cdk.core.IResolvable caCertificates) {
             this.props.caCertificates(caCertificates);
             return this;
         }
         /**
-         * Property caCertificates: List of configured CA certificates for listener.
+         * Property caCertificates: A list of CA certificates for the listener.
+         * <p>
+         * Only one CA certificate is supported.
          * <p>
          * @return {@code this}
-         * @param caCertificates Property caCertificates: List of configured CA certificates for listener. This parameter is required.
+         * @param caCertificates Property caCertificates: A list of CA certificates for the listener. This parameter is required.
          */
         public Builder caCertificates(final java.util.List<? extends java.lang.Object> caCertificates) {
             this.props.caCertificates(caCertificates);
@@ -258,20 +262,20 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property certificates: The list of SSL certificates for listener.
+         * Property certificates: A list of server certificates.
          * <p>
          * @return {@code this}
-         * @param certificates Property certificates: The list of SSL certificates for listener. This parameter is required.
+         * @param certificates Property certificates: A list of server certificates. This parameter is required.
          */
         public Builder certificates(final com.aliyun.ros.cdk.core.IResolvable certificates) {
             this.props.certificates(certificates);
             return this;
         }
         /**
-         * Property certificates: The list of SSL certificates for listener.
+         * Property certificates: A list of server certificates.
          * <p>
          * @return {@code this}
-         * @param certificates Property certificates: The list of SSL certificates for listener. This parameter is required.
+         * @param certificates Property certificates: A list of server certificates. This parameter is required.
          */
         public Builder certificates(final java.util.List<? extends java.lang.Object> certificates) {
             this.props.certificates(certificates);
@@ -337,28 +341,44 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property idleTimeout: The timeout period of idle connections.
+         * Property idleTimeout: The idle timeout in seconds.
          * <p>
-         * Valid values: 1 to 3600. Unit: seconds.
+         * Valid values: 1 to 600.
          * Default value: 15.
-         * If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
+         * If no requests are received on a connection within the idle timeout, the load
+         * balancer closes the connection. A new connection is established for the next
+         * request.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can request a quota increase to a maximum of 3,600 seconds.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param idleTimeout Property idleTimeout: The timeout period of idle connections. This parameter is required.
+         * @param idleTimeout Property idleTimeout: The idle timeout in seconds. This parameter is required.
          */
         public Builder idleTimeout(final java.lang.Number idleTimeout) {
             this.props.idleTimeout(idleTimeout);
             return this;
         }
         /**
-         * Property idleTimeout: The timeout period of idle connections.
+         * Property idleTimeout: The idle timeout in seconds.
          * <p>
-         * Valid values: 1 to 3600. Unit: seconds.
+         * Valid values: 1 to 600.
          * Default value: 15.
-         * If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
+         * If no requests are received on a connection within the idle timeout, the load
+         * balancer closes the connection. A new connection is established for the next
+         * request.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can request a quota increase to a maximum of 3,600 seconds.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param idleTimeout Property idleTimeout: The timeout period of idle connections. This parameter is required.
+         * @param idleTimeout Property idleTimeout: The idle timeout in seconds. This parameter is required.
          */
         public Builder idleTimeout(final com.aliyun.ros.cdk.core.IResolvable idleTimeout) {
             this.props.idleTimeout(idleTimeout);
@@ -366,24 +386,28 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property listenerDescription: The description of the listener.
+         * Property listenerDescription: A custom name for the listener.
          * <p>
-         * The description must be 2 to 256 characters in length.
+         * The name must be 2 to 256 characters long and can contain letters, digits,
+         * hyphens (-), forward slashes (/), periods (.), underscores (_), and Chinese
+         * characters.
          * <p>
          * @return {@code this}
-         * @param listenerDescription Property listenerDescription: The description of the listener. This parameter is required.
+         * @param listenerDescription Property listenerDescription: A custom name for the listener. This parameter is required.
          */
         public Builder listenerDescription(final java.lang.String listenerDescription) {
             this.props.listenerDescription(listenerDescription);
             return this;
         }
         /**
-         * Property listenerDescription: The description of the listener.
+         * Property listenerDescription: A custom name for the listener.
          * <p>
-         * The description must be 2 to 256 characters in length.
+         * The name must be 2 to 256 characters long and can contain letters, digits,
+         * hyphens (-), forward slashes (/), periods (.), underscores (_), and Chinese
+         * characters.
          * <p>
          * @return {@code this}
-         * @param listenerDescription Property listenerDescription: The description of the listener. This parameter is required.
+         * @param listenerDescription Property listenerDescription: A custom name for the listener. This parameter is required.
          */
         public Builder listenerDescription(final com.aliyun.ros.cdk.core.IResolvable listenerDescription) {
             this.props.listenerDescription(listenerDescription);
@@ -454,30 +478,42 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property requestTimeout: The timeout period of the request.
+         * Property requestTimeout: The request timeout in seconds.
          * <p>
-         * Valid values: 1 to 900. Unit: seconds.
+         * Valid values: 1 to 600.
          * Default value: 60.
-         * If no response is received from the backend server during the request timeout period,
-         * ALB sends an HTTP 504 error code to the client.
+         * If a backend server does not respond within the timeout period, the load balancer
+         * returns an <code>HTTP 504</code> error to the client.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can request a quota increase to a maximum of 3,600 seconds.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param requestTimeout Property requestTimeout: The timeout period of the request. This parameter is required.
+         * @param requestTimeout Property requestTimeout: The request timeout in seconds. This parameter is required.
          */
         public Builder requestTimeout(final java.lang.Number requestTimeout) {
             this.props.requestTimeout(requestTimeout);
             return this;
         }
         /**
-         * Property requestTimeout: The timeout period of the request.
+         * Property requestTimeout: The request timeout in seconds.
          * <p>
-         * Valid values: 1 to 900. Unit: seconds.
+         * Valid values: 1 to 600.
          * Default value: 60.
-         * If no response is received from the backend server during the request timeout period,
-         * ALB sends an HTTP 504 error code to the client.
+         * If a backend server does not respond within the timeout period, the load balancer
+         * returns an <code>HTTP 504</code> error to the client.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can request a quota increase to a maximum of 3,600 seconds.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param requestTimeout Property requestTimeout: The timeout period of the request. This parameter is required.
+         * @param requestTimeout Property requestTimeout: The request timeout in seconds. This parameter is required.
          */
         public Builder requestTimeout(final com.aliyun.ros.cdk.core.IResolvable requestTimeout) {
             this.props.requestTimeout(requestTimeout);
@@ -516,20 +552,20 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property xForwardedForConfig: The configuration of the XForward field.
+         * Property xForwardedForConfig: The configuration of <code>X-Forwarded-*</code> headers.
          * <p>
          * @return {@code this}
-         * @param xForwardedForConfig Property xForwardedForConfig: The configuration of the XForward field. This parameter is required.
+         * @param xForwardedForConfig Property xForwardedForConfig: The configuration of <code>X-Forwarded-*</code> headers. This parameter is required.
          */
         public Builder xForwardedForConfig(final com.aliyun.ros.cdk.core.IResolvable xForwardedForConfig) {
             this.props.xForwardedForConfig(xForwardedForConfig);
             return this;
         }
         /**
-         * Property xForwardedForConfig: The configuration of the XForward field.
+         * Property xForwardedForConfig: The configuration of <code>X-Forwarded-*</code> headers.
          * <p>
          * @return {@code this}
-         * @param xForwardedForConfig Property xForwardedForConfig: The configuration of the XForward field. This parameter is required.
+         * @param xForwardedForConfig Property xForwardedForConfig: The configuration of <code>X-Forwarded-*</code> headers. This parameter is required.
          */
         public Builder xForwardedForConfig(final com.aliyun.ros.cdk.alb.RosListener.XForwardedForConfigProperty xForwardedForConfig) {
             this.props.xForwardedForConfig(xForwardedForConfig);

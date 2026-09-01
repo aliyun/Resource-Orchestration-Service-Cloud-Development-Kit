@@ -10,7 +10,10 @@ export { RosDomain as DomainProperty };
 export interface DomainProps {
 
     /**
-     * Property cdnType: The business type. Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
+     * Property cdnType: The business type of the domain name. Valid values:
+     * - web: images and small files.
+     * - download: large files.
+     * - video: on-demand video and audio streaming.
      */
     readonly cdnType: string | ros.IResolvable;
 
@@ -20,7 +23,7 @@ export interface DomainProps {
     readonly domainName: string | ros.IResolvable;
 
     /**
-     * Property checkUrl: The validation of the origin.
+     * Property checkUrl: The health check URL.
      */
     readonly checkUrl?: string | ros.IResolvable;
 
@@ -35,7 +38,10 @@ export interface DomainProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property scope: Valid values: domestic, overseas, and global. Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
+     * Property scope: The acceleration region. Valid values:
+     * - domestic (default): Chinese mainland only.
+     * - overseas: global (excluding the Chinese mainland).
+     * - global: global.
      */
     readonly scope?: string | ros.IResolvable;
 
@@ -77,7 +83,7 @@ export interface IDomain extends ros.IResource {
     readonly attrDomainName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CDN::Domain`, which is used to add an accelerated domain name.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CDN::Domain`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domain
  */

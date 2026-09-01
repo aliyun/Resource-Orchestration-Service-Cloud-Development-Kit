@@ -1,4 +1,8 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
+## [ros-cdk-cli 1.15.0] (2026-08-25)
+### Features 
+- Update ROS resource sdk packages(Added the ALIYUN::ARMS::TraceResource、ALIYUN::Bailian::Index、ALIYUN::CMS2::AggTaskGroup、ALIYUN::CMS2::Workspace、ALIYUN::CR::InstanceV2、ALIYUN::EMR::LivyCompute、ALIYUN::EMR::SparkWorkspace、ALIYUN::GA::CertificatesListenerAssociation、ALIYUN::GA::ResourceAttachment、ALIYUN::Milvus::Instance、ALIYUN::POLARDB::Extensions、ALIYUN::ResourceManager::ServiceLinkedRole、DATASOURCE::OOS::Parameter)
+
 ## [ros-cdk-cli 1.14.0] (2026-06-08)
 ### Features 
 - Update ROS resource sdk packages(Added the ALIYUN::BPStudio::Application、ALIYUN::Bailian::ApiKey、ALIYUN::CMS2::AddonRelease、ALIYUN::CMS2::ServiceObservability、ALIYUN::Config::ReportTemplate、ALIYUN::DTS::JobMonitorRule、ALIYUN::Eflo::Vpd、ALIYUN::EventBridge::ApiDestination、ALIYUN::EventBridge::Connection、ALIYUN::PAI::Quota、ALIYUN::PAI::ResourceGroup、DATASOURCE::BPStudio::Application、DATASOURCE::BPStudio::Template)

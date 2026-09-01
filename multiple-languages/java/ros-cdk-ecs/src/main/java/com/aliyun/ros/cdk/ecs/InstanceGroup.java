@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::InstanceGroup</code>The , which resource creates a group of ECS instances that share identical configurations.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::InstanceGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.956Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.331Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroup")
 public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IInstanceGroup {
 
@@ -419,20 +419,40 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property dedicatedHostId: which dedicated host will be deployed.
+         * Property dedicatedHostId: The ID of the dedicated host.
+         * <p>
+         * You can call the <a href="">DescribeDedicatedHosts</a> operation to query the list of
+         * dedicated host IDs.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Spot instances cannot be created on dedicated hosts. If you specify
+         * DedicatedHostId, SpotStrategy and SpotPriceLimit are automatically ignored.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dedicatedHostId Property dedicatedHostId: which dedicated host will be deployed. This parameter is required.
+         * @param dedicatedHostId Property dedicatedHostId: The ID of the dedicated host. This parameter is required.
          */
         public Builder dedicatedHostId(final java.lang.String dedicatedHostId) {
             this.props.dedicatedHostId(dedicatedHostId);
             return this;
         }
         /**
-         * Property dedicatedHostId: which dedicated host will be deployed.
+         * Property dedicatedHostId: The ID of the dedicated host.
+         * <p>
+         * You can call the <a href="">DescribeDedicatedHosts</a> operation to query the list of
+         * dedicated host IDs.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Spot instances cannot be created on dedicated hosts. If you specify
+         * DedicatedHostId, SpotStrategy and SpotPriceLimit are automatically ignored.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dedicatedHostId Property dedicatedHostId: which dedicated host will be deployed. This parameter is required.
+         * @param dedicatedHostId Property dedicatedHostId: The ID of the dedicated host. This parameter is required.
          */
         public Builder dedicatedHostId(final com.aliyun.ros.cdk.core.IResolvable dedicatedHostId) {
             this.props.dedicatedHostId(dedicatedHostId);
@@ -835,20 +855,40 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property imageId: Image ID to create ecs instance.
+         * Property imageId: The image ID.
+         * <p>
+         * <details>
+         * <summary>
+         * Naming convention for image IDs
+         * <\/summary>
+         * - Public images: Named based on the operating system version, architecture,
+         * language, and published date.
+         * - Custom images, shared images, cloud marketplace images, and community
+         * images: Start with the letter `m`.
+         * <\/details>
          * <p>
          * @return {@code this}
-         * @param imageId Property imageId: Image ID to create ecs instance. This parameter is required.
+         * @param imageId Property imageId: The image ID. This parameter is required.
          */
         public Builder imageId(final java.lang.String imageId) {
             this.props.imageId(imageId);
             return this;
         }
         /**
-         * Property imageId: Image ID to create ecs instance.
+         * Property imageId: The image ID.
+         * <p>
+         * <details>
+         * <summary>
+         * Naming convention for image IDs
+         * <\/summary>
+         * - Public images: Named based on the operating system version, architecture,
+         * language, and published date.
+         * - Custom images, shared images, cloud marketplace images, and community
+         * images: Start with the letter `m`.
+         * <\/details>
          * <p>
          * @return {@code this}
-         * @param imageId Property imageId: Image ID to create ecs instance. This parameter is required.
+         * @param imageId Property imageId: The image ID. This parameter is required.
          */
         public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.props.imageId(imageId);
@@ -944,24 +984,26 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property internetMaxBandwidthOut: Set internet output bandwidth of instance.
+         * Property internetMaxBandwidthOut: The maximum outbound public bandwidth.
          * <p>
-         * Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
+         * Unit: Mbit/s. Valid values: 0 to 100.
+         * Default value: 0.
          * <p>
          * @return {@code this}
-         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Set internet output bandwidth of instance. This parameter is required.
+         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: The maximum outbound public bandwidth. This parameter is required.
          */
         public Builder internetMaxBandwidthOut(final java.lang.Number internetMaxBandwidthOut) {
             this.props.internetMaxBandwidthOut(internetMaxBandwidthOut);
             return this;
         }
         /**
-         * Property internetMaxBandwidthOut: Set internet output bandwidth of instance.
+         * Property internetMaxBandwidthOut: The maximum outbound public bandwidth.
          * <p>
-         * Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
+         * Unit: Mbit/s. Valid values: 0 to 100.
+         * Default value: 0.
          * <p>
          * @return {@code this}
-         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Set internet output bandwidth of instance. This parameter is required.
+         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: The maximum outbound public bandwidth. This parameter is required.
          */
         public Builder internetMaxBandwidthOut(final com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthOut) {
             this.props.internetMaxBandwidthOut(internetMaxBandwidthOut);
@@ -969,24 +1011,38 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property ioOptimized: The 'optimized' instance can provide better IO performance.
+         * Property ioOptimized: Specifies whether the instance is I/O optimized.
          * <p>
-         * Support 'none' and 'optimized' only, default is 'optimized'.
+         * For instances of <a href="">retired
+         * instance types</a>, the default value is none. For instances of other instance
+         * types, the default value is optimized. Valid values:
+         * <p>
+         * <ul>
+         * <li>none: The instance is not I/O optimized.</li>
+         * <li>optimized: The instance is I/O optimized.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param ioOptimized Property ioOptimized: The 'optimized' instance can provide better IO performance. This parameter is required.
+         * @param ioOptimized Property ioOptimized: Specifies whether the instance is I/O optimized. This parameter is required.
          */
         public Builder ioOptimized(final java.lang.String ioOptimized) {
             this.props.ioOptimized(ioOptimized);
             return this;
         }
         /**
-         * Property ioOptimized: The 'optimized' instance can provide better IO performance.
+         * Property ioOptimized: Specifies whether the instance is I/O optimized.
          * <p>
-         * Support 'none' and 'optimized' only, default is 'optimized'.
+         * For instances of <a href="">retired
+         * instance types</a>, the default value is none. For instances of other instance
+         * types, the default value is optimized. Valid values:
+         * <p>
+         * <ul>
+         * <li>none: The instance is not I/O optimized.</li>
+         * <li>optimized: The instance is I/O optimized.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param ioOptimized Property ioOptimized: The 'optimized' instance can provide better IO performance. This parameter is required.
+         * @param ioOptimized Property ioOptimized: Specifies whether the instance is I/O optimized. This parameter is required.
          */
         public Builder ioOptimized(final com.aliyun.ros.cdk.core.IResolvable ioOptimized) {
             this.props.ioOptimized(ioOptimized);
@@ -1442,20 +1498,38 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property securityEnhancementStrategy:.
+         * Property securityEnhancementStrategy: Specifies whether to enable security hardening.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Active: enables security hardening. This value is applicable only to public
+         * images.</li>
+         * <li>Deactive: does not enable security hardening. This value is applicable to all
+         * images.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param securityEnhancementStrategy Property securityEnhancementStrategy:. This parameter is required.
+         * @param securityEnhancementStrategy Property securityEnhancementStrategy: Specifies whether to enable security hardening. This parameter is required.
          */
         public Builder securityEnhancementStrategy(final java.lang.String securityEnhancementStrategy) {
             this.props.securityEnhancementStrategy(securityEnhancementStrategy);
             return this;
         }
         /**
-         * Property securityEnhancementStrategy:.
+         * Property securityEnhancementStrategy: Specifies whether to enable security hardening.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Active: enables security hardening. This value is applicable only to public
+         * images.</li>
+         * <li>Deactive: does not enable security hardening. This value is applicable to all
+         * images.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param securityEnhancementStrategy Property securityEnhancementStrategy:. This parameter is required.
+         * @param securityEnhancementStrategy Property securityEnhancementStrategy: Specifies whether to enable security hardening. This parameter is required.
          */
         public Builder securityEnhancementStrategy(final com.aliyun.ros.cdk.core.IResolvable securityEnhancementStrategy) {
             this.props.securityEnhancementStrategy(securityEnhancementStrategy);
@@ -1534,30 +1608,64 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property spotDuration: The protection period of the preemptible instance.
+         * Property spotDuration: The protection period of the spot instance.
          * <p>
-         * Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
-         * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
-         * If this parameter is set to 0, no protection period is configured for the preemptible instance.
-         * Default value: 1.
+         * Unit: hours. Valid values:
+         * <p>
+         * <ul>
+         * <li>1: After a spot instance is created, the system ensures that the instance is not
+         * automatically released within 1 hour. After the 1-hour protection period ends, the system
+         * compares the bid price with the market price and checks the resource inventory to
+         * determine whether to retain or release the instance.</li>
+         * <li>0: After a spot instance is created, the system does not ensure that the instance
+         * can run for one hour. The system compares the biding price with the market prices and
+         * checks the resource inventory to determine whether to retain or release the instance.
+         * Default value: 1.</li>
+         * </ul>
+         * <p>
+         * <blockquote></blockquote>
+         * <p>
+         * <ul>
+         * <li>You can set this parameter only to 0 or 1.</li>
+         * <li>The spot instance is billed by second. Specify an appropriate protection period.</li>
+         * <li>The system sends an ECS system event to notify you 5 minutes before the instance is
+         * released.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param spotDuration Property spotDuration: The protection period of the preemptible instance. This parameter is required.
+         * @param spotDuration Property spotDuration: The protection period of the spot instance. This parameter is required.
          */
         public Builder spotDuration(final java.lang.Number spotDuration) {
             this.props.spotDuration(spotDuration);
             return this;
         }
         /**
-         * Property spotDuration: The protection period of the preemptible instance.
+         * Property spotDuration: The protection period of the spot instance.
          * <p>
-         * Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
-         * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
-         * If this parameter is set to 0, no protection period is configured for the preemptible instance.
-         * Default value: 1.
+         * Unit: hours. Valid values:
+         * <p>
+         * <ul>
+         * <li>1: After a spot instance is created, the system ensures that the instance is not
+         * automatically released within 1 hour. After the 1-hour protection period ends, the system
+         * compares the bid price with the market price and checks the resource inventory to
+         * determine whether to retain or release the instance.</li>
+         * <li>0: After a spot instance is created, the system does not ensure that the instance
+         * can run for one hour. The system compares the biding price with the market prices and
+         * checks the resource inventory to determine whether to retain or release the instance.
+         * Default value: 1.</li>
+         * </ul>
+         * <p>
+         * <blockquote></blockquote>
+         * <p>
+         * <ul>
+         * <li>You can set this parameter only to 0 or 1.</li>
+         * <li>The spot instance is billed by second. Specify an appropriate protection period.</li>
+         * <li>The system sends an ECS system event to notify you 5 minutes before the instance is
+         * released.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param spotDuration Property spotDuration: The protection period of the preemptible instance. This parameter is required.
+         * @param spotDuration Property spotDuration: The protection period of the spot instance. This parameter is required.
          */
         public Builder spotDuration(final com.aliyun.ros.cdk.core.IResolvable spotDuration) {
             this.props.spotDuration(spotDuration);
@@ -1565,24 +1673,38 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property spotInterruptionBehavior: The interruption mode of the preemptible instance.
+         * Property spotInterruptionBehavior: The interruption mode of the spot instance.
          * <p>
-         * Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Terminate: The instance is released.</li>
+         * <li>Stop: The instance is stopped in economical mode.
+         * For information about the economical mode, see <a href="">Economical mode</a>.
+         * Default value: Terminate.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param spotInterruptionBehavior Property spotInterruptionBehavior: The interruption mode of the preemptible instance. This parameter is required.
+         * @param spotInterruptionBehavior Property spotInterruptionBehavior: The interruption mode of the spot instance. This parameter is required.
          */
         public Builder spotInterruptionBehavior(final java.lang.String spotInterruptionBehavior) {
             this.props.spotInterruptionBehavior(spotInterruptionBehavior);
             return this;
         }
         /**
-         * Property spotInterruptionBehavior: The interruption mode of the preemptible instance.
+         * Property spotInterruptionBehavior: The interruption mode of the spot instance.
          * <p>
-         * Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Terminate: The instance is released.</li>
+         * <li>Stop: The instance is stopped in economical mode.
+         * For information about the economical mode, see <a href="">Economical mode</a>.
+         * Default value: Terminate.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param spotInterruptionBehavior Property spotInterruptionBehavior: The interruption mode of the preemptible instance. This parameter is required.
+         * @param spotInterruptionBehavior Property spotInterruptionBehavior: The interruption mode of the spot instance. This parameter is required.
          */
         public Builder spotInterruptionBehavior(final com.aliyun.ros.cdk.core.IResolvable spotInterruptionBehavior) {
             this.props.spotInterruptionBehavior(spotInterruptionBehavior);
@@ -1663,7 +1785,8 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property storageSetPartitionNumber: The maximum number of partitions in the storage set.
          * <p>
-         * The value must be greater than or equal to 2.
+         * Valid values: integers
+         * greater than or equal to 2.
          * <p>
          * @return {@code this}
          * @param storageSetPartitionNumber Property storageSetPartitionNumber: The maximum number of partitions in the storage set. This parameter is required.
@@ -1675,7 +1798,8 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property storageSetPartitionNumber: The maximum number of partitions in the storage set.
          * <p>
-         * The value must be greater than or equal to 2.
+         * Valid values: integers
+         * greater than or equal to 2.
          * <p>
          * @return {@code this}
          * @param storageSetPartitionNumber Property storageSetPartitionNumber: The maximum number of partitions in the storage set. This parameter is required.
@@ -2150,24 +2274,50 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property userData: User data to pass to instance.
+         * Property userData: The user data of the instance.
          * <p>
-         * [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+         * You must specify Base64-encoded data. The instance
+         * user data cannot exceed 32 KB in size before Base64 encoding.
+         * For information about the limits, formats, and running frequencies of instance
+         * user data, see <a href="">Instance user data</a>.
+         * <p>
+         * <blockquote>
+         * <p>
+         * To ensure security, we recommend that you do not use plaintext to pass in
+         * confidential information, such as passwords or private keys, as user data. If you
+         * need to pass in confidential information, we recommend that you encrypt and
+         * encode the information in Base64 and then decode and decrypt the information in
+         * the same manner in the instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param userData Property userData: User data to pass to instance. This parameter is required.
+         * @param userData Property userData: The user data of the instance. This parameter is required.
          */
         public Builder userData(final java.lang.String userData) {
             this.props.userData(userData);
             return this;
         }
         /**
-         * Property userData: User data to pass to instance.
+         * Property userData: The user data of the instance.
          * <p>
-         * [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+         * You must specify Base64-encoded data. The instance
+         * user data cannot exceed 32 KB in size before Base64 encoding.
+         * For information about the limits, formats, and running frequencies of instance
+         * user data, see <a href="">Instance user data</a>.
+         * <p>
+         * <blockquote>
+         * <p>
+         * To ensure security, we recommend that you do not use plaintext to pass in
+         * confidential information, such as passwords or private keys, as user data. If you
+         * need to pass in confidential information, we recommend that you encrypt and
+         * encode the information in Base64 and then decode and decrypt the information in
+         * the same manner in the instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param userData Property userData: User data to pass to instance. This parameter is required.
+         * @param userData Property userData: The user data of the instance. This parameter is required.
          */
         public Builder userData(final com.aliyun.ros.cdk.core.IResolvable userData) {
             this.props.userData(userData);
@@ -2196,20 +2346,50 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property vSwitchId: The vSwitch Id to create ecs instance.
+         * Property vSwitchId: The ID of the vSwitch to which to connect to the instance.
+         * <p>
+         * You must set this
+         * parameter when you create an instance of the VPC type. The specified vSwitch and
+         * security group must belong to the same VPC. You can call the
+         * <a href="">DescribeVSwitches</a> operation to query available vSwitches.
+         * Take note of the following items:
+         * <p>
+         * <ul>
+         * <li>If you specify the <code>VSwitchId</code> parameter, the zone specified by the <code>ZoneId</code>
+         * parameter must be the zone where the specified vSwitch is located. You can also
+         * leave the <code>ZoneId</code> parameter empty. Then, the system selects the zone where the
+         * specified vSwitch resides.</li>
+         * <li>If <code>NetworkInterface.N.InstanceType</code> is set to <code>Primary</code>, you cannot specify
+         * <code>VSwitchId</code> but can specify <code>NetworkInterface.N.VSwitchId</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The vSwitch Id to create ecs instance. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which to connect to the instance. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: The vSwitch Id to create ecs instance.
+         * Property vSwitchId: The ID of the vSwitch to which to connect to the instance.
+         * <p>
+         * You must set this
+         * parameter when you create an instance of the VPC type. The specified vSwitch and
+         * security group must belong to the same VPC. You can call the
+         * <a href="">DescribeVSwitches</a> operation to query available vSwitches.
+         * Take note of the following items:
+         * <p>
+         * <ul>
+         * <li>If you specify the <code>VSwitchId</code> parameter, the zone specified by the <code>ZoneId</code>
+         * parameter must be the zone where the specified vSwitch is located. You can also
+         * leave the <code>ZoneId</code> parameter empty. Then, the system selects the zone where the
+         * specified vSwitch resides.</li>
+         * <li>If <code>NetworkInterface.N.InstanceType</code> is set to <code>Primary</code>, you cannot specify
+         * <code>VSwitchId</code> but can specify <code>NetworkInterface.N.VSwitchId</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The vSwitch Id to create ecs instance. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which to connect to the instance. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);

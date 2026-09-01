@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::AccessGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.465Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:15:39.266Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.AccessGroup")
 public class AccessGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nas.IAccessGroup {
 
@@ -112,20 +112,42 @@ public class AccessGroup extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property accessGroupName: Permission group name.
+         * Property accessGroupName: The name of the permission group.
+         * <p>
+         * Limits:
+         * <p>
+         * <ul>
+         * <li>The name must be 3 to 64 characters in length.</li>
+         * <li>The name must start with a letter and can contain letters, digits,
+         * underscores (_), and hyphens (-).</li>
+         * <li>The name must be different from the name of the default permission group.
+         * The default permission group for virtual private clouds (VPCs) is named
+         * DEFAULT_VPC_GROUP_NAME.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accessGroupName Property accessGroupName: Permission group name. This parameter is required.
+         * @param accessGroupName Property accessGroupName: The name of the permission group. This parameter is required.
          */
         public Builder accessGroupName(final java.lang.String accessGroupName) {
             this.props.accessGroupName(accessGroupName);
             return this;
         }
         /**
-         * Property accessGroupName: Permission group name.
+         * Property accessGroupName: The name of the permission group.
+         * <p>
+         * Limits:
+         * <p>
+         * <ul>
+         * <li>The name must be 3 to 64 characters in length.</li>
+         * <li>The name must start with a letter and can contain letters, digits,
+         * underscores (_), and hyphens (-).</li>
+         * <li>The name must be different from the name of the default permission group.
+         * The default permission group for virtual private clouds (VPCs) is named
+         * DEFAULT_VPC_GROUP_NAME.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accessGroupName Property accessGroupName: Permission group name. This parameter is required.
+         * @param accessGroupName Property accessGroupName: The name of the permission group. This parameter is required.
          */
         public Builder accessGroupName(final com.aliyun.ros.cdk.core.IResolvable accessGroupName) {
             this.props.accessGroupName(accessGroupName);
@@ -154,24 +176,42 @@ public class AccessGroup extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property description: Permission group description.
+         * Property description: The description of the permission group.
          * <p>
-         * It is the same as the permission group name by default.
+         * Limits:
+         * <p>
+         * <ul>
+         * <li>By default, the description of a permission group is the same as the name of
+         * the permission group. The description must be 2 to 128 characters in length.</li>
+         * <li>The name must start with a letter and cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>.</li>
+         * <li>The description can contain digits, colons (:), underscores (_), and hyphens
+         * (-).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param description Property description: Permission group description. This parameter is required.
+         * @param description Property description: The description of the permission group. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: Permission group description.
+         * Property description: The description of the permission group.
          * <p>
-         * It is the same as the permission group name by default.
+         * Limits:
+         * <p>
+         * <ul>
+         * <li>By default, the description of a permission group is the same as the name of
+         * the permission group. The description must be 2 to 128 characters in length.</li>
+         * <li>The name must start with a letter and cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>.</li>
+         * <li>The description can contain digits, colons (:), underscores (_), and hyphens
+         * (-).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param description Property description: Permission group description. This parameter is required.
+         * @param description Property description: The description of the permission group. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);

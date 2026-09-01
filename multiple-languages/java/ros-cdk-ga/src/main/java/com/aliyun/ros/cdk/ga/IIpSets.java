@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Represents a <code>IpSets</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.817Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:19:27.786Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.IIpSets")
 @software.amazon.jsii.Jsii.Proxy(IIpSets.Jsii$Proxy.class)
 public interface IIpSets extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

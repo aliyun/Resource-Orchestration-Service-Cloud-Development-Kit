@@ -52,6 +52,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: cpuOptions: CPU options.
+        /// </remarks>
+        [JsiiProperty(name: "cpuOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingConfiguration.CpuOptionsProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CpuOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: creditSpecification: The performance mode of the burstable instance. Valid values:
         /// Standard: the standard mode.
         /// Unlimited: the unlimited mode.
@@ -869,6 +882,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             [JsiiOptional]
             [JsiiProperty(name: "cpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Cpu
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cpuOptions: CPU options.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cpuOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingConfiguration.CpuOptionsProperty\"}]}}", isOptional: true)]
+            public object? CpuOptions
             {
                 get => GetInstanceProperty<object?>();
             }

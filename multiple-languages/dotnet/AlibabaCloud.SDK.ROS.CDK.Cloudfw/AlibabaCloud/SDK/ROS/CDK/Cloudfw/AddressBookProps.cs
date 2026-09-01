@@ -346,7 +346,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 
         private object? _tagList;
 
-        /// <summary>Property tagList:.</summary>
+        /// <summary>Property tagList: The list of ECS tags.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "tagList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cloudfw.RosAddressBook.TagListProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? TagList

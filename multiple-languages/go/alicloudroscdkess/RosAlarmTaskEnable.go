@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`, which is used to start an alarm task.
-//
-// You can call this operation to enable alarm tasks when the task is stopped.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`.
 type RosAlarmTaskEnable interface {
 	alicloudroscdkcore.RosResource
 	AlarmTaskId() interface{}

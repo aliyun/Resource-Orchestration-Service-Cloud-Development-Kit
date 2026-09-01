@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroupClone`Use , which to clone a group of ECS instances.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroupClone`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `InstanceGroupClone` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
@@ -423,7 +423,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
+        /// <strong>Property</strong>: deletionProtection: Specifies whether to enable release protection for the instance. This parameter
+        /// determines whether you can use the ECS console or call the [DeleteInstance]()
+        /// operation to release the instance. Valid values:
+        /// - true: enables release protection for the instance.
+        /// - false: disables release protection for the instance.
+        /// Default value: false.
+        /// > This parameter is applicable to only pay-as-you-go instances. It can protect
+        /// instances against manual releases, but not against automatic releases.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2070,6 +2077,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: nestedVirtualization: Specifies whether to enable nested virtualization. Valid values:
+            /// - **enabled**: enables nested virtualization.
+            /// - **disabled**: disables nested virtualization.
+            /// This parameter is currently under invitation testing and is not yet available for use.
+            /// </remarks>
+            [JsiiProperty(name: "nestedVirtualization", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? NestedVirtualization
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: threadsPerCore: The number of threads per CPU core. The following formula is used to calculate the number of vCPUs of the instance: CpuOptions.Core value × CpuOptions.ThreadsPerCore value.
             /// - If CpuOptionsThreadPerCore is set to 1, hyperthreading is disabled.
             /// - This parameter is applicable only to specific instance types.
@@ -2097,6 +2120,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 [JsiiOptional]
                 [JsiiProperty(name: "core", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? Core
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: nestedVirtualization: Specifies whether to enable nested virtualization. Valid values:
+                /// - **enabled**: enables nested virtualization.
+                /// - **disabled**: disables nested virtualization.
+                /// This parameter is currently under invitation testing and is not yet available for use.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "nestedVirtualization", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? NestedVirtualization
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -2167,6 +2203,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                         }
                     }
                     _core = value;
+                }
+            }
+
+            private object? _nestedVirtualization;
+
+            /// <remarks>
+            /// <strong>Property</strong>: nestedVirtualization: Specifies whether to enable nested virtualization. Valid values:
+            /// - **enabled**: enables nested virtualization.
+            /// - **disabled**: disables nested virtualization.
+            /// This parameter is currently under invitation testing and is not yet available for use.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "nestedVirtualization", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NestedVirtualization
+            {
+                get => _nestedVirtualization;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _nestedVirtualization = value;
                 }
             }
 

@@ -5,13 +5,16 @@ package com.aliyun.ros.cdk.cdn;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-delivertask
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:42:42.223Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:28:08.563Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.DeliverTaskProps")
 @software.amazon.jsii.Jsii.Proxy(DeliverTaskProps.Jsii$Proxy.class)
 public interface DeliverTaskProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property deliver: The deliver of the CDN deliver task.
+     * Property deliver: The method that is used to send operations reports.
+     * <p>
+     * Operations reports are sent
+     * to you only by email. The settings must be escaped in JSON.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDeliver();
 
@@ -21,12 +24,17 @@ public interface DeliverTaskProps extends software.amazon.jsii.JsiiSerializable 
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
-     * Property reports: The reports of the CDN deliver task.
+     * Property reports: The operations reports that are tracked by the task.
+     * <p>
+     * The data must be escaped in
+     * JSON.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getReports();
 
     /**
-     * Property schedule: The schedule of the CDN deliver task.
+     * Property schedule: The parameters that specify the time interval at which the tracking task sends operations reports.
+     * <p>
+     * The settings must be escaped in JSON.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSchedule();
 
@@ -55,7 +63,9 @@ public interface DeliverTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link DeliverTaskProps#getDeliver}
-         * @param deliver Property deliver: The deliver of the CDN deliver task. This parameter is required.
+         * @param deliver Property deliver: The method that is used to send operations reports. This parameter is required.
+         *                Operations reports are sent
+         *                to you only by email. The settings must be escaped in JSON.
          * @return {@code this}
          */
         public Builder deliver(com.aliyun.ros.cdk.core.IResolvable deliver) {
@@ -65,7 +75,9 @@ public interface DeliverTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link DeliverTaskProps#getDeliver}
-         * @param deliver Property deliver: The deliver of the CDN deliver task. This parameter is required.
+         * @param deliver Property deliver: The method that is used to send operations reports. This parameter is required.
+         *                Operations reports are sent
+         *                to you only by email. The settings must be escaped in JSON.
          * @return {@code this}
          */
         public Builder deliver(java.util.Map<java.lang.String, ? extends java.lang.Object> deliver) {
@@ -95,7 +107,9 @@ public interface DeliverTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link DeliverTaskProps#getReports}
-         * @param reports Property reports: The reports of the CDN deliver task. This parameter is required.
+         * @param reports Property reports: The operations reports that are tracked by the task. This parameter is required.
+         *                The data must be escaped in
+         *                JSON.
          * @return {@code this}
          */
         public Builder reports(java.util.List<? extends java.lang.Object> reports) {
@@ -105,7 +119,9 @@ public interface DeliverTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link DeliverTaskProps#getReports}
-         * @param reports Property reports: The reports of the CDN deliver task. This parameter is required.
+         * @param reports Property reports: The operations reports that are tracked by the task. This parameter is required.
+         *                The data must be escaped in
+         *                JSON.
          * @return {@code this}
          */
         public Builder reports(com.aliyun.ros.cdk.core.IResolvable reports) {
@@ -115,7 +131,8 @@ public interface DeliverTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link DeliverTaskProps#getSchedule}
-         * @param schedule Property schedule: The schedule of the CDN deliver task. This parameter is required.
+         * @param schedule Property schedule: The parameters that specify the time interval at which the tracking task sends operations reports. This parameter is required.
+         *                 The settings must be escaped in JSON.
          * @return {@code this}
          */
         public Builder schedule(com.aliyun.ros.cdk.core.IResolvable schedule) {
@@ -125,7 +142,8 @@ public interface DeliverTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link DeliverTaskProps#getSchedule}
-         * @param schedule Property schedule: The schedule of the CDN deliver task. This parameter is required.
+         * @param schedule Property schedule: The parameters that specify the time interval at which the tracking task sends operations reports. This parameter is required.
+         *                 The settings must be escaped in JSON.
          * @return {@code this}
          */
         public Builder schedule(java.util.Map<java.lang.String, ? extends java.lang.Object> schedule) {

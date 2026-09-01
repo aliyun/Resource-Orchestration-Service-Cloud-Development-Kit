@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Represents a <code>CrossAccount</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.740Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.124Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.ICrossAccount")
 @software.amazon.jsii.Jsii.Proxy(ICrossAccount.Jsii$Proxy.class)
 public interface ICrossAccount extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

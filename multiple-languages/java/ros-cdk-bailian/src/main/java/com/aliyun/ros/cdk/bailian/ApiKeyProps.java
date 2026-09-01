@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.bailian;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bailian-apikey
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:34:25.359Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:16:16.802Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bailian.$Module.class, fqn = "@alicloud/ros-cdk-bailian.ApiKeyProps")
 @software.amazon.jsii.Jsii.Proxy(ApiKeyProps.Jsii$Proxy.class)
 public interface ApiKeyProps extends software.amazon.jsii.JsiiSerializable {

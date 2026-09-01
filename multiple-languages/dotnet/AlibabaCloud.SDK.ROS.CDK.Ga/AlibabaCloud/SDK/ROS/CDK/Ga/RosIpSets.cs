@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::GA::IpSets`, which is used to create acceleration regions.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::GA::IpSets`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `IpSets` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-ipsets
@@ -195,7 +195,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: ipVersion: IP version. Valid values: IPv4, IPv6
+            /// <strong>Property</strong>: ipVersion: IP address protocol for Global Accelerator access, valid values:
+            /// - IPv4 (default): IPv4 address protocol.
+            /// - IPv6: IPv6 address protocol.
+            /// - DUAL_STACK: IPv4 and IPv6 address protocol.
+            /// Note: DUAL_STACK is supported only by standard pay-as-you-go Global Accelerator instances.
             /// </remarks>
             [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -250,7 +254,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: ipVersion: IP version. Valid values: IPv4, IPv6
+                /// <strong>Property</strong>: ipVersion: IP address protocol for Global Accelerator access, valid values:
+                /// - IPv4 (default): IPv4 address protocol.
+                /// - IPv6: IPv6 address protocol.
+                /// - DUAL_STACK: IPv4 and IPv6 address protocol.
+                /// Note: DUAL_STACK is supported only by standard pay-as-you-go Global Accelerator instances.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -366,7 +374,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             private object? _ipVersion;
 
             /// <remarks>
-            /// <strong>Property</strong>: ipVersion: IP version. Valid values: IPv4, IPv6
+            /// <strong>Property</strong>: ipVersion: IP address protocol for Global Accelerator access, valid values:
+            /// - IPv4 (default): IPv4 address protocol.
+            /// - IPv6: IPv6 address protocol.
+            /// - DUAL_STACK: IPv4 and IPv6 address protocol.
+            /// Note: DUAL_STACK is supported only by standard pay-as-you-go Global Accelerator instances.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

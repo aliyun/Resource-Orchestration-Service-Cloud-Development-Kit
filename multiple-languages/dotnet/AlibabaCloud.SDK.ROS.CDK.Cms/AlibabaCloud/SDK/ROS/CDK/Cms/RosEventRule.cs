@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRule`, which is used to create or modify an event-triggered alert rule.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRule`.</summary>
     /// <remarks>
-    /// If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
-    ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `EventRule` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
     /// </remarks>
@@ -78,7 +76,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: eventPattern: Event pattern configuration.A maximum of 20 event patterns.
+        /// <strong>Property</strong>: eventPattern: The pattern of the event-triggered alert rule.
         /// </remarks>
         [JsiiProperty(name: "eventPattern", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosEventRule.EventPatternProperty\"}]}},\"kind\":\"array\"}}]}}")]
         public virtual object EventPattern
@@ -186,9 +184,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: eventType: The type of the event alert. Valid values:
-        /// SYSTEM
-        /// CUSTOM
+        /// <strong>Property</strong>: eventType: The type of the event. Valid values:
+        /// - SYSTEM: a system event.
+        /// - CUSTOM: a custom event.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "eventType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -301,9 +299,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: state: The status of the alert rule. Valid values:
-        /// ENABLED
-        /// DISABLED
+        /// <strong>Property</strong>: state: The status of the event-triggered alert rule. Valid values:
+        /// - ENABLED: The rule is enabled.
+        /// - DISABLED: The rule is disabled.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "state", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudsiem;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CloudSiem::UserSourceLogConfig</code>, which is used to add logs of a cloud service within an account.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CloudSiem::UserSourceLogConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:51:36.513Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:39:59.120Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsiem.$Module.class, fqn = "@alicloud/ros-cdk-cloudsiem.RosUserSourceLogConfig")
 public class RosUserSourceLogConfig extends com.aliyun.ros.cdk.core.RosResource {
 

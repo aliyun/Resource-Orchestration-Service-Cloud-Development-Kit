@@ -77,7 +77,7 @@ export interface IAutoSnapshotPolicy extends ros.IResource {
     readonly attrVolumeNums: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicy`, which is used to query an automatic snapshot policy.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoSnapshotPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-autosnapshotpolicy
  */

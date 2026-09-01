@@ -75,7 +75,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
-        /// <summary>Property notifyLevel: Alarm notification method.Value: 2: Phone + SMS + Email + Wangwang + DingTalk Robot. 3: SMS + Email + Wangwang + DingTalk Robot. 4: Wangwang + Dingding Robot.</summary>
+        /// <summary>Property notifyLevel: The alert notification method.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// Set the value to 4. A value of 4 indicates that alert notifications are sent by
+        /// using TradeManager and DingTalk chatbots.
+        /// </remarks>
         [JsiiProperty(name: "notifyLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? NotifyLevel
@@ -171,7 +176,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property notifyLevel: Alarm notification method.Value: 2: Phone + SMS + Email + Wangwang + DingTalk Robot. 3: SMS + Email + Wangwang + DingTalk Robot. 4: Wangwang + Dingding Robot.</summary>
+            /// <summary>Property notifyLevel: The alert notification method.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// Set the value to 4. A value of 4 indicates that alert notifications are sent by
+            /// using TradeManager and DingTalk chatbots.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "notifyLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NotifyLevel

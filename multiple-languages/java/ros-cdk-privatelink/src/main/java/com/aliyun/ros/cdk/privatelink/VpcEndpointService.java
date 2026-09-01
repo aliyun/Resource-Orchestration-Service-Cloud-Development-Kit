@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PrivateLink::VpcEndpointService</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:31:09.944Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:47:52.284Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointService")
 public class VpcEndpointService extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.privatelink.IVpcEndpointService {
 
@@ -284,20 +284,26 @@ public class VpcEndpointService extends com.aliyun.ros.cdk.core.Resource impleme
         }
 
         /**
-         * Property resource:.
+         * Property resource: A collection of service resources.
+         * <p>
+         * You can add up to 10 resources in a single
+         * request. An endpoint service can have a maximum of 20 service resources.
          * <p>
          * @return {@code this}
-         * @param resource Property resource:. This parameter is required.
+         * @param resource Property resource: A collection of service resources. This parameter is required.
          */
         public Builder resource(final com.aliyun.ros.cdk.core.IResolvable resource) {
             this.props().resource(resource);
             return this;
         }
         /**
-         * Property resource:.
+         * Property resource: A collection of service resources.
+         * <p>
+         * You can add up to 10 resources in a single
+         * request. An endpoint service can have a maximum of 20 service resources.
          * <p>
          * @return {@code this}
-         * @param resource Property resource:. This parameter is required.
+         * @param resource Property resource: A collection of service resources. This parameter is required.
          */
         public Builder resource(final java.util.List<? extends java.lang.Object> resource) {
             this.props().resource(resource);
@@ -347,20 +353,52 @@ public class VpcEndpointService extends com.aliyun.ros.cdk.core.Resource impleme
         }
 
         /**
-         * Property serviceResourceType: Service resource type.
+         * Property serviceResourceType: The type of the service resource.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>slb: a Classic Load Balancer (CLB) instance.</li>
+         * <li>alb: an Application Load Balancer (ALB) instance.</li>
+         * <li>nlb: a Network Load Balancer (NLB) instance.</li>
+         * <li>gwlb: a Gateway Load Balancer (GWLB) instance.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * PrivateLink does not support connections to TCPSSL listeners on Network Load
+         * Balancer (NLB) instances.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param serviceResourceType Property serviceResourceType: Service resource type. This parameter is required.
+         * @param serviceResourceType Property serviceResourceType: The type of the service resource. This parameter is required.
          */
         public Builder serviceResourceType(final java.lang.String serviceResourceType) {
             this.props().serviceResourceType(serviceResourceType);
             return this;
         }
         /**
-         * Property serviceResourceType: Service resource type.
+         * Property serviceResourceType: The type of the service resource.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>slb: a Classic Load Balancer (CLB) instance.</li>
+         * <li>alb: an Application Load Balancer (ALB) instance.</li>
+         * <li>nlb: a Network Load Balancer (NLB) instance.</li>
+         * <li>gwlb: a Gateway Load Balancer (GWLB) instance.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * PrivateLink does not support connections to TCPSSL listeners on Network Load
+         * Balancer (NLB) instances.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param serviceResourceType Property serviceResourceType: Service resource type. This parameter is required.
+         * @param serviceResourceType Property serviceResourceType: The type of the service resource. This parameter is required.
          */
         public Builder serviceResourceType(final com.aliyun.ros.cdk.core.IResolvable serviceResourceType) {
             this.props().serviceResourceType(serviceResourceType);

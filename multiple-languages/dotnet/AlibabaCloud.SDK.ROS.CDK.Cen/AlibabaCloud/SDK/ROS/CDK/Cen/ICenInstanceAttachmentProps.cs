@@ -25,9 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             get;
         }
 
-        /// <summary>Property childInstanceRegionId: The ID of the region where the network is located.</summary>
+        /// <summary>Property childInstanceRegionId: The ID of the region where the network instance is deployed.</summary>
         /// <remarks>
-        /// The ID of the region where the network is located.
+        /// You can call the <a href="">DescribeRegions</a> operation to query the most recent region
+        /// list.
         /// </remarks>
         [JsiiProperty(name: "childInstanceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ChildInstanceRegionId
@@ -45,7 +46,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             get;
         }
 
-        /// <summary>Property childInstanceOwnerId: The account ID to which the network belongs.</summary>
+        /// <summary>Property childInstanceOwnerId: The ID of the account to which the network instance belongs.</summary>
+        /// <remarks>
+        ///     If the network instance and the CEN instance belong to different accounts,
+        ///     this parameter is required.
+        /// </remarks>
         [JsiiProperty(name: "childInstanceOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ChildInstanceOwnerId
@@ -81,9 +86,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property childInstanceRegionId: The ID of the region where the network is located.</summary>
+            /// <summary>Property childInstanceRegionId: The ID of the region where the network instance is deployed.</summary>
             /// <remarks>
-            /// The ID of the region where the network is located.
+            /// You can call the <a href="">DescribeRegions</a> operation to query the most recent region
+            /// list.
             /// </remarks>
             [JsiiProperty(name: "childInstanceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ChildInstanceRegionId
@@ -101,7 +107,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property childInstanceOwnerId: The account ID to which the network belongs.</summary>
+            /// <summary>Property childInstanceOwnerId: The ID of the account to which the network instance belongs.</summary>
+            /// <remarks>
+            ///     If the network instance and the CEN instance belong to different accounts,
+            ///     this parameter is required.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "childInstanceOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ChildInstanceOwnerId

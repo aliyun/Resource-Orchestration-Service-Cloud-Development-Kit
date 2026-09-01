@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.actiontrail;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACTIONTRAIL::Trail</code>, which is used to create a trail to deliver events to Simple Log Service or Object Storage Service (OSS).
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACTIONTRAIL::Trail</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:13:01.945Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:51:46.213Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.Trail")
 public class Trail extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.actiontrail.ITrail {
 
@@ -112,20 +112,38 @@ public class Trail extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property name: The name of the trail to be created, which must be unique for an account.
+         * Property name: The name of the trail to be created.
+         * <p>
+         * Length should be between 6 and 36 characters, must start with a lowercase letter,
+         * and can include lowercase letters, numbers, hyphens (-), and underscores (_).
+         * <p>
+         * <blockquote>
+         * <p>
+         * The trail name must be unique within the same account.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the trail to be created, which must be unique for an account. This parameter is required.
+         * @param name Property name: The name of the trail to be created. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
         /**
-         * Property name: The name of the trail to be created, which must be unique for an account.
+         * Property name: The name of the trail to be created.
+         * <p>
+         * Length should be between 6 and 36 characters, must start with a lowercase letter,
+         * and can include lowercase letters, numbers, hyphens (-), and underscores (_).
+         * <p>
+         * <blockquote>
+         * <p>
+         * The trail name must be unique within the same account.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the trail to be created, which must be unique for an account. This parameter is required.
+         * @param name Property name: The name of the trail to be created. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
@@ -158,24 +176,38 @@ public class Trail extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property ossBucketName: The OSS bucket to which the trail delivers logs.
+         * Property ossBucketName: The OSS bucket for the trail delivery.
          * <p>
-         * Ensure that this is an existing OSS bucket.
+         * Length should be between 3 and 63 characters, must start with a lowercase letter
+         * or number, and can include lowercase letters, numbers, and hyphens (-).
+         * <p>
+         * <blockquote>
+         * <p>
+         * At least one of OssBucketName and SlsProjectArn must be specified.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param ossBucketName Property ossBucketName: The OSS bucket to which the trail delivers logs. This parameter is required.
+         * @param ossBucketName Property ossBucketName: The OSS bucket for the trail delivery. This parameter is required.
          */
         public Builder ossBucketName(final java.lang.String ossBucketName) {
             this.props.ossBucketName(ossBucketName);
             return this;
         }
         /**
-         * Property ossBucketName: The OSS bucket to which the trail delivers logs.
+         * Property ossBucketName: The OSS bucket for the trail delivery.
          * <p>
-         * Ensure that this is an existing OSS bucket.
+         * Length should be between 3 and 63 characters, must start with a lowercase letter
+         * or number, and can include lowercase letters, numbers, and hyphens (-).
+         * <p>
+         * <blockquote>
+         * <p>
+         * At least one of OssBucketName and SlsProjectArn must be specified.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param ossBucketName Property ossBucketName: The OSS bucket to which the trail delivers logs. This parameter is required.
+         * @param ossBucketName Property ossBucketName: The OSS bucket for the trail delivery. This parameter is required.
          */
         public Builder ossBucketName(final com.aliyun.ros.cdk.core.IResolvable ossBucketName) {
             this.props.ossBucketName(ossBucketName);
@@ -183,24 +215,26 @@ public class Trail extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property ossKeyPrefix: The prefix of the specified OSS bucket name.
+         * Property ossKeyPrefix: The prefix for the filenames in the OSS bucket for the trail delivery.
          * <p>
-         * This parameter can be left empty.
+         * Length should be between 6 and 32 characters, must start with a letter, and can
+         * include letters, numbers, hyphens (-), forward slashes (/), and underscores (_).
          * <p>
          * @return {@code this}
-         * @param ossKeyPrefix Property ossKeyPrefix: The prefix of the specified OSS bucket name. This parameter is required.
+         * @param ossKeyPrefix Property ossKeyPrefix: The prefix for the filenames in the OSS bucket for the trail delivery. This parameter is required.
          */
         public Builder ossKeyPrefix(final java.lang.String ossKeyPrefix) {
             this.props.ossKeyPrefix(ossKeyPrefix);
             return this;
         }
         /**
-         * Property ossKeyPrefix: The prefix of the specified OSS bucket name.
+         * Property ossKeyPrefix: The prefix for the filenames in the OSS bucket for the trail delivery.
          * <p>
-         * This parameter can be left empty.
+         * Length should be between 6 and 32 characters, must start with a letter, and can
+         * include letters, numbers, hyphens (-), forward slashes (/), and underscores (_).
          * <p>
          * @return {@code this}
-         * @param ossKeyPrefix Property ossKeyPrefix: The prefix of the specified OSS bucket name. This parameter is required.
+         * @param ossKeyPrefix Property ossKeyPrefix: The prefix for the filenames in the OSS bucket for the trail delivery. This parameter is required.
          */
         public Builder ossKeyPrefix(final com.aliyun.ros.cdk.core.IResolvable ossKeyPrefix) {
             this.props.ossKeyPrefix(ossKeyPrefix);
@@ -208,20 +242,20 @@ public class Trail extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property roleName: The RAM role in ActionTrail permitted by the user.
+         * Property roleName: The name of the associated role for Operation Audit, with a default value of serviceroleforactiontrail.
          * <p>
          * @return {@code this}
-         * @param roleName Property roleName: The RAM role in ActionTrail permitted by the user. This parameter is required.
+         * @param roleName Property roleName: The name of the associated role for Operation Audit, with a default value of serviceroleforactiontrail. This parameter is required.
          */
         public Builder roleName(final java.lang.String roleName) {
             this.props.roleName(roleName);
             return this;
         }
         /**
-         * Property roleName: The RAM role in ActionTrail permitted by the user.
+         * Property roleName: The name of the associated role for Operation Audit, with a default value of serviceroleforactiontrail.
          * <p>
          * @return {@code this}
-         * @param roleName Property roleName: The RAM role in ActionTrail permitted by the user. This parameter is required.
+         * @param roleName Property roleName: The name of the associated role for Operation Audit, with a default value of serviceroleforactiontrail. This parameter is required.
          */
         public Builder roleName(final com.aliyun.ros.cdk.core.IResolvable roleName) {
             this.props.roleName(roleName);
@@ -229,20 +263,32 @@ public class Trail extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property slsProjectArn: The unique ARN of the Log Service project.
+         * Property slsProjectArn: The ARN of the Log Service project for the trail delivery.
+         * <p>
+         * <blockquote>
+         * <p>
+         * At least one of OssBucketName and SlsProjectArn must be specified.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param slsProjectArn Property slsProjectArn: The unique ARN of the Log Service project. This parameter is required.
+         * @param slsProjectArn Property slsProjectArn: The ARN of the Log Service project for the trail delivery. This parameter is required.
          */
         public Builder slsProjectArn(final java.lang.String slsProjectArn) {
             this.props.slsProjectArn(slsProjectArn);
             return this;
         }
         /**
-         * Property slsProjectArn: The unique ARN of the Log Service project.
+         * Property slsProjectArn: The ARN of the Log Service project for the trail delivery.
+         * <p>
+         * <blockquote>
+         * <p>
+         * At least one of OssBucketName and SlsProjectArn must be specified.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param slsProjectArn Property slsProjectArn: The unique ARN of the Log Service project. This parameter is required.
+         * @param slsProjectArn Property slsProjectArn: The ARN of the Log Service project for the trail delivery. This parameter is required.
          */
         public Builder slsProjectArn(final com.aliyun.ros.cdk.core.IResolvable slsProjectArn) {
             this.props.slsProjectArn(slsProjectArn);
@@ -250,20 +296,42 @@ public class Trail extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property slsWriteRoleArn: The unique ARN of the Log Service role.
+         * Property slsWriteRoleArn: The ARN of the role assumed by Operation Audit when delivering operation events to the Log Service project.
+         * <p>
+         * <ul>
+         * <li>If this parameter is not specified, Operation Audit will create the necessary
+         * resources by creating a service-linked role.</li>
+         * <li>If this parameter is specified, when you need to deliver events to the current
+         * account, you need to grant the RAM role the permissions of the Operation Audit
+         * service-linked role. When you need to deliver events to another account, you need
+         * to bind the system permission policy for event delivery to the RAM role. For more
+         * information on cross-account delivery, see Deliver Events from Multiple
+         * Accounts to One Account.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param slsWriteRoleArn Property slsWriteRoleArn: The unique ARN of the Log Service role. This parameter is required.
+         * @param slsWriteRoleArn Property slsWriteRoleArn: The ARN of the role assumed by Operation Audit when delivering operation events to the Log Service project. This parameter is required.
          */
         public Builder slsWriteRoleArn(final java.lang.String slsWriteRoleArn) {
             this.props.slsWriteRoleArn(slsWriteRoleArn);
             return this;
         }
         /**
-         * Property slsWriteRoleArn: The unique ARN of the Log Service role.
+         * Property slsWriteRoleArn: The ARN of the role assumed by Operation Audit when delivering operation events to the Log Service project.
+         * <p>
+         * <ul>
+         * <li>If this parameter is not specified, Operation Audit will create the necessary
+         * resources by creating a service-linked role.</li>
+         * <li>If this parameter is specified, when you need to deliver events to the current
+         * account, you need to grant the RAM role the permissions of the Operation Audit
+         * service-linked role. When you need to deliver events to another account, you need
+         * to bind the system permission policy for event delivery to the RAM role. For more
+         * information on cross-account delivery, see Deliver Events from Multiple
+         * Accounts to One Account.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param slsWriteRoleArn Property slsWriteRoleArn: The unique ARN of the Log Service role. This parameter is required.
+         * @param slsWriteRoleArn Property slsWriteRoleArn: The ARN of the role assumed by Operation Audit when delivering operation events to the Log Service project. This parameter is required.
          */
         public Builder slsWriteRoleArn(final com.aliyun.ros.cdk.core.IResolvable slsWriteRoleArn) {
             this.props.slsWriteRoleArn(slsWriteRoleArn);

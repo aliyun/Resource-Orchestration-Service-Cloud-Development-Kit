@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.adb;
 /**
  * Represents a <code>BackupPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:14:30.233Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:53:53.110Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.IBackupPolicy")
 @software.amazon.jsii.Jsii.Proxy(IBackupPolicy.Jsii$Proxy.class)
 public interface IBackupPolicy extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

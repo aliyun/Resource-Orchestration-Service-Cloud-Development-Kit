@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterNodePool`The , which resource type creates a node pool for a cluster.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterNodePool`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ClusterNodePool` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusternodepool
@@ -3518,6 +3518,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: systemDiskEncrypted: Whether to encrypt the system disk.
+            /// </remarks>
+            [JsiiProperty(name: "systemDiskEncrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? SystemDiskEncrypted
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
             /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
             /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
@@ -3906,6 +3919,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 [JsiiOptional]
                 [JsiiProperty(name: "systemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? SystemDiskCategory
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: systemDiskEncrypted: Whether to encrypt the system disk.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "systemDiskEncrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SystemDiskEncrypted
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -5245,6 +5268,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                         }
                     }
                     _systemDiskCategory = value;
+                }
+            }
+
+            private object? _systemDiskEncrypted;
+
+            /// <remarks>
+            /// <strong>Property</strong>: systemDiskEncrypted: Whether to encrypt the system disk.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "systemDiskEncrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SystemDiskEncrypted
+            {
+                get => _systemDiskEncrypted;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _systemDiskEncrypted = value;
                 }
             }
 

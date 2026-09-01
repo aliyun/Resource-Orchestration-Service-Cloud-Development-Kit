@@ -24,10 +24,10 @@ export interface RosAggregateCompliancePackProps {
     readonly description: string | ros.IResolvable;
 
     /**
-     * @Property riskLevel: Compliance package risk level. Value:
-     * 1: High risk.
-     * 2: Medium risk.
-     * 3: Low risk.
+     * @Property riskLevel: The risk level of the compliance pack. Valid values:
+     * - 1: High
+     * - 2 (default): Medium
+     * - 3: Low
      */
     readonly riskLevel: number | ros.IResolvable;
 
@@ -176,7 +176,7 @@ function rosAggregateCompliancePackPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::AggregateCompliancePack`, which is used to create a compliance package for an account group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::AggregateCompliancePack`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AggregateCompliancePack` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregatecompliancepack
  */
@@ -210,10 +210,10 @@ export class RosAggregateCompliancePack extends ros.RosResource {
     public description: string | ros.IResolvable;
 
     /**
-     * @Property riskLevel: Compliance package risk level. Value:
-     * 1: High risk.
-     * 2: Medium risk.
-     * 3: Low risk.
+     * @Property riskLevel: The risk level of the compliance pack. Valid values:
+     * - 1: High
+     * - 2 (default): Medium
+     * - 3: Low
      */
     public riskLevel: number | ros.IResolvable;
 
@@ -495,7 +495,9 @@ export interface RosAggregatorProps {
     readonly aggregatorType?: string | ros.IResolvable;
 
     /**
-     * @Property folderId: The folder ID.
+     * @Property folderId: The ID of the attached folder. You can specify multiple folder IDs. Separate the
+     * IDs with commas (,).
+     * This parameter is required if you set `AggregatorType` to `FOLDER`.
      */
     readonly folderId?: string | ros.IResolvable;
 }
@@ -549,7 +551,7 @@ function rosAggregatorPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Aggregator`, which is used to create an account group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Aggregator`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Aggregator` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregator
  */
@@ -591,7 +593,9 @@ export class RosAggregator extends ros.RosResource {
     public aggregatorType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property folderId: The folder ID.
+     * @Property folderId: The ID of the attached folder. You can specify multiple folder IDs. Separate the
+     * IDs with commas (,).
+     * This parameter is required if you set `AggregatorType` to `FOLDER`.
      */
     public folderId: string | ros.IResolvable | undefined;
 
@@ -777,7 +781,7 @@ function rosCompliancePackPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::CompliancePack`, which is used to create a compliance package.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::CompliancePack`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CompliancePack` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-compliancepack
  */
@@ -1042,7 +1046,7 @@ function rosDeliveryChannelPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::DeliveryChannel`, which is used to create or update a delivery channel.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::DeliveryChannel`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeliveryChannel` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
  */
@@ -1616,7 +1620,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Rule`, which is used to create or modify a rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Rule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-rule
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::CS::KubernetesClusters`, which is used to query Container Service for Kubernetes (ACK) clusters.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::CS::KubernetesClusters`.
 type KubernetesClusters interface {
 	alicloudroscdkcore.Resource
 	IKubernetesClusters

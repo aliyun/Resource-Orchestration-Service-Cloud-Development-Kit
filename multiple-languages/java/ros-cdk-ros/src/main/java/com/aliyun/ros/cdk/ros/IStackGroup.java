@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Represents a <code>StackGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:42:02.086Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:23:14.447Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.IStackGroup")
 @software.amazon.jsii.Jsii.Proxy(IStackGroup.Jsii$Proxy.class)
 public interface IStackGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

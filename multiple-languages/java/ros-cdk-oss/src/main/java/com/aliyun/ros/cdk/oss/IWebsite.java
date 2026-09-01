@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * Represents a <code>Website</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:11:59.888Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:18:25.409Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.IWebsite")
 @software.amazon.jsii.Jsii.Proxy(IWebsite.Jsii$Proxy.class)
 public interface IWebsite extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

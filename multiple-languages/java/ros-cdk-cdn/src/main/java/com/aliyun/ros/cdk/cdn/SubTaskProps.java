@@ -5,20 +5,49 @@ package com.aliyun.ros.cdk.cdn;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-subtask
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:42:42.272Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:28:08.630Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.SubTaskProps")
 @software.amazon.jsii.Jsii.Proxy(SubTaskProps.Jsii$Proxy.class)
 public interface SubTaskProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property reportIds: The report IDs.
+     * Property reportIds: The IDs of the metrics that you want to include in the report.
      * <p>
-     * The value can be up to 128 bytes in length.
+     * Separate multiple
+     * IDs with commas (,). Valid values:
+     * <p>
+     * <ul>
+     * <li>1: frequently requested URLs (ranked by the number of requests)</li>
+     * <li>3: frequently requested URLs (ranked by the amount of network traffic)</li>
+     * <li>5: frequently used Referer headers (ranked by the number of requests)</li>
+     * <li>7: frequently used Referer headers (ranked by the amount of network traffic)</li>
+     * <li>9: frequently requested URLs that are redirected to the origin (ranked by the
+     * number of requests)</li>
+     * <li>11: frequently requested URLs that are redirected to the origin (ranked by the
+     * amount of network traffic)</li>
+     * <li>13: top client IP addresses (ranked by the number of requests)</li>
+     * <li>15: top client IP addresses (ranked by the amount of network traffic)</li>
+     * <li>17: domain names ranked by the amount of network traffic</li>
+     * <li>19: page views and unique visitors</li>
+     * <li>21: regions from which requests are initiated</li>
+     * <li>23: Internet service providers (ISPs)</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getReportIds();
 
     /**
-     * Property domainName: The domain name.
+     * Property domainName: The domain names to be tracked.
+     * <p>
+     * Separate multiple domain names with commas (,).
+     * You can specify up to 500 domain names. If you want to specify more than 500
+     * domain names, submit a ticket.
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you do not specify a domain name, the custom operations report is created
+     * for all domain names that belong to your account.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDomainName() {
         return null;
@@ -39,8 +68,26 @@ public interface SubTaskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SubTaskProps#getReportIds}
-         * @param reportIds Property reportIds: The report IDs. This parameter is required.
-         *                  The value can be up to 128 bytes in length.
+         * @param reportIds Property reportIds: The IDs of the metrics that you want to include in the report. This parameter is required.
+         *                  Separate multiple
+         *                  IDs with commas (,). Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>1: frequently requested URLs (ranked by the number of requests)</li>
+         *                  <li>3: frequently requested URLs (ranked by the amount of network traffic)</li>
+         *                  <li>5: frequently used Referer headers (ranked by the number of requests)</li>
+         *                  <li>7: frequently used Referer headers (ranked by the amount of network traffic)</li>
+         *                  <li>9: frequently requested URLs that are redirected to the origin (ranked by the
+         *                  number of requests)</li>
+         *                  <li>11: frequently requested URLs that are redirected to the origin (ranked by the
+         *                  amount of network traffic)</li>
+         *                  <li>13: top client IP addresses (ranked by the number of requests)</li>
+         *                  <li>15: top client IP addresses (ranked by the amount of network traffic)</li>
+         *                  <li>17: domain names ranked by the amount of network traffic</li>
+         *                  <li>19: page views and unique visitors</li>
+         *                  <li>21: regions from which requests are initiated</li>
+         *                  <li>23: Internet service providers (ISPs)</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder reportIds(com.aliyun.ros.cdk.core.IResolvable reportIds) {
@@ -50,8 +97,26 @@ public interface SubTaskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SubTaskProps#getReportIds}
-         * @param reportIds Property reportIds: The report IDs. This parameter is required.
-         *                  The value can be up to 128 bytes in length.
+         * @param reportIds Property reportIds: The IDs of the metrics that you want to include in the report. This parameter is required.
+         *                  Separate multiple
+         *                  IDs with commas (,). Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>1: frequently requested URLs (ranked by the number of requests)</li>
+         *                  <li>3: frequently requested URLs (ranked by the amount of network traffic)</li>
+         *                  <li>5: frequently used Referer headers (ranked by the number of requests)</li>
+         *                  <li>7: frequently used Referer headers (ranked by the amount of network traffic)</li>
+         *                  <li>9: frequently requested URLs that are redirected to the origin (ranked by the
+         *                  number of requests)</li>
+         *                  <li>11: frequently requested URLs that are redirected to the origin (ranked by the
+         *                  amount of network traffic)</li>
+         *                  <li>13: top client IP addresses (ranked by the number of requests)</li>
+         *                  <li>15: top client IP addresses (ranked by the amount of network traffic)</li>
+         *                  <li>17: domain names ranked by the amount of network traffic</li>
+         *                  <li>19: page views and unique visitors</li>
+         *                  <li>21: regions from which requests are initiated</li>
+         *                  <li>23: Internet service providers (ISPs)</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder reportIds(java.util.List<? extends java.lang.Object> reportIds) {
@@ -61,7 +126,17 @@ public interface SubTaskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SubTaskProps#getDomainName}
-         * @param domainName Property domainName: The domain name.
+         * @param domainName Property domainName: The domain names to be tracked.
+         *                   Separate multiple domain names with commas (,).
+         *                   You can specify up to 500 domain names. If you want to specify more than 500
+         *                   domain names, submit a ticket.
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   If you do not specify a domain name, the custom operations report is created
+         *                   for all domain names that belong to your account.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder domainName(java.lang.String domainName) {
@@ -71,7 +146,17 @@ public interface SubTaskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SubTaskProps#getDomainName}
-         * @param domainName Property domainName: The domain name.
+         * @param domainName Property domainName: The domain names to be tracked.
+         *                   Separate multiple domain names with commas (,).
+         *                   You can specify up to 500 domain names. If you want to specify more than 500
+         *                   domain names, submit a ticket.
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   If you do not specify a domain name, the custom operations report is created
+         *                   for all domain names that belong to your account.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder domainName(com.aliyun.ros.cdk.core.IResolvable domainName) {

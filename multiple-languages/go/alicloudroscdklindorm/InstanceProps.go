@@ -59,12 +59,12 @@ type InstanceProps struct {
 	//
 	// Unit: GB.
 	InstanceStorage interface{} `field:"optional" json:"instanceStorage" yaml:"instanceStorage"`
-	// Property lindormNum: The number of LindormTable nodes in the instance.
+	// Property lindormNum: The number of nodes in the wide table engine.
 	//
-	// The valid values of this parameter depend on the value of the PayType parameter.
-	// If the PayType parameter is set to PREPAY, set this parameter to an integer that ranges from 0 to 90.
-	// If the PayType parameter is set to POSTPAY, set this parameter to an integer that ranges from 0 to 400.
-	// ** This parameter is required if you want to create a multi-zone instance. ** The valid values of this parameter range from 4 to 400 if you want to create a multi-zone instance.
+	// For a single-zone instance, the value of this parameter ranges from 0 to 90.
+	// This parameter is required for multi-zone instances. For an instance that uses
+	// cloud disks, the value ranges from 4 to 400. For an instance that uses local
+	// disks, the value ranges from 6 to 400.
 	LindormNum interface{} `field:"optional" json:"lindormNum" yaml:"lindormNum"`
 	// Property lindormSpec: The specification of LindormTable nodes in the instance.
 	//

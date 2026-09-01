@@ -15,7 +15,7 @@ export interface EventRuleTargetsProps {
     readonly ruleName: string | ros.IResolvable;
 
     /**
-     * Property contactParameters: CONTACT configuration.A maximum of 5 parameters
+     * Property contactParameters: The information about the alert contact groups that receive alert notifications.
      */
     readonly contactParameters?: Array<RosEventRuleTargets.ContactParametersProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -40,7 +40,8 @@ export interface EventRuleTargetsProps {
     readonly slsParameters?: Array<RosEventRuleTargets.SlsParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
+     * Property webhookParameters: The information about the callback URLs that are used to receive alert
+     * notifications.
      */
     readonly webhookParameters?: Array<RosEventRuleTargets.WebhookParametersProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -52,7 +53,7 @@ export interface IEventRuleTargets extends ros.IResource {
     readonly props: EventRuleTargetsProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::EventRuleTargets`, which is used to add or change the recipients to which alert notifications are sent based on an event-triggered alert rule.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::EventRuleTargets`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEventRuleTargets`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventruletargets
  */

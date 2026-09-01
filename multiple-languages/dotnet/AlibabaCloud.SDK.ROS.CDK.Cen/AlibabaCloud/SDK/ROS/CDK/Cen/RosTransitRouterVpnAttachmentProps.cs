@@ -224,7 +224,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object? _transitRouterAttachmentDescription;
 
         /// <remarks>
-        /// <strong>Property</strong>: transitRouterAttachmentDescription: Description of the VPN connection.
+        /// <strong>Property</strong>: transitRouterAttachmentDescription: The description of the VPN connection.
+        /// The description can be empty or 1 to 256 characters in length, and cannot start
+        /// with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "transitRouterAttachmentDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -258,6 +260,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         /// <remarks>
         /// <strong>Property</strong>: transitRouterAttachmentName: The name of the VPN connection.
+        /// The name can be empty or 1 to 128 characters in length, and cannot start with
+        /// http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "transitRouterAttachmentName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -323,7 +327,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object? _vpnOwnerId;
 
         /// <remarks>
-        /// <strong>Property</strong>: vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
+        /// <strong>Property</strong>: vpnOwnerId: The ID of the account to which the IPsec-VPN connection belongs.
+        /// - If you do not specify this parameter, the ID of the current account
+        /// is used.
+        /// - This parameter is required if you want to connect to a cross-account IPsec-VPN
+        /// connection.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "vpnOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

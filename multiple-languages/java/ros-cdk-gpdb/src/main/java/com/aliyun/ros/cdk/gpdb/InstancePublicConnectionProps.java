@@ -5,13 +5,16 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:13:37.759Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:21:33.468Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.InstancePublicConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(InstancePublicConnectionProps.Jsii$Proxy.class)
 public interface InstancePublicConnectionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property connectionStringPrefix: The endpoint that is used to connect to the specified database.
+     * Property connectionStringPrefix: The prefix of the endpoint.
+     * <p>
+     * Specify a prefix for the endpoint. Example: <code>gp-bp12ga6v69h86**</code>. In this
+     * example, the endpoint is <code>gp-bp12ga6v69h86**.gpdb.rds.example.com</code>.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getConnectionStringPrefix();
 
@@ -60,7 +63,9 @@ public interface InstancePublicConnectionProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link InstancePublicConnectionProps#getConnectionStringPrefix}
-         * @param connectionStringPrefix Property connectionStringPrefix: The endpoint that is used to connect to the specified database. This parameter is required.
+         * @param connectionStringPrefix Property connectionStringPrefix: The prefix of the endpoint. This parameter is required.
+         *                               Specify a prefix for the endpoint. Example: <code>gp-bp12ga6v69h86**</code>. In this
+         *                               example, the endpoint is <code>gp-bp12ga6v69h86**.gpdb.rds.example.com</code>.
          * @return {@code this}
          */
         public Builder connectionStringPrefix(java.lang.String connectionStringPrefix) {
@@ -70,7 +75,9 @@ public interface InstancePublicConnectionProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link InstancePublicConnectionProps#getConnectionStringPrefix}
-         * @param connectionStringPrefix Property connectionStringPrefix: The endpoint that is used to connect to the specified database. This parameter is required.
+         * @param connectionStringPrefix Property connectionStringPrefix: The prefix of the endpoint. This parameter is required.
+         *                               Specify a prefix for the endpoint. Example: <code>gp-bp12ga6v69h86**</code>. In this
+         *                               example, the endpoint is <code>gp-bp12ga6v69h86**.gpdb.rds.example.com</code>.
          * @return {@code this}
          */
         public Builder connectionStringPrefix(com.aliyun.ros.cdk.core.IResolvable connectionStringPrefix) {

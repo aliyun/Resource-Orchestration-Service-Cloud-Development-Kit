@@ -33,14 +33,19 @@ export interface RuleProps {
 
     /**
      * Property ruleName: The name of the forwarding rule.
-     * The name must be 2 to 128 characters in length.
-     * It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It
-     * must start with a letter.
+     * - The length must be 2 to 128 English or Chinese characters.
+     * - The name must start with a letter, a Chinese character, or a number, and can
+     * contain numbers, periods (.), underscores (_), hyphens (-), and spaces.
      */
     readonly ruleName: string | ros.IResolvable;
 
     /**
-     * Property direction: Rule direction. Valid values: Request or Response.
+     * Property direction: The direction in which the forwarding rule is applied. Valid values:
+     * - Request (default): The rule matches and processes requests sent from the client
+     * to the ALB instance.
+     * - Response: The rule matches and processes responses returned from server groups
+     * to the ALB instance.
+     * > Basic ALB instances support only forwarding rules whose Direction is Request.
      */
     readonly direction?: string | ros.IResolvable;
 }
@@ -62,7 +67,7 @@ export interface IRule extends ros.IResource {
     readonly attrRuleId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Rule`The , which type creates a forwarding rule.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Rule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-rule
  */

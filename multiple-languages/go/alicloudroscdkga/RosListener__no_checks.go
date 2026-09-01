@@ -104,6 +104,14 @@ func (j *jsiiProxy_RosListener) validateSetEnableResourcePropertyConstraintParam
 	return nil
 }
 
+func (j *jsiiProxy_RosListener) validateSetHttpVersionParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosListener) validateSetIdleTimeoutParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosListener) validateSetNameParameters(val interface{}) error {
 	return nil
 }
@@ -120,7 +128,15 @@ func (j *jsiiProxy_RosListener) validateSetProxyProtocolParameters(val interface
 	return nil
 }
 
+func (j *jsiiProxy_RosListener) validateSetRequestTimeoutParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosListener) validateSetSecurityPolicyIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosListener) validateSetTypeParameters(val interface{}) error {
 	return nil
 }
 

@@ -31,10 +31,13 @@ export interface InstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
-     * Property autoPay: Indicates whether automatic payment is enabled. Valid values:
-     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
-     * true: Automatic payment is enabled. The payment is automatically made.
-     * Default true.
+     * Property autoPay: Specifies whether to enable auto-payment for renewals. Valid values:
+     * - True: Auto-payment is enabled. Make sure that your account has a sufficient
+     * balance.
+     * - False: Manual payment is required. To pay for an order, log on to the console.
+     * In the upper-right corner, choose Billing > User Center. On the Order Management
+     * page, find the order and complete the payment.
+     * Default value: False.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -49,12 +52,19 @@ export interface InstanceProps {
     readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
-     * Property duration: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+     * Property duration: The subscription duration of the instance. Valid values:
+     * - If PricingCycle is set to Month, the valid values are 1 to 9.
+     * - If PricingCycle is set to Year, the valid values are 1 to 3.
+     * > This parameter is required and takes effect only if you set ChargeType to
+     * PrePaid.
      */
     readonly duration?: number | ros.IResolvable;
 
     /**
-     * Property pricingCycle: Unit of the payment cycle. It could be Month (default) or Year.
+     * Property pricingCycle: The billing cycle of the subscription instance. Valid values:
+     * - year
+     * - month
+     * > This parameter is required if you set ChargeType to PrePaid.
      */
     readonly pricingCycle?: string | ros.IResolvable;
 
@@ -116,7 +126,7 @@ export interface IInstance extends ros.IResource {
     readonly attrVpcSlbIntranetEnable: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Instance`, which is used to create a dedicated instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Instance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-instance
  */

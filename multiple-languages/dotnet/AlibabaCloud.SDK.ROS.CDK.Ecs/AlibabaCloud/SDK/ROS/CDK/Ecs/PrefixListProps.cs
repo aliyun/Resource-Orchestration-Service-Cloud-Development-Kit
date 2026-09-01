@@ -17,7 +17,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property addressFamily: The IP address family.</summary>
         /// <remarks>
-        /// Valid values: IPv4 IPv6
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>IPv4</description>
+        /// <description>IPv6</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "addressFamily", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AddressFamily

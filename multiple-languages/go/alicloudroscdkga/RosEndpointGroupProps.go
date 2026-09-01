@@ -11,13 +11,18 @@ type RosEndpointGroupProps struct {
 	ListenerId interface{} `field:"required" json:"listenerId" yaml:"listenerId"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	EndpointGroupType interface{} `field:"optional" json:"endpointGroupType" yaml:"endpointGroupType"`
+	EndpointIpVersion interface{} `field:"optional" json:"endpointIpVersion" yaml:"endpointIpVersion"`
+	EndpointProtocolVersion interface{} `field:"optional" json:"endpointProtocolVersion" yaml:"endpointProtocolVersion"`
 	EndpointRequestProtocol interface{} `field:"optional" json:"endpointRequestProtocol" yaml:"endpointRequestProtocol"`
 	HealthCheckEnabled interface{} `field:"optional" json:"healthCheckEnabled" yaml:"healthCheckEnabled"`
+	HealthCheckHost interface{} `field:"optional" json:"healthCheckHost" yaml:"healthCheckHost"`
 	HealthCheckIntervalSeconds interface{} `field:"optional" json:"healthCheckIntervalSeconds" yaml:"healthCheckIntervalSeconds"`
 	HealthCheckPath interface{} `field:"optional" json:"healthCheckPath" yaml:"healthCheckPath"`
 	HealthCheckPort interface{} `field:"optional" json:"healthCheckPort" yaml:"healthCheckPort"`
 	HealthCheckProtocol interface{} `field:"optional" json:"healthCheckProtocol" yaml:"healthCheckProtocol"`
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
+	PortOverrides interface{} `field:"optional" json:"portOverrides" yaml:"portOverrides"`
+	Tags *[]*RosEndpointGroup_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	ThresholdCount interface{} `field:"optional" json:"thresholdCount" yaml:"thresholdCount"`
 	TrafficPercentage interface{} `field:"optional" json:"trafficPercentage" yaml:"trafficPercentage"`
 }

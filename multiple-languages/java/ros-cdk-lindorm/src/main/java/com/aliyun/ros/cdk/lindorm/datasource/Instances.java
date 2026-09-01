@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.lindorm.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::Lindorm::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:41:50.422Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:57:28.778Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.datasource.Instances")
 public class Instances extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.lindorm.datasource.IInstances {
 

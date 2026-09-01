@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Signature`, which is used to create a backend signature.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Signature`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Signature` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signature
@@ -76,7 +76,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: signatureKey: The key of the signature.
+        /// <strong>Property</strong>: signatureKey: The Key value of the key. The value must be 6 to 20 characters in length and can
+        /// contain letters, digits, and underscores (_). It must start with a letter.
         /// </remarks>
         [JsiiProperty(name: "signatureKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object SignatureKey
@@ -106,7 +107,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+        /// <strong>Property</strong>: signatureName: The displayed name of the key. The name must be 4 to 50 characters in length and
+        /// can contain letters, digits, and underscores (_). It must start with a letter.
         /// </remarks>
         [JsiiProperty(name: "signatureName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object SignatureName
@@ -136,7 +138,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: signatureSecret: The secret of the signature.
+        /// <strong></strong>: ), number signs (#), exclamation points (!), and
+        /// asterisks (\*). The value must start with a letter.
+        ///
+        /// <strong>Property</strong>: signatureSecret: The Secret value of the key. The value must be 6 to 30 characters in length and
+        /// can contain letters, digits, and special characters. Special characters include
+        /// underscores (_), at signs (
         /// </remarks>
         [JsiiProperty(name: "signatureSecret", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object SignatureSecret

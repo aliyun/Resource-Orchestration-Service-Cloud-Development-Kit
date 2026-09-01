@@ -7,7 +7,11 @@ package alicloudroscdkdns
 type DomainProps struct {
 	// Property domainName: Domain name.
 	DomainName interface{} `field:"required" json:"domainName" yaml:"domainName"`
-	// Property groupId: Domain name grouping, the default is the "default grouping" GroupId.
+	// Property groupId: The ID of the domain name group.
+	//
+	// If you do not specify this parameter, pass an
+	// empty string, or pass defaultGroup, the domain name is added to the default
+	// group. You can call the AddDomainGroup operation to obtain the group ID.
 	GroupId interface{} `field:"optional" json:"groupId" yaml:"groupId"`
 	// Property resourceGroupId: Resource group id.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

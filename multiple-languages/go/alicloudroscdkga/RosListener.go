@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Listener`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Listener`Creates a listener for a Global Accelerator (GA) instance.
 type RosListener interface {
 	alicloudroscdkcore.RosResource
 	AcceleratorId() interface{}
@@ -27,6 +27,10 @@ type RosListener interface {
 	SetDescription(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	HttpVersion() interface{}
+	SetHttpVersion(val interface{})
+	IdleTimeout() interface{}
+	SetIdleTimeout(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -52,6 +56,8 @@ type RosListener interface {
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	RequestTimeout() interface{}
+	SetRequestTimeout(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -63,6 +69,8 @@ type RosListener interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Type() interface{}
+	SetType(val interface{})
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -259,6 +267,26 @@ func (j *jsiiProxy_RosListener) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosListener) HttpVersion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"httpVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosListener) IdleTimeout() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"idleTimeout",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosListener) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -329,6 +357,16 @@ func (j *jsiiProxy_RosListener) Ref() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RosListener) RequestTimeout() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"requestTimeout",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosListener) RosOptions() alicloudroscdkcore.IRosResourceOptions {
 	var returns alicloudroscdkcore.IRosResourceOptions
 	_jsii_.Get(
@@ -374,6 +412,16 @@ func (j *jsiiProxy_RosListener) Stack() alicloudroscdkcore.Stack {
 	_jsii_.Get(
 		j,
 		"stack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosListener) Type() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"type",
 		&returns,
 	)
 	return returns
@@ -482,6 +530,28 @@ func (j *jsiiProxy_RosListener)SetEnableResourcePropertyConstraint(val *bool) {
 	)
 }
 
+func (j *jsiiProxy_RosListener)SetHttpVersion(val interface{}) {
+	if err := j.validateSetHttpVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"httpVersion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosListener)SetIdleTimeout(val interface{}) {
+	if err := j.validateSetIdleTimeoutParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"idleTimeout",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosListener)SetName(val interface{}) {
 	if err := j.validateSetNameParameters(val); err != nil {
 		panic(err)
@@ -526,6 +596,17 @@ func (j *jsiiProxy_RosListener)SetProxyProtocol(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosListener)SetRequestTimeout(val interface{}) {
+	if err := j.validateSetRequestTimeoutParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"requestTimeout",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosListener)SetSecurityPolicyId(val interface{}) {
 	if err := j.validateSetSecurityPolicyIdParameters(val); err != nil {
 		panic(err)
@@ -533,6 +614,17 @@ func (j *jsiiProxy_RosListener)SetSecurityPolicyId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"securityPolicyId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosListener)SetType(val interface{}) {
+	if err := j.validateSetTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"type",
 		val,
 	)
 }

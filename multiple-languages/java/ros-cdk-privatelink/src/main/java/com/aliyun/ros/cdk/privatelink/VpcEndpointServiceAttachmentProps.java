@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.privatelink;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointserviceattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:31:09.949Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:47:52.290Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointServiceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(VpcEndpointServiceAttachmentProps.Jsii$Proxy.class)
 public interface VpcEndpointServiceAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,14 +16,15 @@ public interface VpcEndpointServiceAttachmentProps extends software.amazon.jsii.
     @org.jetbrains.annotations.NotNull java.lang.Object getResourceId();
 
     /**
-     * Property resourceType: The resource type.
+     * Property resourceType: The type of the service resource.
      * <p>
-     * Allowed values:
+     * Valid values:
      * <p>
      * <ul>
-     * <li>slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.</li>
-     * <li>alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.</li>
-     * <li>nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.</li>
+     * <li>slb: Classic Load Balancer (CLB).</li>
+     * <li>alb: Application Load Balancer (ALB).</li>
+     * <li>nlb: Network Load Balancer (NLB).</li>
+     * <li>gwlb: Gateway Load Balancer (GWLB).</li>
      * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getResourceType();
@@ -34,7 +35,10 @@ public interface VpcEndpointServiceAttachmentProps extends software.amazon.jsii.
     @org.jetbrains.annotations.NotNull java.lang.Object getServiceId();
 
     /**
-     * Property zoneId: Zone id of the service resource.
+     * Property zoneId: The zone where the service resource is located.
+     * <p>
+     * This parameter is required if the
+     * service resource is an ALB, NLB, or GWLB instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
@@ -77,13 +81,14 @@ public interface VpcEndpointServiceAttachmentProps extends software.amazon.jsii.
 
         /**
          * Sets the value of {@link VpcEndpointServiceAttachmentProps#getResourceType}
-         * @param resourceType Property resourceType: The resource type. This parameter is required.
-         *                     Allowed values:
+         * @param resourceType Property resourceType: The type of the service resource. This parameter is required.
+         *                     Valid values:
          *                     <p>
          *                     <ul>
-         *                     <li>slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.</li>
-         *                     <li>alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.</li>
-         *                     <li>nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.</li>
+         *                     <li>slb: Classic Load Balancer (CLB).</li>
+         *                     <li>alb: Application Load Balancer (ALB).</li>
+         *                     <li>nlb: Network Load Balancer (NLB).</li>
+         *                     <li>gwlb: Gateway Load Balancer (GWLB).</li>
          *                     </ul>
          * @return {@code this}
          */
@@ -94,13 +99,14 @@ public interface VpcEndpointServiceAttachmentProps extends software.amazon.jsii.
 
         /**
          * Sets the value of {@link VpcEndpointServiceAttachmentProps#getResourceType}
-         * @param resourceType Property resourceType: The resource type. This parameter is required.
-         *                     Allowed values:
+         * @param resourceType Property resourceType: The type of the service resource. This parameter is required.
+         *                     Valid values:
          *                     <p>
          *                     <ul>
-         *                     <li>slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.</li>
-         *                     <li>alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.</li>
-         *                     <li>nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.</li>
+         *                     <li>slb: Classic Load Balancer (CLB).</li>
+         *                     <li>alb: Application Load Balancer (ALB).</li>
+         *                     <li>nlb: Network Load Balancer (NLB).</li>
+         *                     <li>gwlb: Gateway Load Balancer (GWLB).</li>
          *                     </ul>
          * @return {@code this}
          */
@@ -131,7 +137,9 @@ public interface VpcEndpointServiceAttachmentProps extends software.amazon.jsii.
 
         /**
          * Sets the value of {@link VpcEndpointServiceAttachmentProps#getZoneId}
-         * @param zoneId Property zoneId: Zone id of the service resource.
+         * @param zoneId Property zoneId: The zone where the service resource is located.
+         *               This parameter is required if the
+         *               service resource is an ALB, NLB, or GWLB instance.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
@@ -141,7 +149,9 @@ public interface VpcEndpointServiceAttachmentProps extends software.amazon.jsii.
 
         /**
          * Sets the value of {@link VpcEndpointServiceAttachmentProps#getZoneId}
-         * @param zoneId Property zoneId: Zone id of the service resource.
+         * @param zoneId Property zoneId: The zone where the service resource is located.
+         *               This parameter is required if the
+         *               service resource is an ALB, NLB, or GWLB instance.
          * @return {@code this}
          */
         public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {

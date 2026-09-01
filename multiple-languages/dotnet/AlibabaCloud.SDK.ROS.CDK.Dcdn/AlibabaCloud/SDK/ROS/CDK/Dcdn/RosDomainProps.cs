@@ -97,7 +97,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dcdn
         private object? _checkUrl;
 
         /// <remarks>
-        /// <strong>Property</strong>: checkUrl: The validation of the origin.
+        /// <strong>Property</strong>: checkUrl: The health check URL.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "checkUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

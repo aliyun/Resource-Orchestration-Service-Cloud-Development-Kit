@@ -17,7 +17,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property content: The content of the image component.</summary>
         /// <remarks>
-        /// The content consists of up to 127 commands.
+        /// The image component consists of multiple
+        /// commands. The command content cannot exceed 16 KB in size. For information about
+        /// the commands supported by Image Builder and the formats of the commands, see
+        /// <a href="">Commands supported by Image Builder</a>.
         /// </remarks>
         [JsiiProperty(name: "content", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Content
@@ -50,7 +53,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property componentType: The type of the image component.</summary>
         /// <remarks>
-        /// Only image build components are supported. Set the value to Build.Default value: Build.
+        /// Only image building components and image test
+        /// components are supported.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Build</description>
+        /// <description>Test
+        /// Default value: Build.</description>
+        /// </list>
+        ///
+        ///     Image building components can be used only in image building templates. Image
+        ///     test components can be used only in image test templates.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "componentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -182,9 +196,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _systemType;
 
-        /// <summary>Property systemType: The operating system type supported by the image component.</summary>
+        /// <summary>Property systemType: The type of the operating system supported by the image component.</summary>
         /// <remarks>
-        /// Only Linux is supported. Set the value to Linux.Default value: Linux.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Linux</description>
+        /// <description>Windows
+        /// Default value: Linux.</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "systemType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

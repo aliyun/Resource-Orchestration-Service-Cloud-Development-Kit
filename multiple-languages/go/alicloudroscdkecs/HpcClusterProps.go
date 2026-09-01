@@ -7,9 +7,9 @@ package alicloudroscdkecs
 type HpcClusterProps struct {
 	// Property name: The name of the HPC cluster.
 	//
-	// The name must be 2 to 128 characters in length. It must
-	// start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters,
-	// digits, colons (:), underscores (_), and hyphens (-).
+	// The name must be 2 to 128 characters in length, and
+	// can contain letters, digits, underscores (_), and hyphens (-). The name must
+	// start with a letter but cannot start with `http:\/\/` or `https:\/\/`.
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	// Property description: The description of the HPC cluster.
 	//

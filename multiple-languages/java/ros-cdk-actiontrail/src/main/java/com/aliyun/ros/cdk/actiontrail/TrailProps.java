@@ -5,13 +5,22 @@ package com.aliyun.ros.cdk.actiontrail;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:13:01.950Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:51:46.229Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.TrailProps")
 @software.amazon.jsii.Jsii.Proxy(TrailProps.Jsii$Proxy.class)
 public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property name: The name of the trail to be created, which must be unique for an account.
+     * Property name: The name of the trail to be created.
+     * <p>
+     * Length should be between 6 and 36 characters, must start with a lowercase letter,
+     * and can include lowercase letters, numbers, hyphens (-), and underscores (_).
+     * <p>
+     * <blockquote>
+     * <p>
+     * The trail name must be unique within the same account.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
@@ -25,39 +34,64 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property ossBucketName: The OSS bucket to which the trail delivers logs.
+     * Property ossBucketName: The OSS bucket for the trail delivery.
      * <p>
-     * Ensure that this is an existing OSS bucket.
+     * Length should be between 3 and 63 characters, must start with a lowercase letter
+     * or number, and can include lowercase letters, numbers, and hyphens (-).
+     * <p>
+     * <blockquote>
+     * <p>
+     * At least one of OssBucketName and SlsProjectArn must be specified.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOssBucketName() {
         return null;
     }
 
     /**
-     * Property ossKeyPrefix: The prefix of the specified OSS bucket name.
+     * Property ossKeyPrefix: The prefix for the filenames in the OSS bucket for the trail delivery.
      * <p>
-     * This parameter can be left empty.
+     * Length should be between 6 and 32 characters, must start with a letter, and can
+     * include letters, numbers, hyphens (-), forward slashes (/), and underscores (_).
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOssKeyPrefix() {
         return null;
     }
 
     /**
-     * Property roleName: The RAM role in ActionTrail permitted by the user.
+     * Property roleName: The name of the associated role for Operation Audit, with a default value of serviceroleforactiontrail.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRoleName() {
         return null;
     }
 
     /**
-     * Property slsProjectArn: The unique ARN of the Log Service project.
+     * Property slsProjectArn: The ARN of the Log Service project for the trail delivery.
+     * <p>
+     * <blockquote>
+     * <p>
+     * At least one of OssBucketName and SlsProjectArn must be specified.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSlsProjectArn() {
         return null;
     }
 
     /**
-     * Property slsWriteRoleArn: The unique ARN of the Log Service role.
+     * Property slsWriteRoleArn: The ARN of the role assumed by Operation Audit when delivering operation events to the Log Service project.
+     * <p>
+     * <ul>
+     * <li>If this parameter is not specified, Operation Audit will create the necessary
+     * resources by creating a service-linked role.</li>
+     * <li>If this parameter is specified, when you need to deliver events to the current
+     * account, you need to grant the RAM role the permissions of the Operation Audit
+     * service-linked role. When you need to deliver events to another account, you need
+     * to bind the system permission policy for event delivery to the RAM role. For more
+     * information on cross-account delivery, see Deliver Events from Multiple
+     * Accounts to One Account.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSlsWriteRoleArn() {
         return null;
@@ -83,7 +117,15 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TrailProps#getName}
-         * @param name Property name: The name of the trail to be created, which must be unique for an account. This parameter is required.
+         * @param name Property name: The name of the trail to be created. This parameter is required.
+         *             Length should be between 6 and 36 characters, must start with a lowercase letter,
+         *             and can include lowercase letters, numbers, hyphens (-), and underscores (_).
+         *             <p>
+         *             <blockquote>
+         *             <p>
+         *             The trail name must be unique within the same account.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -93,7 +135,15 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TrailProps#getName}
-         * @param name Property name: The name of the trail to be created, which must be unique for an account. This parameter is required.
+         * @param name Property name: The name of the trail to be created. This parameter is required.
+         *             Length should be between 6 and 36 characters, must start with a lowercase letter,
+         *             and can include lowercase letters, numbers, hyphens (-), and underscores (_).
+         *             <p>
+         *             <blockquote>
+         *             <p>
+         *             The trail name must be unique within the same account.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
@@ -125,8 +175,15 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TrailProps#getOssBucketName}
-         * @param ossBucketName Property ossBucketName: The OSS bucket to which the trail delivers logs.
-         *                      Ensure that this is an existing OSS bucket.
+         * @param ossBucketName Property ossBucketName: The OSS bucket for the trail delivery.
+         *                      Length should be between 3 and 63 characters, must start with a lowercase letter
+         *                      or number, and can include lowercase letters, numbers, and hyphens (-).
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      At least one of OssBucketName and SlsProjectArn must be specified.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder ossBucketName(java.lang.String ossBucketName) {
@@ -136,8 +193,15 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TrailProps#getOssBucketName}
-         * @param ossBucketName Property ossBucketName: The OSS bucket to which the trail delivers logs.
-         *                      Ensure that this is an existing OSS bucket.
+         * @param ossBucketName Property ossBucketName: The OSS bucket for the trail delivery.
+         *                      Length should be between 3 and 63 characters, must start with a lowercase letter
+         *                      or number, and can include lowercase letters, numbers, and hyphens (-).
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      At least one of OssBucketName and SlsProjectArn must be specified.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder ossBucketName(com.aliyun.ros.cdk.core.IResolvable ossBucketName) {
@@ -147,8 +211,9 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TrailProps#getOssKeyPrefix}
-         * @param ossKeyPrefix Property ossKeyPrefix: The prefix of the specified OSS bucket name.
-         *                     This parameter can be left empty.
+         * @param ossKeyPrefix Property ossKeyPrefix: The prefix for the filenames in the OSS bucket for the trail delivery.
+         *                     Length should be between 6 and 32 characters, must start with a letter, and can
+         *                     include letters, numbers, hyphens (-), forward slashes (/), and underscores (_).
          * @return {@code this}
          */
         public Builder ossKeyPrefix(java.lang.String ossKeyPrefix) {
@@ -158,8 +223,9 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TrailProps#getOssKeyPrefix}
-         * @param ossKeyPrefix Property ossKeyPrefix: The prefix of the specified OSS bucket name.
-         *                     This parameter can be left empty.
+         * @param ossKeyPrefix Property ossKeyPrefix: The prefix for the filenames in the OSS bucket for the trail delivery.
+         *                     Length should be between 6 and 32 characters, must start with a letter, and can
+         *                     include letters, numbers, hyphens (-), forward slashes (/), and underscores (_).
          * @return {@code this}
          */
         public Builder ossKeyPrefix(com.aliyun.ros.cdk.core.IResolvable ossKeyPrefix) {
@@ -169,7 +235,7 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TrailProps#getRoleName}
-         * @param roleName Property roleName: The RAM role in ActionTrail permitted by the user.
+         * @param roleName Property roleName: The name of the associated role for Operation Audit, with a default value of serviceroleforactiontrail.
          * @return {@code this}
          */
         public Builder roleName(java.lang.String roleName) {
@@ -179,7 +245,7 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TrailProps#getRoleName}
-         * @param roleName Property roleName: The RAM role in ActionTrail permitted by the user.
+         * @param roleName Property roleName: The name of the associated role for Operation Audit, with a default value of serviceroleforactiontrail.
          * @return {@code this}
          */
         public Builder roleName(com.aliyun.ros.cdk.core.IResolvable roleName) {
@@ -189,7 +255,12 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TrailProps#getSlsProjectArn}
-         * @param slsProjectArn Property slsProjectArn: The unique ARN of the Log Service project.
+         * @param slsProjectArn Property slsProjectArn: The ARN of the Log Service project for the trail delivery.
+         *                      <blockquote>
+         *                      <p>
+         *                      At least one of OssBucketName and SlsProjectArn must be specified.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder slsProjectArn(java.lang.String slsProjectArn) {
@@ -199,7 +270,12 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TrailProps#getSlsProjectArn}
-         * @param slsProjectArn Property slsProjectArn: The unique ARN of the Log Service project.
+         * @param slsProjectArn Property slsProjectArn: The ARN of the Log Service project for the trail delivery.
+         *                      <blockquote>
+         *                      <p>
+         *                      At least one of OssBucketName and SlsProjectArn must be specified.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder slsProjectArn(com.aliyun.ros.cdk.core.IResolvable slsProjectArn) {
@@ -209,7 +285,17 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TrailProps#getSlsWriteRoleArn}
-         * @param slsWriteRoleArn Property slsWriteRoleArn: The unique ARN of the Log Service role.
+         * @param slsWriteRoleArn Property slsWriteRoleArn: The ARN of the role assumed by Operation Audit when delivering operation events to the Log Service project.
+         *                        <ul>
+         *                        <li>If this parameter is not specified, Operation Audit will create the necessary
+         *                        resources by creating a service-linked role.</li>
+         *                        <li>If this parameter is specified, when you need to deliver events to the current
+         *                        account, you need to grant the RAM role the permissions of the Operation Audit
+         *                        service-linked role. When you need to deliver events to another account, you need
+         *                        to bind the system permission policy for event delivery to the RAM role. For more
+         *                        information on cross-account delivery, see Deliver Events from Multiple
+         *                        Accounts to One Account.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder slsWriteRoleArn(java.lang.String slsWriteRoleArn) {
@@ -219,7 +305,17 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TrailProps#getSlsWriteRoleArn}
-         * @param slsWriteRoleArn Property slsWriteRoleArn: The unique ARN of the Log Service role.
+         * @param slsWriteRoleArn Property slsWriteRoleArn: The ARN of the role assumed by Operation Audit when delivering operation events to the Log Service project.
+         *                        <ul>
+         *                        <li>If this parameter is not specified, Operation Audit will create the necessary
+         *                        resources by creating a service-linked role.</li>
+         *                        <li>If this parameter is specified, when you need to deliver events to the current
+         *                        account, you need to grant the RAM role the permissions of the Operation Audit
+         *                        service-linked role. When you need to deliver events to another account, you need
+         *                        to bind the system permission policy for event delivery to the RAM role. For more
+         *                        information on cross-account delivery, see Deliver Events from Multiple
+         *                        Accounts to One Account.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder slsWriteRoleArn(com.aliyun.ros.cdk.core.IResolvable slsWriteRoleArn) {

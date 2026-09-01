@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::EventRule</code>, which is used to create or modify an event-triggered alert rule.
- * <p>
- * If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::EventRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.924Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.194Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.EventRule")
 public class EventRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IEventRule {
 
@@ -114,20 +112,20 @@ public class EventRule extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property eventPattern: Event pattern configuration.A maximum of 20 event patterns.
+         * Property eventPattern: The pattern of the event-triggered alert rule.
          * <p>
          * @return {@code this}
-         * @param eventPattern Property eventPattern: Event pattern configuration.A maximum of 20 event patterns. This parameter is required.
+         * @param eventPattern Property eventPattern: The pattern of the event-triggered alert rule. This parameter is required.
          */
         public Builder eventPattern(final com.aliyun.ros.cdk.core.IResolvable eventPattern) {
             this.props.eventPattern(eventPattern);
             return this;
         }
         /**
-         * Property eventPattern: Event pattern configuration.A maximum of 20 event patterns.
+         * Property eventPattern: The pattern of the event-triggered alert rule.
          * <p>
          * @return {@code this}
-         * @param eventPattern Property eventPattern: Event pattern configuration.A maximum of 20 event patterns. This parameter is required.
+         * @param eventPattern Property eventPattern: The pattern of the event-triggered alert rule. This parameter is required.
          */
         public Builder eventPattern(final java.util.List<? extends java.lang.Object> eventPattern) {
             this.props.eventPattern(eventPattern);
@@ -177,28 +175,34 @@ public class EventRule extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property eventType: The type of the event alert.
+         * Property eventType: The type of the event.
          * <p>
          * Valid values:
-         * SYSTEM
-         * CUSTOM
+         * <p>
+         * <ul>
+         * <li>SYSTEM: a system event.</li>
+         * <li>CUSTOM: a custom event.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param eventType Property eventType: The type of the event alert. This parameter is required.
+         * @param eventType Property eventType: The type of the event. This parameter is required.
          */
         public Builder eventType(final java.lang.String eventType) {
             this.props.eventType(eventType);
             return this;
         }
         /**
-         * Property eventType: The type of the event alert.
+         * Property eventType: The type of the event.
          * <p>
          * Valid values:
-         * SYSTEM
-         * CUSTOM
+         * <p>
+         * <ul>
+         * <li>SYSTEM: a system event.</li>
+         * <li>CUSTOM: a custom event.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param eventType Property eventType: The type of the event alert. This parameter is required.
+         * @param eventType Property eventType: The type of the event. This parameter is required.
          */
         public Builder eventType(final com.aliyun.ros.cdk.core.IResolvable eventType) {
             this.props.eventType(eventType);
@@ -248,28 +252,34 @@ public class EventRule extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property state: The status of the alert rule.
+         * Property state: The status of the event-triggered alert rule.
          * <p>
          * Valid values:
-         * ENABLED
-         * DISABLED
+         * <p>
+         * <ul>
+         * <li>ENABLED: The rule is enabled.</li>
+         * <li>DISABLED: The rule is disabled.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param state Property state: The status of the alert rule. This parameter is required.
+         * @param state Property state: The status of the event-triggered alert rule. This parameter is required.
          */
         public Builder state(final java.lang.String state) {
             this.props.state(state);
             return this;
         }
         /**
-         * Property state: The status of the alert rule.
+         * Property state: The status of the event-triggered alert rule.
          * <p>
          * Valid values:
-         * ENABLED
-         * DISABLED
+         * <p>
+         * <ul>
+         * <li>ENABLED: The rule is enabled.</li>
+         * <li>DISABLED: The rule is disabled.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param state Property state: The status of the alert rule. This parameter is required.
+         * @param state Property state: The status of the event-triggered alert rule. This parameter is required.
          */
         public Builder state(final com.aliyun.ros.cdk.core.IResolvable state) {
             this.props.state(state);

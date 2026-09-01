@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms2;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms2-serviceobservability
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:59:01.360Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:47:48.994Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms2.$Module.class, fqn = "@alicloud/ros-cdk-cms2.RosServiceObservabilityProps")
 @software.amazon.jsii.Jsii.Proxy(RosServiceObservabilityProps.Jsii$Proxy.class)
 public interface RosServiceObservabilityProps extends software.amazon.jsii.JsiiSerializable {

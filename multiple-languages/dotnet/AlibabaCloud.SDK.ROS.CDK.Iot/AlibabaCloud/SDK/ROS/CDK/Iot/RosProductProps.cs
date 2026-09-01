@@ -107,11 +107,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         private object? _aliyunCommodityCode;
 
         /// <remarks>
-        /// <strong>Property</strong>: aliyunCommodityCode: The edition of the product that you want to create. There are two options:
-        /// iothub_senior: Pro Edition.
-        /// iothub: Basic Edition.
-        /// If you do not input this parameter, the default value is used, which is iothub (Basic
-        /// Edition).
+        /// <strong>Property</strong>: aliyunCommodityCode: The edition of the product.
+        /// *   If you do not configure this parameter, a product of the Basic Edition is
+        /// automatically created. You cannot use a TSL model to define the product.
+        /// *   If you want to configure this parameter, set the value to iothub_senior. A
+        /// product that supports TSL models is created. You must also configure the
+        /// DataFormat parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "aliyunCommodityCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

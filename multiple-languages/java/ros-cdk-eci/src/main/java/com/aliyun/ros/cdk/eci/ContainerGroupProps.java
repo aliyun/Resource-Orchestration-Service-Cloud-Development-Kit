@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.eci;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:35:20.490Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:35:35.434Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.ContainerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ContainerGroupProps.Jsii$Proxy.class)
 public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,7 +23,7 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
     @org.jetbrains.annotations.NotNull java.lang.Object getContainerGroupName();
 
     /**
-     * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     * Property acrRegistryInfo: A list of ACR Enterprise instances.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAcrRegistryInfo() {
         return null;
@@ -38,6 +38,9 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      * Property autoMatchImageCache: Specifies whether to automatically match the image cache.
+     * <p>
+     * The default value is
+     * false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoMatchImageCache() {
         return null;
@@ -79,7 +82,7 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
-     * Property imageSnapshotId: Image cache ID or snapshot ID.
+     * Property imageSnapshotId: The ID of the image cache.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getImageSnapshotId() {
         return null;
@@ -93,7 +96,10 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
-     * Property instanceType: The type of the ECS instance.
+     * Property instanceType: The ECS instance type.
+     * <p>
+     * You can specify multiple instance types. For more
+     * information, see <a href="">Create an instance by specifying an ECS instance type</a>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
         return null;
@@ -101,6 +107,9 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      * Property ipv6AddressCount: The number of IPv6 addresses.
+     * <p>
+     * The value is fixed at 1, which indicates that one
+     * IPv6 address can be bound to an ECI instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressCount() {
         return null;
@@ -216,10 +225,22 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
-     * Property vSwitchId: The ID of the specified VSwitch.
+     * Property vSwitchId: The ID of the vSwitch to which the instance belongs.
      * <p>
-     * If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
-     * If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+     * You can specify up to 10
+     * vSwitch IDs. Separate multiple IDs with commas (,), for example, <code>vsw-*,vsw-*</code>.
+     * If you do not specify a vSwitch, the system uses the default vSwitch in the
+     * default VPC of the selected region. If you do not have a default VPC and a
+     * default vSwitch in the region, the system creates a default VPC and a default
+     * vSwitch.
+     * <p>
+     * <blockquote>
+     * <p>
+     * The number of IP addresses in the vSwitch CIDR block determines the maximum
+     * number of ECI instances that can be created in the vSwitch. Plan the CIDR block
+     * in advance.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
@@ -317,7 +338,7 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link ContainerGroupProps#getAcrRegistryInfo}
-         * @param acrRegistryInfo Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+         * @param acrRegistryInfo Property acrRegistryInfo: A list of ACR Enterprise instances.
          * @return {@code this}
          */
         public Builder acrRegistryInfo(com.aliyun.ros.cdk.core.IResolvable acrRegistryInfo) {
@@ -327,7 +348,7 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link ContainerGroupProps#getAcrRegistryInfo}
-         * @param acrRegistryInfo Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+         * @param acrRegistryInfo Property acrRegistryInfo: A list of ACR Enterprise instances.
          * @return {@code this}
          */
         public Builder acrRegistryInfo(java.util.List<? extends java.lang.Object> acrRegistryInfo) {
@@ -358,6 +379,8 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link ContainerGroupProps#getAutoMatchImageCache}
          * @param autoMatchImageCache Property autoMatchImageCache: Specifies whether to automatically match the image cache.
+         *                            The default value is
+         *                            false.
          * @return {@code this}
          */
         public Builder autoMatchImageCache(java.lang.Boolean autoMatchImageCache) {
@@ -368,6 +391,8 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link ContainerGroupProps#getAutoMatchImageCache}
          * @param autoMatchImageCache Property autoMatchImageCache: Specifies whether to automatically match the image cache.
+         *                            The default value is
+         *                            false.
          * @return {@code this}
          */
         public Builder autoMatchImageCache(com.aliyun.ros.cdk.core.IResolvable autoMatchImageCache) {
@@ -477,7 +502,7 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link ContainerGroupProps#getImageSnapshotId}
-         * @param imageSnapshotId Property imageSnapshotId: Image cache ID or snapshot ID.
+         * @param imageSnapshotId Property imageSnapshotId: The ID of the image cache.
          * @return {@code this}
          */
         public Builder imageSnapshotId(java.lang.String imageSnapshotId) {
@@ -487,7 +512,7 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link ContainerGroupProps#getImageSnapshotId}
-         * @param imageSnapshotId Property imageSnapshotId: Image cache ID or snapshot ID.
+         * @param imageSnapshotId Property imageSnapshotId: The ID of the image cache.
          * @return {@code this}
          */
         public Builder imageSnapshotId(com.aliyun.ros.cdk.core.IResolvable imageSnapshotId) {
@@ -517,7 +542,9 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link ContainerGroupProps#getInstanceType}
-         * @param instanceType Property instanceType: The type of the ECS instance.
+         * @param instanceType Property instanceType: The ECS instance type.
+         *                     You can specify multiple instance types. For more
+         *                     information, see <a href="">Create an instance by specifying an ECS instance type</a>.
          * @return {@code this}
          */
         public Builder instanceType(java.lang.String instanceType) {
@@ -527,7 +554,9 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link ContainerGroupProps#getInstanceType}
-         * @param instanceType Property instanceType: The type of the ECS instance.
+         * @param instanceType Property instanceType: The ECS instance type.
+         *                     You can specify multiple instance types. For more
+         *                     information, see <a href="">Create an instance by specifying an ECS instance type</a>.
          * @return {@code this}
          */
         public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
@@ -538,6 +567,8 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link ContainerGroupProps#getIpv6AddressCount}
          * @param ipv6AddressCount Property ipv6AddressCount: The number of IPv6 addresses.
+         *                         The value is fixed at 1, which indicates that one
+         *                         IPv6 address can be bound to an ECI instance.
          * @return {@code this}
          */
         public Builder ipv6AddressCount(java.lang.Number ipv6AddressCount) {
@@ -548,6 +579,8 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link ContainerGroupProps#getIpv6AddressCount}
          * @param ipv6AddressCount Property ipv6AddressCount: The number of IPv6 addresses.
+         *                         The value is fixed at 1, which indicates that one
+         *                         IPv6 address can be bound to an ECI instance.
          * @return {@code this}
          */
         public Builder ipv6AddressCount(com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
@@ -829,9 +862,21 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link ContainerGroupProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The ID of the specified VSwitch.
-         *                  If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
-         *                  If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which the instance belongs.
+         *                  You can specify up to 10
+         *                  vSwitch IDs. Separate multiple IDs with commas (,), for example, <code>vsw-*,vsw-*</code>.
+         *                  If you do not specify a vSwitch, the system uses the default vSwitch in the
+         *                  default VPC of the selected region. If you do not have a default VPC and a
+         *                  default vSwitch in the region, the system creates a default VPC and a default
+         *                  vSwitch.
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  The number of IP addresses in the vSwitch CIDR block determines the maximum
+         *                  number of ECI instances that can be created in the vSwitch. Plan the CIDR block
+         *                  in advance.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -841,9 +886,21 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link ContainerGroupProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The ID of the specified VSwitch.
-         *                  If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
-         *                  If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which the instance belongs.
+         *                  You can specify up to 10
+         *                  vSwitch IDs. Separate multiple IDs with commas (,), for example, <code>vsw-*,vsw-*</code>.
+         *                  If you do not specify a vSwitch, the system uses the default vSwitch in the
+         *                  default VPC of the selected region. If you do not have a default VPC and a
+         *                  default vSwitch in the region, the system creates a default VPC and a default
+         *                  vSwitch.
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  The number of IP addresses in the vSwitch CIDR block determines the maximum
+         *                  number of ECI instances that can be created in the vSwitch. Plan the CIDR block
+         *                  in advance.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {

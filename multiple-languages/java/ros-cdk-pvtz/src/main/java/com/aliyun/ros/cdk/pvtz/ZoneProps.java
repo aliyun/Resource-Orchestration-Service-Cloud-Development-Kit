@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pvtz;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zone
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:32:30.944Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:52:38.655Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.ZoneProps")
 @software.amazon.jsii.Jsii.Proxy(ZoneProps.Jsii$Proxy.class)
 public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,14 +16,30 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneName();
 
     /**
-     * Property dnsGroup: Built-in authority location area.
+     * Property dnsGroup: The location of the built-in authoritative zone.
      * <p>
      * Valid values:
      * <p>
      * <ul>
-     * <li>NORMAL_ZONE: Default. normal zone (The parsing response result will be cached, and only back to the built-in authority normal zone if the cache is missed, the effect of parsing changes is affected by TTL time; Cannot use custom line analysis, weight analysis function.</li>
-     * <li>FAST_ZONE: Fast zone (Recommended: directly reply to the parsing request, the parsing delay is the lowest, and the record changes take effect in real time; Support custom line analysis, weight analysis.</li>
+     * <li>NORMAL_ZONE: Standard zone. DNS responses are cached. If a cache miss occurs,
+     * the query is sent to the built-in authoritative standard zone. The time to live
+     * (TTL) value affects the time when a DNS record change takes effect. You cannot
+     * use custom DNS lines or weighted round-robin.</li>
+     * <li>FAST_ZONE: Accelerated zone (recommended). DNS queries are directly responded
+     * to with the lowest latency. DNS record changes take effect in real time. You can
+     * use custom DNS lines and weighted round-robin.
+     * Default value: NORMAL_ZONE.</li>
      * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * The built-in authoritative accelerated zone is located before the cache module.
+     * DNS responses are not cached. This may increase the number of DNS queries and
+     * your costs.
+     * Starting from April 30, 2025 (UTC+8), when new users activate Cloud DNS
+     * PrivateZone, added zones are set as accelerated zones by default.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDnsGroup() {
         return null;
@@ -37,10 +53,19 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property proxyPattern: ZONE: completely hijack the entire zone.
+     * Property proxyPattern: Specifies whether to enable subdomain recursive proxy.
      * <p>
-     * RECORD: Incomplete hijacking, recursive resolution agent.
-     * Default to ZONE.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>ZONE: Disables the feature. If a DNS query for a subdomain that does not exist
+     * under the current domain name is received, an NXDOMAIN error is returned.</li>
+     * <li>RECORD: Enables the feature. If a DNS query for a subdomain that does not exist
+     * under the current domain name is received, the query is processed by the
+     * forwarding and recursion modules in sequence. The final result is used to respond
+     * to the DNS query.
+     * Default value: ZONE.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProxyPattern() {
         return null;
@@ -111,13 +136,29 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneProps#getDnsGroup}
-         * @param dnsGroup Property dnsGroup: Built-in authority location area.
+         * @param dnsGroup Property dnsGroup: The location of the built-in authoritative zone.
          *                 Valid values:
          *                 <p>
          *                 <ul>
-         *                 <li>NORMAL_ZONE: Default. normal zone (The parsing response result will be cached, and only back to the built-in authority normal zone if the cache is missed, the effect of parsing changes is affected by TTL time; Cannot use custom line analysis, weight analysis function.</li>
-         *                 <li>FAST_ZONE: Fast zone (Recommended: directly reply to the parsing request, the parsing delay is the lowest, and the record changes take effect in real time; Support custom line analysis, weight analysis.</li>
+         *                 <li>NORMAL_ZONE: Standard zone. DNS responses are cached. If a cache miss occurs,
+         *                 the query is sent to the built-in authoritative standard zone. The time to live
+         *                 (TTL) value affects the time when a DNS record change takes effect. You cannot
+         *                 use custom DNS lines or weighted round-robin.</li>
+         *                 <li>FAST_ZONE: Accelerated zone (recommended). DNS queries are directly responded
+         *                 to with the lowest latency. DNS record changes take effect in real time. You can
+         *                 use custom DNS lines and weighted round-robin.
+         *                 Default value: NORMAL_ZONE.</li>
          *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 The built-in authoritative accelerated zone is located before the cache module.
+         *                 DNS responses are not cached. This may increase the number of DNS queries and
+         *                 your costs.
+         *                 Starting from April 30, 2025 (UTC+8), when new users activate Cloud DNS
+         *                 PrivateZone, added zones are set as accelerated zones by default.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder dnsGroup(java.lang.String dnsGroup) {
@@ -127,13 +168,29 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneProps#getDnsGroup}
-         * @param dnsGroup Property dnsGroup: Built-in authority location area.
+         * @param dnsGroup Property dnsGroup: The location of the built-in authoritative zone.
          *                 Valid values:
          *                 <p>
          *                 <ul>
-         *                 <li>NORMAL_ZONE: Default. normal zone (The parsing response result will be cached, and only back to the built-in authority normal zone if the cache is missed, the effect of parsing changes is affected by TTL time; Cannot use custom line analysis, weight analysis function.</li>
-         *                 <li>FAST_ZONE: Fast zone (Recommended: directly reply to the parsing request, the parsing delay is the lowest, and the record changes take effect in real time; Support custom line analysis, weight analysis.</li>
+         *                 <li>NORMAL_ZONE: Standard zone. DNS responses are cached. If a cache miss occurs,
+         *                 the query is sent to the built-in authoritative standard zone. The time to live
+         *                 (TTL) value affects the time when a DNS record change takes effect. You cannot
+         *                 use custom DNS lines or weighted round-robin.</li>
+         *                 <li>FAST_ZONE: Accelerated zone (recommended). DNS queries are directly responded
+         *                 to with the lowest latency. DNS record changes take effect in real time. You can
+         *                 use custom DNS lines and weighted round-robin.
+         *                 Default value: NORMAL_ZONE.</li>
          *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 The built-in authoritative accelerated zone is located before the cache module.
+         *                 DNS responses are not cached. This may increase the number of DNS queries and
+         *                 your costs.
+         *                 Starting from April 30, 2025 (UTC+8), when new users activate Cloud DNS
+         *                 PrivateZone, added zones are set as accelerated zones by default.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder dnsGroup(com.aliyun.ros.cdk.core.IResolvable dnsGroup) {
@@ -163,9 +220,18 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneProps#getProxyPattern}
-         * @param proxyPattern Property proxyPattern: ZONE: completely hijack the entire zone.
-         *                     RECORD: Incomplete hijacking, recursive resolution agent.
-         *                     Default to ZONE.
+         * @param proxyPattern Property proxyPattern: Specifies whether to enable subdomain recursive proxy.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>ZONE: Disables the feature. If a DNS query for a subdomain that does not exist
+         *                     under the current domain name is received, an NXDOMAIN error is returned.</li>
+         *                     <li>RECORD: Enables the feature. If a DNS query for a subdomain that does not exist
+         *                     under the current domain name is received, the query is processed by the
+         *                     forwarding and recursion modules in sequence. The final result is used to respond
+         *                     to the DNS query.
+         *                     Default value: ZONE.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder proxyPattern(java.lang.String proxyPattern) {
@@ -175,9 +241,18 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneProps#getProxyPattern}
-         * @param proxyPattern Property proxyPattern: ZONE: completely hijack the entire zone.
-         *                     RECORD: Incomplete hijacking, recursive resolution agent.
-         *                     Default to ZONE.
+         * @param proxyPattern Property proxyPattern: Specifies whether to enable subdomain recursive proxy.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>ZONE: Disables the feature. If a DNS query for a subdomain that does not exist
+         *                     under the current domain name is received, an NXDOMAIN error is returned.</li>
+         *                     <li>RECORD: Enables the feature. If a DNS query for a subdomain that does not exist
+         *                     under the current domain name is received, the query is processed by the
+         *                     forwarding and recursion modules in sequence. The final result is used to respond
+         *                     to the DNS query.
+         *                     Default value: ZONE.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder proxyPattern(com.aliyun.ros.cdk.core.IResolvable proxyPattern) {

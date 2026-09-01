@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Queue`, which is used to create a queue.
+// This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Queue`.
 type Queue interface {
 	alicloudroscdkcore.Resource
 	IQueue

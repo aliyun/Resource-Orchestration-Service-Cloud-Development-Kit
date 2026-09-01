@@ -73,7 +73,7 @@ export interface IImageLib extends ros.IResource {
     readonly attrScene: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::ImageLib`, which is used to create a custom image library.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::ImageLib`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImageLib`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-imagelib
  */

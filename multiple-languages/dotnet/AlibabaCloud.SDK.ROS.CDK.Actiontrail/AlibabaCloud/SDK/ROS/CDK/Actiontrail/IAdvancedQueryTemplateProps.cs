@@ -25,7 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
             get;
         }
 
-        /// <summary>Property templateName: The name of the advanced query template.</summary>
+        /// <summary>Property templateName: The name of the template, which can contain a maximum of 64 characters.</summary>
+        /// <remarks>
+        /// Uniqueness is not required.
+        /// </remarks>
         [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? TemplateName
@@ -61,7 +64,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property templateName: The name of the advanced query template.</summary>
+            /// <summary>Property templateName: The name of the template, which can contain a maximum of 64 characters.</summary>
+            /// <remarks>
+            /// Uniqueness is not required.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? TemplateName

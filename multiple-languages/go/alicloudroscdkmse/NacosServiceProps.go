@@ -6,6 +6,9 @@ package alicloudroscdkmse
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosservice
 type NacosServiceProps struct {
 	// Property instanceId: The ID of the instance.
+	//
+	// > This operation contains both the InstanceId and ClusterId parameters. You must
+	// specify one of them.
 	InstanceId interface{} `field:"required" json:"instanceId" yaml:"instanceId"`
 	// Property serviceName: The name of the service.
 	ServiceName interface{} `field:"required" json:"serviceName" yaml:"serviceName"`

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::EAIS::ClientInstanceAttachment`, which is used to attach an Elastic Accelerated Computing Instances (EAIS) instance to an Elastic Compute Service (ECS) instance or elastic container instance of a user.
+// This class encapsulates and extends the ROS resource type `ALIYUN::EAIS::ClientInstanceAttachment`.
 type ClientInstanceAttachment interface {
 	alicloudroscdkcore.Resource
 	IClientInstanceAttachment

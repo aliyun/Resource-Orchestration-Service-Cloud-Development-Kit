@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::EciScalingConfiguration</code>, which is used to define a scaling configuration of the Elastic Container Instance type in Auto Scaling.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:56:08.377Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:06:45.531Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.EciScalingConfiguration")
 public class EciScalingConfiguration extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ess.IEciScalingConfiguration {
 
@@ -135,8 +135,12 @@ public class EciScalingConfiguration extends com.aliyun.ros.cdk.core.Resource im
         /**
          * Property scalingConfigurationName: The name of the scaling configuration.
          * <p>
-         * The name must be 2 to 64 characters in length and can contain letters, digits, underscores (_), hyphens (-), and periods (.). The name must start with a letter or a digit.
-         * The name of the scaling configuration must be unique in a region. If you do not specify this parameter, the scaling configuration ID is used.
+         * The name must be 2 to 64 characters in
+         * length and can contain letters, digits, underscores (_), hyphens (-), and periods
+         * (.). The name must start with a letter or a digit.
+         * The name of the scaling configuration must be unique within a scaling group in a
+         * region. If you do not specify this parameter, the value of the
+         * ScalingConfigurationId parameter is used.
          * <p>
          * @return {@code this}
          * @param scalingConfigurationName Property scalingConfigurationName: The name of the scaling configuration. This parameter is required.
@@ -148,8 +152,12 @@ public class EciScalingConfiguration extends com.aliyun.ros.cdk.core.Resource im
         /**
          * Property scalingConfigurationName: The name of the scaling configuration.
          * <p>
-         * The name must be 2 to 64 characters in length and can contain letters, digits, underscores (_), hyphens (-), and periods (.). The name must start with a letter or a digit.
-         * The name of the scaling configuration must be unique in a region. If you do not specify this parameter, the scaling configuration ID is used.
+         * The name must be 2 to 64 characters in
+         * length and can contain letters, digits, underscores (_), hyphens (-), and periods
+         * (.). The name must start with a letter or a digit.
+         * The name of the scaling configuration must be unique within a scaling group in a
+         * region. If you do not specify this parameter, the value of the
+         * ScalingConfigurationId parameter is used.
          * <p>
          * @return {@code this}
          * @param scalingConfigurationName Property scalingConfigurationName: The name of the scaling configuration. This parameter is required.
@@ -524,28 +532,28 @@ public class EciScalingConfiguration extends com.aliyun.ros.cdk.core.Resource im
         }
 
         /**
-         * Property dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching.
+         * Property dataCacheProvisionedIops: The provisioned read/write input/output operations per second (IOPS) for the ESSD AutoPL disk when data caching uses an ESSD AutoPL disk.
          * <p>
-         * Valid values: 0 to min{50000, 1000 × Capacity - Baseline IOPS}, where Baseline IOPS = min{1800 + 50 × Capacity - 50000}.
-         * Note
-         * For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+         * Valid values: 0 to
+         * min{50000, 1000 × capacity − baseline performance}, where baseline performance =
+         * min{1800 + 50 × capacity, 50000}.
          * <p>
          * @return {@code this}
-         * @param dataCacheProvisionedIops Property dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching. This parameter is required.
+         * @param dataCacheProvisionedIops Property dataCacheProvisionedIops: The provisioned read/write input/output operations per second (IOPS) for the ESSD AutoPL disk when data caching uses an ESSD AutoPL disk. This parameter is required.
          */
         public Builder dataCacheProvisionedIops(final java.lang.Number dataCacheProvisionedIops) {
             this.props.dataCacheProvisionedIops(dataCacheProvisionedIops);
             return this;
         }
         /**
-         * Property dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching.
+         * Property dataCacheProvisionedIops: The provisioned read/write input/output operations per second (IOPS) for the ESSD AutoPL disk when data caching uses an ESSD AutoPL disk.
          * <p>
-         * Valid values: 0 to min{50000, 1000 × Capacity - Baseline IOPS}, where Baseline IOPS = min{1800 + 50 × Capacity - 50000}.
-         * Note
-         * For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+         * Valid values: 0 to
+         * min{50000, 1000 × capacity − baseline performance}, where baseline performance =
+         * min{1800 + 50 × capacity, 50000}.
          * <p>
          * @return {@code this}
-         * @param dataCacheProvisionedIops Property dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching. This parameter is required.
+         * @param dataCacheProvisionedIops Property dataCacheProvisionedIops: The provisioned read/write input/output operations per second (IOPS) for the ESSD AutoPL disk when data caching uses an ESSD AutoPL disk. This parameter is required.
          */
         public Builder dataCacheProvisionedIops(final com.aliyun.ros.cdk.core.IResolvable dataCacheProvisionedIops) {
             this.props.dataCacheProvisionedIops(dataCacheProvisionedIops);
@@ -647,7 +655,7 @@ public class EciScalingConfiguration extends com.aliyun.ros.cdk.core.Resource im
         /**
          * Property egressBandwidth: The maximum outbound bandwidth.
          * <p>
-         * Unit: bytes.
+         * Unit: bit/s.
          * <p>
          * @return {@code this}
          * @param egressBandwidth Property egressBandwidth: The maximum outbound bandwidth. This parameter is required.
@@ -659,7 +667,7 @@ public class EciScalingConfiguration extends com.aliyun.ros.cdk.core.Resource im
         /**
          * Property egressBandwidth: The maximum outbound bandwidth.
          * <p>
-         * Unit: bytes.
+         * Unit: bit/s.
          * <p>
          * @return {@code this}
          * @param egressBandwidth Property egressBandwidth: The maximum outbound bandwidth. This parameter is required.
@@ -806,7 +814,7 @@ public class EciScalingConfiguration extends com.aliyun.ros.cdk.core.Resource im
         /**
          * Property ingressBandwidth: The maximum inbound bandwidth.
          * <p>
-         * Unit: bytes.
+         * Unit: bit/s.
          * <p>
          * @return {@code this}
          * @param ingressBandwidth Property ingressBandwidth: The maximum inbound bandwidth. This parameter is required.
@@ -818,7 +826,7 @@ public class EciScalingConfiguration extends com.aliyun.ros.cdk.core.Resource im
         /**
          * Property ingressBandwidth: The maximum inbound bandwidth.
          * <p>
-         * Unit: bytes.
+         * Unit: bit/s.
          * <p>
          * @return {@code this}
          * @param ingressBandwidth Property ingressBandwidth: The maximum inbound bandwidth. This parameter is required.

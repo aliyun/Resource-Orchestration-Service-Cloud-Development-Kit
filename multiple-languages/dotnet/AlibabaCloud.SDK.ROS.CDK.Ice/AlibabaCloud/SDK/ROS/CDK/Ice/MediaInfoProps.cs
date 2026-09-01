@@ -274,8 +274,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ice
         /// video
         /// audio
         /// text
-        /// We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension. For more information
-        /// .
+        /// We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "mediaType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -492,6 +491,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ice
         /// <summary>Property userData: The user data.</summary>
         /// <remarks>
         /// You can specify a custom callback URL.
+        ///
+        /// <list type="bullet">
+        /// <description>The value can be up to 1,024 bytes in length.</description>
+        /// <description>The value must be encoded in UTF-8.</description>
+        /// <description>The value must be in the JSON format.</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "userData", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]

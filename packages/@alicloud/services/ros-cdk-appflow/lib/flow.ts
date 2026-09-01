@@ -20,7 +20,8 @@ export interface FlowProps {
     readonly flowDesc?: string | ros.IResolvable;
 
     /**
-     * Property flowId: The ID of the flow.
+     * Property flowId: The ID of the flow. This parameter is required when you update a flow or create a
+     * new flow version.
      */
     readonly flowId?: string | ros.IResolvable;
 
@@ -37,7 +38,10 @@ export interface FlowProps {
     readonly launchFlow?: boolean | ros.IResolvable;
 
     /**
-     * Property parameters: The parameters of the flow.
+     * Property parameters: The parameters for the template.
+     * You can specify up to 200 parameters.
+     * > This parameter is optional. If you use this parameter, you must specify both
+     * ParameterKey and ParameterValue for each entry.
      */
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -47,7 +51,8 @@ export interface FlowProps {
     readonly template?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * Property templateId: The ID of the template.
+     * Property templateId: The ID of the template. Specify this parameter when you create a flow from a
+     * template in the Template Center.
      */
     readonly templateId?: string | ros.IResolvable;
 }
@@ -69,7 +74,7 @@ export interface IFlow extends ros.IResource {
     readonly attrWebhookAddress: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::Flow`, which is used to create a flow.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::Flow`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlow`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-flow
  */

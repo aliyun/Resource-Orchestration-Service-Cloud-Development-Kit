@@ -48,8 +48,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _ipv6AddressCount;
 
         /// <remarks>
-        /// <strong>Property</strong>: ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
-        /// Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
+        /// <strong>Property</strong>: ipv6AddressCount: The number of IPv6 addresses to randomly generate for the ENI. Valid values: 1 to
+        /// 10.
+        /// > You must specify `Ipv6Addresses.N` or `Ipv6AddressCount`, but not both.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -136,7 +137,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _ipv6PrefixCount;
 
         /// <remarks>
-        /// <strong>Property</strong>: ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+        /// <strong>Property</strong>: ipv6PrefixCount: The number of IPv6 prefixes to assign to the ENI. Valid values: 1 to 10.
+        /// > To assign IPv6 prefixes to the ENI, you must specify Ipv6Prefix.N or
+        /// Ipv6PrefixCount, but not both.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ipv6PrefixCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

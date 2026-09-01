@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.878Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.237Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DiskProps")
 @software.amazon.jsii.Jsii.Proxy(DiskProps.Jsii$Proxy.class)
 public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,7 +18,21 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property burstingEnabled: Whether enable bursting.
+     * Property burstingEnabled: Specifies whether to enable performance bursting.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true</li>
+     * <li>false</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is available only for ESSD AutoPL disks (<code>cloud_auto</code>). For more
+     * information, see <a href="">ESSD AutoPL disks</a>.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBurstingEnabled() {
         return null;
@@ -50,7 +64,13 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+     * Property diskName: The name of the disk.
+     * <p>
+     * The name must be 2 to 128 characters in length. It must
+     * start with a letter as defined by Unicode and can contain letters (including
+     * English and Chinese characters), digits (0-9), colons (:), underscores (_),
+     * periods (.), and hyphens (-).
+     * Default value: empty.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDiskName() {
         return null;
@@ -64,12 +84,14 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+     * Property instanceId: Creates a subscription disk and automatically attaches it to the specified subscription instance.
      * <p>
      * <ul>
-     * <li>Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.</li>
-     * <li>You cannot specify both ZoneId and InstanceId.
-     * Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.</li>
+     * <li>If you set this parameter, the <code>ResourceGroupId</code>, <code>Tag.N.Key</code>, <code>Tag.N.Value</code>,
+     * <code>ClientToken</code>, and <code>KMSKeyId</code> parameters are ignored.</li>
+     * <li>You cannot specify both <code>ZoneId</code> and <code>InstanceId</code>.
+     * Default value: empty. An empty value indicates that you are creating a
+     * pay-as-you-go disk. The disk's location is determined by <code>RegionId</code> and <code>ZoneId</code>.</li>
      * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
@@ -77,7 +99,33 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property kmsKeyId: KMS key ID used by the cloud disk.
+     * Property kmsKeyId: The ID of the KMS key to use for the disk.
+     * <p>
+     * <blockquote>
+     * <p>
+     * If <code>Encrypted</code> is set to true and you do not specify <code>KMSKeyId</code>, a default key
+     * is used for encryption. The <code>KMSKeyId</code> is returned in the response after the
+     * instance is created.
+     * <p>
+     * <ul>
+     * <li><ul>
+     * <li>If the disk is created from an unshared encrypted snapshot, the encryption
+     * key used by that snapshot is used by default.</li>
+     * </ul></li>
+     * <li><ul>
+     * <li>If the disk is created from a shared encrypted snapshot, the service key is
+     * used by default.</li>
+     * </ul></li>
+     * <li><ul>
+     * <li>If the disk is created in a region with account-level default encryption
+     * enabled, the specified account-level key is used by default.</li>
+     * </ul></li>
+     * <li><ul>
+     * <li>In other cases, the service key is used by default.</li>
+     * </ul></li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getKmsKeyId() {
         return null;
@@ -103,7 +151,22 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property provisionedIops: Provisioning IOPS.
+     * Property provisionedIops: The provisioned read/write IOPS of a single ESSD AutoPL disk.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Capacity &lt;= 3 GiB: You cannot set provisioned performance.</li>
+     * <li>Capacity &gt;= 4 GiB: 0 to min(1,000 IOPS/GiB × Capacity - Baseline IOPS, 50,000).
+     * Baseline IOPS = max(min(1,800 + 50 × Capacity, 50,000), 3,000).</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is available only for ESSD AutoPL disks (<code>cloud_auto</code>). For more
+     * information, see <a href="">ESSD AutoPL disks</a>.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProvisionedIops() {
         return null;
@@ -117,28 +180,78 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property size: The size of the disk unit in GB.
+     * Property size: The capacity of the disk, in GiB.
+     * <p>
+     * You must specify a value for this parameter.
+     * Value range:
+     * <p>
+     * <ul>
+     * <li><code>cloud</code>: 5 to 2,000</li>
+     * <li><code>cloud_efficiency</code>: 20 to 32,768</li>
+     * <li><code>cloud_ssd</code>: 20 to 32,768</li>
+     * <li><code>PerformanceLevel</code></li>
+     * <li>PL0: 1 to 65,536</li>
+     * <li>PL1: 20 to 65,536</li>
+     * <li>PL2: 461 to 65,536</li>
+     * <li>PL3: 1,261 to 65,536</li>
+     * <li><code>cloud_auto</code>: 1 to 65,536</li>
+     * <li><code>cloud_essd_entry</code>: 10 to 32,768</li>
+     * <li><code>cloud_regional_disk_auto</code>: 10 to 65,536</li>
+     * <li><code>elastic_ephemeral_disk_standard</code>: 64 to 8,192</li>
+     * <li><code>elastic_ephemeral_disk_premium</code>: 64 to 8,192
+     * If you specify <code>SnapshotId</code>, the following limits apply to <code>SnapshotId</code> and
+     * <code>Size</code>:</li>
+     * <li>If the snapshot capacity is greater than the specified <code>Size</code>, the actual disk
+     * size is the snapshot capacity.</li>
+     * <li>If the snapshot capacity is smaller than the specified <code>Size</code>, the actual disk
+     * size is the specified <code>Size</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSize() {
         return null;
     }
 
     /**
-     * Property snapshotId: If specified, the backup used as the source to create disk.
+     * Property snapshotId: The ID of the snapshot used to create the disk.
+     * <p>
+     * Snapshots created on or before
+     * July 15, 2013 cannot be used to create disks.
+     * The <code>SnapshotId</code> and <code>Size</code> parameters have the following limits:
+     * <p>
+     * <ul>
+     * <li>If the snapshot capacity is greater than the specified <code>Size</code>, the actual disk
+     * size is the snapshot capacity.</li>
+     * <li>If the snapshot capacity is smaller than the specified <code>Size</code>, the actual disk
+     * size is the specified <code>Size</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotId() {
         return null;
     }
 
     /**
-     * Property storageSetId: Storage set ID.
+     * Property storageSetId: The ID of the storage set.
+     * <p>
+     * <blockquote>
+     * <p>
+     * You can specify either storage set parameters (<code>StorageSetId</code> and
+     * <code>StorageSetPartitionNumber</code>) or the dedicated block storage cluster parameter
+     * (<code>StorageClusterId</code>), but not both. The request fails if you specify parameters
+     * for both.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStorageSetId() {
         return null;
     }
 
     /**
-     * Property storageSetPartitionNumber: The number of storage set partitions.
+     * Property storageSetPartitionNumber: The number of partitions in the storage set.
+     * <p>
+     * The value must be greater than or
+     * equal to 2 and cannot exceed the quota returned by the
+     * <a href="">DescribeAccountAttributes</a> operation.
+     * Default value: 2.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStorageSetPartitionNumber() {
         return null;
@@ -154,12 +267,19 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+     * Property zoneId: The ID of the zone in which to create the pay-as-you-go disk.
      * <p>
      * <ul>
-     * <li>If you do not set InstanceId, ZoneId is required.</li>
-     * <li>You cannot specify both ZoneId and InstanceId.</li>
+     * <li>If you do not set <code>InstanceId</code>, this parameter is required.</li>
+     * <li>You cannot specify both <code>ZoneId</code> and <code>InstanceId</code>.</li>
      * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * ESSD zone-redundant disks (<code>cloud_regional_disk_auto</code>) do not require a zone
+     * ID.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
@@ -217,7 +337,20 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getBurstingEnabled}
-         * @param burstingEnabled Property burstingEnabled: Whether enable bursting.
+         * @param burstingEnabled Property burstingEnabled: Specifies whether to enable performance bursting.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>true</li>
+         *                        <li>false</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is available only for ESSD AutoPL disks (<code>cloud_auto</code>). For more
+         *                        information, see <a href="">ESSD AutoPL disks</a>.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder burstingEnabled(java.lang.Boolean burstingEnabled) {
@@ -227,7 +360,20 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getBurstingEnabled}
-         * @param burstingEnabled Property burstingEnabled: Whether enable bursting.
+         * @param burstingEnabled Property burstingEnabled: Specifies whether to enable performance bursting.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>true</li>
+         *                        <li>false</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is available only for ESSD AutoPL disks (<code>cloud_auto</code>). For more
+         *                        information, see <a href="">ESSD AutoPL disks</a>.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder burstingEnabled(com.aliyun.ros.cdk.core.IResolvable burstingEnabled) {
@@ -301,7 +447,12 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getDiskName}
-         * @param diskName Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * @param diskName Property diskName: The name of the disk.
+         *                 The name must be 2 to 128 characters in length. It must
+         *                 start with a letter as defined by Unicode and can contain letters (including
+         *                 English and Chinese characters), digits (0-9), colons (:), underscores (_),
+         *                 periods (.), and hyphens (-).
+         *                 Default value: empty.
          * @return {@code this}
          */
         public Builder diskName(java.lang.String diskName) {
@@ -311,7 +462,12 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getDiskName}
-         * @param diskName Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * @param diskName Property diskName: The name of the disk.
+         *                 The name must be 2 to 128 characters in length. It must
+         *                 start with a letter as defined by Unicode and can contain letters (including
+         *                 English and Chinese characters), digits (0-9), colons (:), underscores (_),
+         *                 periods (.), and hyphens (-).
+         *                 Default value: empty.
          * @return {@code this}
          */
         public Builder diskName(com.aliyun.ros.cdk.core.IResolvable diskName) {
@@ -341,11 +497,13 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getInstanceId}
-         * @param instanceId Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+         * @param instanceId Property instanceId: Creates a subscription disk and automatically attaches it to the specified subscription instance.
          *                   <ul>
-         *                   <li>Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.</li>
-         *                   <li>You cannot specify both ZoneId and InstanceId.
-         *                   Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.</li>
+         *                   <li>If you set this parameter, the <code>ResourceGroupId</code>, <code>Tag.N.Key</code>, <code>Tag.N.Value</code>,
+         *                   <code>ClientToken</code>, and <code>KMSKeyId</code> parameters are ignored.</li>
+         *                   <li>You cannot specify both <code>ZoneId</code> and <code>InstanceId</code>.
+         *                   Default value: empty. An empty value indicates that you are creating a
+         *                   pay-as-you-go disk. The disk's location is determined by <code>RegionId</code> and <code>ZoneId</code>.</li>
          *                   </ul>
          * @return {@code this}
          */
@@ -356,11 +514,13 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getInstanceId}
-         * @param instanceId Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+         * @param instanceId Property instanceId: Creates a subscription disk and automatically attaches it to the specified subscription instance.
          *                   <ul>
-         *                   <li>Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.</li>
-         *                   <li>You cannot specify both ZoneId and InstanceId.
-         *                   Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.</li>
+         *                   <li>If you set this parameter, the <code>ResourceGroupId</code>, <code>Tag.N.Key</code>, <code>Tag.N.Value</code>,
+         *                   <code>ClientToken</code>, and <code>KMSKeyId</code> parameters are ignored.</li>
+         *                   <li>You cannot specify both <code>ZoneId</code> and <code>InstanceId</code>.
+         *                   Default value: empty. An empty value indicates that you are creating a
+         *                   pay-as-you-go disk. The disk's location is determined by <code>RegionId</code> and <code>ZoneId</code>.</li>
          *                   </ul>
          * @return {@code this}
          */
@@ -371,7 +531,32 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getKmsKeyId}
-         * @param kmsKeyId Property kmsKeyId: KMS key ID used by the cloud disk.
+         * @param kmsKeyId Property kmsKeyId: The ID of the KMS key to use for the disk.
+         *                 <blockquote>
+         *                 <p>
+         *                 If <code>Encrypted</code> is set to true and you do not specify <code>KMSKeyId</code>, a default key
+         *                 is used for encryption. The <code>KMSKeyId</code> is returned in the response after the
+         *                 instance is created.
+         *                 <p>
+         *                 <ul>
+         *                 <li><ul>
+         *                 <li>If the disk is created from an unshared encrypted snapshot, the encryption
+         *                 key used by that snapshot is used by default.</li>
+         *                 </ul></li>
+         *                 <li><ul>
+         *                 <li>If the disk is created from a shared encrypted snapshot, the service key is
+         *                 used by default.</li>
+         *                 </ul></li>
+         *                 <li><ul>
+         *                 <li>If the disk is created in a region with account-level default encryption
+         *                 enabled, the specified account-level key is used by default.</li>
+         *                 </ul></li>
+         *                 <li><ul>
+         *                 <li>In other cases, the service key is used by default.</li>
+         *                 </ul></li>
+         *                 </ul>
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder kmsKeyId(java.lang.String kmsKeyId) {
@@ -381,7 +566,32 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getKmsKeyId}
-         * @param kmsKeyId Property kmsKeyId: KMS key ID used by the cloud disk.
+         * @param kmsKeyId Property kmsKeyId: The ID of the KMS key to use for the disk.
+         *                 <blockquote>
+         *                 <p>
+         *                 If <code>Encrypted</code> is set to true and you do not specify <code>KMSKeyId</code>, a default key
+         *                 is used for encryption. The <code>KMSKeyId</code> is returned in the response after the
+         *                 instance is created.
+         *                 <p>
+         *                 <ul>
+         *                 <li><ul>
+         *                 <li>If the disk is created from an unshared encrypted snapshot, the encryption
+         *                 key used by that snapshot is used by default.</li>
+         *                 </ul></li>
+         *                 <li><ul>
+         *                 <li>If the disk is created from a shared encrypted snapshot, the service key is
+         *                 used by default.</li>
+         *                 </ul></li>
+         *                 <li><ul>
+         *                 <li>If the disk is created in a region with account-level default encryption
+         *                 enabled, the specified account-level key is used by default.</li>
+         *                 </ul></li>
+         *                 <li><ul>
+         *                 <li>In other cases, the service key is used by default.</li>
+         *                 </ul></li>
+         *                 </ul>
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder kmsKeyId(com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
@@ -439,7 +649,21 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getProvisionedIops}
-         * @param provisionedIops Property provisionedIops: Provisioning IOPS.
+         * @param provisionedIops Property provisionedIops: The provisioned read/write IOPS of a single ESSD AutoPL disk.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>Capacity &lt;= 3 GiB: You cannot set provisioned performance.</li>
+         *                        <li>Capacity &gt;= 4 GiB: 0 to min(1,000 IOPS/GiB × Capacity - Baseline IOPS, 50,000).
+         *                        Baseline IOPS = max(min(1,800 + 50 × Capacity, 50,000), 3,000).</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is available only for ESSD AutoPL disks (<code>cloud_auto</code>). For more
+         *                        information, see <a href="">ESSD AutoPL disks</a>.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder provisionedIops(java.lang.Number provisionedIops) {
@@ -449,7 +673,21 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getProvisionedIops}
-         * @param provisionedIops Property provisionedIops: Provisioning IOPS.
+         * @param provisionedIops Property provisionedIops: The provisioned read/write IOPS of a single ESSD AutoPL disk.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>Capacity &lt;= 3 GiB: You cannot set provisioned performance.</li>
+         *                        <li>Capacity &gt;= 4 GiB: 0 to min(1,000 IOPS/GiB × Capacity - Baseline IOPS, 50,000).
+         *                        Baseline IOPS = max(min(1,800 + 50 × Capacity, 50,000), 3,000).</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is available only for ESSD AutoPL disks (<code>cloud_auto</code>). For more
+         *                        information, see <a href="">ESSD AutoPL disks</a>.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder provisionedIops(com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
@@ -479,7 +717,31 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getSize}
-         * @param size Property size: The size of the disk unit in GB.
+         * @param size Property size: The capacity of the disk, in GiB.
+         *             You must specify a value for this parameter.
+         *             Value range:
+         *             <p>
+         *             <ul>
+         *             <li><code>cloud</code>: 5 to 2,000</li>
+         *             <li><code>cloud_efficiency</code>: 20 to 32,768</li>
+         *             <li><code>cloud_ssd</code>: 20 to 32,768</li>
+         *             <li><code>PerformanceLevel</code></li>
+         *             <li>PL0: 1 to 65,536</li>
+         *             <li>PL1: 20 to 65,536</li>
+         *             <li>PL2: 461 to 65,536</li>
+         *             <li>PL3: 1,261 to 65,536</li>
+         *             <li><code>cloud_auto</code>: 1 to 65,536</li>
+         *             <li><code>cloud_essd_entry</code>: 10 to 32,768</li>
+         *             <li><code>cloud_regional_disk_auto</code>: 10 to 65,536</li>
+         *             <li><code>elastic_ephemeral_disk_standard</code>: 64 to 8,192</li>
+         *             <li><code>elastic_ephemeral_disk_premium</code>: 64 to 8,192
+         *             If you specify <code>SnapshotId</code>, the following limits apply to <code>SnapshotId</code> and
+         *             <code>Size</code>:</li>
+         *             <li>If the snapshot capacity is greater than the specified <code>Size</code>, the actual disk
+         *             size is the snapshot capacity.</li>
+         *             <li>If the snapshot capacity is smaller than the specified <code>Size</code>, the actual disk
+         *             size is the specified <code>Size</code>.</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder size(java.lang.Number size) {
@@ -489,7 +751,31 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getSize}
-         * @param size Property size: The size of the disk unit in GB.
+         * @param size Property size: The capacity of the disk, in GiB.
+         *             You must specify a value for this parameter.
+         *             Value range:
+         *             <p>
+         *             <ul>
+         *             <li><code>cloud</code>: 5 to 2,000</li>
+         *             <li><code>cloud_efficiency</code>: 20 to 32,768</li>
+         *             <li><code>cloud_ssd</code>: 20 to 32,768</li>
+         *             <li><code>PerformanceLevel</code></li>
+         *             <li>PL0: 1 to 65,536</li>
+         *             <li>PL1: 20 to 65,536</li>
+         *             <li>PL2: 461 to 65,536</li>
+         *             <li>PL3: 1,261 to 65,536</li>
+         *             <li><code>cloud_auto</code>: 1 to 65,536</li>
+         *             <li><code>cloud_essd_entry</code>: 10 to 32,768</li>
+         *             <li><code>cloud_regional_disk_auto</code>: 10 to 65,536</li>
+         *             <li><code>elastic_ephemeral_disk_standard</code>: 64 to 8,192</li>
+         *             <li><code>elastic_ephemeral_disk_premium</code>: 64 to 8,192
+         *             If you specify <code>SnapshotId</code>, the following limits apply to <code>SnapshotId</code> and
+         *             <code>Size</code>:</li>
+         *             <li>If the snapshot capacity is greater than the specified <code>Size</code>, the actual disk
+         *             size is the snapshot capacity.</li>
+         *             <li>If the snapshot capacity is smaller than the specified <code>Size</code>, the actual disk
+         *             size is the specified <code>Size</code>.</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder size(com.aliyun.ros.cdk.core.IResolvable size) {
@@ -499,7 +785,17 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getSnapshotId}
-         * @param snapshotId Property snapshotId: If specified, the backup used as the source to create disk.
+         * @param snapshotId Property snapshotId: The ID of the snapshot used to create the disk.
+         *                   Snapshots created on or before
+         *                   July 15, 2013 cannot be used to create disks.
+         *                   The <code>SnapshotId</code> and <code>Size</code> parameters have the following limits:
+         *                   <p>
+         *                   <ul>
+         *                   <li>If the snapshot capacity is greater than the specified <code>Size</code>, the actual disk
+         *                   size is the snapshot capacity.</li>
+         *                   <li>If the snapshot capacity is smaller than the specified <code>Size</code>, the actual disk
+         *                   size is the specified <code>Size</code>.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder snapshotId(java.lang.String snapshotId) {
@@ -509,7 +805,17 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getSnapshotId}
-         * @param snapshotId Property snapshotId: If specified, the backup used as the source to create disk.
+         * @param snapshotId Property snapshotId: The ID of the snapshot used to create the disk.
+         *                   Snapshots created on or before
+         *                   July 15, 2013 cannot be used to create disks.
+         *                   The <code>SnapshotId</code> and <code>Size</code> parameters have the following limits:
+         *                   <p>
+         *                   <ul>
+         *                   <li>If the snapshot capacity is greater than the specified <code>Size</code>, the actual disk
+         *                   size is the snapshot capacity.</li>
+         *                   <li>If the snapshot capacity is smaller than the specified <code>Size</code>, the actual disk
+         *                   size is the specified <code>Size</code>.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder snapshotId(com.aliyun.ros.cdk.core.IResolvable snapshotId) {
@@ -519,7 +825,15 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getStorageSetId}
-         * @param storageSetId Property storageSetId: Storage set ID.
+         * @param storageSetId Property storageSetId: The ID of the storage set.
+         *                     <blockquote>
+         *                     <p>
+         *                     You can specify either storage set parameters (<code>StorageSetId</code> and
+         *                     <code>StorageSetPartitionNumber</code>) or the dedicated block storage cluster parameter
+         *                     (<code>StorageClusterId</code>), but not both. The request fails if you specify parameters
+         *                     for both.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder storageSetId(java.lang.String storageSetId) {
@@ -529,7 +843,15 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getStorageSetId}
-         * @param storageSetId Property storageSetId: Storage set ID.
+         * @param storageSetId Property storageSetId: The ID of the storage set.
+         *                     <blockquote>
+         *                     <p>
+         *                     You can specify either storage set parameters (<code>StorageSetId</code> and
+         *                     <code>StorageSetPartitionNumber</code>) or the dedicated block storage cluster parameter
+         *                     (<code>StorageClusterId</code>), but not both. The request fails if you specify parameters
+         *                     for both.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder storageSetId(com.aliyun.ros.cdk.core.IResolvable storageSetId) {
@@ -539,7 +861,11 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getStorageSetPartitionNumber}
-         * @param storageSetPartitionNumber Property storageSetPartitionNumber: The number of storage set partitions.
+         * @param storageSetPartitionNumber Property storageSetPartitionNumber: The number of partitions in the storage set.
+         *                                  The value must be greater than or
+         *                                  equal to 2 and cannot exceed the quota returned by the
+         *                                  <a href="">DescribeAccountAttributes</a> operation.
+         *                                  Default value: 2.
          * @return {@code this}
          */
         public Builder storageSetPartitionNumber(java.lang.Number storageSetPartitionNumber) {
@@ -549,7 +875,11 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getStorageSetPartitionNumber}
-         * @param storageSetPartitionNumber Property storageSetPartitionNumber: The number of storage set partitions.
+         * @param storageSetPartitionNumber Property storageSetPartitionNumber: The number of partitions in the storage set.
+         *                                  The value must be greater than or
+         *                                  equal to 2 and cannot exceed the quota returned by the
+         *                                  <a href="">DescribeAccountAttributes</a> operation.
+         *                                  Default value: 2.
          * @return {@code this}
          */
         public Builder storageSetPartitionNumber(com.aliyun.ros.cdk.core.IResolvable storageSetPartitionNumber) {
@@ -571,11 +901,18 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getZoneId}
-         * @param zoneId Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+         * @param zoneId Property zoneId: The ID of the zone in which to create the pay-as-you-go disk.
          *               <ul>
-         *               <li>If you do not set InstanceId, ZoneId is required.</li>
-         *               <li>You cannot specify both ZoneId and InstanceId.</li>
+         *               <li>If you do not set <code>InstanceId</code>, this parameter is required.</li>
+         *               <li>You cannot specify both <code>ZoneId</code> and <code>InstanceId</code>.</li>
          *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               ESSD zone-redundant disks (<code>cloud_regional_disk_auto</code>) do not require a zone
+         *               ID.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
@@ -585,11 +922,18 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getZoneId}
-         * @param zoneId Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+         * @param zoneId Property zoneId: The ID of the zone in which to create the pay-as-you-go disk.
          *               <ul>
-         *               <li>If you do not set InstanceId, ZoneId is required.</li>
-         *               <li>You cannot specify both ZoneId and InstanceId.</li>
+         *               <li>If you do not set <code>InstanceId</code>, this parameter is required.</li>
+         *               <li>You cannot specify both <code>ZoneId</code> and <code>InstanceId</code>.</li>
          *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               ESSD zone-redundant disks (<code>cloud_regional_disk_auto</code>) do not require a zone
+         *               ID.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {

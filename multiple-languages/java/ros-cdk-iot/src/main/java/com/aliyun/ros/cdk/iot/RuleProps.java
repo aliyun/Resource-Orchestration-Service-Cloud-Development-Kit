@@ -5,17 +5,16 @@ package com.aliyun.ros.cdk.iot;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-rule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:35:50.741Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:45:11.700Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RuleProps")
 @software.amazon.jsii.Jsii.Proxy(RuleProps.Jsii$Proxy.class)
 public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property name: The name of the rule.
+     * Property name: The name of the data forwarding rule.
      * <p>
-     * The name must be 1 to 30 characters in length and can contain
-     * English letters, digits, underscores (_), and hyphens (-). Chinese language is also
-     * supported. Each Chinese symbol occupies 2 characters.
+     * The rule name must be 1 to 30 characters in
+     * length, and can contain letters, digits, underscores (_), and hyphens (-).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
@@ -54,10 +53,17 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property resourceGroupId: The ID of the resource group to which the rule is assigned.
      * <p>
-     * You can view the resource
-     * group information in the Resource Management console.
-     * If you do not specify this parameter, the rule is assigned to the default resource
-     * group.
+     * You can view the
+     * resource group information in the Resource Management console.
+     * <p>
+     * <blockquote>
+     * <p>
+     * You can specify a value for this parameter only if you have activated Resource
+     * Management.
+     * If you do not specify this parameter, the rule is assigned to the default
+     * resource group.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
@@ -180,10 +186,9 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RuleProps#getName}
-         * @param name Property name: The name of the rule. This parameter is required.
-         *             The name must be 1 to 30 characters in length and can contain
-         *             English letters, digits, underscores (_), and hyphens (-). Chinese language is also
-         *             supported. Each Chinese symbol occupies 2 characters.
+         * @param name Property name: The name of the data forwarding rule. This parameter is required.
+         *             The rule name must be 1 to 30 characters in
+         *             length, and can contain letters, digits, underscores (_), and hyphens (-).
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -193,10 +198,9 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RuleProps#getName}
-         * @param name Property name: The name of the rule. This parameter is required.
-         *             The name must be 1 to 30 characters in length and can contain
-         *             English letters, digits, underscores (_), and hyphens (-). Chinese language is also
-         *             supported. Each Chinese symbol occupies 2 characters.
+         * @param name Property name: The name of the data forwarding rule. This parameter is required.
+         *             The rule name must be 1 to 30 characters in
+         *             length, and can contain letters, digits, underscores (_), and hyphens (-).
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
@@ -285,10 +289,17 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link RuleProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the rule is assigned.
-         *                        You can view the resource
-         *                        group information in the Resource Management console.
-         *                        If you do not specify this parameter, the rule is assigned to the default resource
-         *                        group.
+         *                        You can view the
+         *                        resource group information in the Resource Management console.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        You can specify a value for this parameter only if you have activated Resource
+         *                        Management.
+         *                        If you do not specify this parameter, the rule is assigned to the default
+         *                        resource group.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -299,10 +310,17 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link RuleProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the rule is assigned.
-         *                        You can view the resource
-         *                        group information in the Resource Management console.
-         *                        If you do not specify this parameter, the rule is assigned to the default resource
-         *                        group.
+         *                        You can view the
+         *                        resource group information in the Resource Management console.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        You can specify a value for this parameter only if you have activated Resource
+         *                        Management.
+         *                        If you do not specify this parameter, the rule is assigned to the default
+         *                        resource group.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {

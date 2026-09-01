@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearch::Instance`The , which resource is used to create an Elasticsearch instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearch::Instance`.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

@@ -48,7 +48,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _description;
 
         /// <remarks>
-        /// <strong>Property</strong>: description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:\/\/ or https:\/\/. The description will appear on the console. By default, the value is zero.
+        /// <strong>Property</strong>: description: The snapshot description must be 2 to 256 characters in length and cannot start
+        /// with `http:\/\/` or `https:\/\/`.
+        /// This parameter is empty by default.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -81,12 +83,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _instantAccess;
 
         /// <remarks>
-        /// <strong>Property</strong>: instantAccess: Specifies whether to enable the instant access feature. Valid values:
-        /// true: enables the instant access feature. This feature can be enabled only for enhanced SSDs (ESSDs)
-        /// false: disables the instant access feature. If InstantAccess is set to false, normal snapshots are created.
+        /// <strong>Property</strong>: instantAccess: Specifies whether to enable the Instant Access feature. Valid values:
+        /// - true: Enables the Instant Access feature. This feature can be enabled only for
+        /// snapshots of ESSD cloud disks.
+        /// - false: Disables the Instant Access feature. A standard snapshot is created.
         /// Default value: false.
-        /// Note This parameter and the Category parameter cannot be specified at the same time.
-        /// For more information, see the "Description" section in this topic.
+        /// > This parameter is deprecated. standard snapshots for ESSD cloud disks now
+        /// include the [Instant Access]() feature by default at no additional cost.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "instantAccess", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -119,11 +122,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _instantAccessRetentionDays;
 
         /// <remarks>
-        /// <strong>Property</strong>: instantAccessRetentionDays: Specifies the retention period of the instant access feature. After the retention period ends,
-        /// the snapshot is automatically released. This parameter takes effect only when InstantAccess
-        /// is set to true. Unit: days.
-        /// Valid values: 1 to 65535. By default, the value of
-        /// this parameter is the same as that of RetentionDays.
+        /// <strong>Property</strong>: instantAccessRetentionDays: The retention period for the Instant Access feature, in days. The snapshot is
+        /// automatically deleted when this retention period expires. This parameter takes
+        /// effect only when `InstantAccess` is set to `true`. Valid values: 1 to 65,535.
+        /// Defaults to the value of `RetentionDays`.
+        /// > This parameter is deprecated. standard snapshots for ESSD cloud disks now
+        /// include the [Instant Access]() feature by default at no additional cost.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "instantAccessRetentionDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -209,8 +213,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _retentionDays;
 
         /// <remarks>
-        /// <strong>Property</strong>: retentionDays: Set the retention period of a snapshot in days. The snapshot will be automatically released after the retention period expires.
-        /// The value ranges from 1 to 65536.
+        /// <strong>Property</strong>: retentionDays: The retention period of the snapshot, in days. Valid values: 1 to 65,536. The
+        /// snapshot is automatically deleted when the retention period expires.
+        /// If this parameter is not specified, the snapshot is retained indefinitely.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "retentionDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -263,7 +268,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _snapshotName;
 
         /// <remarks>
-        /// <strong>Property</strong>: snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
+        /// <strong>Property</strong>: snapshotName: The snapshot name must be 2 to 128 characters long. It must start with a letter
+        /// or a Chinese character and can contain letters, digits, colons (:), underscores
+        /// (_), periods (.), and hyphens (-).
+        /// > The name cannot start with `http:\/\/` or `https:\/\/`. To avoid conflicts with
+        /// auto snapshot names, the name cannot start with `auto`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "snapshotName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

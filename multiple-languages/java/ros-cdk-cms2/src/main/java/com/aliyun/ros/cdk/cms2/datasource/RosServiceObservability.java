@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms2.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CMS2::ServiceObservability</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:59:01.365Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:47:49.001Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms2.$Module.class, fqn = "@alicloud/ros-cdk-cms2.datasource.RosServiceObservability")
 public class RosServiceObservability extends com.aliyun.ros.cdk.core.RosResource {
 

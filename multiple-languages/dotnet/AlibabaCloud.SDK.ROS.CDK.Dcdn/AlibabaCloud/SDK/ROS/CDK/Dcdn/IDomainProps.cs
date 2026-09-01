@@ -28,7 +28,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dcdn
             get;
         }
 
-        /// <summary>Property checkUrl: The validation of the origin.</summary>
+        /// <summary>Property checkUrl: The health check URL.</summary>
         [JsiiProperty(name: "checkUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? CheckUrl
@@ -120,7 +120,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dcdn
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property checkUrl: The validation of the origin.</summary>
+            /// <summary>Property checkUrl: The health check URL.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "checkUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CheckUrl

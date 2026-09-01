@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.appflow;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-flow
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:30:09.439Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:10:07.378Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.FlowProps")
 @software.amazon.jsii.Jsii.Proxy(FlowProps.Jsii$Proxy.class)
 public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
@@ -24,6 +24,9 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property flowId: The ID of the flow.
+     * <p>
+     * This parameter is required when you update a flow or create a
+     * new flow version.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getFlowId() {
         return null;
@@ -48,7 +51,16 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property parameters: The parameters of the flow.
+     * Property parameters: The parameters for the template.
+     * <p>
+     * You can specify up to 200 parameters.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is optional. If you use this parameter, you must specify both
+     * ParameterKey and ParameterValue for each entry.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getParameters() {
         return null;
@@ -63,6 +75,9 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property templateId: The ID of the template.
+     * <p>
+     * Specify this parameter when you create a flow from a
+     * template in the Template Center.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateId() {
         return null;
@@ -130,6 +145,8 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FlowProps#getFlowId}
          * @param flowId Property flowId: The ID of the flow.
+         *               This parameter is required when you update a flow or create a
+         *               new flow version.
          * @return {@code this}
          */
         public Builder flowId(java.lang.String flowId) {
@@ -140,6 +157,8 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FlowProps#getFlowId}
          * @param flowId Property flowId: The ID of the flow.
+         *               This parameter is required when you update a flow or create a
+         *               new flow version.
          * @return {@code this}
          */
         public Builder flowId(com.aliyun.ros.cdk.core.IResolvable flowId) {
@@ -195,7 +214,15 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FlowProps#getParameters}
-         * @param parameters Property parameters: The parameters of the flow.
+         * @param parameters Property parameters: The parameters for the template.
+         *                   You can specify up to 200 parameters.
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   This parameter is optional. If you use this parameter, you must specify both
+         *                   ParameterKey and ParameterValue for each entry.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder parameters(com.aliyun.ros.cdk.core.IResolvable parameters) {
@@ -205,7 +232,15 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FlowProps#getParameters}
-         * @param parameters Property parameters: The parameters of the flow.
+         * @param parameters Property parameters: The parameters for the template.
+         *                   You can specify up to 200 parameters.
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   This parameter is optional. If you use this parameter, you must specify both
+         *                   ParameterKey and ParameterValue for each entry.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder parameters(java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
@@ -236,6 +271,8 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FlowProps#getTemplateId}
          * @param templateId Property templateId: The ID of the template.
+         *                   Specify this parameter when you create a flow from a
+         *                   template in the Template Center.
          * @return {@code this}
          */
         public Builder templateId(java.lang.String templateId) {
@@ -246,6 +283,8 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FlowProps#getTemplateId}
          * @param templateId Property templateId: The ID of the template.
+         *                   Specify this parameter when you create a flow from a
+         *                   template in the Template Center.
          * @return {@code this}
          */
         public Builder templateId(com.aliyun.ros.cdk.core.IResolvable templateId) {

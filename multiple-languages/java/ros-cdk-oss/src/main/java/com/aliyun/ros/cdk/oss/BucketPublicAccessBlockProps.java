@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oss;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketpublicaccessblock
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:11:59.859Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:18:25.381Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.BucketPublicAccessBlockProps")
 @software.amazon.jsii.Jsii.Proxy(BucketPublicAccessBlockProps.Jsii$Proxy.class)
 public interface BucketPublicAccessBlockProps extends software.amazon.jsii.JsiiSerializable {

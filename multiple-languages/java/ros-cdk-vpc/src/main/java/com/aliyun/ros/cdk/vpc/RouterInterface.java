@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::RouterInterface</code>The , which resource creates a router interface.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.679Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.473Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RouterInterface")
 public class RouterInterface extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IRouterInterface {
 
@@ -183,30 +183,52 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property autoPay: Indicates whether automatic payment is enabled.
+         * Property autoPay: Specifies whether to enable automatic payment.
          * <p>
          * Valid values:
-         * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
-         * true: Automatic payment is enabled. The payment is automatically made.
-         * Default: true.
+         * <p>
+         * <ul>
+         * <li>false (default): The automatic payment is disabled. If you select this
+         * option, you must go to the Order Center to complete the payment after an order is
+         * generated.</li>
+         * <li>true: The automatic payment is enabled. Payments are automatically complete
+         * after an order is generated.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if InstanceChargeType is set to PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoPay Property autoPay: Indicates whether automatic payment is enabled. This parameter is required.
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment. This parameter is required.
          */
         public Builder autoPay(final java.lang.Boolean autoPay) {
             this.props.autoPay(autoPay);
             return this;
         }
         /**
-         * Property autoPay: Indicates whether automatic payment is enabled.
+         * Property autoPay: Specifies whether to enable automatic payment.
          * <p>
          * Valid values:
-         * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
-         * true: Automatic payment is enabled. The payment is automatically made.
-         * Default: true.
+         * <p>
+         * <ul>
+         * <li>false (default): The automatic payment is disabled. If you select this
+         * option, you must go to the Order Center to complete the payment after an order is
+         * generated.</li>
+         * <li>true: The automatic payment is enabled. Payments are automatically complete
+         * after an order is generated.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if InstanceChargeType is set to PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoPay Property autoPay: Indicates whether automatic payment is enabled. This parameter is required.
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment. This parameter is required.
          */
         public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
             this.props.autoPay(autoPay);
@@ -347,8 +369,6 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource implements
         /**
          * Property instanceChargeType: The billing method of the router interface.
          * <p>
-         * Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go)
-         * <p>
          * @return {@code this}
          * @param instanceChargeType Property instanceChargeType: The billing method of the router interface. This parameter is required.
          */
@@ -358,8 +378,6 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource implements
         }
         /**
          * Property instanceChargeType: The billing method of the router interface.
-         * <p>
-         * Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go)
          * <p>
          * @return {@code this}
          * @param instanceChargeType Property instanceChargeType: The billing method of the router interface. This parameter is required.
@@ -604,24 +622,34 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property routerType: Router type.
+         * Property routerType: The type of router that is associated with the router interface.
          * <p>
-         * Now support 'VRouter|VBR'
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>VRouter</li>
+         * <li>VBR</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param routerType Property routerType: Router type. This parameter is required.
+         * @param routerType Property routerType: The type of router that is associated with the router interface. This parameter is required.
          */
         public Builder routerType(final java.lang.String routerType) {
             this.props.routerType(routerType);
             return this;
         }
         /**
-         * Property routerType: Router type.
+         * Property routerType: The type of router that is associated with the router interface.
          * <p>
-         * Now support 'VRouter|VBR'
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>VRouter</li>
+         * <li>VBR</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param routerType Property routerType: Router type. This parameter is required.
+         * @param routerType Property routerType: The type of router that is associated with the router interface. This parameter is required.
          */
         public Builder routerType(final com.aliyun.ros.cdk.core.IResolvable routerType) {
             this.props.routerType(routerType);
@@ -629,24 +657,72 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property spec: RouterInterface specification.
+         * Property spec: The specification of the router interface and the corresponding bandwidth.
          * <p>
-         * If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>Mini.2: 2 Mbit/s</li>
+         * <li>Mini.5: 5 Mbit/s</li>
+         * <li>Small.1: 10 Mbit/s</li>
+         * <li>Small.2: 20 Mbit/s</li>
+         * <li>Small.5: 50 Mbit/s</li>
+         * <li>Middle.1: 100 Mbit/s</li>
+         * <li>Middle.2: 200 Mbit/s</li>
+         * <li>Middle.5: 500 Mbit/s</li>
+         * <li>Large.1: 1,000 Mbit/s</li>
+         * <li>Large.2: 2,000 Mbit/s</li>
+         * <li>Large.5: 5,000 Mbit/s</li>
+         * <li>Xlarge.1: 10,000 Mbit/s</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If Role is set to AcceptingSide, set Spec to Negative. This indicates that you
+         * do not need to specify the specification when you create an acceptor router
+         * interface.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param spec Property spec: RouterInterface specification. This parameter is required.
+         * @param spec Property spec: The specification of the router interface and the corresponding bandwidth. This parameter is required.
          */
         public Builder spec(final java.lang.String spec) {
             this.props.spec(spec);
             return this;
         }
         /**
-         * Property spec: RouterInterface specification.
+         * Property spec: The specification of the router interface and the corresponding bandwidth.
          * <p>
-         * If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>Mini.2: 2 Mbit/s</li>
+         * <li>Mini.5: 5 Mbit/s</li>
+         * <li>Small.1: 10 Mbit/s</li>
+         * <li>Small.2: 20 Mbit/s</li>
+         * <li>Small.5: 50 Mbit/s</li>
+         * <li>Middle.1: 100 Mbit/s</li>
+         * <li>Middle.2: 200 Mbit/s</li>
+         * <li>Middle.5: 500 Mbit/s</li>
+         * <li>Large.1: 1,000 Mbit/s</li>
+         * <li>Large.2: 2,000 Mbit/s</li>
+         * <li>Large.5: 5,000 Mbit/s</li>
+         * <li>Xlarge.1: 10,000 Mbit/s</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If Role is set to AcceptingSide, set Spec to Negative. This indicates that you
+         * do not need to specify the specification when you create an acceptor router
+         * interface.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param spec Property spec: RouterInterface specification. This parameter is required.
+         * @param spec Property spec: The specification of the router interface and the corresponding bandwidth. This parameter is required.
          */
         public Builder spec(final com.aliyun.ros.cdk.core.IResolvable spec) {
             this.props.spec(spec);

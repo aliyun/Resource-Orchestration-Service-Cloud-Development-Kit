@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.elasticsearchserverless;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ElasticSearchServerless::Endpoint</code>The , which is used to create an endpoint.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ElasticSearchServerless::Endpoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:44:50.445Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:57:09.786Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearchserverless.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearchserverless.RosEndpoint")
 public class RosEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 

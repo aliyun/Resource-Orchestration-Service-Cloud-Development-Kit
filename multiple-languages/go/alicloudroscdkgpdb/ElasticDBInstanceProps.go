@@ -26,7 +26,11 @@ type ElasticDBInstanceProps struct {
 	//
 	// Unit: GB. Minimum is 50, max is 4000, step is 50.
 	StorageSize interface{} `field:"required" json:"storageSize" yaml:"storageSize"`
-	// Property vSwitchId: The vSwitch ID of the instance.
+	// Property vSwitchId: The vSwitch ID.
+	//
+	// > - This parameter is required.
+	// >
+	// > - The vSwitch must be in the zone specified by `ZoneId`.
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
 	// Property zoneId: The zone ID of the instance, such as cn-hangzhou-d.
 	//
@@ -37,9 +41,12 @@ type ElasticDBInstanceProps struct {
 	//
 	// You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
 	BackupId interface{} `field:"optional" json:"backupId" yaml:"backupId"`
-	// Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+	// Property dbInstanceCategory: The instance edition.
 	//
-	// This parameter must be passed in to create a storage reservation mode instance.
+	// Valid values:
+	// - HighAvailability: High-availability Edition
+	// - Basic: Basic Edition
+	// > This parameter is required for instances in elastic storage mode.
 	DbInstanceCategory interface{} `field:"optional" json:"dbInstanceCategory" yaml:"dbInstanceCategory"`
 	// Property dbInstanceDescription: The description of the instance.
 	//
@@ -78,12 +85,13 @@ type ElasticDBInstanceProps struct {
 	//
 	// Default value is Month.
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
-	// Property privateIpAddress: Private IP address.
+	// Property privateIpAddress: This parameter is deprecated.
 	PrivateIpAddress interface{} `field:"optional" json:"privateIpAddress" yaml:"privateIpAddress"`
-	// Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
+	// Property securityIpList: The IP address whitelist for the instance.
 	//
-	// Default value:
-	// 127.0.0.1.
+	// A value of 127.0.0.1 blocks all external access. After you create the instance,
+	// you can call the [ModifySecurityIps]() operation to modify the IP address
+	// whitelist.
 	SecurityIpList interface{} `field:"optional" json:"securityIpList" yaml:"securityIpList"`
 	// Property srcDbInstanceName: Clone source instance ID.
 	//

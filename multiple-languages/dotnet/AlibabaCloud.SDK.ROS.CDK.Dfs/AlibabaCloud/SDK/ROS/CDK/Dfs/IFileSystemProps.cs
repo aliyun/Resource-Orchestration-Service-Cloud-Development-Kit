@@ -20,8 +20,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 
         /// <summary>Property spaceCapacity: Capacity of the file system.</summary>
         /// <remarks>
-        /// When the actual data volume reaches the file system capacity, data cannot be written.
-        /// Unit: GB
+        /// When the actual storage data size reaches the file system capacity, no further
+        /// data can be written.
+        /// Unit: GiB
         /// </remarks>
         [JsiiProperty(name: "spaceCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object SpaceCapacity
@@ -48,11 +49,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
             get;
         }
 
-        /// <summary>Property dataRedundancyType: Redundancy mode of the file system.</summary>
+        /// <summary>Property dataRedundancyType: Data redundancy mode of the file system.</summary>
         /// <remarks>
-        /// Values:
-        /// LRS (default) : local redundancy.
-        /// ZRS: in-city redundancy.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>LRS (default): locally redundant storage</description>
+        /// <description>ZRS: zone-redundant storage. When ZRS is selected, the zoneId parameter must be
+        /// a string containing a list of multiple zone IDs for zone-redundant deployment,
+        /// for example, <codeph xmlns="http://www.w3.org/1999/xhtml"></codeph><c>zoneId1,zoneId2</c>.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "dataRedundancyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -75,12 +81,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
             }
         }
 
-        /// <summary>Property fileSystemName: Name of the file system.</summary>
+        /// <summary>Property fileSystemName: File system name.</summary>
         /// <remarks>
-        /// The naming rules are as follows:
-        /// The value contains 6 to 100 characters.
-        /// Globally unique and cannot be an empty string.
-        /// The value can contain letters and digits and underscores (_).
+        /// The naming convention is as follows:
+        ///
+        /// <list type="bullet">
+        /// <description>Length must be 6 to 64 characters.</description>
+        /// <description>Must be globally unique and cannot be an empty string.</description>
+        /// <description>Supports English letters and can contain digits, underscores (_), and hyphens
+        /// (-).</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "fileSystemName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -103,9 +113,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
             }
         }
 
-        /// <summary>Property provisionedThroughputInMiBps: Preset handling capacity.</summary>
+        /// <summary>Property provisionedThroughputInMiBps: Preset throughput.</summary>
         /// <remarks>
-        /// Unit: MB/sdata range: 1-5120
+        /// This parameter is required when the ThroughputMode parameter
+        /// is set to Provisioned.
+        /// Unit: MB/s
+        /// Valid values: 1 to 5120
         /// </remarks>
         [JsiiProperty(name: "provisionedThroughputInMiBps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -159,8 +172,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 
             /// <summary>Property spaceCapacity: Capacity of the file system.</summary>
             /// <remarks>
-            /// When the actual data volume reaches the file system capacity, data cannot be written.
-            /// Unit: GB
+            /// When the actual storage data size reaches the file system capacity, no further
+            /// data can be written.
+            /// Unit: GiB
             /// </remarks>
             [JsiiProperty(name: "spaceCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SpaceCapacity
@@ -187,11 +201,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property dataRedundancyType: Redundancy mode of the file system.</summary>
+            /// <summary>Property dataRedundancyType: Data redundancy mode of the file system.</summary>
             /// <remarks>
-            /// Values:
-            /// LRS (default) : local redundancy.
-            /// ZRS: in-city redundancy.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>LRS (default): locally redundant storage</description>
+            /// <description>ZRS: zone-redundant storage. When ZRS is selected, the zoneId parameter must be
+            /// a string containing a list of multiple zone IDs for zone-redundant deployment,
+            /// for example, <codeph xmlns="http://www.w3.org/1999/xhtml"></codeph><c>zoneId1,zoneId2</c>.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dataRedundancyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -208,12 +227,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property fileSystemName: Name of the file system.</summary>
+            /// <summary>Property fileSystemName: File system name.</summary>
             /// <remarks>
-            /// The naming rules are as follows:
-            /// The value contains 6 to 100 characters.
-            /// Globally unique and cannot be an empty string.
-            /// The value can contain letters and digits and underscores (_).
+            /// The naming convention is as follows:
+            ///
+            /// <list type="bullet">
+            /// <description>Length must be 6 to 64 characters.</description>
+            /// <description>Must be globally unique and cannot be an empty string.</description>
+            /// <description>Supports English letters and can contain digits, underscores (_), and hyphens
+            /// (-).</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "fileSystemName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -230,9 +253,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property provisionedThroughputInMiBps: Preset handling capacity.</summary>
+            /// <summary>Property provisionedThroughputInMiBps: Preset throughput.</summary>
             /// <remarks>
-            /// Unit: MB/sdata range: 1-5120
+            /// This parameter is required when the ThroughputMode parameter
+            /// is set to Provisioned.
+            /// Unit: MB/s
+            /// Valid values: 1 to 5120
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "provisionedThroughputInMiBps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

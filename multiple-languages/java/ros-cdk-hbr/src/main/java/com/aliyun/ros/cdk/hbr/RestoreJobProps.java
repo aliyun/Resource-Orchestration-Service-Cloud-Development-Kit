@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.hbr;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.784Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.176Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RestoreJobProps")
 @software.amazon.jsii.Jsii.Proxy(RestoreJobProps.Jsii$Proxy.class)
 public interface RestoreJobProps extends software.amazon.jsii.JsiiSerializable {
@@ -54,9 +54,10 @@ public interface RestoreJobProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getTargetInstanceId();
 
     /**
-     * Property targetPath: Target path.
+     * Property targetPath: The destination path for the restore.
      * <p>
-     * For instance, "/".
+     * This parameter is valid only when
+     * RestoreType is set to ECS_FILE.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTargetPath();
 
@@ -235,8 +236,9 @@ public interface RestoreJobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RestoreJobProps#getTargetPath}
-         * @param targetPath Property targetPath: Target path. This parameter is required.
-         *                   For instance, "/".
+         * @param targetPath Property targetPath: The destination path for the restore. This parameter is required.
+         *                   This parameter is valid only when
+         *                   RestoreType is set to ECS_FILE.
          * @return {@code this}
          */
         public Builder targetPath(java.lang.String targetPath) {
@@ -246,8 +248,9 @@ public interface RestoreJobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RestoreJobProps#getTargetPath}
-         * @param targetPath Property targetPath: Target path. This parameter is required.
-         *                   For instance, "/".
+         * @param targetPath Property targetPath: The destination path for the restore. This parameter is required.
+         *                   This parameter is valid only when
+         *                   RestoreType is set to ECS_FILE.
          * @return {@code this}
          */
         public Builder targetPath(com.aliyun.ros.cdk.core.IResolvable targetPath) {

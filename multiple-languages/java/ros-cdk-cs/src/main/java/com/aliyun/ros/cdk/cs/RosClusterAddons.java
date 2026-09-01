@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ClusterAddons</code>, which is used to install components in a cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ClusterAddons</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:04:30.633Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:56:05.667Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterAddons")
 public class RosClusterAddons extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -133,6 +133,24 @@ public class RosClusterAddons extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setInstalledIgnore(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "installedIgnore", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOverrideExisting() {
+        return software.amazon.jsii.Kernel.get(this, "overrideExisting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setOverrideExisting(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "overrideExisting", value);
+    }
+
+    /**
+     */
+    public void setOverrideExisting(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "overrideExisting", value);
     }
 
     /**
@@ -1037,6 +1055,23 @@ public class RosClusterAddons extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder installedIgnore(final com.aliyun.ros.cdk.core.IResolvable installedIgnore) {
             this.props.installedIgnore(installedIgnore);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param overrideExisting This parameter is required.
+         */
+        public Builder overrideExisting(final java.lang.Boolean overrideExisting) {
+            this.props.overrideExisting(overrideExisting);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param overrideExisting This parameter is required.
+         */
+        public Builder overrideExisting(final com.aliyun.ros.cdk.core.IResolvable overrideExisting) {
+            this.props.overrideExisting(overrideExisting);
             return this;
         }
 

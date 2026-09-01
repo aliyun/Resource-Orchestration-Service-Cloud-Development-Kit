@@ -5,13 +5,24 @@ package com.aliyun.ros.cdk.cloudsiem;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsiem-importlogtaskssubmission
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:51:36.503Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:39:59.112Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsiem.$Module.class, fqn = "@alicloud/ros-cdk-cloudsiem.ImportLogTasksSubmissionProps")
 @software.amazon.jsii.Jsii.Proxy(ImportLogTasksSubmissionProps.Jsii$Proxy.class)
 public interface ImportLogTasksSubmissionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property accounts: The list of accounts to be submitted.
+     * Property accounts: The list of accounts for log ingestion.
+     * <p>
+     * The value must be a JSON array. Valid
+     * values:
+     * <p>
+     * <ul>
+     * <li>AccountId: The ID of the account.</li>
+     * <li>Imported: Specifies whether to enable or disable log ingestion for the account.
+     * Valid values:</li>
+     * <li>0: Disable ingestion.</li>
+     * <li>1: Enable ingestion.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAccounts();
 
@@ -53,7 +64,17 @@ public interface ImportLogTasksSubmissionProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link ImportLogTasksSubmissionProps#getAccounts}
-         * @param accounts Property accounts: The list of accounts to be submitted. This parameter is required.
+         * @param accounts Property accounts: The list of accounts for log ingestion. This parameter is required.
+         *                 The value must be a JSON array. Valid
+         *                 values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>AccountId: The ID of the account.</li>
+         *                 <li>Imported: Specifies whether to enable or disable log ingestion for the account.
+         *                 Valid values:</li>
+         *                 <li>0: Disable ingestion.</li>
+         *                 <li>1: Enable ingestion.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder accounts(com.aliyun.ros.cdk.core.IResolvable accounts) {
@@ -63,7 +84,17 @@ public interface ImportLogTasksSubmissionProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link ImportLogTasksSubmissionProps#getAccounts}
-         * @param accounts Property accounts: The list of accounts to be submitted. This parameter is required.
+         * @param accounts Property accounts: The list of accounts for log ingestion. This parameter is required.
+         *                 The value must be a JSON array. Valid
+         *                 values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>AccountId: The ID of the account.</li>
+         *                 <li>Imported: Specifies whether to enable or disable log ingestion for the account.
+         *                 Valid values:</li>
+         *                 <li>0: Disable ingestion.</li>
+         *                 <li>1: Enable ingestion.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder accounts(java.util.List<? extends java.lang.Object> accounts) {

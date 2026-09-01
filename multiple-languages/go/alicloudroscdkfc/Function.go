@@ -10,9 +10,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::FC::Function`, which is used to create a function.
-//
-// A function must belong to a service. All functions of a service share the same attributes as the service, such as the service authorization and log configurations.
+// This class encapsulates and extends the ROS resource type `ALIYUN::FC::Function`.
 type Function interface {
 	alicloudroscdkcore.Resource
 	IFunction

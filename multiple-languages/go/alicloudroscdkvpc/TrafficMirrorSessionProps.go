@@ -30,9 +30,9 @@ type TrafficMirrorSessionProps struct {
 	// - **false** (default): does not enable the traffic mirror session.
 	// - **true**: enables the traffic mirror session.
 	Enabled interface{} `field:"optional" json:"enabled" yaml:"enabled"`
-	// Property packetLength: The maximum transmission unit (MTU).
+	// Property packetLength: The maximum transmission unit.
 	//
-	// Default value: **1500**.
+	// Valid values: 64 to 9600. Default value: 1500.
 	PacketLength interface{} `field:"optional" json:"packetLength" yaml:"packetLength"`
 	// Property resourceGroupId: The ID of the resource group to which the mirrored traffic belongs.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

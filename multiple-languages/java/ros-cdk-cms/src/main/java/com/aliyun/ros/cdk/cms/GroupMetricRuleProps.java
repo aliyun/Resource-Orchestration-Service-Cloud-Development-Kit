@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.935Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.213Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.GroupMetricRuleProps")
 @software.amazon.jsii.Jsii.Proxy(GroupMetricRuleProps.Jsii$Proxy.class)
 public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -98,7 +98,10 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
-     * Property dimensions: The expended resource dimensions.
+     * Property dimensions: The dimensions that specify the resources to be monitored.
+     * <p>
+     * The value is a collection of key-value pairs. Format: <code>key:value</code>. For example,
+     * <code>{"userId":"120886317861**"}</code> and <code>{"instanceId":"i-2ze2d6j5uhg20x47**"}</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDimensions() {
         return null;
@@ -130,7 +133,17 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
-     * Property interval: The detection period of alerts.
+     * Property interval: The interval at which the alert rule is triggered.
+     * <p>
+     * Unit: seconds.
+     * <p>
+     * <blockquote>
+     * <p>
+     * Set the alert detection interval to the same value as the data reporting
+     * interval. If the alert detection interval is shorter than the data reporting
+     * interval, alerts may not be triggered due to insufficient data.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInterval() {
         return null;
@@ -168,9 +181,10 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
-     * Property period: The aggregation period.
+     * Property period: The statistical period of the metric.
      * <p>
-     * Unite: second.
+     * The value of <code>Period</code> must be an integral multiple of 60. Unit: seconds. Default
+     * value: 300.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -186,7 +200,11 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
-     * Property webhook: The URL of the callback triggered when an alert occurs.
+     * Property webhook: The callback URL to which alert notifications are sent.
+     * <p>
+     * Enter a URL that is accessible over the Internet. CloudMonitor sends alert
+     * notifications to the URL using POST requests. Only the HTTP protocol is
+     * supported.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getWebhook() {
         return null;
@@ -466,7 +484,9 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link GroupMetricRuleProps#getDimensions}
-         * @param dimensions Property dimensions: The expended resource dimensions.
+         * @param dimensions Property dimensions: The dimensions that specify the resources to be monitored.
+         *                   The value is a collection of key-value pairs. Format: <code>key:value</code>. For example,
+         *                   <code>{"userId":"120886317861**"}</code> and <code>{"instanceId":"i-2ze2d6j5uhg20x47**"}</code>.
          * @return {@code this}
          */
         public Builder dimensions(java.lang.String dimensions) {
@@ -476,7 +496,9 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link GroupMetricRuleProps#getDimensions}
-         * @param dimensions Property dimensions: The expended resource dimensions.
+         * @param dimensions Property dimensions: The dimensions that specify the resources to be monitored.
+         *                   The value is a collection of key-value pairs. Format: <code>key:value</code>. For example,
+         *                   <code>{"userId":"120886317861**"}</code> and <code>{"instanceId":"i-2ze2d6j5uhg20x47**"}</code>.
          * @return {@code this}
          */
         public Builder dimensions(com.aliyun.ros.cdk.core.IResolvable dimensions) {
@@ -552,7 +574,16 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link GroupMetricRuleProps#getInterval}
-         * @param interval Property interval: The detection period of alerts.
+         * @param interval Property interval: The interval at which the alert rule is triggered.
+         *                 Unit: seconds.
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 Set the alert detection interval to the same value as the data reporting
+         *                 interval. If the alert detection interval is shorter than the data reporting
+         *                 interval, alerts may not be triggered due to insufficient data.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder interval(java.lang.Number interval) {
@@ -562,7 +593,16 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link GroupMetricRuleProps#getInterval}
-         * @param interval Property interval: The detection period of alerts.
+         * @param interval Property interval: The interval at which the alert rule is triggered.
+         *                 Unit: seconds.
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 Set the alert detection interval to the same value as the data reporting
+         *                 interval. If the alert detection interval is shorter than the data reporting
+         *                 interval, alerts may not be triggered due to insufficient data.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder interval(com.aliyun.ros.cdk.core.IResolvable interval) {
@@ -648,8 +688,9 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link GroupMetricRuleProps#getPeriod}
-         * @param period Property period: The aggregation period.
-         *               Unite: second.
+         * @param period Property period: The statistical period of the metric.
+         *               The value of <code>Period</code> must be an integral multiple of 60. Unit: seconds. Default
+         *               value: 300.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -659,8 +700,9 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link GroupMetricRuleProps#getPeriod}
-         * @param period Property period: The aggregation period.
-         *               Unite: second.
+         * @param period Property period: The statistical period of the metric.
+         *               The value of <code>Period</code> must be an integral multiple of 60. Unit: seconds. Default
+         *               value: 300.
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
@@ -692,7 +734,10 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link GroupMetricRuleProps#getWebhook}
-         * @param webhook Property webhook: The URL of the callback triggered when an alert occurs.
+         * @param webhook Property webhook: The callback URL to which alert notifications are sent.
+         *                Enter a URL that is accessible over the Internet. CloudMonitor sends alert
+         *                notifications to the URL using POST requests. Only the HTTP protocol is
+         *                supported.
          * @return {@code this}
          */
         public Builder webhook(java.lang.String webhook) {
@@ -702,7 +747,10 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link GroupMetricRuleProps#getWebhook}
-         * @param webhook Property webhook: The URL of the callback triggered when an alert occurs.
+         * @param webhook Property webhook: The callback URL to which alert notifications are sent.
+         *                Enter a URL that is accessible over the Internet. CloudMonitor sends alert
+         *                notifications to the URL using POST requests. Only the HTTP protocol is
+         *                supported.
          * @return {@code this}
          */
         public Builder webhook(com.aliyun.ros.cdk.core.IResolvable webhook) {

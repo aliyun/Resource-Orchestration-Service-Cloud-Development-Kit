@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.flink;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Flink::Member</code>, which is used to grants authorization to a member.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Flink::Member</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:06:21.265Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:13:20.950Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.RosMember")
 public class RosMember extends com.aliyun.ros.cdk.core.RosResource {
 

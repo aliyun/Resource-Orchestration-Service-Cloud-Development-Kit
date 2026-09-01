@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::DBCluster`, which is used to create an ApsaraDB for ClickHouse cluster.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::DBCluster`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-dbcluster
@@ -740,7 +740,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: period: The unit of the subscription duration.
+        /// <strong>Property</strong>: period: The subscription duration unit.
+        /// ><notice>This parameter is required only when `PayType` is set to
+        /// `Prepaid`.><\/notice>
+        /// - Year: Measured in years.
+        /// - Month: Measured in months.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

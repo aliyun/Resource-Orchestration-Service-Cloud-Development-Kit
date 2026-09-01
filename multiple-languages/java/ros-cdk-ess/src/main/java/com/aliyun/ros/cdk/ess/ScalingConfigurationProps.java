@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:56:08.509Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:06:45.652Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingConfigurationProps.Jsii$Proxy.class)
 public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,6 +37,13 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
      * <strong>Note</strong>: You can specify <strong>Cpu</strong> and <strong>Memory</strong> to determine the range of instance types only if you set Scaling Policy to Cost Optimization Policy and you do not specify instance types in the scaling configuration.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCpu() {
+        return null;
+    }
+
+    /**
+     * Property cpuOptions: CPU options.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCpuOptions() {
         return null;
     }
 
@@ -578,6 +585,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object scalingGroupId;
         java.lang.Object affinity;
         java.lang.Object cpu;
+        java.lang.Object cpuOptions;
         java.lang.Object creditSpecification;
         java.lang.Object dedicatedHostId;
         java.lang.Object deploymentSetId;
@@ -709,6 +717,26 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
          */
         public Builder cpu(com.aliyun.ros.cdk.core.IResolvable cpu) {
             this.cpu = cpu;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingConfigurationProps#getCpuOptions}
+         * @param cpuOptions Property cpuOptions: CPU options.
+         * @return {@code this}
+         */
+        public Builder cpuOptions(com.aliyun.ros.cdk.core.IResolvable cpuOptions) {
+            this.cpuOptions = cpuOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingConfigurationProps#getCpuOptions}
+         * @param cpuOptions Property cpuOptions: CPU options.
+         * @return {@code this}
+         */
+        public Builder cpuOptions(com.aliyun.ros.cdk.ess.RosScalingConfiguration.CpuOptionsProperty cpuOptions) {
+            this.cpuOptions = cpuOptions;
             return this;
         }
 
@@ -2043,6 +2071,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object scalingGroupId;
         private final java.lang.Object affinity;
         private final java.lang.Object cpu;
+        private final java.lang.Object cpuOptions;
         private final java.lang.Object creditSpecification;
         private final java.lang.Object dedicatedHostId;
         private final java.lang.Object deploymentSetId;
@@ -2108,6 +2137,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.affinity = software.amazon.jsii.Kernel.get(this, "affinity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cpu = software.amazon.jsii.Kernel.get(this, "cpu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cpuOptions = software.amazon.jsii.Kernel.get(this, "cpuOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.creditSpecification = software.amazon.jsii.Kernel.get(this, "creditSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dedicatedHostId = software.amazon.jsii.Kernel.get(this, "dedicatedHostId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2173,6 +2203,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             this.scalingGroupId = java.util.Objects.requireNonNull(builder.scalingGroupId, "scalingGroupId is required");
             this.affinity = builder.affinity;
             this.cpu = builder.cpu;
+            this.cpuOptions = builder.cpuOptions;
             this.creditSpecification = builder.creditSpecification;
             this.dedicatedHostId = builder.dedicatedHostId;
             this.deploymentSetId = builder.deploymentSetId;
@@ -2243,6 +2274,11 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         @Override
         public final java.lang.Object getCpu() {
             return this.cpu;
+        }
+
+        @Override
+        public final java.lang.Object getCpuOptions() {
+            return this.cpuOptions;
         }
 
         @Override
@@ -2533,6 +2569,9 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             if (this.getCpu() != null) {
                 data.set("cpu", om.valueToTree(this.getCpu()));
             }
+            if (this.getCpuOptions() != null) {
+                data.set("cpuOptions", om.valueToTree(this.getCpuOptions()));
+            }
             if (this.getCreditSpecification() != null) {
                 data.set("creditSpecification", om.valueToTree(this.getCreditSpecification()));
             }
@@ -2719,6 +2758,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             if (!scalingGroupId.equals(that.scalingGroupId)) return false;
             if (this.affinity != null ? !this.affinity.equals(that.affinity) : that.affinity != null) return false;
             if (this.cpu != null ? !this.cpu.equals(that.cpu) : that.cpu != null) return false;
+            if (this.cpuOptions != null ? !this.cpuOptions.equals(that.cpuOptions) : that.cpuOptions != null) return false;
             if (this.creditSpecification != null ? !this.creditSpecification.equals(that.creditSpecification) : that.creditSpecification != null) return false;
             if (this.dedicatedHostId != null ? !this.dedicatedHostId.equals(that.dedicatedHostId) : that.dedicatedHostId != null) return false;
             if (this.deploymentSetId != null ? !this.deploymentSetId.equals(that.deploymentSetId) : that.deploymentSetId != null) return false;
@@ -2781,6 +2821,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             int result = this.scalingGroupId.hashCode();
             result = 31 * result + (this.affinity != null ? this.affinity.hashCode() : 0);
             result = 31 * result + (this.cpu != null ? this.cpu.hashCode() : 0);
+            result = 31 * result + (this.cpuOptions != null ? this.cpuOptions.hashCode() : 0);
             result = 31 * result + (this.creditSpecification != null ? this.creditSpecification.hashCode() : 0);
             result = 31 * result + (this.dedicatedHostId != null ? this.dedicatedHostId.hashCode() : 0);
             result = 31 * result + (this.deploymentSetId != null ? this.deploymentSetId.hashCode() : 0);

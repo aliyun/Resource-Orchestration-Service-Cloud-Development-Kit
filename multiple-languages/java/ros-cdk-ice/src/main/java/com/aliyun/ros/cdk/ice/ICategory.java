@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ice;
 /**
  * Represents a <code>Category</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:31:54.371Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:41:15.840Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ice.$Module.class, fqn = "@alicloud/ros-cdk-ice.ICategory")
 @software.amazon.jsii.Jsii.Proxy(ICategory.Jsii$Proxy.class)
 public interface ICategory extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:56:08.418Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:06:45.566Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.LifecycleHookProps")
 @software.amazon.jsii.Jsii.Proxy(LifecycleHookProps.Jsii$Proxy.class)
 public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,23 +21,45 @@ public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializabl
     @org.jetbrains.annotations.NotNull java.lang.Object getScalingGroupId();
 
     /**
-     * Property defaultResult: The action that the scaling group takes when the lifecycle hook times out.
+     * Property defaultResult: The action that Auto Scaling performs after the lifecycle hook times out.
      * <p>
-     * Value range:
-     * CONTINUE: the scaling group continues with the scale-in or scale-out process.
-     * ABANDON: the scaling group stops any remaining action of the scale-in or scale-out event.
-     * Default value: CONTINUE
-     * If the scaling group has multiple lifecycle hooks and one of them is terminated by the DefaultResult=ABANDON parameter during a scale-in event (SCALE_IN), the remaining lifecycle hooks under the same scaling group will also be terminated. Otherwise, the action following the wait state is the next action, as specified in the parameter DefaultResult, after the last lifecycle event under the same scaling group.
+     * Valid
+     * values:
+     * <p>
+     * <ul>
+     * <li>CONTINUE: Auto Scaling continues to respond to a scale-in or scale-out
+     * request.</li>
+     * <li>ABANDON: Auto Scaling releases ECS instances that are created during
+     * scale-out activities or removes ECS instances from the scaling group during
+     * scale-in activities.</li>
+     * <li>ROLLBACK: For scale-in activities, Auto Scaling rejects the requests to
+     * release ECS instances but rolls back ECS instances. For scale-out activities, the
+     * ROLLBACK setting has the same effect as the <code>ABANDON</code> setting.
+     * If a scaling group has multiple lifecycle hooks in effect and you set the
+     * <code>DefaultResult</code> parameter for one of the lifecycle hooks to <code>ABANDON</code> or
+     * <code>ROLLBACK</code>, the following rule applies to scale-in activities: When the lifecycle
+     * hook whose DefaultResult parameter is set to ABANDON or ROLLBACK times out, other
+     * lifecycle hooks time out ahead of schedule. In other cases, Auto Scaling performs
+     * the action only after all lifecycle hooks time out. The action that Auto Scaling
+     * performs is specified by the DefaultResult parameter of the last lifecycle hook
+     * that times out.
+     * Default value: CONTINUE.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDefaultResult() {
         return null;
     }
 
     /**
-     * Property heartbeatTimeout: The time, in seconds, that can elapse before the lifecycle hook times out.
+     * Property heartbeatTimeout: The period of time before the lifecycle hook times out.
      * <p>
-     * If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 86400 seconds. The default value is 600 seconds.
-     * You can prevent the lifecycle hook from timing out by calling the RecordLifecycleActionHeartbeat operation. You can also terminate the lifecycle action by calling the CompleteLifecycleAction operation.
+     * When the lifecycle hook
+     * times out, Auto Scaling performs the action that is specified by the
+     * DefaultResult parameter. Valid values: 30 to 21600. Unit: seconds.
+     * You can call the <a href="">RecordLifecycleActionHeartbeat</a> operation to extend the
+     * period of time before a lifecycle hook times out. You can also call the
+     * <a href="">CompleteLifecycleAction</a> operation to end a lifecycle hook ahead of schedule.
+     * Default value: 600.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHeartbeatTimeout() {
         return null;
@@ -80,9 +102,52 @@ public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property notificationMetadata: The fixed string that you want to include when Auto Scaling sends a message about the wait state of the scaling activity to the notification target.
+     * Property notificationMetadata: The fixed string that is included in a notification that Auto Scaling sends when the lifecycle hook takes effect.
      * <p>
-     * The length of the parameter can be up to 4096 characters. Auto Scaling will send the specified NotificationMetadata parameter along with the notification message so that you can easily categorize your notifications. The NotificationMetadata parameter will only take effect after you specify the NotificationArn parameter.
+     * Auto Scaling sends the value of the
+     * NotificationMetadata parameter together with the notification. This helps you
+     * categorize your notifications. If you specify this parameter, you must also
+     * specify the <code>NotificationArn</code> parameter. The value of this parameter cannot
+     * exceed 4,096 characters in length.
+     * If you use the <code>NotificationArn</code> parameter to specify a public or custom OOS
+     * template, the value of the <code>NotificationMetadata</code> parameter must be a JSON string
+     * that contains the OOS template parameters.
+     * For example, your OOS template includes the following parameters:
+     * <code>{"dbInstanceId": "dds-bp17661e0135****", "modifyMode": "Append"}</code>,
+     * <code>dbInstanceId</code>, and <code>modifyMode</code>. Specific parameters that are defined in your
+     * OOS template have default values. When you specify the <code>NotificationMetadata</code>
+     * parameter, specify parameters that do not have default values. If you specify
+     * parameters that have default values, the default values are overwritten. The
+     * default values of the following parameters must be retained to obtain information
+     * about scaling activities that are in progress:
+     * <p>
+     * <ul>
+     * <li>regionId: the region ID of the scaling activity that is in progress. Default
+     * value: ${regionId}.</li>
+     * <li>instanceIds: the IDs of ECS instances that are scaled in the scaling
+     * activity. Default value: ${instanceIds}.</li>
+     * <li>lifecycleHookId: the ID of the lifecycle hook. Default value:
+     * ${lifecycleHookId}.</li>
+     * <li>lifecycleActionToken: the token of the lifecycle hook. You can use the token
+     * to end the timeout period of the lifecycle hook ahead of schedule. Default value:
+     * ${lifecycleActionToken}</li>
+     * <li>scalingGroupId: the ID of the scaling group in which the scaling activity is
+     * executed. Default value: ${scalingGroupId}.</li>
+     * <li>lifecycleActionResult: the action that Auto Scaling performs after the
+     * lifecycle hook times out. If the OOS template fails to be executed, the lifecycle
+     * hook times out ahead of schedule. If you set the <code>DefalutResult</code> parameter to
+     * <code>ROLLBACK</code>, the default value of this parameter is <code>ROLLBACK</code>. If you set the
+     * <code>DefaultResult</code> parameter to other values, the default value of this parameter is
+     * ABANDON.
+     * Note**</li>
+     * <li>You can specify a value for the <code>lifecycleActionResult</code> parameter to
+     * overwrite the default value. Valid values: ABANDON, CONTINUE, ROLLBACK, and
+     * ${lifecycleActionResult}. A value of <code>${lifecycleActionResult}</code> specifies that
+     * the value of the lifecycleActionResult parameter is the same as the value of the
+     * DefaultResult parameter.</li>
+     * <li>You can view the details of the OOS template that you specify in the OOS
+     * console.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNotificationMetadata() {
         return null;
@@ -148,12 +213,29 @@ public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link LifecycleHookProps#getDefaultResult}
-         * @param defaultResult Property defaultResult: The action that the scaling group takes when the lifecycle hook times out.
-         *                      Value range:
-         *                      CONTINUE: the scaling group continues with the scale-in or scale-out process.
-         *                      ABANDON: the scaling group stops any remaining action of the scale-in or scale-out event.
-         *                      Default value: CONTINUE
-         *                      If the scaling group has multiple lifecycle hooks and one of them is terminated by the DefaultResult=ABANDON parameter during a scale-in event (SCALE_IN), the remaining lifecycle hooks under the same scaling group will also be terminated. Otherwise, the action following the wait state is the next action, as specified in the parameter DefaultResult, after the last lifecycle event under the same scaling group.
+         * @param defaultResult Property defaultResult: The action that Auto Scaling performs after the lifecycle hook times out.
+         *                      Valid
+         *                      values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>CONTINUE: Auto Scaling continues to respond to a scale-in or scale-out
+         *                      request.</li>
+         *                      <li>ABANDON: Auto Scaling releases ECS instances that are created during
+         *                      scale-out activities or removes ECS instances from the scaling group during
+         *                      scale-in activities.</li>
+         *                      <li>ROLLBACK: For scale-in activities, Auto Scaling rejects the requests to
+         *                      release ECS instances but rolls back ECS instances. For scale-out activities, the
+         *                      ROLLBACK setting has the same effect as the <code>ABANDON</code> setting.
+         *                      If a scaling group has multiple lifecycle hooks in effect and you set the
+         *                      <code>DefaultResult</code> parameter for one of the lifecycle hooks to <code>ABANDON</code> or
+         *                      <code>ROLLBACK</code>, the following rule applies to scale-in activities: When the lifecycle
+         *                      hook whose DefaultResult parameter is set to ABANDON or ROLLBACK times out, other
+         *                      lifecycle hooks time out ahead of schedule. In other cases, Auto Scaling performs
+         *                      the action only after all lifecycle hooks time out. The action that Auto Scaling
+         *                      performs is specified by the DefaultResult parameter of the last lifecycle hook
+         *                      that times out.
+         *                      Default value: CONTINUE.</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder defaultResult(java.lang.String defaultResult) {
@@ -163,12 +245,29 @@ public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link LifecycleHookProps#getDefaultResult}
-         * @param defaultResult Property defaultResult: The action that the scaling group takes when the lifecycle hook times out.
-         *                      Value range:
-         *                      CONTINUE: the scaling group continues with the scale-in or scale-out process.
-         *                      ABANDON: the scaling group stops any remaining action of the scale-in or scale-out event.
-         *                      Default value: CONTINUE
-         *                      If the scaling group has multiple lifecycle hooks and one of them is terminated by the DefaultResult=ABANDON parameter during a scale-in event (SCALE_IN), the remaining lifecycle hooks under the same scaling group will also be terminated. Otherwise, the action following the wait state is the next action, as specified in the parameter DefaultResult, after the last lifecycle event under the same scaling group.
+         * @param defaultResult Property defaultResult: The action that Auto Scaling performs after the lifecycle hook times out.
+         *                      Valid
+         *                      values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>CONTINUE: Auto Scaling continues to respond to a scale-in or scale-out
+         *                      request.</li>
+         *                      <li>ABANDON: Auto Scaling releases ECS instances that are created during
+         *                      scale-out activities or removes ECS instances from the scaling group during
+         *                      scale-in activities.</li>
+         *                      <li>ROLLBACK: For scale-in activities, Auto Scaling rejects the requests to
+         *                      release ECS instances but rolls back ECS instances. For scale-out activities, the
+         *                      ROLLBACK setting has the same effect as the <code>ABANDON</code> setting.
+         *                      If a scaling group has multiple lifecycle hooks in effect and you set the
+         *                      <code>DefaultResult</code> parameter for one of the lifecycle hooks to <code>ABANDON</code> or
+         *                      <code>ROLLBACK</code>, the following rule applies to scale-in activities: When the lifecycle
+         *                      hook whose DefaultResult parameter is set to ABANDON or ROLLBACK times out, other
+         *                      lifecycle hooks time out ahead of schedule. In other cases, Auto Scaling performs
+         *                      the action only after all lifecycle hooks time out. The action that Auto Scaling
+         *                      performs is specified by the DefaultResult parameter of the last lifecycle hook
+         *                      that times out.
+         *                      Default value: CONTINUE.</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder defaultResult(com.aliyun.ros.cdk.core.IResolvable defaultResult) {
@@ -178,9 +277,14 @@ public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link LifecycleHookProps#getHeartbeatTimeout}
-         * @param heartbeatTimeout Property heartbeatTimeout: The time, in seconds, that can elapse before the lifecycle hook times out.
-         *                         If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 86400 seconds. The default value is 600 seconds.
-         *                         You can prevent the lifecycle hook from timing out by calling the RecordLifecycleActionHeartbeat operation. You can also terminate the lifecycle action by calling the CompleteLifecycleAction operation.
+         * @param heartbeatTimeout Property heartbeatTimeout: The period of time before the lifecycle hook times out.
+         *                         When the lifecycle hook
+         *                         times out, Auto Scaling performs the action that is specified by the
+         *                         DefaultResult parameter. Valid values: 30 to 21600. Unit: seconds.
+         *                         You can call the <a href="">RecordLifecycleActionHeartbeat</a> operation to extend the
+         *                         period of time before a lifecycle hook times out. You can also call the
+         *                         <a href="">CompleteLifecycleAction</a> operation to end a lifecycle hook ahead of schedule.
+         *                         Default value: 600.
          * @return {@code this}
          */
         public Builder heartbeatTimeout(java.lang.Number heartbeatTimeout) {
@@ -190,9 +294,14 @@ public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link LifecycleHookProps#getHeartbeatTimeout}
-         * @param heartbeatTimeout Property heartbeatTimeout: The time, in seconds, that can elapse before the lifecycle hook times out.
-         *                         If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 86400 seconds. The default value is 600 seconds.
-         *                         You can prevent the lifecycle hook from timing out by calling the RecordLifecycleActionHeartbeat operation. You can also terminate the lifecycle action by calling the CompleteLifecycleAction operation.
+         * @param heartbeatTimeout Property heartbeatTimeout: The period of time before the lifecycle hook times out.
+         *                         When the lifecycle hook
+         *                         times out, Auto Scaling performs the action that is specified by the
+         *                         DefaultResult parameter. Valid values: 30 to 21600. Unit: seconds.
+         *                         You can call the <a href="">RecordLifecycleActionHeartbeat</a> operation to extend the
+         *                         period of time before a lifecycle hook times out. You can also call the
+         *                         <a href="">CompleteLifecycleAction</a> operation to end a lifecycle hook ahead of schedule.
+         *                         Default value: 600.
          * @return {@code this}
          */
         public Builder heartbeatTimeout(com.aliyun.ros.cdk.core.IResolvable heartbeatTimeout) {
@@ -282,8 +391,51 @@ public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link LifecycleHookProps#getNotificationMetadata}
-         * @param notificationMetadata Property notificationMetadata: The fixed string that you want to include when Auto Scaling sends a message about the wait state of the scaling activity to the notification target.
-         *                             The length of the parameter can be up to 4096 characters. Auto Scaling will send the specified NotificationMetadata parameter along with the notification message so that you can easily categorize your notifications. The NotificationMetadata parameter will only take effect after you specify the NotificationArn parameter.
+         * @param notificationMetadata Property notificationMetadata: The fixed string that is included in a notification that Auto Scaling sends when the lifecycle hook takes effect.
+         *                             Auto Scaling sends the value of the
+         *                             NotificationMetadata parameter together with the notification. This helps you
+         *                             categorize your notifications. If you specify this parameter, you must also
+         *                             specify the <code>NotificationArn</code> parameter. The value of this parameter cannot
+         *                             exceed 4,096 characters in length.
+         *                             If you use the <code>NotificationArn</code> parameter to specify a public or custom OOS
+         *                             template, the value of the <code>NotificationMetadata</code> parameter must be a JSON string
+         *                             that contains the OOS template parameters.
+         *                             For example, your OOS template includes the following parameters:
+         *                             <code>{"dbInstanceId": "dds-bp17661e0135****", "modifyMode": "Append"}</code>,
+         *                             <code>dbInstanceId</code>, and <code>modifyMode</code>. Specific parameters that are defined in your
+         *                             OOS template have default values. When you specify the <code>NotificationMetadata</code>
+         *                             parameter, specify parameters that do not have default values. If you specify
+         *                             parameters that have default values, the default values are overwritten. The
+         *                             default values of the following parameters must be retained to obtain information
+         *                             about scaling activities that are in progress:
+         *                             <p>
+         *                             <ul>
+         *                             <li>regionId: the region ID of the scaling activity that is in progress. Default
+         *                             value: ${regionId}.</li>
+         *                             <li>instanceIds: the IDs of ECS instances that are scaled in the scaling
+         *                             activity. Default value: ${instanceIds}.</li>
+         *                             <li>lifecycleHookId: the ID of the lifecycle hook. Default value:
+         *                             ${lifecycleHookId}.</li>
+         *                             <li>lifecycleActionToken: the token of the lifecycle hook. You can use the token
+         *                             to end the timeout period of the lifecycle hook ahead of schedule. Default value:
+         *                             ${lifecycleActionToken}</li>
+         *                             <li>scalingGroupId: the ID of the scaling group in which the scaling activity is
+         *                             executed. Default value: ${scalingGroupId}.</li>
+         *                             <li>lifecycleActionResult: the action that Auto Scaling performs after the
+         *                             lifecycle hook times out. If the OOS template fails to be executed, the lifecycle
+         *                             hook times out ahead of schedule. If you set the <code>DefalutResult</code> parameter to
+         *                             <code>ROLLBACK</code>, the default value of this parameter is <code>ROLLBACK</code>. If you set the
+         *                             <code>DefaultResult</code> parameter to other values, the default value of this parameter is
+         *                             ABANDON.
+         *                             Note**</li>
+         *                             <li>You can specify a value for the <code>lifecycleActionResult</code> parameter to
+         *                             overwrite the default value. Valid values: ABANDON, CONTINUE, ROLLBACK, and
+         *                             ${lifecycleActionResult}. A value of <code>${lifecycleActionResult}</code> specifies that
+         *                             the value of the lifecycleActionResult parameter is the same as the value of the
+         *                             DefaultResult parameter.</li>
+         *                             <li>You can view the details of the OOS template that you specify in the OOS
+         *                             console.</li>
+         *                             </ul>
          * @return {@code this}
          */
         public Builder notificationMetadata(java.lang.String notificationMetadata) {
@@ -293,8 +445,51 @@ public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link LifecycleHookProps#getNotificationMetadata}
-         * @param notificationMetadata Property notificationMetadata: The fixed string that you want to include when Auto Scaling sends a message about the wait state of the scaling activity to the notification target.
-         *                             The length of the parameter can be up to 4096 characters. Auto Scaling will send the specified NotificationMetadata parameter along with the notification message so that you can easily categorize your notifications. The NotificationMetadata parameter will only take effect after you specify the NotificationArn parameter.
+         * @param notificationMetadata Property notificationMetadata: The fixed string that is included in a notification that Auto Scaling sends when the lifecycle hook takes effect.
+         *                             Auto Scaling sends the value of the
+         *                             NotificationMetadata parameter together with the notification. This helps you
+         *                             categorize your notifications. If you specify this parameter, you must also
+         *                             specify the <code>NotificationArn</code> parameter. The value of this parameter cannot
+         *                             exceed 4,096 characters in length.
+         *                             If you use the <code>NotificationArn</code> parameter to specify a public or custom OOS
+         *                             template, the value of the <code>NotificationMetadata</code> parameter must be a JSON string
+         *                             that contains the OOS template parameters.
+         *                             For example, your OOS template includes the following parameters:
+         *                             <code>{"dbInstanceId": "dds-bp17661e0135****", "modifyMode": "Append"}</code>,
+         *                             <code>dbInstanceId</code>, and <code>modifyMode</code>. Specific parameters that are defined in your
+         *                             OOS template have default values. When you specify the <code>NotificationMetadata</code>
+         *                             parameter, specify parameters that do not have default values. If you specify
+         *                             parameters that have default values, the default values are overwritten. The
+         *                             default values of the following parameters must be retained to obtain information
+         *                             about scaling activities that are in progress:
+         *                             <p>
+         *                             <ul>
+         *                             <li>regionId: the region ID of the scaling activity that is in progress. Default
+         *                             value: ${regionId}.</li>
+         *                             <li>instanceIds: the IDs of ECS instances that are scaled in the scaling
+         *                             activity. Default value: ${instanceIds}.</li>
+         *                             <li>lifecycleHookId: the ID of the lifecycle hook. Default value:
+         *                             ${lifecycleHookId}.</li>
+         *                             <li>lifecycleActionToken: the token of the lifecycle hook. You can use the token
+         *                             to end the timeout period of the lifecycle hook ahead of schedule. Default value:
+         *                             ${lifecycleActionToken}</li>
+         *                             <li>scalingGroupId: the ID of the scaling group in which the scaling activity is
+         *                             executed. Default value: ${scalingGroupId}.</li>
+         *                             <li>lifecycleActionResult: the action that Auto Scaling performs after the
+         *                             lifecycle hook times out. If the OOS template fails to be executed, the lifecycle
+         *                             hook times out ahead of schedule. If you set the <code>DefalutResult</code> parameter to
+         *                             <code>ROLLBACK</code>, the default value of this parameter is <code>ROLLBACK</code>. If you set the
+         *                             <code>DefaultResult</code> parameter to other values, the default value of this parameter is
+         *                             ABANDON.
+         *                             Note**</li>
+         *                             <li>You can specify a value for the <code>lifecycleActionResult</code> parameter to
+         *                             overwrite the default value. Valid values: ABANDON, CONTINUE, ROLLBACK, and
+         *                             ${lifecycleActionResult}. A value of <code>${lifecycleActionResult}</code> specifies that
+         *                             the value of the lifecycleActionResult parameter is the same as the value of the
+         *                             DefaultResult parameter.</li>
+         *                             <li>You can view the details of the OOS template that you specify in the OOS
+         *                             console.</li>
+         *                             </ul>
          * @return {@code this}
          */
         public Builder notificationMetadata(com.aliyun.ros.cdk.core.IResolvable notificationMetadata) {

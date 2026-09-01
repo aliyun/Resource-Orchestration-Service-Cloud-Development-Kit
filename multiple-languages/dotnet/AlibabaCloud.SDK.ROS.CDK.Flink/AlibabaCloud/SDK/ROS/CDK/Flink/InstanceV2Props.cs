@@ -48,7 +48,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
 
         private object _instanceName;
 
-        /// <summary>Property instanceName: The name of instance.</summary>
+        /// <summary>Property instanceName: The name of the workspace.</summary>
+        /// <remarks>
+        /// The name must start with a lowercase letter, can
+        /// contain lowercase letters, digits, and hyphens (-), and cannot end with a hyphen.
+        /// </remarks>
         [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object InstanceName
         {
@@ -78,10 +82,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
 
         private object _storage;
 
-        /// <summary>Property storage: Resource specifications.</summary>
-        /// <remarks>
-        /// When ChargeType is configured as PRE, the resource specification parameters must be filled.
-        /// </remarks>
+        /// <summary>Property storage: The storage parameters.</summary>
         [JsiiProperty(name: "storage", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-flink.RosInstanceV2.StorageProperty\"}]}}")]
         public object Storage
         {
@@ -202,9 +203,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
 
         private object? _autoRenew;
 
-        /// <summary>Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal.</summary>
+        /// <summary>Property autoRenew: Specifies whether to enable auto-renewal.</summary>
         /// <remarks>
-        /// false: Manual renewal.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>true: Auto-renewal is enabled.</description>
+        /// <description>false: Auto-renewal is disabled. This is the default value.</description>
+        /// </list>
+        ///
+        ///     This parameter does not take effect for pay-as-you-go instances.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

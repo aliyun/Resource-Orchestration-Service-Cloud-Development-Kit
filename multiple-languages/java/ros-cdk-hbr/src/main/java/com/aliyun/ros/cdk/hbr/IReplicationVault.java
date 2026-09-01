@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Represents a <code>ReplicationVault</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.754Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.137Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.IReplicationVault")
 @software.amazon.jsii.Jsii.Proxy(IReplicationVault.Jsii$Proxy.class)
 public interface IReplicationVault extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

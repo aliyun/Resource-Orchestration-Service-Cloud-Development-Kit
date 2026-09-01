@@ -60,7 +60,7 @@ export interface RosAddressBookProps {
     readonly regionId?: string | ros.IResolvable;
 
     /**
-     * @Property tagList:
+     * @Property tagList: The list of ECS tags.
      */
     readonly tagList?: Array<RosAddressBook.TagListProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -174,7 +174,7 @@ function rosAddressBookPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`The , which resource type is used to create address books for security access control, such as IP address books, ECS tag-based address books, port address books, and domain name address books.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AddressBook` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
  */
@@ -244,7 +244,7 @@ export class RosAddressBook extends ros.RosResource {
     public regionId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property tagList:
+     * @Property tagList: The list of ECS tags.
      */
     public tagList: Array<RosAddressBook.TagListProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -438,7 +438,7 @@ function rosAllFwSwitchPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AllFwSwitch`, which is used to enable all firewalls.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AllFwSwitch`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AllFwSwitch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-allfwswitch
  */
@@ -530,8 +530,14 @@ export interface RosControlPolicyProps {
     readonly newOrder: number | ros.IResolvable;
 
     /**
-     * @Property proto: The type of security protocol for traffic access in the security access control policy. Can be set to ANY when you are not sure of the specific protocol type.
-     * Allowed values: ANY, TCP, UDP, ICMP
+     * @Property proto: The protocol type of the traffic in the access control policy. Valid values:
+     * - ANY (any protocol)
+     * - TCP
+     * - UDP
+     * - ICMP
+     * > If the traffic direction is \`out\` and the destination is a domain-based
+     * threat intelligence or cloud service address book, you can set the protocol only
+     * to \`TCP\`. The supported applications are HTTP, HTTPS, SMTP, SMTPS, and SSL.
      */
     readonly proto: string | ros.IResolvable;
 
@@ -552,10 +558,28 @@ export interface RosControlPolicyProps {
     readonly sourceType: string | ros.IResolvable;
 
     /**
-     * @Property applicationName: Application types supported by the security policy.
-     * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
-     * NOTE ANY indicates that the policy is applied to all types of applications.
-     * Either ApplicationNameList or ApplicationName must be passed, not both.
+     * @Property applicationName: The application type that the access control policy supports. Valid values:
+     * - FTP
+     * - HTTP
+     * - HTTPS
+     * - Memcache
+     * - MongoDB
+     * - MQTT
+     * - MySQL
+     * - RDP
+     * - Redis
+     * - SMTP
+     * - SMTPS
+     * - SSH
+     * - SSL_No_Cert
+     * - SSL
+     * - VNC
+     * - ANY (all application types)
+     * > The available application types depend on the protocol type (\`Proto\`). If you
+     * set \`Proto\` to \`TCP\`, you can set \`ApplicationName\` to any of the listed
+     * application types. If you set \`Proto\` to \`UDP\`, \`ICMP\`, or \`ANY\`, you can
+     * set \`ApplicationName\` only to \`ANY\`. Specify either \`ApplicationNameList\`
+     * or \`ApplicationName\`.
      */
     readonly applicationName?: string | ros.IResolvable;
 
@@ -565,8 +589,17 @@ export interface RosControlPolicyProps {
     readonly applicationNameList?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property destPort: Security access control policy access traffic destination port.
-     * Note When DestPortType to port, set the item.
+     * @Property destPort: The destination port in the access control policy. Valid values:
+     * - If \`Proto\` is \`ICMP\`, leave this parameter empty.
+     * > If the protocol type is ICMP, you cannot control access based on the
+     * destination port.
+     * - If \`Proto\` is \`TCP\`, \`UDP\`, or \`ANY\`, and \`DestPortType\` is
+     * \`group\`, leave this parameter empty.
+     * > If you set \`DestPortType\` to \`group\` (port address book), you do not need
+     * to specify a destination port number. The port address book contains all the
+     * destination ports that the policy manages.
+     * - If \`Proto\` is \`TCP\`, \`UDP\`, or \`ANY\`, and \`DestPortType\` is \`port\`,
+     * set this parameter to the destination port number.
      */
     readonly destPort?: string | ros.IResolvable;
 
@@ -851,7 +884,7 @@ function rosControlPolicyPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`, which is used to add an access control policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ControlPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
  */
@@ -914,8 +947,14 @@ export class RosControlPolicy extends ros.RosResource {
     public newOrder: number | ros.IResolvable;
 
     /**
-     * @Property proto: The type of security protocol for traffic access in the security access control policy. Can be set to ANY when you are not sure of the specific protocol type.
-     * Allowed values: ANY, TCP, UDP, ICMP
+     * @Property proto: The protocol type of the traffic in the access control policy. Valid values:
+     * - ANY (any protocol)
+     * - TCP
+     * - UDP
+     * - ICMP
+     * > If the traffic direction is \`out\` and the destination is a domain-based
+     * threat intelligence or cloud service address book, you can set the protocol only
+     * to \`TCP\`. The supported applications are HTTP, HTTPS, SMTP, SMTPS, and SSL.
      */
     public proto: string | ros.IResolvable;
 
@@ -936,10 +975,28 @@ export class RosControlPolicy extends ros.RosResource {
     public sourceType: string | ros.IResolvable;
 
     /**
-     * @Property applicationName: Application types supported by the security policy.
-     * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
-     * NOTE ANY indicates that the policy is applied to all types of applications.
-     * Either ApplicationNameList or ApplicationName must be passed, not both.
+     * @Property applicationName: The application type that the access control policy supports. Valid values:
+     * - FTP
+     * - HTTP
+     * - HTTPS
+     * - Memcache
+     * - MongoDB
+     * - MQTT
+     * - MySQL
+     * - RDP
+     * - Redis
+     * - SMTP
+     * - SMTPS
+     * - SSH
+     * - SSL_No_Cert
+     * - SSL
+     * - VNC
+     * - ANY (all application types)
+     * > The available application types depend on the protocol type (\`Proto\`). If you
+     * set \`Proto\` to \`TCP\`, you can set \`ApplicationName\` to any of the listed
+     * application types. If you set \`Proto\` to \`UDP\`, \`ICMP\`, or \`ANY\`, you can
+     * set \`ApplicationName\` only to \`ANY\`. Specify either \`ApplicationNameList\`
+     * or \`ApplicationName\`.
      */
     public applicationName: string | ros.IResolvable | undefined;
 
@@ -949,8 +1006,17 @@ export class RosControlPolicy extends ros.RosResource {
     public applicationNameList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property destPort: Security access control policy access traffic destination port.
-     * Note When DestPortType to port, set the item.
+     * @Property destPort: The destination port in the access control policy. Valid values:
+     * - If \`Proto\` is \`ICMP\`, leave this parameter empty.
+     * > If the protocol type is ICMP, you cannot control access based on the
+     * destination port.
+     * - If \`Proto\` is \`TCP\`, \`UDP\`, or \`ANY\`, and \`DestPortType\` is
+     * \`group\`, leave this parameter empty.
+     * > If you set \`DestPortType\` to \`group\` (port address book), you do not need
+     * to specify a destination port number. The port address book contains all the
+     * destination ports that the policy manages.
+     * - If \`Proto\` is \`TCP\`, \`UDP\`, or \`ANY\`, and \`DestPortType\` is \`port\`,
+     * set this parameter to the destination port number.
      */
     public destPort: string | ros.IResolvable | undefined;
 
@@ -1137,19 +1203,29 @@ export interface RosFwSwitchProps {
     readonly regionList?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property resourceTypeList: The asset type list. Valid values:
-     * - BastionHostIP: Bastion machine exit IP.
-     * - BastionHostIngressIP: The entrance IP of the fortress machine.
-     * - EcsEIP: ECS EIP.
-     * - EcsPublicIP: ECS public network IP.
-     * - EIP: Elastic Public IP.
-     * - EniEIP: Elastic Network card EIP.
-     * - NatEIP: NAT EIP.
-     * - SlbEIP: SLB EIP.
-     * - SlbPublicIP: SLB public network IP.
-     * - NatPublicIP: NAT public IP
-     * - HAVIP: High Availability Virtual IP.
-     * **Note**: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
+     * @Property resourceTypeList: The list of asset types.
+     * Valid values:
+     * - BastionHostEgressIP: the egress IP address of a bastion host.
+     * - BastionHostIngressIP: the ingress IP address of a bastion host.
+     * - EcsEIP: the EIP of an ECS instance.
+     * - EcsPublicIP: the public IP address of an ECS instance.
+     * - EIP: an EIP.
+     * - EniEIP: the EIP of an ENI.
+     * - NatEIP: the EIP of a NAT gateway.
+     * - SlbEIP: the EIP of an SLB instance or a CLB instance.
+     * - SlbPublicIP: the public IP address of an SLB instance or a CLB instance.
+     * - NatPublicIP: the public IP address of a NAT gateway.
+     * - HAVIP: an HAVIP.
+     * - NlbEIP: the EIP of an NLB instance.
+     * - ApiGatewayEIP: the public IP address of an API gateway.
+     * - AlbEIP: the EIP of an ALB instance.
+     * - AiGatewayEIP: the public IP address of an AI gateway.
+     * - GaEIP: the EIP of a GA instance.
+     * - SwasEIP: the public IP address of a Simple Application Server instance.
+     * - EcdEIP: the public IP address of an Elastic Desktop Service instance.
+     * - BastionHostIP: the IP address of a bastion host.
+     * > You must specify at least one of the `IpaddrList`, `RegionList`, and
+     * `ResourceTypeList` parameters.
      */
     readonly resourceTypeList?: Array<any | ros.IResolvable> | ros.IResolvable;
 }
@@ -1216,7 +1292,7 @@ function rosFwSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`, which is used to enable a firewall.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`.
  * @Note This class does not contain additional functions, so it is recommended to use the `FwSwitch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-fwswitch
  */
@@ -1252,19 +1328,29 @@ export class RosFwSwitch extends ros.RosResource {
     public regionList: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property resourceTypeList: The asset type list. Valid values:
-     * - BastionHostIP: Bastion machine exit IP.
-     * - BastionHostIngressIP: The entrance IP of the fortress machine.
-     * - EcsEIP: ECS EIP.
-     * - EcsPublicIP: ECS public network IP.
-     * - EIP: Elastic Public IP.
-     * - EniEIP: Elastic Network card EIP.
-     * - NatEIP: NAT EIP.
-     * - SlbEIP: SLB EIP.
-     * - SlbPublicIP: SLB public network IP.
-     * - NatPublicIP: NAT public IP
-     * - HAVIP: High Availability Virtual IP.
-     * **Note**: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
+     * @Property resourceTypeList: The list of asset types.
+     * Valid values:
+     * - BastionHostEgressIP: the egress IP address of a bastion host.
+     * - BastionHostIngressIP: the ingress IP address of a bastion host.
+     * - EcsEIP: the EIP of an ECS instance.
+     * - EcsPublicIP: the public IP address of an ECS instance.
+     * - EIP: an EIP.
+     * - EniEIP: the EIP of an ENI.
+     * - NatEIP: the EIP of a NAT gateway.
+     * - SlbEIP: the EIP of an SLB instance or a CLB instance.
+     * - SlbPublicIP: the public IP address of an SLB instance or a CLB instance.
+     * - NatPublicIP: the public IP address of a NAT gateway.
+     * - HAVIP: an HAVIP.
+     * - NlbEIP: the EIP of an NLB instance.
+     * - ApiGatewayEIP: the public IP address of an API gateway.
+     * - AlbEIP: the EIP of an ALB instance.
+     * - AiGatewayEIP: the public IP address of an AI gateway.
+     * - GaEIP: the EIP of a GA instance.
+     * - SwasEIP: the public IP address of a Simple Application Server instance.
+     * - EcdEIP: the public IP address of an Elastic Desktop Service instance.
+     * - BastionHostIP: the IP address of a bastion host.
+     * > You must specify at least one of the `IpaddrList`, `RegionList`, and
+     * `ResourceTypeList` parameters.
      */
     public resourceTypeList: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -1553,7 +1639,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::Instance`, which is used to create a Cloud Firewall instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-instance
  */
@@ -2036,7 +2122,7 @@ function rosNatFirewallControlPolicyPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`, which is used to add an access control policy for a NAT firewall.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatFirewallControlPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-natfirewallcontrolpolicy
  */
@@ -2441,7 +2527,7 @@ function rosTrFirewallPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewall`, which is used to create a virtual private cloud (VPC) firewall for a transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewall`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrFirewall` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewall
  */
@@ -2688,7 +2774,7 @@ function rosTrFirewallRoutePolicyPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewallRoutePolicy`, which is used to create a routing policy for a virtual private cloud (VPC) firewall of a transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewallRoutePolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrFirewallRoutePolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewallroutepolicy
  */
@@ -2997,7 +3083,7 @@ function rosVpcFirewallCenPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallCen`, which is used to create a virtual private cloud (VPC) firewall.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallCen`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcFirewallCen` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcen
  */
@@ -3240,7 +3326,7 @@ function rosVpcFirewallConfigurePropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallConfigure`, which is used to create a virtual private cloud (VPC) firewall.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallConfigure`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcFirewallConfigure` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallconfigure
  */
@@ -3686,9 +3772,9 @@ export interface RosVpcFirewallControlPolicyProps {
     readonly endTime?: number | ros.IResolvable;
 
     /**
-     * @Property lang: The natural language of the request and response. Valid values:
-     * zh: Chinese
-     * en: English
+     * @Property lang: The language of the request and response. Valid values:
+     * - zh (default): Chinese
+     * - en: English
      */
     readonly lang?: string | ros.IResolvable;
 
@@ -3912,7 +3998,7 @@ function rosVpcFirewallControlPolicyPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`The , which resource type adds access control policies to specified VPC firewall policy groups.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcFirewallControlPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */
@@ -4059,9 +4145,9 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
     public endTime: number | ros.IResolvable | undefined;
 
     /**
-     * @Property lang: The natural language of the request and response. Valid values:
-     * zh: Chinese
-     * en: English
+     * @Property lang: The language of the request and response. Valid values:
+     * - zh (default): Chinese
+     * - en: English
      */
     public lang: string | ros.IResolvable | undefined;
 

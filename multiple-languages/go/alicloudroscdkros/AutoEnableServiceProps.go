@@ -25,9 +25,11 @@ type AutoEnableServiceProps struct {
 	// DCDN: Dynamic Route for CDN
 	// EDAS: Enterprise Distributed Application Service
 	// EMAS: Enterprise Mobile Application Studio
+	// EMR\/AICenter: EMR Serverless Spark AI Center
 	// FC: Function Compute
 	// FNF: Serverless Workflow
 	// MaxCompute: MaxCompute
+	// Milvus\/Function: Milvus Function
 	// NAS: Network Attached Storage
 	// MNS: Message Service (MNS)
 	// HBR: Hybrid Backup Recovery
@@ -55,5 +57,9 @@ type AutoEnableServiceProps struct {
 	// ControlPolicy: Control Policy
 	// DSC: Data Security Center Free Edition Service.
 	ServiceName interface{} `field:"required" json:"serviceName" yaml:"serviceName"`
+	// Property serviceParameters: The parameters that are required to enable the service.
+	//
+	// WorkspaceId is required when ServiceName is EMR\/AICenter.
+	ServiceParameters interface{} `field:"optional" json:"serviceParameters" yaml:"serviceParameters"`
 }
 

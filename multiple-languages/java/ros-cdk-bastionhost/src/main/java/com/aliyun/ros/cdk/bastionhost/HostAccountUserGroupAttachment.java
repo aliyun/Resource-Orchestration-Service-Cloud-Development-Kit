@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bastionhost;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::BastionHost::HostAccountUserGroupAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:35:53.482Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:18:29.192Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.HostAccountUserGroupAttachment")
 public class HostAccountUserGroupAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.bastionhost.IHostAccountUserGroupAttachment {
 

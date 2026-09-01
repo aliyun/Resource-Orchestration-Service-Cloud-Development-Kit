@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ForwardingRules`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ForwardingRules`, which is used to create forwarding rules.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ForwardingRules` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-forwardingrules
@@ -54,7 +54,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Ga.RosForwardingRules))!;
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ForwardingRuleIds: The IDs of the endpoint groups.
+        /// <strong>Attribute</strong>: ForwardingRuleIds: The IDs of the forwarding rules.
         /// </remarks>
         [JsiiProperty(name: "attrForwardingRuleIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrForwardingRuleIds
@@ -203,7 +203,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: forwardingRuleName: The name of the forwarding rule. The name must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name must start with a letter.
+            /// <strong>Property</strong>: forwardingRuleName: The name of the forwarding rule. The name must be 2 to 128 characters in length. It must start with a letter or a Chinese character, and can contain letters, Chinese characters, digits, periods (.), underscores (_), and hyphens (-).
             /// </remarks>
             [JsiiProperty(name: "forwardingRuleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -267,7 +267,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: forwardingRuleName: The name of the forwarding rule. The name must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name must start with a letter.
+                /// <strong>Property</strong>: forwardingRuleName: The name of the forwarding rule. The name must be 2 to 128 characters in length. It must start with a letter or a Chinese character, and can contain letters, Chinese characters, digits, periods (.), underscores (_), and hyphens (-).
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "forwardingRuleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -403,7 +403,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             private object? _forwardingRuleName;
 
             /// <remarks>
-            /// <strong>Property</strong>: forwardingRuleName: The name of the forwarding rule. The name must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name must start with a letter.
+            /// <strong>Property</strong>: forwardingRuleName: The name of the forwarding rule. The name must be 2 to 128 characters in length. It must start with a letter or a Chinese character, and can contain letters, Chinese characters, digits, periods (.), underscores (_), and hyphens (-).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "forwardingRuleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -523,7 +523,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         public interface IRuleActionsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: order: The forwarding priority.
+            /// <strong>Property</strong>: order: The priority of the action. This parameter is not in use and can be ignored.
             /// </remarks>
             [JsiiProperty(name: "order", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object Order
@@ -538,7 +538,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// * FixResponse: returns a fixed response.
             /// * Rewrite: rewrites a request.
             /// * AddHeader: adds a header to a request.
-            /// * RemoveHeaderConfig: deletes the header from a request.
+            /// * RemoveHeader: deletes a header from a request.
+            /// * Drop: drops a request.
+            /// * RemoveHeaderConfig: compatibility alias for RemoveHeader.
             /// </remarks>
             [JsiiProperty(name: "ruleActionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object RuleActionType
@@ -553,24 +555,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// * value: set this parameter to the ID of a virtual endpoint group.
             /// * If RuleActionType is set to Redirect, this parameter specifies redirecting configurations. You cannot leave all of the following parameters empty or configure all of these parameters to use the default values for a forwarding action whose type is Redirect: protocol, domain, port, path, and query. Example: {"protocol":"HTTP", "domain":"www.example.com", "port":"80", "path":"\/a","query":"value1", "code":"301" }.
             /// * protocol: the protocol of requests after the requests are redirected. Valid values: ${protocol} (default), HTTP, and HTTPS.
-            /// * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only letters, digits, and the following special characters: . - ? = ~ _ - + \/ ^ * ! $ & | ( ) [ ].
+            /// * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only lowercase letters, digits, and the following special characters: . - = ~ _ + \/ ^ * ! $ & ( ) [ ] ?.
             /// * port: the port to which requests are redirected. Default value: ${port}. You can enter a port number that ranges from 1 to 63335.
-            /// * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] + |. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
-            /// * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # | &.
+            /// * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] +. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
+            /// * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # &.
             /// * code: the redirecting code. Valid values: 301, 302, 303, 307, and 308.
             /// * If RuleActionType is set to FixResponse, this parameter specifies a fixed response. Example: {"code":"200", "type":"text\/plain", "content":"dssacav" }.
             /// * code: the HTTP status code to return. The response status code must be one of the following numeric strings: 2xx, 4xx, and 5xx. The letter x indicates a number from 0 to 9.
             /// * type: the type of the response content. Valid values: text\/plain, text\/css, text\/html, application\/javascript, and application\/json.
             /// * content: the response content. The response content cannot exceed 1,000 characters in length and does not support Chinese characters.
-            /// * If RuleActionType is set to AddHeader, this parameter specifies an HTTP header to be added. If a forwarding rule contains a forwarding action whose type is AddHeader, you must specify another forwarding action whose type is ForwardGroup. Example: [{"name":"header1","type":"userdefined", "value":"value"}].
+            /// * If RuleActionType is set to AddHeader, this parameter specifies an HTTP header to be added. If a forwarding rule contains a forwarding action whose type is AddHeader, you must specify another forwarding action whose type is ForwardGroup. Example: [{"name":"header1","type":"user-defined", "value":"value"}].
             /// * name: the name of the HTTP header. The name must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). The name of the HTTP header specified by AddHeader must be unique and cannot be the same as the name of the HTTP header specified by RemoveHeader.
             /// * type: the content type of the HTTP header. Valid values: user-defined, ref, and system-defined.
             /// * value: the content of the HTTP header. You cannot leave this parameter empty. If you set type to user-defined, the content must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The content can contain letters, digits, hyphens (-), and underscores (_). The content cannot start or end with a space character. If you set type to ref, the content must be 1 to 128 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). The content cannot start or end with a space character. If you set type to system-defined, only ClientSrcIp is supported.
-            /// * If RuleActionType is set to RemoveHeader, this parameter specifies an HTTP header to be removed. If a forwarding rule contains a forwarding action whose type is RemoveHeader, you must specify another forwarding action whose type is ForwardGroup. The header must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). Example: ["header1"].
+            /// * If RuleActionType is set to RemoveHeader, this parameter specifies an HTTP header to be removed. If a forwarding rule contains a forwarding action whose type is RemoveHeader, you must specify another forwarding action whose type is ForwardGroup. The header must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). Example: ["header1"]. RemoveHeaderConfig is accepted as a compatibility alias and is sent to the API as RemoveHeader.
             /// * If RuleActionType is set to Rewrite, this parameter specifies the rewriting configuration. If a forwarding rule contains a forwarding action whose type is Rewrite, you must specify another forwarding action whose type is ForwardGroup. Example: {"domain":"value1", "path":"value2", "query":"value3"}.
-            /// * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only lowercase letters, digits, and the following special characters: . - ? = ~ _ - + \/ ^ * ! $ & | ( ) [ ].
-            /// * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] + |. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
-            /// * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # | &.
+            /// * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only lowercase letters, digits, and the following special characters: . - = ~ _ + \/ ^ * ! $ & ( ) [ ] ?.
+            /// * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] +. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
+            /// * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # &.
+            /// * If RuleActionType is set to Drop, you do not need to specify this parameter.
             /// </remarks>
             [JsiiProperty(name: "ruleActionValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -590,7 +593,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: order: The forwarding priority.
+                /// <strong>Property</strong>: order: The priority of the action. This parameter is not in use and can be ignored.
                 /// </remarks>
                 [JsiiProperty(name: "order", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object Order
@@ -605,7 +608,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 /// * FixResponse: returns a fixed response.
                 /// * Rewrite: rewrites a request.
                 /// * AddHeader: adds a header to a request.
-                /// * RemoveHeaderConfig: deletes the header from a request.
+                /// * RemoveHeader: deletes a header from a request.
+                /// * Drop: drops a request.
+                /// * RemoveHeaderConfig: compatibility alias for RemoveHeader.
                 /// </remarks>
                 [JsiiProperty(name: "ruleActionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object RuleActionType
@@ -620,24 +625,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 /// * value: set this parameter to the ID of a virtual endpoint group.
                 /// * If RuleActionType is set to Redirect, this parameter specifies redirecting configurations. You cannot leave all of the following parameters empty or configure all of these parameters to use the default values for a forwarding action whose type is Redirect: protocol, domain, port, path, and query. Example: {"protocol":"HTTP", "domain":"www.example.com", "port":"80", "path":"\/a","query":"value1", "code":"301" }.
                 /// * protocol: the protocol of requests after the requests are redirected. Valid values: ${protocol} (default), HTTP, and HTTPS.
-                /// * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only letters, digits, and the following special characters: . - ? = ~ _ - + \/ ^ * ! $ & | ( ) [ ].
+                /// * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only lowercase letters, digits, and the following special characters: . - = ~ _ + \/ ^ * ! $ & ( ) [ ] ?.
                 /// * port: the port to which requests are redirected. Default value: ${port}. You can enter a port number that ranges from 1 to 63335.
-                /// * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] + |. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
-                /// * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # | &.
+                /// * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] +. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
+                /// * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # &.
                 /// * code: the redirecting code. Valid values: 301, 302, 303, 307, and 308.
                 /// * If RuleActionType is set to FixResponse, this parameter specifies a fixed response. Example: {"code":"200", "type":"text\/plain", "content":"dssacav" }.
                 /// * code: the HTTP status code to return. The response status code must be one of the following numeric strings: 2xx, 4xx, and 5xx. The letter x indicates a number from 0 to 9.
                 /// * type: the type of the response content. Valid values: text\/plain, text\/css, text\/html, application\/javascript, and application\/json.
                 /// * content: the response content. The response content cannot exceed 1,000 characters in length and does not support Chinese characters.
-                /// * If RuleActionType is set to AddHeader, this parameter specifies an HTTP header to be added. If a forwarding rule contains a forwarding action whose type is AddHeader, you must specify another forwarding action whose type is ForwardGroup. Example: [{"name":"header1","type":"userdefined", "value":"value"}].
+                /// * If RuleActionType is set to AddHeader, this parameter specifies an HTTP header to be added. If a forwarding rule contains a forwarding action whose type is AddHeader, you must specify another forwarding action whose type is ForwardGroup. Example: [{"name":"header1","type":"user-defined", "value":"value"}].
                 /// * name: the name of the HTTP header. The name must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). The name of the HTTP header specified by AddHeader must be unique and cannot be the same as the name of the HTTP header specified by RemoveHeader.
                 /// * type: the content type of the HTTP header. Valid values: user-defined, ref, and system-defined.
                 /// * value: the content of the HTTP header. You cannot leave this parameter empty. If you set type to user-defined, the content must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The content can contain letters, digits, hyphens (-), and underscores (_). The content cannot start or end with a space character. If you set type to ref, the content must be 1 to 128 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). The content cannot start or end with a space character. If you set type to system-defined, only ClientSrcIp is supported.
-                /// * If RuleActionType is set to RemoveHeader, this parameter specifies an HTTP header to be removed. If a forwarding rule contains a forwarding action whose type is RemoveHeader, you must specify another forwarding action whose type is ForwardGroup. The header must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). Example: ["header1"].
+                /// * If RuleActionType is set to RemoveHeader, this parameter specifies an HTTP header to be removed. If a forwarding rule contains a forwarding action whose type is RemoveHeader, you must specify another forwarding action whose type is ForwardGroup. The header must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). Example: ["header1"]. RemoveHeaderConfig is accepted as a compatibility alias and is sent to the API as RemoveHeader.
                 /// * If RuleActionType is set to Rewrite, this parameter specifies the rewriting configuration. If a forwarding rule contains a forwarding action whose type is Rewrite, you must specify another forwarding action whose type is ForwardGroup. Example: {"domain":"value1", "path":"value2", "query":"value3"}.
-                /// * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only lowercase letters, digits, and the following special characters: . - ? = ~ _ - + \/ ^ * ! $ & | ( ) [ ].
-                /// * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] + |. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
-                /// * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # | &.
+                /// * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only lowercase letters, digits, and the following special characters: . - = ~ _ + \/ ^ * ! $ & ( ) [ ] ?.
+                /// * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] +. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
+                /// * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # &.
+                /// * If RuleActionType is set to Drop, you do not need to specify this parameter.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "ruleActionValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -655,7 +661,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             private object _order;
 
             /// <remarks>
-            /// <strong>Property</strong>: order: The forwarding priority.
+            /// <strong>Property</strong>: order: The priority of the action. This parameter is not in use and can be ignored.
             /// </remarks>
             [JsiiProperty(name: "order", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Order
@@ -713,7 +719,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// * FixResponse: returns a fixed response.
             /// * Rewrite: rewrites a request.
             /// * AddHeader: adds a header to a request.
-            /// * RemoveHeaderConfig: deletes the header from a request.
+            /// * RemoveHeader: deletes a header from a request.
+            /// * Drop: drops a request.
+            /// * RemoveHeaderConfig: compatibility alias for RemoveHeader.
             /// </remarks>
             [JsiiProperty(name: "ruleActionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object RuleActionType
@@ -751,24 +759,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// * value: set this parameter to the ID of a virtual endpoint group.
             /// * If RuleActionType is set to Redirect, this parameter specifies redirecting configurations. You cannot leave all of the following parameters empty or configure all of these parameters to use the default values for a forwarding action whose type is Redirect: protocol, domain, port, path, and query. Example: {"protocol":"HTTP", "domain":"www.example.com", "port":"80", "path":"\/a","query":"value1", "code":"301" }.
             /// * protocol: the protocol of requests after the requests are redirected. Valid values: ${protocol} (default), HTTP, and HTTPS.
-            /// * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only letters, digits, and the following special characters: . - ? = ~ _ - + \/ ^ * ! $ & | ( ) [ ].
+            /// * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only lowercase letters, digits, and the following special characters: . - = ~ _ + \/ ^ * ! $ & ( ) [ ] ?.
             /// * port: the port to which requests are redirected. Default value: ${port}. You can enter a port number that ranges from 1 to 63335.
-            /// * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] + |. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
-            /// * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # | &.
+            /// * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] +. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
+            /// * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # &.
             /// * code: the redirecting code. Valid values: 301, 302, 303, 307, and 308.
             /// * If RuleActionType is set to FixResponse, this parameter specifies a fixed response. Example: {"code":"200", "type":"text\/plain", "content":"dssacav" }.
             /// * code: the HTTP status code to return. The response status code must be one of the following numeric strings: 2xx, 4xx, and 5xx. The letter x indicates a number from 0 to 9.
             /// * type: the type of the response content. Valid values: text\/plain, text\/css, text\/html, application\/javascript, and application\/json.
             /// * content: the response content. The response content cannot exceed 1,000 characters in length and does not support Chinese characters.
-            /// * If RuleActionType is set to AddHeader, this parameter specifies an HTTP header to be added. If a forwarding rule contains a forwarding action whose type is AddHeader, you must specify another forwarding action whose type is ForwardGroup. Example: [{"name":"header1","type":"userdefined", "value":"value"}].
+            /// * If RuleActionType is set to AddHeader, this parameter specifies an HTTP header to be added. If a forwarding rule contains a forwarding action whose type is AddHeader, you must specify another forwarding action whose type is ForwardGroup. Example: [{"name":"header1","type":"user-defined", "value":"value"}].
             /// * name: the name of the HTTP header. The name must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). The name of the HTTP header specified by AddHeader must be unique and cannot be the same as the name of the HTTP header specified by RemoveHeader.
             /// * type: the content type of the HTTP header. Valid values: user-defined, ref, and system-defined.
             /// * value: the content of the HTTP header. You cannot leave this parameter empty. If you set type to user-defined, the content must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The content can contain letters, digits, hyphens (-), and underscores (_). The content cannot start or end with a space character. If you set type to ref, the content must be 1 to 128 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). The content cannot start or end with a space character. If you set type to system-defined, only ClientSrcIp is supported.
-            /// * If RuleActionType is set to RemoveHeader, this parameter specifies an HTTP header to be removed. If a forwarding rule contains a forwarding action whose type is RemoveHeader, you must specify another forwarding action whose type is ForwardGroup. The header must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). Example: ["header1"].
+            /// * If RuleActionType is set to RemoveHeader, this parameter specifies an HTTP header to be removed. If a forwarding rule contains a forwarding action whose type is RemoveHeader, you must specify another forwarding action whose type is ForwardGroup. The header must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). Example: ["header1"]. RemoveHeaderConfig is accepted as a compatibility alias and is sent to the API as RemoveHeader.
             /// * If RuleActionType is set to Rewrite, this parameter specifies the rewriting configuration. If a forwarding rule contains a forwarding action whose type is Rewrite, you must specify another forwarding action whose type is ForwardGroup. Example: {"domain":"value1", "path":"value2", "query":"value3"}.
-            /// * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only lowercase letters, digits, and the following special characters: . - ? = ~ _ - + \/ ^ * ! $ & | ( ) [ ].
-            /// * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] + |. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
-            /// * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # | &.
+            /// * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only lowercase letters, digits, and the following special characters: . - = ~ _ + \/ ^ * ! $ & ( ) [ ] ?.
+            /// * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] +. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
+            /// * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # &.
+            /// * If RuleActionType is set to Drop, you do not need to specify this parameter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ruleActionValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -822,7 +831,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: ruleConditionValue: The endpoint port that is mapped to the listener port.
+            /// <strong>Property</strong>: ruleConditionValue: The value of the rule condition. The value is a JSON-formatted string whose structure depends on RuleConditionType.
+            /// * Host: a JSON array of domain names. Example: ["www.example.com", "www.aliyun.com"].
+            /// * Path: a JSON array of paths. Example: ["\/a", "\/b\/"].
+            /// * RequestHeader: a JSON array of HTTP header key-value pairs. Example: [{"header1":["value1","value2"]}].
+            /// * Query: a JSON array of query key-value pairs. Example: [{"query1":["value1"]}, {"query2":["value2"]}].
+            /// * Method: a JSON array whose values can be HEAD, GET, POST, OPTIONS, PUT, PATCH, or DELETE. Example: ["GET", "OPTIONS", "POST"].
+            /// * Cookie: a JSON array of cookie key-value pairs. Example: [{"cookie1":["value1"]}, {"cookie2":["value2"]}].
+            /// * SourceIP: a JSON array of IP addresses or CIDR blocks. Example: ["1.1.XX.XX\/32", "2.2.XX.XX\/24"].
             /// </remarks>
             [JsiiProperty(name: "ruleConditionValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -859,7 +875,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: ruleConditionValue: The endpoint port that is mapped to the listener port.
+                /// <strong>Property</strong>: ruleConditionValue: The value of the rule condition. The value is a JSON-formatted string whose structure depends on RuleConditionType.
+                /// * Host: a JSON array of domain names. Example: ["www.example.com", "www.aliyun.com"].
+                /// * Path: a JSON array of paths. Example: ["\/a", "\/b\/"].
+                /// * RequestHeader: a JSON array of HTTP header key-value pairs. Example: [{"header1":["value1","value2"]}].
+                /// * Query: a JSON array of query key-value pairs. Example: [{"query1":["value1"]}, {"query2":["value2"]}].
+                /// * Method: a JSON array whose values can be HEAD, GET, POST, OPTIONS, PUT, PATCH, or DELETE. Example: ["GET", "OPTIONS", "POST"].
+                /// * Cookie: a JSON array of cookie key-value pairs. Example: [{"cookie1":["value1"]}, {"cookie2":["value2"]}].
+                /// * SourceIP: a JSON array of IP addresses or CIDR blocks. Example: ["1.1.XX.XX\/32", "2.2.XX.XX\/24"].
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "ruleConditionValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -915,7 +938,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             private object? _ruleConditionValue;
 
             /// <remarks>
-            /// <strong>Property</strong>: ruleConditionValue: The endpoint port that is mapped to the listener port.
+            /// <strong>Property</strong>: ruleConditionValue: The value of the rule condition. The value is a JSON-formatted string whose structure depends on RuleConditionType.
+            /// * Host: a JSON array of domain names. Example: ["www.example.com", "www.aliyun.com"].
+            /// * Path: a JSON array of paths. Example: ["\/a", "\/b\/"].
+            /// * RequestHeader: a JSON array of HTTP header key-value pairs. Example: [{"header1":["value1","value2"]}].
+            /// * Query: a JSON array of query key-value pairs. Example: [{"query1":["value1"]}, {"query2":["value2"]}].
+            /// * Method: a JSON array whose values can be HEAD, GET, POST, OPTIONS, PUT, PATCH, or DELETE. Example: ["GET", "OPTIONS", "POST"].
+            /// * Cookie: a JSON array of cookie key-value pairs. Example: [{"cookie1":["value1"]}, {"cookie2":["value2"]}].
+            /// * SourceIP: a JSON array of IP addresses or CIDR blocks. Example: ["1.1.XX.XX\/32", "2.2.XX.XX\/24"].
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ruleConditionValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

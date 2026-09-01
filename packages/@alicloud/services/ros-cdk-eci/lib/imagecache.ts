@@ -10,7 +10,7 @@ export { RosImageCache as ImageCacheProperty };
 export interface ImageCacheProps {
 
     /**
-     * Property image: The image list to be cached.
+     * Property image: The container images used to create the image cache.
      */
     readonly image: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -25,12 +25,13 @@ export interface ImageCacheProps {
     readonly securityGroupId: string | ros.IResolvable;
 
     /**
-     * Property vSwitchId: VSwitch ID.
+     * Property vSwitchId: The ID of the vSwitch. You can specify up to 10 vSwitch IDs, separated by commas
+     * (,). For example, `vsw-*,vsw-*`.
      */
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     * Property acrRegistryInfo: The information about the ACR instance.
      */
     readonly acrRegistryInfo?: Array<RosImageCache.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -54,7 +55,7 @@ export interface ImageCacheProps {
     readonly imageCacheSize?: number | ros.IResolvable;
 
     /**
-     * Property imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
+     * Property imageRegistryCredential: The credentials of the image repository.
      */
     readonly imageRegistryCredential?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -88,7 +89,7 @@ export interface IImageCache extends ros.IResource {
     readonly attrImageCacheId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECI::ImageCache`, which is used to create an image cache.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECI::ImageCache`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImageCache`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-imagecache
  */

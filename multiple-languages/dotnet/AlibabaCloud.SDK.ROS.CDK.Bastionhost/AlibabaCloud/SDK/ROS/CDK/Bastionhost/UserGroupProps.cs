@@ -45,7 +45,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bastionhost
 
         private object _userGroupName;
 
-        /// <summary>Property userGroupName: The name of the user group.</summary>
+        /// <summary>Property userGroupName: The name of the user group that you want to create.</summary>
+        /// <remarks>
+        /// This name can be a up to 128
+        /// characters in length.
+        /// </remarks>
         [JsiiProperty(name: "userGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object UserGroupName
         {
@@ -75,7 +79,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bastionhost
 
         private object? _comment;
 
-        /// <summary>Property comment: The comment of the user group.</summary>
+        /// <summary>Property comment: The description of the user group.</summary>
+        /// <remarks>
+        /// The description can be up to 500 characters in
+        /// length.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Comment

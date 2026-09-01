@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterGrantAttachment`The , which resource grants a transit router permissions on a network instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterGrantAttachment`.
 type TransitRouterGrantAttachment interface {
 	alicloudroscdkcore.Resource
 	ITransitRouterGrantAttachment

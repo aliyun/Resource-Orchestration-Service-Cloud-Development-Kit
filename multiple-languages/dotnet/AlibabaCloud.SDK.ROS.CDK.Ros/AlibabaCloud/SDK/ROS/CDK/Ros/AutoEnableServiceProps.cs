@@ -35,9 +35,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// DCDN: Dynamic Route for CDN
         /// EDAS: Enterprise Distributed Application Service
         /// EMAS: Enterprise Mobile Application Studio
+        /// EMR/AICenter: EMR Serverless Spark AI Center
         /// FC: Function Compute
         /// FNF: Serverless Workflow
         /// MaxCompute: MaxCompute
+        /// Milvus/Function: Milvus Function
         /// NAS: Network Attached Storage
         /// MNS: Message Service (MNS)
         /// HBR: Hybrid Backup Recovery
@@ -89,6 +91,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
                     }
                 }
                 _serviceName = value;
+            }
+        }
+
+        private object? _serviceParameters;
+
+        /// <summary>Property serviceParameters: The parameters that are required to enable the service.</summary>
+        /// <remarks>
+        /// WorkspaceId is required when ServiceName is EMR/AICenter.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "serviceParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ros.RosAutoEnableService.ServiceParametersProperty\"}]}}", isOptional: true)]
+        public object? ServiceParameters
+        {
+            get => _serviceParameters;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Ros.RosAutoEnableService.IServiceParametersProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ros.RosAutoEnableService.IServiceParametersProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _serviceParameters = value;
             }
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.esa;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESA::Site</code>You can use the , which resource type to create a site.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:49:07.877Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:03:27.767Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.RosSite")
 public class RosSite extends com.aliyun.ros.cdk.core.RosResource {
 

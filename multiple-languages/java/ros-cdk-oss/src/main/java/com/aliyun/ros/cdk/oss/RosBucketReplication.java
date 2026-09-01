@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OSS::BucketReplication</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:11:59.909Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:18:25.438Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucketReplication")
 public class RosBucketReplication extends com.aliyun.ros.cdk.core.RosResource {
 

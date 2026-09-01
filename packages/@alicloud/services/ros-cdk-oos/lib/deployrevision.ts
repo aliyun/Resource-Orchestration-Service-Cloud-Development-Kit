@@ -15,7 +15,11 @@ export interface DeployRevisionProps {
     readonly applicationName: string | ros.IResolvable;
 
     /**
-     * Property deployResourceType: The type of the deploy resource.
+     * Property deployResourceType: The type of the deployment resource. Valid values:
+     * - `Kubernetes`: A Kubernetes cluster.
+     * - `Ecs`: An ECS instance.
+     * - `FC`: A Function Compute service.
+     * - `SWAS`: A Simple Application Server instance.
      */
     readonly deployResourceType?: string | ros.IResolvable;
 
@@ -35,7 +39,14 @@ export interface DeployRevisionProps {
     readonly location?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * Property revisionType: The type of the revision.
+     * Property revisionType: The type of the deployment revision. Valid values:
+     * - `Command`: A command.
+     * - `GitRepo`: A Git repository.
+     * - `HelmChart`: A Helm chart.
+     * - `Oss`: An object in Object Storage Service (OSS).
+     * - `EcsImage`: An ECS image.
+     * - `DockerImage`: A Docker image.
+     * - `Yaml`: A YAML file.
      */
     readonly revisionType?: string | ros.IResolvable;
 }

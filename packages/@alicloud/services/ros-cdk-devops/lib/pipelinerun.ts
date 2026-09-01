@@ -52,7 +52,7 @@ export interface IPipelineRun extends ros.IResource {
     readonly attrPipelineRunId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::PipelineRun`, which is used to run a pipeline.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::PipelineRun`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPipelineRun`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerun
  */

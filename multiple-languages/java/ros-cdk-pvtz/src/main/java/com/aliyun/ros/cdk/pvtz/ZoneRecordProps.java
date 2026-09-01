@@ -5,23 +5,56 @@ package com.aliyun.ros.cdk.pvtz;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonerecord
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:32:30.948Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:52:38.660Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.ZoneRecordProps")
 @software.amazon.jsii.Jsii.Proxy(ZoneRecordProps.Jsii$Proxy.class)
 public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty.
+     * Property rr: The host record.
+     * <p>
+     * A host record is the prefix of a domain name. Common host
+     * records include www, &#64;, * (for wildcard DNS), and mail (for mailboxes).
+     * For example, to resolve &#64;.example.com, set the host record to "&#64;", not an empty
+     * string.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRr();
 
     /**
-     * Property status: Allowed values: [ENABLE, DISABLE].
+     * Property status: The status of the DNS record.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>ENABLE: Enables DNS resolution.</li>
+     * <li>DISABLE: Pauses DNS resolution.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getStatus();
 
     /**
-     * Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV.
+     * Property type: The type of the DNS record.
+     * <p>
+     * The following types are supported:
+     * <p>
+     * <ul>
+     * <li>A: Maps a domain name to an IPv4 address in dotted decimal notation.</li>
+     * <li>AAAA: Maps a domain name to an IPv6 address.</li>
+     * <li>CNAME: Maps a domain name to another domain name.</li>
+     * <li>TXT: A text record. The text can be up to 255 characters in length. TXT records
+     * are often used for Sender Policy Framework (SPF) records to prevent spam.</li>
+     * <li>MX: Maps a domain name to the domain name of a mail server.</li>
+     * <li>PTR: Maps an IP address to a domain name.</li>
+     * <li>SRV: Specifies the server for a specific service. The format is: Priority
+     * Weight Port Target. Separate each value with a space.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * Before adding a PTR record, configure a reverse lookup zone. For more
+     * information, see <a href="">Reverse DNS lookups and PTR records</a>.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
@@ -36,16 +69,20 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
     /**
-     * Property priority: MX record priority, value range [1,99].
+     * Property priority: The priority of the MX record.
      * <p>
-     * Default to 10.
+     * A smaller value indicates a higher priority. Valid
+     * values: [1, 99].
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
         return null;
     }
 
     /**
-     * Property ttl: Survival time, default is 60.
+     * Property ttl: The time to live (TTL).
+     * <p>
+     * The unit is seconds (s). Valid values are 5, 30, 60, 3600
+     * (1 hour), 43200 (12 hours), and 86400 (1 day). The default value is 60.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTtl() {
         return null;
@@ -71,7 +108,11 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneRecordProps#getRr}
-         * @param rr Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty. This parameter is required.
+         * @param rr Property rr: The host record. This parameter is required.
+         *           A host record is the prefix of a domain name. Common host
+         *           records include www, &#64;, * (for wildcard DNS), and mail (for mailboxes).
+         *           For example, to resolve &#64;.example.com, set the host record to "&#64;", not an empty
+         *           string.
          * @return {@code this}
          */
         public Builder rr(java.lang.String rr) {
@@ -81,7 +122,11 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneRecordProps#getRr}
-         * @param rr Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty. This parameter is required.
+         * @param rr Property rr: The host record. This parameter is required.
+         *           A host record is the prefix of a domain name. Common host
+         *           records include www, &#64;, * (for wildcard DNS), and mail (for mailboxes).
+         *           For example, to resolve &#64;.example.com, set the host record to "&#64;", not an empty
+         *           string.
          * @return {@code this}
          */
         public Builder rr(com.aliyun.ros.cdk.core.IResolvable rr) {
@@ -91,7 +136,13 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneRecordProps#getStatus}
-         * @param status Property status: Allowed values: [ENABLE, DISABLE]. This parameter is required.
+         * @param status Property status: The status of the DNS record. This parameter is required.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>ENABLE: Enables DNS resolution.</li>
+         *               <li>DISABLE: Pauses DNS resolution.</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder status(java.lang.String status) {
@@ -101,7 +152,13 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneRecordProps#getStatus}
-         * @param status Property status: Allowed values: [ENABLE, DISABLE]. This parameter is required.
+         * @param status Property status: The status of the DNS record. This parameter is required.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>ENABLE: Enables DNS resolution.</li>
+         *               <li>DISABLE: Pauses DNS resolution.</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder status(com.aliyun.ros.cdk.core.IResolvable status) {
@@ -111,7 +168,27 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneRecordProps#getType}
-         * @param type Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV. This parameter is required.
+         * @param type Property type: The type of the DNS record. This parameter is required.
+         *             The following types are supported:
+         *             <p>
+         *             <ul>
+         *             <li>A: Maps a domain name to an IPv4 address in dotted decimal notation.</li>
+         *             <li>AAAA: Maps a domain name to an IPv6 address.</li>
+         *             <li>CNAME: Maps a domain name to another domain name.</li>
+         *             <li>TXT: A text record. The text can be up to 255 characters in length. TXT records
+         *             are often used for Sender Policy Framework (SPF) records to prevent spam.</li>
+         *             <li>MX: Maps a domain name to the domain name of a mail server.</li>
+         *             <li>PTR: Maps an IP address to a domain name.</li>
+         *             <li>SRV: Specifies the server for a specific service. The format is: Priority
+         *             Weight Port Target. Separate each value with a space.</li>
+         *             </ul>
+         *             <p>
+         *             <blockquote>
+         *             <p>
+         *             Before adding a PTR record, configure a reverse lookup zone. For more
+         *             information, see <a href="">Reverse DNS lookups and PTR records</a>.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder type(java.lang.String type) {
@@ -121,7 +198,27 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneRecordProps#getType}
-         * @param type Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV. This parameter is required.
+         * @param type Property type: The type of the DNS record. This parameter is required.
+         *             The following types are supported:
+         *             <p>
+         *             <ul>
+         *             <li>A: Maps a domain name to an IPv4 address in dotted decimal notation.</li>
+         *             <li>AAAA: Maps a domain name to an IPv6 address.</li>
+         *             <li>CNAME: Maps a domain name to another domain name.</li>
+         *             <li>TXT: A text record. The text can be up to 255 characters in length. TXT records
+         *             are often used for Sender Policy Framework (SPF) records to prevent spam.</li>
+         *             <li>MX: Maps a domain name to the domain name of a mail server.</li>
+         *             <li>PTR: Maps an IP address to a domain name.</li>
+         *             <li>SRV: Specifies the server for a specific service. The format is: Priority
+         *             Weight Port Target. Separate each value with a space.</li>
+         *             </ul>
+         *             <p>
+         *             <blockquote>
+         *             <p>
+         *             Before adding a PTR record, configure a reverse lookup zone. For more
+         *             information, see <a href="">Reverse DNS lookups and PTR records</a>.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
@@ -171,8 +268,9 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneRecordProps#getPriority}
-         * @param priority Property priority: MX record priority, value range [1,99].
-         *                 Default to 10.
+         * @param priority Property priority: The priority of the MX record.
+         *                 A smaller value indicates a higher priority. Valid
+         *                 values: [1, 99].
          * @return {@code this}
          */
         public Builder priority(java.lang.Number priority) {
@@ -182,8 +280,9 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneRecordProps#getPriority}
-         * @param priority Property priority: MX record priority, value range [1,99].
-         *                 Default to 10.
+         * @param priority Property priority: The priority of the MX record.
+         *                 A smaller value indicates a higher priority. Valid
+         *                 values: [1, 99].
          * @return {@code this}
          */
         public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {
@@ -193,7 +292,9 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneRecordProps#getTtl}
-         * @param ttl Property ttl: Survival time, default is 60.
+         * @param ttl Property ttl: The time to live (TTL).
+         *            The unit is seconds (s). Valid values are 5, 30, 60, 3600
+         *            (1 hour), 43200 (12 hours), and 86400 (1 day). The default value is 60.
          * @return {@code this}
          */
         public Builder ttl(java.lang.Number ttl) {
@@ -203,7 +304,9 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZoneRecordProps#getTtl}
-         * @param ttl Property ttl: Survival time, default is 60.
+         * @param ttl Property ttl: The time to live (TTL).
+         *            The unit is seconds (s). Valid values are 5, 30, 60, 3600
+         *            (1 hour), 43200 (12 hours), and 86400 (1 day). The default value is 60.
          * @return {@code this}
          */
         public Builder ttl(com.aliyun.ros.cdk.core.IResolvable ttl) {

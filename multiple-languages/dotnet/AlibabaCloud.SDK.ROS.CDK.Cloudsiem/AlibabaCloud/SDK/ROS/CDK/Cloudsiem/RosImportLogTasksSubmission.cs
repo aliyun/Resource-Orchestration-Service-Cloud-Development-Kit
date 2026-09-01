@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudsiem
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSiem::ImportLogTasksSubmission`, which is used to import and submit a log collection task.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSiem::ImportLogTasksSubmission`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ImportLogTasksSubmission` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsiem-importlogtaskssubmission
@@ -60,7 +60,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudsiem
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: accounts: The list of accounts to be submitted.
+        /// <strong>Property</strong>: accounts: The list of accounts for log ingestion. The value must be a JSON array. Valid
+        /// values:
+        /// - AccountId: The ID of the account.
+        /// - Imported: Specifies whether to enable or disable log ingestion for the account.
+        /// Valid values:
+        /// - 0: Disable ingestion.
+        /// - 1: Enable ingestion.
         /// </remarks>
         [JsiiProperty(name: "accounts", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         public virtual object Accounts

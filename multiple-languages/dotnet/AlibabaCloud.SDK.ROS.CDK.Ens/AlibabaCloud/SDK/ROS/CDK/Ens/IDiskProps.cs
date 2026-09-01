@@ -61,11 +61,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             }
         }
 
-        /// <summary>Property encrypted: Specifies whether to encrypt the new system disk.</summary>
+        /// <summary>Property encrypted: Specifies whether to encrypt the disk.</summary>
         /// <remarks>
         /// Valid values:
-        /// true
-        /// false (default): no
+        ///
+        /// <list type="bullet">
+        /// <description>true</description>
+        /// <description>false (default)</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -176,11 +179,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property encrypted: Specifies whether to encrypt the new system disk.</summary>
+            /// <summary>Property encrypted: Specifies whether to encrypt the disk.</summary>
             /// <remarks>
             /// Valid values:
-            /// true
-            /// false (default): no
+            ///
+            /// <list type="bullet">
+            /// <description>true</description>
+            /// <description>false (default)</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

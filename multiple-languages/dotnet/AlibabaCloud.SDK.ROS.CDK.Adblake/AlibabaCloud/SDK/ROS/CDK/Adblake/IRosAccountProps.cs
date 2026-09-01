@@ -59,7 +59,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: accountDescription: The description of the account.
+        /// <strong>Property</strong>: accountDescription: The account description.
+        /// - Must not start with `http:\/\/` or `https:\/\/`.
+        /// - Be no longer than 256 characters.
         /// </remarks>
         [JsiiProperty(name: "accountDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -143,7 +145,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: accountDescription: The description of the account.
+            /// <strong>Property</strong>: accountDescription: The account description.
+            /// - Must not start with `http:\/\/` or `https:\/\/`.
+            /// - Be no longer than 256 characters.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "accountDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

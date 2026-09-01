@@ -12,7 +12,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
     public interface IRosDrdsInstanceProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: description: Description of the DRDS instance, 2-128 characters
+        /// <strong>Property</strong>: description: Specifies the description of the instance. The description must meet the
+        /// following requirements:
+        /// *   The description cannot contain the prefix http:\/\/ or https:\/\/.
+        /// *   The description must start with a letter or a Chinese character, and can
+        /// contain uppercase and lowercase letters, Chinese characters, digits, underscores
+        /// (_), and hyphens (-).
+        /// *   The description must be 2 to 256 characters in length.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Description
@@ -21,7 +27,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceSeries: drds.sn1.4c8g Starter Edition; drds.sn1.8c16g Standard Edition; drds.sn1.16c32g Business Edition; drds.sn1.32c64g Ultimate Edition
+        /// <strong>Property</strong>: instanceSeries: Specifies the instance type of the instance. Valid values:
+        /// *   drds.sn2.4c16g: The instance is of the Starter Edition.
+        /// *   drds.sn2.8c32g: The instance is of the Standard Edition
+        /// *   drds.sn2.16c64g: The instance is of the Enterprise Edition.
         /// </remarks>
         [JsiiProperty(name: "instanceSeries", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object InstanceSeries
@@ -30,7 +39,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: payType: For the type of payment, see "Payment Type Parameter Table"
+        /// <strong>Property</strong>: payType: Specifies the billing method of the instance. Valid values:
+        /// *   drdsPre: The instance uses the subscription billing method.
+        /// *   drdsPost: The instance uses the pay-as-you-go billing method.
+        /// *   drdsRo: By default, the pay-as-you-go billing method is used when you create
+        /// read-only instances.
         /// </remarks>
         [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object PayType
@@ -39,7 +52,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing
+        /// <strong>Property</strong>: specification: Specifies the specification code of the instance. The value consists of the
+        /// instance type and the specified instance specification. For example, you can set
+        /// the value to drds.sn2.4c16g.8c32g.
         /// </remarks>
         [JsiiProperty(name: "specification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Specification
@@ -48,7 +63,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: type: Instance type, instance type 0 - shared instance 1 - exclusive instance, in addition, this parameter can also pass PRIVATE and PUBLIC to represent exclusive instance and shared instance respectively
+        /// <strong>Property</strong>: type: Specifies the type of the instance. Set the value to PRIVATE. The value PRIVATE
+        /// specifies that the instance is a dedicated instance.
+        /// >  You can also set the value to 1 to specify that the instance is a dedicated
+        /// instance.
         /// </remarks>
         [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Type
@@ -79,7 +97,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: isAutoRenew: Whether to renew the fee automatically, if it is purchased on a monthly basis, it will automatically renew for one month, and if it is purchased on an annual basis, it will automatically renew for one year. The parameter takes effect when the payment type is drdsPre.
+        /// <strong>Property</strong>: isAutoRenew: Specifies whether to enable automatic renewal. Valid values:
+        /// *   true: If the PricingCycle parameter is set to month, the subscription is
+        /// automatically renewed for one month. If the PricingCycle parameter is set to
+        /// year, the subscription is automatically renewed for one year.
+        /// *   false: The auto-renewal feature is disabled for the instance.
+        /// >  This parameter only takes effect when the PayType parameter is set to drdsPre.
         /// </remarks>
         [JsiiProperty(name: "isAutoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -92,7 +115,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: mySqlVersion: The MySQL protocol version supported by DRDS. Valid values: 5 and 8. Default value: 5. This parameter is valid only when the primary instance is created. The read-only instance is the same as the primary instance by default.
+        /// <strong>Property</strong>: mySqlVersion: Specifies the MySQL version that is supported by the instance. Valid values:
+        /// *   5: The instance is fully compatible with MySQL 5.x. This value is the default
+        /// value.
+        /// *   8: The instance is fully compatible with MySQL 8.0.
+        /// >  This parameter only takes effect when you create a primary instance. By
+        /// default, the MySQL version of the read-only instance is the same as that of the
+        /// primary instance.
         /// </remarks>
         [JsiiProperty(name: "mySqlVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -105,7 +134,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: pricingCycle: The unit of the order period, year: year, month: month. The parameter takes effect when the payment type is drdsPre.
+        /// <strong>Property</strong>: pricingCycle: Specifies the unit of the subscription duration of the subscription instance.
+        /// Valid values:
+        /// *   year: The unit of the subscription duration is year.
+        /// *   month: The unit of the subscription duration is month.
+        /// >  This parameter is required if you set the PayType parameter to drdsPre.
         /// </remarks>
         [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -181,7 +214,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: description: Description of the DRDS instance, 2-128 characters
+            /// <strong>Property</strong>: description: Specifies the description of the instance. The description must meet the
+            /// following requirements:
+            /// *   The description cannot contain the prefix http:\/\/ or https:\/\/.
+            /// *   The description must start with a letter or a Chinese character, and can
+            /// contain uppercase and lowercase letters, Chinese characters, digits, underscores
+            /// (_), and hyphens (-).
+            /// *   The description must be 2 to 256 characters in length.
             /// </remarks>
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Description
@@ -190,7 +229,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: instanceSeries: drds.sn1.4c8g Starter Edition; drds.sn1.8c16g Standard Edition; drds.sn1.16c32g Business Edition; drds.sn1.32c64g Ultimate Edition
+            /// <strong>Property</strong>: instanceSeries: Specifies the instance type of the instance. Valid values:
+            /// *   drds.sn2.4c16g: The instance is of the Starter Edition.
+            /// *   drds.sn2.8c32g: The instance is of the Standard Edition
+            /// *   drds.sn2.16c64g: The instance is of the Enterprise Edition.
             /// </remarks>
             [JsiiProperty(name: "instanceSeries", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceSeries
@@ -199,7 +241,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: payType: For the type of payment, see "Payment Type Parameter Table"
+            /// <strong>Property</strong>: payType: Specifies the billing method of the instance. Valid values:
+            /// *   drdsPre: The instance uses the subscription billing method.
+            /// *   drdsPost: The instance uses the pay-as-you-go billing method.
+            /// *   drdsRo: By default, the pay-as-you-go billing method is used when you create
+            /// read-only instances.
             /// </remarks>
             [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object PayType
@@ -208,7 +254,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing
+            /// <strong>Property</strong>: specification: Specifies the specification code of the instance. The value consists of the
+            /// instance type and the specified instance specification. For example, you can set
+            /// the value to drds.sn2.4c16g.8c32g.
             /// </remarks>
             [JsiiProperty(name: "specification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Specification
@@ -217,7 +265,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: type: Instance type, instance type 0 - shared instance 1 - exclusive instance, in addition, this parameter can also pass PRIVATE and PUBLIC to represent exclusive instance and shared instance respectively
+            /// <strong>Property</strong>: type: Specifies the type of the instance. Set the value to PRIVATE. The value PRIVATE
+            /// specifies that the instance is a dedicated instance.
+            /// >  You can also set the value to 1 to specify that the instance is a dedicated
+            /// instance.
             /// </remarks>
             [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Type
@@ -245,7 +296,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: isAutoRenew: Whether to renew the fee automatically, if it is purchased on a monthly basis, it will automatically renew for one month, and if it is purchased on an annual basis, it will automatically renew for one year. The parameter takes effect when the payment type is drdsPre.
+            /// <strong>Property</strong>: isAutoRenew: Specifies whether to enable automatic renewal. Valid values:
+            /// *   true: If the PricingCycle parameter is set to month, the subscription is
+            /// automatically renewed for one month. If the PricingCycle parameter is set to
+            /// year, the subscription is automatically renewed for one year.
+            /// *   false: The auto-renewal feature is disabled for the instance.
+            /// >  This parameter only takes effect when the PayType parameter is set to drdsPre.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "isAutoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -255,7 +311,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: mySqlVersion: The MySQL protocol version supported by DRDS. Valid values: 5 and 8. Default value: 5. This parameter is valid only when the primary instance is created. The read-only instance is the same as the primary instance by default.
+            /// <strong>Property</strong>: mySqlVersion: Specifies the MySQL version that is supported by the instance. Valid values:
+            /// *   5: The instance is fully compatible with MySQL 5.x. This value is the default
+            /// value.
+            /// *   8: The instance is fully compatible with MySQL 8.0.
+            /// >  This parameter only takes effect when you create a primary instance. By
+            /// default, the MySQL version of the read-only instance is the same as that of the
+            /// primary instance.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "mySqlVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -265,7 +327,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: pricingCycle: The unit of the order period, year: year, month: month. The parameter takes effect when the payment type is drdsPre.
+            /// <strong>Property</strong>: pricingCycle: Specifies the unit of the subscription duration of the subscription instance.
+            /// Valid values:
+            /// *   year: The unit of the subscription duration is year.
+            /// *   month: The unit of the subscription duration is month.
+            /// >  This parameter is required if you set the PayType parameter to drdsPre.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

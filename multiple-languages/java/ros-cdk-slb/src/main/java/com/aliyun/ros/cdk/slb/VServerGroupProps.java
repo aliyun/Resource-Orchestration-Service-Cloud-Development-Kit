@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.343Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:44:47.166Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.VServerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(VServerGroupProps.Jsii$Proxy.class)
 public interface VServerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,12 +16,64 @@ public interface VServerGroupProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId();
 
     /**
-     * Property vServerGroupName: Display name of the VServerGroup.
+     * Property vServerGroupName: The name of the vServer group.
+     * <p>
+     * The name must be 1 to 80 characters in length, and can contain letters, digits,
+     * hyphens (-), forward slashes (/), periods (.),and underscores (_).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVServerGroupName();
 
     /**
-     * Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
+     * Property backendServers: The backend servers that you want to add.
+     * <p>
+     * Configure the following parameters:
+     * <p>
+     * <ul>
+     * <li>ServerId: required. The ID of the backend server. Specify the ID in a string.
+     * You can specify the ID of an Elastic Compute Service (ECS) instance, an elastic
+     * network interface (ENI), or an elastic container instance. If you set ServerId to
+     * the ID of an ENI or an elastic container instance, you must configure the Type
+     * parameter.</li>
+     * <li>Weight: the weight of the backend server. Valid values: 0 to 100. Default
+     * value: 100. If you set the weight of a backend server to 0, no requests are
+     * forwarded to the backend server.</li>
+     * <li>Description: optional. The description of the backend server. Specify the
+     * description in a string. The description must be 1 to 80 characters in length,
+     * and can contain letters, digits, hyphens (-), forward slashes (/), periods (.),
+     * and underscores (_).</li>
+     * <li>Type: the type of the backend server. Valid values:</li>
+     * <li>ecs (default): ECS instance</li>
+     * <li>eni: ENI.</li>
+     * <li>eni: elastic container instance.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * You can specify ENIs and elastic container instances as backend servers only
+     * for high-performance SLB instances.
+     * <p>
+     * </blockquote>
+     * <p>
+     * <ul>
+     * <li>ServerIp: The IP address of the ECS instance or ENI.</li>
+     * <li>Port: the backend port.
+     * Examples:</li>
+     * <li>Add an ECS instance:
+     * <code>[{ "ServerId": "i-xxxxxxxxx", "Weight": "100", "Type": "ecs", "Port":"80","Description":"test-112" }]</code></li>
+     * <li>Add an ENI:
+     * <code>[{ "ServerId": "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp": "192.168..", "Port":"80","Description":"test-112" }]</code></li>
+     * <li>Add an ENI with multiple IP addresses:
+     * <code>[{ "ServerId": "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp": "192.168..", "Port":"80","Description":"test-113" },{ "ServerId": "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp": "172.166..", "Port":"80","Description":"test-113" }]</code></li>
+     * <li>Add an elastic container instance:
+     * <code>[{ "ServerId": "eci-xxxxxxxxx", "Weight": "100", "Type": "eci", "ServerIp": "192.168..", "Port":"80","Description":"test-114" }]</code></li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * You can add only running backend servers to SLB instances. You can specify at
+     * most 20 backend servers.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBackendServers() {
         return null;
@@ -73,7 +125,9 @@ public interface VServerGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link VServerGroupProps#getVServerGroupName}
-         * @param vServerGroupName Property vServerGroupName: Display name of the VServerGroup. This parameter is required.
+         * @param vServerGroupName Property vServerGroupName: The name of the vServer group. This parameter is required.
+         *                         The name must be 1 to 80 characters in length, and can contain letters, digits,
+         *                         hyphens (-), forward slashes (/), periods (.),and underscores (_).
          * @return {@code this}
          */
         public Builder vServerGroupName(java.lang.String vServerGroupName) {
@@ -83,7 +137,9 @@ public interface VServerGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link VServerGroupProps#getVServerGroupName}
-         * @param vServerGroupName Property vServerGroupName: Display name of the VServerGroup. This parameter is required.
+         * @param vServerGroupName Property vServerGroupName: The name of the vServer group. This parameter is required.
+         *                         The name must be 1 to 80 characters in length, and can contain letters, digits,
+         *                         hyphens (-), forward slashes (/), periods (.),and underscores (_).
          * @return {@code this}
          */
         public Builder vServerGroupName(com.aliyun.ros.cdk.core.IResolvable vServerGroupName) {
@@ -93,7 +149,55 @@ public interface VServerGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link VServerGroupProps#getBackendServers}
-         * @param backendServers Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
+         * @param backendServers Property backendServers: The backend servers that you want to add.
+         *                       Configure the following parameters:
+         *                       <p>
+         *                       <ul>
+         *                       <li>ServerId: required. The ID of the backend server. Specify the ID in a string.
+         *                       You can specify the ID of an Elastic Compute Service (ECS) instance, an elastic
+         *                       network interface (ENI), or an elastic container instance. If you set ServerId to
+         *                       the ID of an ENI or an elastic container instance, you must configure the Type
+         *                       parameter.</li>
+         *                       <li>Weight: the weight of the backend server. Valid values: 0 to 100. Default
+         *                       value: 100. If you set the weight of a backend server to 0, no requests are
+         *                       forwarded to the backend server.</li>
+         *                       <li>Description: optional. The description of the backend server. Specify the
+         *                       description in a string. The description must be 1 to 80 characters in length,
+         *                       and can contain letters, digits, hyphens (-), forward slashes (/), periods (.),
+         *                       and underscores (_).</li>
+         *                       <li>Type: the type of the backend server. Valid values:</li>
+         *                       <li>ecs (default): ECS instance</li>
+         *                       <li>eni: ENI.</li>
+         *                       <li>eni: elastic container instance.</li>
+         *                       </ul>
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       You can specify ENIs and elastic container instances as backend servers only
+         *                       for high-performance SLB instances.
+         *                       <p>
+         *                       </blockquote>
+         *                       <p>
+         *                       <ul>
+         *                       <li>ServerIp: The IP address of the ECS instance or ENI.</li>
+         *                       <li>Port: the backend port.
+         *                       Examples:</li>
+         *                       <li>Add an ECS instance:
+         *                       <code>[{ "ServerId": "i-xxxxxxxxx", "Weight": "100", "Type": "ecs", "Port":"80","Description":"test-112" }]</code></li>
+         *                       <li>Add an ENI:
+         *                       <code>[{ "ServerId": "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp": "192.168..", "Port":"80","Description":"test-112" }]</code></li>
+         *                       <li>Add an ENI with multiple IP addresses:
+         *                       <code>[{ "ServerId": "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp": "192.168..", "Port":"80","Description":"test-113" },{ "ServerId": "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp": "172.166..", "Port":"80","Description":"test-113" }]</code></li>
+         *                       <li>Add an elastic container instance:
+         *                       <code>[{ "ServerId": "eci-xxxxxxxxx", "Weight": "100", "Type": "eci", "ServerIp": "192.168..", "Port":"80","Description":"test-114" }]</code></li>
+         *                       </ul>
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       You can add only running backend servers to SLB instances. You can specify at
+         *                       most 20 backend servers.
+         *                       <p>
+         *                       </blockquote>
          * @return {@code this}
          */
         public Builder backendServers(com.aliyun.ros.cdk.core.IResolvable backendServers) {
@@ -103,7 +207,55 @@ public interface VServerGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link VServerGroupProps#getBackendServers}
-         * @param backendServers Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
+         * @param backendServers Property backendServers: The backend servers that you want to add.
+         *                       Configure the following parameters:
+         *                       <p>
+         *                       <ul>
+         *                       <li>ServerId: required. The ID of the backend server. Specify the ID in a string.
+         *                       You can specify the ID of an Elastic Compute Service (ECS) instance, an elastic
+         *                       network interface (ENI), or an elastic container instance. If you set ServerId to
+         *                       the ID of an ENI or an elastic container instance, you must configure the Type
+         *                       parameter.</li>
+         *                       <li>Weight: the weight of the backend server. Valid values: 0 to 100. Default
+         *                       value: 100. If you set the weight of a backend server to 0, no requests are
+         *                       forwarded to the backend server.</li>
+         *                       <li>Description: optional. The description of the backend server. Specify the
+         *                       description in a string. The description must be 1 to 80 characters in length,
+         *                       and can contain letters, digits, hyphens (-), forward slashes (/), periods (.),
+         *                       and underscores (_).</li>
+         *                       <li>Type: the type of the backend server. Valid values:</li>
+         *                       <li>ecs (default): ECS instance</li>
+         *                       <li>eni: ENI.</li>
+         *                       <li>eni: elastic container instance.</li>
+         *                       </ul>
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       You can specify ENIs and elastic container instances as backend servers only
+         *                       for high-performance SLB instances.
+         *                       <p>
+         *                       </blockquote>
+         *                       <p>
+         *                       <ul>
+         *                       <li>ServerIp: The IP address of the ECS instance or ENI.</li>
+         *                       <li>Port: the backend port.
+         *                       Examples:</li>
+         *                       <li>Add an ECS instance:
+         *                       <code>[{ "ServerId": "i-xxxxxxxxx", "Weight": "100", "Type": "ecs", "Port":"80","Description":"test-112" }]</code></li>
+         *                       <li>Add an ENI:
+         *                       <code>[{ "ServerId": "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp": "192.168..", "Port":"80","Description":"test-112" }]</code></li>
+         *                       <li>Add an ENI with multiple IP addresses:
+         *                       <code>[{ "ServerId": "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp": "192.168..", "Port":"80","Description":"test-113" },{ "ServerId": "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp": "172.166..", "Port":"80","Description":"test-113" }]</code></li>
+         *                       <li>Add an elastic container instance:
+         *                       <code>[{ "ServerId": "eci-xxxxxxxxx", "Weight": "100", "Type": "eci", "ServerIp": "192.168..", "Port":"80","Description":"test-114" }]</code></li>
+         *                       </ul>
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       You can add only running backend servers to SLB instances. You can specify at
+         *                       most 20 backend servers.
+         *                       <p>
+         *                       </blockquote>
          * @return {@code this}
          */
         public Builder backendServers(java.util.List<? extends java.lang.Object> backendServers) {

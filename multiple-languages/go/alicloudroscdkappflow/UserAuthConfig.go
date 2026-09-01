@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::UserAuthConfig`, which is used to create configurations for a user credential.
+// This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::UserAuthConfig`.
 type UserAuthConfig interface {
 	alicloudroscdkcore.Resource
 	IUserAuthConfig

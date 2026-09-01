@@ -168,7 +168,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 
         private object? _description;
 
-        /// <summary>Property description: The description of the Mount Point.</summary>
+        /// <summary>Property description: Description of the mount target.</summary>
+        /// <remarks>
+        /// The length cannot exceed 32 characters.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Description

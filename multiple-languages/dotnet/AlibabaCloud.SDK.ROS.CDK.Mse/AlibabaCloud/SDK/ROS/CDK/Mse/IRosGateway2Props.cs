@@ -68,7 +68,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.
+        /// <strong>Property</strong>: enableHardwareAcceleration: Specifies whether to enable hardware acceleration.
         /// </remarks>
         [JsiiProperty(name: "enableHardwareAcceleration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -107,7 +107,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.
+        /// <strong>Property</strong>: enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group.
         /// </remarks>
         [JsiiProperty(name: "enterpriseSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -156,9 +156,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: mserVersion: The MSE gateway instance type. Valid values:
-        /// mse_pro: normal instance
-        /// mse_premium: professional normal instancemse_serverless: serverless instance
+        /// <strong>Property</strong>: mserVersion: The edition of the gateway.
+        /// - `mse_premium`: Professional Edition
+        /// - `mse_pro`: Standard Edition
+        /// - `mse_serverless`: Serverless Edition
         /// </remarks>
         [JsiiProperty(name: "mserVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -412,7 +413,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.
+            /// <strong>Property</strong>: enableHardwareAcceleration: Specifies whether to enable hardware acceleration.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "enableHardwareAcceleration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -442,7 +443,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.
+            /// <strong>Property</strong>: enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "enterpriseSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -482,9 +483,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: mserVersion: The MSE gateway instance type. Valid values:
-            /// mse_pro: normal instance
-            /// mse_premium: professional normal instancemse_serverless: serverless instance
+            /// <strong>Property</strong>: mserVersion: The edition of the gateway.
+            /// - `mse_premium`: Professional Edition
+            /// - `mse_pro`: Standard Edition
+            /// - `mse_serverless`: Serverless Edition
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "mserVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

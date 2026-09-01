@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Represents a <code>AttachPolicyToGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.272Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:56:20.215Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.IAttachPolicyToGroup")
 @software.amazon.jsii.Jsii.Proxy(IAttachPolicyToGroup.Jsii$Proxy.class)
 public interface IAttachPolicyToGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

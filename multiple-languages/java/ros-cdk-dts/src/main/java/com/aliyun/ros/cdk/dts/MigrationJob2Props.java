@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dts;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-migrationjob2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:29:50.791Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:27:14.953Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.MigrationJob2Props")
 @software.amazon.jsii.Jsii.Proxy(MigrationJob2Props.Jsii$Proxy.class)
 public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializable {
@@ -13,19 +13,43 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
     /**
      * Property dataInitialization: Specifies whether to perform full data migration or full data synchronization.
      * <p>
-     * Default value: <strong>true</strong>. Valid values: <strong>true</strong> and <strong>false</strong>.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true (default)</li>
+     * <li>false</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * If JobType is set to CHECK, set this parameter to false.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDataInitialization();
 
     /**
      * Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization.
      * <p>
-     * Default value: <strong>false</strong>. Valid values: <strong>true</strong> and <strong>false</strong>.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>false (default)</li>
+     * <li>true</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * If JobType is set to CHECK, set this parameter to false.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDataSynchronization();
 
     /**
      * Property dbList: The objects that you want to migrate or synchronize.
+     * <p>
+     * The value is a JSON string.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDbList();
 
@@ -47,7 +71,19 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
     /**
      * Property structureInitialization: Specifies whether to perform schema migration or schema synchronization.
      * <p>
-     * Default value: true. Valid values: <strong>true</strong> and <strong>false</strong>.
+     * Valid
+     * values:
+     * <p>
+     * <ul>
+     * <li>true (default)</li>
+     * <li>false</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * If JobType is set to CHECK, set this parameter to false.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getStructureInitialization();
 
@@ -96,7 +132,16 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
     /**
      * Property delayRuleTime: The threshold for latency alerts.
      * <p>
-     * Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     * Unit: seconds. The value must be an integer.
+     * You can set the threshold based on your business requirements. To prevent
+     * unstable latency caused by network and database overloads, we recommend that you
+     * set the threshold to more than 10 seconds.
+     * <p>
+     * <blockquote>
+     * <p>
+     * If DelayNotice is set to true, this parameter is required.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDelayRuleTime() {
         return null;
@@ -175,18 +220,18 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property maxDu: The upper limit of DU.
+     * Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
      * <p>
-     * This parameter is supported only for serverless instances.
+     * Currently, this feature is not supported, please do not pass in parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMaxDu() {
         return null;
     }
 
     /**
-     * Property minDu: The lower limit of DU.
+     * Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.
      * <p>
-     * This parameter is supported only for serverless instances.
+     * This feature is currently not supported, please do not pass in parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMinDu() {
         return null;
@@ -195,7 +240,10 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
     /**
      * Property reserve: The reserved parameter of DTS.
      * <p>
-     * You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+     * The value is a JSON string. You can specify this
+     * parameter to add more configurations of the source or destination instance to the
+     * DTS task. For example, you can specify the data storage format of the destination
+     * Kafka database and the CEN instance ID.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getReserve() {
         return null;
@@ -280,7 +328,18 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link MigrationJob2Props#getDataInitialization}
          * @param dataInitialization Property dataInitialization: Specifies whether to perform full data migration or full data synchronization. This parameter is required.
-         *                           Default value: <strong>true</strong>. Valid values: <strong>true</strong> and <strong>false</strong>.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>true (default)</li>
+         *                           <li>false</li>
+         *                           </ul>
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           If JobType is set to CHECK, set this parameter to false.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder dataInitialization(java.lang.Boolean dataInitialization) {
@@ -291,7 +350,18 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link MigrationJob2Props#getDataInitialization}
          * @param dataInitialization Property dataInitialization: Specifies whether to perform full data migration or full data synchronization. This parameter is required.
-         *                           Default value: <strong>true</strong>. Valid values: <strong>true</strong> and <strong>false</strong>.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>true (default)</li>
+         *                           <li>false</li>
+         *                           </ul>
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           If JobType is set to CHECK, set this parameter to false.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder dataInitialization(com.aliyun.ros.cdk.core.IResolvable dataInitialization) {
@@ -302,7 +372,18 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link MigrationJob2Props#getDataSynchronization}
          * @param dataSynchronization Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization. This parameter is required.
-         *                            Default value: <strong>false</strong>. Valid values: <strong>true</strong> and <strong>false</strong>.
+         *                            Valid values:
+         *                            <p>
+         *                            <ul>
+         *                            <li>false (default)</li>
+         *                            <li>true</li>
+         *                            </ul>
+         *                            <p>
+         *                            <blockquote>
+         *                            <p>
+         *                            If JobType is set to CHECK, set this parameter to false.
+         *                            <p>
+         *                            </blockquote>
          * @return {@code this}
          */
         public Builder dataSynchronization(java.lang.Boolean dataSynchronization) {
@@ -313,7 +394,18 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link MigrationJob2Props#getDataSynchronization}
          * @param dataSynchronization Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization. This parameter is required.
-         *                            Default value: <strong>false</strong>. Valid values: <strong>true</strong> and <strong>false</strong>.
+         *                            Valid values:
+         *                            <p>
+         *                            <ul>
+         *                            <li>false (default)</li>
+         *                            <li>true</li>
+         *                            </ul>
+         *                            <p>
+         *                            <blockquote>
+         *                            <p>
+         *                            If JobType is set to CHECK, set this parameter to false.
+         *                            <p>
+         *                            </blockquote>
          * @return {@code this}
          */
         public Builder dataSynchronization(com.aliyun.ros.cdk.core.IResolvable dataSynchronization) {
@@ -324,6 +416,7 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link MigrationJob2Props#getDbList}
          * @param dbList Property dbList: The objects that you want to migrate or synchronize. This parameter is required.
+         *               The value is a JSON string.
          * @return {@code this}
          */
         public Builder dbList(com.aliyun.ros.cdk.core.IResolvable dbList) {
@@ -334,6 +427,7 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link MigrationJob2Props#getDbList}
          * @param dbList Property dbList: The objects that you want to migrate or synchronize. This parameter is required.
+         *               The value is a JSON string.
          * @return {@code this}
          */
         public Builder dbList(java.util.Map<java.lang.String, ? extends java.lang.Object> dbList) {
@@ -404,7 +498,19 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link MigrationJob2Props#getStructureInitialization}
          * @param structureInitialization Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. This parameter is required.
-         *                                Default value: true. Valid values: <strong>true</strong> and <strong>false</strong>.
+         *                                Valid
+         *                                values:
+         *                                <p>
+         *                                <ul>
+         *                                <li>true (default)</li>
+         *                                <li>false</li>
+         *                                </ul>
+         *                                <p>
+         *                                <blockquote>
+         *                                <p>
+         *                                If JobType is set to CHECK, set this parameter to false.
+         *                                <p>
+         *                                </blockquote>
          * @return {@code this}
          */
         public Builder structureInitialization(java.lang.Boolean structureInitialization) {
@@ -415,7 +521,19 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link MigrationJob2Props#getStructureInitialization}
          * @param structureInitialization Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. This parameter is required.
-         *                                Default value: true. Valid values: <strong>true</strong> and <strong>false</strong>.
+         *                                Valid
+         *                                values:
+         *                                <p>
+         *                                <ul>
+         *                                <li>true (default)</li>
+         *                                <li>false</li>
+         *                                </ul>
+         *                                <p>
+         *                                <blockquote>
+         *                                <p>
+         *                                If JobType is set to CHECK, set this parameter to false.
+         *                                <p>
+         *                                </blockquote>
          * @return {@code this}
          */
         public Builder structureInitialization(com.aliyun.ros.cdk.core.IResolvable structureInitialization) {
@@ -534,7 +652,16 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link MigrationJob2Props#getDelayRuleTime}
          * @param delayRuleTime Property delayRuleTime: The threshold for latency alerts.
-         *                      Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+         *                      Unit: seconds. The value must be an integer.
+         *                      You can set the threshold based on your business requirements. To prevent
+         *                      unstable latency caused by network and database overloads, we recommend that you
+         *                      set the threshold to more than 10 seconds.
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      If DelayNotice is set to true, this parameter is required.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder delayRuleTime(java.lang.Number delayRuleTime) {
@@ -545,7 +672,16 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link MigrationJob2Props#getDelayRuleTime}
          * @param delayRuleTime Property delayRuleTime: The threshold for latency alerts.
-         *                      Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+         *                      Unit: seconds. The value must be an integer.
+         *                      You can set the threshold based on your business requirements. To prevent
+         *                      unstable latency caused by network and database overloads, we recommend that you
+         *                      set the threshold to more than 10 seconds.
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      If DelayNotice is set to true, this parameter is required.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder delayRuleTime(com.aliyun.ros.cdk.core.IResolvable delayRuleTime) {
@@ -745,8 +881,8 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link MigrationJob2Props#getMaxDu}
-         * @param maxDu Property maxDu: The upper limit of DU.
-         *              This parameter is supported only for serverless instances.
+         * @param maxDu Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
+         *              Currently, this feature is not supported, please do not pass in parameters.
          * @return {@code this}
          */
         public Builder maxDu(java.lang.Number maxDu) {
@@ -756,8 +892,8 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link MigrationJob2Props#getMaxDu}
-         * @param maxDu Property maxDu: The upper limit of DU.
-         *              This parameter is supported only for serverless instances.
+         * @param maxDu Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
+         *              Currently, this feature is not supported, please do not pass in parameters.
          * @return {@code this}
          */
         public Builder maxDu(com.aliyun.ros.cdk.core.IResolvable maxDu) {
@@ -767,8 +903,8 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link MigrationJob2Props#getMinDu}
-         * @param minDu Property minDu: The lower limit of DU.
-         *              This parameter is supported only for serverless instances.
+         * @param minDu Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.
+         *              This feature is currently not supported, please do not pass in parameters.
          * @return {@code this}
          */
         public Builder minDu(java.lang.Number minDu) {
@@ -778,8 +914,8 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link MigrationJob2Props#getMinDu}
-         * @param minDu Property minDu: The lower limit of DU.
-         *              This parameter is supported only for serverless instances.
+         * @param minDu Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.
+         *              This feature is currently not supported, please do not pass in parameters.
          * @return {@code this}
          */
         public Builder minDu(com.aliyun.ros.cdk.core.IResolvable minDu) {
@@ -790,7 +926,10 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link MigrationJob2Props#getReserve}
          * @param reserve Property reserve: The reserved parameter of DTS.
-         *                You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+         *                The value is a JSON string. You can specify this
+         *                parameter to add more configurations of the source or destination instance to the
+         *                DTS task. For example, you can specify the data storage format of the destination
+         *                Kafka database and the CEN instance ID.
          * @return {@code this}
          */
         public Builder reserve(com.aliyun.ros.cdk.core.IResolvable reserve) {
@@ -801,7 +940,10 @@ public interface MigrationJob2Props extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link MigrationJob2Props#getReserve}
          * @param reserve Property reserve: The reserved parameter of DTS.
-         *                You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+         *                The value is a JSON string. You can specify this
+         *                parameter to add more configurations of the source or destination instance to the
+         *                DTS task. For example, you can specify the data storage format of the destination
+         *                Kafka database and the CEN instance ID.
          * @return {@code this}
          */
         public Builder reserve(java.util.Map<java.lang.String, ? extends java.lang.Object> reserve) {

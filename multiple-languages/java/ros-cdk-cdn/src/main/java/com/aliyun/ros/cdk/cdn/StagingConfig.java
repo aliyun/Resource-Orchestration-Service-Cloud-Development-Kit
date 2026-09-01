@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDN::StagingConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:42:42.270Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:28:08.626Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.StagingConfig")
 public class StagingConfig extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cdn.IStagingConfig {
 
@@ -120,20 +120,24 @@ public class StagingConfig extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property domainName: The domain name of the CDN.
+         * Property domainName: The accelerated domain name.
+         * <p>
+         * Only one domain name can be configured at a time.
          * <p>
          * @return {@code this}
-         * @param domainName Property domainName: The domain name of the CDN. This parameter is required.
+         * @param domainName Property domainName: The accelerated domain name. This parameter is required.
          */
         public Builder domainName(final java.lang.String domainName) {
             this.props.domainName(domainName);
             return this;
         }
         /**
-         * Property domainName: The domain name of the CDN.
+         * Property domainName: The accelerated domain name.
+         * <p>
+         * Only one domain name can be configured at a time.
          * <p>
          * @return {@code this}
-         * @param domainName Property domainName: The domain name of the CDN. This parameter is required.
+         * @param domainName Property domainName: The accelerated domain name. This parameter is required.
          */
         public Builder domainName(final com.aliyun.ros.cdk.core.IResolvable domainName) {
             this.props.domainName(domainName);

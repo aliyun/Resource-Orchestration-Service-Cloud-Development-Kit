@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::DomainGroup`, which is used to add a domain name group.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::DomainGroup`.
 type RosDomainGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrGroupId() alicloudroscdkcore.IResolvable

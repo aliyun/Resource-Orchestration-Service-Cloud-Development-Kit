@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.actiontrail;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-advancedquerytemplate
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:13:01.920Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:51:46.187Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.AdvancedQueryTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(AdvancedQueryTemplateProps.Jsii$Proxy.class)
 public interface AdvancedQueryTemplateProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,7 +21,9 @@ public interface AdvancedQueryTemplateProps extends software.amazon.jsii.JsiiSer
     @org.jetbrains.annotations.NotNull java.lang.Object getTemplateSql();
 
     /**
-     * Property templateName: The name of the advanced query template.
+     * Property templateName: The name of the template, which can contain a maximum of 64 characters.
+     * <p>
+     * Uniqueness is not required.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateName() {
         return null;
@@ -83,7 +85,8 @@ public interface AdvancedQueryTemplateProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link AdvancedQueryTemplateProps#getTemplateName}
-         * @param templateName Property templateName: The name of the advanced query template.
+         * @param templateName Property templateName: The name of the template, which can contain a maximum of 64 characters.
+         *                     Uniqueness is not required.
          * @return {@code this}
          */
         public Builder templateName(java.lang.String templateName) {
@@ -93,7 +96,8 @@ public interface AdvancedQueryTemplateProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link AdvancedQueryTemplateProps#getTemplateName}
-         * @param templateName Property templateName: The name of the advanced query template.
+         * @param templateName Property templateName: The name of the template, which can contain a maximum of 64 characters.
+         *                     Uniqueness is not required.
          * @return {@code this}
          */
         public Builder templateName(com.aliyun.ros.cdk.core.IResolvable templateName) {

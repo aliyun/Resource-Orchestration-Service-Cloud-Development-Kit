@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-template
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:13:00.007Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:21:57.956Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.datasource.RosTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(RosTemplateProps.Jsii$Proxy.class)
 public interface RosTemplateProps extends software.amazon.jsii.JsiiSerializable {

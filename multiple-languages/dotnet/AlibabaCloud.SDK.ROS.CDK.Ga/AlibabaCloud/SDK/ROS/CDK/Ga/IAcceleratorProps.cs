@@ -44,10 +44,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
         }
 
+        /// <summary>Property bandwidth: The bandwidth of the global acceleration instance.</summary>
+        /// <remarks>
+        /// Unit: Mbps. Valid values: 200 to 5000. This parameter is required when the access mode is set to Anycast.
+        /// </remarks>
+        [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Bandwidth
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property bandwidthBillingType: Bandwidth billing method.</summary>
         [JsiiProperty(name: "bandwidthBillingType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? BandwidthBillingType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property crossBorderMode: The cross-border mode of the global acceleration instance.</summary>
+        [JsiiProperty(name: "crossBorderMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CrossBorderMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property ddosConfigList: The DDoS configuration list of the global acceleration instance.</summary>
+        [JsiiProperty(name: "ddosConfigList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ga.RosAccelerator.DdosConfigListProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DdosConfigList
         {
             get
             {
@@ -132,6 +168,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
         }
 
+        /// <summary>Property tags: Tags to attach to acceleration instance.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create acceleration instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ga.RosAccelerator.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Ga.RosAccelerator.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `Accelerator`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
@@ -167,10 +217,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property bandwidth: The bandwidth of the global acceleration instance.</summary>
+            /// <remarks>
+            /// Unit: Mbps. Valid values: 200 to 5000. This parameter is required when the access mode is set to Anycast.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Bandwidth
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property bandwidthBillingType: Bandwidth billing method.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "bandwidthBillingType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? BandwidthBillingType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property crossBorderMode: The cross-border mode of the global acceleration instance.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "crossBorderMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CrossBorderMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ddosConfigList: The DDoS configuration list of the global acceleration instance.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "ddosConfigList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ga.RosAccelerator.DdosConfigListProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? DdosConfigList
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -229,6 +306,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             public object? Spec
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tags: Tags to attach to acceleration instance.</summary>
+            /// <remarks>
+            /// Max support 20 tags to add during create acceleration instance. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ga.RosAccelerator.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Ga.RosAccelerator.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ga.RosAccelerator.ITagsProperty[]?>();
             }
         }
     }

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenRouteMaps`, which is used to query the information about routing policies.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenRouteMaps`.
 type CenRouteMaps interface {
 	alicloudroscdkcore.Resource
 	ICenRouteMaps

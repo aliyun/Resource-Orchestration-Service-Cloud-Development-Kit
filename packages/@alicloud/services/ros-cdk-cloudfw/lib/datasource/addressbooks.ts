@@ -51,7 +51,7 @@ export interface IAddressBooks extends ros.IResource {
     readonly attrGroupUuids: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CLOUDFW::AddressBooks`, which is used to query the information about address books for access control in Cloud Firewall.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CLOUDFW::AddressBooks`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAddressBooks`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudfw-addressbooks
  */

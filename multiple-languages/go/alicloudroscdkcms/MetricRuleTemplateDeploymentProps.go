@@ -21,7 +21,11 @@ type MetricRuleTemplateDeploymentProps struct {
 	EnableEndTime interface{} `field:"optional" json:"enableEndTime" yaml:"enableEndTime"`
 	// Property enableStartTime: The start time when the alarm takes effect.Value range: 0~23, indicating 00:00 to 23:00.
 	EnableStartTime interface{} `field:"optional" json:"enableStartTime" yaml:"enableStartTime"`
-	// Property notifyLevel: Alarm notification method.Value: 2: Phone + SMS + Email + Wangwang + DingTalk Robot. 3: SMS + Email + Wangwang + DingTalk Robot. 4: Wangwang + Dingding Robot.
+	// Property notifyLevel: The alert notification method.
+	//
+	// Valid values:
+	// Set the value to 4. A value of 4 indicates that alert notifications are sent by
+	// using TradeManager and DingTalk chatbots.
 	NotifyLevel interface{} `field:"optional" json:"notifyLevel" yaml:"notifyLevel"`
 	// Property silenceTime: Channel silence period.Unit: seconds.Default value: 86400. Note When the monitoring data continues to exceed the alarm rule threshold, only one alarm notification will be sent during each silence cycle.
 	SilenceTime interface{} `field:"optional" json:"silenceTime" yaml:"silenceTime"`

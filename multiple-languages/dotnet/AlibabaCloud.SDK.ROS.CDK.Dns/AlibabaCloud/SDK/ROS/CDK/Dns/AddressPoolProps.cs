@@ -92,9 +92,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
 
         private object _lbaStrategy;
 
-        /// <summary>Property lbaStrategy: The load balancing strategy.</summary>
+        /// <summary>Property lbaStrategy: The load balancing policy.</summary>
         /// <remarks>
-        /// Valid values: RoundRobin, Weighted, FallbackToFirst.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>ALL_RR: returns all addresses.</description>
+        /// <description>RATIO: returns addresses by weight.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "lbaStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object LbaStrategy
@@ -157,7 +162,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
 
         /// <summary>Property type: The type of the address pool.</summary>
         /// <remarks>
-        /// Valid values: Ipv4, Ipv6, Domain.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>IPV4: IPv4 address</description>
+        /// <description>IPV6: IPv6 address</description>
+        /// <description>DOMAIN: domain name</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Type
@@ -338,7 +349,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
 
         private object? _monitorExtendInfo;
 
-        /// <summary>Property monitorExtendInfo: The extended information of the health check.</summary>
+        /// <summary>Property monitorExtendInfo: The extended information.</summary>
+        /// <remarks>
+        /// This parameter is a JSON string. The required
+        /// parameters vary based on the health check protocol:
+        ///
+        /// <list type="bullet">
+        /// <description>HTTP and HTTPS:</description>
+        /// <description>port: The health check port.</description>
+        /// <description>host: The host settings.</description>
+        /// <description>path: The URL path.</description>
+        /// <description>code: The return code. A response with a status code greater than this value is
+        /// considered abnormal. Valid values: 400 and 500.</description>
+        /// <description>failureRate: The failure rate.</description>
+        /// <description>sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+        /// is available only for the HTTPS protocol.</description>
+        /// <description>true: Enable SNI.</description>
+        /// <description>Other values: Disable SNI.</description>
+        /// <description>nodeType: The type of the health check node when the address pool type is
+        /// DOMAIN. Valid values:</description>
+        /// <description>IPV4</description>
+        /// <description>IPV6</description>
+        /// <description>PING:</description>
+        /// <description>failureRate: The failure rate.</description>
+        /// <description>packetNum: The number of ping packets.</description>
+        /// <description>packetLossRate: The packet loss rate.</description>
+        /// <description>nodeType: The type of the health check node when the address pool type is
+        /// DOMAIN. Valid values:</description>
+        /// <description>IPV4</description>
+        /// <description>IPV6</description>
+        /// <description>TCP:</description>
+        /// <description>port: The health check port.</description>
+        /// <description>failureRate: The failure rate.</description>
+        /// <description>nodeType: The type of the health check node when the address pool type is
+        /// DOMAIN. Valid values:</description>
+        /// <description>IPV4</description>
+        /// <description>IPV6</description>
+        /// </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "monitorExtendInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         public object? MonitorExtendInfo
@@ -369,7 +417,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
 
         private object? _monitorStatus;
 
-        /// <summary>Property monitorStatus: The monitoring status of the address pool.</summary>
+        /// <summary>Property monitorStatus: The status of the health check feature.</summary>
+        /// <remarks>
+        /// Default value: CLOSE. If you set this
+        /// parameter to OPEN, the health check configuration is verified. Otherwise, the
+        /// configuration is ignored.
+        ///
+        /// <list type="bullet">
+        /// <description>OPEN: enabled</description>
+        /// <description>CLOSE: disabled</description>
+        /// </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "monitorStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? MonitorStatus

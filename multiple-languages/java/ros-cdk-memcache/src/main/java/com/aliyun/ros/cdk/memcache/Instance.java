@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.memcache;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Memcache::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:49:03.018Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:03:56.967Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.memcache.$Module.class, fqn = "@alicloud/ros-cdk-memcache.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.memcache.IInstance {
 
@@ -185,36 +185,36 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property autoRenewPeriod: The period of the auto renewal.
+         * Property autoRenewPeriod: The auto-renewal duration, in months.
          * <p>
-         * Unit: months. Valid values:
-         * 1
-         * 2
-         * 3
-         * 6
-         * 12
-         * Note You must specify this parameter if the value of the AutoRenew parameter is true.
+         * Valid values: 1, 2, 3, 6, and 12.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required when AutoRenew is set to true.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: The period of the auto renewal. This parameter is required.
+         * @param autoRenewPeriod Property autoRenewPeriod: The auto-renewal duration, in months. This parameter is required.
          */
         public Builder autoRenewPeriod(final java.lang.String autoRenewPeriod) {
             this.props().autoRenewPeriod(autoRenewPeriod);
             return this;
         }
         /**
-         * Property autoRenewPeriod: The period of the auto renewal.
+         * Property autoRenewPeriod: The auto-renewal duration, in months.
          * <p>
-         * Unit: months. Valid values:
-         * 1
-         * 2
-         * 3
-         * 6
-         * 12
-         * Note You must specify this parameter if the value of the AutoRenew parameter is true.
+         * Valid values: 1, 2, 3, 6, and 12.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required when AutoRenew is set to true.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: The period of the auto renewal. This parameter is required.
+         * @param autoRenewPeriod Property autoRenewPeriod: The auto-renewal duration, in months. This parameter is required.
          */
         public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
             this.props().autoRenewPeriod(autoRenewPeriod);
@@ -361,24 +361,24 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property couponNo: The coupon number.
+         * Property couponNo: The coupon code.
          * <p>
-         * Default value: youhuiquan_promotion_option_id_for_blank.
+         * Default value: <code>default</code>.
          * <p>
          * @return {@code this}
-         * @param couponNo Property couponNo: The coupon number. This parameter is required.
+         * @param couponNo Property couponNo: The coupon code. This parameter is required.
          */
         public Builder couponNo(final java.lang.String couponNo) {
             this.props().couponNo(couponNo);
             return this;
         }
         /**
-         * Property couponNo: The coupon number.
+         * Property couponNo: The coupon code.
          * <p>
-         * Default value: youhuiquan_promotion_option_id_for_blank.
+         * Default value: <code>default</code>.
          * <p>
          * @return {@code this}
-         * @param couponNo Property couponNo: The coupon number. This parameter is required.
+         * @param couponNo Property couponNo: The coupon code. This parameter is required.
          */
         public Builder couponNo(final com.aliyun.ros.cdk.core.IResolvable couponNo) {
             this.props().couponNo(couponNo);
@@ -417,9 +417,9 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property instanceName: The name of the instance.
          * <p>
-         * The name can be 2 to 128 characters in length and must start
-         * with a letter. The following characters are not supported: at signs (&#64;), forward slashes (/), colons (:), equal signs (=), double quotation marks
-         * ("), angle brackets (&lt;&gt;), braces ([]), curly brackets ({}) and spaces.
+         * The name must be 2 to 80 characters long, start with a
+         * letter (uppercase or lowercase) or a Chinese character, and not contain spaces or
+         * the characters <code>&#64;\/:=”&lt;&gt;{[]}</code>.
          * <p>
          * @return {@code this}
          * @param instanceName Property instanceName: The name of the instance. This parameter is required.
@@ -431,9 +431,9 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property instanceName: The name of the instance.
          * <p>
-         * The name can be 2 to 128 characters in length and must start
-         * with a letter. The following characters are not supported: at signs (&#64;), forward slashes (/), colons (:), equal signs (=), double quotation marks
-         * ("), angle brackets (&lt;&gt;), braces ([]), curly brackets ({}) and spaces.
+         * The name must be 2 to 80 characters long, start with a
+         * letter (uppercase or lowercase) or a Chinese character, and not contain spaces or
+         * the characters <code>&#64;\/:=”&lt;&gt;{[]}</code>.
          * <p>
          * @return {@code this}
          * @param instanceName Property instanceName: The name of the instance. This parameter is required.
@@ -475,32 +475,30 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property password: The password of the instance.
+         * Property password: The password for the instance.
          * <p>
-         * The password can be 8 to 32 characters in length and
-         * must contain at least three types of the following characters: uppercase letters,
-         * lowercase letters, digits, and special characters. Special characters include ! at signs (&#64;), number signs (#), dollar signs ($), percent signs (%), carets (^),
-         * ampersands (&amp;), asterisks (*), parentheses (()), underscores (_), plus signs (+),
-         * hyphens (-), and equal signs (=).
+         * The password must be 8 to 32 characters long and
+         * contain at least three of the following character types: uppercase letters,
+         * lowercase letters, digits, and special characters. The allowed special characters
+         * are <code>!&#64;#$%^&amp;*()_+-=</code>.
          * <p>
          * @return {@code this}
-         * @param password Property password: The password of the instance. This parameter is required.
+         * @param password Property password: The password for the instance. This parameter is required.
          */
         public Builder password(final java.lang.String password) {
             this.props().password(password);
             return this;
         }
         /**
-         * Property password: The password of the instance.
+         * Property password: The password for the instance.
          * <p>
-         * The password can be 8 to 32 characters in length and
-         * must contain at least three types of the following characters: uppercase letters,
-         * lowercase letters, digits, and special characters. Special characters include ! at signs (&#64;), number signs (#), dollar signs ($), percent signs (%), carets (^),
-         * ampersands (&amp;), asterisks (*), parentheses (()), underscores (_), plus signs (+),
-         * hyphens (-), and equal signs (=).
+         * The password must be 8 to 32 characters long and
+         * contain at least three of the following character types: uppercase letters,
+         * lowercase letters, digits, and special characters. The allowed special characters
+         * are <code>!&#64;#$%^&amp;*()_+-=</code>.
          * <p>
          * @return {@code this}
-         * @param password Property password: The password of the instance. This parameter is required.
+         * @param password Property password: The password for the instance. This parameter is required.
          */
         public Builder password(final com.aliyun.ros.cdk.core.IResolvable password) {
             this.props().password(password);
@@ -508,30 +506,38 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property period: The subscription period.
+         * Property period: The subscription duration, in months.
          * <p>
-         * You must specify this parameter if the value of the ChargeType
-         * parameter is PrePaid. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24,
-         * and 36.
-         * Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
+         * Valid values: 1 to 9, 12, 24, 36, and 60.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is available and required only when ChargeType is set to
+         * PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription period. This parameter is required.
+         * @param period Property period: The subscription duration, in months. This parameter is required.
          */
         public Builder period(final java.lang.String period) {
             this.props().period(period);
             return this;
         }
         /**
-         * Property period: The subscription period.
+         * Property period: The subscription duration, in months.
          * <p>
-         * You must specify this parameter if the value of the ChargeType
-         * parameter is PrePaid. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24,
-         * and 36.
-         * Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
+         * Valid values: 1 to 9, 12, 24, 36, and 60.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is available and required only when ChargeType is set to
+         * PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription period. This parameter is required.
+         * @param period Property period: The subscription duration, in months. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props().period(period);
@@ -664,24 +670,42 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property zoneId: The ID of the zone in which the instance is created.
+         * Property zoneId: The ID of the primary zone for the instance.
          * <p>
-         * You can call the DescribeRegions operation to query the latest region list.
+         * You can call the <a href="">DescribeZones</a>
+         * operation to query available zones.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can also specify a secondary zone by using the <code>SecondaryZoneId</code> parameter.
+         * The primary and replica nodes are then deployed in the specified primary and
+         * secondary zones to create a dual-zone architecture for in-city disaster recovery.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param zoneId Property zoneId: The ID of the zone in which the instance is created. This parameter is required.
+         * @param zoneId Property zoneId: The ID of the primary zone for the instance. This parameter is required.
          */
         public Builder zoneId(final java.lang.String zoneId) {
             this.props().zoneId(zoneId);
             return this;
         }
         /**
-         * Property zoneId: The ID of the zone in which the instance is created.
+         * Property zoneId: The ID of the primary zone for the instance.
          * <p>
-         * You can call the DescribeRegions operation to query the latest region list.
+         * You can call the <a href="">DescribeZones</a>
+         * operation to query available zones.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can also specify a secondary zone by using the <code>SecondaryZoneId</code> parameter.
+         * The primary and replica nodes are then deployed in the specified primary and
+         * secondary zones to create a dual-zone architecture for in-city disaster recovery.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param zoneId Property zoneId: The ID of the zone in which the instance is created. This parameter is required.
+         * @param zoneId Property zoneId: The ID of the primary zone for the instance. This parameter is required.
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props().zoneId(zoneId);

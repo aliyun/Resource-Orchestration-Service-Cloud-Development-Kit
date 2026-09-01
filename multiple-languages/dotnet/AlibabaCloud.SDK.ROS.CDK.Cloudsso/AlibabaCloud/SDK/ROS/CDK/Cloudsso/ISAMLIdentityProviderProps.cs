@@ -93,7 +93,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudsso
             }
         }
 
-        /// <summary>Property x509Certificate: The X.509 certificate n the PEM format. If you specify this parameter, all existing certificates are replaced.</summary>
+        /// <summary>Property x509Certificate: The X.509 certificate in the PEM format. If you specify this parameter, all existing certificates are replaced.</summary>
         [JsiiProperty(name: "x509Certificate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? X509Certificate
@@ -182,7 +182,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudsso
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property x509Certificate: The X.509 certificate n the PEM format. If you specify this parameter, all existing certificates are replaced.</summary>
+            /// <summary>Property x509Certificate: The X.509 certificate in the PEM format. If you specify this parameter, all existing certificates are replaced.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "x509Certificate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? X509Certificate

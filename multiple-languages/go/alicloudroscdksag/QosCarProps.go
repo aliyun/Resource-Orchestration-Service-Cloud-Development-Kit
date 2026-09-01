@@ -21,27 +21,33 @@ type QosCarProps struct {
 	QosId interface{} `field:"required" json:"qosId" yaml:"qosId"`
 	// Property description: The description of the traffic throttling policy.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
-	// Property maxBandwidthAbs: The maximum bandwidth.
+	// Property maxBandwidthAbs: The maximum bandwidth value.
 	//
-	// This parameter is required when LimitType is set to Absolute.
+	// The value must be an integer. Unit: Mbit\/s.
+	// This parameter is returned when LimitType is set to Absolute.
+	// >  The maximum bandwidth value must be greater than the minimum bandwidth value.
 	MaxBandwidthAbs interface{} `field:"optional" json:"maxBandwidthAbs" yaml:"maxBandwidthAbs"`
-	// Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG instance.
+	// Property maxBandwidthPercent: The maximum bandwidth percentage.
 	//
-	// This parameter is required when LimitType is set to Percent.
+	// Unit: percent (%). Valid values: 1 to 100.
+	// This parameter is required when you set LimitType to Percent.
+	// >  The maximum bandwidth percentage must be greater than the minimum bandwidth
+	// percentage.
 	MaxBandwidthPercent interface{} `field:"optional" json:"maxBandwidthPercent" yaml:"maxBandwidthPercent"`
-	// Property minBandwidthAbs: The minimum bandwidth.
+	// Property minBandwidthAbs: The minimum bandwidth value.
 	//
-	// This parameter is required when LimitType is set to Absolute.
+	// The value must be an integer. Unit: Mbit\/s.
+	// This parameter is returned when LimitType is set to Absolute.
 	MinBandwidthAbs interface{} `field:"optional" json:"minBandwidthAbs" yaml:"minBandwidthAbs"`
-	// Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG instance.
+	// Property minBandwidthPercent: The minimum bandwidth percentage.
 	//
-	// This parameter is required when LimitType is set to Percent.
+	// Unit: percent (%). Valid values: 1 to 100.
+	// This parameter is required when you set LimitType to Percent.
 	MinBandwidthPercent interface{} `field:"optional" json:"minBandwidthPercent" yaml:"minBandwidthPercent"`
-	// Property name: The name of the traffic throttling policy.
+	// Property name: The name of the traffic throttling rule.
 	//
-	// The name must be 2 to 128 characters in
-	// length, and can contain Chinese characters, letters, digits, periods (.), underscores
-	// (_), and hyphens (-).
+	// The name must be 2 to 128 characters in length, and can contain letters, digits,
+	// periods (.), underscores (_), and hyphens (-). The name must start with a letter.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	// Property percentSourceType: If the policy throttles traffic based on a specified bandwidth percentage, the following options are available: CcnBandwidth: Cloud Enterprise Network (CCN) bandwidth.
 	//

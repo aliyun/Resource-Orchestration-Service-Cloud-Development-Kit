@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edsuser;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::EdsUser::User</code>, which is used to create a convenience user.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:39:34.922Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:41:49.072Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edsuser.$Module.class, fqn = "@alicloud/ros-cdk-edsuser.User")
 public class User extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.edsuser.IUser {
 
@@ -162,20 +162,20 @@ public class User extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property businessChannel: The channel.
+         * Property businessChannel: The business channel.
          * <p>
          * @return {@code this}
-         * @param businessChannel Property businessChannel: The channel. This parameter is required.
+         * @param businessChannel Property businessChannel: The business channel. This parameter is required.
          */
         public Builder businessChannel(final java.lang.String businessChannel) {
             this.props.businessChannel(businessChannel);
             return this;
         }
         /**
-         * Property businessChannel: The channel.
+         * Property businessChannel: The business channel.
          * <p>
          * @return {@code this}
-         * @param businessChannel Property businessChannel: The channel. This parameter is required.
+         * @param businessChannel Property businessChannel: The business channel. This parameter is required.
          */
         public Builder businessChannel(final com.aliyun.ros.cdk.core.IResolvable businessChannel) {
             this.props.businessChannel(businessChannel);

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::MountPoint`, which is used to create a mount target.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::MountPoint`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `MountPoint` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-mountpoint
@@ -226,7 +226,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: description: The description of the Mount Point.
+        /// <strong>Property</strong>: description: Description of the mount target.
+        /// The length cannot exceed 32 characters.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

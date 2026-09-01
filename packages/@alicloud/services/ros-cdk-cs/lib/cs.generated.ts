@@ -224,7 +224,7 @@ function rosASKClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`The , which resource type creates an ACK Serverless cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ASKCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
@@ -783,7 +783,7 @@ function rosAnyClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::AnyCluster`, which is used to create a Container Service for Kubernetes (ACK) cluster of a specific type.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::AnyCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AnyCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-anycluster
  */
@@ -995,7 +995,7 @@ function rosApplicationDeploymentPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ApplicationDeployment`, which is used to deploy an application.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ApplicationDeployment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationDeployment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-applicationdeployment
  */
@@ -1103,6 +1103,13 @@ export interface RosClusterAddonsProps {
     readonly installedIgnore?: boolean | ros.IResolvable;
 
     /**
+     * @Property overrideExisting: Whether to override configuration of already installed addons when creating. If true, when creating, addons that already exist will have their configuration overridden, and addons that do not exist will be installed. When deleting, only uninstall addons that are installed during the creation stage.
+     * Cannot be used together with InstalledIgnore.
+     * Default false.
+     */
+    readonly overrideExisting?: boolean | ros.IResolvable;
+
+    /**
      * @Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
      * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
      * - None: Do nothing.
@@ -1151,6 +1158,7 @@ function RosClusterAddonsPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosClusterAddons_AddonsPropertyValidator))(properties.addons));
+    errors.collect(ros.propertyValidator('overrideExisting', ros.validateBoolean)(properties.overrideExisting));
     if(properties.validationMode && (typeof properties.validationMode) !== 'object') {
         errors.collect(ros.propertyValidator('validationMode', ros.validateAllowedValues)({
           data: properties.validationMode,
@@ -1187,6 +1195,7 @@ function rosClusterAddonsPropsToRosTemplate(properties: any, enableResourcePrope
       'Addons': ros.listMapper(rosClusterAddonsAddonsPropertyToRosTemplate)(properties.addons),
       'ClusterId': ros.stringToRosTemplate(properties.clusterId),
       'InstalledIgnore': ros.booleanToRosTemplate(properties.installedIgnore),
+      'OverrideExisting': ros.booleanToRosTemplate(properties.overrideExisting),
       'RolePolicy': ros.stringToRosTemplate(properties.rolePolicy),
       'ValidationMode': ros.stringToRosTemplate(properties.validationMode),
       'WaitUntil': ros.listMapper(rosClusterAddonsWaitUntilPropertyToRosTemplate)(properties.waitUntil),
@@ -1194,7 +1203,7 @@ function rosClusterAddonsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterAddons`, which is used to install components in a cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterAddons`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterAddons` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusteraddons
  */
@@ -1237,6 +1246,13 @@ export class RosClusterAddons extends ros.RosResource {
     public installedIgnore: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property overrideExisting: Whether to override configuration of already installed addons when creating. If true, when creating, addons that already exist will have their configuration overridden, and addons that do not exist will be installed. When deleting, only uninstall addons that are installed during the creation stage.
+     * Cannot be used together with InstalledIgnore.
+     * Default false.
+     */
+    public overrideExisting: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
      * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
      * - None: Do nothing.
@@ -1270,6 +1286,7 @@ export class RosClusterAddons extends ros.RosResource {
         this.addons = props.addons;
         this.clusterId = props.clusterId;
         this.installedIgnore = props.installedIgnore;
+        this.overrideExisting = props.overrideExisting;
         this.rolePolicy = props.rolePolicy;
         this.validationMode = props.validationMode;
         this.waitUntil = props.waitUntil;
@@ -1281,6 +1298,7 @@ export class RosClusterAddons extends ros.RosResource {
             addons: this.addons,
             clusterId: this.clusterId,
             installedIgnore: this.installedIgnore,
+            overrideExisting: this.overrideExisting,
             rolePolicy: this.rolePolicy,
             validationMode: this.validationMode,
             waitUntil: this.waitUntil,
@@ -1637,7 +1655,7 @@ function rosClusterApplicationPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterApplication`The , which resource type deploys containerized applications.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterApplication`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterApplication` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
@@ -2055,7 +2073,7 @@ function rosClusterHelmApplicationPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterHelmApplication`The , which type is used to deploy an application using Helm.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterHelmApplication`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterHelmApplication` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
@@ -2464,7 +2482,7 @@ function rosClusterNodePoolPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterNodePool`The , which resource type creates a node pool for a cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterNodePool`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterNodePool` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusternodepool
  */
@@ -3254,6 +3272,10 @@ export namespace RosClusterNodePool {
          */
         readonly onDemandPercentageAboveBaseCapacity?: number | ros.IResolvable;
         /**
+         * @Property systemDiskEncrypted: Whether to encrypt the system disk.
+         */
+        readonly systemDiskEncrypted?: boolean | ros.IResolvable;
+        /**
          * @Property imageType: The type of the OS image. You must specify this parameter or Platform.
          */
         readonly imageType?: string | ros.IResolvable;
@@ -3426,6 +3448,7 @@ function RosClusterNodePool_ScalingGroupPropertyValidator(properties: any): ros.
           }));
     }
     errors.collect(ros.propertyValidator('onDemandPercentageAboveBaseCapacity', ros.validateNumber)(properties.onDemandPercentageAboveBaseCapacity));
+    errors.collect(ros.propertyValidator('systemDiskEncrypted', ros.validateBoolean)(properties.systemDiskEncrypted));
     errors.collect(ros.propertyValidator('imageType', ros.validateString)(properties.imageType));
     if(properties.onDemandBaseCapacity && (typeof properties.onDemandBaseCapacity) !== 'object') {
         errors.collect(ros.propertyValidator('onDemandBaseCapacity', ros.validateRange)({
@@ -3538,6 +3561,7 @@ function rosClusterNodePoolScalingGroupPropertyToRosTemplate(properties: any): a
       'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
       'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
       'OnDemandPercentageAboveBaseCapacity': ros.numberToRosTemplate(properties.onDemandPercentageAboveBaseCapacity),
+      'SystemDiskEncrypted': ros.booleanToRosTemplate(properties.systemDiskEncrypted),
       'ImageType': ros.stringToRosTemplate(properties.imageType),
       'OnDemandBaseCapacity': ros.numberToRosTemplate(properties.onDemandBaseCapacity),
       'SystemDiskPerformanceLevel': ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
@@ -3895,7 +3919,7 @@ function rosGrantPermissionsPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::GrantPermissions`, which is used to grant role-based access control (RBAC) permissions to a Resource Access Management (RAM) user or RAM role.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::GrantPermissions`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrantPermissions` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-grantpermissions
  */
@@ -4298,7 +4322,7 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`Use , which to create an ACK managed edge Kubernetes cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedEdgeKubernetesCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
@@ -6182,7 +6206,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`The , which type creates ACK managed clusters.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedKubernetesCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */

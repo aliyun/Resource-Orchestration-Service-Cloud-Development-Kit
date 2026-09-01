@@ -10,7 +10,10 @@ export { RosAccessControl as AccessControlProperty };
 export interface AccessControlProps {
 
     /**
-     * Property aclName: The name of the access control list.
+     * Property aclName: The name of the ACL. The name must be 1 to 80 characters in length, and can
+     * contain letters, digits, periods (.), hyphens (-), forward slashes (\/), and
+     * underscores (_). The name of the ACL that you create must be unique within each
+     * region.
      */
     readonly aclName: string | ros.IResolvable;
 
@@ -20,7 +23,7 @@ export interface AccessControlProps {
     readonly aclEntries?: Array<RosAccessControl.AclEntriesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property addressIpVersion: IP version. Could be "ipv4" or "ipv6".
+     * Property addressIpVersion: The IP version. Valid values: ipv4 and ipv6.
      */
     readonly addressIpVersion?: string | ros.IResolvable;
 

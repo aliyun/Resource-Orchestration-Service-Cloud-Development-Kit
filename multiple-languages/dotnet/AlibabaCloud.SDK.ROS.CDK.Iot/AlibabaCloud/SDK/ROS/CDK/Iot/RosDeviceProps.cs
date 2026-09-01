@@ -48,8 +48,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         private object? _devEui;
 
         /// <remarks>
-        /// <strong>Property</strong>: devEui: DevEUI LoRaWAN equipment.
-        /// When you create a LoRaWAN devices, this will pass.
+        /// <strong>Property</strong>: devEui: The DevEUI of the LoRaWAN device.
+        /// This parameter is required when you create a LoRaWAN device.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "devEui", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -82,13 +82,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         private object? _deviceName;
 
         /// <remarks>
-        /// <strong></strong>: ), periods (.) , and colons (:).
-        /// DeviceName is used with ProductKey to identify a specified device.
-        /// Note If you do not specify this parameter, the system will generate a name for the device.
+        /// <strong></strong>: ), periods
+        /// (.), and colons (:).
+        /// You can use a combination of the DeviceName and ProductKey parameters to identify
+        /// a device.
+        /// >  If you do not specify this parameter, IoT Platform randomly generates a
+        /// DeviceName.
         ///
-        /// <strong>Property</strong>: deviceName: The name of the device that you want to register. The device name must consist of
-        /// 4 to 32 characters, including English letters, digits, and special characters, for
-        /// example, hyphens (-), underscores (_), at signs (
+        /// <strong>Property</strong>: deviceName: The DeviceName of the device. The name must be 4 to 32 characters in length, and
+        /// can contain letters, digits, hyphens (-), underscores (_), at signs (
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "deviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -121,7 +123,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         private object? _iotInstanceId;
 
         /// <remarks>
-        /// <strong>Property</strong>: iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
+        /// <strong>Property</strong>: iotInstanceId: The ID of the instance. You can view the instance ID on the Overview page in the
+        /// IoT Platform console.
+        /// >*   If your instance has an ID, you must configure this parameter. If you do not
+        /// set this parameter, the call fails.
+        /// >*   If your instance has no Overview page or ID, you do not need to set this
+        /// parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -154,9 +161,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         private object? _nickname;
 
         /// <remarks>
-        /// <strong>Property</strong>: nickname: Add a nickname for the device. A nickname can be 4-64 characters in length, and can
-        /// contain Chinese characters, English letters, numbers and underscores (_). A Chinese
-        /// character counts as two characters.
+        /// <strong>Property</strong>: nickname: The alias of the device. The alias must be 4 to 64 characters in length, and can
+        /// contain letters, digits, and underscores (_).
+        /// >  If you do not specify this parameter, IoT Platform does not generate an alias
+        /// for the device.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "nickname", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -189,8 +197,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         private object? _pinCode;
 
         /// <remarks>
-        /// <strong>Property</strong>: pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
-        /// When you create a LoRaWAN devices, this will pass.
+        /// <strong>Property</strong>: pinCode: The PIN code of the LoRaWAN device. This parameter is used to verify the DevEUI.
+        /// When you create a LoRaWAN device, set LoraNodeType to CUSTOMDEFINED. This
+        /// parameter is required.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "pinCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

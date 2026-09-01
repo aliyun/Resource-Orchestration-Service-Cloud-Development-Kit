@@ -12,6 +12,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     public interface INetworkAclProps
     {
         /// <summary>Property vpcId: The ID of the virtual private cloud (VPC) to which the network ACL belongs.</summary>
+        /// <remarks>
+        /// If the VPC contains Elastic Compute Service (ECS) instances of the following
+        /// instance families, you must upgrade the ECS instances or release the ECS
+        /// instances. Otherwise, you cannot create a network ACL for the VPC.
+        /// ecs.c1, ecs.c2, ecs.c4, ecs.c5, ecs.ce4, ecs.cm4, ecs.d1, ecs.e3, ecs.e4,
+        /// ecs.ga1, ecs.gn4, ecs.gn5, ecs.i1, ecs.m1, ecs.m2, ecs.mn4, ecs.n1, ecs.n2,
+        /// ecs.n4, ecs.s1, ecs.s2, ecs.s3, ecs.se1, ecs.sn1, ecs.sn2, ecs.t1, and ecs.xn4.
+        ///
+        ///     If the VPC contains an ECS instance that does not support network ACLs,
+        ///     upgrade the ECS instance.
+        /// </remarks>
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object VpcId
         {
@@ -20,8 +31,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property description: The description of the network ACL.</summary>
         /// <remarks>
-        /// The description must be 2 to 256 characters in length. The description must start
-        /// with a letter but cannot start with http:// or https://.
+        /// The description must be 1 to 256 characters in length, and cannot start with
+        /// <c>http:\/\/</c> or <c>https:\/\/</c>.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -57,9 +68,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property networkAclName: The name of the network ACL.</summary>
         /// <remarks>
-        /// The name must be 2 to 128 characters in length and can contain letters, digits, periods
-        /// (.), underscores (_), and hyphens (-). The name must start with a letter and cannot
-        /// start with http:// or https://.
+        /// The name must be 1 to 128 characters in length, and cannot start with <c>http:\/\/</c>
+        /// or <c>https:\/\/</c>.
         /// </remarks>
         [JsiiProperty(name: "networkAclName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -83,6 +93,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <summary>Property vpcId: The ID of the virtual private cloud (VPC) to which the network ACL belongs.</summary>
+            /// <remarks>
+            /// If the VPC contains Elastic Compute Service (ECS) instances of the following
+            /// instance families, you must upgrade the ECS instances or release the ECS
+            /// instances. Otherwise, you cannot create a network ACL for the VPC.
+            /// ecs.c1, ecs.c2, ecs.c4, ecs.c5, ecs.ce4, ecs.cm4, ecs.d1, ecs.e3, ecs.e4,
+            /// ecs.ga1, ecs.gn4, ecs.gn5, ecs.i1, ecs.m1, ecs.m2, ecs.mn4, ecs.n1, ecs.n2,
+            /// ecs.n4, ecs.s1, ecs.s2, ecs.s3, ecs.se1, ecs.sn1, ecs.sn2, ecs.t1, and ecs.xn4.
+            ///
+            ///     If the VPC contains an ECS instance that does not support network ACLs,
+            ///     upgrade the ECS instance.
+            /// </remarks>
             [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VpcId
             {
@@ -91,8 +112,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
             /// <summary>Property description: The description of the network ACL.</summary>
             /// <remarks>
-            /// The description must be 2 to 256 characters in length. The description must start
-            /// with a letter but cannot start with http:// or https://.
+            /// The description must be 1 to 256 characters in length, and cannot start with
+            /// <c>http:\/\/</c> or <c>https:\/\/</c>.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -119,9 +140,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
             /// <summary>Property networkAclName: The name of the network ACL.</summary>
             /// <remarks>
-            /// The name must be 2 to 128 characters in length and can contain letters, digits, periods
-            /// (.), underscores (_), and hyphens (-). The name must start with a letter and cannot
-            /// start with http:// or https://.
+            /// The name must be 1 to 128 characters in length, and cannot start with <c>http:\/\/</c>
+            /// or <c>https:\/\/</c>.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "networkAclName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

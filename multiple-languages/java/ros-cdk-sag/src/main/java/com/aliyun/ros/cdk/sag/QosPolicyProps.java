@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sag;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qospolicy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:44:51.004Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:26:52.121Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.QosPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(QosPolicyProps.Jsii$Proxy.class)
 public interface QosPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,7 +37,9 @@ public interface QosPolicyProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getIpProtocol();
 
     /**
-     * Property priority: The priority of the traffic throttling policy to which the traffic classification rule belongs.
+     * Property priority: The priority of the throttling rule to which the stream classification rule belongs.
+     * <p>
+     * Valid values: 1 to 3. A smaller value indicates a higher priority.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPriority();
 
@@ -65,10 +67,11 @@ public interface QosPolicyProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getSourcePortRange();
 
     /**
-     * Property description: The description of the traffic classification rule.
+     * Property description: The description of the stream classification rule for the QoS policy.
      * <p>
-     * The description must be 1 to 512 characters in length and can contain letters, digits,
-     * underscores (_), and hyphens (-). It must start with a letter.
+     * The description must be 1 to 512 characters in length. It must start with a
+     * letter or a Chinese character and can contain digits, underscores (_), and
+     * hyphens (-).
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -105,10 +108,10 @@ public interface QosPolicyProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property name: The name of the traffic classification rule.
+     * Property name: The name of the stream classification rule.
      * <p>
-     * The name must be 2 to 100 characters in length, and can contain digits, underscores
-     * (_), and hyphens (-). It must start with a letter.
+     * The name must be 2 to 100 characters in length. It must start with a letter or a
+     * Chinese character and can contain digits, hyphens (-), and underscores (_).
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
@@ -226,7 +229,8 @@ public interface QosPolicyProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosPolicyProps#getPriority}
-         * @param priority Property priority: The priority of the traffic throttling policy to which the traffic classification rule belongs. This parameter is required.
+         * @param priority Property priority: The priority of the throttling rule to which the stream classification rule belongs. This parameter is required.
+         *                 Valid values: 1 to 3. A smaller value indicates a higher priority.
          * @return {@code this}
          */
         public Builder priority(java.lang.Number priority) {
@@ -236,7 +240,8 @@ public interface QosPolicyProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosPolicyProps#getPriority}
-         * @param priority Property priority: The priority of the traffic throttling policy to which the traffic classification rule belongs. This parameter is required.
+         * @param priority Property priority: The priority of the throttling rule to which the stream classification rule belongs. This parameter is required.
+         *                 Valid values: 1 to 3. A smaller value indicates a higher priority.
          * @return {@code this}
          */
         public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {
@@ -318,9 +323,10 @@ public interface QosPolicyProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosPolicyProps#getDescription}
-         * @param description Property description: The description of the traffic classification rule.
-         *                    The description must be 1 to 512 characters in length and can contain letters, digits,
-         *                    underscores (_), and hyphens (-). It must start with a letter.
+         * @param description Property description: The description of the stream classification rule for the QoS policy.
+         *                    The description must be 1 to 512 characters in length. It must start with a
+         *                    letter or a Chinese character and can contain digits, underscores (_), and
+         *                    hyphens (-).
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -330,9 +336,10 @@ public interface QosPolicyProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosPolicyProps#getDescription}
-         * @param description Property description: The description of the traffic classification rule.
-         *                    The description must be 1 to 512 characters in length and can contain letters, digits,
-         *                    underscores (_), and hyphens (-). It must start with a letter.
+         * @param description Property description: The description of the stream classification rule for the QoS policy.
+         *                    The description must be 1 to 512 characters in length. It must start with a
+         *                    letter or a Chinese character and can contain digits, underscores (_), and
+         *                    hyphens (-).
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -414,9 +421,9 @@ public interface QosPolicyProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosPolicyProps#getName}
-         * @param name Property name: The name of the traffic classification rule.
-         *             The name must be 2 to 100 characters in length, and can contain digits, underscores
-         *             (_), and hyphens (-). It must start with a letter.
+         * @param name Property name: The name of the stream classification rule.
+         *             The name must be 2 to 100 characters in length. It must start with a letter or a
+         *             Chinese character and can contain digits, hyphens (-), and underscores (_).
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -426,9 +433,9 @@ public interface QosPolicyProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosPolicyProps#getName}
-         * @param name Property name: The name of the traffic classification rule.
-         *             The name must be 2 to 100 characters in length, and can contain digits, underscores
-         *             (_), and hyphens (-). It must start with a letter.
+         * @param name Property name: The name of the stream classification rule.
+         *             The name must be 2 to 100 characters in length. It must start with a letter or a
+         *             Chinese character and can contain digits, hyphens (-), and underscores (_).
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

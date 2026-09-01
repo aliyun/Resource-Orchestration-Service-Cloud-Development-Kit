@@ -243,7 +243,7 @@ export interface IHttpsApplicationConfiguration extends ros.IResource {
     readonly attrSiteVersion: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::HttpsApplicationConfiguration`The , which resource is used to add an HTTPS application configuration for a website.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::HttpsApplicationConfiguration`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHttpsApplicationConfiguration`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httpsapplicationconfiguration
  */

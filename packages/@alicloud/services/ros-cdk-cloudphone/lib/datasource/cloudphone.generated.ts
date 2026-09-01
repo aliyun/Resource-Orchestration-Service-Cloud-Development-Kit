@@ -64,7 +64,7 @@ function rosImagePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::Image`, which is used to query the information about an image.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::Image`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Image` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-image
  */
@@ -268,7 +268,7 @@ function rosImagesPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::Images`, which is used to query the information about available images.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::Images`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Images` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-images
  */
@@ -407,7 +407,7 @@ function rosKeyPairPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::KeyPair`, which is used to query the information about a key pair.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::KeyPair`.
  * @Note This class does not contain additional functions, so it is recommended to use the `KeyPair` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-keypair
  */
@@ -544,7 +544,7 @@ function rosKeyPairsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::KeyPairs`, which is used to query the information about key pairs.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::KeyPairs`.
  * @Note This class does not contain additional functions, so it is recommended to use the `KeyPairs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-keypairs
  */

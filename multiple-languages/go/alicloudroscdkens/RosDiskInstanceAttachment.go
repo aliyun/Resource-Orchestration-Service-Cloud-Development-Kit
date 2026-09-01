@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`, which is used to attach a data disk to an Edge Node Service (ENS) instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`.
 type RosDiskInstanceAttachment interface {
 	alicloudroscdkcore.RosResource
 	AttrDiskId() alicloudroscdkcore.IResolvable

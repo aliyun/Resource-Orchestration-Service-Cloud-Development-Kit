@@ -37,7 +37,7 @@ export interface IAclAssociation extends ros.IResource {
     readonly attrListenerId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AclAssociation`, which is used to associate access control lists (ACLs) with a listener.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AclAssociation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAclAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-aclassociation
  */

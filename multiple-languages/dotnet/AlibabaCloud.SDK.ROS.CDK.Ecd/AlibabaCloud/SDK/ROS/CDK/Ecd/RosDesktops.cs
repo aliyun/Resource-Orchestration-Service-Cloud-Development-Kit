@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecd
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Desktops`, which is used to create one or more cloud desktops.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Desktops`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Desktops` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
@@ -338,7 +338,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: desktopName: The name of the cloud desktop.
+        /// <strong>Property</strong>: desktopName: The name of the desktop. The name must meet the following requirements:
+        /// - The name cannot exceed 64 characters in length.
+        /// - It must start with a letter or a Chinese character. It cannot start
+        /// with`http:\/\/` or `https:\/\/`.
+        /// - It can contain letters, digits, Chinese characters, colons (:), underscores
+        /// (_), periods (.), and hyphens (-).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "desktopName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

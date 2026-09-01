@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.actiontrail;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACTIONTRAIL::AdvancedQueryTemplate</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:13:01.916Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:51:46.182Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.AdvancedQueryTemplate")
 public class AdvancedQueryTemplate extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.actiontrail.IAdvancedQueryTemplate {
 
@@ -154,20 +154,24 @@ public class AdvancedQueryTemplate extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property templateName: The name of the advanced query template.
+         * Property templateName: The name of the template, which can contain a maximum of 64 characters.
+         * <p>
+         * Uniqueness is not required.
          * <p>
          * @return {@code this}
-         * @param templateName Property templateName: The name of the advanced query template. This parameter is required.
+         * @param templateName Property templateName: The name of the template, which can contain a maximum of 64 characters. This parameter is required.
          */
         public Builder templateName(final java.lang.String templateName) {
             this.props.templateName(templateName);
             return this;
         }
         /**
-         * Property templateName: The name of the advanced query template.
+         * Property templateName: The name of the template, which can contain a maximum of 64 characters.
+         * <p>
+         * Uniqueness is not required.
          * <p>
          * @return {@code this}
-         * @param templateName Property templateName: The name of the advanced query template. This parameter is required.
+         * @param templateName Property templateName: The name of the template, which can contain a maximum of 64 characters. This parameter is required.
          */
         public Builder templateName(final com.aliyun.ros.cdk.core.IResolvable templateName) {
             this.props.templateName(templateName);

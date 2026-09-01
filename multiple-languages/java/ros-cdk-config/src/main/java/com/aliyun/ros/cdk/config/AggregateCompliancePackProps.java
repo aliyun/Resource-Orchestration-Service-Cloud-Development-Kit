@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.config;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregatecompliancepack
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:01:48.308Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:52:04.554Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.AggregateCompliancePackProps")
 @software.amazon.jsii.Jsii.Proxy(AggregateCompliancePackProps.Jsii$Proxy.class)
 public interface AggregateCompliancePackProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,12 +26,15 @@ public interface AggregateCompliancePackProps extends software.amazon.jsii.JsiiS
     @org.jetbrains.annotations.NotNull java.lang.Object getDescription();
 
     /**
-     * Property riskLevel: Compliance package risk level.
+     * Property riskLevel: The risk level of the compliance pack.
      * <p>
-     * Value:
-     * 1: High risk.
-     * 2: Medium risk.
-     * 3: Low risk.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>1: High</li>
+     * <li>2 (default): Medium</li>
+     * <li>3: Low</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRiskLevel();
 
@@ -216,11 +219,14 @@ public interface AggregateCompliancePackProps extends software.amazon.jsii.JsiiS
 
         /**
          * Sets the value of {@link AggregateCompliancePackProps#getRiskLevel}
-         * @param riskLevel Property riskLevel: Compliance package risk level. This parameter is required.
-         *                  Value:
-         *                  1: High risk.
-         *                  2: Medium risk.
-         *                  3: Low risk.
+         * @param riskLevel Property riskLevel: The risk level of the compliance pack. This parameter is required.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>1: High</li>
+         *                  <li>2 (default): Medium</li>
+         *                  <li>3: Low</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder riskLevel(java.lang.Number riskLevel) {
@@ -230,11 +236,14 @@ public interface AggregateCompliancePackProps extends software.amazon.jsii.JsiiS
 
         /**
          * Sets the value of {@link AggregateCompliancePackProps#getRiskLevel}
-         * @param riskLevel Property riskLevel: Compliance package risk level. This parameter is required.
-         *                  Value:
-         *                  1: High risk.
-         *                  2: Medium risk.
-         *                  3: Low risk.
+         * @param riskLevel Property riskLevel: The risk level of the compliance pack. This parameter is required.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>1: High</li>
+         *                  <li>2 (default): Medium</li>
+         *                  <li>3: Low</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder riskLevel(com.aliyun.ros.cdk.core.IResolvable riskLevel) {

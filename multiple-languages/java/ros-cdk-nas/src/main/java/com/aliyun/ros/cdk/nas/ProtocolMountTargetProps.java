@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.520Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:15:39.336Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.ProtocolMountTargetProps")
 @software.amazon.jsii.Jsii.Proxy(ProtocolMountTargetProps.Jsii$Proxy.class)
 public interface ProtocolMountTargetProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,7 +26,10 @@ public interface ProtocolMountTargetProps extends software.amazon.jsii.JsiiSeria
     @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
 
     /**
-     * Property vSwitchId: Switch ID exported by the protocol service.
+     * Property vSwitchId: The vSwitch ID of the export directory.
+     * <p>
+     * If the storage redundancy type of the file system is not zone-redundant (ZRS) and
+     * the VpcId is set, this field is required.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
@@ -40,7 +43,19 @@ public interface ProtocolMountTargetProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name. limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * Property description: The description of the export directory for the protocol service.
+     * <p>
+     * The name of the
+     * export directory appears in the console.
+     * Limits:
+     * <p>
+     * <ul>
+     * <li>The description must be 2 to 128 characters in length.</li>
+     * <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+     * <code>https:\/\/</code>.</li>
+     * <li>The description can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -59,16 +74,20 @@ public interface ProtocolMountTargetProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property path: The path of the CPFS directory that needs to be exported.
+     * Property path: The path of the CPFS directory that you want to export.
      * <p>
-     * limit:
-     * This directory must be existing directory on CPFS.
-     * The same directory allows only one export.
-     * Fileset and Path can only specify one.
-     * Format:
-     * The length is 1 to 1024 characters.
-     * Use UTF-8 encoding.
-     * It must start with the positive oblique line (/), and the root directory must be/.
+     * Limits:
+     * <p>
+     * <ul>
+     * <li>The directory already exists in the CPFS file system.</li>
+     * <li>You can create only one export directory for a directory.</li>
+     * <li>You can specify either a fileset or a path.
+     * Format:</li>
+     * <li>The path must be 1 to 1,024 characters in length.</li>
+     * <li>The path must be encoded in UTF-8.</li>
+     * <li>The path must start and end with a forward slash (/). The root directory is
+     * <code>\/</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPath() {
         return null;
@@ -155,7 +174,9 @@ public interface ProtocolMountTargetProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ProtocolMountTargetProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: Switch ID exported by the protocol service. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID of the export directory. This parameter is required.
+         *                  If the storage redundancy type of the file system is not zone-redundant (ZRS) and
+         *                  the VpcId is set, this field is required.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -165,7 +186,9 @@ public interface ProtocolMountTargetProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ProtocolMountTargetProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: Switch ID exported by the protocol service. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID of the export directory. This parameter is required.
+         *                  If the storage redundancy type of the file system is not zone-redundant (ZRS) and
+         *                  the VpcId is set, this field is required.
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
@@ -197,7 +220,18 @@ public interface ProtocolMountTargetProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ProtocolMountTargetProps#getDescription}
-         * @param description Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name. limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * @param description Property description: The description of the export directory for the protocol service.
+         *                    The name of the
+         *                    export directory appears in the console.
+         *                    Limits:
+         *                    <p>
+         *                    <ul>
+         *                    <li>The description must be 2 to 128 characters in length.</li>
+         *                    <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+         *                    <code>https:\/\/</code>.</li>
+         *                    <li>The description can contain letters, digits, colons (:), underscores (_), and
+         *                    hyphens (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -207,7 +241,18 @@ public interface ProtocolMountTargetProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ProtocolMountTargetProps#getDescription}
-         * @param description Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name. limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * @param description Property description: The description of the export directory for the protocol service.
+         *                    The name of the
+         *                    export directory appears in the console.
+         *                    Limits:
+         *                    <p>
+         *                    <ul>
+         *                    <li>The description must be 2 to 128 characters in length.</li>
+         *                    <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+         *                    <code>https:\/\/</code>.</li>
+         *                    <li>The description can contain letters, digits, colons (:), underscores (_), and
+         *                    hyphens (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -245,15 +290,19 @@ public interface ProtocolMountTargetProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ProtocolMountTargetProps#getPath}
-         * @param path Property path: The path of the CPFS directory that needs to be exported.
-         *             limit:
-         *             This directory must be existing directory on CPFS.
-         *             The same directory allows only one export.
-         *             Fileset and Path can only specify one.
-         *             Format:
-         *             The length is 1 to 1024 characters.
-         *             Use UTF-8 encoding.
-         *             It must start with the positive oblique line (/), and the root directory must be/.
+         * @param path Property path: The path of the CPFS directory that you want to export.
+         *             Limits:
+         *             <p>
+         *             <ul>
+         *             <li>The directory already exists in the CPFS file system.</li>
+         *             <li>You can create only one export directory for a directory.</li>
+         *             <li>You can specify either a fileset or a path.
+         *             Format:</li>
+         *             <li>The path must be 1 to 1,024 characters in length.</li>
+         *             <li>The path must be encoded in UTF-8.</li>
+         *             <li>The path must start and end with a forward slash (/). The root directory is
+         *             <code>\/</code>.</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder path(java.lang.String path) {
@@ -263,15 +312,19 @@ public interface ProtocolMountTargetProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ProtocolMountTargetProps#getPath}
-         * @param path Property path: The path of the CPFS directory that needs to be exported.
-         *             limit:
-         *             This directory must be existing directory on CPFS.
-         *             The same directory allows only one export.
-         *             Fileset and Path can only specify one.
-         *             Format:
-         *             The length is 1 to 1024 characters.
-         *             Use UTF-8 encoding.
-         *             It must start with the positive oblique line (/), and the root directory must be/.
+         * @param path Property path: The path of the CPFS directory that you want to export.
+         *             Limits:
+         *             <p>
+         *             <ul>
+         *             <li>The directory already exists in the CPFS file system.</li>
+         *             <li>You can create only one export directory for a directory.</li>
+         *             <li>You can specify either a fileset or a path.
+         *             Format:</li>
+         *             <li>The path must be 1 to 1,024 characters in length.</li>
+         *             <li>The path must be encoded in UTF-8.</li>
+         *             <li>The path must start and end with a forward slash (/). The root directory is
+         *             <code>\/</code>.</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder path(com.aliyun.ros.cdk.core.IResolvable path) {

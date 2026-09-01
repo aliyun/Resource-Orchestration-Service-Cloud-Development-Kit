@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.hbase;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::HBase::Cluster</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::HBase::Cluster</code>, which is used to create an ApsaraDB for HBase cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:23:49.958Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:29:16.474Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbase.$Module.class, fqn = "@alicloud/ros-cdk-hbase.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.hbase.ICluster {
 
@@ -235,32 +235,42 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property nodeCount: The number of nodes.
+         * Property nodeCount: The number of core nodes.
          * <p>
-         * Valid values: 1 to 100.
-         * ApsaraDB for HBase in single-node mode: one node
-         * ApsaraDB for HBase that runs in cluster mode and uses disks: at least two nodes
-         * ApsaraDB for HBase that runs in cluster mode and uses local disks: at least three
-         * nodes
+         * Valid values are as follows:
+         * <p>
+         * <ul>
+         * <li>If the instance is a single node, the number of core nodes is fixed at
+         * 1.<\/li>
+         * <li>If the instance uses disks, the number of core nodes ranges from 2 to
+         * 100.<\/li>
+         * <li>If the instance uses local disks, the number of core nodes ranges from 4 to
+         * 100.<\/li>
+         * <\/ul>
          * <p>
          * @return {@code this}
-         * @param nodeCount Property nodeCount: The number of nodes. This parameter is required.
+         * @param nodeCount Property nodeCount: The number of core nodes. This parameter is required.
          */
         public Builder nodeCount(final java.lang.Number nodeCount) {
             this.props.nodeCount(nodeCount);
             return this;
         }
         /**
-         * Property nodeCount: The number of nodes.
+         * Property nodeCount: The number of core nodes.
          * <p>
-         * Valid values: 1 to 100.
-         * ApsaraDB for HBase in single-node mode: one node
-         * ApsaraDB for HBase that runs in cluster mode and uses disks: at least two nodes
-         * ApsaraDB for HBase that runs in cluster mode and uses local disks: at least three
-         * nodes
+         * Valid values are as follows:
+         * <p>
+         * <ul>
+         * <li>If the instance is a single node, the number of core nodes is fixed at
+         * 1.<\/li>
+         * <li>If the instance uses disks, the number of core nodes ranges from 2 to
+         * 100.<\/li>
+         * <li>If the instance uses local disks, the number of core nodes ranges from 4 to
+         * 100.<\/li>
+         * <\/ul>
          * <p>
          * @return {@code this}
-         * @param nodeCount Property nodeCount: The number of nodes. This parameter is required.
+         * @param nodeCount Property nodeCount: The number of core nodes. This parameter is required.
          */
         public Builder nodeCount(final com.aliyun.ros.cdk.core.IResolvable nodeCount) {
             this.props.nodeCount(nodeCount);
@@ -349,26 +359,38 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property clusterName: The name of the instance.
+         * Property clusterName: Instance name.
          * <p>
-         * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-         * (.), underscores (_), and hyphens (-). It must start with a letter.
+         * The naming convention is as follows:
+         * <p>
+         * <ul>
+         * <li>Length must be 2 to 128 characters.</li>
+         * <li>Must start with a letter (uppercase or lowercase) or a Chinese character.</li>
+         * <li>Can contain digits or special characters. Valid special characters include the
+         * period (.), hyphen (-), and underscore (_).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param clusterName Property clusterName: The name of the instance. This parameter is required.
+         * @param clusterName Property clusterName: Instance name. This parameter is required.
          */
         public Builder clusterName(final java.lang.String clusterName) {
             this.props.clusterName(clusterName);
             return this;
         }
         /**
-         * Property clusterName: The name of the instance.
+         * Property clusterName: Instance name.
          * <p>
-         * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-         * (.), underscores (_), and hyphens (-). It must start with a letter.
+         * The naming convention is as follows:
+         * <p>
+         * <ul>
+         * <li>Length must be 2 to 128 characters.</li>
+         * <li>Must start with a letter (uppercase or lowercase) or a Chinese character.</li>
+         * <li>Can contain digits or special characters. Valid special characters include the
+         * period (.), hyphen (-), and underscore (_).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param clusterName Property clusterName: The name of the instance. This parameter is required.
+         * @param clusterName Property clusterName: Instance name. This parameter is required.
          */
         public Builder clusterName(final com.aliyun.ros.cdk.core.IResolvable clusterName) {
             this.props.clusterName(clusterName);
@@ -376,28 +398,46 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property coldStorageSize: The size of cold data storage.
+         * Property coldStorageSize: The cold storage capacity of the instance, in GB.
          * <p>
-         * If this parameter is set to 0, cold data storage is disabled.
-         * If this parameter is set to a value greater than 0, cold data storage is enabled.
-         * The storage size ranges from 800 GB to 100,000 GB and the step size is 10 GB.
+         * Valid values are as follows:
+         * <p>
+         * <ul>
+         * <li>0: Indicates that cold storage is disabled.</li>
+         * <li>800 to 1 000 000: Indicates that cold storage is enabled.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Cold storage is effective only when the engine type of the instance is hbaseue.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param coldStorageSize Property coldStorageSize: The size of cold data storage. This parameter is required.
+         * @param coldStorageSize Property coldStorageSize: The cold storage capacity of the instance, in GB. This parameter is required.
          */
         public Builder coldStorageSize(final java.lang.Number coldStorageSize) {
             this.props.coldStorageSize(coldStorageSize);
             return this;
         }
         /**
-         * Property coldStorageSize: The size of cold data storage.
+         * Property coldStorageSize: The cold storage capacity of the instance, in GB.
          * <p>
-         * If this parameter is set to 0, cold data storage is disabled.
-         * If this parameter is set to a value greater than 0, cold data storage is enabled.
-         * The storage size ranges from 800 GB to 100,000 GB and the step size is 10 GB.
+         * Valid values are as follows:
+         * <p>
+         * <ul>
+         * <li>0: Indicates that cold storage is disabled.</li>
+         * <li>800 to 1 000 000: Indicates that cold storage is enabled.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Cold storage is effective only when the engine type of the instance is hbaseue.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param coldStorageSize Property coldStorageSize: The size of cold data storage. This parameter is required.
+         * @param coldStorageSize Property coldStorageSize: The cold storage capacity of the instance, in GB. This parameter is required.
          */
         public Builder coldStorageSize(final com.aliyun.ros.cdk.core.IResolvable coldStorageSize) {
             this.props.coldStorageSize(coldStorageSize);
@@ -572,32 +612,48 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property period: The subscription period.
+         * Property period: The subscription duration of a subscription instance.
          * <p>
-         * This parameter only takes effect when the PayType parameter is set to Prepaid.
-         * When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-         * from 1 to 5.
-         * When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-         * from 1 to 9.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>When PeriodUnit is year, the value range is 1 to 3.</li>
+         * <li>When PeriodUnit is month, the value range is 1 to 9.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only when the payment type of the instance is
+         * Prepaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription period. This parameter is required.
+         * @param period Property period: The subscription duration of a subscription instance. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The subscription period.
+         * Property period: The subscription duration of a subscription instance.
          * <p>
-         * This parameter only takes effect when the PayType parameter is set to Prepaid.
-         * When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-         * from 1 to 5.
-         * When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-         * from 1 to 9.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>When PeriodUnit is year, the value range is 1 to 3.</li>
+         * <li>When PeriodUnit is month, the value range is 1 to 9.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only when the payment type of the instance is
+         * Prepaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription period. This parameter is required.
+         * @param period Property period: The subscription duration of a subscription instance. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
@@ -605,28 +661,48 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property periodUnit: The unit of the subscription period.
+         * Property periodUnit: The purchase unit for subscription instances.
          * <p>
          * Valid values:
-         * year
-         * month
+         * <p>
+         * <ul>
+         * <li>year: Year.</li>
+         * <li>month: Month.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only when the payment type of the instance is
+         * Prepaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: The unit of the subscription period. This parameter is required.
+         * @param periodUnit Property periodUnit: The purchase unit for subscription instances. This parameter is required.
          */
         public Builder periodUnit(final java.lang.String periodUnit) {
             this.props.periodUnit(periodUnit);
             return this;
         }
         /**
-         * Property periodUnit: The unit of the subscription period.
+         * Property periodUnit: The purchase unit for subscription instances.
          * <p>
          * Valid values:
-         * year
-         * month
+         * <p>
+         * <ul>
+         * <li>year: Year.</li>
+         * <li>month: Month.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only when the payment type of the instance is
+         * Prepaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: The unit of the subscription period. This parameter is required.
+         * @param periodUnit Property periodUnit: The purchase unit for subscription instances. This parameter is required.
          */
         public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.props.periodUnit(periodUnit);
@@ -663,26 +739,42 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property securityIpList: The IP addresses in the whitelist.
+         * Property securityIpList: The IP addresses to add to the instance whitelist.
          * <p>
-         * Example: 192.168.<em>.</em>/24. The 0.0.0.0/0 value cannot
-         * be added to the whitelist. Separate multiple IP addresses with commas (,).
+         * Separate multiple IP addresses
+         * with commas (,).
+         * <p>
+         * <blockquote>
+         * <p>
+         * If the IP address is set to 127.0.0.1, access to the instance from all IP
+         * addresses is denied. For example, if the IP address is set to 192.168.0.0/24, all
+         * IP addresses in the range 192.168.0.XX are allowed to access the instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param securityIpList Property securityIpList: The IP addresses in the whitelist. This parameter is required.
+         * @param securityIpList Property securityIpList: The IP addresses to add to the instance whitelist. This parameter is required.
          */
         public Builder securityIpList(final java.lang.String securityIpList) {
             this.props.securityIpList(securityIpList);
             return this;
         }
         /**
-         * Property securityIpList: The IP addresses in the whitelist.
+         * Property securityIpList: The IP addresses to add to the instance whitelist.
          * <p>
-         * Example: 192.168.<em>.</em>/24. The 0.0.0.0/0 value cannot
-         * be added to the whitelist. Separate multiple IP addresses with commas (,).
+         * Separate multiple IP addresses
+         * with commas (,).
+         * <p>
+         * <blockquote>
+         * <p>
+         * If the IP address is set to 127.0.0.1, access to the instance from all IP
+         * addresses is denied. For example, if the IP address is set to 192.168.0.0/24, all
+         * IP addresses in the range 192.168.0.XX are allowed to access the instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param securityIpList Property securityIpList: The IP addresses in the whitelist. This parameter is required.
+         * @param securityIpList Property securityIpList: The IP addresses to add to the instance whitelist. This parameter is required.
          */
         public Builder securityIpList(final com.aliyun.ros.cdk.core.IResolvable securityIpList) {
             this.props.securityIpList(securityIpList);

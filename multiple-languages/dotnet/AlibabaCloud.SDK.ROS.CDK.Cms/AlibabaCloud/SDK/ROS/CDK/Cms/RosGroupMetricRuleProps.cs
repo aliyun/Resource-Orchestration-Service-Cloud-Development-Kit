@@ -327,7 +327,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         private object? _dimensions;
 
         /// <remarks>
-        /// <strong>Property</strong>: dimensions: The expended resource dimensions.
+        /// <strong>Property</strong>: dimensions: The dimensions that specify the resources to be monitored.
+        /// The value is a collection of key-value pairs. Format: `key:value`. For example,
+        /// `{"userId":"120886317861**"}` and `{"instanceId":"i-2ze2d6j5uhg20x47**"}`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dimensions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -463,7 +465,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         private object? _interval;
 
         /// <remarks>
-        /// <strong>Property</strong>: interval: The detection period of alerts.
+        /// <strong>Property</strong>: interval: The interval at which the alert rule is triggered. Unit: seconds.
+        /// > Set the alert detection interval to the same value as the data reporting
+        /// interval. If the alert detection interval is shorter than the data reporting
+        /// interval, alerts may not be triggered due to insufficient data.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -620,7 +625,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         private object? _period;
 
         /// <remarks>
-        /// <strong>Property</strong>: period: The aggregation period. Unite: second.
+        /// <strong>Property</strong>: period: The statistical period of the metric.
+        /// The value of `Period` must be an integral multiple of 60. Unit: seconds. Default
+        /// value: 300.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -727,7 +734,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         private object? _webhook;
 
         /// <remarks>
-        /// <strong>Property</strong>: webhook: The URL of the callback triggered when an alert occurs.
+        /// <strong>Property</strong>: webhook: The callback URL to which alert notifications are sent.
+        /// Enter a URL that is accessible over the Internet. CloudMonitor sends alert
+        /// notifications to the URL using POST requests. Only the HTTP protocol is
+        /// supported.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "webhook", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

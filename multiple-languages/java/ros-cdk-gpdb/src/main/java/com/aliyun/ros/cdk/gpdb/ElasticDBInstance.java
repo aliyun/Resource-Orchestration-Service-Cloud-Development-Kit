@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::ElasticDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:13:37.716Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:21:33.432Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.ElasticDBInstance")
 public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.gpdb.IElasticDBInstance {
 
@@ -271,20 +271,38 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource implemen
         }
 
         /**
-         * Property vSwitchId: The vSwitch ID of the instance.
+         * Property vSwitchId: The vSwitch ID.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter is required.</li>
+         * <li>The vSwitch must be in the zone specified by <code>ZoneId</code>.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The vSwitch ID of the instance. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: The vSwitch ID of the instance.
+         * Property vSwitchId: The vSwitch ID.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter is required.</li>
+         * <li>The vSwitch must be in the zone specified by <code>ZoneId</code>.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The vSwitch ID of the instance. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
@@ -344,24 +362,46 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource implemen
         }
 
         /**
-         * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+         * Property dbInstanceCategory: The instance edition.
          * <p>
-         * This parameter must be passed in to create a storage reservation mode instance.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>HighAvailability: High-availability Edition</li>
+         * <li>Basic: Basic Edition</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for instances in elastic storage mode.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbInstanceCategory Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability. This parameter is required.
+         * @param dbInstanceCategory Property dbInstanceCategory: The instance edition. This parameter is required.
          */
         public Builder dbInstanceCategory(final java.lang.String dbInstanceCategory) {
             this.props.dbInstanceCategory(dbInstanceCategory);
             return this;
         }
         /**
-         * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+         * Property dbInstanceCategory: The instance edition.
          * <p>
-         * This parameter must be passed in to create a storage reservation mode instance.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>HighAvailability: High-availability Edition</li>
+         * <li>Basic: Basic Edition</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for instances in elastic storage mode.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbInstanceCategory Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability. This parameter is required.
+         * @param dbInstanceCategory Property dbInstanceCategory: The instance edition. This parameter is required.
          */
         public Builder dbInstanceCategory(final com.aliyun.ros.cdk.core.IResolvable dbInstanceCategory) {
             this.props.dbInstanceCategory(dbInstanceCategory);
@@ -579,20 +619,20 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource implemen
         }
 
         /**
-         * Property privateIpAddress: Private IP address.
+         * Property privateIpAddress: This parameter is deprecated.
          * <p>
          * @return {@code this}
-         * @param privateIpAddress Property privateIpAddress: Private IP address. This parameter is required.
+         * @param privateIpAddress Property privateIpAddress: This parameter is deprecated. This parameter is required.
          */
         public Builder privateIpAddress(final java.lang.String privateIpAddress) {
             this.props.privateIpAddress(privateIpAddress);
             return this;
         }
         /**
-         * Property privateIpAddress: Private IP address.
+         * Property privateIpAddress: This parameter is deprecated.
          * <p>
          * @return {@code this}
-         * @param privateIpAddress Property privateIpAddress: Private IP address. This parameter is required.
+         * @param privateIpAddress Property privateIpAddress: This parameter is deprecated. This parameter is required.
          */
         public Builder privateIpAddress(final com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
             this.props.privateIpAddress(privateIpAddress);
@@ -600,26 +640,28 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource implemen
         }
 
         /**
-         * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
+         * Property securityIpList: The IP address whitelist for the instance.
          * <p>
-         * Default value:
-         * 127.0.0.1.
+         * A value of 127.0.0.1 blocks all external access. After you create the instance,
+         * you can call the <a href="">ModifySecurityIps</a> operation to modify the IP address
+         * whitelist.
          * <p>
          * @return {@code this}
-         * @param securityIpList Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. This parameter is required.
+         * @param securityIpList Property securityIpList: The IP address whitelist for the instance. This parameter is required.
          */
         public Builder securityIpList(final java.lang.String securityIpList) {
             this.props.securityIpList(securityIpList);
             return this;
         }
         /**
-         * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
+         * Property securityIpList: The IP address whitelist for the instance.
          * <p>
-         * Default value:
-         * 127.0.0.1.
+         * A value of 127.0.0.1 blocks all external access. After you create the instance,
+         * you can call the <a href="">ModifySecurityIps</a> operation to modify the IP address
+         * whitelist.
          * <p>
          * @return {@code this}
-         * @param securityIpList Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. This parameter is required.
+         * @param securityIpList Property securityIpList: The IP address whitelist for the instance. This parameter is required.
          */
         public Builder securityIpList(final com.aliyun.ros.cdk.core.IResolvable securityIpList) {
             this.props.securityIpList(securityIpList);

@@ -5,22 +5,39 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnconnection
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.745Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.537Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(VpnConnectionProps.Jsii$Proxy.class)
 public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
+     * Property localSubnet: The CIDR block of the virtual private cloud (VPC) that needs to communicate with the on-premises database.
      * <p>
-     * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+     * The CIDR block is used in Phase 2 negotiations.
+     * Separate multiple CIDR blocks with commas (,). Example:
+     * 192.168.1.0/24,192.168.2.0/24.
+     * The following routing modes are supported:
+     * <p>
+     * <ul>
+     * <li>If you set LocalSubnet and RemoteSubnet to 0.0.0.0/0, the routing mode of the
+     * IPsec-VPN connection is set to Destination Routing Mode.</li>
+     * <li>If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+     * mode of the IPsec-VPN connection is set to Protected Data Flows.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getLocalSubnet();
 
     /**
-     * Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
+     * Property remoteSubnet: The CIDR block of the on-premises database that needs to communicate with the VPC.
      * <p>
-     * Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+     * The CIDR block is used in Phase 2 negotiations.
+     * Separate multiple CIDR blocks with commas (,). Example:
+     * 192.168.3.0/24,192.168.4.0/24.
+     * The following routing modes are supported:
+     * <p>
+     * <ul>
+     * <li>If you set LocalSubnet and RemoteSubnet to 0.0.0.0/0...</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRemoteSubnet();
 
@@ -102,7 +119,15 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property healthCheckConfig: Whether to enable the health check configuration.
+     * Property healthCheckConfig: This parameter is available if you create an IPsec-VPN connection in single-tunnel mode.
+     * <p>
+     * The health check configuration:
+     * <p>
+     * <ul>
+     * <li>HealthCheckConfig.enable: ... Default value: false.</li>
+     * <li>HealthCheckConfig.dip / sip / interval (Default: 3) / retry (Default: 3) /
+     * Policy (revoke_route default / reserve_route).</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckConfig() {
         return null;
@@ -123,9 +148,10 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property name: The name of the IPsec connection.
+     * Property name: The name of the IPsec-VPN connection.
      * <p>
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+     * The name must be 1 to 100 characters in length and cannot start with <code>http:\/\/</code> or
+     * <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
@@ -179,8 +205,18 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getLocalSubnet}
-         * @param localSubnet Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation. This parameter is required.
-         *                    Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+         * @param localSubnet Property localSubnet: The CIDR block of the virtual private cloud (VPC) that needs to communicate with the on-premises database. This parameter is required.
+         *                    The CIDR block is used in Phase 2 negotiations.
+         *                    Separate multiple CIDR blocks with commas (,). Example:
+         *                    192.168.1.0/24,192.168.2.0/24.
+         *                    The following routing modes are supported:
+         *                    <p>
+         *                    <ul>
+         *                    <li>If you set LocalSubnet and RemoteSubnet to 0.0.0.0/0, the routing mode of the
+         *                    IPsec-VPN connection is set to Destination Routing Mode.</li>
+         *                    <li>If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+         *                    mode of the IPsec-VPN connection is set to Protected Data Flows.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder localSubnet(java.lang.String localSubnet) {
@@ -190,8 +226,18 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getLocalSubnet}
-         * @param localSubnet Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation. This parameter is required.
-         *                    Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+         * @param localSubnet Property localSubnet: The CIDR block of the virtual private cloud (VPC) that needs to communicate with the on-premises database. This parameter is required.
+         *                    The CIDR block is used in Phase 2 negotiations.
+         *                    Separate multiple CIDR blocks with commas (,). Example:
+         *                    192.168.1.0/24,192.168.2.0/24.
+         *                    The following routing modes are supported:
+         *                    <p>
+         *                    <ul>
+         *                    <li>If you set LocalSubnet and RemoteSubnet to 0.0.0.0/0, the routing mode of the
+         *                    IPsec-VPN connection is set to Destination Routing Mode.</li>
+         *                    <li>If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+         *                    mode of the IPsec-VPN connection is set to Protected Data Flows.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder localSubnet(com.aliyun.ros.cdk.core.IResolvable localSubnet) {
@@ -201,8 +247,15 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getRemoteSubnet}
-         * @param remoteSubnet Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation. This parameter is required.
-         *                     Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+         * @param remoteSubnet Property remoteSubnet: The CIDR block of the on-premises database that needs to communicate with the VPC. This parameter is required.
+         *                     The CIDR block is used in Phase 2 negotiations.
+         *                     Separate multiple CIDR blocks with commas (,). Example:
+         *                     192.168.3.0/24,192.168.4.0/24.
+         *                     The following routing modes are supported:
+         *                     <p>
+         *                     <ul>
+         *                     <li>If you set LocalSubnet and RemoteSubnet to 0.0.0.0/0...</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder remoteSubnet(java.lang.String remoteSubnet) {
@@ -212,8 +265,15 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getRemoteSubnet}
-         * @param remoteSubnet Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation. This parameter is required.
-         *                     Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+         * @param remoteSubnet Property remoteSubnet: The CIDR block of the on-premises database that needs to communicate with the VPC. This parameter is required.
+         *                     The CIDR block is used in Phase 2 negotiations.
+         *                     Separate multiple CIDR blocks with commas (,). Example:
+         *                     192.168.3.0/24,192.168.4.0/24.
+         *                     The following routing modes are supported:
+         *                     <p>
+         *                     <ul>
+         *                     <li>If you set LocalSubnet and RemoteSubnet to 0.0.0.0/0...</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder remoteSubnet(com.aliyun.ros.cdk.core.IResolvable remoteSubnet) {
@@ -417,7 +477,14 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getHealthCheckConfig}
-         * @param healthCheckConfig Property healthCheckConfig: Whether to enable the health check configuration.
+         * @param healthCheckConfig Property healthCheckConfig: This parameter is available if you create an IPsec-VPN connection in single-tunnel mode.
+         *                          The health check configuration:
+         *                          <p>
+         *                          <ul>
+         *                          <li>HealthCheckConfig.enable: ... Default value: false.</li>
+         *                          <li>HealthCheckConfig.dip / sip / interval (Default: 3) / retry (Default: 3) /
+         *                          Policy (revoke_route default / reserve_route).</li>
+         *                          </ul>
          * @return {@code this}
          */
         public Builder healthCheckConfig(com.aliyun.ros.cdk.core.IResolvable healthCheckConfig) {
@@ -427,7 +494,14 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getHealthCheckConfig}
-         * @param healthCheckConfig Property healthCheckConfig: Whether to enable the health check configuration.
+         * @param healthCheckConfig Property healthCheckConfig: This parameter is available if you create an IPsec-VPN connection in single-tunnel mode.
+         *                          The health check configuration:
+         *                          <p>
+         *                          <ul>
+         *                          <li>HealthCheckConfig.enable: ... Default value: false.</li>
+         *                          <li>HealthCheckConfig.dip / sip / interval (Default: 3) / retry (Default: 3) /
+         *                          Policy (revoke_route default / reserve_route).</li>
+         *                          </ul>
          * @return {@code this}
          */
         public Builder healthCheckConfig(com.aliyun.ros.cdk.vpc.RosVpnConnection.HealthCheckConfigProperty healthCheckConfig) {
@@ -477,8 +551,9 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getName}
-         * @param name Property name: The name of the IPsec connection.
-         *             The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+         * @param name Property name: The name of the IPsec-VPN connection.
+         *             The name must be 1 to 100 characters in length and cannot start with <code>http:\/\/</code> or
+         *             <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -488,8 +563,9 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getName}
-         * @param name Property name: The name of the IPsec connection.
-         *             The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+         * @param name Property name: The name of the IPsec-VPN connection.
+         *             The name must be 1 to 100 characters in length and cannot start with <code>http:\/\/</code> or
+         *             <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

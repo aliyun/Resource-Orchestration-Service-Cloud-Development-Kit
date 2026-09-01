@@ -25,9 +25,10 @@ type ResourceMetricRuleProps struct {
 	// Examples: [{"instanceId":"i-uf6j91r34rnwawoo****"}] and [{"userId":"100931896542****"}].
 	// For information about the supported dimensions that are used to query resources, see Appendix 1: Metrics.
 	Resources interface{} `field:"required" json:"resources" yaml:"resources"`
-	// Property compositeExpression: The trigger conditions for multiple metrics.
+	// Property compositeExpression: The alert conditions for multiple metrics.
 	//
-	// Note: The trigger conditions for a single metric and multiple metrics are mutually exclusive. You cannot specify trigger conditions for a single metric and multiple metrics at the same time.
+	// > The settings for a single metric and multiple metrics are mutually exclusive.
+	// You cannot configure both.
 	CompositeExpression interface{} `field:"optional" json:"compositeExpression" yaml:"compositeExpression"`
 	// Property deletionForce: Whether to delete rule even if it is not created by ROS.
 	//
@@ -44,7 +45,11 @@ type ResourceMetricRuleProps struct {
 	// Unit: seconds.
 	// Note: For information about how to query the statistical period of a metric, see Appendix 1: Metrics.
 	Interval interface{} `field:"optional" json:"interval" yaml:"interval"`
-	// Property labels:.
+	// Property labels: Labels to add to a triggered alert.
+	//
+	// These labels appear in the alert
+	// notification.
+	// > This feature is equivalent to the `label` feature in Prometheus alerting.
 	Labels interface{} `field:"optional" json:"labels" yaml:"labels"`
 	// Property noDataPolicy: The processing method of alerts when no monitoring data is found.
 	//
@@ -60,9 +65,10 @@ type ResourceMetricRuleProps struct {
 	// Unit: seconds. The default value is the interval at which the monitoring data of the metric is collected.
 	// Note: For information about how to query the statistical period of a metric, see Appendix 1: Metrics.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
-	// Property prometheus: The Prometheus alert rule.
+	// Property prometheus: The configurations for a Prometheus alert rule.
 	//
-	// Note: This parameter is required only when you create a Prometheus alert rule for Hybrid Cloud Monitoring.
+	// > You need to configure this parameter only when you create a Prometheus alert
+	// rule for CloudMonitor for Enterprise.
 	Prometheus interface{} `field:"optional" json:"prometheus" yaml:"prometheus"`
 	// Property ruleId: The ID of the alert rule.
 	//

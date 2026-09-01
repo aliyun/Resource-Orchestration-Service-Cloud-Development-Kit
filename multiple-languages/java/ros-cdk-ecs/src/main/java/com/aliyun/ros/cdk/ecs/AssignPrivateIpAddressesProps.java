@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignprivateipaddresses
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.817Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.167Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AssignPrivateIpAddressesProps")
 @software.amazon.jsii.Jsii.Proxy(AssignPrivateIpAddressesProps.Jsii$Proxy.class)
 public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,17 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
     @org.jetbrains.annotations.NotNull java.lang.Object getNetworkInterfaceId();
 
     /**
-     * Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+     * Property ipv4PrefixCount: The number of IPv4 prefixes to be randomly generated for the ENI.
+     * <p>
+     * Valid values: 1
+     * to 10.
+     * <p>
+     * <blockquote>
+     * <p>
+     * To assign IPv4 prefixes to the ENI, you must specify the Ipv4Prefix.N or
+     * Ipv4PrefixCount parameter, but not both.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIpv4PrefixCount() {
         return null;
@@ -43,7 +53,10 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
     }
 
     /**
-     * Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
+     * Property secondaryPrivateIpAddressCount: The number of private IP addresses to be automatically assigned from the CIDR block of the vSwitch that is connected to the ENI.
+     * <p>
+     * To assign secondary private IP addresses to the ENI, you must specify
+     * <code>PrivateIpAddress.N</code> or <code>SecondaryPrivateIpAddressCount</code> but not both.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryPrivateIpAddressCount() {
         return null;
@@ -87,7 +100,16 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link AssignPrivateIpAddressesProps#getIpv4PrefixCount}
-         * @param ipv4PrefixCount Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+         * @param ipv4PrefixCount Property ipv4PrefixCount: The number of IPv4 prefixes to be randomly generated for the ENI.
+         *                        Valid values: 1
+         *                        to 10.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        To assign IPv4 prefixes to the ENI, you must specify the Ipv4Prefix.N or
+         *                        Ipv4PrefixCount parameter, but not both.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder ipv4PrefixCount(java.lang.Number ipv4PrefixCount) {
@@ -97,7 +119,16 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link AssignPrivateIpAddressesProps#getIpv4PrefixCount}
-         * @param ipv4PrefixCount Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+         * @param ipv4PrefixCount Property ipv4PrefixCount: The number of IPv4 prefixes to be randomly generated for the ENI.
+         *                        Valid values: 1
+         *                        to 10.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        To assign IPv4 prefixes to the ENI, you must specify the Ipv4Prefix.N or
+         *                        Ipv4PrefixCount parameter, but not both.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder ipv4PrefixCount(com.aliyun.ros.cdk.core.IResolvable ipv4PrefixCount) {
@@ -157,7 +188,9 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link AssignPrivateIpAddressesProps#getSecondaryPrivateIpAddressCount}
-         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
+         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The number of private IP addresses to be automatically assigned from the CIDR block of the vSwitch that is connected to the ENI.
+         *                                       To assign secondary private IP addresses to the ENI, you must specify
+         *                                       <code>PrivateIpAddress.N</code> or <code>SecondaryPrivateIpAddressCount</code> but not both.
          * @return {@code this}
          */
         public Builder secondaryPrivateIpAddressCount(java.lang.Number secondaryPrivateIpAddressCount) {
@@ -167,7 +200,9 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link AssignPrivateIpAddressesProps#getSecondaryPrivateIpAddressCount}
-         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
+         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The number of private IP addresses to be automatically assigned from the CIDR block of the vSwitch that is connected to the ENI.
+         *                                       To assign secondary private IP addresses to the ENI, you must specify
+         *                                       <code>PrivateIpAddress.N</code> or <code>SecondaryPrivateIpAddressCount</code> but not both.
          * @return {@code this}
          */
         public Builder secondaryPrivateIpAddressCount(com.aliyun.ros.cdk.core.IResolvable secondaryPrivateIpAddressCount) {

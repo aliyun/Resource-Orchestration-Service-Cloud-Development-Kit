@@ -12,9 +12,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
     public interface IRosAccountProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: accountName: The name of the database account. The name must comply with the following rules:
-        /// - It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).
-        /// - It can be up to 16 characters in length.
+        /// <strong>Property</strong>: accountName: The name of the database account. The name must meet the following requirements:
+        /// - It must start with a lowercase letter and end with a letter or a digit.
+        /// - It can contain lowercase letters, digits, and underscores (_).
+        /// - It must be 1 to 16 characters in length.
+        /// - It cannot be a reserved keyword, such as root or admin.
         /// </remarks>
         [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AccountName
@@ -59,14 +61,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: accountPrivilege: The permissions of the database account on the database. Valid values:
-        /// ReadWrite: has read and write permissions on the database.
-        /// ReadOnly: has the read-only permission on the database.
-        /// DMLOnly: runs only data manipulation language (DML) statements.
-        /// DDLOnly: runs only data definition language (DDL) statements.
-        /// ReadIndex: has read and index permissions on the database.
-        /// Default value: ReadWrite.
-        /// Separate multiple permissions with a comma (,).
+        /// <strong>Property</strong>: accountPrivilege: The privilege level to grant on the specified databases. Valid values:
+        /// - ReadWrite: read and write permissions
+        /// - ReadOnly: read-only permissions
+        /// - DMLOnly: DML permissions only
+        /// - DDLOnly: DDL permissions only
+        /// - ReadIndex: read-only and index permissions
+        /// > * This parameter takes effect only when you specify the `DBName` parameter.
+        /// >
+        /// > * If you specify multiple databases in `DBName`, you must specify a
+        /// corresponding permission for each in `AccountPrivilege`, separated by commas. The
+        /// `AccountPrivilege` string cannot exceed 900 characters. For example, to grant
+        /// read and write permissions to database DB1 and read-only permissions to database
+        /// DB2, set `DBName` to `DB1,DB2` and set `AccountPrivilege` to
+        /// `ReadWrite,ReadOnly`.
+        /// >
+        /// > * This parameter applies only to standard accounts on PolarDB for MySQL
+        /// clusters.
         /// </remarks>
         [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -97,7 +108,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: dbName: The name of the database whose access permissions are to be granted to the database account. Separate multiple databases with a comma (,).
+        /// <strong>Property</strong>: dbName: The name of the database that the account can access. To specify multiple
+        /// databases, separate the database names with a comma (,).
+        /// > This parameter applies only to standard accounts on PolarDB for MySQL clusters.
         /// </remarks>
         [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -136,9 +149,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: accountName: The name of the database account. The name must comply with the following rules:
-            /// - It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).
-            /// - It can be up to 16 characters in length.
+            /// <strong>Property</strong>: accountName: The name of the database account. The name must meet the following requirements:
+            /// - It must start with a lowercase letter and end with a letter or a digit.
+            /// - It can contain lowercase letters, digits, and underscores (_).
+            /// - It must be 1 to 16 characters in length.
+            /// - It cannot be a reserved keyword, such as root or admin.
             /// </remarks>
             [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AccountName
@@ -180,14 +195,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: accountPrivilege: The permissions of the database account on the database. Valid values:
-            /// ReadWrite: has read and write permissions on the database.
-            /// ReadOnly: has the read-only permission on the database.
-            /// DMLOnly: runs only data manipulation language (DML) statements.
-            /// DDLOnly: runs only data definition language (DDL) statements.
-            /// ReadIndex: has read and index permissions on the database.
-            /// Default value: ReadWrite.
-            /// Separate multiple permissions with a comma (,).
+            /// <strong>Property</strong>: accountPrivilege: The privilege level to grant on the specified databases. Valid values:
+            /// - ReadWrite: read and write permissions
+            /// - ReadOnly: read-only permissions
+            /// - DMLOnly: DML permissions only
+            /// - DDLOnly: DDL permissions only
+            /// - ReadIndex: read-only and index permissions
+            /// > * This parameter takes effect only when you specify the `DBName` parameter.
+            /// >
+            /// > * If you specify multiple databases in `DBName`, you must specify a
+            /// corresponding permission for each in `AccountPrivilege`, separated by commas. The
+            /// `AccountPrivilege` string cannot exceed 900 characters. For example, to grant
+            /// read and write permissions to database DB1 and read-only permissions to database
+            /// DB2, set `DBName` to `DB1,DB2` and set `AccountPrivilege` to
+            /// `ReadWrite,ReadOnly`.
+            /// >
+            /// > * This parameter applies only to standard accounts on PolarDB for MySQL
+            /// clusters.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -212,7 +236,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: dbName: The name of the database whose access permissions are to be granted to the database account. Separate multiple databases with a comma (,).
+            /// <strong>Property</strong>: dbName: The name of the database that the account can access. To specify multiple
+            /// databases, separate the database names with a comma (,).
+            /// > This parameter applies only to standard accounts on PolarDB for MySQL clusters.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

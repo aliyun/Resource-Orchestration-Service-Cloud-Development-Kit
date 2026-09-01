@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::ProInstance`, which is used to create an Anti-DDoS Proxy (Chinese Mainland) instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::ProInstance`.
 type RosProInstance interface {
 	alicloudroscdkcore.RosResource
 	AddressType() interface{}

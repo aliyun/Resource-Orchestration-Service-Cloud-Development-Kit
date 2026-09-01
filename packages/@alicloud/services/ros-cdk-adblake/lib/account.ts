@@ -35,7 +35,9 @@ export interface AccountProps {
     readonly engine: string | ros.IResolvable;
 
     /**
-     * Property accountDescription: The description of the account.
+     * Property accountDescription: The account description.
+     * - Must not start with `http:\/\/` or `https:\/\/`.
+     * - Be no longer than 256 characters.
      */
     readonly accountDescription?: string | ros.IResolvable;
 
@@ -57,7 +59,7 @@ export interface IAccount extends ros.IResource {
     readonly attrAccountName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::Account`, which is used to create a database account for an AnalyticDB for MySQL Data Lakehouse Edition cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::Account`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-account
  */

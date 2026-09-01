@@ -387,7 +387,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Instance`, which is used to create a Container Registry Enterprise Edition instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instance
  */
@@ -616,7 +616,7 @@ function rosInstanceEndpointAclPolicyPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceEndpointAclPolicy`, which is used to create a whitelist policy for the public endpoint of an instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceEndpointAclPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceEndpointAclPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instanceendpointaclpolicy
  */
@@ -713,6 +713,357 @@ export class RosInstanceEndpointAclPolicy extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosInstanceV2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancev2
+ */
+export interface RosInstanceV2Props {
+
+    /**
+     * @Property instanceName: Instance name.The value contains 3 to 30 lowercase letters, digits, and delimiters "-"(it can not be first or last).
+     */
+    readonly instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The Value configuration of the Group 1 attribute of Container Mirror Service Enterprise Edition. Valid values:
+     * Basic: Basic instance.
+     * Standard: Standard instance.
+     * Advanced: Advanced Edition Instance.
+     */
+    readonly instanceType: string | ros.IResolvable;
+
+    /**
+     * @Property paymentType: Payment type, value:
+     * - Subscription: Prepaid.
+     */
+    readonly paymentType: string | ros.IResolvable;
+
+    /**
+     * @Property customOssBucket: Custom OSS Bucket name.
+     */
+    readonly customOssBucket?: string | ros.IResolvable;
+
+    /**
+     * @Property defaultOssBucket: Whether to use the default OSS Bucket. Value:
+     * true: Use the default OSS Bucket.
+     * false: Use a custom OSS Bucket.
+     */
+    readonly defaultOssBucket?: boolean | ros.IResolvable;
+
+    /**
+     * @Property imageScanner: The security scan engine used by the Enterprise Edition of Container Image Service. Value:
+     * ACR: Uses the Trivy scan engine provided by default.
+     * SAS: uses the enhanced cloud security scan engine.
+     */
+    readonly imageScanner?: string | ros.IResolvable;
+
+    /**
+     * @Property password: Login password, 8-32 digits, must contain at least two letters, symbols, or numbers.
+     */
+    readonly password?: string | ros.IResolvable;
+
+    /**
+     * @Property period: Prepaid cycle. The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+     * > must be set when creating a prepaid instance.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property renewalStatus: Automatic renewal status, value:
+     * - AutoRenewal: automatic renewal.
+     * - ManualRenewal: manual renewal.
+     * Default ManualRenewal.
+     */
+    readonly renewalStatus?: string | ros.IResolvable;
+
+    /**
+     * @Property renewPeriod: Automatic renewal cycle, in months.
+     * > When **RenewalStatus** is set to **AutoRenewal**, it must be set.
+     */
+    readonly renewPeriod?: number | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceV2Props`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceV2Props`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstanceV2PropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('defaultOssBucket', ros.validateBoolean)(properties.defaultOssBucket));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.renewalStatus && (typeof properties.renewalStatus) !== 'object') {
+        errors.collect(ros.propertyValidator('renewalStatus', ros.validateAllowedValues)({
+          data: properties.renewalStatus,
+          allowedValues: ["AutoRenewal","ManualRenewal"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('renewalStatus', ros.validateString)(properties.renewalStatus));
+    if(properties.imageScanner && (typeof properties.imageScanner) !== 'object') {
+        errors.collect(ros.propertyValidator('imageScanner', ros.validateAllowedValues)({
+          data: properties.imageScanner,
+          allowedValues: ["ACR","SAS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('imageScanner', ros.validateString)(properties.imageScanner));
+    errors.collect(ros.propertyValidator('renewPeriod', ros.validateNumber)(properties.renewPeriod));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,6,12,24,36,48,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('paymentType', ros.requiredValidator)(properties.paymentType));
+    if(properties.paymentType && (typeof properties.paymentType) !== 'object') {
+        errors.collect(ros.propertyValidator('paymentType', ros.validateAllowedValues)({
+          data: properties.paymentType,
+          allowedValues: ["Subscription"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('paymentType', ros.validateString)(properties.paymentType));
+    errors.collect(ros.propertyValidator('customOssBucket', ros.validateString)(properties.customOssBucket));
+    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
+    if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
+          data: properties.instanceType,
+          allowedValues: ["Basic","Standard","Advanced"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "RosInstanceV2Props"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CR::InstanceV2` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceV2Props`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CR::InstanceV2` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceV2PropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstanceV2PropsValidator(properties).assertSuccess();
+    }
+    return {
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'PaymentType': ros.stringToRosTemplate(properties.paymentType),
+      'CustomOssBucket': ros.stringToRosTemplate(properties.customOssBucket),
+      'DefaultOssBucket': ros.booleanToRosTemplate(properties.defaultOssBucket),
+      'ImageScanner': ros.stringToRosTemplate(properties.imageScanner),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'RenewalStatus': ros.stringToRosTemplate(properties.renewalStatus),
+      'RenewPeriod': ros.numberToRosTemplate(properties.renewPeriod),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceV2`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InstanceV2` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancev2
+ */
+export class RosInstanceV2 extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::InstanceV2";
+
+    /**
+     * @Attribute CreateTime: The time when the instance was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute EndTime: Expiration Time of instance.
+     */
+    public readonly attrEndTime: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceEndpoints: Instance Network Access Endpoints.
+     */
+    public readonly attrInstanceEndpoints: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The ID of the Container Registry instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceIssue: The issue occurs on the instance.
+     */
+    public readonly attrInstanceIssue: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceName: The name of the Container Registry instance.
+     */
+    public readonly attrInstanceName: ros.IResolvable;
+
+    /**
+     * @Attribute ModifiedTime: The time when the instance was last modified.
+     */
+    public readonly attrModifiedTime: ros.IResolvable;
+
+    /**
+     * @Attribute PaymentType: Payment type.
+     */
+    public readonly attrPaymentType: ros.IResolvable;
+
+    /**
+     * @Attribute RenewPeriod: Automatic renewal cycle, in months.
+     */
+    public readonly attrRenewPeriod: ros.IResolvable;
+
+    /**
+     * @Attribute RenewalStatus: Automatic renewal status.
+     */
+    public readonly attrRenewalStatus: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceName: Instance name.The value contains 3 to 30 lowercase letters, digits, and delimiters "-"(it can not be first or last).
+     */
+    public instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The Value configuration of the Group 1 attribute of Container Mirror Service Enterprise Edition. Valid values:
+     * Basic: Basic instance.
+     * Standard: Standard instance.
+     * Advanced: Advanced Edition Instance.
+     */
+    public instanceType: string | ros.IResolvable;
+
+    /**
+     * @Property paymentType: Payment type, value:
+     * - Subscription: Prepaid.
+     */
+    public paymentType: string | ros.IResolvable;
+
+    /**
+     * @Property customOssBucket: Custom OSS Bucket name.
+     */
+    public customOssBucket: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property defaultOssBucket: Whether to use the default OSS Bucket. Value:
+     * true: Use the default OSS Bucket.
+     * false: Use a custom OSS Bucket.
+     */
+    public defaultOssBucket: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageScanner: The security scan engine used by the Enterprise Edition of Container Image Service. Value:
+     * ACR: Uses the Trivy scan engine provided by default.
+     * SAS: uses the enhanced cloud security scan engine.
+     */
+    public imageScanner: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property password: Login password, 8-32 digits, must contain at least two letters, symbols, or numbers.
+     */
+    public password: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: Prepaid cycle. The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+     * > must be set when creating a prepaid instance.
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property renewalStatus: Automatic renewal status, value:
+     * - AutoRenewal: automatic renewal.
+     * - ManualRenewal: manual renewal.
+     * Default ManualRenewal.
+     */
+    public renewalStatus: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property renewPeriod: Automatic renewal cycle, in months.
+     * > When **RenewalStatus** is set to **AutoRenewal**, it must be set.
+     */
+    public renewPeriod: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceV2Props, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstanceV2.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrEndTime = this.getAtt('EndTime');
+        this.attrInstanceEndpoints = this.getAtt('InstanceEndpoints');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrInstanceIssue = this.getAtt('InstanceIssue');
+        this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrModifiedTime = this.getAtt('ModifiedTime');
+        this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrRenewPeriod = this.getAtt('RenewPeriod');
+        this.attrRenewalStatus = this.getAtt('RenewalStatus');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceName = props.instanceName;
+        this.instanceType = props.instanceType;
+        this.paymentType = props.paymentType;
+        this.customOssBucket = props.customOssBucket;
+        this.defaultOssBucket = props.defaultOssBucket;
+        this.imageScanner = props.imageScanner;
+        this.password = props.password;
+        this.period = props.period;
+        this.renewalStatus = props.renewalStatus;
+        this.renewPeriod = props.renewPeriod;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceName: this.instanceName,
+            instanceType: this.instanceType,
+            paymentType: this.paymentType,
+            customOssBucket: this.customOssBucket,
+            defaultOssBucket: this.defaultOssBucket,
+            imageScanner: this.imageScanner,
+            password: this.password,
+            period: this.period,
+            renewalStatus: this.renewalStatus,
+            renewPeriod: this.renewPeriod,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstanceV2PropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosInstanceVpcEndpointLinkedVpc`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
  */
@@ -794,7 +1145,7 @@ function rosInstanceVpcEndpointLinkedVpcPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`, which is used to associate a virtual private cloud (VPC) with a Container Registry instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceVpcEndpointLinkedVpc` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
  */
@@ -967,7 +1318,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Namespace`, which is used to create a namespace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Namespace`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-namespace
  */
@@ -1459,7 +1810,7 @@ function rosRepositoryPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Repository`, which is used to create an image repository.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Repository`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Repository` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-repository
  */
@@ -2186,7 +2537,7 @@ function rosUserInfoPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::UserInfo`, which is used to create the information about a user.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::UserInfo`.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserInfo` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-userinfo
  */

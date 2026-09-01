@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ehpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:42:12.663Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:50:32.921Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -62,7 +62,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property additionalVolumes:.
+     * Property additionalVolumes: The information of the NAS file system.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAdditionalVolumes() {
         return null;
@@ -76,16 +76,25 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property autoRenew: true: automatic renewals;
+     * Property autoRenew: Specifies whether to enable auto-renewal.
      * <p>
-     * false: no automatic renewals.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true</li>
+     * <li>false
+     * Default value: false.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return null;
     }
 
     /**
-     * Property autoRenewPeriod: Duration of each automatic renewals, AutoRenew take effect when AutoRenew is True.
+     * Property autoRenewPeriod: The auto-renewal period of the subscription compute nodes.
+     * <p>
+     * The parameter takes
+     * effect when AutoRenew is set to true.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
         return null;
@@ -114,14 +123,29 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property computeSpotPriceLimit: Set an example of the highest price per hour, are floating-point values, in the range of the current price range.
+     * Property computeSpotPriceLimit: The maximum hourly price of the compute nodes.
+     * <p>
+     * A maximum of three decimal places
+     * can be used in the value of the parameter. The parameter is valid only when the
+     * ComputeSpotStrategy parameter is set to SpotWithPriceLimit.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getComputeSpotPriceLimit() {
         return null;
     }
 
     /**
-     * Property computeSpotStrategy: Compute nodes bidding strategy, value NoSpot, SpotWithPriceLimit or SpotAsPriceGo.
+     * Property computeSpotStrategy: The bidding method of the compute nodes.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>NoSpot: The compute nodes are pay-as-you-go instances.</li>
+     * <li>SpotWithPriceLimit: The compute nodes are preemptible instances that have a
+     * user-defined maximum hourly price.</li>
+     * <li>SpotAsPriceGo: The compute nodes are preemptible instances for which the
+     * market price at the time of purchase is used as the bid price.
+     * Default value: NoSpot.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getComputeSpotStrategy() {
         return null;
@@ -141,7 +165,10 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property description: Cluster description, 2 to 128 characters.
+     * Property description: The description of the E-HPC cluster.
+     * <p>
+     * The description must be 2 to 256 characters
+     * in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -184,9 +211,10 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property imageId: Mirror Id, if ImageType a system, based on the image ID is determined only according OsTag;
+     * Property imageId: The image IDs.
      * <p>
-     * if self, others, or marketplace, ImageId is mandatory.
+     * You can call the <a href="">ListImages</a> and <a href="">ListCustomImages</a> operations to query the
+     * images that are supported by E-HPC.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
         return null;
@@ -256,34 +284,61 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property password: Root password of jump server (login node).
+     * Property password: The root password of the logon node.
      * <p>
-     * 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ &#64; # $% ^ &amp; * - + = | {} []:; '&lt;&gt;, / Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
+     * The password must be 8 to 30 characters in
+     * length and contain at least three of the following items: uppercase letters,
+     * lowercase letters, digits, and special characters. Special characters include:
+     * <code>( ) ~ ! &#64; # $ % ^ &amp; * - + = | { } [ ] : ; ‘ &lt; &gt; , . ? \/</code>
+     * You must specify either Password or KeyPairName. If both are specified, the
+     * Password parameter prevails.
+     * <p>
+     * <blockquote>
+     * <p>
+     * We recommend that you use HTTPS to call the API operation to prevent password
+     * leakage.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
         return null;
     }
 
     /**
-     * Property period: The purchase of long resources, units: week / month / year.
+     * Property period: The duration of the subscription.
      * <p>
-     * When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
+     * The unit of the duration is specified by the
+     * <code>PeriodUnit</code> parameter.
+     * <p>
+     * <ul>
+     * <li>Valid values if PriceUnit is set to Year: 1, 2, and 3.</li>
+     * <li>Valid values if PriceUnit is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
+     * <li>Valid value if PriceUnit is set to Hour: 1.
+     * Default value: 1.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
-     * Property periodUnit: The purchase of long-resources unit.
+     * Property periodUnit: The unit of the subscription duration.
      * <p>
-     * Alternatively value Week / Month / year.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Year</li>
+     * <li>Month</li>
+     * <li>Hour
+     * Default value: Month.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
         return null;
     }
 
     /**
-     * Property postInstallScript:.
+     * Property postInstallScript: The information of the post-installation script.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPostInstallScript() {
         return null;
@@ -340,7 +395,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property sccClusterId: When SCC models, if you pass this field, then the specified SccCluster create Scc instance, otherwise it will create an instance for the user.
+     * Property sccClusterId: The Super Computing Cluster (SCC) instance ID.
+     * <p>
+     * If you specify the parameter, the SCC instance is moved to a new SCC cluster.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSccClusterId() {
         return null;
@@ -368,9 +425,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property securityGroupName: If you do not use an existing security group (SecurityGroupId is empty), then use this name to create a new security group, the default policy.
+     * Property securityGroupName: If you do not use an existing security group, set the parameter to the name of a new security group.
      * <p>
-     * Format Requirements Reference ECS security group name.
+     * A default policy is applied to the new security group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupName() {
         return null;
@@ -716,7 +773,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getAdditionalVolumes}
-         * @param additionalVolumes Property additionalVolumes:.
+         * @param additionalVolumes Property additionalVolumes: The information of the NAS file system.
          * @return {@code this}
          */
         public Builder additionalVolumes(com.aliyun.ros.cdk.core.IResolvable additionalVolumes) {
@@ -726,7 +783,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getAdditionalVolumes}
-         * @param additionalVolumes Property additionalVolumes:.
+         * @param additionalVolumes Property additionalVolumes: The information of the NAS file system.
          * @return {@code this}
          */
         public Builder additionalVolumes(java.util.List<? extends java.lang.Object> additionalVolumes) {
@@ -756,8 +813,14 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getAutoRenew}
-         * @param autoRenew Property autoRenew: true: automatic renewals;.
-         *                  false: no automatic renewals.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>true</li>
+         *                  <li>false
+         *                  Default value: false.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder autoRenew(java.lang.Boolean autoRenew) {
@@ -767,8 +830,14 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getAutoRenew}
-         * @param autoRenew Property autoRenew: true: automatic renewals;.
-         *                  false: no automatic renewals.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>true</li>
+         *                  <li>false
+         *                  Default value: false.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
@@ -778,7 +847,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: Duration of each automatic renewals, AutoRenew take effect when AutoRenew is True.
+         * @param autoRenewPeriod Property autoRenewPeriod: The auto-renewal period of the subscription compute nodes.
+         *                        The parameter takes
+         *                        effect when AutoRenew is set to true.
          * @return {@code this}
          */
         public Builder autoRenewPeriod(java.lang.Number autoRenewPeriod) {
@@ -788,7 +859,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: Duration of each automatic renewals, AutoRenew take effect when AutoRenew is True.
+         * @param autoRenewPeriod Property autoRenewPeriod: The auto-renewal period of the subscription compute nodes.
+         *                        The parameter takes
+         *                        effect when AutoRenew is set to true.
          * @return {@code this}
          */
         public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
@@ -850,7 +923,10 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getComputeSpotPriceLimit}
-         * @param computeSpotPriceLimit Property computeSpotPriceLimit: Set an example of the highest price per hour, are floating-point values, in the range of the current price range.
+         * @param computeSpotPriceLimit Property computeSpotPriceLimit: The maximum hourly price of the compute nodes.
+         *                              A maximum of three decimal places
+         *                              can be used in the value of the parameter. The parameter is valid only when the
+         *                              ComputeSpotStrategy parameter is set to SpotWithPriceLimit.
          * @return {@code this}
          */
         public Builder computeSpotPriceLimit(java.lang.String computeSpotPriceLimit) {
@@ -860,7 +936,10 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getComputeSpotPriceLimit}
-         * @param computeSpotPriceLimit Property computeSpotPriceLimit: Set an example of the highest price per hour, are floating-point values, in the range of the current price range.
+         * @param computeSpotPriceLimit Property computeSpotPriceLimit: The maximum hourly price of the compute nodes.
+         *                              A maximum of three decimal places
+         *                              can be used in the value of the parameter. The parameter is valid only when the
+         *                              ComputeSpotStrategy parameter is set to SpotWithPriceLimit.
          * @return {@code this}
          */
         public Builder computeSpotPriceLimit(com.aliyun.ros.cdk.core.IResolvable computeSpotPriceLimit) {
@@ -870,7 +949,17 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getComputeSpotStrategy}
-         * @param computeSpotStrategy Property computeSpotStrategy: Compute nodes bidding strategy, value NoSpot, SpotWithPriceLimit or SpotAsPriceGo.
+         * @param computeSpotStrategy Property computeSpotStrategy: The bidding method of the compute nodes.
+         *                            Valid values:
+         *                            <p>
+         *                            <ul>
+         *                            <li>NoSpot: The compute nodes are pay-as-you-go instances.</li>
+         *                            <li>SpotWithPriceLimit: The compute nodes are preemptible instances that have a
+         *                            user-defined maximum hourly price.</li>
+         *                            <li>SpotAsPriceGo: The compute nodes are preemptible instances for which the
+         *                            market price at the time of purchase is used as the bid price.
+         *                            Default value: NoSpot.</li>
+         *                            </ul>
          * @return {@code this}
          */
         public Builder computeSpotStrategy(java.lang.String computeSpotStrategy) {
@@ -880,7 +969,17 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getComputeSpotStrategy}
-         * @param computeSpotStrategy Property computeSpotStrategy: Compute nodes bidding strategy, value NoSpot, SpotWithPriceLimit or SpotAsPriceGo.
+         * @param computeSpotStrategy Property computeSpotStrategy: The bidding method of the compute nodes.
+         *                            Valid values:
+         *                            <p>
+         *                            <ul>
+         *                            <li>NoSpot: The compute nodes are pay-as-you-go instances.</li>
+         *                            <li>SpotWithPriceLimit: The compute nodes are preemptible instances that have a
+         *                            user-defined maximum hourly price.</li>
+         *                            <li>SpotAsPriceGo: The compute nodes are preemptible instances for which the
+         *                            market price at the time of purchase is used as the bid price.
+         *                            Default value: NoSpot.</li>
+         *                            </ul>
          * @return {@code this}
          */
         public Builder computeSpotStrategy(com.aliyun.ros.cdk.core.IResolvable computeSpotStrategy) {
@@ -920,7 +1019,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getDescription}
-         * @param description Property description: Cluster description, 2 to 128 characters.
+         * @param description Property description: The description of the E-HPC cluster.
+         *                    The description must be 2 to 256 characters
+         *                    in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -930,7 +1031,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getDescription}
-         * @param description Property description: Cluster description, 2 to 128 characters.
+         * @param description Property description: The description of the E-HPC cluster.
+         *                    The description must be 2 to 256 characters
+         *                    in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -1032,8 +1135,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getImageId}
-         * @param imageId Property imageId: Mirror Id, if ImageType a system, based on the image ID is determined only according OsTag;.
-         *                if self, others, or marketplace, ImageId is mandatory.
+         * @param imageId Property imageId: The image IDs.
+         *                You can call the <a href="">ListImages</a> and <a href="">ListCustomImages</a> operations to query the
+         *                images that are supported by E-HPC.
          * @return {@code this}
          */
         public Builder imageId(java.lang.String imageId) {
@@ -1043,8 +1147,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getImageId}
-         * @param imageId Property imageId: Mirror Id, if ImageType a system, based on the image ID is determined only according OsTag;.
-         *                if self, others, or marketplace, ImageId is mandatory.
+         * @param imageId Property imageId: The image IDs.
+         *                You can call the <a href="">ListImages</a> and <a href="">ListCustomImages</a> operations to query the
+         *                images that are supported by E-HPC.
          * @return {@code this}
          */
         public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
@@ -1216,8 +1321,20 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getPassword}
-         * @param password Property password: Root password of jump server (login node).
-         *                 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ &#64; # $% ^ &amp; * - + = | {} []:; '&lt;&gt;, / Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
+         * @param password Property password: The root password of the logon node.
+         *                 The password must be 8 to 30 characters in
+         *                 length and contain at least three of the following items: uppercase letters,
+         *                 lowercase letters, digits, and special characters. Special characters include:
+         *                 <code>( ) ~ ! &#64; # $ % ^ &amp; * - + = | { } [ ] : ; ‘ &lt; &gt; , . ? \/</code>
+         *                 You must specify either Password or KeyPairName. If both are specified, the
+         *                 Password parameter prevails.
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 We recommend that you use HTTPS to call the API operation to prevent password
+         *                 leakage.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder password(java.lang.String password) {
@@ -1227,8 +1344,20 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getPassword}
-         * @param password Property password: Root password of jump server (login node).
-         *                 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ &#64; # $% ^ &amp; * - + = | {} []:; '&lt;&gt;, / Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
+         * @param password Property password: The root password of the logon node.
+         *                 The password must be 8 to 30 characters in
+         *                 length and contain at least three of the following items: uppercase letters,
+         *                 lowercase letters, digits, and special characters. Special characters include:
+         *                 <code>( ) ~ ! &#64; # $ % ^ &amp; * - + = | { } [ ] : ; ‘ &lt; &gt; , . ? \/</code>
+         *                 You must specify either Password or KeyPairName. If both are specified, the
+         *                 Password parameter prevails.
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 We recommend that you use HTTPS to call the API operation to prevent password
+         *                 leakage.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
@@ -1238,8 +1367,16 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getPeriod}
-         * @param period Property period: The purchase of long resources, units: week / month / year.
-         *               When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
+         * @param period Property period: The duration of the subscription.
+         *               The unit of the duration is specified by the
+         *               <code>PeriodUnit</code> parameter.
+         *               <p>
+         *               <ul>
+         *               <li>Valid values if PriceUnit is set to Year: 1, 2, and 3.</li>
+         *               <li>Valid values if PriceUnit is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
+         *               <li>Valid value if PriceUnit is set to Hour: 1.
+         *               Default value: 1.</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -1249,8 +1386,16 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getPeriod}
-         * @param period Property period: The purchase of long resources, units: week / month / year.
-         *               When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
+         * @param period Property period: The duration of the subscription.
+         *               The unit of the duration is specified by the
+         *               <code>PeriodUnit</code> parameter.
+         *               <p>
+         *               <ul>
+         *               <li>Valid values if PriceUnit is set to Year: 1, 2, and 3.</li>
+         *               <li>Valid values if PriceUnit is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
+         *               <li>Valid value if PriceUnit is set to Hour: 1.
+         *               Default value: 1.</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
@@ -1260,8 +1405,15 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: The purchase of long-resources unit.
-         *                   Alternatively value Week / Month / year.
+         * @param periodUnit Property periodUnit: The unit of the subscription duration.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>Year</li>
+         *                   <li>Month</li>
+         *                   <li>Hour
+         *                   Default value: Month.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder periodUnit(java.lang.String periodUnit) {
@@ -1271,8 +1423,15 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: The purchase of long-resources unit.
-         *                   Alternatively value Week / Month / year.
+         * @param periodUnit Property periodUnit: The unit of the subscription duration.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>Year</li>
+         *                   <li>Month</li>
+         *                   <li>Hour
+         *                   Default value: Month.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
@@ -1282,7 +1441,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getPostInstallScript}
-         * @param postInstallScript Property postInstallScript:.
+         * @param postInstallScript Property postInstallScript: The information of the post-installation script.
          * @return {@code this}
          */
         public Builder postInstallScript(com.aliyun.ros.cdk.core.IResolvable postInstallScript) {
@@ -1292,7 +1451,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getPostInstallScript}
-         * @param postInstallScript Property postInstallScript:.
+         * @param postInstallScript Property postInstallScript: The information of the post-installation script.
          * @return {@code this}
          */
         public Builder postInstallScript(java.util.List<? extends java.lang.Object> postInstallScript) {
@@ -1422,7 +1581,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getSccClusterId}
-         * @param sccClusterId Property sccClusterId: When SCC models, if you pass this field, then the specified SccCluster create Scc instance, otherwise it will create an instance for the user.
+         * @param sccClusterId Property sccClusterId: The Super Computing Cluster (SCC) instance ID.
+         *                     If you specify the parameter, the SCC instance is moved to a new SCC cluster.
          * @return {@code this}
          */
         public Builder sccClusterId(java.lang.String sccClusterId) {
@@ -1432,7 +1592,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getSccClusterId}
-         * @param sccClusterId Property sccClusterId: When SCC models, if you pass this field, then the specified SccCluster create Scc instance, otherwise it will create an instance for the user.
+         * @param sccClusterId Property sccClusterId: The Super Computing Cluster (SCC) instance ID.
+         *                     If you specify the parameter, the SCC instance is moved to a new SCC cluster.
          * @return {@code this}
          */
         public Builder sccClusterId(com.aliyun.ros.cdk.core.IResolvable sccClusterId) {
@@ -1494,8 +1655,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getSecurityGroupName}
-         * @param securityGroupName Property securityGroupName: If you do not use an existing security group (SecurityGroupId is empty), then use this name to create a new security group, the default policy.
-         *                          Format Requirements Reference ECS security group name.
+         * @param securityGroupName Property securityGroupName: If you do not use an existing security group, set the parameter to the name of a new security group.
+         *                          A default policy is applied to the new security group.
          * @return {@code this}
          */
         public Builder securityGroupName(java.lang.String securityGroupName) {
@@ -1505,8 +1666,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getSecurityGroupName}
-         * @param securityGroupName Property securityGroupName: If you do not use an existing security group (SecurityGroupId is empty), then use this name to create a new security group, the default policy.
-         *                          Format Requirements Reference ECS security group name.
+         * @param securityGroupName Property securityGroupName: If you do not use an existing security group, set the parameter to the name of a new security group.
+         *                          A default policy is applied to the new security group.
          * @return {@code this}
          */
         public Builder securityGroupName(com.aliyun.ros.cdk.core.IResolvable securityGroupName) {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Version`, which is used to release a Version.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Version`.
 type RosVersion interface {
 	alicloudroscdkcore.RosResource
 	AttrServiceName() alicloudroscdkcore.IResolvable

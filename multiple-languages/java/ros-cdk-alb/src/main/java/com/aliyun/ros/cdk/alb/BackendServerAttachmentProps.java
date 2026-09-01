@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-backendserverattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.182Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.365Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.BackendServerAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(BackendServerAttachmentProps.Jsii$Proxy.class)
 public interface BackendServerAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,10 +16,9 @@ public interface BackendServerAttachmentProps extends software.amazon.jsii.JsiiS
     @org.jetbrains.annotations.NotNull java.lang.Object getServerGroupId();
 
     /**
-     * Property servers: The backend servers that you want to add to the server group.
+     * Property servers: A list of backend servers.
      * <p>
-     * You can specify up to
-     * 40 servers in each call.
+     * You can add up to 200 servers in a single call.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getServers();
 
@@ -58,9 +57,8 @@ public interface BackendServerAttachmentProps extends software.amazon.jsii.JsiiS
 
         /**
          * Sets the value of {@link BackendServerAttachmentProps#getServers}
-         * @param servers Property servers: The backend servers that you want to add to the server group. This parameter is required.
-         *                You can specify up to
-         *                40 servers in each call.
+         * @param servers Property servers: A list of backend servers. This parameter is required.
+         *                You can add up to 200 servers in a single call.
          * @return {@code this}
          */
         public Builder servers(com.aliyun.ros.cdk.core.IResolvable servers) {
@@ -70,9 +68,8 @@ public interface BackendServerAttachmentProps extends software.amazon.jsii.JsiiS
 
         /**
          * Sets the value of {@link BackendServerAttachmentProps#getServers}
-         * @param servers Property servers: The backend servers that you want to add to the server group. This parameter is required.
-         *                You can specify up to
-         *                40 servers in each call.
+         * @param servers Property servers: A list of backend servers. This parameter is required.
+         *                You can add up to 200 servers in a single call.
          * @return {@code this}
          */
         public Builder servers(java.util.List<? extends java.lang.Object> servers) {

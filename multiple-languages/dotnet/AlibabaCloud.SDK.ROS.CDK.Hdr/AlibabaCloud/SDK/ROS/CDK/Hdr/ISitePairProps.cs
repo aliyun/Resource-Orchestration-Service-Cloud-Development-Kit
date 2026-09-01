@@ -26,9 +26,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
         }
 
         /// <summary>Property primarySiteType: The type of the primary site.</summary>
-        /// <remarks>
-        /// Valid values: VPC, VSwitch, VRouter.
-        /// </remarks>
         [JsiiProperty(name: "primarySiteType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object PrimarySiteType
         {
@@ -57,9 +54,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
         }
 
         /// <summary>Property secondarySiteType: The type of the secondary site.</summary>
-        /// <remarks>
-        /// Valid values: VPC, VSwitch, VRouter.
-        /// </remarks>
         [JsiiProperty(name: "secondarySiteType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object SecondarySiteType
         {
@@ -74,6 +68,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
         }
 
         /// <summary>Property primarySiteZoneId: The zone ID of the primary site.</summary>
+        /// <remarks>
+        /// This parameter is valid only when the site pair
+        /// type is cross-zone disaster recovery.
+        /// </remarks>
         [JsiiProperty(name: "primarySiteZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PrimarySiteZoneId
@@ -85,6 +83,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
         }
 
         /// <summary>Property secondarySiteZoneId: The zone ID of the secondary site.</summary>
+        /// <remarks>
+        /// This parameter is valid only when the site
+        /// pair type is cross-zone disaster recovery.
+        /// </remarks>
         [JsiiProperty(name: "secondarySiteZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SecondarySiteZoneId
@@ -132,9 +134,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
             }
 
             /// <summary>Property primarySiteType: The type of the primary site.</summary>
-            /// <remarks>
-            /// Valid values: VPC, VSwitch, VRouter.
-            /// </remarks>
             [JsiiProperty(name: "primarySiteType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object PrimarySiteType
             {
@@ -163,9 +162,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
             }
 
             /// <summary>Property secondarySiteType: The type of the secondary site.</summary>
-            /// <remarks>
-            /// Valid values: VPC, VSwitch, VRouter.
-            /// </remarks>
             [JsiiProperty(name: "secondarySiteType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SecondarySiteType
             {
@@ -180,6 +176,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
             }
 
             /// <summary>Property primarySiteZoneId: The zone ID of the primary site.</summary>
+            /// <remarks>
+            /// This parameter is valid only when the site pair
+            /// type is cross-zone disaster recovery.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "primarySiteZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PrimarySiteZoneId
@@ -188,6 +188,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
             }
 
             /// <summary>Property secondarySiteZoneId: The zone ID of the secondary site.</summary>
+            /// <remarks>
+            /// This parameter is valid only when the site
+            /// pair type is cross-zone disaster recovery.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "secondarySiteZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SecondarySiteZoneId

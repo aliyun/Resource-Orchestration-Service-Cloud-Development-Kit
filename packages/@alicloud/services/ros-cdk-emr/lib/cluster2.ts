@@ -20,12 +20,16 @@ export interface Cluster2Props {
     readonly clusterName: string | ros.IResolvable;
 
     /**
-     * Property clusterType: Cluster type.Ranges:
-     * DATALAKE: The new version of the data lake.
-     * OLAP: Data analysis.
-     * DATAFLOW: Real -time data stream.
-     * DATASERVING: Data service.
-     * HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+     * Property clusterType: The cluster type. Valid values:
+     * - DATALAKE: new data lake.
+     * - OLAP: data analytics.
+     * - DATAFLOW: real-time data stream.
+     * - DATASERVING: data serving.
+     * - CUSTOM: custom cluster.
+     * - HADOOP: earlier-version data lake. We recommend that you use the new data lake.
+     * If you create an EMR cluster for the first time after 17:00 (UTC+8) on December
+     * 19, 2022, you cannot select HADOOP, DATA_SCIENCE, PRESTO, or ZOOKEEPER as the
+     * cluster type.
      */
     readonly clusterType: string | ros.IResolvable;
 
@@ -40,7 +44,8 @@ export interface Cluster2Props {
     readonly nodeGroups: Array<RosCluster2.NodeGroupsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property releaseVersion: EMR release version.View EMR distribution versions can be viewed through the EMR cluster.
+     * Property releaseVersion: The EMR release version. You can find the EMR release versions on the EMR cluster
+     * purchase page.
      */
     readonly releaseVersion: string | ros.IResolvable;
 
@@ -109,7 +114,7 @@ export interface ICluster2 extends ros.IResource {
     readonly attrClusterId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::Cluster2`, which is used to create an E-MapReduce (EMR) cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::Cluster2`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster2
  */

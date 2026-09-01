@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::Application</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.241Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:56:20.179Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.Application")
 public class Application extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.IApplication {
 
@@ -311,36 +311,40 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property refreshTokenValidity: The validity period of the refreshed token.
+         * Property refreshTokenValidity: The validity period of the refresh token.
          * <p>
          * Valid values: 7200 to 31536000. Unit: seconds.
          * Default value:
          * <p>
          * <ul>
-         * <li>For applications of the WebApp and ServerApp types, if this parameter is left empty, the value 2592000 is used. The value 2592000 indicates that the validity period of the refreshed token is 30 days.</li>
-         * <li>For applications of the NativeApp type, if this parameter is left empty, the value 7776000 is used. The value 7776000 indicates that the validity period of the refreshed token is 90 days.</li>
+         * <li>If not specified, the default value is 2,592,000 seconds (30 days) for
+         * NativeApp and ServerApp applications.</li>
+         * <li>If not specified, the default value is 7,776,000 seconds (90 days) for WebApp
+         * applications.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param refreshTokenValidity Property refreshTokenValidity: The validity period of the refreshed token. This parameter is required.
+         * @param refreshTokenValidity Property refreshTokenValidity: The validity period of the refresh token. This parameter is required.
          */
         public Builder refreshTokenValidity(final java.lang.Number refreshTokenValidity) {
             this.props.refreshTokenValidity(refreshTokenValidity);
             return this;
         }
         /**
-         * Property refreshTokenValidity: The validity period of the refreshed token.
+         * Property refreshTokenValidity: The validity period of the refresh token.
          * <p>
          * Valid values: 7200 to 31536000. Unit: seconds.
          * Default value:
          * <p>
          * <ul>
-         * <li>For applications of the WebApp and ServerApp types, if this parameter is left empty, the value 2592000 is used. The value 2592000 indicates that the validity period of the refreshed token is 30 days.</li>
-         * <li>For applications of the NativeApp type, if this parameter is left empty, the value 7776000 is used. The value 7776000 indicates that the validity period of the refreshed token is 90 days.</li>
+         * <li>If not specified, the default value is 2,592,000 seconds (30 days) for
+         * NativeApp and ServerApp applications.</li>
+         * <li>If not specified, the default value is 7,776,000 seconds (90 days) for WebApp
+         * applications.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param refreshTokenValidity Property refreshTokenValidity: The validity period of the refreshed token. This parameter is required.
+         * @param refreshTokenValidity Property refreshTokenValidity: The validity period of the refresh token. This parameter is required.
          */
         public Builder refreshTokenValidity(final com.aliyun.ros.cdk.core.IResolvable refreshTokenValidity) {
             this.props.refreshTokenValidity(refreshTokenValidity);

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnclientcert
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.689Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.493Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.SslVpnClientCertProps")
 @software.amazon.jsii.Jsii.Proxy(SslVpnClientCertProps.Jsii$Proxy.class)
 public interface SslVpnClientCertProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,9 +16,10 @@ public interface SslVpnClientCertProps extends software.amazon.jsii.JsiiSerializ
     @org.jetbrains.annotations.NotNull java.lang.Object getSslVpnServerId();
 
     /**
-     * Property name: The name of the client certificate.
+     * Property name: The name of the SSL client certificate.
      * <p>
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+     * The name must be 1 to 100 characters in length, and cannot start with <code>http:\/\/</code>
+     * or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
@@ -59,8 +60,9 @@ public interface SslVpnClientCertProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link SslVpnClientCertProps#getName}
-         * @param name Property name: The name of the client certificate.
-         *             The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+         * @param name Property name: The name of the SSL client certificate.
+         *             The name must be 1 to 100 characters in length, and cannot start with <code>http:\/\/</code>
+         *             or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -70,8 +72,9 @@ public interface SslVpnClientCertProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link SslVpnClientCertProps#getName}
-         * @param name Property name: The name of the client certificate.
-         *             The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+         * @param name Property name: The name of the SSL client certificate.
+         *             The name must be 1 to 100 characters in length, and cannot start with <code>http:\/\/</code>
+         *             or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

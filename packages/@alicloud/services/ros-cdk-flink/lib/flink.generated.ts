@@ -164,7 +164,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Instance`, which is used to create a subscription or pay-as-you-go Realtime Compute for Apache Flink instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Instance`Creates a subscription or pay-as-you-go Realtime Compute for Apache Flink instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instance
  */
@@ -372,13 +372,13 @@ export interface RosInstanceV2Props {
     readonly chargeType: string | ros.IResolvable;
 
     /**
-     * @Property instanceName: The name of instance.
+     * @Property instanceName: The name of the workspace. The name must start with a lowercase letter, can
+     * contain lowercase letters, digits, and hyphens (-), and cannot end with a hyphen.
      */
     readonly instanceName: string | ros.IResolvable;
 
     /**
-     * @Property storage: Resource specifications.
-     * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+     * @Property storage: The storage parameters.
      */
     readonly storage: RosInstanceV2.StorageProperty | ros.IResolvable;
 
@@ -398,9 +398,10 @@ export interface RosInstanceV2Props {
     readonly architectureType?: string | ros.IResolvable;
 
     /**
-     * @Property autoRenew: When the payment type is the monthly package, the value of the value is as follows:
-     * true: Automatic renewal.
-     * false: Manual renewal.
+     * @Property autoRenew: Specifies whether to enable auto-renewal. Valid values:
+     * - true: Auto-renewal is enabled.
+     * - false: Auto-renewal is disabled. This is the default value.
+     * > This parameter does not take effect for pay-as-you-go instances.
      */
     readonly autoRenew?: boolean | ros.IResolvable;
 
@@ -561,7 +562,7 @@ function rosInstanceV2PropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::InstanceV2`The , which resource creates a fully managed Flink workspace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::InstanceV2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceV2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instancev2
  */
@@ -597,13 +598,13 @@ export class RosInstanceV2 extends ros.RosResource {
     public chargeType: string | ros.IResolvable;
 
     /**
-     * @Property instanceName: The name of instance.
+     * @Property instanceName: The name of the workspace. The name must start with a lowercase letter, can
+     * contain lowercase letters, digits, and hyphens (-), and cannot end with a hyphen.
      */
     public instanceName: string | ros.IResolvable;
 
     /**
-     * @Property storage: Resource specifications.
-     * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+     * @Property storage: The storage parameters.
      */
     public storage: RosInstanceV2.StorageProperty | ros.IResolvable;
 
@@ -623,9 +624,10 @@ export class RosInstanceV2 extends ros.RosResource {
     public architectureType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property autoRenew: When the payment type is the monthly package, the value of the value is as follows:
-     * true: Automatic renewal.
-     * false: Manual renewal.
+     * @Property autoRenew: Specifies whether to enable auto-renewal. Valid values:
+     * - true: Auto-renewal is enabled.
+     * - false: Auto-renewal is disabled. This is the default value.
+     * > This parameter does not take effect for pay-as-you-go instances.
      */
     public autoRenew: boolean | ros.IResolvable | undefined;
 
@@ -1005,7 +1007,7 @@ function rosMemberPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Member`, which is used to grants authorization to a member.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Member`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Member` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-member
  */
@@ -1140,7 +1142,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Namespace`, which is used to create a project.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Namespace`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespace
  */
@@ -1325,7 +1327,7 @@ function rosNamespaceV2PropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::NamespaceV2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::NamespaceV2`The , which resource creates a project.
  * @Note This class does not contain additional functions, so it is recommended to use the `NamespaceV2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespacev2
  */

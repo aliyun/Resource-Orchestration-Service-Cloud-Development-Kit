@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MetricRuleTemplateDeployment`, which is used to apply an alert template to an application group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MetricRuleTemplateDeployment`.
 type MetricRuleTemplateDeployment interface {
 	alicloudroscdkcore.Resource
 	IMetricRuleTemplateDeployment

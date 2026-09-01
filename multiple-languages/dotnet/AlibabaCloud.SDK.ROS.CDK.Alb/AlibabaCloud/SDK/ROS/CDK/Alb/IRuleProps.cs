@@ -45,9 +45,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <summary>Property ruleName: The name of the forwarding rule.</summary>
         /// <remarks>
-        /// The name must be 2 to 128 characters in length.
-        /// It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It
-        /// must start with a letter.
+        /// <list type="bullet">
+        /// <description>The length must be 2 to 128 English or Chinese characters.</description>
+        /// <description>The name must start with a letter, a Chinese character, or a number, and can
+        /// contain numbers, periods (.), underscores (_), hyphens (-), and spaces.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "ruleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object RuleName
@@ -55,9 +57,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             get;
         }
 
-        /// <summary>Property direction: Rule direction.</summary>
+        /// <summary>Property direction: The direction in which the forwarding rule is applied.</summary>
         /// <remarks>
-        /// Valid values: Request or Response.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Request (default): The rule matches and processes requests sent from the client
+        /// to the ALB instance.</description>
+        /// <description>Response: The rule matches and processes responses returned from server groups
+        /// to the ALB instance.</description>
+        /// </list>
+        ///
+        ///     Basic ALB instances support only forwarding rules whose Direction is Request.
         /// </remarks>
         [JsiiProperty(name: "direction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -114,9 +125,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
             /// <summary>Property ruleName: The name of the forwarding rule.</summary>
             /// <remarks>
-            /// The name must be 2 to 128 characters in length.
-            /// It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It
-            /// must start with a letter.
+            /// <list type="bullet">
+            /// <description>The length must be 2 to 128 English or Chinese characters.</description>
+            /// <description>The name must start with a letter, a Chinese character, or a number, and can
+            /// contain numbers, periods (.), underscores (_), hyphens (-), and spaces.</description>
+            /// </list>
             /// </remarks>
             [JsiiProperty(name: "ruleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object RuleName
@@ -124,9 +137,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property direction: Rule direction.</summary>
+            /// <summary>Property direction: The direction in which the forwarding rule is applied.</summary>
             /// <remarks>
-            /// Valid values: Request or Response.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>Request (default): The rule matches and processes requests sent from the client
+            /// to the ALB instance.</description>
+            /// <description>Response: The rule matches and processes responses returned from server groups
+            /// to the ALB instance.</description>
+            /// </list>
+            ///
+            ///     Basic ALB instances support only forwarding rules whose Direction is Request.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "direction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

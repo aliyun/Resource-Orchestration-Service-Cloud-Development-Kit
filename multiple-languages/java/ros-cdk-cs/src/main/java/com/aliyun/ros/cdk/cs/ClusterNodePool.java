@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ClusterNodePool</code>The , which resource type creates a node pool for a cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ClusterNodePool</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:04:30.559Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:56:05.616Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterNodePool")
 public class ClusterNodePool extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IClusterNodePool {
 

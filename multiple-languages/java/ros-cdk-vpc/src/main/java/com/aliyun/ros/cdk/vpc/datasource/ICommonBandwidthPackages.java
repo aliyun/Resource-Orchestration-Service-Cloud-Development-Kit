@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
 /**
  * Represents a <code>CommonBandwidthPackages</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.803Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.598Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.ICommonBandwidthPackages")
 @software.amazon.jsii.Jsii.Proxy(ICommonBandwidthPackages.Jsii$Proxy.class)
 public interface ICommonBandwidthPackages extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

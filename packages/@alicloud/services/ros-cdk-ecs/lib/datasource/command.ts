@@ -85,7 +85,7 @@ export interface ICommand extends ros.IResource {
     readonly attrWorkingDir: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Command`, which is used to query an available command that is manually created.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Command`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommand`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-command
  */

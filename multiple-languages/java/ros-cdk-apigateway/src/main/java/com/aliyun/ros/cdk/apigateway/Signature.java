@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apigateway;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::Signature</code>, which is used to create a backend signature.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::Signature</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.625Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:57.010Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Signature")
 public class Signature extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apigateway.ISignature {
 
@@ -112,20 +112,26 @@ public class Signature extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property signatureKey: The key of the signature.
+         * Property signatureKey: The Key value of the key.
+         * <p>
+         * The value must be 6 to 20 characters in length and can
+         * contain letters, digits, and underscores (_). It must start with a letter.
          * <p>
          * @return {@code this}
-         * @param signatureKey Property signatureKey: The key of the signature. This parameter is required.
+         * @param signatureKey Property signatureKey: The Key value of the key. This parameter is required.
          */
         public Builder signatureKey(final java.lang.String signatureKey) {
             this.props.signatureKey(signatureKey);
             return this;
         }
         /**
-         * Property signatureKey: The key of the signature.
+         * Property signatureKey: The Key value of the key.
+         * <p>
+         * The value must be 6 to 20 characters in length and can
+         * contain letters, digits, and underscores (_). It must start with a letter.
          * <p>
          * @return {@code this}
-         * @param signatureKey Property signatureKey: The key of the signature. This parameter is required.
+         * @param signatureKey Property signatureKey: The Key value of the key. This parameter is required.
          */
         public Builder signatureKey(final com.aliyun.ros.cdk.core.IResolvable signatureKey) {
             this.props.signatureKey(signatureKey);
@@ -133,20 +139,26 @@ public class Signature extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+         * Property signatureName: The displayed name of the key.
+         * <p>
+         * The name must be 4 to 50 characters in length and
+         * can contain letters, digits, and underscores (_). It must start with a letter.
          * <p>
          * @return {@code this}
-         * @param signatureName Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
+         * @param signatureName Property signatureName: The displayed name of the key. This parameter is required.
          */
         public Builder signatureName(final java.lang.String signatureName) {
             this.props.signatureName(signatureName);
             return this;
         }
         /**
-         * Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+         * Property signatureName: The displayed name of the key.
+         * <p>
+         * The name must be 4 to 50 characters in length and
+         * can contain letters, digits, and underscores (_). It must start with a letter.
          * <p>
          * @return {@code this}
-         * @param signatureName Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
+         * @param signatureName Property signatureName: The displayed name of the key. This parameter is required.
          */
         public Builder signatureName(final com.aliyun.ros.cdk.core.IResolvable signatureName) {
             this.props.signatureName(signatureName);
@@ -154,20 +166,30 @@ public class Signature extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property signatureSecret: The secret of the signature.
+         * Property signatureSecret: The Secret value of the key.
+         * <p>
+         * The value must be 6 to 30 characters in length and
+         * can contain letters, digits, and special characters. Special characters include
+         * underscores (_), at signs (&#64;), number signs (#), exclamation points (!), and
+         * asterisks (*). The value must start with a letter.
          * <p>
          * @return {@code this}
-         * @param signatureSecret Property signatureSecret: The secret of the signature. This parameter is required.
+         * @param signatureSecret Property signatureSecret: The Secret value of the key. This parameter is required.
          */
         public Builder signatureSecret(final java.lang.String signatureSecret) {
             this.props.signatureSecret(signatureSecret);
             return this;
         }
         /**
-         * Property signatureSecret: The secret of the signature.
+         * Property signatureSecret: The Secret value of the key.
+         * <p>
+         * The value must be 6 to 30 characters in length and
+         * can contain letters, digits, and special characters. Special characters include
+         * underscores (_), at signs (&#64;), number signs (#), exclamation points (!), and
+         * asterisks (*). The value must start with a letter.
          * <p>
          * @return {@code this}
-         * @param signatureSecret Property signatureSecret: The secret of the signature. This parameter is required.
+         * @param signatureSecret Property signatureSecret: The Secret value of the key. This parameter is required.
          */
         public Builder signatureSecret(final com.aliyun.ros.cdk.core.IResolvable signatureSecret) {
             this.props.signatureSecret(signatureSecret);

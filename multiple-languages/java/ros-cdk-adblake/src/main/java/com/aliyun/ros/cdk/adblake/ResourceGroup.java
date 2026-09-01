@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.adblake;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADBLake::ResourceGroup</code>, which is used to create a resource group for an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADBLake::ResourceGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:17:27.694Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:55:45.921Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.ResourceGroup")
 public class ResourceGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.adblake.IResourceGroup {
 
@@ -149,24 +149,34 @@ public class ResourceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property engine: Database engine, value: AnalyticDB (default): AnalyticDB for mysql engine.
+         * Property engine: The database engine.
          * <p>
-         * Sparkwarehouse: Sparkwarehous engine.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>AnalyticDB (default): the AnalyticDB for MySQL engine.</li>
+         * <li>SparkWarehouse: the SparkWarehouse engine.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param engine Property engine: Database engine, value: AnalyticDB (default): AnalyticDB for mysql engine. This parameter is required.
+         * @param engine Property engine: The database engine. This parameter is required.
          */
         public Builder engine(final java.lang.String engine) {
             this.props.engine(engine);
             return this;
         }
         /**
-         * Property engine: Database engine, value: AnalyticDB (default): AnalyticDB for mysql engine.
+         * Property engine: The database engine.
          * <p>
-         * Sparkwarehouse: Sparkwarehous engine.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>AnalyticDB (default): the AnalyticDB for MySQL engine.</li>
+         * <li>SparkWarehouse: the SparkWarehouse engine.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param engine Property engine: Database engine, value: AnalyticDB (default): AnalyticDB for mysql engine. This parameter is required.
+         * @param engine Property engine: The database engine. This parameter is required.
          */
         public Builder engine(final com.aliyun.ros.cdk.core.IResolvable engine) {
             this.props.engine(engine);
@@ -255,24 +265,20 @@ public class ResourceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property clusterMode: The mode of cluster.
-         * <p>
-         * Default: AutoScale.
+         * Property clusterMode: This parameter is reserved.
          * <p>
          * @return {@code this}
-         * @param clusterMode Property clusterMode: The mode of cluster. This parameter is required.
+         * @param clusterMode Property clusterMode: This parameter is reserved. This parameter is required.
          */
         public Builder clusterMode(final java.lang.String clusterMode) {
             this.props.clusterMode(clusterMode);
             return this;
         }
         /**
-         * Property clusterMode: The mode of cluster.
-         * <p>
-         * Default: AutoScale.
+         * Property clusterMode: This parameter is reserved.
          * <p>
          * @return {@code this}
-         * @param clusterMode Property clusterMode: The mode of cluster. This parameter is required.
+         * @param clusterMode Property clusterMode: This parameter is reserved. This parameter is required.
          */
         public Builder clusterMode(final com.aliyun.ros.cdk.core.IResolvable clusterMode) {
             this.props.clusterMode(clusterMode);

@@ -10,7 +10,8 @@ export { RosZoneVpcBinder as ZoneVpcBinderProperty };
 export interface ZoneVpcBinderProps {
 
     /**
-     * Property vpcs:
+     * Property vpcs: The VPCs.
+     * > If you leave this parameter empty, all VPCs bound to the zone are unbound.
      */
     readonly vpcs: Array<RosZoneVpcBinder.VpcsProperty | ros.IResolvable> | ros.IResolvable;
 

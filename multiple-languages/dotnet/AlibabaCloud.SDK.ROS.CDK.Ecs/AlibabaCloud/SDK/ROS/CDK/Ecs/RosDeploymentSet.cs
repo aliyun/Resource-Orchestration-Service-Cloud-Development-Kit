@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DeploymentSet`, which is used to create a deployment set in a region.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DeploymentSet`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `DeploymentSet` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-deploymentset
@@ -194,11 +194,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set. Valid values:
-        /// CancelMembershipAndStart: restarts the instances immediately after they are shut down
-        /// and migrated to other deployment sets. This is the default value.
-        /// KeepStopped: keeps the instances shut down and restarts them after the deployment
-        /// set is replenished.
+        /// <strong>Property</strong>: onUnableToRedeployFailedInstance: The policy to use when an instance fails over but cannot be redeployed due to
+        /// insufficient resources. Valid values:
+        /// - CancelMembershipAndStart: Removes the instance from the deployment set and
+        /// starts the instance immediately after failover.
+        /// - KeepStopped: Keeps the instance's deployment set membership and leaves it in
+        /// the Stopped state.
+        /// Default value: CancelMembershipAndStart.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "onUnableToRedeployFailedInstance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -229,10 +231,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: strategy: Deployment strategy. Ranges:
-        /// Availability: High availability strategy.
-        /// AvailabilityGroup: Deployment group high availability strategy.
-        /// LowLatency: Network low latency strategy.
+        /// <strong>Property</strong>: strategy: The deployment strategy. Valid values:
+        /// - Availability: A high availability strategy.
+        /// - AvailabilityGroup: A high availability strategy for a deployment set group.
+        /// - LowLatency: A low-latency strategy.
+        /// Default value: Availability.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "strategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

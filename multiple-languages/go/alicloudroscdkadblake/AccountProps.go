@@ -15,7 +15,10 @@ type AccountProps struct {
 	DbClusterId interface{} `field:"required" json:"dbClusterId" yaml:"dbClusterId"`
 	// Property engine: The engine of the account.Valid values: AnalyticDB \/ Clickhouse.
 	Engine interface{} `field:"required" json:"engine" yaml:"engine"`
-	// Property accountDescription: The description of the account.
+	// Property accountDescription: The account description.
+	//
+	// - Must not start with `http:\/\/` or `https:\/\/`.
+	// - Be no longer than 256 characters.
 	AccountDescription interface{} `field:"optional" json:"accountDescription" yaml:"accountDescription"`
 	// Property ramUser: Bind the RAM user to the cluster database common account.
 	RamUser interface{} `field:"optional" json:"ramUser" yaml:"ramUser"`

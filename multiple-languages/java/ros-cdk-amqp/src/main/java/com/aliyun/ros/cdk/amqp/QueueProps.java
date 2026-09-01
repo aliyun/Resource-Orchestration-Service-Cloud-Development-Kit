@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.amqp;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:25:35.827Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:03:33.256Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.QueueProps")
 @software.amazon.jsii.Jsii.Proxy(QueueProps.Jsii$Proxy.class)
 public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,12 +16,24 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
     /**
-     * Property queueName: The name of the queue.
+     * Property queueName: The name of the queue to create.
+     * <p>
+     * <ul>
+     * <li>The queue name can contain only letters, digits, hyphens (-), underscores (_),
+     * periods (.), number signs (#), forward slashes (/), and at signs (&#64;). The name
+     * must be 1 to 255 characters in length.</li>
+     * <li>After a queue is created, its name cannot be changed. To change the name,
+     * delete the queue and create a new one.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getQueueName();
 
     /**
-     * Property virtualHost: The name of the virtual host.
+     * Property virtualHost: The name of the vhost to which the queue belongs.
+     * <p>
+     * The name can contain only letters, digits, hyphens (-), underscores (_), periods
+     * (.), number signs (#), forward slashes (/), and at signs (&#64;). The name must be 1
+     * to 255 characters in length.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVirtualHost();
 
@@ -37,9 +49,18 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property autoExpireState: The validity period after which the queue is automatically deleted.
+     * Property autoExpireState: The auto-expiration time for the queue.
      * <p>
-     * If the queue is not accessed within a specified period of time, it is automatically deleted.
+     * The queue is automatically deleted if it
+     * is not accessed within the specified time period.
+     * Unit: milliseconds.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This feature must be enabled before you can use this parameter. To enable the
+     * feature, .
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoExpireState() {
         return null;
@@ -57,7 +78,11 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property deadLetterRoutingKey: The dead letter routing key.
+     * Property deadLetterRoutingKey: The dead-letter routing key.
+     * <p>
+     * The key can contain only letters, digits, hyphens (-), underscores (_), periods
+     * (.), number signs (#), forward slashes (/), and at signs (&#64;). The key must be 1
+     * to 255 characters in length.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeadLetterRoutingKey() {
         return null;
@@ -67,24 +92,40 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
      * Property exclusiveState: Specifies whether the queue is an exclusive queue.
      * <p>
      * Valid values:
-     * true: The queue is an exclusive queue. It can be used only for the connection that declares the exclusive queue. After the connection is closed, the exclusive queue is automatically deleted.
-     * false: The Auto Delete attribute is not configured.
+     * <p>
+     * <ul>
+     * <li>true: The queue is an exclusive queue. An exclusive queue can be used only by
+     * the connection that declares it. The queue is automatically deleted after the
+     * connection is closed.</li>
+     * <li>false: The queue is not an exclusive queue.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getExclusiveState() {
         return null;
     }
 
     /**
-     * Property maximumPriority: The priority function is not supported.
+     * Property maximumPriority: The priority of the queue.
+     * <p>
+     * The recommended value is an integer from 1 to 10.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is used for message priority. It is supported only by dedicated
+     * instances and can be used only after the message priority feature is enabled. To
+     * enable the feature, .
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMaximumPriority() {
         return null;
     }
 
     /**
-     * Property maxLength: The maximum number of messages that can be stored in the queue.
+     * Property maxLength: This parameter is not supported in the current version.
      * <p>
-     * If this threshold is exceeded, the earliest messages that are routed to the queue are discarded.
+     * The maximum number of messages that can be stored in the queue. If this limit is
+     * exceeded, the earliest messages in the queue are deleted.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMaxLength() {
         return null;
@@ -144,7 +185,14 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getQueueName}
-         * @param queueName Property queueName: The name of the queue. This parameter is required.
+         * @param queueName Property queueName: The name of the queue to create. This parameter is required.
+         *                  <ul>
+         *                  <li>The queue name can contain only letters, digits, hyphens (-), underscores (_),
+         *                  periods (.), number signs (#), forward slashes (/), and at signs (&#64;). The name
+         *                  must be 1 to 255 characters in length.</li>
+         *                  <li>After a queue is created, its name cannot be changed. To change the name,
+         *                  delete the queue and create a new one.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder queueName(java.lang.String queueName) {
@@ -154,7 +202,14 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getQueueName}
-         * @param queueName Property queueName: The name of the queue. This parameter is required.
+         * @param queueName Property queueName: The name of the queue to create. This parameter is required.
+         *                  <ul>
+         *                  <li>The queue name can contain only letters, digits, hyphens (-), underscores (_),
+         *                  periods (.), number signs (#), forward slashes (/), and at signs (&#64;). The name
+         *                  must be 1 to 255 characters in length.</li>
+         *                  <li>After a queue is created, its name cannot be changed. To change the name,
+         *                  delete the queue and create a new one.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder queueName(com.aliyun.ros.cdk.core.IResolvable queueName) {
@@ -164,7 +219,10 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getVirtualHost}
-         * @param virtualHost Property virtualHost: The name of the virtual host. This parameter is required.
+         * @param virtualHost Property virtualHost: The name of the vhost to which the queue belongs. This parameter is required.
+         *                    The name can contain only letters, digits, hyphens (-), underscores (_), periods
+         *                    (.), number signs (#), forward slashes (/), and at signs (&#64;). The name must be 1
+         *                    to 255 characters in length.
          * @return {@code this}
          */
         public Builder virtualHost(java.lang.String virtualHost) {
@@ -174,7 +232,10 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getVirtualHost}
-         * @param virtualHost Property virtualHost: The name of the virtual host. This parameter is required.
+         * @param virtualHost Property virtualHost: The name of the vhost to which the queue belongs. This parameter is required.
+         *                    The name can contain only letters, digits, hyphens (-), underscores (_), periods
+         *                    (.), number signs (#), forward slashes (/), and at signs (&#64;). The name must be 1
+         *                    to 255 characters in length.
          * @return {@code this}
          */
         public Builder virtualHost(com.aliyun.ros.cdk.core.IResolvable virtualHost) {
@@ -210,8 +271,17 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getAutoExpireState}
-         * @param autoExpireState Property autoExpireState: The validity period after which the queue is automatically deleted.
-         *                        If the queue is not accessed within a specified period of time, it is automatically deleted.
+         * @param autoExpireState Property autoExpireState: The auto-expiration time for the queue.
+         *                        The queue is automatically deleted if it
+         *                        is not accessed within the specified time period.
+         *                        Unit: milliseconds.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This feature must be enabled before you can use this parameter. To enable the
+         *                        feature, .
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder autoExpireState(java.lang.Number autoExpireState) {
@@ -221,8 +291,17 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getAutoExpireState}
-         * @param autoExpireState Property autoExpireState: The validity period after which the queue is automatically deleted.
-         *                        If the queue is not accessed within a specified period of time, it is automatically deleted.
+         * @param autoExpireState Property autoExpireState: The auto-expiration time for the queue.
+         *                        The queue is automatically deleted if it
+         *                        is not accessed within the specified time period.
+         *                        Unit: milliseconds.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This feature must be enabled before you can use this parameter. To enable the
+         *                        feature, .
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder autoExpireState(com.aliyun.ros.cdk.core.IResolvable autoExpireState) {
@@ -258,7 +337,10 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getDeadLetterRoutingKey}
-         * @param deadLetterRoutingKey Property deadLetterRoutingKey: The dead letter routing key.
+         * @param deadLetterRoutingKey Property deadLetterRoutingKey: The dead-letter routing key.
+         *                             The key can contain only letters, digits, hyphens (-), underscores (_), periods
+         *                             (.), number signs (#), forward slashes (/), and at signs (&#64;). The key must be 1
+         *                             to 255 characters in length.
          * @return {@code this}
          */
         public Builder deadLetterRoutingKey(java.lang.String deadLetterRoutingKey) {
@@ -268,7 +350,10 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getDeadLetterRoutingKey}
-         * @param deadLetterRoutingKey Property deadLetterRoutingKey: The dead letter routing key.
+         * @param deadLetterRoutingKey Property deadLetterRoutingKey: The dead-letter routing key.
+         *                             The key can contain only letters, digits, hyphens (-), underscores (_), periods
+         *                             (.), number signs (#), forward slashes (/), and at signs (&#64;). The key must be 1
+         *                             to 255 characters in length.
          * @return {@code this}
          */
         public Builder deadLetterRoutingKey(com.aliyun.ros.cdk.core.IResolvable deadLetterRoutingKey) {
@@ -280,8 +365,13 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link QueueProps#getExclusiveState}
          * @param exclusiveState Property exclusiveState: Specifies whether the queue is an exclusive queue.
          *                       Valid values:
-         *                       true: The queue is an exclusive queue. It can be used only for the connection that declares the exclusive queue. After the connection is closed, the exclusive queue is automatically deleted.
-         *                       false: The Auto Delete attribute is not configured.
+         *                       <p>
+         *                       <ul>
+         *                       <li>true: The queue is an exclusive queue. An exclusive queue can be used only by
+         *                       the connection that declares it. The queue is automatically deleted after the
+         *                       connection is closed.</li>
+         *                       <li>false: The queue is not an exclusive queue.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder exclusiveState(java.lang.Boolean exclusiveState) {
@@ -293,8 +383,13 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link QueueProps#getExclusiveState}
          * @param exclusiveState Property exclusiveState: Specifies whether the queue is an exclusive queue.
          *                       Valid values:
-         *                       true: The queue is an exclusive queue. It can be used only for the connection that declares the exclusive queue. After the connection is closed, the exclusive queue is automatically deleted.
-         *                       false: The Auto Delete attribute is not configured.
+         *                       <p>
+         *                       <ul>
+         *                       <li>true: The queue is an exclusive queue. An exclusive queue can be used only by
+         *                       the connection that declares it. The queue is automatically deleted after the
+         *                       connection is closed.</li>
+         *                       <li>false: The queue is not an exclusive queue.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder exclusiveState(com.aliyun.ros.cdk.core.IResolvable exclusiveState) {
@@ -304,7 +399,16 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getMaximumPriority}
-         * @param maximumPriority Property maximumPriority: The priority function is not supported.
+         * @param maximumPriority Property maximumPriority: The priority of the queue.
+         *                        The recommended value is an integer from 1 to 10.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is used for message priority. It is supported only by dedicated
+         *                        instances and can be used only after the message priority feature is enabled. To
+         *                        enable the feature, .
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder maximumPriority(java.lang.Number maximumPriority) {
@@ -314,7 +418,16 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getMaximumPriority}
-         * @param maximumPriority Property maximumPriority: The priority function is not supported.
+         * @param maximumPriority Property maximumPriority: The priority of the queue.
+         *                        The recommended value is an integer from 1 to 10.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is used for message priority. It is supported only by dedicated
+         *                        instances and can be used only after the message priority feature is enabled. To
+         *                        enable the feature, .
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder maximumPriority(com.aliyun.ros.cdk.core.IResolvable maximumPriority) {
@@ -324,8 +437,9 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getMaxLength}
-         * @param maxLength Property maxLength: The maximum number of messages that can be stored in the queue.
-         *                  If this threshold is exceeded, the earliest messages that are routed to the queue are discarded.
+         * @param maxLength Property maxLength: This parameter is not supported in the current version.
+         *                  The maximum number of messages that can be stored in the queue. If this limit is
+         *                  exceeded, the earliest messages in the queue are deleted.
          * @return {@code this}
          */
         public Builder maxLength(java.lang.Number maxLength) {
@@ -335,8 +449,9 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QueueProps#getMaxLength}
-         * @param maxLength Property maxLength: The maximum number of messages that can be stored in the queue.
-         *                  If this threshold is exceeded, the earliest messages that are routed to the queue are discarded.
+         * @param maxLength Property maxLength: This parameter is not supported in the current version.
+         *                  The maximum number of messages that can be stored in the queue. If this limit is
+         *                  exceeded, the earliest messages in the queue are deleted.
          * @return {@code this}
          */
         public Builder maxLength(com.aliyun.ros.cdk.core.IResolvable maxLength) {

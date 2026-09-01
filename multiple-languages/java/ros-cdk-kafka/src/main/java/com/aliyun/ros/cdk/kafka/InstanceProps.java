@@ -5,17 +5,28 @@ package com.aliyun.ros.cdk.kafka;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:37:40.592Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:51:39.100Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property deployType: The deployment mode of the Message Queue for Apache Kafka instance.
+     * Property deployType: The deployment type.
      * <p>
      * Valid values:
-     * 4: Instance of the public type
-     * 5: Instance of the VPC type
+     * <p>
+     * <ul>
+     * <li>4: Internet/VPC instance</li>
+     * <li>5: VPC instance</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you are creating a Confluent series instance, you cannot select the
+     * deployment type. You can only set the value to 5. After the purchase, you can
+     * adjust whether each component is open to the Internet.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDeployType();
 
@@ -63,9 +74,20 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property ioMax: The peak traffic to be configured for the Message Queue for Apache Kafka instance.
+     * Property ioMax: The traffic peak (not recommended).
      * <p>
-     * For more information about the value range, see Billing.
+     * <ul>
+     * <li>You must specify either IoMax or IoMaxSpec. If you specify both parameters,
+     * IoMaxSpec takes precedence. We recommend that you specify only IoMaxSpec.</li>
+     * <li>For the valid values, see <a href="">Billing</a>.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you are creating a Confluent series instance, you do not need to pass this
+     * parameter.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIoMax() {
         return null;
@@ -107,7 +129,10 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property serverlessConfig: Serverless instance related settings.
+     * Property serverlessConfig: The settings of the Serverless instance.
+     * <p>
+     * This parameter is required if you create
+     * a Serverless instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getServerlessConfig() {
         return null;
@@ -178,10 +203,21 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getDeployType}
-         * @param deployType Property deployType: The deployment mode of the Message Queue for Apache Kafka instance. This parameter is required.
+         * @param deployType Property deployType: The deployment type. This parameter is required.
          *                   Valid values:
-         *                   4: Instance of the public type
-         *                   5: Instance of the VPC type
+         *                   <p>
+         *                   <ul>
+         *                   <li>4: Internet/VPC instance</li>
+         *                   <li>5: VPC instance</li>
+         *                   </ul>
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   If you are creating a Confluent series instance, you cannot select the
+         *                   deployment type. You can only set the value to 5. After the purchase, you can
+         *                   adjust whether each component is open to the Internet.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder deployType(java.lang.Number deployType) {
@@ -191,10 +227,21 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getDeployType}
-         * @param deployType Property deployType: The deployment mode of the Message Queue for Apache Kafka instance. This parameter is required.
+         * @param deployType Property deployType: The deployment type. This parameter is required.
          *                   Valid values:
-         *                   4: Instance of the public type
-         *                   5: Instance of the VPC type
+         *                   <p>
+         *                   <ul>
+         *                   <li>4: Internet/VPC instance</li>
+         *                   <li>5: VPC instance</li>
+         *                   </ul>
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   If you are creating a Confluent series instance, you cannot select the
+         *                   deployment type. You can only set the value to 5. After the purchase, you can
+         *                   adjust whether each component is open to the Internet.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder deployType(com.aliyun.ros.cdk.core.IResolvable deployType) {
@@ -314,8 +361,19 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getIoMax}
-         * @param ioMax Property ioMax: The peak traffic to be configured for the Message Queue for Apache Kafka instance.
-         *              For more information about the value range, see Billing.
+         * @param ioMax Property ioMax: The traffic peak (not recommended).
+         *              <ul>
+         *              <li>You must specify either IoMax or IoMaxSpec. If you specify both parameters,
+         *              IoMaxSpec takes precedence. We recommend that you specify only IoMaxSpec.</li>
+         *              <li>For the valid values, see <a href="">Billing</a>.</li>
+         *              </ul>
+         *              <p>
+         *              <blockquote>
+         *              <p>
+         *              If you are creating a Confluent series instance, you do not need to pass this
+         *              parameter.
+         *              <p>
+         *              </blockquote>
          * @return {@code this}
          */
         public Builder ioMax(java.lang.Number ioMax) {
@@ -325,8 +383,19 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getIoMax}
-         * @param ioMax Property ioMax: The peak traffic to be configured for the Message Queue for Apache Kafka instance.
-         *              For more information about the value range, see Billing.
+         * @param ioMax Property ioMax: The traffic peak (not recommended).
+         *              <ul>
+         *              <li>You must specify either IoMax or IoMaxSpec. If you specify both parameters,
+         *              IoMaxSpec takes precedence. We recommend that you specify only IoMaxSpec.</li>
+         *              <li>For the valid values, see <a href="">Billing</a>.</li>
+         *              </ul>
+         *              <p>
+         *              <blockquote>
+         *              <p>
+         *              If you are creating a Confluent series instance, you do not need to pass this
+         *              parameter.
+         *              <p>
+         *              </blockquote>
          * @return {@code this}
          */
         public Builder ioMax(com.aliyun.ros.cdk.core.IResolvable ioMax) {
@@ -426,7 +495,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getServerlessConfig}
-         * @param serverlessConfig Property serverlessConfig: Serverless instance related settings.
+         * @param serverlessConfig Property serverlessConfig: The settings of the Serverless instance.
+         *                         This parameter is required if you create
+         *                         a Serverless instance.
          * @return {@code this}
          */
         public Builder serverlessConfig(com.aliyun.ros.cdk.core.IResolvable serverlessConfig) {
@@ -436,7 +507,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getServerlessConfig}
-         * @param serverlessConfig Property serverlessConfig: Serverless instance related settings.
+         * @param serverlessConfig Property serverlessConfig: The settings of the Serverless instance.
+         *                         This parameter is required if you create
+         *                         a Serverless instance.
          * @return {@code this}
          */
         public Builder serverlessConfig(com.aliyun.ros.cdk.kafka.RosInstance.ServerlessConfigProperty serverlessConfig) {

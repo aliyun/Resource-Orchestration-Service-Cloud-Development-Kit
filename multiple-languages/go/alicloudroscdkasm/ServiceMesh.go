@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ASM::ServiceMesh`, which is used to create a Service Mesh (ASM) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ASM::ServiceMesh`.
 type ServiceMesh interface {
 	alicloudroscdkcore.Resource
 	IServiceMesh

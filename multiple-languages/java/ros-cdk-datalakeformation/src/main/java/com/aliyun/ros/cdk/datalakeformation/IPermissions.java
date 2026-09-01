@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.datalakeformation;
 /**
  * Represents a <code>Permissions</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:08:39.645Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:01:59.406Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datalakeformation.$Module.class, fqn = "@alicloud/ros-cdk-datalakeformation.IPermissions")
 @software.amazon.jsii.Jsii.Proxy(IPermissions.Jsii$Proxy.class)
 public interface IPermissions extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

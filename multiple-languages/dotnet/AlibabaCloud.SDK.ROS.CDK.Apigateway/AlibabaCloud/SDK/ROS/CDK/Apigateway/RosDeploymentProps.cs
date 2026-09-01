@@ -112,7 +112,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         private object? _description;
 
         /// <remarks>
-        /// <strong>Property</strong>: description: Description of the deployment, less than 180 characters.
+        /// <strong>Property</strong>: description: The description. The description can be up to 200 characters in length.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

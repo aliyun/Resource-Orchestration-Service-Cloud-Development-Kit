@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cas;
 /**
  * Represents a <code>SslCertificate</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:39:53.056Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:24:27.035Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cas.$Module.class, fqn = "@alicloud/ros-cdk-cas.ISslCertificate")
 @software.amazon.jsii.Jsii.Proxy(ISslCertificate.Jsii$Proxy.class)
 public interface ISslCertificate extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

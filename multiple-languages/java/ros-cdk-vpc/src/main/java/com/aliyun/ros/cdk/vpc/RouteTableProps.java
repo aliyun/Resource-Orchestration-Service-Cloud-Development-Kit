@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetable
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.678Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.472Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RouteTableProps")
 @software.amazon.jsii.Jsii.Proxy(RouteTableProps.Jsii$Proxy.class)
 public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,13 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property associateType: The type of the route table.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>VSwitch (default): vSwitch route table</li>
+     * <li>Gateway: gateway route table</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAssociateType() {
         return null;
@@ -25,7 +32,8 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property description: The description of the route table.
      * <p>
-     * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
+     * The description must be 1 to 256 characters in length, and cannot start with
+     * <code>http:\/\/</code> or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -34,7 +42,8 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property routeTableName: The name of the route table.
      * <p>
-     * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
+     * The name must be 1 to 128 characters in length, and cannot start with <code>http:\/\/</code>
+     * or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRouteTableName() {
         return null;
@@ -88,6 +97,12 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link RouteTableProps#getAssociateType}
          * @param associateType Property associateType: The type of the route table.
+         *                      Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>VSwitch (default): vSwitch route table</li>
+         *                      <li>Gateway: gateway route table</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder associateType(java.lang.String associateType) {
@@ -98,6 +113,12 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link RouteTableProps#getAssociateType}
          * @param associateType Property associateType: The type of the route table.
+         *                      Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>VSwitch (default): vSwitch route table</li>
+         *                      <li>Gateway: gateway route table</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder associateType(com.aliyun.ros.cdk.core.IResolvable associateType) {
@@ -108,7 +129,8 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link RouteTableProps#getDescription}
          * @param description Property description: The description of the route table.
-         *                    The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
+         *                    The description must be 1 to 256 characters in length, and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -119,7 +141,8 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link RouteTableProps#getDescription}
          * @param description Property description: The description of the route table.
-         *                    The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
+         *                    The description must be 1 to 256 characters in length, and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -130,7 +153,8 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link RouteTableProps#getRouteTableName}
          * @param routeTableName Property routeTableName: The name of the route table.
-         *                       The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
+         *                       The name must be 1 to 128 characters in length, and cannot start with <code>http:\/\/</code>
+         *                       or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder routeTableName(java.lang.String routeTableName) {
@@ -141,7 +165,8 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link RouteTableProps#getRouteTableName}
          * @param routeTableName Property routeTableName: The name of the route table.
-         *                       The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
+         *                       The name must be 1 to 128 characters in length, and cannot start with <code>http:\/\/</code>
+         *                       or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder routeTableName(com.aliyun.ros.cdk.core.IResolvable routeTableName) {

@@ -152,7 +152,7 @@ export interface IDiskReplicaGroup extends ros.IResource {
     readonly attrTags: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaGroup`, which is used to create a replication pair-consistent group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskReplicaGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicagroup
  */

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apig;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::APIG::Domain</code>, which is used to create a domain name.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::APIG::Domain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.622Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:05:26.210Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.RosDomain")
 public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 

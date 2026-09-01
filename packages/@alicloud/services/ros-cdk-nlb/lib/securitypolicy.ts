@@ -10,7 +10,9 @@ export { RosSecurityPolicy as SecurityPolicyProperty };
 export interface SecurityPolicyProps {
 
     /**
-     * Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version. You can specify at most 32 cipher suites.
+     * Property ciphers: The cipher suites supported by the security policy. Valid values of this
+     * parameter vary based on the value of TlsVersions. You can specify up to 32 cipher
+     * suites.
      */
     readonly ciphers: Array<string | ros.IResolvable> | ros.IResolvable;
 

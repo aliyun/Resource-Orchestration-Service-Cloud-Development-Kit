@@ -18,7 +18,11 @@ type AggregatorProps struct {
 	// CUSTOM: Custom account group (default value).
 	// FOLDER: Folder account group. Must set FolderId if the AggregatorType is FOLDER. Please refer to ListAccounts for accessing FolderId.
 	AggregatorType interface{} `field:"optional" json:"aggregatorType" yaml:"aggregatorType"`
-	// Property folderId: The folder ID.
+	// Property folderId: The ID of the attached folder.
+	//
+	// You can specify multiple folder IDs. Separate the
+	// IDs with commas (,).
+	// This parameter is required if you set `AggregatorType` to `FOLDER`.
 	FolderId interface{} `field:"optional" json:"folderId" yaml:"folderId"`
 }
 

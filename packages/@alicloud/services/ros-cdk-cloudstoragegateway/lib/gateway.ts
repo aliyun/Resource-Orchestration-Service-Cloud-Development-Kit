@@ -10,7 +10,7 @@ export { RosGateway as GatewayProperty };
 export interface GatewayProps {
 
     /**
-     * Property category: The category of the gateway.
+     * Property category: The category of the gateway. The default value is `Cloud`.
      */
     readonly category: string | ros.IResolvable;
 
@@ -20,7 +20,9 @@ export interface GatewayProps {
     readonly location: string | ros.IResolvable;
 
     /**
-     * Property name: The name of the gateway.
+     * Property name: The name of the gateway. The name must be 60 characters in length. The name must
+     * start with a letter or a Chinese character. The name can contain letters, Chinese
+     * characters, digits, underscores (_), hyphens (-), and periods (.).
      */
     readonly name: string | ros.IResolvable;
 
@@ -35,22 +37,40 @@ export interface GatewayProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property gatewayClass: The class of the gateway.
+     * Property gatewayClass: If your gateway is deployed in a data center, which is an on-premises gateway,
+     * you can ignore this parameter.
+     * If your gateway is deployed on the cloud, which is a cloud gateway, valid
+     * values are:
+     * - Basic: Basic
+     * - Standard: Medium
+     * - Enhanced: Enhanced
+     * - Advanced: Performance
      */
     readonly gatewayClass?: string | ros.IResolvable;
 
     /**
-     * Property postPaid: Whether the gateway is pay-as-you-go.
+     * Property postPaid: Valid values:
+     * - true: pay-as-you-go.
+     * - false: subscription.
+     * Default value: false (subscription).
      */
     readonly postPaid?: boolean | ros.IResolvable;
 
     /**
-     * Property publicNetworkBandwidth: The public network bandwidth of the gateway.
+     * Property publicNetworkBandwidth: > - This parameter is supported only for cloud gateways. You can ignore this
+     * parameter for on-premises gateways.
+     * > - Configure this parameter only when you need to mount an OSS bucket across
+     * regions.
+     * > - If you specify 0 or do not specify this parameter, the default value is 5.
      */
     readonly publicNetworkBandwidth?: number | ros.IResolvable;
 
     /**
-     * Property releaseAfterExpiration: Whether to release the gateway after expiration.
+     * Property releaseAfterExpiration: Specifies whether to release the gateway when the subscription expires. Valid
+     * values:
+     * true: The gateway is automatically released.
+     * false: The billing method of the gateway is automatically changed to
+     * pay-as-you-go after the subscription expires.
      */
     readonly releaseAfterExpiration?: boolean | ros.IResolvable;
 
@@ -65,7 +85,8 @@ export interface GatewayProps {
     readonly secondaryVSwitchId?: string | ros.IResolvable;
 
     /**
-     * Property storageBundleId: The ID of the storage bundle.
+     * Property storageBundleId: The ID of the gateway cluster. You must specify this parameter if you do not
+     * specify ResourceRegionId.
      */
     readonly storageBundleId?: string | ros.IResolvable;
 
@@ -80,7 +101,12 @@ export interface GatewayProps {
     readonly untrustedEnvInstanceType?: string | ros.IResolvable;
 
     /**
-     * Property vSwitchId: The ID of the VSwitch.
+     * Property vSwitchId: The ID of the virtual switch. If your gateway is deployed in a data center, you
+     * can ignore this parameter.
+     * - The vSwitch must be in the same VPC as the ECS instance that you want to
+     * attach.
+     * - If no gateway resources can be allocated in the zone where the vSwitch resides,
+     * create a vSwitch in another zone.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.lindorm;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Lindorm::MultiZoneInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:41:50.382Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:57:28.746Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.MultiZoneInstance")
 public class MultiZoneInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.lindorm.IMultiZoneInstance {
 
@@ -456,30 +456,30 @@ public class MultiZoneInstance extends com.aliyun.ros.cdk.core.Resource implemen
         }
 
         /**
-         * Property lindormNum: The number of LindormTable nodes in the instance.
+         * Property lindormNum: The number of nodes in the wide table engine.
          * <p>
-         * The valid values of this parameter depend on the value of the PayType parameter.
-         * If the PayType parameter is set to PREPAY, set this parameter to an integer that ranges from 0 to 90.
-         * If the PayType parameter is set to POSTPAY, set this parameter to an integer that ranges from 0 to 400.
-         * ** This parameter is required if you want to create a multi-zone instance. ** The valid values of this parameter range from 4 to 400 if you want to create a multi-zone instance.
+         * For a single-zone instance, the value of this parameter ranges from 0 to 90.
+         * This parameter is required for multi-zone instances. For an instance that uses
+         * cloud disks, the value ranges from 4 to 400. For an instance that uses local
+         * disks, the value ranges from 6 to 400.
          * <p>
          * @return {@code this}
-         * @param lindormNum Property lindormNum: The number of LindormTable nodes in the instance. This parameter is required.
+         * @param lindormNum Property lindormNum: The number of nodes in the wide table engine. This parameter is required.
          */
         public Builder lindormNum(final java.lang.Number lindormNum) {
             this.props.lindormNum(lindormNum);
             return this;
         }
         /**
-         * Property lindormNum: The number of LindormTable nodes in the instance.
+         * Property lindormNum: The number of nodes in the wide table engine.
          * <p>
-         * The valid values of this parameter depend on the value of the PayType parameter.
-         * If the PayType parameter is set to PREPAY, set this parameter to an integer that ranges from 0 to 90.
-         * If the PayType parameter is set to POSTPAY, set this parameter to an integer that ranges from 0 to 400.
-         * ** This parameter is required if you want to create a multi-zone instance. ** The valid values of this parameter range from 4 to 400 if you want to create a multi-zone instance.
+         * For a single-zone instance, the value of this parameter ranges from 0 to 90.
+         * This parameter is required for multi-zone instances. For an instance that uses
+         * cloud disks, the value ranges from 4 to 400. For an instance that uses local
+         * disks, the value ranges from 6 to 400.
          * <p>
          * @return {@code this}
-         * @param lindormNum Property lindormNum: The number of LindormTable nodes in the instance. This parameter is required.
+         * @param lindormNum Property lindormNum: The number of nodes in the wide table engine. This parameter is required.
          */
         public Builder lindormNum(final com.aliyun.ros.cdk.core.IResolvable lindormNum) {
             this.props.lindormNum(lindormNum);

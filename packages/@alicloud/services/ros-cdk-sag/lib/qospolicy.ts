@@ -33,8 +33,9 @@ export interface QosPolicyProps {
     readonly ipProtocol: string | ros.IResolvable;
 
     /**
-     * Property priority: The priority of the traffic throttling policy to which the traffic classification
-     * rule belongs.
+     * Property priority: The priority of the throttling rule to which the stream classification rule
+     * belongs.
+     * Valid values: 1 to 3. A smaller value indicates a higher priority.
      */
     readonly priority: number | ros.IResolvable;
 
@@ -60,9 +61,10 @@ export interface QosPolicyProps {
     readonly sourcePortRange: string | ros.IResolvable;
 
     /**
-     * Property description: The description of the traffic classification rule.
-     * The description must be 1 to 512 characters in length and can contain letters, digits,
-     * underscores (_), and hyphens (-). It must start with a letter.
+     * Property description: The description of the stream classification rule for the QoS policy.
+     * The description must be 1 to 512 characters in length. It must start with a
+     * letter or a Chinese character and can contain digits, underscores (_), and
+     * hyphens (-).
      */
     readonly description?: string | ros.IResolvable;
 
@@ -88,9 +90,9 @@ export interface QosPolicyProps {
     readonly endTime?: string | ros.IResolvable;
 
     /**
-     * Property name: The name of the traffic classification rule.
-     * The name must be 2 to 100 characters in length, and can contain digits, underscores
-     * (_), and hyphens (-). It must start with a letter.
+     * Property name: The name of the stream classification rule.
+     * The name must be 2 to 100 characters in length. It must start with a letter or a
+     * Chinese character and can contain digits, hyphens (-), and underscores (_).
      */
     readonly name?: string | ros.IResolvable;
 

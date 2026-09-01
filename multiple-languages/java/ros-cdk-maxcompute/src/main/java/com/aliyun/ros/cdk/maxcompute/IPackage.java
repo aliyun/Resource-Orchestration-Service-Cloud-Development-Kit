@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.maxcompute;
 /**
  * Represents a <code>Package</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:47:11.299Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:01:49.056Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.maxcompute.$Module.class, fqn = "@alicloud/ros-cdk-maxcompute.IPackage")
 @software.amazon.jsii.Jsii.Proxy(IPackage.Jsii$Proxy.class)
 public interface IPackage extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

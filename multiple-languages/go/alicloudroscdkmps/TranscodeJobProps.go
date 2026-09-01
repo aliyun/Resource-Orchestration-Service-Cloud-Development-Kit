@@ -5,9 +5,11 @@ package alicloudroscdkmps
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-transcodejob
 type TranscodeJobProps struct {
-	// Property input: The input configuration of the job.
+	// Property input: Job input.
 	//
-	// For more information, see Input details.
+	// > - In ApsaraVideo Media Processing APIs, the Object value must be URL-encoded
+	// using UTF-8 encoding.
+	// - The OSS region must match the region where MPS is deployed.
 	Input interface{} `field:"required" json:"input" yaml:"input"`
 	// Property outputBucket: The name of the OSS bucket where the output files are stored.
 	OutputBucket interface{} `field:"required" json:"outputBucket" yaml:"outputBucket"`
@@ -17,7 +19,11 @@ type TranscodeJobProps struct {
 	Outputs interface{} `field:"required" json:"outputs" yaml:"outputs"`
 	// Property pipelineId: The ID of the pipeline.
 	PipelineId interface{} `field:"required" json:"pipelineId" yaml:"pipelineId"`
-	// Property outputLocation: The region of the OSS bucket where the output files are stored.
+	// Property outputLocation: The OSS region (OSS Region) where the output bucket resides.
+	//
+	// - The OSS bucket must be in the same region as the ApsaraVideo Media Processing
+	// service.
+	// - Follows the OSS bucket definition.
 	OutputLocation interface{} `field:"optional" json:"outputLocation" yaml:"outputLocation"`
 }
 

@@ -7,7 +7,9 @@ package alicloudroscdkecs
 type PrefixListProps struct {
 	// Property addressFamily: The IP address family.
 	//
-	// Valid values: IPv4 IPv6.
+	// Valid values:
+	// - IPv4
+	// - IPv6.
 	AddressFamily interface{} `field:"required" json:"addressFamily" yaml:"addressFamily"`
 	// Property maxEntries: The maximum number of entries that the prefix list can contain.
 	//

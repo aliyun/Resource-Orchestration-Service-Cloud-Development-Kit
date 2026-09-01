@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * Represents a <code>ConsumerChannel</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:29:50.744Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:27:14.910Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.IConsumerChannel")
 @software.amazon.jsii.Jsii.Proxy(IConsumerChannel.Jsii$Proxy.class)
 public interface IConsumerChannel extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

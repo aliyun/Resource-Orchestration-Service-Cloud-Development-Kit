@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
 /**
  * Represents a <code>Vpcs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.831Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.630Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.IVpcs")
 @software.amazon.jsii.Jsii.Proxy(IVpcs.Jsii$Proxy.class)
 public interface IVpcs extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

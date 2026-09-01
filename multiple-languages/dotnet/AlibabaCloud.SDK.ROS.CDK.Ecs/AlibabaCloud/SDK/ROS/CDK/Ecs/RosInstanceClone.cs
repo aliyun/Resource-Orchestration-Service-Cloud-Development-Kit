@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceClone`, which is used to clone an Elastic Compute Service (ECS) instance.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceClone`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `InstanceClone` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instanceclone
@@ -220,7 +220,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
+        /// <strong>Property</strong>: deletionProtection: Specifies whether to enable release protection for the instance. This parameter
+        /// determines whether you can use the ECS console or call the [DeleteInstance]()
+        /// operation to release the instance. Valid values:
+        /// - true: enables release protection for the instance.
+        /// - false: disables release protection for the instance.
+        /// Default value: false.
+        /// > This parameter is applicable to only pay-as-you-go instances. It can protect
+        /// instances against manual releases, but not against automatic releases.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

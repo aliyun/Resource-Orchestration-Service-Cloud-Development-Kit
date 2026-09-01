@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.arms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ARMS::ManagedPrometheus</code>, which is used to install a Prometheus instance to monitor a serverless Kubernetes (ASK) cluster or an Elastic Compute Service (ECS) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ARMS::ManagedPrometheus</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:31:39.082Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:12:12.719Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.ManagedPrometheus")
 public class ManagedPrometheus extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.arms.IManagedPrometheus {
 
@@ -120,24 +120,38 @@ public class ManagedPrometheus extends com.aliyun.ros.cdk.core.Resource implemen
         }
 
         /**
-         * Property clusterType: The type of the cluster.
+         * Property clusterType: The cluster type.
          * <p>
-         * Currently, only ask, ecs and one clusters are supported. Default is ecs.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ecs: ECS</li>
+         * <li>one: ACK One</li>
+         * <li>ask: ASK</li>
+         * <li>pro: Container Monitoring Pro</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param clusterType Property clusterType: The type of the cluster. This parameter is required.
+         * @param clusterType Property clusterType: The cluster type. This parameter is required.
          */
         public Builder clusterType(final java.lang.String clusterType) {
             this.props.clusterType(clusterType);
             return this;
         }
         /**
-         * Property clusterType: The type of the cluster.
+         * Property clusterType: The cluster type.
          * <p>
-         * Currently, only ask, ecs and one clusters are supported. Default is ecs.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ecs: ECS</li>
+         * <li>one: ACK One</li>
+         * <li>ask: ASK</li>
+         * <li>pro: Container Monitoring Pro</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param clusterType Property clusterType: The type of the cluster. This parameter is required.
+         * @param clusterType Property clusterType: The cluster type. This parameter is required.
          */
         public Builder clusterType(final com.aliyun.ros.cdk.core.IResolvable clusterType) {
             this.props.clusterType(clusterType);
@@ -254,24 +268,28 @@ public class ManagedPrometheus extends com.aliyun.ros.cdk.core.Resource implemen
         }
 
         /**
-         * Property grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster.
+         * Property grafanaInstanceId: The ID of the managed Grafana workspace that is associated with the cluster.
          * <p>
-         * When empty or "free", binds to the shared version of Grafana.
+         * If
+         * you set this parameter to free or leave this parameter empty, the cluster is
+         * associated with a shared Grafana workspace.
          * <p>
          * @return {@code this}
-         * @param grafanaInstanceId Property grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster. This parameter is required.
+         * @param grafanaInstanceId Property grafanaInstanceId: The ID of the managed Grafana workspace that is associated with the cluster. This parameter is required.
          */
         public Builder grafanaInstanceId(final java.lang.String grafanaInstanceId) {
             this.props.grafanaInstanceId(grafanaInstanceId);
             return this;
         }
         /**
-         * Property grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster.
+         * Property grafanaInstanceId: The ID of the managed Grafana workspace that is associated with the cluster.
          * <p>
-         * When empty or "free", binds to the shared version of Grafana.
+         * If
+         * you set this parameter to free or leave this parameter empty, the cluster is
+         * associated with a shared Grafana workspace.
          * <p>
          * @return {@code this}
-         * @param grafanaInstanceId Property grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster. This parameter is required.
+         * @param grafanaInstanceId Property grafanaInstanceId: The ID of the managed Grafana workspace that is associated with the cluster. This parameter is required.
          */
         public Builder grafanaInstanceId(final com.aliyun.ros.cdk.core.IResolvable grafanaInstanceId) {
             this.props.grafanaInstanceId(grafanaInstanceId);

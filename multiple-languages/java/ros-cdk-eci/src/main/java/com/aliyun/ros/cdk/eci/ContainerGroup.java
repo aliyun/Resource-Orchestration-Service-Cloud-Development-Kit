@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.eci;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECI::ContainerGroup</code>, which is used to create a container group.
- * <p>
- * A container group is an elastic container instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECI::ContainerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:35:20.480Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:35:35.421Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.ContainerGroup")
 public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.eci.IContainerGroup {
 
@@ -238,20 +236,20 @@ public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+         * Property acrRegistryInfo: A list of ACR Enterprise instances.
          * <p>
          * @return {@code this}
-         * @param acrRegistryInfo Property acrRegistryInfo: Enterprise Edition access credential configuration information. This parameter is required.
+         * @param acrRegistryInfo Property acrRegistryInfo: A list of ACR Enterprise instances. This parameter is required.
          */
         public Builder acrRegistryInfo(final com.aliyun.ros.cdk.core.IResolvable acrRegistryInfo) {
             this.props.acrRegistryInfo(acrRegistryInfo);
             return this;
         }
         /**
-         * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+         * Property acrRegistryInfo: A list of ACR Enterprise instances.
          * <p>
          * @return {@code this}
-         * @param acrRegistryInfo Property acrRegistryInfo: Enterprise Edition access credential configuration information. This parameter is required.
+         * @param acrRegistryInfo Property acrRegistryInfo: A list of ACR Enterprise instances. This parameter is required.
          */
         public Builder acrRegistryInfo(final java.util.List<? extends java.lang.Object> acrRegistryInfo) {
             this.props.acrRegistryInfo(acrRegistryInfo);
@@ -282,6 +280,9 @@ public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource implements 
         /**
          * Property autoMatchImageCache: Specifies whether to automatically match the image cache.
          * <p>
+         * The default value is
+         * false.
+         * <p>
          * @return {@code this}
          * @param autoMatchImageCache Property autoMatchImageCache: Specifies whether to automatically match the image cache. This parameter is required.
          */
@@ -291,6 +292,9 @@ public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource implements 
         }
         /**
          * Property autoMatchImageCache: Specifies whether to automatically match the image cache.
+         * <p>
+         * The default value is
+         * false.
          * <p>
          * @return {@code this}
          * @param autoMatchImageCache Property autoMatchImageCache: Specifies whether to automatically match the image cache. This parameter is required.
@@ -406,20 +410,20 @@ public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property imageSnapshotId: Image cache ID or snapshot ID.
+         * Property imageSnapshotId: The ID of the image cache.
          * <p>
          * @return {@code this}
-         * @param imageSnapshotId Property imageSnapshotId: Image cache ID or snapshot ID. This parameter is required.
+         * @param imageSnapshotId Property imageSnapshotId: The ID of the image cache. This parameter is required.
          */
         public Builder imageSnapshotId(final java.lang.String imageSnapshotId) {
             this.props.imageSnapshotId(imageSnapshotId);
             return this;
         }
         /**
-         * Property imageSnapshotId: Image cache ID or snapshot ID.
+         * Property imageSnapshotId: The ID of the image cache.
          * <p>
          * @return {@code this}
-         * @param imageSnapshotId Property imageSnapshotId: Image cache ID or snapshot ID. This parameter is required.
+         * @param imageSnapshotId Property imageSnapshotId: The ID of the image cache. This parameter is required.
          */
         public Builder imageSnapshotId(final com.aliyun.ros.cdk.core.IResolvable imageSnapshotId) {
             this.props.imageSnapshotId(imageSnapshotId);
@@ -448,20 +452,26 @@ public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property instanceType: The type of the ECS instance.
+         * Property instanceType: The ECS instance type.
+         * <p>
+         * You can specify multiple instance types. For more
+         * information, see <a href="">Create an instance by specifying an ECS instance type</a>.
          * <p>
          * @return {@code this}
-         * @param instanceType Property instanceType: The type of the ECS instance. This parameter is required.
+         * @param instanceType Property instanceType: The ECS instance type. This parameter is required.
          */
         public Builder instanceType(final java.lang.String instanceType) {
             this.props.instanceType(instanceType);
             return this;
         }
         /**
-         * Property instanceType: The type of the ECS instance.
+         * Property instanceType: The ECS instance type.
+         * <p>
+         * You can specify multiple instance types. For more
+         * information, see <a href="">Create an instance by specifying an ECS instance type</a>.
          * <p>
          * @return {@code this}
-         * @param instanceType Property instanceType: The type of the ECS instance. This parameter is required.
+         * @param instanceType Property instanceType: The ECS instance type. This parameter is required.
          */
         public Builder instanceType(final com.aliyun.ros.cdk.core.IResolvable instanceType) {
             this.props.instanceType(instanceType);
@@ -470,6 +480,9 @@ public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource implements 
 
         /**
          * Property ipv6AddressCount: The number of IPv6 addresses.
+         * <p>
+         * The value is fixed at 1, which indicates that one
+         * IPv6 address can be bound to an ECI instance.
          * <p>
          * @return {@code this}
          * @param ipv6AddressCount Property ipv6AddressCount: The number of IPv6 addresses. This parameter is required.
@@ -480,6 +493,9 @@ public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource implements 
         }
         /**
          * Property ipv6AddressCount: The number of IPv6 addresses.
+         * <p>
+         * The value is fixed at 1, which indicates that one
+         * IPv6 address can be bound to an ECI instance.
          * <p>
          * @return {@code this}
          * @param ipv6AddressCount Property ipv6AddressCount: The number of IPv6 addresses. This parameter is required.
@@ -792,26 +808,50 @@ public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property vSwitchId: The ID of the specified VSwitch.
+         * Property vSwitchId: The ID of the vSwitch to which the instance belongs.
          * <p>
-         * If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
-         * If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+         * You can specify up to 10
+         * vSwitch IDs. Separate multiple IDs with commas (,), for example, <code>vsw-*,vsw-*</code>.
+         * If you do not specify a vSwitch, the system uses the default vSwitch in the
+         * default VPC of the selected region. If you do not have a default VPC and a
+         * default vSwitch in the region, the system creates a default VPC and a default
+         * vSwitch.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The number of IP addresses in the vSwitch CIDR block determines the maximum
+         * number of ECI instances that can be created in the vSwitch. Plan the CIDR block
+         * in advance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The ID of the specified VSwitch. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which the instance belongs. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: The ID of the specified VSwitch.
+         * Property vSwitchId: The ID of the vSwitch to which the instance belongs.
          * <p>
-         * If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
-         * If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+         * You can specify up to 10
+         * vSwitch IDs. Separate multiple IDs with commas (,), for example, <code>vsw-*,vsw-*</code>.
+         * If you do not specify a vSwitch, the system uses the default vSwitch in the
+         * default VPC of the selected region. If you do not have a default VPC and a
+         * default vSwitch in the region, the system creates a default VPC and a default
+         * vSwitch.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The number of IP addresses in the vSwitch CIDR block determines the maximum
+         * number of ECI instances that can be created in the vSwitch. Plan the CIDR block
+         * in advance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The ID of the specified VSwitch. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which the instance belongs. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);

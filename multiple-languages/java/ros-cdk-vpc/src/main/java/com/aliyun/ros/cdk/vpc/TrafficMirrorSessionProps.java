@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.695Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.499Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.TrafficMirrorSessionProps")
 @software.amazon.jsii.Jsii.Proxy(TrafficMirrorSessionProps.Jsii$Proxy.class)
 public interface TrafficMirrorSessionProps extends software.amazon.jsii.JsiiSerializable {
@@ -62,9 +62,9 @@ public interface TrafficMirrorSessionProps extends software.amazon.jsii.JsiiSeri
     }
 
     /**
-     * Property packetLength: The maximum transmission unit (MTU).
+     * Property packetLength: The maximum transmission unit.
      * <p>
-     * Default value: <strong>1500</strong>.
+     * Valid values: 64 to 9600. Default value: 1500.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPacketLength() {
         return null;
@@ -287,8 +287,8 @@ public interface TrafficMirrorSessionProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link TrafficMirrorSessionProps#getPacketLength}
-         * @param packetLength Property packetLength: The maximum transmission unit (MTU).
-         *                     Default value: <strong>1500</strong>.
+         * @param packetLength Property packetLength: The maximum transmission unit.
+         *                     Valid values: 64 to 9600. Default value: 1500.
          * @return {@code this}
          */
         public Builder packetLength(java.lang.Number packetLength) {
@@ -298,8 +298,8 @@ public interface TrafficMirrorSessionProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link TrafficMirrorSessionProps#getPacketLength}
-         * @param packetLength Property packetLength: The maximum transmission unit (MTU).
-         *                     Default value: <strong>1500</strong>.
+         * @param packetLength Property packetLength: The maximum transmission unit.
+         *                     Valid values: 64 to 9600. Default value: 1500.
          * @return {@code this}
          */
         public Builder packetLength(com.aliyun.ros.cdk.core.IResolvable packetLength) {

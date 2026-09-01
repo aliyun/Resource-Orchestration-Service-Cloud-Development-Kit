@@ -5,9 +5,9 @@ package alicloudroscdkslb
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancer
 type LoadBalancerProps struct {
-	// Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'.
+	// Property addressIpVersion: The IP version of the CLB instance.
 	//
-	// If 'ipv6' is selected, please note that the zone and the specification are supported.
+	// Valid values: ipv4 and ipv6.
 	AddressIpVersion interface{} `field:"optional" json:"addressIpVersion" yaml:"addressIpVersion"`
 	// Property addressType: The network type of the CLB instance.
 	//
@@ -21,11 +21,12 @@ type LoadBalancerProps struct {
 	Bandwidth interface{} `field:"optional" json:"bandwidth" yaml:"bandwidth"`
 	// Property deletionProtection: Whether to enable deletion protection.
 	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
-	// Property instanceChargeType: Instance billing method.
+	// Property instanceChargeType: The resource metering method for the CLB instance.
 	//
 	// Valid value:
-	// - **PayBySpec** (default): Pay by spec.
-	// - **PayByCLCU**: billed by usage.
+	// - PayByCLCU: pay-by-data-transfer
+	// > As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+	// no longer available for purchase. For more details, see [](t2857909.xdita#).
 	InstanceChargeType interface{} `field:"optional" json:"instanceChargeType" yaml:"instanceChargeType"`
 	// Property internetChargeType: The metering method of the Internet-facing CLB instance.
 	//
@@ -34,30 +35,48 @@ type LoadBalancerProps struct {
 	// - **paybybandwidth**: pay-by-bandwidth.
 	// **Note** If you set PayType to PayOnDemand and set InstanceChargeType to PayByCLCU, you must set InternetChargeType to paybytraffic.
 	InternetChargeType interface{} `field:"optional" json:"internetChargeType" yaml:"internetChargeType"`
-	// Property loadBalancerName: Name of created load balancer.
+	// Property loadBalancerName: The CLB instance name.
 	//
-	// Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
+	// The name must be 1 to 80 characters in length, and can contain digits, periods
+	// (.), underscores (_), and hyphens (-). It must start with a letter.
+	// If you do not specify this parameter, the system automatically assigns a name to
+	// the CLB instance.
 	LoadBalancerName interface{} `field:"optional" json:"loadBalancerName" yaml:"loadBalancerName"`
 	// Property loadBalancerSpec: The specification of the CLB instance.
 	//
 	// Valid values:
-	// - **slb.s1.small**
-	// - **slb.s2.small**
-	// - **slb.s2.medium**
-	// - **slb.s3.small**
-	// - **slb.s3.medium**
-	// - **slb.s3.large**
-	// **Note** If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
-	// If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.
+	// - slb.s1.small
+	// - slb.s2.small
+	// - slb.s2.medium
+	// - slb.s3.small
+	// - slb.s3.medium
+	// - slb.s3.large
+	// > * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+	// do not need to specify this parameter.
+	// >
+	// > * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+	// are no longer available for purchase. For more details, see [](t2857909.xdita#).
 	LoadBalancerSpec interface{} `field:"optional" json:"loadBalancerSpec" yaml:"loadBalancerSpec"`
 	// Property masterZoneId: The master zone id to create load balancer instance.
 	MasterZoneId interface{} `field:"optional" json:"masterZoneId" yaml:"masterZoneId"`
-	// Property modificationProtectionReason: Set the reason for modifying the protection status.
+	// Property modificationProtectionReason: The reason for enabling the configuration read-only mode.
 	//
-	// The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
-	// Only valid when ModificationProtectionStatus is ConsoleProtection.
+	// The reason must be 1 to
+	// 80 characters in length. It must start with a letter and can contain letters,
+	// digits, periods (.), underscores (_), and hyphens (-).
+	// > This parameter takes effect only when ModificationProtectionStatus is set to
+	// ConsoleProtection.
 	ModificationProtectionReason interface{} `field:"optional" json:"modificationProtectionReason" yaml:"modificationProtectionReason"`
-	// Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection ConsoleProtection: Modify instance protection status by console Default value is empty.
+	// Property modificationProtectionStatus: Specifies whether to enable the configuration read-only mode.
+	//
+	// Valid values:
+	// - NonProtection: disables the configuration read-only mode. After you disable the
+	// configuration read-only mode, the value of ModificationProtectionReason is
+	// cleared.
+	// - ConsoleProtection: enables the configuration read-only mode.
+	// > If you set this parameter to ConsoleProtection, you cannot modify instance
+	// configurations in the CLB console. However, you can modify instance
+	// configurations by calling API operations.
 	ModificationProtectionStatus interface{} `field:"optional" json:"modificationProtectionStatus" yaml:"modificationProtectionStatus"`
 	// Property resourceGroupId: Resource group id.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
@@ -71,9 +90,11 @@ type LoadBalancerProps struct {
 	//
 	// For VPC network only.
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
-	// Property vSwitchId: The VSwitch id to create load balancer instance.
+	// Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
 	//
-	// For VPC network only.
+	// If you want to deploy the CLB instance in a VPC, this parameter is required. If
+	// this parameter is specified, AddessType is set to intranet by default.
+	// > The vSwitch must be in the primary zone.
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`
 }
 

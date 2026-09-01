@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ALB::Zones`This data source provides information about the zones that are available for Application Load Balancer (ALB) in a region.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ALB::Zones`.
 type Zones interface {
 	alicloudroscdkcore.Resource
 	IZones

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sag;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qoscar
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:44:50.993Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:26:52.116Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.QosCarProps")
 @software.amazon.jsii.Jsii.Proxy(QosCarProps.Jsii$Proxy.class)
 public interface QosCarProps extends software.amazon.jsii.JsiiSerializable {
@@ -41,47 +41,63 @@ public interface QosCarProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property maxBandwidthAbs: The maximum bandwidth.
+     * Property maxBandwidthAbs: The maximum bandwidth value.
      * <p>
-     * This parameter is required when LimitType is set to Absolute.
+     * The value must be an integer. Unit: Mbit/s.
+     * This parameter is returned when LimitType is set to Absolute.
+     * <p>
+     * <blockquote>
+     * <p>
+     * The maximum bandwidth value must be greater than the minimum bandwidth value.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMaxBandwidthAbs() {
         return null;
     }
 
     /**
-     * Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG instance.
+     * Property maxBandwidthPercent: The maximum bandwidth percentage.
      * <p>
-     * This parameter is required when LimitType is set to Percent.
+     * Unit: percent (%). Valid values: 1 to 100.
+     * This parameter is required when you set LimitType to Percent.
+     * <p>
+     * <blockquote>
+     * <p>
+     * The maximum bandwidth percentage must be greater than the minimum bandwidth
+     * percentage.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMaxBandwidthPercent() {
         return null;
     }
 
     /**
-     * Property minBandwidthAbs: The minimum bandwidth.
+     * Property minBandwidthAbs: The minimum bandwidth value.
      * <p>
-     * This parameter is required when LimitType is set to Absolute.
+     * The value must be an integer. Unit: Mbit/s.
+     * This parameter is returned when LimitType is set to Absolute.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMinBandwidthAbs() {
         return null;
     }
 
     /**
-     * Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG instance.
+     * Property minBandwidthPercent: The minimum bandwidth percentage.
      * <p>
-     * This parameter is required when LimitType is set to Percent.
+     * Unit: percent (%). Valid values: 1 to 100.
+     * This parameter is required when you set LimitType to Percent.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMinBandwidthPercent() {
         return null;
     }
 
     /**
-     * Property name: The name of the traffic throttling policy.
+     * Property name: The name of the traffic throttling rule.
      * <p>
-     * The name must be 2 to 128 characters in
-     * length, and can contain Chinese characters, letters, digits, periods (.), underscores
-     * (_), and hyphens (-).
+     * The name must be 2 to 128 characters in length, and can contain letters, digits,
+     * periods (.), underscores (_), and hyphens (-). The name must start with a letter.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
@@ -211,8 +227,15 @@ public interface QosCarProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosCarProps#getMaxBandwidthAbs}
-         * @param maxBandwidthAbs Property maxBandwidthAbs: The maximum bandwidth.
-         *                        This parameter is required when LimitType is set to Absolute.
+         * @param maxBandwidthAbs Property maxBandwidthAbs: The maximum bandwidth value.
+         *                        The value must be an integer. Unit: Mbit/s.
+         *                        This parameter is returned when LimitType is set to Absolute.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        The maximum bandwidth value must be greater than the minimum bandwidth value.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder maxBandwidthAbs(java.lang.Number maxBandwidthAbs) {
@@ -222,8 +245,15 @@ public interface QosCarProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosCarProps#getMaxBandwidthAbs}
-         * @param maxBandwidthAbs Property maxBandwidthAbs: The maximum bandwidth.
-         *                        This parameter is required when LimitType is set to Absolute.
+         * @param maxBandwidthAbs Property maxBandwidthAbs: The maximum bandwidth value.
+         *                        The value must be an integer. Unit: Mbit/s.
+         *                        This parameter is returned when LimitType is set to Absolute.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        The maximum bandwidth value must be greater than the minimum bandwidth value.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder maxBandwidthAbs(com.aliyun.ros.cdk.core.IResolvable maxBandwidthAbs) {
@@ -233,8 +263,16 @@ public interface QosCarProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosCarProps#getMaxBandwidthPercent}
-         * @param maxBandwidthPercent Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG instance.
-         *                            This parameter is required when LimitType is set to Percent.
+         * @param maxBandwidthPercent Property maxBandwidthPercent: The maximum bandwidth percentage.
+         *                            Unit: percent (%). Valid values: 1 to 100.
+         *                            This parameter is required when you set LimitType to Percent.
+         *                            <p>
+         *                            <blockquote>
+         *                            <p>
+         *                            The maximum bandwidth percentage must be greater than the minimum bandwidth
+         *                            percentage.
+         *                            <p>
+         *                            </blockquote>
          * @return {@code this}
          */
         public Builder maxBandwidthPercent(java.lang.Number maxBandwidthPercent) {
@@ -244,8 +282,16 @@ public interface QosCarProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosCarProps#getMaxBandwidthPercent}
-         * @param maxBandwidthPercent Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG instance.
-         *                            This parameter is required when LimitType is set to Percent.
+         * @param maxBandwidthPercent Property maxBandwidthPercent: The maximum bandwidth percentage.
+         *                            Unit: percent (%). Valid values: 1 to 100.
+         *                            This parameter is required when you set LimitType to Percent.
+         *                            <p>
+         *                            <blockquote>
+         *                            <p>
+         *                            The maximum bandwidth percentage must be greater than the minimum bandwidth
+         *                            percentage.
+         *                            <p>
+         *                            </blockquote>
          * @return {@code this}
          */
         public Builder maxBandwidthPercent(com.aliyun.ros.cdk.core.IResolvable maxBandwidthPercent) {
@@ -255,8 +301,9 @@ public interface QosCarProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosCarProps#getMinBandwidthAbs}
-         * @param minBandwidthAbs Property minBandwidthAbs: The minimum bandwidth.
-         *                        This parameter is required when LimitType is set to Absolute.
+         * @param minBandwidthAbs Property minBandwidthAbs: The minimum bandwidth value.
+         *                        The value must be an integer. Unit: Mbit/s.
+         *                        This parameter is returned when LimitType is set to Absolute.
          * @return {@code this}
          */
         public Builder minBandwidthAbs(java.lang.Number minBandwidthAbs) {
@@ -266,8 +313,9 @@ public interface QosCarProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosCarProps#getMinBandwidthAbs}
-         * @param minBandwidthAbs Property minBandwidthAbs: The minimum bandwidth.
-         *                        This parameter is required when LimitType is set to Absolute.
+         * @param minBandwidthAbs Property minBandwidthAbs: The minimum bandwidth value.
+         *                        The value must be an integer. Unit: Mbit/s.
+         *                        This parameter is returned when LimitType is set to Absolute.
          * @return {@code this}
          */
         public Builder minBandwidthAbs(com.aliyun.ros.cdk.core.IResolvable minBandwidthAbs) {
@@ -277,8 +325,9 @@ public interface QosCarProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosCarProps#getMinBandwidthPercent}
-         * @param minBandwidthPercent Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG instance.
-         *                            This parameter is required when LimitType is set to Percent.
+         * @param minBandwidthPercent Property minBandwidthPercent: The minimum bandwidth percentage.
+         *                            Unit: percent (%). Valid values: 1 to 100.
+         *                            This parameter is required when you set LimitType to Percent.
          * @return {@code this}
          */
         public Builder minBandwidthPercent(java.lang.Number minBandwidthPercent) {
@@ -288,8 +337,9 @@ public interface QosCarProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosCarProps#getMinBandwidthPercent}
-         * @param minBandwidthPercent Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG instance.
-         *                            This parameter is required when LimitType is set to Percent.
+         * @param minBandwidthPercent Property minBandwidthPercent: The minimum bandwidth percentage.
+         *                            Unit: percent (%). Valid values: 1 to 100.
+         *                            This parameter is required when you set LimitType to Percent.
          * @return {@code this}
          */
         public Builder minBandwidthPercent(com.aliyun.ros.cdk.core.IResolvable minBandwidthPercent) {
@@ -299,10 +349,9 @@ public interface QosCarProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosCarProps#getName}
-         * @param name Property name: The name of the traffic throttling policy.
-         *             The name must be 2 to 128 characters in
-         *             length, and can contain Chinese characters, letters, digits, periods (.), underscores
-         *             (_), and hyphens (-).
+         * @param name Property name: The name of the traffic throttling rule.
+         *             The name must be 2 to 128 characters in length, and can contain letters, digits,
+         *             periods (.), underscores (_), and hyphens (-). The name must start with a letter.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -312,10 +361,9 @@ public interface QosCarProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link QosCarProps#getName}
-         * @param name Property name: The name of the traffic throttling policy.
-         *             The name must be 2 to 128 characters in
-         *             length, and can contain Chinese characters, letters, digits, periods (.), underscores
-         *             (_), and hyphens (-).
+         * @param name Property name: The name of the traffic throttling rule.
+         *             The name must be 2 to 128 characters in length, and can contain letters, digits,
+         *             periods (.), underscores (_), and hyphens (-). The name must start with a letter.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::TrafficMirrorSession</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.693Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.498Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.TrafficMirrorSession")
 public class TrafficMirrorSession extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.ITrafficMirrorSession {
 
@@ -276,24 +276,24 @@ public class TrafficMirrorSession extends com.aliyun.ros.cdk.core.Resource imple
         }
 
         /**
-         * Property packetLength: The maximum transmission unit (MTU).
+         * Property packetLength: The maximum transmission unit.
          * <p>
-         * Default value: <strong>1500</strong>.
+         * Valid values: 64 to 9600. Default value: 1500.
          * <p>
          * @return {@code this}
-         * @param packetLength Property packetLength: The maximum transmission unit (MTU). This parameter is required.
+         * @param packetLength Property packetLength: The maximum transmission unit. This parameter is required.
          */
         public Builder packetLength(final java.lang.Number packetLength) {
             this.props.packetLength(packetLength);
             return this;
         }
         /**
-         * Property packetLength: The maximum transmission unit (MTU).
+         * Property packetLength: The maximum transmission unit.
          * <p>
-         * Default value: <strong>1500</strong>.
+         * Valid values: 64 to 9600. Default value: 1500.
          * <p>
          * @return {@code this}
-         * @param packetLength Property packetLength: The maximum transmission unit (MTU). This parameter is required.
+         * @param packetLength Property packetLength: The maximum transmission unit. This parameter is required.
          */
         public Builder packetLength(final com.aliyun.ros.cdk.core.IResolvable packetLength) {
             this.props.packetLength(packetLength);

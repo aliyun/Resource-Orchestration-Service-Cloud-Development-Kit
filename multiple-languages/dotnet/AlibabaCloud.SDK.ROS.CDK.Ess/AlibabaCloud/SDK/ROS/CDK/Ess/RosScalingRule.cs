@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingRule`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingRule`Creates a scaling rule for Auto Scaling (ESS).</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ScalingRule` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingrule
@@ -115,10 +115,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: adjustmentType: Adjustment mode of a scaling rule. Optional values:
-        /// - QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.
-        /// - PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.
-        /// - TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.
+        /// <strong>Property</strong>: adjustmentType: The adjustment method of the scaling rule. If you set ScalingRuleType to
+        /// SimpleScalingRule or StepScalingRule, you must specify this parameter. Valid
+        /// values:
+        /// *   QuantityChangeInCapacity: adds the specified number of ECS instances to or
+        /// removes the specified number of ECS instances from the scaling group.
+        /// *   PercentChangeInCapacity: adds the specified percentage of ECS instances to or
+        /// removes the specified percentage of ECS instances from the scaling group.
+        /// *   TotalCapacity: adjusts the number of ECS instances in the scaling group to a
+        /// specified number.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "adjustmentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -149,10 +154,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: adjustmentValue: Adjusted value of a scaling rule. Value range:
-        /// - QuantityChangeInCapacity: [-500, 500]
-        /// - PercentChangeInCapacity: [-100, 10000]
-        /// - TotalCapacity: [0, 1000]
+        /// <strong>Property</strong>: adjustmentValue: The number of instances that must be scaled based on the scaling rule. If you set
+        /// ScalingRuleType to SimpleScalingRule or StepScalingRule, you must specify this
+        /// parameter. The number of ECS instances that must be scaled in a scaling activity
+        /// cannot exceed 1,000. Valid values of AdjustmentValue vary based on the value of
+        /// AdjustmentType.
+        /// *   Valid values if AdjustmentType is set to QuantityChangeInCapacity: -1000 to
+        /// 1000.
+        /// *   Valid values if AdjustmentType is set to PercentChangeInCapacity: -100 to
+        /// 10000.
+        /// *   Valid values if AdjustmentType is set to TotalCapacity: 0 to 2000.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "adjustmentValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -203,7 +214,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: cooldown: Cool-down time of a scaling rule. Value range: [0, 86,400], in seconds. The default value is empty.
+        /// <strong>Property</strong>: cooldown: The cooldown period of the scaling rule. This parameter is available only if you
+        /// set ScalingRuleType to SimpleScalingRule. Valid values: 0 to 86400. Unit:
+        /// seconds.
+        /// You can leave this parameter empty.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "cooldown", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -762,7 +776,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters. It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
+        /// <strong>Property</strong>: scalingRuleName: The name of the scaling rule. The name must be 2 to 64 characters in length, and
+        /// can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+        /// name must start with a letter or a digit.
+        /// The name of a scaling rule must be unique within an account in a
+        /// region.
+        /// >  If you leave this parameter empty, the scaling rule ID is used.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "scalingRuleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -829,7 +848,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: stepAdjustment:
+        /// <strong>Property</strong>: stepAdjustment: Details of the step adjustments.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "stepAdjustment", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingRule.StepAdjustmentProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

@@ -15,7 +15,9 @@ export interface DomainProps {
     readonly domainName: string | ros.IResolvable;
 
     /**
-     * Property groupId: Domain name grouping, the default is the "default grouping" GroupId
+     * Property groupId: The ID of the domain name group. If you do not specify this parameter, pass an
+     * empty string, or pass defaultGroup, the domain name is added to the default
+     * group. You can call the AddDomainGroup operation to obtain the group ID.
      */
     readonly groupId?: string | ros.IResolvable;
 
@@ -72,7 +74,7 @@ export interface IDomain extends ros.IResource {
     readonly attrPunyCode: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DNS::Domain`, which is used to add a domain name.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DNS::Domain`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domain
  */

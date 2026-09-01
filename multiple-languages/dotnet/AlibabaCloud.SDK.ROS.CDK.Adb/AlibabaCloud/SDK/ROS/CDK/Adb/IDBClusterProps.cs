@@ -11,12 +11,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
     [JsiiInterface(nativeType: typeof(IDBClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-adb.DBClusterProps")]
     public interface IDBClusterProps
     {
-        /// <summary>Property dbClusterCategory: The edition of the cluster.</summary>
+        /// <summary>Property dbClusterCategory: The cluster edition.</summary>
         /// <remarks>
-        /// Valid values when the cluster is in reserved mode:
-        /// Basic
-        /// Cluster
-        /// When the cluster is in elastic mode, set the value to MixedStorage.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Cluster: reserved cluster.</description>
+        /// </list>
+        ///
+        ///     Reserved clusters are available only in the Chinese mainland and Singapore
+        ///     regions. In the Singapore region, you can purchase reserved clusters only with
+        ///     the pay-as-you-go billing method.
+        ///
+        /// <list type="bullet">
+        /// <description>MixedStorage: elastic cluster (new).</description>
+        /// </list>
+        ///
+        ///     If you set <c>DBClusterCategory</c> to <c>Cluster</c>, you must set the <c>Mode</c> parameter
+        ///     to <c>Reserved</c>. If you set <c>DBClusterCategory</c> to <c>MixedStorage</c>, you must set the
+        ///     <c>Mode</c> parameter to <c>Flexible</c>. Otherwise, cluster creation will fail.
         /// </remarks>
         [JsiiProperty(name: "dbClusterCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object DbClusterCategory
@@ -34,11 +47,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
             get;
         }
 
-        /// <summary>Property mode: The mode of the cluster.</summary>
+        /// <summary>Property mode: The cluster mode.</summary>
         /// <remarks>
         /// Valid values:
-        /// Reserver: the reserved mode
-        /// Flexible: the elastic mode
+        ///
+        /// <list type="bullet">
+        /// <description>Reserved: reserved mode.</description>
+        /// <description>Flexible: flexible mode.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Mode
@@ -72,9 +88,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
             get;
         }
 
-        /// <summary>Property computeResource: The computing resource of the cluster.</summary>
+        /// <summary>Property computeResource: The compute resources for the cluster.</summary>
         /// <remarks>
-        /// This parameter is required in elastic mode.
+        /// Compute resources are used for data
+        /// queries. A larger amount of compute resources can provide better query
+        /// performance. Compute resources are available in cluster and single-node editions:
+        ///
+        /// <list type="bullet">
+        /// <description>Cluster edition: includes specifications such as 16 cores/64 GB, 24 cores/96
+        /// GB, and 32 cores or more. The cluster edition supports resource pool isolation,
+        /// scheduled scaling, and tiered storage of hot and cold data.</description>
+        /// <description>Single-node edition: includes specifications such as 8 cores/32 GB and 16
+        /// cores/64 GB. The single-node edition does not provide an SLA guarantee and has a
+        /// long recovery time from failures (4 to 8 hours). We do not recommend that you use
+        /// the single-node edition in production environments.</description>
+        /// </list>
+        ///
+        ///     <list type="bullet">
+        ///     <description>You can call the <a href="">DescribeAvailableResource</a> operation to query the compute
+        ///     resources that are available in a specific region.</description>
+        ///     <description>This parameter is required when <c>Mode</c> is set to <c>Flexible</c> (flexible mode).</description>
+        ///     </list>
         /// </remarks>
         [JsiiProperty(name: "computeResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -103,6 +137,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
         }
 
         /// <summary>Property dbClusterDescription: The description of the cluster.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>The description cannot start with <c>http:\/\/</c> or <c>https:\/\/</c>.</description>
+        /// <description>The description must be 2 to 256 characters long.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "dbClusterDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DbClusterDescription
@@ -115,9 +155,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
 
         /// <summary>Property dbNodeGroupCount: The number of node groups.</summary>
         /// <remarks>
-        /// This parameter is required in reserved mode. Valid values:
-        /// T8, T16, T32, and T52: 1
-        /// C8 and C32: 1 to 128
+        /// The value must be an integer from 1 to 200.
+        ///
+        ///     This parameter is required when <c>Mode</c> is set to <c>Reserved</c> (reserved mode).
         /// </remarks>
         [JsiiProperty(name: "dbNodeGroupCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -166,7 +206,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
             }
         }
 
-        /// <summary>Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.</summary>
+        /// <summary>Property elasticIoResource: The number of Elastic IO Units (EIUs).</summary>
         [JsiiProperty(name: "elasticIoResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ElasticIoResource
@@ -194,7 +234,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
             }
         }
 
-        /// <summary>Property executorCount: ExecutorCount.</summary>
+        /// <summary>Property executorCount: This parameter is reserved.</summary>
         [JsiiProperty(name: "executorCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ExecutorCount
@@ -216,9 +256,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
             }
         }
 
-        /// <summary>Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</summary>
+        /// <summary>Property period: The subscription period unit.</summary>
         /// <remarks>
-        /// Valid values when the Period parameter is set to Year: 1, 2, and 3.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Year</description>
+        /// <description>Month</description>
+        /// </list>
+        ///
+        ///     This parameter is required when <c>PayType</c> is set to <c>Prepaid</c> (subscription).
         /// </remarks>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -296,12 +343,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
             {
             }
 
-            /// <summary>Property dbClusterCategory: The edition of the cluster.</summary>
+            /// <summary>Property dbClusterCategory: The cluster edition.</summary>
             /// <remarks>
-            /// Valid values when the cluster is in reserved mode:
-            /// Basic
-            /// Cluster
-            /// When the cluster is in elastic mode, set the value to MixedStorage.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>Cluster: reserved cluster.</description>
+            /// </list>
+            ///
+            ///     Reserved clusters are available only in the Chinese mainland and Singapore
+            ///     regions. In the Singapore region, you can purchase reserved clusters only with
+            ///     the pay-as-you-go billing method.
+            ///
+            /// <list type="bullet">
+            /// <description>MixedStorage: elastic cluster (new).</description>
+            /// </list>
+            ///
+            ///     If you set <c>DBClusterCategory</c> to <c>Cluster</c>, you must set the <c>Mode</c> parameter
+            ///     to <c>Reserved</c>. If you set <c>DBClusterCategory</c> to <c>MixedStorage</c>, you must set the
+            ///     <c>Mode</c> parameter to <c>Flexible</c>. Otherwise, cluster creation will fail.
             /// </remarks>
             [JsiiProperty(name: "dbClusterCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DbClusterCategory
@@ -319,11 +379,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property mode: The mode of the cluster.</summary>
+            /// <summary>Property mode: The cluster mode.</summary>
             /// <remarks>
             /// Valid values:
-            /// Reserver: the reserved mode
-            /// Flexible: the elastic mode
+            ///
+            /// <list type="bullet">
+            /// <description>Reserved: reserved mode.</description>
+            /// <description>Flexible: flexible mode.</description>
+            /// </list>
             /// </remarks>
             [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Mode
@@ -357,9 +420,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property computeResource: The computing resource of the cluster.</summary>
+            /// <summary>Property computeResource: The compute resources for the cluster.</summary>
             /// <remarks>
-            /// This parameter is required in elastic mode.
+            /// Compute resources are used for data
+            /// queries. A larger amount of compute resources can provide better query
+            /// performance. Compute resources are available in cluster and single-node editions:
+            ///
+            /// <list type="bullet">
+            /// <description>Cluster edition: includes specifications such as 16 cores/64 GB, 24 cores/96
+            /// GB, and 32 cores or more. The cluster edition supports resource pool isolation,
+            /// scheduled scaling, and tiered storage of hot and cold data.</description>
+            /// <description>Single-node edition: includes specifications such as 8 cores/32 GB and 16
+            /// cores/64 GB. The single-node edition does not provide an SLA guarantee and has a
+            /// long recovery time from failures (4 to 8 hours). We do not recommend that you use
+            /// the single-node edition in production environments.</description>
+            /// </list>
+            ///
+            ///     <list type="bullet">
+            ///     <description>You can call the <a href="">DescribeAvailableResource</a> operation to query the compute
+            ///     resources that are available in a specific region.</description>
+            ///     <description>This parameter is required when <c>Mode</c> is set to <c>Flexible</c> (flexible mode).</description>
+            ///     </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "computeResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -382,6 +463,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
             }
 
             /// <summary>Property dbClusterDescription: The description of the cluster.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>The description cannot start with <c>http:\/\/</c> or <c>https:\/\/</c>.</description>
+            /// <description>The description must be 2 to 256 characters long.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dbClusterDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DbClusterDescription
@@ -391,9 +478,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
 
             /// <summary>Property dbNodeGroupCount: The number of node groups.</summary>
             /// <remarks>
-            /// This parameter is required in reserved mode. Valid values:
-            /// T8, T16, T32, and T52: 1
-            /// C8 and C32: 1 to 128
+            /// The value must be an integer from 1 to 200.
+            ///
+            ///     This parameter is required when <c>Mode</c> is set to <c>Reserved</c> (reserved mode).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dbNodeGroupCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -433,7 +520,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.</summary>
+            /// <summary>Property elasticIoResource: The number of Elastic IO Units (EIUs).</summary>
             [JsiiOptional]
             [JsiiProperty(name: "elasticIoResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ElasticIoResource
@@ -455,7 +542,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property executorCount: ExecutorCount.</summary>
+            /// <summary>Property executorCount: This parameter is reserved.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "executorCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ExecutorCount
@@ -471,9 +558,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</summary>
+            /// <summary>Property period: The subscription period unit.</summary>
             /// <remarks>
-            /// Valid values when the Period parameter is set to Year: 1, 2, and 3.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>Year</description>
+            /// <description>Month</description>
+            /// </list>
+            ///
+            ///     This parameter is required when <c>PayType</c> is set to <c>Prepaid</c> (subscription).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

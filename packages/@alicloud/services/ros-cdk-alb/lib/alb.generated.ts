@@ -103,7 +103,7 @@ function rosAScriptPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AScript`, which is used to create an AScript rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AScript`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AScript` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-ascript
  */
@@ -374,8 +374,9 @@ export interface RosAclProps {
     readonly aclEntries?: Array<RosAcl.AclEntriesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property aclName: The name of the ACL. The name must be 2 to 128 characters in length, and can contain
-     * letters, digits, hyphens (-) and underscores (_). It must start with a letter.
+     * @Property aclName: The name of the ACL. The name must be 2 to 128 characters in length, and can
+     * contain digits, periods (.), underscores (_), hyphens (-), letters, and Chinese
+     * characters. The name must start with a letter, a Chinese character, or a digit.
      */
     readonly aclName?: string | ros.IResolvable;
 
@@ -436,7 +437,7 @@ function rosAclPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Acl`, which is used to create an access control list (ACL).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Acl`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Acl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-acl
  */
@@ -460,8 +461,9 @@ export class RosAcl extends ros.RosResource {
     public aclEntries: Array<RosAcl.AclEntriesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property aclName: The name of the ACL. The name must be 2 to 128 characters in length, and can contain
-     * letters, digits, hyphens (-) and underscores (_). It must start with a letter.
+     * @Property aclName: The name of the ACL. The name must be 2 to 128 characters in length, and can
+     * contain digits, periods (.), underscores (_), hyphens (-), letters, and Chinese
+     * characters. The name must start with a letter, a Chinese character, or a digit.
      */
     public aclName: string | ros.IResolvable | undefined;
 
@@ -628,7 +630,7 @@ function rosAclAssociationPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AclAssociation`, which is used to associate access control lists (ACLs) with a listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AclAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AclAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-aclassociation
  */
@@ -750,7 +752,7 @@ function rosAdditionalCertificateAssociationPropsToRosTemplate(properties: any, 
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AdditionalCertificateAssociation`, which is used to add additional certificates to a listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AdditionalCertificateAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AdditionalCertificateAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-additionalcertificateassociation
  */
@@ -858,8 +860,7 @@ export interface RosBackendServerAttachmentProps {
     readonly serverGroupId: string | ros.IResolvable;
 
     /**
-     * @Property servers: The backend servers that you want to add to the server group. You can specify up to
-     * 40 servers in each call.
+     * @Property servers: A list of backend servers. You can add up to 200 servers in a single call.
      */
     readonly servers: Array<RosBackendServerAttachment.ServersProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -908,7 +909,7 @@ function rosBackendServerAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::BackendServerAttachment`Use , which to add backend servers to a server group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::BackendServerAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BackendServerAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-backendserverattachment
  */
@@ -932,8 +933,7 @@ export class RosBackendServerAttachment extends ros.RosResource {
     public serverGroupId: string | ros.IResolvable;
 
     /**
-     * @Property servers: The backend servers that you want to add to the server group. You can specify up to
-     * 40 servers in each call.
+     * @Property servers: A list of backend servers. You can add up to 200 servers in a single call.
      */
     public servers: Array<RosBackendServerAttachment.ServersProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -1068,17 +1068,14 @@ export interface RosHealthCheckTemplateProps {
 
     /**
      * @Property healthCheckTemplateName: The name of the health check template.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). The name must start with a letter.
+     * The name must be 2 to 128 characters in length, must start with a letter, a
+     * digit, or a Chinese character, and can contain digits, periods (.), underscores
+     * (_), hyphens (-), and spaces.
      */
     readonly healthCheckTemplateName: string | ros.IResolvable;
 
     /**
-     * @Property healthCheckCodes: The HTTP status code for a successful health check.
-     * If HealthCheckProtocol is set to HTTP, HealthCheckCodes can be set to http_2xx (default), http_3xx, http_4xx, and http_5xx. Separate multiple HTTP status codes with commas (,).
-     * If HealthCheckProtocol is set to gRPC, HealthCheckCodes can be set to 0 to 99. Default value: 0. Value ranges are supported. You can enter at most 20 value ranges and must separate
-     * them with commas (,).
-     * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * @Property healthCheckCodes: The HTTP status codes that indicate a successful health check.
      */
     readonly healthCheckCodes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -1090,16 +1087,14 @@ export interface RosHealthCheckTemplateProps {
     readonly healthCheckConnectPort?: number | ros.IResolvable;
 
     /**
-     * @Property healthCheckHost: The domain name that is used for health checks.
-     * Default value: $SERVER_IP. The domain name is 1 to 80 characters in length. Make sure that the destination
-     * CIDR block meets the following requirements:
-     * The domain name can contain lowercase letters, digits, hyphens (-), and periods (.).
-     * The domain name contains at least one period (.) but does not start or end with a
-     * period (.).
-     * The rightmost domain label can contain only letters, and cannot contain digits or
-     * hyphens (-).
-     * Other domain labels cannot start or end with a hyphen (-).
-     * This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * @Property healthCheckHost: The domain name used for the health check. Valid values:
+     * - $SERVER_IP: The private IP address of a backend server. If you set this
+     * parameter to `$SERVER_IP` or leave it empty, the load balancer uses the private
+     * IP address of the backend server as the domain name for the health check.
+     * - domain: The domain name must be 1 to 80 characters in length and can contain
+     * letters, digits, periods (.), and hyphens (-).
+     * > This parameter takes effect only when the `HealthCheckProtocol` parameter is
+     * set to HTTP or HTTPS.
      */
     readonly healthCheckHost?: string | ros.IResolvable;
 
@@ -1119,35 +1114,37 @@ export interface RosHealthCheckTemplateProps {
     readonly healthCheckInterval?: number | ros.IResolvable;
 
     /**
-     * @Property healthCheckMethod: The HTTP method that is used for health checks. Valid values:
-     * HEAD: By default, the ALB instance sends HEAD requests to a backend server to perform
-     * HTTP health checks.
-     * POST: By default, gRPC health checks use the POST method.
-     * GET: If the length of a response exceeds 8 KB, the response is truncated. However, the
-     * health check result is not affected.
-     * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * @Property healthCheckMethod: The method used for the health check. Valid values:
+     * - HEAD (default): For HTTP and HTTPS listeners, the default health check method
+     * is HEAD.
+     * - POST: For gRPC listeners, the default health check method is POST.
+     * - GET: If the response body exceeds 8 KB, it is truncated. This does not affect
+     * the health check result.
+     * > This parameter takes effect only when the `HealthCheckProtocol` parameter is
+     * set to HTTP, HTTPS, or gRPC.
      */
     readonly healthCheckMethod?: string | ros.IResolvable;
 
     /**
-     * @Property healthCheckPath: The URL path that is used for health checks.
-     * It must be 1 to 80 characters in length, and can contain letters, digits, hyphens
-     * (-), forward slashes (\/), periods (.), percent signs (%), question marks (?), number
-     * signs (#), and ampersands (&). It can also contain the following extended characters:
-     * _ ; ~ ! ( ) * [ ] @ $ ^ : ' , +. The URL path must start with a forward slash (\/).
-     * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * @Property healthCheckPath: The URL that is used for health checks.
+     * The URL must be 1 to 80 characters in length. It must start with a forward slash
+     * (\/) and can contain letters, digits, and the following special characters: `- \/ .
+     * % ? # & _;~!()*[]@$^:',+`.
+     * > This parameter takes effect only when the `HealthCheckProtocol` parameter is
+     * set to HTTP or HTTPS.
      */
     readonly healthCheckPath?: string | ros.IResolvable;
 
     /**
-     * @Property healthCheckProtocol: The protocol that is used for health checks. Valid values:
-     * HTTP: The ALB instance sends HEAD or GET requests to a backend server to simulate access
-     * from a browser and check whether the backend server is healthy. This is the default
-     * protocol.
-     * TCP: To perform TCP health checks, ALB sends SYN packets to a backend server to check
-     * whether the port of the backend server is available to receive requests.
-     * GRPC: To perform gRPC health checks, ALB sends POST or GET requests to a backend server
-     * to check whether the backend server is healthy.
+     * @Property healthCheckProtocol: The protocol used for the health check. Valid values:
+     * - HTTP (default): simulates browser access by sending HEAD or GET requests to
+     * check whether the server application is healthy.
+     * - HTTPS: simulates browser access by sending HEAD or GET requests to check
+     * whether the server application is healthy. HTTPS provides encrypted data
+     * transmission and is more secure than HTTP.
+     * - TCP: checks whether the server port is responsive by sending SYN packets.
+     * - gRPC: checks whether the server application is healthy by sending POST or GET
+     * requests.
      */
     readonly healthCheckProtocol?: string | ros.IResolvable;
 
@@ -1266,7 +1263,7 @@ function rosHealthCheckTemplatePropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`The , which resource type creates a health check template.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HealthCheckTemplate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
  */
@@ -1286,17 +1283,14 @@ export class RosHealthCheckTemplate extends ros.RosResource {
 
     /**
      * @Property healthCheckTemplateName: The name of the health check template.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). The name must start with a letter.
+     * The name must be 2 to 128 characters in length, must start with a letter, a
+     * digit, or a Chinese character, and can contain digits, periods (.), underscores
+     * (_), hyphens (-), and spaces.
      */
     public healthCheckTemplateName: string | ros.IResolvable;
 
     /**
-     * @Property healthCheckCodes: The HTTP status code for a successful health check.
-     * If HealthCheckProtocol is set to HTTP, HealthCheckCodes can be set to http_2xx (default), http_3xx, http_4xx, and http_5xx. Separate multiple HTTP status codes with commas (,).
-     * If HealthCheckProtocol is set to gRPC, HealthCheckCodes can be set to 0 to 99. Default value: 0. Value ranges are supported. You can enter at most 20 value ranges and must separate
-     * them with commas (,).
-     * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * @Property healthCheckCodes: The HTTP status codes that indicate a successful health check.
      */
     public healthCheckCodes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -1308,16 +1302,14 @@ export class RosHealthCheckTemplate extends ros.RosResource {
     public healthCheckConnectPort: number | ros.IResolvable | undefined;
 
     /**
-     * @Property healthCheckHost: The domain name that is used for health checks.
-     * Default value: $SERVER_IP. The domain name is 1 to 80 characters in length. Make sure that the destination
-     * CIDR block meets the following requirements:
-     * The domain name can contain lowercase letters, digits, hyphens (-), and periods (.).
-     * The domain name contains at least one period (.) but does not start or end with a
-     * period (.).
-     * The rightmost domain label can contain only letters, and cannot contain digits or
-     * hyphens (-).
-     * Other domain labels cannot start or end with a hyphen (-).
-     * This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * @Property healthCheckHost: The domain name used for the health check. Valid values:
+     * - $SERVER_IP: The private IP address of a backend server. If you set this
+     * parameter to `$SERVER_IP` or leave it empty, the load balancer uses the private
+     * IP address of the backend server as the domain name for the health check.
+     * - domain: The domain name must be 1 to 80 characters in length and can contain
+     * letters, digits, periods (.), and hyphens (-).
+     * > This parameter takes effect only when the `HealthCheckProtocol` parameter is
+     * set to HTTP or HTTPS.
      */
     public healthCheckHost: string | ros.IResolvable | undefined;
 
@@ -1337,35 +1329,37 @@ export class RosHealthCheckTemplate extends ros.RosResource {
     public healthCheckInterval: number | ros.IResolvable | undefined;
 
     /**
-     * @Property healthCheckMethod: The HTTP method that is used for health checks. Valid values:
-     * HEAD: By default, the ALB instance sends HEAD requests to a backend server to perform
-     * HTTP health checks.
-     * POST: By default, gRPC health checks use the POST method.
-     * GET: If the length of a response exceeds 8 KB, the response is truncated. However, the
-     * health check result is not affected.
-     * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * @Property healthCheckMethod: The method used for the health check. Valid values:
+     * - HEAD (default): For HTTP and HTTPS listeners, the default health check method
+     * is HEAD.
+     * - POST: For gRPC listeners, the default health check method is POST.
+     * - GET: If the response body exceeds 8 KB, it is truncated. This does not affect
+     * the health check result.
+     * > This parameter takes effect only when the `HealthCheckProtocol` parameter is
+     * set to HTTP, HTTPS, or gRPC.
      */
     public healthCheckMethod: string | ros.IResolvable | undefined;
 
     /**
-     * @Property healthCheckPath: The URL path that is used for health checks.
-     * It must be 1 to 80 characters in length, and can contain letters, digits, hyphens
-     * (-), forward slashes (\/), periods (.), percent signs (%), question marks (?), number
-     * signs (#), and ampersands (&). It can also contain the following extended characters:
-     * _ ; ~ ! ( ) * [ ] @ $ ^ : ' , +. The URL path must start with a forward slash (\/).
-     * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * @Property healthCheckPath: The URL that is used for health checks.
+     * The URL must be 1 to 80 characters in length. It must start with a forward slash
+     * (\/) and can contain letters, digits, and the following special characters: `- \/ .
+     * % ? # & _;~!()*[]@$^:',+`.
+     * > This parameter takes effect only when the `HealthCheckProtocol` parameter is
+     * set to HTTP or HTTPS.
      */
     public healthCheckPath: string | ros.IResolvable | undefined;
 
     /**
-     * @Property healthCheckProtocol: The protocol that is used for health checks. Valid values:
-     * HTTP: The ALB instance sends HEAD or GET requests to a backend server to simulate access
-     * from a browser and check whether the backend server is healthy. This is the default
-     * protocol.
-     * TCP: To perform TCP health checks, ALB sends SYN packets to a backend server to check
-     * whether the port of the backend server is available to receive requests.
-     * GRPC: To perform gRPC health checks, ALB sends POST or GET requests to a backend server
-     * to check whether the backend server is healthy.
+     * @Property healthCheckProtocol: The protocol used for the health check. Valid values:
+     * - HTTP (default): simulates browser access by sending HEAD or GET requests to
+     * check whether the server application is healthy.
+     * - HTTPS: simulates browser access by sending HEAD or GET requests to check
+     * whether the server application is healthy. HTTPS provides encrypted data
+     * transmission and is more secure than HTTP.
+     * - TCP: checks whether the server port is responsive by sending SYN packets.
+     * - gRPC: checks whether the server application is healthy by sending POST or GET
+     * requests.
      */
     public healthCheckProtocol: string | ros.IResolvable | undefined;
 
@@ -1455,7 +1449,7 @@ export class RosHealthCheckTemplate extends ros.RosResource {
 export interface RosListenerProps {
 
     /**
-     * @Property defaultActions: The actions of the rule.
+     * @Property defaultActions: The default actions for the listener.
      */
     readonly defaultActions: Array<RosListener.DefaultActionsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -1477,7 +1471,7 @@ export interface RosListenerProps {
     readonly loadBalancerId: string | ros.IResolvable;
 
     /**
-     * @Property caCertificates: List of configured CA certificates for listener.
+     * @Property caCertificates: A list of CA certificates for the listener. Only one CA certificate is supported.
      */
     readonly caCertificates?: Array<RosListener.CaCertificatesProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -1487,7 +1481,7 @@ export interface RosListenerProps {
     readonly caEnabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property certificates: The list of SSL certificates for listener.
+     * @Property certificates: A list of server certificates.
      */
     readonly certificates?: Array<RosListener.CertificatesProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -1507,16 +1501,21 @@ export interface RosListenerProps {
     readonly http2Enabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property idleTimeout: The timeout period of idle connections.
-     * Valid values: 1 to 3600. Unit: seconds.
+     * @Property idleTimeout: The idle timeout in seconds.
+     * Valid values: 1 to 600.
      * Default value: 15.
-     * If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
+     * If no requests are received on a connection within the idle timeout, the load
+     * balancer closes the connection. A new connection is established for the next
+     * request.
+     * > You can request a quota increase to a maximum of 3,600 seconds.
      */
     readonly idleTimeout?: number | ros.IResolvable;
 
     /**
-     * @Property listenerDescription: The description of the listener. 
-     * The description must be 2 to 256 characters in length.
+     * @Property listenerDescription: A custom name for the listener.
+     * The name must be 2 to 256 characters long and can contain letters, digits,
+     * hyphens (-), forward slashes (\/), periods (.), underscores (_), and Chinese
+     * characters.
      */
     readonly listenerDescription?: string | ros.IResolvable;
 
@@ -1536,11 +1535,12 @@ export interface RosListenerProps {
     readonly quicConfig?: RosListener.QuicConfigProperty | ros.IResolvable;
 
     /**
-     * @Property requestTimeout: The timeout period of the request.
-     * Valid values: 1 to 900. Unit: seconds.
+     * @Property requestTimeout: The request timeout in seconds.
+     * Valid values: 1 to 600.
      * Default value: 60.
-     * If no response is received from the backend server during the request timeout period,
-     * ALB sends an HTTP 504 error code to the client.
+     * If a backend server does not respond within the timeout period, the load balancer
+     * returns an `HTTP 504` error to the client.
+     * > You can request a quota increase to a maximum of 3,600 seconds.
      */
     readonly requestTimeout?: number | ros.IResolvable;
 
@@ -1553,7 +1553,7 @@ export interface RosListenerProps {
     readonly securityPolicyId?: string | ros.IResolvable;
 
     /**
-     * @Property xForwardedForConfig: The configuration of the XForward field.
+     * @Property xForwardedForConfig: The configuration of `X-Forwarded-*` headers.
      */
     readonly xForwardedForConfig?: RosListener.XForwardedForConfigProperty | ros.IResolvable;
 }
@@ -1667,7 +1667,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Listener`The , which resource type creates an HTTP, HTTPS, or QUIC listener for an Application Load Balancer (ALB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Listener`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
  */
@@ -1691,7 +1691,7 @@ export class RosListener extends ros.RosResource {
 
 
     /**
-     * @Property defaultActions: The actions of the rule.
+     * @Property defaultActions: The default actions for the listener.
      */
     public defaultActions: Array<RosListener.DefaultActionsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -1713,7 +1713,7 @@ export class RosListener extends ros.RosResource {
     public loadBalancerId: string | ros.IResolvable;
 
     /**
-     * @Property caCertificates: List of configured CA certificates for listener.
+     * @Property caCertificates: A list of CA certificates for the listener. Only one CA certificate is supported.
      */
     public caCertificates: Array<RosListener.CaCertificatesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -1723,7 +1723,7 @@ export class RosListener extends ros.RosResource {
     public caEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property certificates: The list of SSL certificates for listener.
+     * @Property certificates: A list of server certificates.
      */
     public certificates: Array<RosListener.CertificatesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -1743,16 +1743,21 @@ export class RosListener extends ros.RosResource {
     public http2Enabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property idleTimeout: The timeout period of idle connections.
-     * Valid values: 1 to 3600. Unit: seconds.
+     * @Property idleTimeout: The idle timeout in seconds.
+     * Valid values: 1 to 600.
      * Default value: 15.
-     * If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
+     * If no requests are received on a connection within the idle timeout, the load
+     * balancer closes the connection. A new connection is established for the next
+     * request.
+     * > You can request a quota increase to a maximum of 3,600 seconds.
      */
     public idleTimeout: number | ros.IResolvable | undefined;
 
     /**
-     * @Property listenerDescription: The description of the listener. 
-     * The description must be 2 to 256 characters in length.
+     * @Property listenerDescription: A custom name for the listener.
+     * The name must be 2 to 256 characters long and can contain letters, digits,
+     * hyphens (-), forward slashes (\/), periods (.), underscores (_), and Chinese
+     * characters.
      */
     public listenerDescription: string | ros.IResolvable | undefined;
 
@@ -1772,11 +1777,12 @@ export class RosListener extends ros.RosResource {
     public quicConfig: RosListener.QuicConfigProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property requestTimeout: The timeout period of the request.
-     * Valid values: 1 to 900. Unit: seconds.
+     * @Property requestTimeout: The request timeout in seconds.
+     * Valid values: 1 to 600.
      * Default value: 60.
-     * If no response is received from the backend server during the request timeout period,
-     * ALB sends an HTTP 504 error code to the client.
+     * If a backend server does not respond within the timeout period, the load balancer
+     * returns an `HTTP 504` error to the client.
+     * > You can request a quota increase to a maximum of 3,600 seconds.
      */
     public requestTimeout: number | ros.IResolvable | undefined;
 
@@ -1789,7 +1795,7 @@ export class RosListener extends ros.RosResource {
     public securityPolicyId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property xForwardedForConfig: The configuration of the XForward field.
+     * @Property xForwardedForConfig: The configuration of `X-Forwarded-*` headers.
      */
     public xForwardedForConfig: RosListener.XForwardedForConfigProperty | ros.IResolvable | undefined;
 
@@ -2493,9 +2499,13 @@ export interface RosLoadBalancerProps {
     readonly accessLogConfig?: RosLoadBalancer.AccessLogConfigProperty | ros.IResolvable;
 
     /**
-     * @Property addressAllocatedMode: The mode in which IP addresses are assigned. Valid values:
-     * Fixed: The ALB instance uses a static IP address.
-     * Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
+     * @Property addressAllocatedMode: Address allocation mode. Valid values:
+     * - Fixed (Default): A fixed IP address is allocated to each zone.
+     * - Dynamic: Dynamic IP mode. IP addresses are dynamically allocated for each zone.
+     * > Starting from , when you create a new instance by using this interface, it is
+     * created as an upgraded ALB instance regardless of the mode you specify. The
+     * distinction between IP modes is removed, and the allocated IP addresses are
+     * automatically elastic. ALB instances created before the upgrade are not affected.
      */
     readonly addressAllocatedMode?: string | ros.IResolvable;
 
@@ -2524,13 +2534,15 @@ export interface RosLoadBalancerProps {
     readonly ipv6AddressType?: string | ros.IResolvable;
 
     /**
-     * @Property loadBalancerName: The name of the ALB instance.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+     * @Property loadBalancerName: The name of the Application Load Balancer (ALB) instance.
+     * The name must be 2 to 128 characters long, must start with a letter, digit, or
+     * Chinese character, and can contain digits, periods (.), underscores (_), hyphens
+     * (-), and spaces.
      */
     readonly loadBalancerName?: string | ros.IResolvable;
 
     /**
-     * @Property modificationProtectionConfig: The configuration of modification protection.
+     * @Property modificationProtectionConfig: The modification protection configuration.
      */
     readonly modificationProtectionConfig?: RosLoadBalancer.ModificationProtectionConfigProperty | ros.IResolvable;
 
@@ -2669,7 +2681,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::LoadBalancer`The , which type is used to create an Application Load Balancer (ALB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::LoadBalancer`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
  */
@@ -2753,9 +2765,13 @@ export class RosLoadBalancer extends ros.RosResource {
     public accessLogConfig: RosLoadBalancer.AccessLogConfigProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property addressAllocatedMode: The mode in which IP addresses are assigned. Valid values:
-     * Fixed: The ALB instance uses a static IP address.
-     * Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
+     * @Property addressAllocatedMode: Address allocation mode. Valid values:
+     * - Fixed (Default): A fixed IP address is allocated to each zone.
+     * - Dynamic: Dynamic IP mode. IP addresses are dynamically allocated for each zone.
+     * > Starting from , when you create a new instance by using this interface, it is
+     * created as an upgraded ALB instance regardless of the mode you specify. The
+     * distinction between IP modes is removed, and the allocated IP addresses are
+     * automatically elastic. ALB instances created before the upgrade are not affected.
      */
     public addressAllocatedMode: string | ros.IResolvable | undefined;
 
@@ -2784,13 +2800,15 @@ export class RosLoadBalancer extends ros.RosResource {
     public ipv6AddressType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property loadBalancerName: The name of the ALB instance.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+     * @Property loadBalancerName: The name of the Application Load Balancer (ALB) instance.
+     * The name must be 2 to 128 characters long, must start with a letter, digit, or
+     * Chinese character, and can contain digits, periods (.), underscores (_), hyphens
+     * (-), and spaces.
      */
     public loadBalancerName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property modificationProtectionConfig: The configuration of modification protection.
+     * @Property modificationProtectionConfig: The modification protection configuration.
      */
     public modificationProtectionConfig: RosLoadBalancer.ModificationProtectionConfigProperty | ros.IResolvable | undefined;
 
@@ -3235,14 +3253,19 @@ export interface RosRuleProps {
 
     /**
      * @Property ruleName: The name of the forwarding rule.
-     * The name must be 2 to 128 characters in length.
-     * It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It
-     * must start with a letter.
+     * - The length must be 2 to 128 English or Chinese characters.
+     * - The name must start with a letter, a Chinese character, or a number, and can
+     * contain numbers, periods (.), underscores (_), hyphens (-), and spaces.
      */
     readonly ruleName: string | ros.IResolvable;
 
     /**
-     * @Property direction: Rule direction. Valid values: Request or Response.
+     * @Property direction: The direction in which the forwarding rule is applied. Valid values:
+     * - Request (default): The rule matches and processes requests sent from the client
+     * to the ALB instance.
+     * - Response: The rule matches and processes responses returned from server groups
+     * to the ALB instance.
+     * > Basic ALB instances support only forwarding rules whose Direction is Request.
      */
     readonly direction?: string | ros.IResolvable;
 }
@@ -3322,7 +3345,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Rule`The , which type creates a forwarding rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Rule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-rule
  */
@@ -3369,14 +3392,19 @@ export class RosRule extends ros.RosResource {
 
     /**
      * @Property ruleName: The name of the forwarding rule.
-     * The name must be 2 to 128 characters in length.
-     * It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It
-     * must start with a letter.
+     * - The length must be 2 to 128 English or Chinese characters.
+     * - The name must start with a letter, a Chinese character, or a number, and can
+     * contain numbers, periods (.), underscores (_), hyphens (-), and spaces.
      */
     public ruleName: string | ros.IResolvable;
 
     /**
-     * @Property direction: Rule direction. Valid values: Request or Response.
+     * @Property direction: The direction in which the forwarding rule is applied. Valid values:
+     * - Request (default): The rule matches and processes requests sent from the client
+     * to the ALB instance.
+     * - Response: The rule matches and processes responses returned from server groups
+     * to the ALB instance.
+     * > Basic ALB instances support only forwarding rules whose Direction is Request.
      */
     public direction: string | ros.IResolvable | undefined;
 
@@ -5053,7 +5081,7 @@ function rosSecurityGroupAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityGroupAttachment`, which is used to associate created security groups with an Application Load Balancer (ALB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityGroupAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitygroupattachment
  */
@@ -5108,16 +5136,14 @@ export class RosSecurityGroupAttachment extends ros.RosResource {
 export interface RosSecurityPolicyProps {
 
     /**
-     * @Property ciphers: The supported cipher suites, which are determined by the TLS protocol version.
-     * The specified cipher suites must be supported by at least one TLS protocol version that you specify.
-     * Note For example, if you set the TLSVersions parameter to TLSv1.3, you must specify cipher suites that are supported by TLS 1.3.
+     * @Property ciphers: The supported cipher suites.
      */
     readonly ciphers: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property securityPolicyName: The name of the security policy.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). The name must start with a letter.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits,
+     * Chinese characters, periods (.), underscores (_), hyphens (-), and spaces.
      */
     readonly securityPolicyName: string | ros.IResolvable;
 
@@ -5188,7 +5214,7 @@ function rosSecurityPolicyPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityPolicy`, which is used to create a custom security policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitypolicy
  */
@@ -5207,16 +5233,14 @@ export class RosSecurityPolicy extends ros.RosResource {
 
 
     /**
-     * @Property ciphers: The supported cipher suites, which are determined by the TLS protocol version.
-     * The specified cipher suites must be supported by at least one TLS protocol version that you specify.
-     * Note For example, if you set the TLSVersions parameter to TLSv1.3, you must specify cipher suites that are supported by TLS 1.3.
+     * @Property ciphers: The supported cipher suites.
      */
     public ciphers: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property securityPolicyName: The name of the security policy.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). The name must start with a letter.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits,
+     * Chinese characters, periods (.), underscores (_), hyphens (-), and spaces.
      */
     public securityPolicyName: string | ros.IResolvable;
 
@@ -5272,9 +5296,9 @@ export interface RosServerGroupProps {
     readonly healthCheckConfig: RosServerGroup.HealthCheckConfigProperty | ros.IResolvable;
 
     /**
-     * @Property serverGroupName: The name of the server group. The name must be 2 to 128 characters in length, and
-     * can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name
-     * must start with a letter.
+     * @Property serverGroupName: The name of the server group. The name must be 2 to 128 characters in length,
+     * start with a letter, digit, or Chinese character, and can contain digits, periods
+     * (.), underscores (_), hyphens (-), and spaces.
      */
     readonly serverGroupName: string | ros.IResolvable;
 
@@ -5285,13 +5309,18 @@ export interface RosServerGroupProps {
     readonly connectionDrainConfig?: RosServerGroup.ConnectionDrainConfigProperty | ros.IResolvable;
 
     /**
-     * @Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing. Valid values:
-     * true (default)
-     * false
-     * Note:
-     * Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
-     * Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
-     * When cross-zone load balancing is disabled, session persistence cannot be enabled.
+     * @Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing for the server group. Valid
+     * values:
+     * - true (default): Enables cross-zone load balancing.
+     * - false: Disables cross-zone load balancing.
+     * > * Basic ALB instances cannot be associated with server groups for which
+     * cross-zone load balancing is disabled. This feature is supported only by standard
+     * and WAF-enabled ALB instances.
+     * >
+     * > * You can disable cross-zone load balancing for instance-type and IP-type
+     * server groups, but not for function-type server groups.
+     * >
+     * > * You cannot enable sticky sessions if you disable cross-zone load balancing.
      */
     readonly crossZoneEnabled?: boolean | ros.IResolvable;
 
@@ -5364,10 +5393,9 @@ export interface RosServerGroupProps {
     readonly upstreamKeepaliveEnabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
-     * in the specified VPC to the server group.
-     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-     * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+     * @Property vpcId: The ID of the VPC where the server group is created. You can add only servers
+     * within this VPC to the server group.
+     * > This parameter is valid only when ServerGroupType is set to Instance or Ip.
      */
     readonly vpcId?: string | ros.IResolvable;
 }
@@ -5462,7 +5490,7 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::ServerGroup`Use , which to create a server group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::ServerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
  */
@@ -5491,9 +5519,9 @@ export class RosServerGroup extends ros.RosResource {
     public healthCheckConfig: RosServerGroup.HealthCheckConfigProperty | ros.IResolvable;
 
     /**
-     * @Property serverGroupName: The name of the server group. The name must be 2 to 128 characters in length, and
-     * can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name
-     * must start with a letter.
+     * @Property serverGroupName: The name of the server group. The name must be 2 to 128 characters in length,
+     * start with a letter, digit, or Chinese character, and can contain digits, periods
+     * (.), underscores (_), hyphens (-), and spaces.
      */
     public serverGroupName: string | ros.IResolvable;
 
@@ -5504,13 +5532,18 @@ export class RosServerGroup extends ros.RosResource {
     public connectionDrainConfig: RosServerGroup.ConnectionDrainConfigProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing. Valid values:
-     * true (default)
-     * false
-     * Note:
-     * Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
-     * Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
-     * When cross-zone load balancing is disabled, session persistence cannot be enabled.
+     * @Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing for the server group. Valid
+     * values:
+     * - true (default): Enables cross-zone load balancing.
+     * - false: Disables cross-zone load balancing.
+     * > * Basic ALB instances cannot be associated with server groups for which
+     * cross-zone load balancing is disabled. This feature is supported only by standard
+     * and WAF-enabled ALB instances.
+     * >
+     * > * You can disable cross-zone load balancing for instance-type and IP-type
+     * server groups, but not for function-type server groups.
+     * >
+     * > * You cannot enable sticky sessions if you disable cross-zone load balancing.
      */
     public crossZoneEnabled: boolean | ros.IResolvable | undefined;
 
@@ -5583,10 +5616,9 @@ export class RosServerGroup extends ros.RosResource {
     public upstreamKeepaliveEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
-     * in the specified VPC to the server group.
-     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-     * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+     * @Property vpcId: The ID of the VPC where the server group is created. You can add only servers
+     * within this VPC to the server group.
+     * > This parameter is valid only when ServerGroupType is set to Instance or Ip.
      */
     public vpcId: string | ros.IResolvable | undefined;
 

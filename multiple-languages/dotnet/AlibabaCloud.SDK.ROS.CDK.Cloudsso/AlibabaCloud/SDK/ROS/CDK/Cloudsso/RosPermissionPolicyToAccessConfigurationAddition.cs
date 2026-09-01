@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudsso
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::PermissionPolicyToAccessConfigurationAddition`, which is used to add a policy to an access configuration.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::PermissionPolicyToAccessConfigurationAddition`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `PermissionPolicyToAccessConfigurationAddition` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-permissionpolicytoaccessconfigurationaddition
@@ -127,9 +127,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudsso
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: permissionPolicyName: The name of the permission policy.
-        /// - If you set PermissionPolicyType to System, you must set this parameter to the name of the system policy. You can obtain the name of the system policy from RAM.
-        /// - If you set PermissionPolicyType to Inline, you must set this parameter to the name of the inline policy. A custom value is supported.
+        /// <strong>Property</strong>: permissionPolicyName: The name of the policy.
+        /// - If you set `PermissionPolicyType` to `System`, you must set
+        /// PermissionPolicyName to the name of a system policy. You can obtain the name of
+        /// the system policy from RAM.
+        /// - If you set `PermissionPolicyType` to `Inline`, you must set
+        /// PermissionPolicyName to the name of an inline policy. A custom value is
+        /// supported. The value can be up to 32 characters in length.
         /// </remarks>
         [JsiiProperty(name: "permissionPolicyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object PermissionPolicyName

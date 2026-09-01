@@ -243,7 +243,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance`, which is used to register a database instance for your enterprise.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance
  */
@@ -789,7 +789,7 @@ function rosInstance2PropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance2`, which is used to register a database instance in new Data Management (DMS).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance2
  */
@@ -1158,7 +1158,7 @@ function rosScriptExecutionPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::ScriptExecution`The , which type executes SQL scripts.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::ScriptExecution`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScriptExecution` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-scriptexecution
  */
@@ -1303,7 +1303,7 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::User`, which is used to add a user to Data Management (DMS).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::User`.
  * @Note This class does not contain additional functions, so it is recommended to use the `User` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-user
  */

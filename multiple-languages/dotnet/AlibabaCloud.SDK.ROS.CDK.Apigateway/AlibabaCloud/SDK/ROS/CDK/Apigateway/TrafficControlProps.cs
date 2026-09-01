@@ -65,7 +65,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 
         private object _trafficControlName;
 
-        /// <summary>Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.</summary>
+        /// <summary>Property trafficControlName: The name of the throttling policy.</summary>
+        /// <remarks>
+        /// The name must be 4 to 50 characters in length
+        /// and can contain letters, digits, and underscores (_). It cannot start with an
+        /// underscore.
+        /// </remarks>
         [JsiiProperty(name: "trafficControlName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TrafficControlName
         {
@@ -95,7 +100,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 
         private object _trafficControlUnit;
 
-        /// <summary>Property trafficControlUnit: Traffic control unit, DAY\/HOUR\/MINUTE.</summary>
+        /// <summary>Property trafficControlUnit: The unit to be used in the throttling policy.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>SECOND</description>
+        /// <description>MINUTE</description>
+        /// <description>HOUR</description>
+        /// <description>DAY</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "trafficControlUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TrafficControlUnit
         {

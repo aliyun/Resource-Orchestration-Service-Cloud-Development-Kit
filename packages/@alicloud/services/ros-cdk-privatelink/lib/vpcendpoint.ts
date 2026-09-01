@@ -22,13 +22,23 @@ export interface VpcEndpointProps {
 
     /**
      * Property endpointName: The name of the endpoint.
-     * The name must be 2 to 128 characters in length and can contain digits, underscores
-     * (_), and hyphens (-). The name must start with a letter.
+     * The name must be 2 to 128 characters long, start with a letter or a Chinese
+     * character, and can contain digits, hyphens (-), and underscores (_).
      */
     readonly endpointName?: string | ros.IResolvable;
 
     /**
-     * Property endpointType: Endpoint type.
+     * Property endpointType: The type of the endpoint. Valid values:
+     * - Interface: an interface endpoint. You can add Application Load Balancer (ALB),
+     *  CLB, and Network Load Balancer (NLB) instances as service
+     * resources.
+     * - Reverse: a reverse endpoint. You can add a VPC NAT Gateway as a service
+     * resource.
+     * - GatewayLoadBalancer: a Gateway Load Balancer endpoint. You can add a Gateway
+     * Load Balancer (GWLB) as a service resource.
+     * > Services that support reverse endpoints are provided exclusively by the cloud
+     * platform and its partners. You cannot create them by default. To request access,
+     * contact your account manager.
      */
     readonly endpointType?: string | ros.IResolvable;
 
@@ -60,7 +70,7 @@ export interface VpcEndpointProps {
     readonly tags?: RosVpcEndpoint.TagsProperty[];
 
     /**
-     * Property zone:
+     * Property zone: The list of zones for the endpoint.
      */
     readonly zone?: Array<RosVpcEndpoint.ZoneProperty | ros.IResolvable> | ros.IResolvable;
 

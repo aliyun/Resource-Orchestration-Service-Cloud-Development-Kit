@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cdn;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDN::DomainConfig</code>, which is used to configure multiple domain names at a time.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDN::DomainConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:42:42.229Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:28:08.571Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.DomainConfig")
 public class DomainConfig extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cdn.IDomainConfig {
 
@@ -104,20 +104,44 @@ public class DomainConfig extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property domainNames: Your accelerated domain name, separated by commas in English.
+         * Property domainNames: The domain names to configure for acceleration.
+         * <p>
+         * Separate multiple domain names
+         * with a comma (,). Note the following limits:
+         * <p>
+         * <ul>
+         * <li>You can specify up to 20 domain names.</li>
+         * <li>The number of domain names multiplied by the number of features cannot exceed</li>
+         * </ul>
+         * <p>
+         * <ol>
+         * <li></li>
+         * </ol>
          * <p>
          * @return {@code this}
-         * @param domainNames Property domainNames: Your accelerated domain name, separated by commas in English. This parameter is required.
+         * @param domainNames Property domainNames: The domain names to configure for acceleration. This parameter is required.
          */
         public Builder domainNames(final java.lang.String domainNames) {
             this.props.domainNames(domainNames);
             return this;
         }
         /**
-         * Property domainNames: Your accelerated domain name, separated by commas in English.
+         * Property domainNames: The domain names to configure for acceleration.
+         * <p>
+         * Separate multiple domain names
+         * with a comma (,). Note the following limits:
+         * <p>
+         * <ul>
+         * <li>You can specify up to 20 domain names.</li>
+         * <li>The number of domain names multiplied by the number of features cannot exceed</li>
+         * </ul>
+         * <p>
+         * <ol>
+         * <li></li>
+         * </ol>
          * <p>
          * @return {@code this}
-         * @param domainNames Property domainNames: Your accelerated domain name, separated by commas in English. This parameter is required.
+         * @param domainNames Property domainNames: The domain names to configure for acceleration. This parameter is required.
          */
         public Builder domainNames(final com.aliyun.ros.cdk.core.IResolvable domainNames) {
             this.props.domainNames(domainNames);

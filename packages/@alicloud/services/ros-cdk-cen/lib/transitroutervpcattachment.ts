@@ -25,7 +25,10 @@ export interface TransitRouterVpcAttachmentProps {
     readonly autoCreateVpcRoute?: boolean | ros.IResolvable;
 
     /**
-     * Property autoPublishRouteEnabled: Whether to automatically publish routes.
+     * Property autoPublishRouteEnabled: Specifies whether to enable the Enterprise Edition transit router to
+     * automatically advertise routes to the VPC instance.
+     * - false (default): Do not automatically advertise routes.
+     * - true: Automatically advertise routes.
      */
     readonly autoPublishRouteEnabled?: boolean | ros.IResolvable;
 
@@ -55,12 +58,16 @@ export interface TransitRouterVpcAttachmentProps {
     readonly routeTablePropagationEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
+     * Property transitRouterAttachmentDescription: The description of the VPC connection.
+     * The description can be empty or 1 to 256 characters long, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
 
     /**
-     * Property transitRouterAttachmentName: The name of the transit router VPC attachment.
+     * Property transitRouterAttachmentName: The name of the VPC connection.
+     * The name can be empty or 1 to 128 characters long, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly transitRouterAttachmentName?: string | ros.IResolvable;
 
@@ -70,12 +77,16 @@ export interface TransitRouterVpcAttachmentProps {
     readonly transitRouterId?: string | ros.IResolvable;
 
     /**
-     * Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+     * Property transitRouterVpcAttachmentOptions: The properties of the VPC connection. This parameter is deprecated. We recommend
+     * that you use the `Options` parameter instead.
      */
     readonly transitRouterVpcAttachmentOptions?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * Property vpcOwnerId: The owner ID of the VPC.
+     * Property vpcOwnerId: The ID of the account (root account) that owns the VPC instance. By
+     * default, this is the ID of the current account.
+     * > This parameter is required if you want to attach a cross-account network
+     * instance.
      */
     readonly vpcOwnerId?: number | ros.IResolvable;
 }
@@ -127,7 +138,7 @@ export interface ITransitRouterVpcAttachment extends ros.IResource {
     readonly attrVpcOwnerId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterVpcAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */

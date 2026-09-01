@@ -5,13 +5,27 @@ package com.aliyun.ros.cdk.swas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-swas-runcommand
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:58:36.019Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:51:38.087Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.swas.$Module.class, fqn = "@alicloud/ros-cdk-swas.RunCommandProps")
 @software.amazon.jsii.Jsii.Proxy(RunCommandProps.Jsii$Proxy.class)
 public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property commandContent: The plaintext content of the command to run.
+     * Property commandContent: The content of the command.
+     * <p>
+     * Take note of the following items:
+     * <p>
+     * <ul>
+     * <li>If you set <code>EnableParameter</code> to true, the custom parameter feature is enabled
+     * in the command content and you can configure custom parameters based on the
+     * following rules:</li>
+     * <li>Define custom parameters in the {{}} format. Within <code>{{}}</code>, the spaces and
+     * line feeds before and after the parameter names are ignored.</li>
+     * <li>The number of custom parameters cannot be greater than 20.</li>
+     * <li>A custom parameter name can contain only letters, digits, underscores (_),
+     * and hyphens (-). The name is case-insensitive.</li>
+     * <li>Each custom parameter name cannot exceed 64 bytes in length.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getCommandContent();
 
@@ -99,11 +113,15 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property workingDir: The directory in which to run the command on the instance.
+     * Property workingDir: The execution path of the command.
      * <p>
-     * Default value:
-     * Linux instances: /root
-     * Windows instances: C:\ProgramData\aliyun\assist$(version)
+     * Custom paths are supported. Default execution
+     * paths vary based on the operating systems of the servers.
+     * <p>
+     * <ul>
+     * <li>For Linux servers, the default path is /root of the root user.</li>
+     * <li>For Windows servers, the default path is C:\Windows\system32.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getWorkingDir() {
         return null;
@@ -143,7 +161,20 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getCommandContent}
-         * @param commandContent Property commandContent: The plaintext content of the command to run. This parameter is required.
+         * @param commandContent Property commandContent: The content of the command. This parameter is required.
+         *                       Take note of the following items:
+         *                       <p>
+         *                       <ul>
+         *                       <li>If you set <code>EnableParameter</code> to true, the custom parameter feature is enabled
+         *                       in the command content and you can configure custom parameters based on the
+         *                       following rules:</li>
+         *                       <li>Define custom parameters in the {{}} format. Within <code>{{}}</code>, the spaces and
+         *                       line feeds before and after the parameter names are ignored.</li>
+         *                       <li>The number of custom parameters cannot be greater than 20.</li>
+         *                       <li>A custom parameter name can contain only letters, digits, underscores (_),
+         *                       and hyphens (-). The name is case-insensitive.</li>
+         *                       <li>Each custom parameter name cannot exceed 64 bytes in length.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder commandContent(java.lang.String commandContent) {
@@ -153,7 +184,20 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getCommandContent}
-         * @param commandContent Property commandContent: The plaintext content of the command to run. This parameter is required.
+         * @param commandContent Property commandContent: The content of the command. This parameter is required.
+         *                       Take note of the following items:
+         *                       <p>
+         *                       <ul>
+         *                       <li>If you set <code>EnableParameter</code> to true, the custom parameter feature is enabled
+         *                       in the command content and you can configure custom parameters based on the
+         *                       following rules:</li>
+         *                       <li>Define custom parameters in the {{}} format. Within <code>{{}}</code>, the spaces and
+         *                       line feeds before and after the parameter names are ignored.</li>
+         *                       <li>The number of custom parameters cannot be greater than 20.</li>
+         *                       <li>A custom parameter name can contain only letters, digits, underscores (_),
+         *                       and hyphens (-). The name is case-insensitive.</li>
+         *                       <li>Each custom parameter name cannot exceed 64 bytes in length.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder commandContent(com.aliyun.ros.cdk.core.IResolvable commandContent) {
@@ -381,10 +425,14 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getWorkingDir}
-         * @param workingDir Property workingDir: The directory in which to run the command on the instance.
-         *                   Default value:
-         *                   Linux instances: /root
-         *                   Windows instances: C:\ProgramData\aliyun\assist$(version)
+         * @param workingDir Property workingDir: The execution path of the command.
+         *                   Custom paths are supported. Default execution
+         *                   paths vary based on the operating systems of the servers.
+         *                   <p>
+         *                   <ul>
+         *                   <li>For Linux servers, the default path is /root of the root user.</li>
+         *                   <li>For Windows servers, the default path is C:\Windows\system32.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder workingDir(java.lang.String workingDir) {
@@ -394,10 +442,14 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getWorkingDir}
-         * @param workingDir Property workingDir: The directory in which to run the command on the instance.
-         *                   Default value:
-         *                   Linux instances: /root
-         *                   Windows instances: C:\ProgramData\aliyun\assist$(version)
+         * @param workingDir Property workingDir: The execution path of the command.
+         *                   Custom paths are supported. Default execution
+         *                   paths vary based on the operating systems of the servers.
+         *                   <p>
+         *                   <ul>
+         *                   <li>For Linux servers, the default path is /root of the root user.</li>
+         *                   <li>For Windows servers, the default path is C:\Windows\system32.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder workingDir(com.aliyun.ros.cdk.core.IResolvable workingDir) {

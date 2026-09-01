@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::APIG::Domain`Use DATASOURCE::APIG::Query domain names using domain type.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::APIG::Domain`.
 type RosDomain interface {
 	alicloudroscdkcore.RosResource
 	AttrCertIdentifier() alicloudroscdkcore.IResolvable

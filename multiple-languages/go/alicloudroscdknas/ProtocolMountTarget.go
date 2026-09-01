@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`Creates an export directory for a NAS protocol service.
 type ProtocolMountTarget interface {
 	alicloudroscdkcore.Resource
 	IProtocolMountTarget

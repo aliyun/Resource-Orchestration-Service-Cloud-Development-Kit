@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecd;
 /**
  * Represents a <code>NetworkPackage</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:33:58.436Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:33:34.839Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.INetworkPackage")
 @software.amazon.jsii.Jsii.Proxy(INetworkPackage.Jsii$Proxy.class)
 public interface INetworkPackage extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

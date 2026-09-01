@@ -10,7 +10,10 @@ export { RosTrail as TrailProperty };
 export interface TrailProps {
 
     /**
-     * Property name: The name of the trail to be created, which must be unique for an account.
+     * Property name: The name of the trail to be created.
+     * Length should be between 6 and 36 characters, must start with a lowercase letter,
+     * and can include lowercase letters, numbers, hyphens (-), and underscores (_).
+     * > The trail name must be unique within the same account.
      */
     readonly name: string | ros.IResolvable;
 
@@ -20,27 +23,43 @@ export interface TrailProps {
     readonly eventRw?: string | ros.IResolvable;
 
     /**
-     * Property ossBucketName: The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket.
+     * Property ossBucketName: The OSS bucket for the trail delivery.
+     * Length should be between 3 and 63 characters, must start with a lowercase letter
+     * or number, and can include lowercase letters, numbers, and hyphens (-).
+     * > At least one of OssBucketName and SlsProjectArn must be specified.
      */
     readonly ossBucketName?: string | ros.IResolvable;
 
     /**
-     * Property ossKeyPrefix: The prefix of the specified OSS bucket name. This parameter can be left empty.
+     * Property ossKeyPrefix: The prefix for the filenames in the OSS bucket for the trail delivery.
+     * Length should be between 6 and 32 characters, must start with a letter, and can
+     * include letters, numbers, hyphens (-), forward slashes (\/), and underscores (_).
      */
     readonly ossKeyPrefix?: string | ros.IResolvable;
 
     /**
-     * Property roleName: The RAM role in ActionTrail permitted by the user.
+     * Property roleName: The name of the associated role for Operation Audit, with a default value of
+     * serviceroleforactiontrail.
      */
     readonly roleName?: string | ros.IResolvable;
 
     /**
-     * Property slsProjectArn: The unique ARN of the Log Service project.
+     * Property slsProjectArn: The ARN of the Log Service project for the trail delivery.
+     * > At least one of OssBucketName and SlsProjectArn must be specified.
      */
     readonly slsProjectArn?: string | ros.IResolvable;
 
     /**
-     * Property slsWriteRoleArn: The unique ARN of the Log Service role.
+     * Property slsWriteRoleArn: The ARN of the role assumed by Operation Audit when delivering operation events
+     * to the Log Service project.
+     * - If this parameter is not specified, Operation Audit will create the necessary
+     * resources by creating a service-linked role. 
+     * - If this parameter is specified, when you need to deliver events to the current
+     * account, you need to grant the RAM role the permissions of the Operation Audit
+     * service-linked role. When you need to deliver events to another account, you need
+     * to bind the system permission policy for event delivery to the RAM role. For more
+     * information on cross-account delivery, see Deliver Events from Multiple
+     * Accounts to One Account.
      */
     readonly slsWriteRoleArn?: string | ros.IResolvable;
 }
@@ -57,7 +76,7 @@ export interface ITrail extends ros.IResource {
     readonly attrName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`, which is used to create a trail to deliver events to Simple Log Service or Object Storage Service (OSS).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrail`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
  */

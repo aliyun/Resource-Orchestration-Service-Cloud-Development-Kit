@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::DBCluster`, which is used to create an ApsaraDB for ClickHouse cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::DBCluster`.
 type RosDBCluster interface {
 	alicloudroscdkcore.RosResource
 	AttrAliUid() alicloudroscdkcore.IResolvable

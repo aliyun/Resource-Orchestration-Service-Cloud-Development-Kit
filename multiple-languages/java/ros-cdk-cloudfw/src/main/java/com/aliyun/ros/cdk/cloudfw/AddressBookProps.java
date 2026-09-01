@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudfw;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:48:07.039Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:36:02.085Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.AddressBookProps")
 @software.amazon.jsii.Jsii.Proxy(AddressBookProps.Jsii$Proxy.class)
 public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable {
@@ -87,7 +87,7 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property tagList:.
+     * Property tagList: The list of ECS tags.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTagList() {
         return null;
@@ -333,7 +333,7 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressBookProps#getTagList}
-         * @param tagList Property tagList:.
+         * @param tagList Property tagList: The list of ECS tags.
          * @return {@code this}
          */
         public Builder tagList(com.aliyun.ros.cdk.core.IResolvable tagList) {
@@ -343,7 +343,7 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressBookProps#getTagList}
-         * @param tagList Property tagList:.
+         * @param tagList Property tagList: The list of ECS tags.
          * @return {@code this}
          */
         public Builder tagList(java.util.List<? extends java.lang.Object> tagList) {

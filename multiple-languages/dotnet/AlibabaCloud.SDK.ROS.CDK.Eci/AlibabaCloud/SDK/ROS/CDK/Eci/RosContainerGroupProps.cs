@@ -98,7 +98,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         private object? _acrRegistryInfo;
 
         /// <remarks>
-        /// <strong>Property</strong>: acrRegistryInfo: Enterprise Edition access credential configuration information.
+        /// <strong>Property</strong>: acrRegistryInfo: A list of ACR Enterprise instances.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "acrRegistryInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.AcrRegistryInfoProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -201,7 +201,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         private object? _autoMatchImageCache;
 
         /// <remarks>
-        /// <strong>Property</strong>: autoMatchImageCache: Specifies whether to automatically match the image cache.
+        /// <strong>Property</strong>: autoMatchImageCache: Specifies whether to automatically match the image cache. The default value is
+        /// false.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoMatchImageCache", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -453,7 +454,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         private object? _imageSnapshotId;
 
         /// <remarks>
-        /// <strong>Property</strong>: imageSnapshotId: Image cache ID or snapshot ID.
+        /// <strong>Property</strong>: imageSnapshotId: The ID of the image cache.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "imageSnapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -536,7 +537,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         private object? _instanceType;
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceType: The type of the ECS instance.
+        /// <strong>Property</strong>: instanceType: The ECS instance type. You can specify multiple instance types. For more
+        /// information, see [Create an instance by specifying an ECS instance type]().
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -569,7 +571,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         private object? _ipv6AddressCount;
 
         /// <remarks>
-        /// <strong>Property</strong>: ipv6AddressCount: The number of IPv6 addresses.
+        /// <strong>Property</strong>: ipv6AddressCount: The number of IPv6 addresses. The value is fixed at 1, which indicates that one
+        /// IPv6 address can be bound to an ECI instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1138,9 +1141,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         private object? _vSwitchId;
 
         /// <remarks>
-        /// <strong>Property</strong>: vSwitchId: The ID of the specified VSwitch.
-        /// If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
-        /// If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+        /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch to which the instance belongs. You can specify up to 10
+        /// vSwitch IDs. Separate multiple IDs with commas (,), for example, `vsw-*,vsw-*`.
+        /// If you do not specify a vSwitch, the system uses the default vSwitch in the
+        /// default VPC of the selected region. If you do not have a default VPC and a
+        /// default vSwitch in the region, the system creates a default VPC and a default
+        /// vSwitch.
+        /// > The number of IP addresses in the vSwitch CIDR block determines the maximum
+        /// number of ECI instances that can be created in the vSwitch. Plan the CIDR block
+        /// in advance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

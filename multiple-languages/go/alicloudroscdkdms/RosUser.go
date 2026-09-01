@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::User`, which is used to add a user to Data Management (DMS).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::User`.
 type RosUser interface {
 	alicloudroscdkcore.RosResource
 	AttrMobile() alicloudroscdkcore.IResolvable

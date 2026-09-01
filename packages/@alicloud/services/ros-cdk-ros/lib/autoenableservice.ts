@@ -28,9 +28,11 @@ export interface AutoEnableServiceProps {
      * DCDN: Dynamic Route for CDN
      * EDAS: Enterprise Distributed Application Service
      * EMAS: Enterprise Mobile Application Studio
+     * EMR\/AICenter: EMR Serverless Spark AI Center
      * FC: Function Compute
      * FNF: Serverless Workflow
      * MaxCompute: MaxCompute
+     * Milvus\/Function: Milvus Function
      * NAS: Network Attached Storage
      * MNS: Message Service (MNS)
      * HBR: Hybrid Backup Recovery
@@ -59,6 +61,11 @@ export interface AutoEnableServiceProps {
      * DSC: Data Security Center Free Edition Service
      */
     readonly serviceName: string | ros.IResolvable;
+
+    /**
+     * Property serviceParameters: The parameters that are required to enable the service. WorkspaceId is required when ServiceName is EMR\/AICenter.
+     */
+    readonly serviceParameters?: RosAutoEnableService.ServiceParametersProperty | ros.IResolvable;
 }
 
 /**
@@ -92,6 +99,7 @@ export class AutoEnableService extends ros.Resource implements IAutoEnableServic
 
         const rosAutoEnableService = new RosAutoEnableService(this, id,  {
             serviceName: props.serviceName,
+            serviceParameters: props.serviceParameters,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAutoEnableService;
     }

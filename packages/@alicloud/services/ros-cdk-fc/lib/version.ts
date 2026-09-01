@@ -37,7 +37,7 @@ export interface IVersion extends ros.IResource {
     readonly attrVersionId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Version`, which is used to release a Version.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Version`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVersion`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-version
  */

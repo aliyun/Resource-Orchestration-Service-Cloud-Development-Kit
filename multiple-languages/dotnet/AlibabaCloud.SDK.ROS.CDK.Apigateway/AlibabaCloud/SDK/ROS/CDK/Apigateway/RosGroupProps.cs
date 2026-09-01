@@ -16,7 +16,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         private object _groupName;
 
         /// <remarks>
-        /// <strong>Property</strong>: groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+        /// <strong>Property</strong>: groupName: The name of the API group. The name must be unique and 4 to 50 characters in
+        /// length. It must start with a letter or a Chinese character and can contain
+        /// letters, digits, underscores (_), and Chinese characters. If you do not specify
+        /// this parameter, the name is not modified.
         /// </remarks>
         [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object GroupName

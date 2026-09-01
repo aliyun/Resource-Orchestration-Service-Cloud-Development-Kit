@@ -10,27 +10,38 @@ export { RosAnycastEIP as AnycastEIPProperty };
 export interface AnycastEIPProps {
 
     /**
-     * Property bandwidth: Anycast EIP instance bandwidth
+     * Property bandwidth: The peak bandwidth of the Anycast EIP instance. Unit: Mbps.
+     * Valid values: 200 to 1000.
+     * Default value: 1000.
+     * > The peak bandwidth is for reference only and is not a guaranteed value. It
+     * serves as the upper limit for bandwidth.
      */
     readonly bandwidth?: number | ros.IResolvable;
 
     /**
-     * Property description: Anycast EIP instance description
+     * Property description: The description of the Anycast EIP instance.
+     * The description must be 0 to 256 characters in length and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property instanceChargeType: Anycast EIP instance charge type
+     * Property instanceChargeType: The billing method of the Anycast EIP instance.
+     * Set the value to PostPaid. This value specifies the pay-as-you-go billing method.
      */
     readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
-     * Property internetChargeType: Anycast EIP instance access public network billing method
+     * Property internetChargeType: The metering method for Internet data transfer.
+     * Set the value to PayByTraffic. This value specifies the pay-by-data-transfer
+     * metering method.
      */
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * Property name: Anycast EIP instance name
+     * Property name: The name of the Anycast EIP instance.
+     * The name must be 0 to 128 characters in length. It must start with a letter or a
+     * Chinese character and can contain digits, underscores (_), and hyphens (-).
      */
     readonly name?: string | ros.IResolvable;
 

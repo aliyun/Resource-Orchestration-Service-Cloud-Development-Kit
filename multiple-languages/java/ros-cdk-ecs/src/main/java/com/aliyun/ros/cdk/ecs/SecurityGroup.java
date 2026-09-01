@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::SecurityGroup</code>The , which resource is used to create a security group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::SecurityGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.240Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.649Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroup")
 public class SecurityGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.ISecurityGroup {
 
@@ -130,24 +130,28 @@ public class SecurityGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property description: Description of the security group, [2, 256] characters.
+         * Property description: The description of the security group.
          * <p>
-         * Do not fill or empty, the default is empty.
+         * The description must be 2 to 256
+         * characters in length. It cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         * By default, this parameter is left empty.
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of the security group, [2, 256] characters. This parameter is required.
+         * @param description Property description: The description of the security group. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props().description(description);
             return this;
         }
         /**
-         * Property description: Description of the security group, [2, 256] characters.
+         * Property description: The description of the security group.
          * <p>
-         * Do not fill or empty, the default is empty.
+         * The description must be 2 to 256
+         * characters in length. It cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         * By default, this parameter is left empty.
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of the security group, [2, 256] characters. This parameter is required.
+         * @param description Property description: The description of the security group. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props().description(description);
@@ -218,20 +222,30 @@ public class SecurityGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * Property securityGroupName: The name of the security group.
+         * <p>
+         * The name must be 2 to 128 characters in length.
+         * The name must start with a letter and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         * The name can contain letters, digits, colons (:), underscores (_), periods (.),
+         * and hyphens (-).
          * <p>
          * @return {@code this}
-         * @param securityGroupName Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'. This parameter is required.
+         * @param securityGroupName Property securityGroupName: The name of the security group. This parameter is required.
          */
         public Builder securityGroupName(final java.lang.String securityGroupName) {
             this.props().securityGroupName(securityGroupName);
             return this;
         }
         /**
-         * Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * Property securityGroupName: The name of the security group.
+         * <p>
+         * The name must be 2 to 128 characters in length.
+         * The name must start with a letter and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         * The name can contain letters, digits, colons (:), underscores (_), periods (.),
+         * and hyphens (-).
          * <p>
          * @return {@code this}
-         * @param securityGroupName Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'. This parameter is required.
+         * @param securityGroupName Property securityGroupName: The name of the security group. This parameter is required.
          */
         public Builder securityGroupName(final com.aliyun.ros.cdk.core.IResolvable securityGroupName) {
             this.props().securityGroupName(securityGroupName);
@@ -242,8 +256,12 @@ public class SecurityGroup extends com.aliyun.ros.cdk.core.Resource implements c
          * Property securityGroupType: The type of the security group.
          * <p>
          * Valid values:
-         * normal: basic security group
-         * enterprise: advanced security group
+         * <p>
+         * <ul>
+         * <li>normal: basic security group</li>
+         * <li>enterprise: advanced security group
+         * Default value: normal.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param securityGroupType Property securityGroupType: The type of the security group. This parameter is required.
@@ -256,8 +274,12 @@ public class SecurityGroup extends com.aliyun.ros.cdk.core.Resource implements c
          * Property securityGroupType: The type of the security group.
          * <p>
          * Valid values:
-         * normal: basic security group
-         * enterprise: advanced security group
+         * <p>
+         * <ul>
+         * <li>normal: basic security group</li>
+         * <li>enterprise: advanced security group
+         * Default value: normal.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param securityGroupType Property securityGroupType: The type of the security group. This parameter is required.
@@ -281,20 +303,34 @@ public class SecurityGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property vpcId: Physical ID of the VPC.
+         * Property vpcId: The ID of the VPC in which you want to create the security group.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The VpcId parameter is required only if you want to create security groups of
+         * the VPC type.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vpcId Property vpcId: Physical ID of the VPC. This parameter is required.
+         * @param vpcId Property vpcId: The ID of the VPC in which you want to create the security group. This parameter is required.
          */
         public Builder vpcId(final java.lang.String vpcId) {
             this.props().vpcId(vpcId);
             return this;
         }
         /**
-         * Property vpcId: Physical ID of the VPC.
+         * Property vpcId: The ID of the VPC in which you want to create the security group.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The VpcId parameter is required only if you want to create security groups of
+         * the VPC type.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vpcId Property vpcId: Physical ID of the VPC. This parameter is required.
+         * @param vpcId Property vpcId: The ID of the VPC in which you want to create the security group. This parameter is required.
          */
         public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.props().vpcId(vpcId);

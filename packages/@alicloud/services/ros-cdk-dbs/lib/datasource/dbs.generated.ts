@@ -64,7 +64,7 @@ function rosBackupPlanPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DBS::BackupPlan`, which is used to query the information about a backup schedule.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DBS::BackupPlan`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BackupPlan` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dbs-backupplan
  */
@@ -346,7 +346,7 @@ function rosBackupPlansPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DBS::BackupPlans`, which is used to query the information about backup schedules.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DBS::BackupPlans`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BackupPlans` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dbs-backupplans
  */

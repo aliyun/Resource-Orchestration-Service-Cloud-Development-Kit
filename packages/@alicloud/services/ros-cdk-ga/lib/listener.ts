@@ -48,6 +48,25 @@ export interface ListenerProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property httpVersion: The maximum version of the HTTP protocol. Valid values:
+     * http1.1
+     * http2
+     * http3
+     * Note Only HTTPS listeners support this parameter.
+     */
+    readonly httpVersion?: string | ros.IResolvable;
+
+    /**
+     * Property idleTimeout: The connection idle timeout period. Unit: seconds.
+     * Valid values:
+     * TCP listener: 10 to 900
+     * UDP listener: 10 to 20
+     * HTTP or HTTPS listener: 1 to 60
+     * Note Only listeners support this parameter.
+     */
+    readonly idleTimeout?: number | ros.IResolvable;
+
+    /**
      * Property name: The name of the listener.
      * The name must be 2 to 128 characters in length and can contain letters, digits, underscores
      * (_), and hyphens (-). It must start with a letter or Chinese character.
@@ -62,6 +81,12 @@ export interface ListenerProps {
     readonly proxyProtocol?: boolean | ros.IResolvable;
 
     /**
+     * Property requestTimeout: The HTTP request timeout period. Unit: seconds. Valid values: 1 to 180. Default value: 60.
+     * Note Only HTTP and HTTPS listeners support this parameter.
+     */
+    readonly requestTimeout?: number | ros.IResolvable;
+
+    /**
      * Property securityPolicyId: The ID of the security policy. Valid values:
      * tls_cipher_policy_1_0
      * tls_cipher_policy_1_1
@@ -71,6 +96,13 @@ export interface ListenerProps {
      * Note Only HTTPS listeners support this parameter.
      */
     readonly securityPolicyId?: string | ros.IResolvable;
+
+    /**
+     * Property type: The listener routing type. Valid values:
+     * Standard: the standard routing type
+     * CustomRouting: the custom routing type
+     */
+    readonly type?: string | ros.IResolvable;
 
     /**
      * Property xForwardedForConfig: The configuration of the XForward field.
@@ -90,7 +122,7 @@ export interface IListener extends ros.IResource {
     readonly attrListenerId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GA::Listener`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::Listener`Creates a listener for a Global Accelerator (GA) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-listener
  */
@@ -118,15 +150,19 @@ export class Listener extends ros.Resource implements IListener {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosListener = new RosListener(this, id,  {
-            securityPolicyId: props.securityPolicyId,
+            requestTimeout: props.requestTimeout,
             description: props.description,
             portRanges: props.portRanges,
             proxyProtocol: props.proxyProtocol,
             certificates: props.certificates,
+            idleTimeout: props.idleTimeout,
+            name: props.name,
+            securityPolicyId: props.securityPolicyId,
+            type: props.type,
             xForwardedForConfig: props.xForwardedForConfig,
             protocol: props.protocol,
             acceleratorId: props.acceleratorId,
-            name: props.name,
+            httpVersion: props.httpVersion,
             clientAffinity: props.clientAffinity,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosListener;

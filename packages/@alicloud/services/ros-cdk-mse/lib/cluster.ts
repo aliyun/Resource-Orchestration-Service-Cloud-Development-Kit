@@ -51,16 +51,13 @@ export interface ClusterProps {
     readonly clusterVersion: string | ros.IResolvable;
 
     /**
-     * Property instanceCount: Number of instance nodes. Range: 1~15.
-     * 
+     * Property instanceCount: Number of instance nodes, with a range limit of 1 to 9.
      * [Professional Edition]
-     * - Must be >=3 and odd number.
-     * 
-     * [Development Edition]
-     * - Only 1 allowed.
-     * 
+     * - The number of instances must be 3 or more and must be an odd number.
+     * [Developer Edition]
+     * - The number of instances can only be 1.
      * [Serverless Edition]
-     * - Ignore this parameter.
+     * Ignore this parameter.
      */
     readonly instanceCount: number | ros.IResolvable;
 
@@ -93,7 +90,8 @@ export interface ClusterProps {
     readonly connectionType?: string | ros.IResolvable;
 
     /**
-     * Property eipEnabled: Effective when ConnectionType is `single_eni`, indicates whether to enable public access (elastic IP).
+     * Property eipEnabled: Valid when `ConnectionType` is `single_eni`, indicating whether to enable public
+     * network access (Elastic IP).
      */
     readonly eipEnabled?: boolean | ros.IResolvable;
 
@@ -121,7 +119,8 @@ export interface ClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property securityGroupType: Effective when ConnectionType is `single_eni`, represents the security group type of the instance.
+     * Property securityGroupType: Valid when `ConnectionType` is `single_eni`, indicating the security group type
+     * of the instance.
      */
     readonly securityGroupType?: string | ros.IResolvable;
 
@@ -313,7 +312,7 @@ export interface ICluster extends ros.IResource {
     readonly attrVpcId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Cluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Cluster`Use , which to create a cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */

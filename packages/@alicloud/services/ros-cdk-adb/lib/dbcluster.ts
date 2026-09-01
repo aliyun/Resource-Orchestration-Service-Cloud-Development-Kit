@@ -10,11 +10,15 @@ export { RosDBCluster as DBClusterProperty };
 export interface DBClusterProps {
 
     /**
-     * Property dbClusterCategory: The edition of the cluster.
-     * Valid values when the cluster is in reserved mode:
-     * Basic
-     * Cluster
-     * When the cluster is in elastic mode, set the value to MixedStorage.
+     * Property dbClusterCategory: The cluster edition. Valid values:
+     * - Cluster: reserved cluster.
+     * > Reserved clusters are available only in the Chinese mainland and Singapore
+     * regions. In the Singapore region, you can purchase reserved clusters only with
+     * the pay-as-you-go billing method.
+     * - MixedStorage: elastic cluster (new).
+     * > If you set `DBClusterCategory` to `Cluster`, you must set the `Mode` parameter
+     * to `Reserved`. If you set `DBClusterCategory` to `MixedStorage`, you must set the
+     * `Mode` parameter to `Flexible`. Otherwise, cluster creation will fail.
      */
     readonly dbClusterCategory: string | ros.IResolvable;
 
@@ -24,9 +28,9 @@ export interface DBClusterProps {
     readonly dbClusterVersion: string | ros.IResolvable;
 
     /**
-     * Property mode: The mode of the cluster. Valid values:
-     * Reserver: the reserved mode
-     * Flexible: the elastic mode
+     * Property mode: The cluster mode. Valid values:
+     * - Reserved: reserved mode.
+     * - Flexible: flexible mode.
      */
     readonly mode: string | ros.IResolvable;
 
@@ -49,7 +53,20 @@ export interface DBClusterProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * Property computeResource: The computing resource of the cluster. This parameter is required in elastic mode.
+     * Property computeResource: The compute resources for the cluster. Compute resources are used for data
+     * queries. A larger amount of compute resources can provide better query
+     * performance. Compute resources are available in cluster and single-node editions:
+     * - Cluster edition: includes specifications such as 16 cores\/64 GB, 24 cores\/96
+     * GB, and 32 cores or more. The cluster edition supports resource pool isolation,
+     * scheduled scaling, and tiered storage of hot and cold data.
+     * - Single-node edition: includes specifications such as 8 cores\/32 GB and 16
+     * cores\/64 GB. The single-node edition does not provide an SLA guarantee and has a
+     * long recovery time from failures (4 to 8 hours). We do not recommend that you use
+     * the single-node edition in production environments.
+     * > * You can call the [DescribeAvailableResource]() operation to query the compute
+     * resources that are available in a specific region.
+     * >
+     * > * This parameter is required when `Mode` is set to `Flexible` (flexible mode).
      */
     readonly computeResource?: string | ros.IResolvable;
 
@@ -62,13 +79,14 @@ export interface DBClusterProps {
 
     /**
      * Property dbClusterDescription: The description of the cluster.
+     * - The description cannot start with `http:\/\/` or `https:\/\/`.
+     * - The description must be 2 to 256 characters long.
      */
     readonly dbClusterDescription?: string | ros.IResolvable;
 
     /**
-     * Property dbNodeGroupCount: The number of node groups. This parameter is required in reserved mode. Valid values:
-     * T8, T16, T32, and T52: 1
-     * C8 and C32: 1 to 128
+     * Property dbNodeGroupCount: The number of node groups. The value must be an integer from 1 to 200.
+     * > This parameter is required when `Mode` is set to `Reserved` (reserved mode).
      */
     readonly dbNodeGroupCount?: number | ros.IResolvable;
 
@@ -92,8 +110,7 @@ export interface DBClusterProps {
     readonly diskEncryption?: boolean | ros.IResolvable;
 
     /**
-     * Property elasticIoResource: Elastic IO Unit
-     * Note the flexible mode cluster will use this parameter.
+     * Property elasticIoResource: The number of Elastic IO Units (EIUs).
      */
     readonly elasticIoResource?: number | ros.IResolvable;
 
@@ -106,7 +123,7 @@ export interface DBClusterProps {
     readonly enableSsl?: boolean | ros.IResolvable;
 
     /**
-     * Property executorCount: ExecutorCount
+     * Property executorCount: This parameter is reserved.
      */
     readonly executorCount?: number | ros.IResolvable;
 
@@ -116,8 +133,10 @@ export interface DBClusterProps {
     readonly kmsId?: string | ros.IResolvable;
 
     /**
-     * Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-     * Valid values when the Period parameter is set to Year: 1, 2, and 3.
+     * Property period: The subscription period unit. Valid values:
+     * - Year
+     * - Month
+     * > This parameter is required when `PayType` is set to `Prepaid` (subscription).
      */
     readonly period?: number | ros.IResolvable;
 
@@ -171,7 +190,7 @@ export interface IDBCluster extends ros.IResource {
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ADB::DBCluster`Use the , which resource type to create an AnalyticDB for MySQL cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ADB::DBCluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */

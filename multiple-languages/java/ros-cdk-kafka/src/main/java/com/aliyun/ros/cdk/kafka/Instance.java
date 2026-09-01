@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::KAFKA::Instance</code>, which is used to create an ApsaraMQ for Kafka instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:37:40.587Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:51:39.095Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kafka.IInstance {
 
@@ -176,28 +176,50 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property deployType: The deployment mode of the Message Queue for Apache Kafka instance.
+         * Property deployType: The deployment type.
          * <p>
          * Valid values:
-         * 4: Instance of the public type
-         * 5: Instance of the VPC type
+         * <p>
+         * <ul>
+         * <li>4: Internet/VPC instance</li>
+         * <li>5: VPC instance</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you are creating a Confluent series instance, you cannot select the
+         * deployment type. You can only set the value to 5. After the purchase, you can
+         * adjust whether each component is open to the Internet.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param deployType Property deployType: The deployment mode of the Message Queue for Apache Kafka instance. This parameter is required.
+         * @param deployType Property deployType: The deployment type. This parameter is required.
          */
         public Builder deployType(final java.lang.Number deployType) {
             this.props.deployType(deployType);
             return this;
         }
         /**
-         * Property deployType: The deployment mode of the Message Queue for Apache Kafka instance.
+         * Property deployType: The deployment type.
          * <p>
          * Valid values:
-         * 4: Instance of the public type
-         * 5: Instance of the VPC type
+         * <p>
+         * <ul>
+         * <li>4: Internet/VPC instance</li>
+         * <li>5: VPC instance</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you are creating a Confluent series instance, you cannot select the
+         * deployment type. You can only set the value to 5. After the purchase, you can
+         * adjust whether each component is open to the Internet.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param deployType Property deployType: The deployment mode of the Message Queue for Apache Kafka instance. This parameter is required.
+         * @param deployType Property deployType: The deployment type. This parameter is required.
          */
         public Builder deployType(final com.aliyun.ros.cdk.core.IResolvable deployType) {
             this.props.deployType(deployType);
@@ -326,24 +348,46 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property ioMax: The peak traffic to be configured for the Message Queue for Apache Kafka instance.
+         * Property ioMax: The traffic peak (not recommended).
          * <p>
-         * For more information about the value range, see Billing.
+         * <ul>
+         * <li>You must specify either IoMax or IoMaxSpec. If you specify both parameters,
+         * IoMaxSpec takes precedence. We recommend that you specify only IoMaxSpec.</li>
+         * <li>For the valid values, see <a href="">Billing</a>.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you are creating a Confluent series instance, you do not need to pass this
+         * parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param ioMax Property ioMax: The peak traffic to be configured for the Message Queue for Apache Kafka instance. This parameter is required.
+         * @param ioMax Property ioMax: The traffic peak (not recommended). This parameter is required.
          */
         public Builder ioMax(final java.lang.Number ioMax) {
             this.props.ioMax(ioMax);
             return this;
         }
         /**
-         * Property ioMax: The peak traffic to be configured for the Message Queue for Apache Kafka instance.
+         * Property ioMax: The traffic peak (not recommended).
          * <p>
-         * For more information about the value range, see Billing.
+         * <ul>
+         * <li>You must specify either IoMax or IoMaxSpec. If you specify both parameters,
+         * IoMaxSpec takes precedence. We recommend that you specify only IoMaxSpec.</li>
+         * <li>For the valid values, see <a href="">Billing</a>.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you are creating a Confluent series instance, you do not need to pass this
+         * parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param ioMax Property ioMax: The peak traffic to be configured for the Message Queue for Apache Kafka instance. This parameter is required.
+         * @param ioMax Property ioMax: The traffic peak (not recommended). This parameter is required.
          */
         public Builder ioMax(final com.aliyun.ros.cdk.core.IResolvable ioMax) {
             this.props.ioMax(ioMax);
@@ -449,20 +493,26 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property serverlessConfig: Serverless instance related settings.
+         * Property serverlessConfig: The settings of the Serverless instance.
+         * <p>
+         * This parameter is required if you create
+         * a Serverless instance.
          * <p>
          * @return {@code this}
-         * @param serverlessConfig Property serverlessConfig: Serverless instance related settings. This parameter is required.
+         * @param serverlessConfig Property serverlessConfig: The settings of the Serverless instance. This parameter is required.
          */
         public Builder serverlessConfig(final com.aliyun.ros.cdk.core.IResolvable serverlessConfig) {
             this.props.serverlessConfig(serverlessConfig);
             return this;
         }
         /**
-         * Property serverlessConfig: Serverless instance related settings.
+         * Property serverlessConfig: The settings of the Serverless instance.
+         * <p>
+         * This parameter is required if you create
+         * a Serverless instance.
          * <p>
          * @return {@code this}
-         * @param serverlessConfig Property serverlessConfig: Serverless instance related settings. This parameter is required.
+         * @param serverlessConfig Property serverlessConfig: The settings of the Serverless instance. This parameter is required.
          */
         public Builder serverlessConfig(final com.aliyun.ros.cdk.kafka.RosInstance.ServerlessConfigProperty serverlessConfig) {
             this.props.serverlessConfig(serverlessConfig);

@@ -5,15 +5,18 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.240Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.648Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SSHKeyPairProps")
 @software.amazon.jsii.Jsii.Proxy(SSHKeyPairProps.Jsii$Proxy.class)
 public interface SSHKeyPairProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property keyPairName: SSH key pair name.
+     * Property keyPairName: The name of the key pair.
      * <p>
-     * It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http://, or https://. It can contain digits, ".", "_", or "-".
+     * The name must be unique. It must be 2 to 128 characters
+     * in length. It must start with a letter and cannot start with http:// or
+     * https://. It can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getKeyPairName();
 
@@ -59,8 +62,11 @@ public interface SSHKeyPairProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SSHKeyPairProps#getKeyPairName}
-         * @param keyPairName Property keyPairName: SSH key pair name. This parameter is required.
-         *                    It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http://, or https://. It can contain digits, ".", "_", or "-".
+         * @param keyPairName Property keyPairName: The name of the key pair. This parameter is required.
+         *                    The name must be unique. It must be 2 to 128 characters
+         *                    in length. It must start with a letter and cannot start with http:// or
+         *                    https://. It can contain letters, digits, colons (:), underscores (_), and
+         *                    hyphens (-).
          * @return {@code this}
          */
         public Builder keyPairName(java.lang.String keyPairName) {
@@ -70,8 +76,11 @@ public interface SSHKeyPairProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SSHKeyPairProps#getKeyPairName}
-         * @param keyPairName Property keyPairName: SSH key pair name. This parameter is required.
-         *                    It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http://, or https://. It can contain digits, ".", "_", or "-".
+         * @param keyPairName Property keyPairName: The name of the key pair. This parameter is required.
+         *                    The name must be unique. It must be 2 to 128 characters
+         *                    in length. It must start with a letter and cannot start with http:// or
+         *                    https://. It can contain letters, digits, colons (:), underscores (_), and
+         *                    hyphens (-).
          * @return {@code this}
          */
         public Builder keyPairName(com.aliyun.ros.cdk.core.IResolvable keyPairName) {

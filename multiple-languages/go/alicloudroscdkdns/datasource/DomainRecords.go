@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::DNS::DomainRecords`, which is used to query Domain Name System (DNS) records.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::DNS::DomainRecords`.
 type DomainRecords interface {
 	alicloudroscdkcore.Resource
 	IDomainRecords

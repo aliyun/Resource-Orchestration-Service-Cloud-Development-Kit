@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-deploymentset
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.873Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.229Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DeploymentSetProps")
 @software.amazon.jsii.Jsii.Proxy(DeploymentSetProps.Jsii$Proxy.class)
 public interface DeploymentSetProps extends software.amazon.jsii.JsiiSerializable {
@@ -43,25 +43,33 @@ public interface DeploymentSetProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set.
+     * Property onUnableToRedeployFailedInstance: The policy to use when an instance fails over but cannot be redeployed due to insufficient resources.
      * <p>
      * Valid values:
-     * CancelMembershipAndStart: restarts the instances immediately after they are shut down
-     * and migrated to other deployment sets. This is the default value.
-     * KeepStopped: keeps the instances shut down and restarts them after the deployment
-     * set is replenished.
+     * <p>
+     * <ul>
+     * <li>CancelMembershipAndStart: Removes the instance from the deployment set and
+     * starts the instance immediately after failover.</li>
+     * <li>KeepStopped: Keeps the instance's deployment set membership and leaves it in
+     * the Stopped state.
+     * Default value: CancelMembershipAndStart.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOnUnableToRedeployFailedInstance() {
         return null;
     }
 
     /**
-     * Property strategy: Deployment strategy.
+     * Property strategy: The deployment strategy.
      * <p>
-     * Ranges:
-     * Availability: High availability strategy.
-     * AvailabilityGroup: Deployment group high availability strategy.
-     * LowLatency: Network low latency strategy.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Availability: A high availability strategy.</li>
+     * <li>AvailabilityGroup: A high availability strategy for a deployment set group.</li>
+     * <li>LowLatency: A low-latency strategy.
+     * Default value: Availability.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStrategy() {
         return null;
@@ -161,12 +169,16 @@ public interface DeploymentSetProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DeploymentSetProps#getOnUnableToRedeployFailedInstance}
-         * @param onUnableToRedeployFailedInstance Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set.
+         * @param onUnableToRedeployFailedInstance Property onUnableToRedeployFailedInstance: The policy to use when an instance fails over but cannot be redeployed due to insufficient resources.
          *                                         Valid values:
-         *                                         CancelMembershipAndStart: restarts the instances immediately after they are shut down
-         *                                         and migrated to other deployment sets. This is the default value.
-         *                                         KeepStopped: keeps the instances shut down and restarts them after the deployment
-         *                                         set is replenished.
+         *                                         <p>
+         *                                         <ul>
+         *                                         <li>CancelMembershipAndStart: Removes the instance from the deployment set and
+         *                                         starts the instance immediately after failover.</li>
+         *                                         <li>KeepStopped: Keeps the instance's deployment set membership and leaves it in
+         *                                         the Stopped state.
+         *                                         Default value: CancelMembershipAndStart.</li>
+         *                                         </ul>
          * @return {@code this}
          */
         public Builder onUnableToRedeployFailedInstance(java.lang.String onUnableToRedeployFailedInstance) {
@@ -176,12 +188,16 @@ public interface DeploymentSetProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DeploymentSetProps#getOnUnableToRedeployFailedInstance}
-         * @param onUnableToRedeployFailedInstance Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set.
+         * @param onUnableToRedeployFailedInstance Property onUnableToRedeployFailedInstance: The policy to use when an instance fails over but cannot be redeployed due to insufficient resources.
          *                                         Valid values:
-         *                                         CancelMembershipAndStart: restarts the instances immediately after they are shut down
-         *                                         and migrated to other deployment sets. This is the default value.
-         *                                         KeepStopped: keeps the instances shut down and restarts them after the deployment
-         *                                         set is replenished.
+         *                                         <p>
+         *                                         <ul>
+         *                                         <li>CancelMembershipAndStart: Removes the instance from the deployment set and
+         *                                         starts the instance immediately after failover.</li>
+         *                                         <li>KeepStopped: Keeps the instance's deployment set membership and leaves it in
+         *                                         the Stopped state.
+         *                                         Default value: CancelMembershipAndStart.</li>
+         *                                         </ul>
          * @return {@code this}
          */
         public Builder onUnableToRedeployFailedInstance(com.aliyun.ros.cdk.core.IResolvable onUnableToRedeployFailedInstance) {
@@ -191,11 +207,15 @@ public interface DeploymentSetProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DeploymentSetProps#getStrategy}
-         * @param strategy Property strategy: Deployment strategy.
-         *                 Ranges:
-         *                 Availability: High availability strategy.
-         *                 AvailabilityGroup: Deployment group high availability strategy.
-         *                 LowLatency: Network low latency strategy.
+         * @param strategy Property strategy: The deployment strategy.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>Availability: A high availability strategy.</li>
+         *                 <li>AvailabilityGroup: A high availability strategy for a deployment set group.</li>
+         *                 <li>LowLatency: A low-latency strategy.
+         *                 Default value: Availability.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder strategy(java.lang.String strategy) {
@@ -205,11 +225,15 @@ public interface DeploymentSetProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DeploymentSetProps#getStrategy}
-         * @param strategy Property strategy: Deployment strategy.
-         *                 Ranges:
-         *                 Availability: High availability strategy.
-         *                 AvailabilityGroup: Deployment group high availability strategy.
-         *                 LowLatency: Network low latency strategy.
+         * @param strategy Property strategy: The deployment strategy.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>Availability: A high availability strategy.</li>
+         *                 <li>AvailabilityGroup: A high availability strategy for a deployment set group.</li>
+         *                 <li>LowLatency: A low-latency strategy.
+         *                 Default value: Availability.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder strategy(com.aliyun.ros.cdk.core.IResolvable strategy) {

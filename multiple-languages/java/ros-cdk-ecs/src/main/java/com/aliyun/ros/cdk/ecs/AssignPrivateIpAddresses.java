@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::AssignPrivateIpAddresses</code>, which is used to assign secondary private IP addresses to an elastic network interface (ENI).
- * <p>
- * You can specify available private IP addresses within the CIDR block of the vSwitch that is associated with the ENI. Alternatively, you can specify a number to have the specified number of private IP addresses automatically assigned to the ENI.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::AssignPrivateIpAddresses</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.815Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.165Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AssignPrivateIpAddresses")
 public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IAssignPrivateIpAddresses {
 
@@ -143,20 +141,40 @@ public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource i
         }
 
         /**
-         * Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+         * Property ipv4PrefixCount: The number of IPv4 prefixes to be randomly generated for the ENI.
+         * <p>
+         * Valid values: 1
+         * to 10.
+         * <p>
+         * <blockquote>
+         * <p>
+         * To assign IPv4 prefixes to the ENI, you must specify the Ipv4Prefix.N or
+         * Ipv4PrefixCount parameter, but not both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param ipv4PrefixCount Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI. This parameter is required.
+         * @param ipv4PrefixCount Property ipv4PrefixCount: The number of IPv4 prefixes to be randomly generated for the ENI. This parameter is required.
          */
         public Builder ipv4PrefixCount(final java.lang.Number ipv4PrefixCount) {
             this.props.ipv4PrefixCount(ipv4PrefixCount);
             return this;
         }
         /**
-         * Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+         * Property ipv4PrefixCount: The number of IPv4 prefixes to be randomly generated for the ENI.
+         * <p>
+         * Valid values: 1
+         * to 10.
+         * <p>
+         * <blockquote>
+         * <p>
+         * To assign IPv4 prefixes to the ENI, you must specify the Ipv4Prefix.N or
+         * Ipv4PrefixCount parameter, but not both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param ipv4PrefixCount Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI. This parameter is required.
+         * @param ipv4PrefixCount Property ipv4PrefixCount: The number of IPv4 prefixes to be randomly generated for the ENI. This parameter is required.
          */
         public Builder ipv4PrefixCount(final com.aliyun.ros.cdk.core.IResolvable ipv4PrefixCount) {
             this.props.ipv4PrefixCount(ipv4PrefixCount);
@@ -218,20 +236,26 @@ public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource i
         }
 
         /**
-         * Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
+         * Property secondaryPrivateIpAddressCount: The number of private IP addresses to be automatically assigned from the CIDR block of the vSwitch that is connected to the ENI.
+         * <p>
+         * To assign secondary private IP addresses to the ENI, you must specify
+         * <code>PrivateIpAddress.N</code> or <code>SecondaryPrivateIpAddressCount</code> but not both.
          * <p>
          * @return {@code this}
-         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance. This parameter is required.
+         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The number of private IP addresses to be automatically assigned from the CIDR block of the vSwitch that is connected to the ENI. This parameter is required.
          */
         public Builder secondaryPrivateIpAddressCount(final java.lang.Number secondaryPrivateIpAddressCount) {
             this.props.secondaryPrivateIpAddressCount(secondaryPrivateIpAddressCount);
             return this;
         }
         /**
-         * Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
+         * Property secondaryPrivateIpAddressCount: The number of private IP addresses to be automatically assigned from the CIDR block of the vSwitch that is connected to the ENI.
+         * <p>
+         * To assign secondary private IP addresses to the ENI, you must specify
+         * <code>PrivateIpAddress.N</code> or <code>SecondaryPrivateIpAddressCount</code> but not both.
          * <p>
          * @return {@code this}
-         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance. This parameter is required.
+         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The number of private IP addresses to be automatically assigned from the CIDR block of the vSwitch that is connected to the ENI. This parameter is required.
          */
         public Builder secondaryPrivateIpAddressCount(final com.aliyun.ros.cdk.core.IResolvable secondaryPrivateIpAddressCount) {
             this.props.secondaryPrivateIpAddressCount(secondaryPrivateIpAddressCount);

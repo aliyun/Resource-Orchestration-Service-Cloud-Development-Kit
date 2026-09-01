@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ens
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`, which is used to create a pay-as-you-go or subscription data disk.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Disk` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-disk
@@ -229,9 +229,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: encrypted: Specifies whether to encrypt the new system disk. Valid values:
-        /// true
-        /// false (default): no
+        /// <strong>Property</strong>: encrypted: Specifies whether to encrypt the disk. Valid values:
+        /// - true
+        /// - false (default)
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -5,13 +5,13 @@ package com.aliyun.ros.cdk.eci;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-imagecache
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:35:20.504Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:35:35.451Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.ImageCacheProps")
 @software.amazon.jsii.Jsii.Proxy(ImageCacheProps.Jsii$Proxy.class)
 public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property image: The image list to be cached.
+     * Property image: The container images used to create the image cache.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getImage();
 
@@ -26,12 +26,15 @@ public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getSecurityGroupId();
 
     /**
-     * Property vSwitchId: VSwitch ID.
+     * Property vSwitchId: The ID of the vSwitch.
+     * <p>
+     * You can specify up to 10 vSwitch IDs, separated by commas
+     * (,). For example, <code>vsw-*,vsw-*</code>.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
     /**
-     * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     * Property acrRegistryInfo: The information about the ACR instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAcrRegistryInfo() {
         return null;
@@ -67,9 +70,7 @@ public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property imageRegistryCredential: Private image password.
-     * <p>
-     * Alibaba Cloud ACR image can be left blank.
+     * Property imageRegistryCredential: The credentials of the image repository.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getImageRegistryCredential() {
         return null;
@@ -125,7 +126,7 @@ public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ImageCacheProps#getImage}
-         * @param image Property image: The image list to be cached. This parameter is required.
+         * @param image Property image: The container images used to create the image cache. This parameter is required.
          * @return {@code this}
          */
         public Builder image(com.aliyun.ros.cdk.core.IResolvable image) {
@@ -135,7 +136,7 @@ public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ImageCacheProps#getImage}
-         * @param image Property image: The image list to be cached. This parameter is required.
+         * @param image Property image: The container images used to create the image cache. This parameter is required.
          * @return {@code this}
          */
         public Builder image(java.util.List<? extends java.lang.Object> image) {
@@ -185,7 +186,9 @@ public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ImageCacheProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: VSwitch ID. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch. This parameter is required.
+         *                  You can specify up to 10 vSwitch IDs, separated by commas
+         *                  (,). For example, <code>vsw-*,vsw-*</code>.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -195,7 +198,9 @@ public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ImageCacheProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: VSwitch ID. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch. This parameter is required.
+         *                  You can specify up to 10 vSwitch IDs, separated by commas
+         *                  (,). For example, <code>vsw-*,vsw-*</code>.
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
@@ -205,7 +210,7 @@ public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ImageCacheProps#getAcrRegistryInfo}
-         * @param acrRegistryInfo Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+         * @param acrRegistryInfo Property acrRegistryInfo: The information about the ACR instance.
          * @return {@code this}
          */
         public Builder acrRegistryInfo(com.aliyun.ros.cdk.core.IResolvable acrRegistryInfo) {
@@ -215,7 +220,7 @@ public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ImageCacheProps#getAcrRegistryInfo}
-         * @param acrRegistryInfo Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+         * @param acrRegistryInfo Property acrRegistryInfo: The information about the ACR instance.
          * @return {@code this}
          */
         public Builder acrRegistryInfo(java.util.List<? extends java.lang.Object> acrRegistryInfo) {
@@ -297,8 +302,7 @@ public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ImageCacheProps#getImageRegistryCredential}
-         * @param imageRegistryCredential Property imageRegistryCredential: Private image password.
-         *                                Alibaba Cloud ACR image can be left blank.
+         * @param imageRegistryCredential Property imageRegistryCredential: The credentials of the image repository.
          * @return {@code this}
          */
         public Builder imageRegistryCredential(com.aliyun.ros.cdk.core.IResolvable imageRegistryCredential) {
@@ -308,8 +312,7 @@ public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ImageCacheProps#getImageRegistryCredential}
-         * @param imageRegistryCredential Property imageRegistryCredential: Private image password.
-         *                                Alibaba Cloud ACR image can be left blank.
+         * @param imageRegistryCredential Property imageRegistryCredential: The credentials of the image repository.
          * @return {@code this}
          */
         public Builder imageRegistryCredential(java.util.List<? extends java.lang.Object> imageRegistryCredential) {

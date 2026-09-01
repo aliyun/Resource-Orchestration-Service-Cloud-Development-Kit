@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::DBResourceGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:13:37.710Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:21:33.426Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.DBResourceGroup")
 public class DBResourceGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.gpdb.IDBResourceGroup {
 

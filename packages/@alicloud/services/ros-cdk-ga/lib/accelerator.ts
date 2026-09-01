@@ -25,9 +25,24 @@ export interface AcceleratorProps {
     readonly autoUseCoupon?: string | ros.IResolvable;
 
     /**
+     * Property bandwidth: The bandwidth of the global acceleration instance. Unit: Mbps. Valid values: 200 to 5000. This parameter is required when the access mode is set to Anycast.
+     */
+    readonly bandwidth?: number | ros.IResolvable;
+
+    /**
      * Property bandwidthBillingType: Bandwidth billing method.
      */
     readonly bandwidthBillingType?: string | ros.IResolvable;
+
+    /**
+     * Property crossBorderMode: The cross-border mode of the global acceleration instance.
+     */
+    readonly crossBorderMode?: string | ros.IResolvable;
+
+    /**
+     * Property ddosConfigList: The DDoS configuration list of the global acceleration instance.
+     */
+    readonly ddosConfigList?: Array<RosAccelerator.DdosConfigListProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property duration: Length of purchase.
@@ -63,6 +78,11 @@ export interface AcceleratorProps {
      * Property spec: Specifications of Global Acceleration Instances.
      */
     readonly spec?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to acceleration instance. Max support 20 tags to add during create acceleration instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosAccelerator.TagsProperty[];
 }
 
 /**
@@ -122,7 +142,7 @@ export interface IAccelerator extends ros.IResource {
     readonly attrSpec: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GA::Accelerator`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::Accelerator`, which is used to create a Global Accelerator (GA) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccelerator`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
  */
@@ -195,17 +215,21 @@ export class Accelerator extends ros.Resource implements IAccelerator {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccelerator = new RosAccelerator(this, id,  {
-            bandwidthBillingType: props.bandwidthBillingType,
-            acceleratorName: props.acceleratorName,
             resourceGroupId: props.resourceGroupId,
-            autoUseCoupon: props.autoUseCoupon,
             pricingCycle: props.pricingCycle,
             instanceChargeType: props.instanceChargeType,
-            enableCrossBorder: props.enableCrossBorder === undefined || props.enableCrossBorder === null ? false : props.enableCrossBorder,
             duration: props.duration,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             ipSetConfig: props.ipSetConfig,
+            crossBorderMode: props.crossBorderMode,
+            bandwidthBillingType: props.bandwidthBillingType,
+            acceleratorName: props.acceleratorName,
+            autoUseCoupon: props.autoUseCoupon,
+            enableCrossBorder: props.enableCrossBorder === undefined || props.enableCrossBorder === null ? false : props.enableCrossBorder,
+            bandwidth: props.bandwidth,
             spec: props.spec,
+            ddosConfigList: props.ddosConfigList,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccelerator;
         this.attrAcceleratorId = rosAccelerator.attrAcceleratorId;

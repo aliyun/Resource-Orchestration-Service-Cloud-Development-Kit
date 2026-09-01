@@ -5,15 +5,26 @@ package com.aliyun.ros.cdk.mps;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-transcodejob
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:55:13.170Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:11:47.237Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.TranscodeJobProps")
 @software.amazon.jsii.Jsii.Proxy(TranscodeJobProps.Jsii$Proxy.class)
 public interface TranscodeJobProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property input: The input configuration of the job.
+     * Property input: Job input.
      * <p>
-     * For more information, see Input details.
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>In ApsaraVideo Media Processing APIs, the Object value must be URL-encoded
+     * using UTF-8 encoding.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
+     * <p>
+     * <ul>
+     * <li>The OSS region must match the region where MPS is deployed.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInput();
 
@@ -35,7 +46,13 @@ public interface TranscodeJobProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getPipelineId();
 
     /**
-     * Property outputLocation: The region of the OSS bucket where the output files are stored.
+     * Property outputLocation: The OSS region (OSS Region) where the output bucket resides.
+     * <p>
+     * <ul>
+     * <li>The OSS bucket must be in the same region as the ApsaraVideo Media Processing
+     * service.</li>
+     * <li>Follows the OSS bucket definition.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOutputLocation() {
         return null;
@@ -59,8 +76,19 @@ public interface TranscodeJobProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link TranscodeJobProps#getInput}
-         * @param input Property input: The input configuration of the job. This parameter is required.
-         *              For more information, see Input details.
+         * @param input Property input: Job input. This parameter is required.
+         *              <blockquote>
+         *              <p>
+         *              <ul>
+         *              <li>In ApsaraVideo Media Processing APIs, the Object value must be URL-encoded
+         *              using UTF-8 encoding.</li>
+         *              </ul>
+         *              <p>
+         *              </blockquote>
+         *              <p>
+         *              <ul>
+         *              <li>The OSS region must match the region where MPS is deployed.</li>
+         *              </ul>
          * @return {@code this}
          */
         public Builder input(com.aliyun.ros.cdk.core.IResolvable input) {
@@ -70,8 +98,19 @@ public interface TranscodeJobProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link TranscodeJobProps#getInput}
-         * @param input Property input: The input configuration of the job. This parameter is required.
-         *              For more information, see Input details.
+         * @param input Property input: Job input. This parameter is required.
+         *              <blockquote>
+         *              <p>
+         *              <ul>
+         *              <li>In ApsaraVideo Media Processing APIs, the Object value must be URL-encoded
+         *              using UTF-8 encoding.</li>
+         *              </ul>
+         *              <p>
+         *              </blockquote>
+         *              <p>
+         *              <ul>
+         *              <li>The OSS region must match the region where MPS is deployed.</li>
+         *              </ul>
          * @return {@code this}
          */
         public Builder input(java.util.Map<java.lang.String, ? extends java.lang.Object> input) {
@@ -143,7 +182,12 @@ public interface TranscodeJobProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link TranscodeJobProps#getOutputLocation}
-         * @param outputLocation Property outputLocation: The region of the OSS bucket where the output files are stored.
+         * @param outputLocation Property outputLocation: The OSS region (OSS Region) where the output bucket resides.
+         *                       <ul>
+         *                       <li>The OSS bucket must be in the same region as the ApsaraVideo Media Processing
+         *                       service.</li>
+         *                       <li>Follows the OSS bucket definition.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder outputLocation(java.lang.String outputLocation) {
@@ -153,7 +197,12 @@ public interface TranscodeJobProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link TranscodeJobProps#getOutputLocation}
-         * @param outputLocation Property outputLocation: The region of the OSS bucket where the output files are stored.
+         * @param outputLocation Property outputLocation: The OSS region (OSS Region) where the output bucket resides.
+         *                       <ul>
+         *                       <li>The OSS bucket must be in the same region as the ApsaraVideo Media Processing
+         *                       service.</li>
+         *                       <li>Follows the OSS bucket definition.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder outputLocation(com.aliyun.ros.cdk.core.IResolvable outputLocation) {

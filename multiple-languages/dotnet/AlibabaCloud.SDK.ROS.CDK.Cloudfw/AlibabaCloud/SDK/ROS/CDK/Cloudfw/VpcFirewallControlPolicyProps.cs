@@ -622,11 +622,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 
         private object? _lang;
 
-        /// <summary>Property lang: The natural language of the request and response.</summary>
+        /// <summary>Property lang: The language of the request and response.</summary>
         /// <remarks>
         /// Valid values:
-        /// zh: Chinese
-        /// en: English
+        ///
+        /// <list type="bullet">
+        /// <description>zh (default): Chinese</description>
+        /// <description>en: English</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "lang", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -16,7 +16,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         private object _applicationType;
 
         /// <remarks>
-        /// <strong>Property</strong>: applicationType: The type of the application. This parameter is required.
+        /// <strong>Property</strong>: applicationType: The type of the application. Valid values:
+        /// - supabase: Creates a managed Supabase application.
+        /// - raycluster: Creates a managed Ray Cluster application.
+        /// - polarclaw: Creates a managed PolarClaw application.
         /// </remarks>
         [JsiiProperty(name: "applicationType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ApplicationType
@@ -112,7 +115,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         private object? _autoCreatePolarFs;
 
         /// <remarks>
-        /// <strong>Property</strong>: autoCreatePolarFs: Whether to auto create PolarFS.
+        /// <strong>Property</strong>: autoCreatePolarFs: Specifies whether to automatically create a PolarFS cold storage instance. Valid
+        /// values:
+        /// - false (default): Does not automatically create the instance.
+        /// - true: Automatically creates the instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoCreatePolarFs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -145,7 +151,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         private object? _components;
 
         /// <remarks>
-        /// <strong>Property</strong>: components: The list of components.
+        /// <strong>Property</strong>: components: A list of custom child components for the application.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "components", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-polardb.RosApplication.ComponentsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -263,7 +269,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         private object? _period;
 
         /// <remarks>
-        /// <strong>Property</strong>: period: The period of the application.
+        /// <strong>Property</strong>: period: The subscription period type.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -316,7 +322,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         private object? _polarFsInstanceId;
 
         /// <remarks>
-        /// <strong>Property</strong>: polarFsInstanceId: The ID of the PolarFS instance.
+        /// <strong>Property</strong>: polarFsInstanceId: The ID of the PolarFileSystem (PolarFS) cold storage or high-performance
+        /// instance. This parameter is empty by default. If you specify this parameter, the
+        /// corresponding storage is mounted to the application.
+        /// This feature is currently supported only by the following applications:
+        /// - supabase
+        /// - raycluster
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "polarFsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -382,7 +393,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         private object? _securityIpList;
 
         /// <remarks>
-        /// <strong>Property</strong>: securityIpList: The security IP list of the component.
+        /// <strong>Property</strong>: securityIpList: The IP address whitelist. If you do not specify this parameter, the default value
+        /// `127.0.0.1` is used.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -448,7 +460,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         private object? _vSwitchId;
 
         /// <remarks>
-        /// <strong>Property</strong>: vSwitchId: The ID of the VSwitch.
+        /// <strong>Property</strong>: vSwitchId: The vSwitch. The default value is the current vSwitch in the primary zone of the
+        /// instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -481,7 +494,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         private object? _zoneId;
 
         /// <remarks>
-        /// <strong>Property</strong>: zoneId: The ID of the zone.
+        /// <strong>Property</strong>: zoneId: The zone. The default value is the primary zone of the instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

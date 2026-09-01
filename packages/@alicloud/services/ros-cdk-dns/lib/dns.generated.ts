@@ -519,7 +519,9 @@ export interface RosAddressPoolProps {
     readonly instanceId: string | ros.IResolvable;
 
     /**
-     * @Property lbaStrategy: The load balancing strategy. Valid values: RoundRobin, Weighted, FallbackToFirst.
+     * @Property lbaStrategy: The load balancing policy. Valid values:
+     * - ALL_RR: returns all addresses.
+     * - RATIO: returns addresses by weight.
      */
     readonly lbaStrategy: string | ros.IResolvable;
 
@@ -529,7 +531,10 @@ export interface RosAddressPoolProps {
     readonly name: string | ros.IResolvable;
 
     /**
-     * @Property type: The type of the address pool. Valid values: Ipv4, Ipv6, Domain.
+     * @Property type: The type of the address pool. Valid values:
+     * - IPV4: IPv4 address
+     * - IPV6: IPv6 address
+     * - DOMAIN: domain name
      */
     readonly type: string | ros.IResolvable;
 
@@ -549,12 +554,47 @@ export interface RosAddressPoolProps {
     readonly ispCityNode?: Array<RosAddressPool.IspCityNodeProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property monitorExtendInfo: The extended information of the health check.
+     * @Property monitorExtendInfo: The extended information. This parameter is a JSON string. The required
+     * parameters vary based on the health check protocol:
+     * - HTTP and HTTPS:
+     * - port: The health check port.
+     * - host: The host settings.
+     * - path: The URL path.
+     * - code: The return code. A response with a status code greater than this value is
+     * considered abnormal. Valid values: 400 and 500.
+     * - failureRate: The failure rate.
+     * - sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+     * is available only for the HTTPS protocol.
+     * - true: Enable SNI.
+     * - Other values: Disable SNI.
+     * - nodeType: The type of the health check node when the address pool type is
+     * DOMAIN. Valid values:
+     * - IPV4
+     * - IPV6
+     * - PING:
+     * - failureRate: The failure rate.
+     * - packetNum: The number of ping packets.
+     * - packetLossRate: The packet loss rate.
+     * - nodeType: The type of the health check node when the address pool type is
+     * DOMAIN. Valid values:
+     * - IPV4
+     * - IPV6
+     * - TCP:
+     * - port: The health check port.
+     * - failureRate: The failure rate.
+     * - nodeType: The type of the health check node when the address pool type is
+     * DOMAIN. Valid values:
+     * - IPV4
+     * - IPV6
      */
     readonly monitorExtendInfo?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property monitorStatus: The monitoring status of the address pool.
+     * @Property monitorStatus: The status of the health check feature. Default value: CLOSE. If you set this
+     * parameter to OPEN, the health check configuration is verified. Otherwise, the
+     * configuration is ignored.
+     * - OPEN: enabled
+     * - CLOSE: disabled
      */
     readonly monitorStatus?: string | ros.IResolvable;
 
@@ -717,7 +757,9 @@ export class RosAddressPool extends ros.RosResource {
     public instanceId: string | ros.IResolvable;
 
     /**
-     * @Property lbaStrategy: The load balancing strategy. Valid values: RoundRobin, Weighted, FallbackToFirst.
+     * @Property lbaStrategy: The load balancing policy. Valid values:
+     * - ALL_RR: returns all addresses.
+     * - RATIO: returns addresses by weight.
      */
     public lbaStrategy: string | ros.IResolvable;
 
@@ -727,7 +769,10 @@ export class RosAddressPool extends ros.RosResource {
     public name: string | ros.IResolvable;
 
     /**
-     * @Property type: The type of the address pool. Valid values: Ipv4, Ipv6, Domain.
+     * @Property type: The type of the address pool. Valid values:
+     * - IPV4: IPv4 address
+     * - IPV6: IPv6 address
+     * - DOMAIN: domain name
      */
     public type: string | ros.IResolvable;
 
@@ -747,12 +792,47 @@ export class RosAddressPool extends ros.RosResource {
     public ispCityNode: Array<RosAddressPool.IspCityNodeProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property monitorExtendInfo: The extended information of the health check.
+     * @Property monitorExtendInfo: The extended information. This parameter is a JSON string. The required
+     * parameters vary based on the health check protocol:
+     * - HTTP and HTTPS:
+     * - port: The health check port.
+     * - host: The host settings.
+     * - path: The URL path.
+     * - code: The return code. A response with a status code greater than this value is
+     * considered abnormal. Valid values: 400 and 500.
+     * - failureRate: The failure rate.
+     * - sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+     * is available only for the HTTPS protocol.
+     * - true: Enable SNI.
+     * - Other values: Disable SNI.
+     * - nodeType: The type of the health check node when the address pool type is
+     * DOMAIN. Valid values:
+     * - IPV4
+     * - IPV6
+     * - PING:
+     * - failureRate: The failure rate.
+     * - packetNum: The number of ping packets.
+     * - packetLossRate: The packet loss rate.
+     * - nodeType: The type of the health check node when the address pool type is
+     * DOMAIN. Valid values:
+     * - IPV4
+     * - IPV6
+     * - TCP:
+     * - port: The health check port.
+     * - failureRate: The failure rate.
+     * - nodeType: The type of the health check node when the address pool type is
+     * DOMAIN. Valid values:
+     * - IPV4
+     * - IPV6
      */
     public monitorExtendInfo: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
-     * @Property monitorStatus: The monitoring status of the address pool.
+     * @Property monitorStatus: The status of the health check feature. Default value: CLOSE. If you set this
+     * parameter to OPEN, the health check configuration is verified. Otherwise, the
+     * configuration is ignored.
+     * - OPEN: enabled
+     * - CLOSE: disabled
      */
     public monitorStatus: string | ros.IResolvable | undefined;
 
@@ -970,7 +1050,8 @@ export interface RosCacheDomainProps {
     readonly sourceEdns: string | ros.IResolvable;
 
     /**
-     * @Property sourceProtocol: The protocol used by the source DNS server.
+     * @Property sourceProtocol: The protocol used for origin fetch. Valid values: TCP and UDP. The default value
+     * is UDP.
      */
     readonly sourceProtocol: string | ros.IResolvable;
 
@@ -1116,7 +1197,8 @@ export class RosCacheDomain extends ros.RosResource {
     public sourceEdns: string | ros.IResolvable;
 
     /**
-     * @Property sourceProtocol: The protocol used by the source DNS server.
+     * @Property sourceProtocol: The protocol used for origin fetch. Valid values: TCP and UDP. The default value
+     * is UDP.
      */
     public sourceProtocol: string | ros.IResolvable;
 
@@ -1401,7 +1483,9 @@ export interface RosDomainProps {
     readonly domainName: string | ros.IResolvable;
 
     /**
-     * @Property groupId: Domain name grouping, the default is the "default grouping" GroupId
+     * @Property groupId: The ID of the domain name group. If you do not specify this parameter, pass an
+     * empty string, or pass defaultGroup, the domain name is added to the default
+     * group. You can call the AddDomainGroup operation to obtain the group ID.
      */
     readonly groupId?: string | ros.IResolvable;
 
@@ -1463,7 +1547,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::Domain`, which is used to add a domain name.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::Domain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domain
  */
@@ -1517,7 +1601,9 @@ export class RosDomain extends ros.RosResource {
     public domainName: string | ros.IResolvable;
 
     /**
-     * @Property groupId: Domain name grouping, the default is the "default grouping" GroupId
+     * @Property groupId: The ID of the domain name group. If you do not specify this parameter, pass an
+     * empty string, or pass defaultGroup, the domain name is added to the default
+     * group. You can call the AddDomainGroup operation to obtain the group ID.
      */
     public groupId: string | ros.IResolvable | undefined;
 
@@ -1770,7 +1856,7 @@ function rosDomainGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::DomainGroup`, which is used to add a domain name group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::DomainGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domaingroup
  */
@@ -1829,7 +1915,8 @@ export interface RosDomainRecordProps {
     readonly domainName: string | ros.IResolvable;
 
     /**
-     * @Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
+     * @Property rr: The host record.
+     * To resolve example.com, set the host record to "@" instead of leaving it empty.
      */
     readonly rr: string | ros.IResolvable;
 
@@ -1849,12 +1936,15 @@ export interface RosDomainRecordProps {
     readonly line?: string | ros.IResolvable;
 
     /**
-     * @Property priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be
+     * @Property priority: The priority of the MX record. Valid values: `[1,50]`.
+     * This parameter is required if the record type is MX. A smaller value indicates a
+     * higher priority.
      */
     readonly priority?: number | ros.IResolvable;
 
     /**
-     * @Property ttl: The resolution time is valid. The default is 600 seconds (10 minutes). See the TTL definition.
+     * @Property ttl: The time to live (TTL) value of the Domain Name System (DNS) record. Default
+     * value: 600. Unit: seconds.
      */
     readonly ttl?: number | ros.IResolvable;
 }
@@ -1886,6 +1976,13 @@ function RosDomainRecordPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
     errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
     errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    if(properties.ttl && (typeof properties.ttl) !== 'object') {
+        errors.collect(ros.propertyValidator('ttl', ros.validateRange)({
+            data: properties.ttl,
+            min: 1,
+            max: 86400,
+          }));
+    }
     errors.collect(ros.propertyValidator('ttl', ros.validateNumber)(properties.ttl));
     return errors.wrap('supplied properties not correct for "RosDomainRecordProps"');
 }
@@ -1915,7 +2012,7 @@ function rosDomainRecordPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::DomainRecord`, which is used to add a Domain Name System (DNS) record.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::DomainRecord`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainRecord` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domainrecord
  */
@@ -1939,7 +2036,8 @@ export class RosDomainRecord extends ros.RosResource {
     public domainName: string | ros.IResolvable;
 
     /**
-     * @Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
+     * @Property rr: The host record.
+     * To resolve example.com, set the host record to "@" instead of leaving it empty.
      */
     public rr: string | ros.IResolvable;
 
@@ -1959,12 +2057,15 @@ export class RosDomainRecord extends ros.RosResource {
     public line: string | ros.IResolvable | undefined;
 
     /**
-     * @Property priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be
+     * @Property priority: The priority of the MX record. Valid values: `[1,50]`.
+     * This parameter is required if the record type is MX. A smaller value indicates a
+     * higher priority.
      */
     public priority: number | ros.IResolvable | undefined;
 
     /**
-     * @Property ttl: The resolution time is valid. The default is 600 seconds (10 minutes). See the TTL definition.
+     * @Property ttl: The time to live (TTL) value of the Domain Name System (DNS) record. Default
+     * value: 600. Unit: seconds.
      */
     public ttl: number | ros.IResolvable | undefined;
 
@@ -2162,7 +2263,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::Instance`, which is used to create an Alibaba Cloud DNS instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-instance
  */
@@ -2291,7 +2392,7 @@ export interface RosMonitorConfigProps {
     readonly evaluationCount: number | ros.IResolvable;
 
     /**
-     * @Property interval: The interval of the monitor.
+     * @Property interval: The health check interval. Unit: seconds.
      */
     readonly interval: number | ros.IResolvable;
 
@@ -2301,17 +2402,52 @@ export interface RosMonitorConfigProps {
     readonly ispCityNode: Array<RosMonitorConfig.IspCityNodeProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property monitorExtendInfo: The extend info of the monitor.
+     * @Property monitorExtendInfo: The extended information. The parameters vary based on the protocol type.
+     * - HTTP or HTTPS
+     * - port: The health check port.
+     * - host: The Host header.
+     * - path: The URL path.
+     * - code: The health check is considered abnormal if the returned HTTP status code
+     * is greater than this value.
+     * - failureRate: The failure rate.
+     * - sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+     * is used only when the health check protocol is HTTPS. Valid values:
+     * - true
+     * - false
+     * - nodeType: The type of the monitoring node. This parameter is used when the
+     * address pool type is DOMAIN. Valid values:
+     * - IPV4
+     * - IPV6
+     * - PING
+     * - failureRate: The failure rate.
+     * - packetNum: The number of ping packets.
+     * - packetLossRate: The packet loss rate.
+     * - nodeType: The type of the monitoring node. This parameter is used when the
+     * address pool type is DOMAIN. Valid values:
+     * - IPV4
+     * - IPV6
+     * - TCP
+     * - port: The health check port.
+     * - failureRate: The failure rate.
+     * - nodeType: The type of the monitoring node. This parameter is used when the
+     * address pool type is DOMAIN. Valid values:
+     * - IPV4
+     * - IPV6
+     * > This parameter must be a JSON string.
      */
     readonly monitorExtendInfo: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property protocolType: The protocol type of the monitor.
+     * @Property protocolType: The health check protocol. Valid values:
+     * - HTTP
+     * - HTTPS
+     * - PING
+     * - TCP
      */
     readonly protocolType: string | ros.IResolvable;
 
     /**
-     * @Property timeout: The timeout of the monitor.
+     * @Property timeout: The timeout period. Unit: milliseconds.
      */
     readonly timeout: number | ros.IResolvable;
 }
@@ -2425,7 +2561,7 @@ export class RosMonitorConfig extends ros.RosResource {
     public evaluationCount: number | ros.IResolvable;
 
     /**
-     * @Property interval: The interval of the monitor.
+     * @Property interval: The health check interval. Unit: seconds.
      */
     public interval: number | ros.IResolvable;
 
@@ -2435,17 +2571,52 @@ export class RosMonitorConfig extends ros.RosResource {
     public ispCityNode: Array<RosMonitorConfig.IspCityNodeProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property monitorExtendInfo: The extend info of the monitor.
+     * @Property monitorExtendInfo: The extended information. The parameters vary based on the protocol type.
+     * - HTTP or HTTPS
+     * - port: The health check port.
+     * - host: The Host header.
+     * - path: The URL path.
+     * - code: The health check is considered abnormal if the returned HTTP status code
+     * is greater than this value.
+     * - failureRate: The failure rate.
+     * - sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+     * is used only when the health check protocol is HTTPS. Valid values:
+     * - true
+     * - false
+     * - nodeType: The type of the monitoring node. This parameter is used when the
+     * address pool type is DOMAIN. Valid values:
+     * - IPV4
+     * - IPV6
+     * - PING
+     * - failureRate: The failure rate.
+     * - packetNum: The number of ping packets.
+     * - packetLossRate: The packet loss rate.
+     * - nodeType: The type of the monitoring node. This parameter is used when the
+     * address pool type is DOMAIN. Valid values:
+     * - IPV4
+     * - IPV6
+     * - TCP
+     * - port: The health check port.
+     * - failureRate: The failure rate.
+     * - nodeType: The type of the monitoring node. This parameter is used when the
+     * address pool type is DOMAIN. Valid values:
+     * - IPV4
+     * - IPV6
+     * > This parameter must be a JSON string.
      */
     public monitorExtendInfo: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property protocolType: The protocol type of the monitor.
+     * @Property protocolType: The health check protocol. Valid values:
+     * - HTTP
+     * - HTTPS
+     * - PING
+     * - TCP
      */
     public protocolType: string | ros.IResolvable;
 
     /**
-     * @Property timeout: The timeout of the monitor.
+     * @Property timeout: The timeout period. Unit: milliseconds.
      */
     public timeout: number | ros.IResolvable;
 

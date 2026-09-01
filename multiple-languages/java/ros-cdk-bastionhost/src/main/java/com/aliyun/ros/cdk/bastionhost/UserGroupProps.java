@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.bastionhost;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-usergroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:35:53.540Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:18:29.243Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.UserGroupProps")
 @software.amazon.jsii.Jsii.Proxy(UserGroupProps.Jsii$Proxy.class)
 public interface UserGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,12 +16,18 @@ public interface UserGroupProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
     /**
-     * Property userGroupName: The name of the user group.
+     * Property userGroupName: The name of the user group that you want to create.
+     * <p>
+     * This name can be a up to 128
+     * characters in length.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getUserGroupName();
 
     /**
-     * Property comment: The comment of the user group.
+     * Property comment: The description of the user group.
+     * <p>
+     * The description can be up to 500 characters in
+     * length.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getComment() {
         return null;
@@ -63,7 +69,9 @@ public interface UserGroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link UserGroupProps#getUserGroupName}
-         * @param userGroupName Property userGroupName: The name of the user group. This parameter is required.
+         * @param userGroupName Property userGroupName: The name of the user group that you want to create. This parameter is required.
+         *                      This name can be a up to 128
+         *                      characters in length.
          * @return {@code this}
          */
         public Builder userGroupName(java.lang.String userGroupName) {
@@ -73,7 +81,9 @@ public interface UserGroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link UserGroupProps#getUserGroupName}
-         * @param userGroupName Property userGroupName: The name of the user group. This parameter is required.
+         * @param userGroupName Property userGroupName: The name of the user group that you want to create. This parameter is required.
+         *                      This name can be a up to 128
+         *                      characters in length.
          * @return {@code this}
          */
         public Builder userGroupName(com.aliyun.ros.cdk.core.IResolvable userGroupName) {
@@ -83,7 +93,9 @@ public interface UserGroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link UserGroupProps#getComment}
-         * @param comment Property comment: The comment of the user group.
+         * @param comment Property comment: The description of the user group.
+         *                The description can be up to 500 characters in
+         *                length.
          * @return {@code this}
          */
         public Builder comment(java.lang.String comment) {
@@ -93,7 +105,9 @@ public interface UserGroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link UserGroupProps#getComment}
-         * @param comment Property comment: The comment of the user group.
+         * @param comment Property comment: The description of the user group.
+         *                The description can be up to 500 characters in
+         *                length.
          * @return {@code this}
          */
         public Builder comment(com.aliyun.ros.cdk.core.IResolvable comment) {

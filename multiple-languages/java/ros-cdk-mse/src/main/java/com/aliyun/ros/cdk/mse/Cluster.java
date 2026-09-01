@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mse;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::Cluster</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::Cluster</code>Use , which to create a cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.264Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:13:41.631Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mse.ICluster {
 
@@ -519,56 +519,40 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property instanceCount: Number of instance nodes. Range: 1~15.
+         * Property instanceCount: Number of instance nodes, with a range limit of 1 to 9.
          * <p>
          * [Professional Edition]
          * <p>
          * <ul>
-         * <li>Must be &gt;=3 and odd number.</li>
-         * </ul>
-         * <p>
-         * [Development Edition]
-         * <p>
-         * <ul>
-         * <li>Only 1 allowed.</li>
-         * </ul>
-         * <p>
+         * <li>The number of instances must be 3 or more and must be an odd number.
+         * [Developer Edition]</li>
+         * <li>The number of instances can only be 1.
          * [Serverless Edition]
-         * <p>
-         * <ul>
-         * <li>Ignore this parameter.</li>
+         * Ignore this parameter.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param instanceCount Property instanceCount: Number of instance nodes. Range: 1~15. This parameter is required.
+         * @param instanceCount Property instanceCount: Number of instance nodes, with a range limit of 1 to 9. This parameter is required.
          */
         public Builder instanceCount(final java.lang.Number instanceCount) {
             this.props.instanceCount(instanceCount);
             return this;
         }
         /**
-         * Property instanceCount: Number of instance nodes. Range: 1~15.
+         * Property instanceCount: Number of instance nodes, with a range limit of 1 to 9.
          * <p>
          * [Professional Edition]
          * <p>
          * <ul>
-         * <li>Must be &gt;=3 and odd number.</li>
-         * </ul>
-         * <p>
-         * [Development Edition]
-         * <p>
-         * <ul>
-         * <li>Only 1 allowed.</li>
-         * </ul>
-         * <p>
+         * <li>The number of instances must be 3 or more and must be an odd number.
+         * [Developer Edition]</li>
+         * <li>The number of instances can only be 1.
          * [Serverless Edition]
-         * <p>
-         * <ul>
-         * <li>Ignore this parameter.</li>
+         * Ignore this parameter.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param instanceCount Property instanceCount: Number of instance nodes. Range: 1~15. This parameter is required.
+         * @param instanceCount Property instanceCount: Number of instance nodes, with a range limit of 1 to 9. This parameter is required.
          */
         public Builder instanceCount(final com.aliyun.ros.cdk.core.IResolvable instanceCount) {
             this.props.instanceCount(instanceCount);
@@ -703,20 +687,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP).
+         * Property eipEnabled: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating whether to enable public network access (Elastic IP).
          * <p>
          * @return {@code this}
-         * @param eipEnabled Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP). This parameter is required.
+         * @param eipEnabled Property eipEnabled: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating whether to enable public network access (Elastic IP). This parameter is required.
          */
         public Builder eipEnabled(final java.lang.Boolean eipEnabled) {
             this.props.eipEnabled(eipEnabled);
             return this;
         }
         /**
-         * Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP).
+         * Property eipEnabled: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating whether to enable public network access (Elastic IP).
          * <p>
          * @return {@code this}
-         * @param eipEnabled Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP). This parameter is required.
+         * @param eipEnabled Property eipEnabled: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating whether to enable public network access (Elastic IP). This parameter is required.
          */
         public Builder eipEnabled(final com.aliyun.ros.cdk.core.IResolvable eipEnabled) {
             this.props.eipEnabled(eipEnabled);
@@ -828,20 +812,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance.
+         * Property securityGroupType: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating the security group type of the instance.
          * <p>
          * @return {@code this}
-         * @param securityGroupType Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance. This parameter is required.
+         * @param securityGroupType Property securityGroupType: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating the security group type of the instance. This parameter is required.
          */
         public Builder securityGroupType(final java.lang.String securityGroupType) {
             this.props.securityGroupType(securityGroupType);
             return this;
         }
         /**
-         * Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance.
+         * Property securityGroupType: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating the security group type of the instance.
          * <p>
          * @return {@code this}
-         * @param securityGroupType Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance. This parameter is required.
+         * @param securityGroupType Property securityGroupType: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating the security group type of the instance. This parameter is required.
          */
         public Builder securityGroupType(final com.aliyun.ros.cdk.core.IResolvable securityGroupType) {
             this.props.securityGroupType(securityGroupType);

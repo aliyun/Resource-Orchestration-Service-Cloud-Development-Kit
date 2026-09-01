@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dfs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-filesystem
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:20:44.369Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:15:26.635Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.FileSystemProps")
 @software.amazon.jsii.Jsii.Proxy(FileSystemProps.Jsii$Proxy.class)
 public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,8 +18,9 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property spaceCapacity: Capacity of the file system.
      * <p>
-     * When the actual data volume reaches the file system capacity, data cannot be written.
-     * Unit: GB
+     * When the actual storage data size reaches the file system capacity, no further
+     * data can be written.
+     * Unit: GiB
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSpaceCapacity();
 
@@ -38,11 +39,16 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
     /**
-     * Property dataRedundancyType: Redundancy mode of the file system.
+     * Property dataRedundancyType: Data redundancy mode of the file system.
      * <p>
-     * Values:
-     * LRS (default) : local redundancy.
-     * ZRS: in-city redundancy.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>LRS (default): locally redundant storage</li>
+     * <li>ZRS: zone-redundant storage. When ZRS is selected, the zoneId parameter must be
+     * a string containing a list of multiple zone IDs for zone-redundant deployment,
+     * for example, <codeph><code>zoneId1,zoneId2</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDataRedundancyType() {
         return null;
@@ -56,12 +62,16 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property fileSystemName: Name of the file system.
+     * Property fileSystemName: File system name.
      * <p>
-     * The naming rules are as follows:
-     * The value contains 6 to 100 characters.
-     * Globally unique and cannot be an empty string.
-     * The value can contain letters and digits and underscores (_).
+     * The naming convention is as follows:
+     * <p>
+     * <ul>
+     * <li>Length must be 6 to 64 characters.</li>
+     * <li>Must be globally unique and cannot be an empty string.</li>
+     * <li>Supports English letters and can contain digits, underscores (_), and hyphens
+     * (-).</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getFileSystemName() {
         return null;
@@ -75,9 +85,12 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property provisionedThroughputInMiBps: Preset handling capacity.
+     * Property provisionedThroughputInMiBps: Preset throughput.
      * <p>
-     * Unit: MB/sdata range: 1-5120
+     * This parameter is required when the ThroughputMode parameter
+     * is set to Provisioned.
+     * Unit: MB/s
+     * Valid values: 1 to 5120
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProvisionedThroughputInMiBps() {
         return null;
@@ -142,8 +155,9 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FileSystemProps#getSpaceCapacity}
          * @param spaceCapacity Property spaceCapacity: Capacity of the file system. This parameter is required.
-         *                      When the actual data volume reaches the file system capacity, data cannot be written.
-         *                      Unit: GB
+         *                      When the actual storage data size reaches the file system capacity, no further
+         *                      data can be written.
+         *                      Unit: GiB
          * @return {@code this}
          */
         public Builder spaceCapacity(java.lang.Number spaceCapacity) {
@@ -154,8 +168,9 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FileSystemProps#getSpaceCapacity}
          * @param spaceCapacity Property spaceCapacity: Capacity of the file system. This parameter is required.
-         *                      When the actual data volume reaches the file system capacity, data cannot be written.
-         *                      Unit: GB
+         *                      When the actual storage data size reaches the file system capacity, no further
+         *                      data can be written.
+         *                      Unit: GiB
          * @return {@code this}
          */
         public Builder spaceCapacity(com.aliyun.ros.cdk.core.IResolvable spaceCapacity) {
@@ -211,10 +226,15 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getDataRedundancyType}
-         * @param dataRedundancyType Property dataRedundancyType: Redundancy mode of the file system.
-         *                           Values:
-         *                           LRS (default) : local redundancy.
-         *                           ZRS: in-city redundancy.
+         * @param dataRedundancyType Property dataRedundancyType: Data redundancy mode of the file system.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>LRS (default): locally redundant storage</li>
+         *                           <li>ZRS: zone-redundant storage. When ZRS is selected, the zoneId parameter must be
+         *                           a string containing a list of multiple zone IDs for zone-redundant deployment,
+         *                           for example, <codeph><code>zoneId1,zoneId2</code>.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder dataRedundancyType(java.lang.String dataRedundancyType) {
@@ -224,10 +244,15 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getDataRedundancyType}
-         * @param dataRedundancyType Property dataRedundancyType: Redundancy mode of the file system.
-         *                           Values:
-         *                           LRS (default) : local redundancy.
-         *                           ZRS: in-city redundancy.
+         * @param dataRedundancyType Property dataRedundancyType: Data redundancy mode of the file system.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>LRS (default): locally redundant storage</li>
+         *                           <li>ZRS: zone-redundant storage. When ZRS is selected, the zoneId parameter must be
+         *                           a string containing a list of multiple zone IDs for zone-redundant deployment,
+         *                           for example, <codeph><code>zoneId1,zoneId2</code>.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder dataRedundancyType(com.aliyun.ros.cdk.core.IResolvable dataRedundancyType) {
@@ -257,11 +282,15 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getFileSystemName}
-         * @param fileSystemName Property fileSystemName: Name of the file system.
-         *                       The naming rules are as follows:
-         *                       The value contains 6 to 100 characters.
-         *                       Globally unique and cannot be an empty string.
-         *                       The value can contain letters and digits and underscores (_).
+         * @param fileSystemName Property fileSystemName: File system name.
+         *                       The naming convention is as follows:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Length must be 6 to 64 characters.</li>
+         *                       <li>Must be globally unique and cannot be an empty string.</li>
+         *                       <li>Supports English letters and can contain digits, underscores (_), and hyphens
+         *                       (-).</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder fileSystemName(java.lang.String fileSystemName) {
@@ -271,11 +300,15 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getFileSystemName}
-         * @param fileSystemName Property fileSystemName: Name of the file system.
-         *                       The naming rules are as follows:
-         *                       The value contains 6 to 100 characters.
-         *                       Globally unique and cannot be an empty string.
-         *                       The value can contain letters and digits and underscores (_).
+         * @param fileSystemName Property fileSystemName: File system name.
+         *                       The naming convention is as follows:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Length must be 6 to 64 characters.</li>
+         *                       <li>Must be globally unique and cannot be an empty string.</li>
+         *                       <li>Supports English letters and can contain digits, underscores (_), and hyphens
+         *                       (-).</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder fileSystemName(com.aliyun.ros.cdk.core.IResolvable fileSystemName) {
@@ -305,8 +338,11 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getProvisionedThroughputInMiBps}
-         * @param provisionedThroughputInMiBps Property provisionedThroughputInMiBps: Preset handling capacity.
-         *                                     Unit: MB/sdata range: 1-5120
+         * @param provisionedThroughputInMiBps Property provisionedThroughputInMiBps: Preset throughput.
+         *                                     This parameter is required when the ThroughputMode parameter
+         *                                     is set to Provisioned.
+         *                                     Unit: MB/s
+         *                                     Valid values: 1 to 5120
          * @return {@code this}
          */
         public Builder provisionedThroughputInMiBps(java.lang.Number provisionedThroughputInMiBps) {
@@ -316,8 +352,11 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getProvisionedThroughputInMiBps}
-         * @param provisionedThroughputInMiBps Property provisionedThroughputInMiBps: Preset handling capacity.
-         *                                     Unit: MB/sdata range: 1-5120
+         * @param provisionedThroughputInMiBps Property provisionedThroughputInMiBps: Preset throughput.
+         *                                     This parameter is required when the ThroughputMode parameter
+         *                                     is set to Provisioned.
+         *                                     Unit: MB/s
+         *                                     Valid values: 1 to 5120
          * @return {@code this}
          */
         public Builder provisionedThroughputInMiBps(com.aliyun.ros.cdk.core.IResolvable provisionedThroughputInMiBps) {

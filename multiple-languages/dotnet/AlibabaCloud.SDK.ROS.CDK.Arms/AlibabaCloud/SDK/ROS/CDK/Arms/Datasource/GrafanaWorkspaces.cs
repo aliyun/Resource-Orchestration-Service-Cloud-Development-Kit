@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Arms.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`, which is used to query the information about Grafana workspaces.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGrafanaWorkspaces`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspaces

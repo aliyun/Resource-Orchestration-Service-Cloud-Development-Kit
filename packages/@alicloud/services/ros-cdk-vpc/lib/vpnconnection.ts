@@ -10,14 +10,25 @@ export { RosVpnConnection as VpnConnectionProperty };
 export interface VpnConnectionProps {
 
     /**
-     * Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.1.0\/24, 192.168.2.0\/24.
+     * Property localSubnet: The CIDR block of the virtual private cloud (VPC) that needs to communicate with
+     * the on-premises database. The CIDR block is used in Phase 2 negotiations.
+     * Separate multiple CIDR blocks with commas (,). Example:
+     * 192.168.1.0\/24,192.168.2.0\/24.
+     * The following routing modes are supported:
+     * *   If you set LocalSubnet and RemoteSubnet to 0.0.0.0\/0, the routing mode of the
+     * IPsec-VPN connection is set to Destination Routing Mode.
+     * *   If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+     * mode of the IPsec-VPN connection is set to Protected Data Flows.
      */
     readonly localSubnet: string | ros.IResolvable;
 
     /**
-     * Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.3.0\/24, 192.168.4.0\/24.
+     * Property remoteSubnet: The CIDR block of the on-premises database that needs to communicate with the
+     * VPC. The CIDR block is used in Phase 2 negotiations.
+     * Separate multiple CIDR blocks with commas (,). Example:
+     * 192.168.3.0\/24,192.168.4.0\/24.
+     * The following routing modes are supported:
+     * *   If you set LocalSubnet and RemoteSubnet to 0.0.0.0\/0...
      */
     readonly remoteSubnet: string | ros.IResolvable;
 
@@ -75,7 +86,12 @@ export interface VpnConnectionProps {
     readonly enableTunnelsBgp?: boolean | ros.IResolvable;
 
     /**
-     * Property healthCheckConfig: Whether to enable the health check configuration.
+     * Property healthCheckConfig: This parameter is available if you create an IPsec-VPN connection in
+     * single-tunnel mode.
+     * The health check configuration:
+     * *   HealthCheckConfig.enable: ... Default value: false.
+     * *   HealthCheckConfig.dip \/ sip \/ interval (Default: 3) \/ retry (Default: 3) \/
+     * Policy (revoke_route default \/ reserve_route).
      */
     readonly healthCheckConfig?: RosVpnConnection.HealthCheckConfigProperty | ros.IResolvable;
 
@@ -90,8 +106,9 @@ export interface VpnConnectionProps {
     readonly ipsecConfig?: RosVpnConnection.IpsecConfigProperty | ros.IResolvable;
 
     /**
-     * Property name: The name of the IPsec connection.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:\/\/ or https:\/\/ .
+     * Property name: The name of the IPsec-VPN connection.
+     * The name must be 1 to 100 characters in length and cannot start with `http:\/\/` or
+     * `https:\/\/`.
      */
     readonly name?: string | ros.IResolvable;
 

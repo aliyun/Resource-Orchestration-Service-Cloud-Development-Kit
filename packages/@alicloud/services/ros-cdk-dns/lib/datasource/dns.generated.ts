@@ -70,7 +70,7 @@ function rosDomainGroupsPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::DomainGroups`, which is used to query domain name groups.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::DomainGroups`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domaingroups
  */
@@ -298,7 +298,7 @@ function rosDomainRecordsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::DomainRecords`, which is used to query Domain Name System (DNS) records.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::DomainRecords`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainRecords` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domainrecords
  */
@@ -547,7 +547,7 @@ function rosDomainsPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::Domains`, which is used to query domain names.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::Domains`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domains` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domains
  */

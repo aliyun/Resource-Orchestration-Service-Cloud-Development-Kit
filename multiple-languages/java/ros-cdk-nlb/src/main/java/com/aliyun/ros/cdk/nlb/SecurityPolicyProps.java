@@ -5,15 +5,17 @@ package com.aliyun.ros.cdk.nlb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitypolicy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:01:45.104Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:17:42.373Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.SecurityPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityPolicyProps.Jsii$Proxy.class)
 public interface SecurityPolicyProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version.
+     * Property ciphers: The cipher suites supported by the security policy.
      * <p>
-     * You can specify at most 32 cipher suites.
+     * Valid values of this
+     * parameter vary based on the value of TlsVersions. You can specify up to 32 cipher
+     * suites.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getCiphers();
 
@@ -67,8 +69,10 @@ public interface SecurityPolicyProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link SecurityPolicyProps#getCiphers}
-         * @param ciphers Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version. This parameter is required.
-         *                You can specify at most 32 cipher suites.
+         * @param ciphers Property ciphers: The cipher suites supported by the security policy. This parameter is required.
+         *                Valid values of this
+         *                parameter vary based on the value of TlsVersions. You can specify up to 32 cipher
+         *                suites.
          * @return {@code this}
          */
         public Builder ciphers(com.aliyun.ros.cdk.core.IResolvable ciphers) {
@@ -78,8 +82,10 @@ public interface SecurityPolicyProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link SecurityPolicyProps#getCiphers}
-         * @param ciphers Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version. This parameter is required.
-         *                You can specify at most 32 cipher suites.
+         * @param ciphers Property ciphers: The cipher suites supported by the security policy. This parameter is required.
+         *                Valid values of this
+         *                parameter vary based on the value of TlsVersions. You can specify up to 32 cipher
+         *                suites.
          * @return {@code this}
          */
         public Builder ciphers(java.util.List<? extends java.lang.Object> ciphers) {

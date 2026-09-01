@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dts
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SubscriptionJob2`, which is used to configure a change tracking task.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SubscriptionJob2`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `SubscriptionJob2` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-subscriptionjob2
@@ -339,7 +339,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+        /// <strong>Property</strong>: delayRuleTime: The threshold for latency alerts. Unit: seconds. The value must be an integer.
+        /// You can set the threshold based on your business requirements. To prevent
+        /// unstable latency caused by network and database overloads, we recommend that you
+        /// set the threshold to more than 10 seconds.
+        /// > If DelayNotice is set to true, this parameter is required.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "delayRuleTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -608,7 +612,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+        /// <strong>Property</strong>: maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
+        /// Currently, this feature is not supported, please do not pass in parameters.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "maxDu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -659,7 +664,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+        /// <strong>Property</strong>: minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8,
+        /// 16.
+        /// This feature is currently not supported, please do not pass in parameters.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "minDu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -710,7 +717,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+        /// <strong>Property</strong>: reserve: The reserved parameter of DTS. The value is a JSON string. You can specify this
+        /// parameter to add more configurations of the source or destination instance to the
+        /// DTS task. For example, you can specify the data storage format of the destination
+        /// Kafka database and the CEN instance ID.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "reserve", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]

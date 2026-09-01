@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::Parameter</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.929Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:21:57.875Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.Parameter")
 public class Parameter extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.IParameter {
 
@@ -197,32 +197,44 @@ public class Parameter extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property constraints: The constraints of the parameter.
+         * Property constraints: The constraints of the encryption parameter.
          * <p>
-         * By default, this parameter is null. Valid values:
-         * AllowedValues: The value that is allowed for the parameter. It must be an array string.
-         * AllowedPattern: The pattern that is allowed for the parameter. It must be a regular expression.
-         * MinLength: The minimum length of the parameter.
-         * MaxLength: The maximum length of the parameter.
+         * By default, this parameter is null.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>AllowedValues: The value that is allowed for the encryption parameter. It
+         * must be an array string.</li>
+         * <li>AllowedPattern: The pattern that is allowed for the encryption parameter. It
+         * must be a regular expression.</li>
+         * <li>MinLength: The minimum length of the encryption parameter.</li>
+         * <li>MaxLength: The maximum length of the encryption parameter.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param constraints Property constraints: The constraints of the parameter. This parameter is required.
+         * @param constraints Property constraints: The constraints of the encryption parameter. This parameter is required.
          */
         public Builder constraints(final java.lang.String constraints) {
             this.props.constraints(constraints);
             return this;
         }
         /**
-         * Property constraints: The constraints of the parameter.
+         * Property constraints: The constraints of the encryption parameter.
          * <p>
-         * By default, this parameter is null. Valid values:
-         * AllowedValues: The value that is allowed for the parameter. It must be an array string.
-         * AllowedPattern: The pattern that is allowed for the parameter. It must be a regular expression.
-         * MinLength: The minimum length of the parameter.
-         * MaxLength: The maximum length of the parameter.
+         * By default, this parameter is null.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>AllowedValues: The value that is allowed for the encryption parameter. It
+         * must be an array string.</li>
+         * <li>AllowedPattern: The pattern that is allowed for the encryption parameter. It
+         * must be a regular expression.</li>
+         * <li>MinLength: The minimum length of the encryption parameter.</li>
+         * <li>MaxLength: The maximum length of the encryption parameter.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param constraints Property constraints: The constraints of the parameter. This parameter is required.
+         * @param constraints Property constraints: The constraints of the encryption parameter. This parameter is required.
          */
         public Builder constraints(final com.aliyun.ros.cdk.core.IResolvable constraints) {
             this.props.constraints(constraints);

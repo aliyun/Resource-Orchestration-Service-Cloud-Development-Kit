@@ -19,7 +19,7 @@ export interface RosUserProps {
     readonly autoLockTime?: string | ros.IResolvable;
 
     /**
-     * @Property businessChannel: The channel.
+     * @Property businessChannel: The business channel.
      */
     readonly businessChannel?: string | ros.IResolvable;
 
@@ -165,7 +165,7 @@ export class RosUser extends ros.RosResource {
     public autoLockTime: string | ros.IResolvable | undefined;
 
     /**
-     * @Property businessChannel: The channel.
+     * @Property businessChannel: The business channel.
      */
     public businessChannel: string | ros.IResolvable | undefined;
 

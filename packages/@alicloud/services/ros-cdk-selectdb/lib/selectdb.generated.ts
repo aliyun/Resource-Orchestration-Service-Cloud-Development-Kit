@@ -27,7 +27,9 @@ export interface RosDBInstanceProps {
     readonly dbInstanceClass: string | ros.IResolvable;
 
     /**
-     * @Property engineVersion: Database version.
+     * @Property engineVersion: The database version. The default value is 4.1. Valid values:
+     * - 4.0
+     * - 4.1
      */
     readonly engineVersion: string | ros.IResolvable;
 
@@ -90,10 +92,11 @@ export interface RosDBInstanceProps {
     readonly tags?: RosDBInstance.TagsProperty[];
 
     /**
-     * @Property usedTime: Specifies the purchase duration of the prepaid instance.Value description:
-     * When Period is Year, UsedTime values range: 1, 2, 3, 5 (integral).
-     * When Period is Month, the UsedTime value range is: 1~9 (integral).
-     * Note This parameter takes effect and is required only if ChargeType is Prepaid.
+     * @Property usedTime: The subscription duration of the subscription instance. Valid values:
+     * - If Period is set to Year, valid values are 1, 2, 3, 4, and 5.
+     * - If Period is set to Month, valid values are integers from 1 to 12.
+     * > This parameter is required and takes effect only when ChargeType is set to
+     * Prepaid.
      */
     readonly usedTime?: number | ros.IResolvable;
 }
@@ -112,7 +115,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.engineVersion && (typeof properties.engineVersion) !== 'object') {
         errors.collect(ros.propertyValidator('engineVersion', ros.validateAllowedValues)({
           data: properties.engineVersion,
-          allowedValues: ["3.0","4.0"],
+          allowedValues: ["3.0","4.0","4.1"],
         }));
     }
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
@@ -168,7 +171,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('usedTime', ros.validateRange)({
             data: properties.usedTime,
             min: 1,
-            max: 9,
+            max: 12,
           }));
     }
     errors.collect(ros.propertyValidator('usedTime', ros.validateNumber)(properties.usedTime));
@@ -262,7 +265,9 @@ export class RosDBInstance extends ros.RosResource {
     public dbInstanceClass: string | ros.IResolvable;
 
     /**
-     * @Property engineVersion: Database version.
+     * @Property engineVersion: The database version. The default value is 4.1. Valid values:
+     * - 4.0
+     * - 4.1
      */
     public engineVersion: string | ros.IResolvable;
 
@@ -325,10 +330,11 @@ export class RosDBInstance extends ros.RosResource {
     public tags: RosDBInstance.TagsProperty[] | undefined;
 
     /**
-     * @Property usedTime: Specifies the purchase duration of the prepaid instance.Value description:
-     * When Period is Year, UsedTime values range: 1, 2, 3, 5 (integral).
-     * When Period is Month, the UsedTime value range is: 1~9 (integral).
-     * Note This parameter takes effect and is required only if ChargeType is Prepaid.
+     * @Property usedTime: The subscription duration of the subscription instance. Valid values:
+     * - If Period is set to Year, valid values are 1, 2, 3, 4, and 5.
+     * - If Period is set to Month, valid values are integers from 1 to 12.
+     * > This parameter is required and takes effect only when ChargeType is set to
+     * Prepaid.
      */
     public usedTime: number | ros.IResolvable | undefined;
 

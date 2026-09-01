@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apigateway;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ApiGateway::LogConfig</code>, which is used to create a log configuration.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ApiGateway::LogConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.614Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:56.999Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosLogConfig")
 public class RosLogConfig extends com.aliyun.ros.cdk.core.RosResource {
 

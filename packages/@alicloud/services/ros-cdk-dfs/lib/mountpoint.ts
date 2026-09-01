@@ -35,7 +35,8 @@ export interface MountPointProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * Property description: The description of the Mount Point.
+     * Property description: Description of the mount target.
+     * The length cannot exceed 32 characters.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -58,7 +59,7 @@ export interface IMountPoint extends ros.IResource {
     readonly attrMountPointId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DFS::MountPoint`, which is used to create a mount target.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DFS::MountPoint`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMountPoint`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-mountpoint
  */

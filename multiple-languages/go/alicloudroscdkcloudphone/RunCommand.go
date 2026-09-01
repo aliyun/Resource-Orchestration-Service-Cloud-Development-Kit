@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::RunCommand`, which is used to run a command on cloud phones.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::RunCommand`.
 type RunCommand interface {
 	alicloudroscdkcore.Resource
 	IRunCommand

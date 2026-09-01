@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::AssignPrivateIpAddresses</code>, which is used to assign secondary private IP addresses to an elastic network interface (ENI).
- * <p>
- * You can specify available private IP addresses within the CIDR block of the vSwitch that is associated with the ENI. Alternatively, you can specify a number to have the specified number of private IP addresses automatically assigned to the ENI.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::AssignPrivateIpAddresses</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.041Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.423Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAssignPrivateIpAddresses")
 public class RosAssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.RosResource {
 

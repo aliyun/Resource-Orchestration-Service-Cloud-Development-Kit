@@ -15,7 +15,9 @@ export interface AttachPolicyToGroupProps {
     readonly groupName: string | ros.IResolvable;
 
     /**
-     * Property policyName: Authorization policy name.
+     * Property policyName: The name of the policy.
+     * The name must be 1 to 128 characters in length and can contain letters, digits,
+     * and hyphens (-).
      */
     readonly policyName: string | ros.IResolvable;
 

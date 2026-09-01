@@ -309,6 +309,30 @@ func (j *jsiiProxy_RosScalingConfiguration) validateSetCpuParameters(val interfa
 	return nil
 }
 
+func (j *jsiiProxy_RosScalingConfiguration) validateSetCpuOptionsParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosScalingConfiguration_CpuOptionsProperty:
+		val := val.(*RosScalingConfiguration_CpuOptionsProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosScalingConfiguration_CpuOptionsProperty:
+		val_ := val.(RosScalingConfiguration_CpuOptionsProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosScalingConfiguration_CpuOptionsProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosScalingConfiguration) validateSetCreditSpecificationParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:

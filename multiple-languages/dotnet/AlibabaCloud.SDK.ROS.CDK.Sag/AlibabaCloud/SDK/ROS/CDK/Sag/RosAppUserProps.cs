@@ -16,7 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         private object _bandwidth;
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidth: The bandwidth. Unit: Kbit\/s. Maximum bandwidth: 2,000 Kbit\/s.
+        /// <strong>Property</strong>: bandwidth: The maximum bandwidth value. Unit: Kbit\/s. Valid values: 1 to 20000. Default
+        /// value: 2000.
         /// </remarks>
         [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Bandwidth
@@ -204,8 +205,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         private object? _password;
 
         /// <remarks>
-        /// <strong>Property</strong>: password: The password used to log on to SAG APP.
-        /// For a client account, if you specify the username, you must also specify the password.
+        /// <strong></strong>: ), and hyphens (-). It must start with a
+        /// letter or a digit.
+        ///
+        /// <strong>Property</strong>: password: The password that is used to log on to the SAG app.
+        /// The password must be 8 to 32 characters in length. It can contain letters,
+        /// digits, underscores (_), at signs (
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -238,9 +243,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         private object? _userName;
 
         /// <remarks>
-        /// <strong>Property</strong>: userName: The username of the client account. Usernames of client accounts added to the same
-        /// SAG APP instance must be unique.
-        /// For a client account, if you specify the username, you must also specify the password.
+        /// <strong></strong>: ), periods (.), and hyphens (-). It must
+        /// start with a letter or a digit.
+        /// >  For a client account, if you specify the username, you must also specify the
+        /// password. If you specify the password, you must specify the username.
+        ///
+        /// <strong>Property</strong>: userName: The username of the client account. The usernames of client accounts added to the
+        /// same SAG app instance must be unique.
+        /// The username must be 7 to 33 characters in length, and can contain letters,
+        /// digits, underscores (_), at signs (
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

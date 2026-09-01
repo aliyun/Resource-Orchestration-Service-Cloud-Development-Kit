@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.kafka;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-consumergroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:37:40.566Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:51:39.086Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.ConsumerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ConsumerGroupProps.Jsii$Proxy.class)
 public interface ConsumerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,10 +13,12 @@ public interface ConsumerGroupProps extends software.amazon.jsii.JsiiSerializabl
     /**
      * Property consumerId: Group name.
      * <p>
-     * Value:
-     * Can only contain letters, numbers, dashes (-), underscores (_), and at least one English or number.
-     * The length is limited to 3 to 128 characters, and more than 128 characters will be automatically intercepted.
-     * Once the group name is created, it cannot be modified.
+     * <ul>
+     * <li>Reserved instance: Supports uppercase and lowercase letters, numbers,
+     * underscores (_), hyphens (-), and periods (.), limited to 3-64 characters.</li>
+     * <li>Serverless instance: Can only contain letters, numbers, and special characters
+     * "&#64;._*$#^!&amp;-", limited to 1-249 characters.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getConsumerId();
 
@@ -59,10 +61,12 @@ public interface ConsumerGroupProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link ConsumerGroupProps#getConsumerId}
          * @param consumerId Property consumerId: Group name. This parameter is required.
-         *                   Value:
-         *                   Can only contain letters, numbers, dashes (-), underscores (_), and at least one English or number.
-         *                   The length is limited to 3 to 128 characters, and more than 128 characters will be automatically intercepted.
-         *                   Once the group name is created, it cannot be modified.
+         *                   <ul>
+         *                   <li>Reserved instance: Supports uppercase and lowercase letters, numbers,
+         *                   underscores (_), hyphens (-), and periods (.), limited to 3-64 characters.</li>
+         *                   <li>Serverless instance: Can only contain letters, numbers, and special characters
+         *                   "&#64;._*$#^!&amp;-", limited to 1-249 characters.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder consumerId(java.lang.String consumerId) {
@@ -73,10 +77,12 @@ public interface ConsumerGroupProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link ConsumerGroupProps#getConsumerId}
          * @param consumerId Property consumerId: Group name. This parameter is required.
-         *                   Value:
-         *                   Can only contain letters, numbers, dashes (-), underscores (_), and at least one English or number.
-         *                   The length is limited to 3 to 128 characters, and more than 128 characters will be automatically intercepted.
-         *                   Once the group name is created, it cannot be modified.
+         *                   <ul>
+         *                   <li>Reserved instance: Supports uppercase and lowercase letters, numbers,
+         *                   underscores (_), hyphens (-), and periods (.), limited to 3-64 characters.</li>
+         *                   <li>Serverless instance: Can only contain letters, numbers, and special characters
+         *                   "&#64;._*$#^!&amp;-", limited to 1-249 characters.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder consumerId(com.aliyun.ros.cdk.core.IResolvable consumerId) {

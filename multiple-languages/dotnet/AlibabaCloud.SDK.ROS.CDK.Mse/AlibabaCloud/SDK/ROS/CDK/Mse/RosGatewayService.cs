@@ -598,7 +598,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: tlsSetting: TLS settings for the service.
+        /// <strong>Property</strong>: tlsSetting: The TLS settings, specified as a JSON string. The following fields are supported:
+        /// - `mode`: The TLS mode.
+        /// - `certId`: The certificate ID.
+        /// - `caCertId`: The CA certificate ID.
+        /// - `caCertContent`: The public key of the CA certificate.
+        /// - `sni`: The Server Name Indication (SNI).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "tlsSetting", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]

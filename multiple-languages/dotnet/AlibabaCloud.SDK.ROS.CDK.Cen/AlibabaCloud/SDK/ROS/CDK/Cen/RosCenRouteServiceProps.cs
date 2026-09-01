@@ -80,7 +80,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object _host;
 
         /// <remarks>
-        /// <strong>Property</strong>: host: The domain or IP address of the cloud service.
+        /// <strong>Property</strong>: host: The IP addresses or CIDR blocks of the cloud service.
+        /// > In most cases, multiple IP addresses or CIDR blocks are assigned to a cloud
+        /// service. We recommend that you call this operation multiple times to add all IP
+        /// addresses and CIDR blocks of the cloud service.
         /// </remarks>
         [JsiiProperty(name: "host", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Host
@@ -213,6 +216,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         /// <remarks>
         /// <strong>Property</strong>: description: The description of the cloud service.
+        /// This parameter is optional. If you enter a description, it must be 1 to 256
+        /// characters in length and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

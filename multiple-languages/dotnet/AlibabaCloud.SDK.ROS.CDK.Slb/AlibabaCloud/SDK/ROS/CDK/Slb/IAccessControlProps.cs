@@ -11,7 +11,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
     [JsiiInterface(nativeType: typeof(IAccessControlProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.AccessControlProps")]
     public interface IAccessControlProps
     {
-        /// <summary>Property aclName: The name of the access control list.</summary>
+        /// <summary>Property aclName: The name of the ACL.</summary>
+        /// <remarks>
+        /// The name must be 1 to 80 characters in length, and can
+        /// contain letters, digits, periods (.), hyphens (-), forward slashes (/), and
+        /// underscores (_). The name of the ACL that you create must be unique within each
+        /// region.
+        /// </remarks>
         [JsiiProperty(name: "aclName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AclName
         {
@@ -32,9 +38,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
-        /// <summary>Property addressIpVersion: IP version.</summary>
+        /// <summary>Property addressIpVersion: The IP version.</summary>
         /// <remarks>
-        /// Could be "ipv4" or "ipv6".
+        /// Valid values: ipv4 and ipv6.
         /// </remarks>
         [JsiiProperty(name: "addressIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -82,7 +88,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             {
             }
 
-            /// <summary>Property aclName: The name of the access control list.</summary>
+            /// <summary>Property aclName: The name of the ACL.</summary>
+            /// <remarks>
+            /// The name must be 1 to 80 characters in length, and can
+            /// contain letters, digits, periods (.), hyphens (-), forward slashes (/), and
+            /// underscores (_). The name of the ACL that you create must be unique within each
+            /// region.
+            /// </remarks>
             [JsiiProperty(name: "aclName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AclName
             {
@@ -100,9 +112,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property addressIpVersion: IP version.</summary>
+            /// <summary>Property addressIpVersion: The IP version.</summary>
             /// <remarks>
-            /// Could be "ipv4" or "ipv6".
+            /// Valid values: ipv4 and ipv6.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "addressIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

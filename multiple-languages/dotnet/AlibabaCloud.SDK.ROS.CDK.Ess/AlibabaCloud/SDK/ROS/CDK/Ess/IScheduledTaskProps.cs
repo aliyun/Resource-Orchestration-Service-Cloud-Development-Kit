@@ -34,9 +34,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Property desiredCapacity: The ID of the scaling group whose number of instances must be modified when the scheduled task is triggered.</summary>
+        /// <summary>Property desiredCapacity: The expected number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances.</summary>
         /// <remarks>
-        /// If you specify the <strong>ScalingGroupId</strong> parameter for a scheduled task, you must specify the minimum, maximum, or expected numbers of instances for a scaling group in the scheduled task. That is, you must specify at least one of the <strong>MinValue</strong>, <strong>MaxValue</strong>, and <strong>DesiredCapacity</strong> parameters.
+        ///     You must specify the <c>DesiredCapacity</c> parameter when you create a scaling
+        ///     group.
         /// </remarks>
         [JsiiProperty(name: "desiredCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -63,10 +64,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Property maxValue: The expected number of instances in the scaling group if you specify the ScalingGroupId parameter.</summary>
-        /// <remarks>
-        /// <strong>Note</strong>: You must specify the <strong>DesiredCapacity</strong> parameter when you create a scaling group.
-        /// </remarks>
+        /// <summary>Property maxValue: The maximum number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances.</summary>
         [JsiiProperty(name: "maxValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? MaxValue
@@ -77,7 +75,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Property minValue: The maximum number of instances in the scaling group if you specify the ScalingGroupId parameter.</summary>
+        /// <summary>Property minValue: The minimum number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances.</summary>
         [JsiiProperty(name: "minValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? MinValue
@@ -88,11 +86,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Property recurrenceEndTime: End time of the scheduled task to be repeated.</summary>
+        /// <summary>Property recurrenceEndTime: The end time of the scheduled task.</summary>
         /// <remarks>
-        /// The date format follows the ISO8601 standard and uses UTC time. It is in the format of YYYY-MM-DDThh:mmZ.
-        /// A time point 90 days after creation or modification cannot be entered.
-        /// RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
+        /// Specify the time in the ISO 8601 standard in
+        /// the YYYY-MM-DDThh:mmZ format.
+        /// The time must be in UTC. You cannot enter a point in time that is later than 365
+        /// days from the point in time at which the scheduled task is created.
         /// </remarks>
         [JsiiProperty(name: "recurrenceEndTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -104,16 +103,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Property recurrenceType: Type of the scheduled task to be repeated.</summary>
+        /// <summary>Property recurrenceType: The interval at which the scheduled task is repeatedly executed.</summary>
         /// <remarks>
-        /// Optional values:
+        /// Valid values:
         ///
         /// <list type="bullet">
-        /// <description>Daily: Recurrence interval by day for a scheduled task.</description>
-        /// <description>Weekly: Recurrence interval by week for a scheduled task.</description>
-        /// <description>Monthly: Recurrence interval by month for a scheduled task.</description>
+        /// <description>Daily: The scheduled task is executed once every specified number of days.</description>
+        /// <description>Weekly: The scheduled task is executed on each specified day of a week.</description>
+        /// <description>Monthly: The scheduled task is executed on each specified day of a month.</description>
         /// <description>Cron: The scheduled task is executed based on the specified cron expression.
-        /// RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</description>
+        /// You must specify the <c>RecurrenceType</c> and <c>RecurrenceValue</c> parameters at the
+        /// same time.</description>
         /// </list>
         /// </remarks>
         [JsiiProperty(name: "recurrenceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -146,10 +146,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Property scalingGroupId: The globally unique ID of the scheduled task.</summary>
+        /// <summary>Property scalingGroupId: The ID of the scaling group whose number of instances is changed when the scheduled task is triggered.</summary>
         /// <remarks>
-        /// The globally unique ID is generated by the system.
-        /// <strong>Note</strong>: You cannot specify the <strong>ScheduledAction</strong> and <strong>ScalingGroupId</strong> parameters at the same time.
+        /// If you specify the <c>ScalingGroupId</c> parameter for a
+        /// scheduled task, the scaling method of the scheduled task is to specify the number
+        /// of instances in the scaling group. In this case, you must specify at least one of
+        /// the <c>MinValue</c>, <c>MaxValue</c>, and <c>DesiredCapacity</c> parameters.
+        ///
+        ///     You cannot specify the <c>ScheduledAction</c> and <c>ScalingGroupId</c> parameters at
+        ///     the same time.
         /// </remarks>
         [JsiiProperty(name: "scalingGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -161,10 +166,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Property scheduledAction: Operations performed when the scheduled task is triggered.</summary>
+        /// <summary>Property scheduledAction: The scaling rule that you want to execute when the scheduled task is triggered.</summary>
         /// <remarks>
-        /// Fill in the unique identifier of the scaling rule.
-        /// <strong>Note</strong>: You cannot specify the <strong>ScheduledAction</strong> and <strong>ScalingGroupId</strong> parameters at the same time.
+        /// Specify the unique identifier of the scaling rule. If you specify the
+        /// <c>ScheduledAction</c> parameter, you must select an existing scaling rule for the
+        /// scheduled task.
+        ///
+        ///     You cannot specify the <c>ScheduledAction</c> and <c>ScalingGroupId</c> parameters at
+        ///     the same time.
         /// </remarks>
         [JsiiProperty(name: "scheduledAction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -176,11 +185,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long.</summary>
+        /// <summary>Property scheduledTaskName: The name of the scheduled task.</summary>
         /// <remarks>
-        /// It must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
-        /// The account name is unique in the same region.
-        /// If this parameter is not specified, the default value ScheduledScalingTaskId is used.
+        /// The name must be 2 to 64 characters in length and
+        /// can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+        /// name must start with a letter or a digit. The name of the scheduled task must be
+        /// unique in the region and within the account.
+        /// By default, the value of the <c>ScheduledTaskId</c> parameter is used.
         /// </remarks>
         [JsiiProperty(name: "scheduledTaskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -241,9 +252,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property desiredCapacity: The ID of the scaling group whose number of instances must be modified when the scheduled task is triggered.</summary>
+            /// <summary>Property desiredCapacity: The expected number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances.</summary>
             /// <remarks>
-            /// If you specify the <strong>ScalingGroupId</strong> parameter for a scheduled task, you must specify the minimum, maximum, or expected numbers of instances for a scaling group in the scheduled task. That is, you must specify at least one of the <strong>MinValue</strong>, <strong>MaxValue</strong>, and <strong>DesiredCapacity</strong> parameters.
+            ///     You must specify the <c>DesiredCapacity</c> parameter when you create a scaling
+            ///     group.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "desiredCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -264,10 +276,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property maxValue: The expected number of instances in the scaling group if you specify the ScalingGroupId parameter.</summary>
-            /// <remarks>
-            /// <strong>Note</strong>: You must specify the <strong>DesiredCapacity</strong> parameter when you create a scaling group.
-            /// </remarks>
+            /// <summary>Property maxValue: The maximum number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "maxValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MaxValue
@@ -275,7 +284,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property minValue: The maximum number of instances in the scaling group if you specify the ScalingGroupId parameter.</summary>
+            /// <summary>Property minValue: The minimum number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "minValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MinValue
@@ -283,11 +292,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property recurrenceEndTime: End time of the scheduled task to be repeated.</summary>
+            /// <summary>Property recurrenceEndTime: The end time of the scheduled task.</summary>
             /// <remarks>
-            /// The date format follows the ISO8601 standard and uses UTC time. It is in the format of YYYY-MM-DDThh:mmZ.
-            /// A time point 90 days after creation or modification cannot be entered.
-            /// RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
+            /// Specify the time in the ISO 8601 standard in
+            /// the YYYY-MM-DDThh:mmZ format.
+            /// The time must be in UTC. You cannot enter a point in time that is later than 365
+            /// days from the point in time at which the scheduled task is created.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "recurrenceEndTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -296,16 +306,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property recurrenceType: Type of the scheduled task to be repeated.</summary>
+            /// <summary>Property recurrenceType: The interval at which the scheduled task is repeatedly executed.</summary>
             /// <remarks>
-            /// Optional values:
+            /// Valid values:
             ///
             /// <list type="bullet">
-            /// <description>Daily: Recurrence interval by day for a scheduled task.</description>
-            /// <description>Weekly: Recurrence interval by week for a scheduled task.</description>
-            /// <description>Monthly: Recurrence interval by month for a scheduled task.</description>
+            /// <description>Daily: The scheduled task is executed once every specified number of days.</description>
+            /// <description>Weekly: The scheduled task is executed on each specified day of a week.</description>
+            /// <description>Monthly: The scheduled task is executed on each specified day of a month.</description>
             /// <description>Cron: The scheduled task is executed based on the specified cron expression.
-            /// RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</description>
+            /// You must specify the <c>RecurrenceType</c> and <c>RecurrenceValue</c> parameters at the
+            /// same time.</description>
             /// </list>
             /// </remarks>
             [JsiiOptional]
@@ -332,10 +343,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property scalingGroupId: The globally unique ID of the scheduled task.</summary>
+            /// <summary>Property scalingGroupId: The ID of the scaling group whose number of instances is changed when the scheduled task is triggered.</summary>
             /// <remarks>
-            /// The globally unique ID is generated by the system.
-            /// <strong>Note</strong>: You cannot specify the <strong>ScheduledAction</strong> and <strong>ScalingGroupId</strong> parameters at the same time.
+            /// If you specify the <c>ScalingGroupId</c> parameter for a
+            /// scheduled task, the scaling method of the scheduled task is to specify the number
+            /// of instances in the scaling group. In this case, you must specify at least one of
+            /// the <c>MinValue</c>, <c>MaxValue</c>, and <c>DesiredCapacity</c> parameters.
+            ///
+            ///     You cannot specify the <c>ScheduledAction</c> and <c>ScalingGroupId</c> parameters at
+            ///     the same time.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "scalingGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -344,10 +360,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property scheduledAction: Operations performed when the scheduled task is triggered.</summary>
+            /// <summary>Property scheduledAction: The scaling rule that you want to execute when the scheduled task is triggered.</summary>
             /// <remarks>
-            /// Fill in the unique identifier of the scaling rule.
-            /// <strong>Note</strong>: You cannot specify the <strong>ScheduledAction</strong> and <strong>ScalingGroupId</strong> parameters at the same time.
+            /// Specify the unique identifier of the scaling rule. If you specify the
+            /// <c>ScheduledAction</c> parameter, you must select an existing scaling rule for the
+            /// scheduled task.
+            ///
+            ///     You cannot specify the <c>ScheduledAction</c> and <c>ScalingGroupId</c> parameters at
+            ///     the same time.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "scheduledAction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -356,11 +376,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long.</summary>
+            /// <summary>Property scheduledTaskName: The name of the scheduled task.</summary>
             /// <remarks>
-            /// It must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
-            /// The account name is unique in the same region.
-            /// If this parameter is not specified, the default value ScheduledScalingTaskId is used.
+            /// The name must be 2 to 64 characters in length and
+            /// can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+            /// name must start with a letter or a digit. The name of the scheduled task must be
+            /// unique in the region and within the account.
+            /// By default, the value of the <c>ScheduledTaskId</c> parameter is used.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "scheduledTaskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

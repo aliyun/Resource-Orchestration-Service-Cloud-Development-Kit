@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::CR::Instances`, which is used to query Container Registry instances.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::CR::Instances`.
 type Instances interface {
 	alicloudroscdkcore.Resource
 	IInstances

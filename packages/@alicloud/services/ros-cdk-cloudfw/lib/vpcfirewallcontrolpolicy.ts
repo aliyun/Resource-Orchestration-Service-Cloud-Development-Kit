@@ -138,9 +138,9 @@ export interface VpcFirewallControlPolicyProps {
     readonly endTime?: number | ros.IResolvable;
 
     /**
-     * Property lang: The natural language of the request and response. Valid values:
-     * zh: Chinese
-     * en: English
+     * Property lang: The language of the request and response. Valid values:
+     * - zh (default): Chinese
+     * - en: English
      */
     readonly lang?: string | ros.IResolvable;
 
@@ -212,7 +212,7 @@ export interface IVpcFirewallControlPolicy extends ros.IResource {
     readonly attrAclUuid: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`The , which resource type adds access control policies to specified VPC firewall policy groups.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcFirewallControlPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */

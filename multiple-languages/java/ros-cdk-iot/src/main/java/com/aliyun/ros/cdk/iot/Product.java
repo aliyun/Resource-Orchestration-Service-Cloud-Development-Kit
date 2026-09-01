@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::IOT::Product</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:35:50.698Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:45:11.649Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.Product")
 public class Product extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.iot.IProduct {
 
@@ -184,32 +184,36 @@ public class Product extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property aliyunCommodityCode: The edition of the product that you want to create.
+         * Property aliyunCommodityCode: The edition of the product.
          * <p>
-         * There are two options:
-         * iothub_senior: Pro Edition.
-         * iothub: Basic Edition.
-         * If you do not input this parameter, the default value is used, which is iothub (Basic
-         * Edition).
+         * <ul>
+         * <li>If you do not configure this parameter, a product of the Basic Edition is
+         * automatically created. You cannot use a TSL model to define the product.</li>
+         * <li>If you want to configure this parameter, set the value to iothub_senior. A
+         * product that supports TSL models is created. You must also configure the
+         * DataFormat parameter.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param aliyunCommodityCode Property aliyunCommodityCode: The edition of the product that you want to create. This parameter is required.
+         * @param aliyunCommodityCode Property aliyunCommodityCode: The edition of the product. This parameter is required.
          */
         public Builder aliyunCommodityCode(final java.lang.String aliyunCommodityCode) {
             this.props.aliyunCommodityCode(aliyunCommodityCode);
             return this;
         }
         /**
-         * Property aliyunCommodityCode: The edition of the product that you want to create.
+         * Property aliyunCommodityCode: The edition of the product.
          * <p>
-         * There are two options:
-         * iothub_senior: Pro Edition.
-         * iothub: Basic Edition.
-         * If you do not input this parameter, the default value is used, which is iothub (Basic
-         * Edition).
+         * <ul>
+         * <li>If you do not configure this parameter, a product of the Basic Edition is
+         * automatically created. You cannot use a TSL model to define the product.</li>
+         * <li>If you want to configure this parameter, set the value to iothub_senior. A
+         * product that supports TSL models is created. You must also configure the
+         * DataFormat parameter.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param aliyunCommodityCode Property aliyunCommodityCode: The edition of the product that you want to create. This parameter is required.
+         * @param aliyunCommodityCode Property aliyunCommodityCode: The edition of the product. This parameter is required.
          */
         public Builder aliyunCommodityCode(final com.aliyun.ros.cdk.core.IResolvable aliyunCommodityCode) {
             this.props.aliyunCommodityCode(aliyunCommodityCode);

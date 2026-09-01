@@ -32,7 +32,7 @@ export interface ITransitRouterRouteTableAssociationReplacement extends ros.IRes
     readonly attrOriginalTransitRouterRouteTableId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociationReplacement`The , which resource replaces the transit router route table associated with a network instance connection.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociationReplacement`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterRouteTableAssociationReplacement`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetableassociationreplacement
  */

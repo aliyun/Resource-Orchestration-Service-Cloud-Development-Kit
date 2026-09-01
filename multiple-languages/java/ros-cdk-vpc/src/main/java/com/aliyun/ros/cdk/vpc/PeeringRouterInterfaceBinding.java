@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::PeeringRouterInterfaceBinding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.496Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.307Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.PeeringRouterInterfaceBinding")
 public class PeeringRouterInterfaceBinding extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IPeeringRouterInterfaceBinding {
 
@@ -133,20 +133,20 @@ public class PeeringRouterInterfaceBinding extends com.aliyun.ros.cdk.core.Resou
         }
 
         /**
-         * Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface.
+         * Property routerInterfaceId: The ID of the router interface.
          * <p>
          * @return {@code this}
-         * @param routerInterfaceId Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface. This parameter is required.
+         * @param routerInterfaceId Property routerInterfaceId: The ID of the router interface. This parameter is required.
          */
         public Builder routerInterfaceId(final java.lang.String routerInterfaceId) {
             this.props.routerInterfaceId(routerInterfaceId);
             return this;
         }
         /**
-         * Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface.
+         * Property routerInterfaceId: The ID of the router interface.
          * <p>
          * @return {@code this}
-         * @param routerInterfaceId Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface. This parameter is required.
+         * @param routerInterfaceId Property routerInterfaceId: The ID of the router interface. This parameter is required.
          */
         public Builder routerInterfaceId(final com.aliyun.ros.cdk.core.IResolvable routerInterfaceId) {
             this.props.routerInterfaceId(routerInterfaceId);

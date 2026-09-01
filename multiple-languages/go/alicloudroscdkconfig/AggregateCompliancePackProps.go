@@ -11,12 +11,12 @@ type AggregateCompliancePackProps struct {
 	CompliancePackName interface{} `field:"required" json:"compliancePackName" yaml:"compliancePackName"`
 	// Property description: The description of compliance pack.
 	Description interface{} `field:"required" json:"description" yaml:"description"`
-	// Property riskLevel: Compliance package risk level.
+	// Property riskLevel: The risk level of the compliance pack.
 	//
-	// Value:
-	// 1: High risk.
-	// 2: Medium risk.
-	// 3: Low risk.
+	// Valid values:
+	// - 1: High
+	// - 2 (default): Medium
+	// - 3: Low.
 	RiskLevel interface{} `field:"required" json:"riskLevel" yaml:"riskLevel"`
 	// Property compliancePackTemplateId: Compliance package template ID.
 	CompliancePackTemplateId interface{} `field:"optional" json:"compliancePackTemplateId" yaml:"compliancePackTemplateId"`

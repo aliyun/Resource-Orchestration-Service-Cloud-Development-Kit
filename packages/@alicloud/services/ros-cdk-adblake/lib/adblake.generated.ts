@@ -34,7 +34,9 @@ export interface RosAccountProps {
     readonly engine: string | ros.IResolvable;
 
     /**
-     * @Property accountDescription: The description of the account.
+     * @Property accountDescription: The account description.
+     * - Must not start with `http:\/\/` or `https:\/\/`.
+     * - Be no longer than 256 characters.
      */
     readonly accountDescription?: string | ros.IResolvable;
 
@@ -126,7 +128,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::Account`, which is used to create a database account for an AnalyticDB for MySQL Data Lakehouse Edition cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::Account`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-account
  */
@@ -170,7 +172,9 @@ export class RosAccount extends ros.RosResource {
     public engine: string | ros.IResolvable;
 
     /**
-     * @Property accountDescription: The description of the account.
+     * @Property accountDescription: The account description.
+     * - Must not start with `http:\/\/` or `https:\/\/`.
+     * - Be no longer than 256 characters.
      */
     public accountDescription: string | ros.IResolvable | undefined;
 
@@ -256,7 +260,8 @@ export interface RosDBClusterProps {
     readonly backupSetId?: string | ros.IResolvable;
 
     /**
-     * @Property cloneSourceRegionId: The ID of the source region where the cluster is located.
+     * @Property cloneSourceRegionId: The region ID of the source cluster.
+     * > This parameter is required for cross-region cloning.
      */
     readonly cloneSourceRegionId?: string | ros.IResolvable;
 
@@ -294,15 +299,17 @@ export interface RosDBClusterProps {
     readonly enableDefaultResourcePool?: boolean | ros.IResolvable;
 
     /**
-     * @Property kmsId:
+     * @Property kmsId: The ID of the key used to encrypt data on cloud disks.
+     * > This parameter takes effect only when disk encryption is enabled for the
+     * AnalyticDB for MySQL cluster.
      */
     readonly kmsId?: string | ros.IResolvable;
 
     /**
-     * @Property period: The subscription duration of the subscription cluster.
-     * Valid values when Period is set to Year: 1 to 3 (integer).
-     * Valid values when Period is set to Month: 1 to 9 (integer).
-     * Note This parameter must be specified when PayType is set to Prepaid.
+     * @Property period: The unit of the subscription duration. Valid values:
+     * - Year
+     * - Month
+     * > This parameter is required if you set `PayType` to `Prepaid`.
      */
     readonly period?: string | ros.IResolvable;
 
@@ -315,9 +322,9 @@ export interface RosDBClusterProps {
     readonly periodType?: string | ros.IResolvable;
 
     /**
-     * @Property productForm: Valid values:
-     * IntegrationForm
-     * LegacyForm
+     * @Property productForm: The product form. Valid values:
+     * - IntegrationForm: Integration Form.
+     * - LegacyForm: Data Lakehouse Edition.
      */
     readonly productForm?: string | ros.IResolvable;
 
@@ -327,13 +334,17 @@ export interface RosDBClusterProps {
     readonly productVersion?: string | ros.IResolvable;
 
     /**
-     * @Property reservedNodeCount: The number of reserved nodes. Must be 1 for basic version and multiple 
-     * of 3 for enterprise version.
+     * @Property reservedNodeCount: The number of reserved nodes.
+     * - For Enterprise Edition, the value must be a multiple of 3. The default value is
+     * 3.
+     * - For Basic Edition, the default value is 1.
+     * > This parameter is available only when `ProductForm` is set to
+     * `IntegrationForm`.
      */
     readonly reservedNodeCount?: number | ros.IResolvable;
 
     /**
-     * @Property reservedNodeSize: The size of each reserved node.
+     * @Property reservedNodeSize: The resource specification of each reserved node, in ACUs.
      */
     readonly reservedNodeSize?: number | ros.IResolvable;
 
@@ -343,7 +354,8 @@ export interface RosDBClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property restoreToTime: The point in time to which you want to restore data from the backup set.
+     * @Property restoreToTime: The point in time to which you want to restore the cluster. Specify the time in
+     * the `YYYY-MM-DDThh:mm:ssZ` format. The time must be in UTC.
      */
     readonly restoreToTime?: string | ros.IResolvable;
 
@@ -355,12 +367,16 @@ export interface RosDBClusterProps {
     readonly restoreType?: string | ros.IResolvable;
 
     /**
-     * @Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+     * @Property secondaryVSwitchId: The ID of the secondary vSwitch.
+     * > The value of this parameter cannot be the same as the value of the `VSwitchId`
+     * parameter.
      */
     readonly secondaryVSwitchId?: string | ros.IResolvable;
 
     /**
-     * @Property secondaryZoneId: The secondary zone ID.
+     * @Property secondaryZoneId: The ID of the secondary availability zone.
+     * > The value of this parameter cannot be the same as the value of the `ZoneId`
+     * parameter.
      */
     readonly secondaryZoneId?: string | ros.IResolvable;
 
@@ -527,7 +543,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::DBCluster`, which type is used to create an AnalyticDB for MySQL Data Lakehouse Edition cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::DBCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-dbcluster
  */
@@ -590,7 +606,8 @@ export class RosDBCluster extends ros.RosResource {
     public backupSetId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property cloneSourceRegionId: The ID of the source region where the cluster is located.
+     * @Property cloneSourceRegionId: The region ID of the source cluster.
+     * > This parameter is required for cross-region cloning.
      */
     public cloneSourceRegionId: string | ros.IResolvable | undefined;
 
@@ -628,15 +645,17 @@ export class RosDBCluster extends ros.RosResource {
     public enableDefaultResourcePool: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property kmsId:
+     * @Property kmsId: The ID of the key used to encrypt data on cloud disks.
+     * > This parameter takes effect only when disk encryption is enabled for the
+     * AnalyticDB for MySQL cluster.
      */
     public kmsId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The subscription duration of the subscription cluster.
-     * Valid values when Period is set to Year: 1 to 3 (integer).
-     * Valid values when Period is set to Month: 1 to 9 (integer).
-     * Note This parameter must be specified when PayType is set to Prepaid.
+     * @Property period: The unit of the subscription duration. Valid values:
+     * - Year
+     * - Month
+     * > This parameter is required if you set `PayType` to `Prepaid`.
      */
     public period: string | ros.IResolvable | undefined;
 
@@ -649,9 +668,9 @@ export class RosDBCluster extends ros.RosResource {
     public periodType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property productForm: Valid values:
-     * IntegrationForm
-     * LegacyForm
+     * @Property productForm: The product form. Valid values:
+     * - IntegrationForm: Integration Form.
+     * - LegacyForm: Data Lakehouse Edition.
      */
     public productForm: string | ros.IResolvable | undefined;
 
@@ -661,13 +680,17 @@ export class RosDBCluster extends ros.RosResource {
     public productVersion: string | ros.IResolvable | undefined;
 
     /**
-     * @Property reservedNodeCount: The number of reserved nodes. Must be 1 for basic version and multiple 
-     * of 3 for enterprise version.
+     * @Property reservedNodeCount: The number of reserved nodes.
+     * - For Enterprise Edition, the value must be a multiple of 3. The default value is
+     * 3.
+     * - For Basic Edition, the default value is 1.
+     * > This parameter is available only when `ProductForm` is set to
+     * `IntegrationForm`.
      */
     public reservedNodeCount: number | ros.IResolvable | undefined;
 
     /**
-     * @Property reservedNodeSize: The size of each reserved node.
+     * @Property reservedNodeSize: The resource specification of each reserved node, in ACUs.
      */
     public reservedNodeSize: number | ros.IResolvable | undefined;
 
@@ -677,7 +700,8 @@ export class RosDBCluster extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property restoreToTime: The point in time to which you want to restore data from the backup set.
+     * @Property restoreToTime: The point in time to which you want to restore the cluster. Specify the time in
+     * the `YYYY-MM-DDThh:mm:ssZ` format. The time must be in UTC.
      */
     public restoreToTime: string | ros.IResolvable | undefined;
 
@@ -689,12 +713,16 @@ export class RosDBCluster extends ros.RosResource {
     public restoreType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+     * @Property secondaryVSwitchId: The ID of the secondary vSwitch.
+     * > The value of this parameter cannot be the same as the value of the `VSwitchId`
+     * parameter.
      */
     public secondaryVSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property secondaryZoneId: The secondary zone ID.
+     * @Property secondaryZoneId: The ID of the secondary availability zone.
+     * > The value of this parameter cannot be the same as the value of the `ZoneId`
+     * parameter.
      */
     public secondaryZoneId: string | ros.IResolvable | undefined;
 
@@ -852,9 +880,9 @@ export interface RosResourceGroupProps {
     readonly dbClusterId: string | ros.IResolvable;
 
     /**
-     * @Property engine: Database engine, value:
-     * AnalyticDB (default): AnalyticDB for mysql engine.
-     * Sparkwarehouse: Sparkwarehous engine.
+     * @Property engine: The database engine. Valid values:
+     * - AnalyticDB (default): the AnalyticDB for MySQL engine.
+     * - SparkWarehouse: the SparkWarehouse engine.
      */
     readonly engine: string | ros.IResolvable;
 
@@ -880,7 +908,7 @@ export interface RosResourceGroupProps {
     readonly autoStopInterval?: string | ros.IResolvable;
 
     /**
-     * @Property clusterMode: The mode of cluster. Default: AutoScale.
+     * @Property clusterMode: This parameter is reserved.
      */
     readonly clusterMode?: string | ros.IResolvable;
 
@@ -1026,7 +1054,7 @@ function rosResourceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroup`, which is used to create a resource group for an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-resourcegroup
  */
@@ -1060,9 +1088,9 @@ export class RosResourceGroup extends ros.RosResource {
     public dbClusterId: string | ros.IResolvable;
 
     /**
-     * @Property engine: Database engine, value:
-     * AnalyticDB (default): AnalyticDB for mysql engine.
-     * Sparkwarehouse: Sparkwarehous engine.
+     * @Property engine: The database engine. Valid values:
+     * - AnalyticDB (default): the AnalyticDB for MySQL engine.
+     * - SparkWarehouse: the SparkWarehouse engine.
      */
     public engine: string | ros.IResolvable;
 
@@ -1088,7 +1116,7 @@ export class RosResourceGroup extends ros.RosResource {
     public autoStopInterval: string | ros.IResolvable | undefined;
 
     /**
-     * @Property clusterMode: The mode of cluster. Default: AutoScale.
+     * @Property clusterMode: This parameter is reserved.
      */
     public clusterMode: string | ros.IResolvable | undefined;
 
@@ -1337,7 +1365,7 @@ function rosResourceGroupAccountBindingPropsToRosTemplate(properties: any, enabl
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroupAccountBinding`, which is used to associate a resource group with a database account.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroupAccountBinding`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroupAccountBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-resourcegroupaccountbinding
  */

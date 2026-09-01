@@ -138,8 +138,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster.
-        /// Default value: 100
+        /// <strong>Property</strong>: maxNodesInCluster: The maximum number of compute nodes that can be added to the cluster. Valid
+        /// values: 0 to 500.
+        /// Default value: 100.
         /// </remarks>
         [JsiiProperty(name: "maxNodesInCluster", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -152,7 +153,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: queues:
+        /// <strong>Property</strong>: queues: The information about the queue.
         /// </remarks>
         [JsiiProperty(name: "queues", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ehpc.RosAutoScaleConfig.QueuesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -179,8 +180,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in. Unit: minutes.
-        /// Default value: 2
+        /// <strong>Property</strong>: shrinkIntervalInMinutes: The interval between two consecutive rounds of scale-in. Unit: minutes.
+        /// Valid values: 2 to 10.
+        /// Default value: 2.
         /// </remarks>
         [JsiiProperty(name: "shrinkIntervalInMinutes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -336,8 +338,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster.
-            /// Default value: 100
+            /// <strong>Property</strong>: maxNodesInCluster: The maximum number of compute nodes that can be added to the cluster. Valid
+            /// values: 0 to 500.
+            /// Default value: 100.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "maxNodesInCluster", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -347,7 +350,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: queues:
+            /// <strong>Property</strong>: queues: The information about the queue.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "queues", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ehpc.RosAutoScaleConfig.QueuesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -368,8 +371,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in. Unit: minutes.
-            /// Default value: 2
+            /// <strong>Property</strong>: shrinkIntervalInMinutes: The interval between two consecutive rounds of scale-in. Unit: minutes.
+            /// Valid values: 2 to 10.
+            /// Default value: 2.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "shrinkIntervalInMinutes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

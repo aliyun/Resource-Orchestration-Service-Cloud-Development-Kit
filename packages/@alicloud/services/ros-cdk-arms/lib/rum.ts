@@ -16,7 +16,7 @@ export interface RumProps {
     readonly appName: string | ros.IResolvable;
 
     /**
-     * Property siteType: The type of the website.
+     * Property siteType: The application type. Valid values: web, miniapp, ios, and android.
      */
     readonly siteType: string | ros.IResolvable;
 
@@ -41,12 +41,14 @@ export interface RumProps {
     readonly nickName?: string | ros.IResolvable;
 
     /**
-     * Property packageName: The package name of the RUM application.
+     * Property packageName: The name of the Android application package. This parameter is required if you
+     * create an Android application.
      */
     readonly packageName?: string | ros.IResolvable;
 
     /**
-     * Property realRegionId: The actual region ID for internal use.
+     * Property realRegionId: The region where the application resides. You can leave this parameter empty or
+     * set it to China East 2 Finance.
      */
     readonly realRegionId?: string | ros.IResolvable;
 
@@ -56,7 +58,7 @@ export interface RumProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property source: The source of the RUM application.
+     * Property source: The source. This is a reserved parameter.
      */
     readonly source?: string | ros.IResolvable;
 

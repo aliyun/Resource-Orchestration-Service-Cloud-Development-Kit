@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::DBInstance</code>Use the , which resource to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:13:37.688Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:21:33.382Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.gpdb.IDBInstance {
 
@@ -169,20 +169,38 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property vSwitchId: The vSwitch ID of the instance.
+         * Property vSwitchId: The vSwitch ID.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter is required.</li>
+         * <li>The vSwitch must be in the zone specified by <code>ZoneId</code>.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The vSwitch ID of the instance. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: The vSwitch ID of the instance.
+         * Property vSwitchId: The vSwitch ID.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter is required.</li>
+         * <li>The vSwitch must be in the zone specified by <code>ZoneId</code>.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The vSwitch ID of the instance. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
@@ -263,20 +281,20 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property cacheStorageSize: Cache storage size.
+         * Property cacheStorageSize: The cache size for a serverless instance, in GB.
          * <p>
          * @return {@code this}
-         * @param cacheStorageSize Property cacheStorageSize: Cache storage size. This parameter is required.
+         * @param cacheStorageSize Property cacheStorageSize: The cache size for a serverless instance, in GB. This parameter is required.
          */
         public Builder cacheStorageSize(final java.lang.String cacheStorageSize) {
             this.props.cacheStorageSize(cacheStorageSize);
             return this;
         }
         /**
-         * Property cacheStorageSize: Cache storage size.
+         * Property cacheStorageSize: The cache size for a serverless instance, in GB.
          * <p>
          * @return {@code this}
-         * @param cacheStorageSize Property cacheStorageSize: Cache storage size. This parameter is required.
+         * @param cacheStorageSize Property cacheStorageSize: The cache size for a serverless instance, in GB. This parameter is required.
          */
         public Builder cacheStorageSize(final com.aliyun.ros.cdk.core.IResolvable cacheStorageSize) {
             this.props.cacheStorageSize(cacheStorageSize);
@@ -313,24 +331,46 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+         * Property dbInstanceCategory: The instance edition.
          * <p>
-         * This parameter must be passed in to create a storage reservation mode instance.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>HighAvailability: High-availability Edition</li>
+         * <li>Basic: Basic Edition</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for instances in elastic storage mode.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbInstanceCategory Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability. This parameter is required.
+         * @param dbInstanceCategory Property dbInstanceCategory: The instance edition. This parameter is required.
          */
         public Builder dbInstanceCategory(final java.lang.String dbInstanceCategory) {
             this.props.dbInstanceCategory(dbInstanceCategory);
             return this;
         }
         /**
-         * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+         * Property dbInstanceCategory: The instance edition.
          * <p>
-         * This parameter must be passed in to create a storage reservation mode instance.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>HighAvailability: High-availability Edition</li>
+         * <li>Basic: Basic Edition</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for instances in elastic storage mode.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbInstanceCategory Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability. This parameter is required.
+         * @param dbInstanceCategory Property dbInstanceCategory: The instance edition. This parameter is required.
          */
         public Builder dbInstanceCategory(final com.aliyun.ros.cdk.core.IResolvable dbInstanceCategory) {
             this.props.dbInstanceCategory(dbInstanceCategory);
@@ -339,6 +379,15 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
 
         /**
          * Property dbInstanceClass: The instance type.
+         * <p>
+         * For more information, see the description of the
+         * <code>DBInstanceClass</code> parameter.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for instances in reserved storage mode.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param dbInstanceClass Property dbInstanceClass: The instance type. This parameter is required.
@@ -349,6 +398,15 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
         /**
          * Property dbInstanceClass: The instance type.
+         * <p>
+         * For more information, see the description of the
+         * <code>DBInstanceClass</code> parameter.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for instances in reserved storage mode.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param dbInstanceClass Property dbInstanceClass: The instance type. This parameter is required.
@@ -384,24 +442,38 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property dbInstanceGroupCount: The number of compute nodes in the instance.
+         * Property dbInstanceGroupCount: The number of compute groups.
          * <p>
-         * The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+         * Valid values: 2, 4, 8, 12, 16, 24, 32, 64, 96, and
+         * 128.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for instances in reserved storage mode.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbInstanceGroupCount Property dbInstanceGroupCount: The number of compute nodes in the instance. This parameter is required.
+         * @param dbInstanceGroupCount Property dbInstanceGroupCount: The number of compute groups. This parameter is required.
          */
         public Builder dbInstanceGroupCount(final java.lang.Number dbInstanceGroupCount) {
             this.props.dbInstanceGroupCount(dbInstanceGroupCount);
             return this;
         }
         /**
-         * Property dbInstanceGroupCount: The number of compute nodes in the instance.
+         * Property dbInstanceGroupCount: The number of compute groups.
          * <p>
-         * The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+         * Valid values: 2, 4, 8, 12, 16, 24, 32, 64, 96, and
+         * 128.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for instances in reserved storage mode.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbInstanceGroupCount Property dbInstanceGroupCount: The number of compute nodes in the instance. This parameter is required.
+         * @param dbInstanceGroupCount Property dbInstanceGroupCount: The number of compute groups. This parameter is required.
          */
         public Builder dbInstanceGroupCount(final com.aliyun.ros.cdk.core.IResolvable dbInstanceGroupCount) {
             this.props.dbInstanceGroupCount(dbInstanceGroupCount);
@@ -434,20 +506,54 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property deployMode: The deployment mode of the instance.
+         * Property deployMode: The deployment mode.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>multiple: multi-AZ deployment.</li>
+         * <li>single: single-AZ deployment.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>If this parameter is not specified, the default value is single.</li>
+         * <li>Defaults to <code>single</code> (single-AZ deployment), which is the only mode currently
+         * supported.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param deployMode Property deployMode: The deployment mode of the instance. This parameter is required.
+         * @param deployMode Property deployMode: The deployment mode. This parameter is required.
          */
         public Builder deployMode(final java.lang.String deployMode) {
             this.props.deployMode(deployMode);
             return this;
         }
         /**
-         * Property deployMode: The deployment mode of the instance.
+         * Property deployMode: The deployment mode.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>multiple: multi-AZ deployment.</li>
+         * <li>single: single-AZ deployment.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>If this parameter is not specified, the default value is single.</li>
+         * <li>Defaults to <code>single</code> (single-AZ deployment), which is the only mode currently
+         * supported.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param deployMode Property deployMode: The deployment mode of the instance. This parameter is required.
+         * @param deployMode Property deployMode: The deployment mode. This parameter is required.
          */
         public Builder deployMode(final com.aliyun.ros.cdk.core.IResolvable deployMode) {
             this.props.deployMode(deployMode);
@@ -536,24 +642,38 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property idleTime: Idle release wait time.
+         * Property idleTime: The period of inactivity, in seconds, after which the instance is considered idle.
          * <p>
-         * That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+         * Minimum value: 60. Default value: 600.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only for serverless instances that use
+         * auto-scheduling.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param idleTime Property idleTime: Idle release wait time. This parameter is required.
+         * @param idleTime Property idleTime: The period of inactivity, in seconds, after which the instance is considered idle. This parameter is required.
          */
         public Builder idleTime(final java.lang.Number idleTime) {
             this.props.idleTime(idleTime);
             return this;
         }
         /**
-         * Property idleTime: Idle release wait time.
+         * Property idleTime: The period of inactivity, in seconds, after which the instance is considered idle.
          * <p>
-         * That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+         * Minimum value: 60. Default value: 600.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only for serverless instances that use
+         * auto-scheduling.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param idleTime Property idleTime: Idle release wait time. This parameter is required.
+         * @param idleTime Property idleTime: The period of inactivity, in seconds, after which the instance is considered idle. This parameter is required.
          */
         public Builder idleTime(final com.aliyun.ros.cdk.core.IResolvable idleTime) {
             this.props.idleTime(idleTime);
@@ -561,34 +681,66 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property instanceSpec: The specification of segment nodes.
+         * Property instanceSpec: The instance type for the compute nodes.
+         * <p>
+         * Valid values for a High-availability Edition instance in elastic storage mode:
          * <p>
          * <ul>
-         * <li>When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.</li>
-         * <li>When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.</li>
-         * <li>When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
-         * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.</li>
+         * <li>2C16G</li>
+         * <li>4C32G</li>
+         * <li>16C128G
+         * Valid values for a Basic Edition instance in elastic storage mode:</li>
+         * <li>2C8G</li>
+         * <li>4C16G</li>
+         * <li>8C32G</li>
+         * <li>16C64G
+         * Valid values for a serverless instance:</li>
+         * <li>4C16G</li>
+         * <li>8C32G</li>
          * </ul>
          * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for instances in elastic storage mode or serverless
+         * mode.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
-         * @param instanceSpec Property instanceSpec: The specification of segment nodes. This parameter is required.
+         * @param instanceSpec Property instanceSpec: The instance type for the compute nodes. This parameter is required.
          */
         public Builder instanceSpec(final java.lang.String instanceSpec) {
             this.props.instanceSpec(instanceSpec);
             return this;
         }
         /**
-         * Property instanceSpec: The specification of segment nodes.
+         * Property instanceSpec: The instance type for the compute nodes.
+         * <p>
+         * Valid values for a High-availability Edition instance in elastic storage mode:
          * <p>
          * <ul>
-         * <li>When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.</li>
-         * <li>When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.</li>
-         * <li>When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
-         * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.</li>
+         * <li>2C16G</li>
+         * <li>4C32G</li>
+         * <li>16C128G
+         * Valid values for a Basic Edition instance in elastic storage mode:</li>
+         * <li>2C8G</li>
+         * <li>4C16G</li>
+         * <li>8C32G</li>
+         * <li>16C64G
+         * Valid values for a serverless instance:</li>
+         * <li>4C16G</li>
+         * <li>8C32G</li>
          * </ul>
          * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for instances in elastic storage mode or serverless
+         * mode.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
-         * @param instanceSpec Property instanceSpec: The specification of segment nodes. This parameter is required.
+         * @param instanceSpec Property instanceSpec: The instance type for the compute nodes. This parameter is required.
          */
         public Builder instanceSpec(final com.aliyun.ros.cdk.core.IResolvable instanceSpec) {
             this.props.instanceSpec(instanceSpec);
@@ -621,24 +773,52 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property masterCu: Master resources.
+         * Property masterCu: The resources for the coordinator node.
          * <p>
-         * Default is 8.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>2 CU</li>
+         * <li>4 CU</li>
+         * <li>8 CU</li>
+         * <li>16 CU</li>
+         * <li>32 CU</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * You are charged for coordinator node resources of 8 CUs or more.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param masterCu Property masterCu: Master resources. This parameter is required.
+         * @param masterCu Property masterCu: The resources for the coordinator node. This parameter is required.
          */
         public Builder masterCu(final java.lang.Number masterCu) {
             this.props.masterCu(masterCu);
             return this;
         }
         /**
-         * Property masterCu: Master resources.
+         * Property masterCu: The resources for the coordinator node.
          * <p>
-         * Default is 8.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>2 CU</li>
+         * <li>4 CU</li>
+         * <li>8 CU</li>
+         * <li>16 CU</li>
+         * <li>32 CU</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * You are charged for coordinator node resources of 8 CUs or more.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param masterCu Property masterCu: Master resources. This parameter is required.
+         * @param masterCu Property masterCu: The resources for the coordinator node. This parameter is required.
          */
         public Builder masterCu(final com.aliyun.ros.cdk.core.IResolvable masterCu) {
             this.props.masterCu(masterCu);
@@ -750,20 +930,20 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property privateIpAddress: Private IP address.
+         * Property privateIpAddress: This parameter is deprecated.
          * <p>
          * @return {@code this}
-         * @param privateIpAddress Property privateIpAddress: Private IP address. This parameter is required.
+         * @param privateIpAddress Property privateIpAddress: This parameter is deprecated. This parameter is required.
          */
         public Builder privateIpAddress(final java.lang.String privateIpAddress) {
             this.props.privateIpAddress(privateIpAddress);
             return this;
         }
         /**
-         * Property privateIpAddress: Private IP address.
+         * Property privateIpAddress: This parameter is deprecated.
          * <p>
          * @return {@code this}
-         * @param privateIpAddress Property privateIpAddress: Private IP address. This parameter is required.
+         * @param privateIpAddress Property privateIpAddress: This parameter is deprecated. This parameter is required.
          */
         public Builder privateIpAddress(final com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
             this.props.privateIpAddress(privateIpAddress);
@@ -817,26 +997,28 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
+         * Property securityIpList: The IP address whitelist for the instance.
          * <p>
-         * Default value:
-         * 127.0.0.1.
+         * A value of 127.0.0.1 blocks all external access. After you create the instance,
+         * you can call the <a href="">ModifySecurityIps</a> operation to modify the IP address
+         * whitelist.
          * <p>
          * @return {@code this}
-         * @param securityIpList Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. This parameter is required.
+         * @param securityIpList Property securityIpList: The IP address whitelist for the instance. This parameter is required.
          */
         public Builder securityIpList(final java.lang.String securityIpList) {
             this.props.securityIpList(securityIpList);
             return this;
         }
         /**
-         * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
+         * Property securityIpList: The IP address whitelist for the instance.
          * <p>
-         * Default value:
-         * 127.0.0.1.
+         * A value of 127.0.0.1 blocks all external access. After you create the instance,
+         * you can call the <a href="">ModifySecurityIps</a> operation to modify the IP address
+         * whitelist.
          * <p>
          * @return {@code this}
-         * @param securityIpList Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. This parameter is required.
+         * @param securityIpList Property securityIpList: The IP address whitelist for the instance. This parameter is required.
          */
         public Builder securityIpList(final com.aliyun.ros.cdk.core.IResolvable securityIpList) {
             this.props.securityIpList(securityIpList);
@@ -844,26 +1026,54 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property segDiskPerformanceLevel: Seg disk performance level.
+         * Property segDiskPerformanceLevel: The performance level of the ESSDs.
          * <p>
-         * The value can be:
-         * pl0、pl1 and pl2
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>pl0: PL0</li>
+         * <li>pl1: PL1</li>
+         * <li>pl2: PL2</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter applies only if the segment node storage type is ESSD.</li>
+         * <li>If this parameter is not specified, pl1 is used by default.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param segDiskPerformanceLevel Property segDiskPerformanceLevel: Seg disk performance level. This parameter is required.
+         * @param segDiskPerformanceLevel Property segDiskPerformanceLevel: The performance level of the ESSDs. This parameter is required.
          */
         public Builder segDiskPerformanceLevel(final java.lang.String segDiskPerformanceLevel) {
             this.props.segDiskPerformanceLevel(segDiskPerformanceLevel);
             return this;
         }
         /**
-         * Property segDiskPerformanceLevel: Seg disk performance level.
+         * Property segDiskPerformanceLevel: The performance level of the ESSDs.
          * <p>
-         * The value can be:
-         * pl0、pl1 and pl2
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>pl0: PL0</li>
+         * <li>pl1: PL1</li>
+         * <li>pl2: PL2</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter applies only if the segment node storage type is ESSD.</li>
+         * <li>If this parameter is not specified, pl1 is used by default.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param segDiskPerformanceLevel Property segDiskPerformanceLevel: Seg disk performance level. This parameter is required.
+         * @param segDiskPerformanceLevel Property segDiskPerformanceLevel: The performance level of the ESSDs. This parameter is required.
          */
         public Builder segDiskPerformanceLevel(final com.aliyun.ros.cdk.core.IResolvable segDiskPerformanceLevel) {
             this.props.segDiskPerformanceLevel(segDiskPerformanceLevel);
@@ -966,26 +1176,40 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property serverlessResource: Computing resource threshold.
+         * Property serverlessResource: The threshold for computing resources, in AnalyticDB Compute Units (ACUs).
          * <p>
-         * The value ranges from 8 to 32. The step length is 8.
-         * The unit is ACU. The default value is 32.
+         * The
+         * value must be a multiple of 8, ranging from 8 to 32. The default value is 32.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only for serverless instances that use
+         * auto-scheduling.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param serverlessResource Property serverlessResource: Computing resource threshold. This parameter is required.
+         * @param serverlessResource Property serverlessResource: The threshold for computing resources, in AnalyticDB Compute Units (ACUs). This parameter is required.
          */
         public Builder serverlessResource(final java.lang.Number serverlessResource) {
             this.props.serverlessResource(serverlessResource);
             return this;
         }
         /**
-         * Property serverlessResource: Computing resource threshold.
+         * Property serverlessResource: The threshold for computing resources, in AnalyticDB Compute Units (ACUs).
          * <p>
-         * The value ranges from 8 to 32. The step length is 8.
-         * The unit is ACU. The default value is 32.
+         * The
+         * value must be a multiple of 8, ranging from 8 to 32. The default value is 32.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only for serverless instances that use
+         * auto-scheduling.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param serverlessResource Property serverlessResource: Computing resource threshold. This parameter is required.
+         * @param serverlessResource Property serverlessResource: The threshold for computing resources, in AnalyticDB Compute Units (ACUs). This parameter is required.
          */
         public Builder serverlessResource(final com.aliyun.ros.cdk.core.IResolvable serverlessResource) {
             this.props.serverlessResource(serverlessResource);
@@ -1018,20 +1242,38 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property standbyVSwitchId: The standby VSwitch ID of the instance.
+         * Property standbyVSwitchId: The ID of the vSwitch in the standby zone.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter is required only for a multi-AZ deployment.</li>
+         * <li>The vSwitch must be in the standby zone specified in <code>StandbyZoneId</code>.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param standbyVSwitchId Property standbyVSwitchId: The standby VSwitch ID of the instance. This parameter is required.
+         * @param standbyVSwitchId Property standbyVSwitchId: The ID of the vSwitch in the standby zone. This parameter is required.
          */
         public Builder standbyVSwitchId(final java.lang.String standbyVSwitchId) {
             this.props.standbyVSwitchId(standbyVSwitchId);
             return this;
         }
         /**
-         * Property standbyVSwitchId: The standby VSwitch ID of the instance.
+         * Property standbyVSwitchId: The ID of the vSwitch in the standby zone.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter is required only for a multi-AZ deployment.</li>
+         * <li>The vSwitch must be in the standby zone specified in <code>StandbyZoneId</code>.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param standbyVSwitchId Property standbyVSwitchId: The standby VSwitch ID of the instance. This parameter is required.
+         * @param standbyVSwitchId Property standbyVSwitchId: The ID of the vSwitch in the standby zone. This parameter is required.
          */
         public Builder standbyVSwitchId(final com.aliyun.ros.cdk.core.IResolvable standbyVSwitchId) {
             this.props.standbyVSwitchId(standbyVSwitchId);
@@ -1039,20 +1281,42 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property standbyZoneId: The standby zone ID of the instance.
+         * Property standbyZoneId: The ID of the standby zone.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter is required only for a multi-AZ deployment.</li>
+         * <li>You can call the <a href="">DescribeRegions</a> operation to query the IDs of available
+         * zones.</li>
+         * <li>The standby zone must be different from the primary zone.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param standbyZoneId Property standbyZoneId: The standby zone ID of the instance. This parameter is required.
+         * @param standbyZoneId Property standbyZoneId: The ID of the standby zone. This parameter is required.
          */
         public Builder standbyZoneId(final java.lang.String standbyZoneId) {
             this.props.standbyZoneId(standbyZoneId);
             return this;
         }
         /**
-         * Property standbyZoneId: The standby zone ID of the instance.
+         * Property standbyZoneId: The ID of the standby zone.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter is required only for a multi-AZ deployment.</li>
+         * <li>You can call the <a href="">DescribeRegions</a> operation to query the IDs of available
+         * zones.</li>
+         * <li>The standby zone must be different from the primary zone.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param standbyZoneId Property standbyZoneId: The standby zone ID of the instance. This parameter is required.
+         * @param standbyZoneId Property standbyZoneId: The ID of the standby zone. This parameter is required.
          */
         public Builder standbyZoneId(final com.aliyun.ros.cdk.core.IResolvable standbyZoneId) {
             this.props.standbyZoneId(standbyZoneId);
@@ -1060,24 +1324,36 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property storageSize: The storage capacity of per segment node.
+         * Property storageSize: The storage capacity for the instance, in GB.
          * <p>
-         * Unit: GB. Minimum is 50, max is 4000, step is 50.
+         * Valid values: .
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for instances in elastic storage mode.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param storageSize Property storageSize: The storage capacity of per segment node. This parameter is required.
+         * @param storageSize Property storageSize: The storage capacity for the instance, in GB. This parameter is required.
          */
         public Builder storageSize(final java.lang.Number storageSize) {
             this.props.storageSize(storageSize);
             return this;
         }
         /**
-         * Property storageSize: The storage capacity of per segment node.
+         * Property storageSize: The storage capacity for the instance, in GB.
          * <p>
-         * Unit: GB. Minimum is 50, max is 4000, step is 50.
+         * Valid values: .
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for instances in elastic storage mode.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param storageSize Property storageSize: The storage capacity of per segment node. This parameter is required.
+         * @param storageSize Property storageSize: The storage capacity for the instance, in GB. This parameter is required.
          */
         public Builder storageSize(final com.aliyun.ros.cdk.core.IResolvable storageSize) {
             this.props.storageSize(storageSize);

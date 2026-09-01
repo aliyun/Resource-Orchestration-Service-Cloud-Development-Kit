@@ -15,19 +15,23 @@ export interface RouteTableProps {
     readonly vpcId: string | ros.IResolvable;
 
     /**
-     * Property associateType: The type of the route table.
+     * Property associateType: The type of the route table. Valid values:
+     * *   VSwitch (default): vSwitch route table
+     * *   Gateway: gateway route table
      */
     readonly associateType?: string | ros.IResolvable;
 
     /**
      * Property description: The description of the route table.
-     * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:\/\/ or https:\/\/.
+     * The description must be 1 to 256 characters in length, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
      * Property routeTableName: The name of the route table.
-     * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:\/\/ or https:\/\/.
+     * The name must be 1 to 128 characters in length, and cannot start with `http:\/\/`
+     * or `https:\/\/`.
      */
     readonly routeTableName?: string | ros.IResolvable;
 

@@ -48,9 +48,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Property capacity: File system capacity, the unit is GB.</summary>
+        /// <summary>Property capacity: Specify the capacity of the file system.</summary>
         /// <remarks>
-        /// Required and valid when FileSystemType=extreme or cpfs.
+        /// Unit: GiB. This parameter is required
+        /// and valid when FileSystemType is set to extreme, cpfs, or cpfsse.
+        /// Specify a value based on the specifications on the following buy page:
+        ///
+        /// <list type="bullet">
+        /// <description>Extreme NAS (Pay-as-you-go)</description>
+        /// <description>CPFS (Pay-as-you-go)</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -87,7 +94,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Property description: File system description (space characters are not allowed).</summary>
+        /// <summary>Property description: The description of the file system.</summary>
+        /// <remarks>
+        /// Limits:
+        ///
+        /// <list type="bullet">
+        /// <description>Must be 2 to 128 characters in length.</description>
+        /// <description>Must start with a letter but cannot start with <c>http:\/\/</c> or <c>https:\/\/</c>.</description>
+        /// <description>Can contain digits, colons (:), underscores (_), and hyphens (-).</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Description
@@ -113,11 +129,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Property encryptType: Specifies whether to encrypt data.</summary>
+        /// <summary>Property encryptType: Specifies whether to encrypt data in the file system.</summary>
         /// <remarks>
-        /// You can use keys that are hosted by Key Management Service (KMS) to encrypt data stored on a file system. Data is automatically decrypted when you access encrypted data. Valid values:
-        /// 0: specifies that no encryption is applied to data on the file system.
-        /// 1: specifies that encryption is applied to data on the file system.
+        /// You can use the keys that are managed by Key Management Service (KMS) to encrypt
+        /// data in a file system. When you read and write the encrypted data, the data is
+        /// automatically decrypted.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>0 (default): The data in the file system is not encrypted.</description>
+        /// <description>1: A NAS-managed key is used to encrypt the data in the file system. This
+        /// value is valid if FileSystemType is set to standard or extreme.</description>
+        /// <description>2: A KMS-managed key is used to encrypt the data in the file system. This
+        /// value is valid if the FileSystemType parameter is set to standard or extreme.</description>
+        /// </list>
+        ///
+        ///
+        ///
+        /// <list type="bullet">
+        /// <description>Extreme NAS: All regions except China East 1 Finance support KMS-managed
+        /// keys.</description>
+        /// <description>General-purpose NAS: All regions support KMS-managed keys.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "encryptType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -154,7 +187,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Property snapshotId: Snapshot ID.</summary>
+        /// <summary>Property snapshotId: The snapshot ID.</summary>
+        /// <remarks>
+        /// This parameter is available only for advanced Extreme NAS file systems.
+        ///
+        ///     You can create a file system from a snapshot. The version of the file system is
+        ///     the same as that of the source file system. For example, the source file system
+        ///     of the snapshot uses version 1. To create a file system of version 2, create File
+        ///     System A from the snapshot and create File System B of version 2. Then copy the
+        ///     data and migrate your business from File System A to File System B.
+        /// </remarks>
         [JsiiProperty(name: "snapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SnapshotId
@@ -179,7 +221,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Property vpcId: Vpc ID.</summary>
+        /// <summary>Property vpcId: The VPC ID.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>This parameter is required if FileSystemType is set to cpfs or cpfsse.</description>
+        /// <description>This parameter is reserved and not required if FileSystemType is set to
+        /// standard or extreme.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? VpcId
@@ -190,7 +239,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Property vSwitchId: VSwitch ID.</summary>
+        /// <summary>Property vSwitchId: The vSwitch ID.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>This parameter is required if FileSystemType is set to cpfs.</description>
+        /// <description>If FileSystemType is not set to cpfs, this parameter is reserved and not
+        /// required.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? VSwitchId
@@ -201,7 +257,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Property zoneId: Zone ID.</summary>
+        /// <summary>Property zoneId: The ID of the zone.</summary>
+        /// <remarks>
+        /// Each region has multiple isolated locations known as zones. Each zone has its own
+        /// independent power supply and network.
+        /// This parameter is not required if FileSystemType is set to standard. By default,
+        /// a random zone is selected based on the protocol type and storage type.
+        /// This parameter is required if FileSystemType is set to extreme or cpfs.
+        ///
+        ///
+        ///
+        /// <list type="bullet">
+        /// <description>An Elastic Compute Service (ECS) instance and a file system that reside in
+        /// different zones of the same region can access each other.</description>
+        /// <description>We recommend that you select the zone where the ECS instance resides. This
+        /// prevents cross-zone latency between the file system and the ECS instance.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ZoneId
@@ -257,9 +329,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property capacity: File system capacity, the unit is GB.</summary>
+            /// <summary>Property capacity: Specify the capacity of the file system.</summary>
             /// <remarks>
-            /// Required and valid when FileSystemType=extreme or cpfs.
+            /// Unit: GiB. This parameter is required
+            /// and valid when FileSystemType is set to extreme, cpfs, or cpfsse.
+            /// Specify a value based on the specifications on the following buy page:
+            ///
+            /// <list type="bullet">
+            /// <description>Extreme NAS (Pay-as-you-go)</description>
+            /// <description>CPFS (Pay-as-you-go)</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -287,7 +366,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property description: File system description (space characters are not allowed).</summary>
+            /// <summary>Property description: The description of the file system.</summary>
+            /// <remarks>
+            /// Limits:
+            ///
+            /// <list type="bullet">
+            /// <description>Must be 2 to 128 characters in length.</description>
+            /// <description>Must start with a letter but cannot start with <c>http:\/\/</c> or <c>https:\/\/</c>.</description>
+            /// <description>Can contain digits, colons (:), underscores (_), and hyphens (-).</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
@@ -307,11 +395,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property encryptType: Specifies whether to encrypt data.</summary>
+            /// <summary>Property encryptType: Specifies whether to encrypt data in the file system.</summary>
             /// <remarks>
-            /// You can use keys that are hosted by Key Management Service (KMS) to encrypt data stored on a file system. Data is automatically decrypted when you access encrypted data. Valid values:
-            /// 0: specifies that no encryption is applied to data on the file system.
-            /// 1: specifies that encryption is applied to data on the file system.
+            /// You can use the keys that are managed by Key Management Service (KMS) to encrypt
+            /// data in a file system. When you read and write the encrypted data, the data is
+            /// automatically decrypted.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>0 (default): The data in the file system is not encrypted.</description>
+            /// <description>1: A NAS-managed key is used to encrypt the data in the file system. This
+            /// value is valid if FileSystemType is set to standard or extreme.</description>
+            /// <description>2: A KMS-managed key is used to encrypt the data in the file system. This
+            /// value is valid if the FileSystemType parameter is set to standard or extreme.</description>
+            /// </list>
+            ///
+            ///
+            ///
+            /// <list type="bullet">
+            /// <description>Extreme NAS: All regions except China East 1 Finance support KMS-managed
+            /// keys.</description>
+            /// <description>General-purpose NAS: All regions support KMS-managed keys.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "encryptType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -339,7 +444,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property snapshotId: Snapshot ID.</summary>
+            /// <summary>Property snapshotId: The snapshot ID.</summary>
+            /// <remarks>
+            /// This parameter is available only for advanced Extreme NAS file systems.
+            ///
+            ///     You can create a file system from a snapshot. The version of the file system is
+            ///     the same as that of the source file system. For example, the source file system
+            ///     of the snapshot uses version 1. To create a file system of version 2, create File
+            ///     System A from the snapshot and create File System B of version 2. Then copy the
+            ///     data and migrate your business from File System A to File System B.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "snapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SnapshotId
@@ -358,7 +472,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Nas.RosFileSystem.ITagsProperty[]?>();
             }
 
-            /// <summary>Property vpcId: Vpc ID.</summary>
+            /// <summary>Property vpcId: The VPC ID.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>This parameter is required if FileSystemType is set to cpfs or cpfsse.</description>
+            /// <description>This parameter is reserved and not required if FileSystemType is set to
+            /// standard or extreme.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? VpcId
@@ -366,7 +487,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property vSwitchId: VSwitch ID.</summary>
+            /// <summary>Property vSwitchId: The vSwitch ID.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>This parameter is required if FileSystemType is set to cpfs.</description>
+            /// <description>If FileSystemType is not set to cpfs, this parameter is reserved and not
+            /// required.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? VSwitchId
@@ -374,7 +502,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property zoneId: Zone ID.</summary>
+            /// <summary>Property zoneId: The ID of the zone.</summary>
+            /// <remarks>
+            /// Each region has multiple isolated locations known as zones. Each zone has its own
+            /// independent power supply and network.
+            /// This parameter is not required if FileSystemType is set to standard. By default,
+            /// a random zone is selected based on the protocol type and storage type.
+            /// This parameter is required if FileSystemType is set to extreme or cpfs.
+            ///
+            ///
+            ///
+            /// <list type="bullet">
+            /// <description>An Elastic Compute Service (ECS) instance and a file system that reside in
+            /// different zones of the same region can access each other.</description>
+            /// <description>We recommend that you select the zone where the ECS instance resides. This
+            /// prevents cross-zone latency between the file system and the ECS instance.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ZoneId

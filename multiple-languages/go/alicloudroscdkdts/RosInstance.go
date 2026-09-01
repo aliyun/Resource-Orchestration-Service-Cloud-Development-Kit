@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`Use the , which resource to create a new DTS instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrInstanceId() alicloudroscdkcore.IResolvable

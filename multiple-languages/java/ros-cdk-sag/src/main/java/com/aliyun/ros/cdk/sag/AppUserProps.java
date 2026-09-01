@@ -5,15 +5,16 @@ package com.aliyun.ros.cdk.sag;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-appuser
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:44:50.972Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:26:52.074Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.AppUserProps")
 @software.amazon.jsii.Jsii.Proxy(AppUserProps.Jsii$Proxy.class)
 public interface AppUserProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property bandwidth: The bandwidth.
+     * Property bandwidth: The maximum bandwidth value.
      * <p>
-     * Unit: Kbit/s. Maximum bandwidth: 2,000 Kbit/s.
+     * Unit: Kbit/s. Valid values: 1 to 20000. Default
+     * value: 2000.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getBandwidth();
 
@@ -52,9 +53,11 @@ public interface AppUserProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property password: The password used to log on to SAG APP.
+     * Property password: The password that is used to log on to the SAG app.
      * <p>
-     * For a client account, if you specify the username, you must also specify the password.
+     * The password must be 8 to 32 characters in length. It can contain letters,
+     * digits, underscores (_), at signs (&#64;), and hyphens (-). It must start with a
+     * letter or a digit.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
         return null;
@@ -63,9 +66,18 @@ public interface AppUserProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property userName: The username of the client account.
      * <p>
-     * Usernames of client accounts added to the same
-     * SAG APP instance must be unique.
-     * For a client account, if you specify the username, you must also specify the password.
+     * The usernames of client accounts added to the
+     * same SAG app instance must be unique.
+     * The username must be 7 to 33 characters in length, and can contain letters,
+     * digits, underscores (_), at signs (&#64;), periods (.), and hyphens (-). It must
+     * start with a letter or a digit.
+     * <p>
+     * <blockquote>
+     * <p>
+     * For a client account, if you specify the username, you must also specify the
+     * password. If you specify the password, you must specify the username.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUserName() {
         return null;
@@ -91,8 +103,9 @@ public interface AppUserProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AppUserProps#getBandwidth}
-         * @param bandwidth Property bandwidth: The bandwidth. This parameter is required.
-         *                  Unit: Kbit/s. Maximum bandwidth: 2,000 Kbit/s.
+         * @param bandwidth Property bandwidth: The maximum bandwidth value. This parameter is required.
+         *                  Unit: Kbit/s. Valid values: 1 to 20000. Default
+         *                  value: 2000.
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
@@ -102,8 +115,9 @@ public interface AppUserProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AppUserProps#getBandwidth}
-         * @param bandwidth Property bandwidth: The bandwidth. This parameter is required.
-         *                  Unit: Kbit/s. Maximum bandwidth: 2,000 Kbit/s.
+         * @param bandwidth Property bandwidth: The maximum bandwidth value. This parameter is required.
+         *                  Unit: Kbit/s. Valid values: 1 to 20000. Default
+         *                  value: 2000.
          * @return {@code this}
          */
         public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
@@ -209,8 +223,10 @@ public interface AppUserProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AppUserProps#getPassword}
-         * @param password Property password: The password used to log on to SAG APP.
-         *                 For a client account, if you specify the username, you must also specify the password.
+         * @param password Property password: The password that is used to log on to the SAG app.
+         *                 The password must be 8 to 32 characters in length. It can contain letters,
+         *                 digits, underscores (_), at signs (&#64;), and hyphens (-). It must start with a
+         *                 letter or a digit.
          * @return {@code this}
          */
         public Builder password(java.lang.String password) {
@@ -220,8 +236,10 @@ public interface AppUserProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AppUserProps#getPassword}
-         * @param password Property password: The password used to log on to SAG APP.
-         *                 For a client account, if you specify the username, you must also specify the password.
+         * @param password Property password: The password that is used to log on to the SAG app.
+         *                 The password must be 8 to 32 characters in length. It can contain letters,
+         *                 digits, underscores (_), at signs (&#64;), and hyphens (-). It must start with a
+         *                 letter or a digit.
          * @return {@code this}
          */
         public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
@@ -232,9 +250,18 @@ public interface AppUserProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link AppUserProps#getUserName}
          * @param userName Property userName: The username of the client account.
-         *                 Usernames of client accounts added to the same
-         *                 SAG APP instance must be unique.
-         *                 For a client account, if you specify the username, you must also specify the password.
+         *                 The usernames of client accounts added to the
+         *                 same SAG app instance must be unique.
+         *                 The username must be 7 to 33 characters in length, and can contain letters,
+         *                 digits, underscores (_), at signs (&#64;), periods (.), and hyphens (-). It must
+         *                 start with a letter or a digit.
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 For a client account, if you specify the username, you must also specify the
+         *                 password. If you specify the password, you must specify the username.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder userName(java.lang.String userName) {
@@ -245,9 +272,18 @@ public interface AppUserProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link AppUserProps#getUserName}
          * @param userName Property userName: The username of the client account.
-         *                 Usernames of client accounts added to the same
-         *                 SAG APP instance must be unique.
-         *                 For a client account, if you specify the username, you must also specify the password.
+         *                 The usernames of client accounts added to the
+         *                 same SAG app instance must be unique.
+         *                 The username must be 7 to 33 characters in length, and can contain letters,
+         *                 digits, underscores (_), at signs (&#64;), periods (.), and hyphens (-). It must
+         *                 start with a letter or a digit.
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 For a client account, if you specify the username, you must also specify the
+         *                 password. If you specify the password, you must specify the username.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder userName(com.aliyun.ros.cdk.core.IResolvable userName) {

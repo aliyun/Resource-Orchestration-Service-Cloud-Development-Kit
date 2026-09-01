@@ -15,12 +15,18 @@ export interface TrafficControlProps {
     readonly apiDefault: number | ros.IResolvable;
 
     /**
-     * Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+     * Property trafficControlName: The name of the throttling policy. The name must be 4 to 50 characters in length
+     * and can contain letters, digits, and underscores (_). It cannot start with an
+     * underscore.
      */
     readonly trafficControlName: string | ros.IResolvable;
 
     /**
-     * Property trafficControlUnit: Traffic control unit, DAY\/HOUR\/MINUTE.
+     * Property trafficControlUnit: The unit to be used in the throttling policy. Valid values:
+     * - SECOND
+     * - MINUTE
+     * - HOUR
+     * - DAY
      */
     readonly trafficControlUnit: string | ros.IResolvable;
 
@@ -57,7 +63,7 @@ export interface ITrafficControl extends ros.IResource {
     readonly attrTrafficControlId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::TrafficControl`, which is used to create a custom throttling policy.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::TrafficControl`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrafficControl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrol
  */

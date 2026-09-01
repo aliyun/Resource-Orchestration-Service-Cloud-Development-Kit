@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::SecurityPolicy</code>, which is used to create a custom security policy.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::SecurityPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.284Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.482Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.SecurityPolicy")
 public class SecurityPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.ISecurityPolicy {
 
@@ -112,26 +112,20 @@ public class SecurityPolicy extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property ciphers: The supported cipher suites, which are determined by the TLS protocol version.
-         * <p>
-         * The specified cipher suites must be supported by at least one TLS protocol version that you specify.
-         * Note For example, if you set the TLSVersions parameter to TLSv1.3, you must specify cipher suites that are supported by TLS 1.3.
+         * Property ciphers: The supported cipher suites.
          * <p>
          * @return {@code this}
-         * @param ciphers Property ciphers: The supported cipher suites, which are determined by the TLS protocol version. This parameter is required.
+         * @param ciphers Property ciphers: The supported cipher suites. This parameter is required.
          */
         public Builder ciphers(final com.aliyun.ros.cdk.core.IResolvable ciphers) {
             this.props.ciphers(ciphers);
             return this;
         }
         /**
-         * Property ciphers: The supported cipher suites, which are determined by the TLS protocol version.
-         * <p>
-         * The specified cipher suites must be supported by at least one TLS protocol version that you specify.
-         * Note For example, if you set the TLSVersions parameter to TLSv1.3, you must specify cipher suites that are supported by TLS 1.3.
+         * Property ciphers: The supported cipher suites.
          * <p>
          * @return {@code this}
-         * @param ciphers Property ciphers: The supported cipher suites, which are determined by the TLS protocol version. This parameter is required.
+         * @param ciphers Property ciphers: The supported cipher suites. This parameter is required.
          */
         public Builder ciphers(final java.util.List<? extends java.lang.Object> ciphers) {
             this.props.ciphers(ciphers);
@@ -141,8 +135,8 @@ public class SecurityPolicy extends com.aliyun.ros.cdk.core.Resource implements 
         /**
          * Property securityPolicyName: The name of the security policy.
          * <p>
-         * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-         * (.), underscores (_), and hyphens (-). The name must start with a letter.
+         * The name must be 2 to 128 characters in length, and can contain letters, digits,
+         * Chinese characters, periods (.), underscores (_), hyphens (-), and spaces.
          * <p>
          * @return {@code this}
          * @param securityPolicyName Property securityPolicyName: The name of the security policy. This parameter is required.
@@ -154,8 +148,8 @@ public class SecurityPolicy extends com.aliyun.ros.cdk.core.Resource implements 
         /**
          * Property securityPolicyName: The name of the security policy.
          * <p>
-         * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-         * (.), underscores (_), and hyphens (-). The name must start with a letter.
+         * The name must be 2 to 128 characters in length, and can contain letters, digits,
+         * Chinese characters, periods (.), underscores (_), hyphens (-), and spaces.
          * <p>
          * @return {@code this}
          * @param securityPolicyName Property securityPolicyName: The name of the security policy. This parameter is required.

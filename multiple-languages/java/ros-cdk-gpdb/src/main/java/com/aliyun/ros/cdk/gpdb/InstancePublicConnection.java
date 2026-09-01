@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::InstancePublicConnection</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:13:37.757Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:21:33.466Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.InstancePublicConnection")
 public class InstancePublicConnection extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.gpdb.IInstancePublicConnection {
 
@@ -120,20 +120,26 @@ public class InstancePublicConnection extends com.aliyun.ros.cdk.core.Resource i
         }
 
         /**
-         * Property connectionStringPrefix: The endpoint that is used to connect to the specified database.
+         * Property connectionStringPrefix: The prefix of the endpoint.
+         * <p>
+         * Specify a prefix for the endpoint. Example: <code>gp-bp12ga6v69h86**</code>. In this
+         * example, the endpoint is <code>gp-bp12ga6v69h86**.gpdb.rds.example.com</code>.
          * <p>
          * @return {@code this}
-         * @param connectionStringPrefix Property connectionStringPrefix: The endpoint that is used to connect to the specified database. This parameter is required.
+         * @param connectionStringPrefix Property connectionStringPrefix: The prefix of the endpoint. This parameter is required.
          */
         public Builder connectionStringPrefix(final java.lang.String connectionStringPrefix) {
             this.props.connectionStringPrefix(connectionStringPrefix);
             return this;
         }
         /**
-         * Property connectionStringPrefix: The endpoint that is used to connect to the specified database.
+         * Property connectionStringPrefix: The prefix of the endpoint.
+         * <p>
+         * Specify a prefix for the endpoint. Example: <code>gp-bp12ga6v69h86**</code>. In this
+         * example, the endpoint is <code>gp-bp12ga6v69h86**.gpdb.rds.example.com</code>.
          * <p>
          * @return {@code this}
-         * @param connectionStringPrefix Property connectionStringPrefix: The endpoint that is used to connect to the specified database. This parameter is required.
+         * @param connectionStringPrefix Property connectionStringPrefix: The prefix of the endpoint. This parameter is required.
          */
         public Builder connectionStringPrefix(final com.aliyun.ros.cdk.core.IResolvable connectionStringPrefix) {
             this.props.connectionStringPrefix(connectionStringPrefix);

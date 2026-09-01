@@ -18,10 +18,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             get;
         }
 
-        /// <summary>Property servers: The backend servers that you want to add to the server group.</summary>
+        /// <summary>Property servers: A list of backend servers.</summary>
         /// <remarks>
-        /// You can specify up to
-        /// 40 servers in each call.
+        /// You can add up to 200 servers in a single call.
         /// </remarks>
         [JsiiProperty(name: "servers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosBackendServerAttachment.ServersProperty\"}]}},\"kind\":\"array\"}}]}}")]
         object Servers
@@ -47,10 +46,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property servers: The backend servers that you want to add to the server group.</summary>
+            /// <summary>Property servers: A list of backend servers.</summary>
             /// <remarks>
-            /// You can specify up to
-            /// 40 servers in each call.
+            /// You can add up to 200 servers in a single call.
             /// </remarks>
             [JsiiProperty(name: "servers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosBackendServerAttachment.ServersProperty\"}]}},\"kind\":\"array\"}}]}}")]
             public object Servers

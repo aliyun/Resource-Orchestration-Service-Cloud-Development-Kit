@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::Accelerator</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::Accelerator</code>, which is used to create a Global Accelerator (GA) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.729Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:19:27.708Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.Accelerator")
 public class Accelerator extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ga.IAccelerator {
 
@@ -257,6 +257,31 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
+         * Property bandwidth: The bandwidth of the global acceleration instance.
+         * <p>
+         * Unit: Mbps. Valid values: 200 to 5000. This parameter is required when the access mode is set to Anycast.
+         * <p>
+         * @return {@code this}
+         * @param bandwidth Property bandwidth: The bandwidth of the global acceleration instance. This parameter is required.
+         */
+        public Builder bandwidth(final java.lang.Number bandwidth) {
+            this.props().bandwidth(bandwidth);
+            return this;
+        }
+        /**
+         * Property bandwidth: The bandwidth of the global acceleration instance.
+         * <p>
+         * Unit: Mbps. Valid values: 200 to 5000. This parameter is required when the access mode is set to Anycast.
+         * <p>
+         * @return {@code this}
+         * @param bandwidth Property bandwidth: The bandwidth of the global acceleration instance. This parameter is required.
+         */
+        public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.props().bandwidth(bandwidth);
+            return this;
+        }
+
+        /**
          * Property bandwidthBillingType: Bandwidth billing method.
          * <p>
          * @return {@code this}
@@ -274,6 +299,48 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource implements com
          */
         public Builder bandwidthBillingType(final com.aliyun.ros.cdk.core.IResolvable bandwidthBillingType) {
             this.props().bandwidthBillingType(bandwidthBillingType);
+            return this;
+        }
+
+        /**
+         * Property crossBorderMode: The cross-border mode of the global acceleration instance.
+         * <p>
+         * @return {@code this}
+         * @param crossBorderMode Property crossBorderMode: The cross-border mode of the global acceleration instance. This parameter is required.
+         */
+        public Builder crossBorderMode(final java.lang.String crossBorderMode) {
+            this.props().crossBorderMode(crossBorderMode);
+            return this;
+        }
+        /**
+         * Property crossBorderMode: The cross-border mode of the global acceleration instance.
+         * <p>
+         * @return {@code this}
+         * @param crossBorderMode Property crossBorderMode: The cross-border mode of the global acceleration instance. This parameter is required.
+         */
+        public Builder crossBorderMode(final com.aliyun.ros.cdk.core.IResolvable crossBorderMode) {
+            this.props().crossBorderMode(crossBorderMode);
+            return this;
+        }
+
+        /**
+         * Property ddosConfigList: The DDoS configuration list of the global acceleration instance.
+         * <p>
+         * @return {@code this}
+         * @param ddosConfigList Property ddosConfigList: The DDoS configuration list of the global acceleration instance. This parameter is required.
+         */
+        public Builder ddosConfigList(final com.aliyun.ros.cdk.core.IResolvable ddosConfigList) {
+            this.props().ddosConfigList(ddosConfigList);
+            return this;
+        }
+        /**
+         * Property ddosConfigList: The DDoS configuration list of the global acceleration instance.
+         * <p>
+         * @return {@code this}
+         * @param ddosConfigList Property ddosConfigList: The DDoS configuration list of the global acceleration instance. This parameter is required.
+         */
+        public Builder ddosConfigList(final java.util.List<? extends java.lang.Object> ddosConfigList) {
+            this.props().ddosConfigList(ddosConfigList);
             return this;
         }
 
@@ -421,6 +488,19 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource implements com
          */
         public Builder spec(final com.aliyun.ros.cdk.core.IResolvable spec) {
             this.props().spec(spec);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to acceleration instance.
+         * <p>
+         * Max support 20 tags to add during create acceleration instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to acceleration instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ga.RosAccelerator.TagsProperty> tags) {
+            this.props().tags(tags);
             return this;
         }
 

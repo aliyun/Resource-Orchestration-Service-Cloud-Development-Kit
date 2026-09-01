@@ -117,7 +117,7 @@ function rosActivationPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Activation`, which is used to create an activation code.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Activation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Activation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-activation
  */
@@ -290,8 +290,9 @@ export interface RosAssignIpv6AddressesProps {
     readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
-     * @Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
-     * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
+     * @Property ipv6AddressCount: The number of IPv6 addresses to randomly generate for the ENI. Valid values: 1 to
+     * 10.
+     * > You must specify `Ipv6Addresses.N` or `Ipv6AddressCount`, but not both.
      */
     readonly ipv6AddressCount?: number | ros.IResolvable;
 
@@ -302,7 +303,9 @@ export interface RosAssignIpv6AddressesProps {
     readonly ipv6Addresses?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+     * @Property ipv6PrefixCount: The number of IPv6 prefixes to assign to the ENI. Valid values: 1 to 10.
+     * > To assign IPv6 prefixes to the ENI, you must specify Ipv6Prefix.N or
+     * Ipv6PrefixCount, but not both.
      */
     readonly ipv6PrefixCount?: number | ros.IResolvable;
 
@@ -382,7 +385,7 @@ function rosAssignIpv6AddressesPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignIpv6Addresses`, which is used to assign IPv6 addresses to an elastic network interface (ENI).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignIpv6Addresses`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AssignIpv6Addresses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
  */
@@ -416,8 +419,9 @@ export class RosAssignIpv6Addresses extends ros.RosResource {
     public networkInterfaceId: string | ros.IResolvable;
 
     /**
-     * @Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
-     * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
+     * @Property ipv6AddressCount: The number of IPv6 addresses to randomly generate for the ENI. Valid values: 1 to
+     * 10.
+     * > You must specify `Ipv6Addresses.N` or `Ipv6AddressCount`, but not both.
      */
     public ipv6AddressCount: number | ros.IResolvable | undefined;
 
@@ -428,7 +432,9 @@ export class RosAssignIpv6Addresses extends ros.RosResource {
     public ipv6Addresses: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+     * @Property ipv6PrefixCount: The number of IPv6 prefixes to assign to the ENI. Valid values: 1 to 10.
+     * > To assign IPv6 prefixes to the ENI, you must specify Ipv6Prefix.N or
+     * Ipv6PrefixCount, but not both.
      */
     public ipv6PrefixCount: number | ros.IResolvable | undefined;
 
@@ -483,7 +489,10 @@ export interface RosAssignPrivateIpAddressesProps {
     readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
-     * @Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+     * @Property ipv4PrefixCount: The number of IPv4 prefixes to be randomly generated for the ENI. Valid values: 1
+     * to 10.
+     * > To assign IPv4 prefixes to the ENI, you must specify the Ipv4Prefix.N or
+     * Ipv4PrefixCount parameter, but not both.
      */
     readonly ipv4PrefixCount?: number | ros.IResolvable;
 
@@ -503,7 +512,10 @@ export interface RosAssignPrivateIpAddressesProps {
     readonly privateIpAddresses?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
+     * @Property secondaryPrivateIpAddressCount: The number of private IP addresses to be automatically assigned from the CIDR
+     * block of the vSwitch that is connected to the ENI.
+     * To assign secondary private IP addresses to the ENI, you must specify
+     * `PrivateIpAddress.N` or `SecondaryPrivateIpAddressCount` but not both.
      */
     readonly secondaryPrivateIpAddressCount?: number | ros.IResolvable;
 }
@@ -542,6 +554,13 @@ function RosAssignPrivateIpAddressesPropsValidator(properties: any): ros.Validat
           }));
     }
     errors.collect(ros.propertyValidator('ipv4Prefixes', ros.listValidator(ros.validateAny))(properties.ipv4Prefixes));
+    if(properties.ipv4PrefixCount && (typeof properties.ipv4PrefixCount) !== 'object') {
+        errors.collect(ros.propertyValidator('ipv4PrefixCount', ros.validateRange)({
+            data: properties.ipv4PrefixCount,
+            min: 1,
+            max: 10,
+          }));
+    }
     errors.collect(ros.propertyValidator('ipv4PrefixCount', ros.validateNumber)(properties.ipv4PrefixCount));
     errors.collect(ros.propertyValidator('networkInterfaceId', ros.requiredValidator)(properties.networkInterfaceId));
     errors.collect(ros.propertyValidator('networkInterfaceId', ros.validateString)(properties.networkInterfaceId));
@@ -571,7 +590,7 @@ function rosAssignPrivateIpAddressesPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignPrivateIpAddresses`, which is used to assign secondary private IP addresses to an elastic network interface (ENI). You can specify available private IP addresses within the CIDR block of the vSwitch that is associated with the ENI. Alternatively, you can specify a number to have the specified number of private IP addresses automatically assigned to the ENI.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignPrivateIpAddresses`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AssignPrivateIpAddresses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignprivateipaddresses
  */
@@ -600,7 +619,10 @@ export class RosAssignPrivateIpAddresses extends ros.RosResource {
     public networkInterfaceId: string | ros.IResolvable;
 
     /**
-     * @Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+     * @Property ipv4PrefixCount: The number of IPv4 prefixes to be randomly generated for the ENI. Valid values: 1
+     * to 10.
+     * > To assign IPv4 prefixes to the ENI, you must specify the Ipv4Prefix.N or
+     * Ipv4PrefixCount parameter, but not both.
      */
     public ipv4PrefixCount: number | ros.IResolvable | undefined;
 
@@ -620,7 +642,10 @@ export class RosAssignPrivateIpAddresses extends ros.RosResource {
     public privateIpAddresses: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
+     * @Property secondaryPrivateIpAddressCount: The number of private IP addresses to be automatically assigned from the CIDR
+     * block of the vSwitch that is connected to the ENI.
+     * To assign secondary private IP addresses to the ENI, you must specify
+     * `PrivateIpAddress.N` or `SecondaryPrivateIpAddressCount` but not both.
      */
     public secondaryPrivateIpAddressCount: number | ros.IResolvable | undefined;
 
@@ -664,11 +689,11 @@ export class RosAssignPrivateIpAddresses extends ros.RosResource {
 export interface RosAutoProvisioningGroupProps {
 
     /**
-     * @Property totalTargetCapacity: The total target capacity of the auto provisioning group. The target capacity consists
-     * of the following three parts:
-     * The target capacity of pay-as-you-go instances specified by the PayAsYouGoTargetCapacity parameter
-     * The target capacity of preemptible instances specified by the SpotTargetCapacity parameter
-     * The supplemental capacity besides PayAsYouGoTargetCapacity and SpotTargetCapacity
+     * @Property totalTargetCapacity: The total target capacity of the auto provisioning group. Valid values: Positive
+     * integers.
+     * The total capacity must be greater than or equal to the sum of
+     * `PayAsYouGoTargetCapacity` (target capacity for pay-as-you-go instances) and
+     * `SpotTargetCapacity` (target capacity for spot instances).
      */
     readonly totalTargetCapacity: string | ros.IResolvable;
 
@@ -680,16 +705,16 @@ export interface RosAutoProvisioningGroupProps {
     readonly autoProvisioningGroupName?: string | ros.IResolvable;
 
     /**
-     * @Property autoProvisioningGroupType: The type of the auto provisioning group. Valid values:
-     * request: One-time delivery. After the auto provisioning group is started, it only attempts
-     * to create an instance cluster once. If the cluster fails to be created, the group
-     * does not try again.
-     * maintain: The continuous delivery and maintain capacity type. After the auto provisioning group
-     * is started, it continuously attempts to create and maintain the instance cluster.
-     * The auto provisioning group compares the real-time and target capacity of the cluster.
-     * If the cluster does not meet the target capacity, the group will create instances
-     * until the cluster meets the target capacity.
-     * Default value: maintain
+     * @Property autoProvisioningGroupType: The delivery type of the auto provisioning group. Valid values:
+     * - request: One-time asynchronous delivery. The group delivers the instance
+     * cluster only at startup. If scheduling fails, no retry occurs.
+     * - instant: One-time synchronous delivery. The group creates instances
+     * synchronously at startup and returns the list of successfully created instances
+     * and reasons for failures in the response.
+     * - maintain: Continuous provisioning. The group attempts to deliver the instance
+     * cluster at startup and monitors real-time capacity. If the target capacity is not
+     * met, it continues creating ECS instances.
+     * Default value: maintain.
      */
     readonly autoProvisioningGroupType?: string | ros.IResolvable;
 
@@ -704,11 +729,12 @@ export interface RosAutoProvisioningGroupProps {
     readonly dataDiskConfig?: Array<RosAutoProvisioningGroup.DataDiskConfigProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property defaultTargetCapacityType: The type of supplemental instances. When the total value of PayAsYouGoTargetCapacity and SpotTargetCapacity is smaller than the value of TotalTargetCapacity, the auto provisioning group will create instances of the specified type to meet
-     * the capacity requirements. Valid values:
-     * PayAsYouGo: Pay-as-you-go instances.
-     * Spot: Preemptible instances.
-     * Default value: Spot
+     * @Property defaultTargetCapacityType: Specifies the billing method for the capacity difference when the sum of
+     * `PayAsYouGoTargetCapacity` and `SpotTargetCapacity` is less than
+     * `TotalTargetCapacity`. Valid values:
+     * - PayAsYouGo: Pay-as-you-go instances.
+     * - Spot: Spot instances.
+     * Default value: Spot.
      */
     readonly defaultTargetCapacityType?: string | ros.IResolvable;
 
@@ -718,12 +744,13 @@ export interface RosAutoProvisioningGroupProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property excessCapacityTerminationPolicy: The shutdown policy for excess preemptible instances followed when the capacity of
-     * the auto provisioning group exceeds the target capacity. Valid values:
-     * no-termination: Excess preemptible instances are not shut down.
-     * termination: Excess preemptible instances are to be shut down. The action to be performed on these
-     * shutdown instances is specified by the SpotInstanceInterruptionBehavior parameter.
-     * Default value: no-termination
+     * @Property excessCapacityTerminationPolicy: Specifies whether to release instances when the real-time capacity of the auto
+     * provisioning group exceeds the target capacity and scale-in is triggered. Valid
+     * values:
+     * - termination: Releases scaled-in instances.
+     * - no-termination: Only removes scaled-in instances from the auto provisioning
+     * group.
+     * Default value: no-termination.
      */
     readonly excessCapacityTerminationPolicy?: string | ros.IResolvable;
 
@@ -747,8 +774,10 @@ export interface RosAutoProvisioningGroupProps {
     readonly launchTemplateId?: string | ros.IResolvable;
 
     /**
-     * @Property launchTemplateVersion: The version of the instance launch template associated with the auto provisioning
-     * group. You can call the DescribeLaunchTemplateVersions operation to query the versions of available instance launch templates.
+     * @Property launchTemplateVersion: The version of the launch template associated with the auto provisioning group.
+     * Call [DescribeLaunchTemplateVersions]() to query available launch template
+     * versions.
+     * Default value: The default version of the launch template.
      */
     readonly launchTemplateVersion?: string | ros.IResolvable;
 
@@ -778,7 +807,8 @@ export interface RosAutoProvisioningGroupProps {
     readonly payAsYouGoAllocationStrategy?: string | ros.IResolvable;
 
     /**
-     * @Property payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group.
+     * @Property payAsYouGoTargetCapacity: The target capacity for pay-as-you-go instances in the auto provisioning group.
+     * Valid values: Integers less than or equal to the value of `TotalTargetCapacity`.
      */
     readonly payAsYouGoTargetCapacity?: string | ros.IResolvable;
 
@@ -795,31 +825,37 @@ export interface RosAutoProvisioningGroupProps {
     readonly resourcePoolOptions?: RosAutoProvisioningGroup.ResourcePoolOptionsProperty | ros.IResolvable;
 
     /**
-     * @Property spotAllocationStrategy: The scale-out policy for preemptible instances. Valid values:
-     * lowest-price: The cost optimization policy the auto provisioning group follows to select instance
-     * types of the lowest cost to create instances.
-     * diversified: The distribution balancing policy the auto provisioning group follows to evenly create
-     * instances across zones specified in multiple extended template configurations.
-     * Default value: lowest-price
+     * @Property spotAllocationStrategy: The strategy for creating spot instances. Valid values:
+     * - lowest-price: Cost optimization strategy. Selects the instance type with the
+     * lowest price.
+     * - diversified: Balanced zone distribution strategy. Creates instances across the
+     * zones specified in the launch template configurations and distributes them
+     * evenly.
+     * - capacity-optimized: Capacity optimization strategy. Selects the optimal
+     * instance type and zone based on inventory availability.
+     * Default value: lowest-price.
      */
     readonly spotAllocationStrategy?: string | ros.IResolvable;
 
     /**
-     * @Property spotInstanceInterruptionBehavior: The default behavior after preemptible instances are shut down. Value values:
-     * stop: stops preemptible instances.
-     * terminate: releases preemptible instances.
-     * Default value: stop
+     * @Property spotInstanceInterruptionBehavior: The behavior when a spot instance is interrupted. Valid values:
+     * - stop: Stops the instance.
+     * - terminate: Releases the instance.
+     * Default value: terminate.
      */
     readonly spotInstanceInterruptionBehavior?: string | ros.IResolvable;
 
     /**
-     * @Property spotInstancePoolsToUseCount: This parameter takes effect when the SpotAllocationStrategy parameter is set to lowest-price. The auto provisioning group selects instance types of the lowest cost to create
-     * instances.
+     * @Property spotInstancePoolsToUseCount: Takes effect only when `SpotAllocationStrategy` is set to `lowest-price`.
+     * Specifies the number of lowest-priced instance types from which the auto
+     * provisioning group creates instances.
+     * Valid values: Less than the value of N in `LaunchTemplateConfig.N`.
      */
     readonly spotInstancePoolsToUseCount?: number | ros.IResolvable;
 
     /**
-     * @Property spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group.
+     * @Property spotTargetCapacity: The target capacity for spot instances in the auto provisioning group. Valid
+     * values: Integers less than or equal to the value of `TotalTargetCapacity`.
      */
     readonly spotTargetCapacity?: string | ros.IResolvable;
 
@@ -829,34 +865,38 @@ export interface RosAutoProvisioningGroupProps {
     readonly systemDiskConfig?: Array<RosAutoProvisioningGroup.SystemDiskConfigProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property terminateInstances: Specifies whether to release instances of the auto provisioning group. Valid values:
-     * true
-     * false
-     * Default: false
+     * @Property terminateInstances: Specifies whether to release instances in the group when you delete the auto
+     * provisioning group. Valid values:
+     * - true: Releases instances in the group.
+     * - false: Retains instances in the group.
+     * Default value: false.
      */
     readonly terminateInstances?: boolean | ros.IResolvable;
 
     /**
-     * @Property terminateInstancesWithExpiration: The shutdown policy for preemptible instances when the auto provisioning group expires.
-     * Valid values:
-     * true: shuts down preemptible instances. The action to be performed on these shutdown instances
-     * is specified by the SpotInstanceInterruptionBehavior parameter.
-     * false: does not shut down preemptible instances.
-     * Default: false
+     * @Property terminateInstancesWithExpiration: Specifies whether to release instances in the group when the auto provisioning
+     * group expires. Valid values:
+     * - true: Releases instances in the group.
+     * - false: Only removes instances from the auto provisioning group.
+     * Default value: false.
      */
     readonly terminateInstancesWithExpiration?: boolean | ros.IResolvable;
 
     /**
-     * @Property validFrom: The time when the auto provisioning group is started. The period of time between this
-     * point in time and the point in time specified by the ValidUntil parameter is the effective time period of the auto provisioning group.
-     * By default, an auto provisioning group is immediately started after creation.
+     * @Property validFrom: The start time of the auto provisioning group. Used together with `ValidUntil` to
+     * define the validity period.
+     * Specify the time in [ISO 8601]() format using UTC+0 time. Format:
+     * yyyy-MM-ddTHH:mm:ssZ.
+     * Default value: The timestamp when the API call takes effect immediately.
      */
     readonly validFrom?: string | ros.IResolvable;
 
     /**
-     * @Property validUntil: The time when the auto provisioning group expires. The period of time between this
-     * point in time and the point in time specified by the ValidFrom parameter is the effective time period of the auto provisioning group.
-     * By default, an auto provisioning group never expires.
+     * @Property validUntil: The expiration time of the auto provisioning group. Used together with
+     * `ValidFrom` to define the validity period.
+     * Specify the time in [ISO 8601]() format using UTC+0 time. Format:
+     * yyyy-MM-ddTHH:mm:ssZ.
+     * Default value: 2099-12-31T23:59:59Z.
      */
     readonly validUntil?: string | ros.IResolvable;
 }
@@ -1004,7 +1044,7 @@ function rosAutoProvisioningGroupPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`, which is used to create an auto provisioning group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AutoProvisioningGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
  */
@@ -1028,11 +1068,11 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
 
 
     /**
-     * @Property totalTargetCapacity: The total target capacity of the auto provisioning group. The target capacity consists
-     * of the following three parts:
-     * The target capacity of pay-as-you-go instances specified by the PayAsYouGoTargetCapacity parameter
-     * The target capacity of preemptible instances specified by the SpotTargetCapacity parameter
-     * The supplemental capacity besides PayAsYouGoTargetCapacity and SpotTargetCapacity
+     * @Property totalTargetCapacity: The total target capacity of the auto provisioning group. Valid values: Positive
+     * integers.
+     * The total capacity must be greater than or equal to the sum of
+     * `PayAsYouGoTargetCapacity` (target capacity for pay-as-you-go instances) and
+     * `SpotTargetCapacity` (target capacity for spot instances).
      */
     public totalTargetCapacity: string | ros.IResolvable;
 
@@ -1044,16 +1084,16 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
     public autoProvisioningGroupName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property autoProvisioningGroupType: The type of the auto provisioning group. Valid values:
-     * request: One-time delivery. After the auto provisioning group is started, it only attempts
-     * to create an instance cluster once. If the cluster fails to be created, the group
-     * does not try again.
-     * maintain: The continuous delivery and maintain capacity type. After the auto provisioning group
-     * is started, it continuously attempts to create and maintain the instance cluster.
-     * The auto provisioning group compares the real-time and target capacity of the cluster.
-     * If the cluster does not meet the target capacity, the group will create instances
-     * until the cluster meets the target capacity.
-     * Default value: maintain
+     * @Property autoProvisioningGroupType: The delivery type of the auto provisioning group. Valid values:
+     * - request: One-time asynchronous delivery. The group delivers the instance
+     * cluster only at startup. If scheduling fails, no retry occurs.
+     * - instant: One-time synchronous delivery. The group creates instances
+     * synchronously at startup and returns the list of successfully created instances
+     * and reasons for failures in the response.
+     * - maintain: Continuous provisioning. The group attempts to deliver the instance
+     * cluster at startup and monitors real-time capacity. If the target capacity is not
+     * met, it continues creating ECS instances.
+     * Default value: maintain.
      */
     public autoProvisioningGroupType: string | ros.IResolvable | undefined;
 
@@ -1068,11 +1108,12 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
     public dataDiskConfig: Array<RosAutoProvisioningGroup.DataDiskConfigProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property defaultTargetCapacityType: The type of supplemental instances. When the total value of PayAsYouGoTargetCapacity and SpotTargetCapacity is smaller than the value of TotalTargetCapacity, the auto provisioning group will create instances of the specified type to meet
-     * the capacity requirements. Valid values:
-     * PayAsYouGo: Pay-as-you-go instances.
-     * Spot: Preemptible instances.
-     * Default value: Spot
+     * @Property defaultTargetCapacityType: Specifies the billing method for the capacity difference when the sum of
+     * `PayAsYouGoTargetCapacity` and `SpotTargetCapacity` is less than
+     * `TotalTargetCapacity`. Valid values:
+     * - PayAsYouGo: Pay-as-you-go instances.
+     * - Spot: Spot instances.
+     * Default value: Spot.
      */
     public defaultTargetCapacityType: string | ros.IResolvable | undefined;
 
@@ -1082,12 +1123,13 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property excessCapacityTerminationPolicy: The shutdown policy for excess preemptible instances followed when the capacity of
-     * the auto provisioning group exceeds the target capacity. Valid values:
-     * no-termination: Excess preemptible instances are not shut down.
-     * termination: Excess preemptible instances are to be shut down. The action to be performed on these
-     * shutdown instances is specified by the SpotInstanceInterruptionBehavior parameter.
-     * Default value: no-termination
+     * @Property excessCapacityTerminationPolicy: Specifies whether to release instances when the real-time capacity of the auto
+     * provisioning group exceeds the target capacity and scale-in is triggered. Valid
+     * values:
+     * - termination: Releases scaled-in instances.
+     * - no-termination: Only removes scaled-in instances from the auto provisioning
+     * group.
+     * Default value: no-termination.
      */
     public excessCapacityTerminationPolicy: string | ros.IResolvable | undefined;
 
@@ -1111,8 +1153,10 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
     public launchTemplateId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property launchTemplateVersion: The version of the instance launch template associated with the auto provisioning
-     * group. You can call the DescribeLaunchTemplateVersions operation to query the versions of available instance launch templates.
+     * @Property launchTemplateVersion: The version of the launch template associated with the auto provisioning group.
+     * Call [DescribeLaunchTemplateVersions]() to query available launch template
+     * versions.
+     * Default value: The default version of the launch template.
      */
     public launchTemplateVersion: string | ros.IResolvable | undefined;
 
@@ -1142,7 +1186,8 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
     public payAsYouGoAllocationStrategy: string | ros.IResolvable | undefined;
 
     /**
-     * @Property payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group.
+     * @Property payAsYouGoTargetCapacity: The target capacity for pay-as-you-go instances in the auto provisioning group.
+     * Valid values: Integers less than or equal to the value of `TotalTargetCapacity`.
      */
     public payAsYouGoTargetCapacity: string | ros.IResolvable | undefined;
 
@@ -1159,31 +1204,37 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
     public resourcePoolOptions: RosAutoProvisioningGroup.ResourcePoolOptionsProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property spotAllocationStrategy: The scale-out policy for preemptible instances. Valid values:
-     * lowest-price: The cost optimization policy the auto provisioning group follows to select instance
-     * types of the lowest cost to create instances.
-     * diversified: The distribution balancing policy the auto provisioning group follows to evenly create
-     * instances across zones specified in multiple extended template configurations.
-     * Default value: lowest-price
+     * @Property spotAllocationStrategy: The strategy for creating spot instances. Valid values:
+     * - lowest-price: Cost optimization strategy. Selects the instance type with the
+     * lowest price.
+     * - diversified: Balanced zone distribution strategy. Creates instances across the
+     * zones specified in the launch template configurations and distributes them
+     * evenly.
+     * - capacity-optimized: Capacity optimization strategy. Selects the optimal
+     * instance type and zone based on inventory availability.
+     * Default value: lowest-price.
      */
     public spotAllocationStrategy: string | ros.IResolvable | undefined;
 
     /**
-     * @Property spotInstanceInterruptionBehavior: The default behavior after preemptible instances are shut down. Value values:
-     * stop: stops preemptible instances.
-     * terminate: releases preemptible instances.
-     * Default value: stop
+     * @Property spotInstanceInterruptionBehavior: The behavior when a spot instance is interrupted. Valid values:
+     * - stop: Stops the instance.
+     * - terminate: Releases the instance.
+     * Default value: terminate.
      */
     public spotInstanceInterruptionBehavior: string | ros.IResolvable | undefined;
 
     /**
-     * @Property spotInstancePoolsToUseCount: This parameter takes effect when the SpotAllocationStrategy parameter is set to lowest-price. The auto provisioning group selects instance types of the lowest cost to create
-     * instances.
+     * @Property spotInstancePoolsToUseCount: Takes effect only when `SpotAllocationStrategy` is set to `lowest-price`.
+     * Specifies the number of lowest-priced instance types from which the auto
+     * provisioning group creates instances.
+     * Valid values: Less than the value of N in `LaunchTemplateConfig.N`.
      */
     public spotInstancePoolsToUseCount: number | ros.IResolvable | undefined;
 
     /**
-     * @Property spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group.
+     * @Property spotTargetCapacity: The target capacity for spot instances in the auto provisioning group. Valid
+     * values: Integers less than or equal to the value of `TotalTargetCapacity`.
      */
     public spotTargetCapacity: string | ros.IResolvable | undefined;
 
@@ -1193,34 +1244,38 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
     public systemDiskConfig: Array<RosAutoProvisioningGroup.SystemDiskConfigProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property terminateInstances: Specifies whether to release instances of the auto provisioning group. Valid values:
-     * true
-     * false
-     * Default: false
+     * @Property terminateInstances: Specifies whether to release instances in the group when you delete the auto
+     * provisioning group. Valid values:
+     * - true: Releases instances in the group.
+     * - false: Retains instances in the group.
+     * Default value: false.
      */
     public terminateInstances: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property terminateInstancesWithExpiration: The shutdown policy for preemptible instances when the auto provisioning group expires.
-     * Valid values:
-     * true: shuts down preemptible instances. The action to be performed on these shutdown instances
-     * is specified by the SpotInstanceInterruptionBehavior parameter.
-     * false: does not shut down preemptible instances.
-     * Default: false
+     * @Property terminateInstancesWithExpiration: Specifies whether to release instances in the group when the auto provisioning
+     * group expires. Valid values:
+     * - true: Releases instances in the group.
+     * - false: Only removes instances from the auto provisioning group.
+     * Default value: false.
      */
     public terminateInstancesWithExpiration: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property validFrom: The time when the auto provisioning group is started. The period of time between this
-     * point in time and the point in time specified by the ValidUntil parameter is the effective time period of the auto provisioning group.
-     * By default, an auto provisioning group is immediately started after creation.
+     * @Property validFrom: The start time of the auto provisioning group. Used together with `ValidUntil` to
+     * define the validity period.
+     * Specify the time in [ISO 8601]() format using UTC+0 time. Format:
+     * yyyy-MM-ddTHH:mm:ssZ.
+     * Default value: The timestamp when the API call takes effect immediately.
      */
     public validFrom: string | ros.IResolvable | undefined;
 
     /**
-     * @Property validUntil: The time when the auto provisioning group expires. The period of time between this
-     * point in time and the point in time specified by the ValidFrom parameter is the effective time period of the auto provisioning group.
-     * By default, an auto provisioning group never expires.
+     * @Property validUntil: The expiration time of the auto provisioning group. Used together with
+     * `ValidFrom` to define the validity period.
+     * Specify the time in [ISO 8601]() format using UTC+0 time. Format:
+     * yyyy-MM-ddTHH:mm:ssZ.
+     * Default value: 2099-12-31T23:59:59Z.
      */
     public validUntil: string | ros.IResolvable | undefined;
 
@@ -2104,10 +2159,13 @@ export interface RosAutoSnapshotPolicyProps {
     readonly autoSnapshotPolicyName?: string | ros.IResolvable;
 
     /**
-     * @Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies. Range:
-     * -1: Permanent storage
-     * 1-65535: Specifies the number of days to save
-     * Default value: -1
+     * @Property copiedSnapshotsRetentionDays: The retention period of the snapshot copy in the destination region. Unit: days.
+     * Valid values:
+     * - -1: The snapshot copy is retained until it is deleted.
+     * - 1 to 65535: The snapshot copy is retained for the specified number of days.
+     * After the retention period of the snapshot copy expires, the snapshot copy is
+     * automatically deleted.
+     * Default value: -1.
      */
     readonly copiedSnapshotsRetentionDays?: number | ros.IResolvable;
 
@@ -2226,7 +2284,7 @@ function rosAutoSnapshotPolicyPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoSnapshotPolicy`, which is used to create an automatic snapshot policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoSnapshotPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AutoSnapshotPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
  */
@@ -2281,10 +2339,13 @@ export class RosAutoSnapshotPolicy extends ros.RosResource {
     public autoSnapshotPolicyName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies. Range:
-     * -1: Permanent storage
-     * 1-65535: Specifies the number of days to save
-     * Default value: -1
+     * @Property copiedSnapshotsRetentionDays: The retention period of the snapshot copy in the destination region. Unit: days.
+     * Valid values:
+     * - -1: The snapshot copy is retained until it is deleted.
+     * - 1 to 65535: The snapshot copy is retained for the specified number of days.
+     * After the retention period of the snapshot copy expires, the snapshot copy is
+     * automatically deleted.
+     * Default value: -1.
      */
     public copiedSnapshotsRetentionDays: number | ros.IResolvable | undefined;
 
@@ -2585,7 +2646,7 @@ function rosCapacityReservationPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CapacityReservation`, which is used to create a capacity reservation.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CapacityReservation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CapacityReservation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-capacityreservation
  */
@@ -2801,17 +2862,40 @@ function rosCapacityReservationTagsPropertyToRosTemplate(properties: any): any {
 export interface RosCloneDisksProps {
 
     /**
-     * @Property diskCategory: The category of the disk.
+     * @Property diskCategory: The type of the new disk. Valid values:
+     * - `cloud_essd`: ESSD cloud disk.
+     * - `cloud_auto`: ESSD AutoPL cloud disk.
+     * - `cloud_essd_entry`: ESSD Entry cloud disk.
+     * - `cloud_regional_disk_auto`: regional disk.
+     * > Disk type limits for cloning
+     * >
+     * > - A non-regional disk can be cloned only as a non-regional disk.
+     * >
+     * > - A regional disk can be cloned only as a regional disk.
      */
     readonly diskCategory: string | ros.IResolvable;
 
     /**
-     * @Property multiAttach: Whether to enable multi-attach for the disk. Valid values: Enabled, Disabled.
+     * @Property multiAttach: Specifies whether to enable the multi-attach feature for the new disk. Valid
+     * values:
+     * - `Disabled`: Disables the multi-attach feature.
+     * - `Enabled`: Enables the multi-attach feature. You can set this parameter to
+     * `Enabled` only for ESSD cloud disks.
      */
     readonly multiAttach: string | ros.IResolvable;
 
     /**
-     * @Property size: The size of the disk in GiB.
+     * @Property size: The size of the new disk, in GiB. The value must be greater than or equal to the
+     * size of the source disk. The value range varies based on the `DiskCategory`
+     * value:
+     * - `cloud_essd`: The value range depends on the `PerformanceLevel` value.
+     * - `PL0`: 1 to 65,536
+     * - `PL1`: 20 to 65,536
+     * - `PL2`: 461 to 65,536
+     * - `PL3`: 1,261 to 65,536
+     * - `cloud_auto`: 1 to 65,536
+     * - `cloud_essd_entry`: 10 to 32,768
+     * - `cloud_regional_disk_auto`: 10 to 65,536
      */
     readonly size: number | ros.IResolvable;
 
@@ -2821,17 +2905,27 @@ export interface RosCloneDisksProps {
     readonly sourceDiskId: string | ros.IResolvable;
 
     /**
-     * @Property burstingEnabled: Whether to enable bursting for the disk.
+     * @Property burstingEnabled: Specifies whether to enable performance bursting for the new disk. Valid values:
+     * - `true`: Enables performance bursting.
+     * - `false`: Disables performance bursting.
+     * > This parameter is valid only when `DiskCategory` is set to `cloud_auto`. For
+     * more information, see ESSD AutoPL cloud disks.
      */
     readonly burstingEnabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property diskName: The name of the disk.
+     * @Property diskName: The name of the new disk. The name must be 2 to 128 characters in length. It must
+     * start with a letter and can contain letters, digits, colons (:), underscores (_),
+     * periods (.), and hyphens (-).
+     * Default value: none.
      */
     readonly diskName?: string | ros.IResolvable;
 
     /**
-     * @Property encrypted: Whether to encrypt the disk.
+     * @Property encrypted: Specifies whether to encrypt the new disk. Valid values:
+     * - `true`: The disk is encrypted.
+     * - `false`: The disk is not encrypted.
+     * Default value: false.
      */
     readonly encrypted?: boolean | ros.IResolvable;
 
@@ -2841,12 +2935,23 @@ export interface RosCloneDisksProps {
     readonly kmsKeyId?: string | ros.IResolvable;
 
     /**
-     * @Property performanceLevel: The performance level of the disk.
+     * @Property performanceLevel: The performance level of the new ESSD cloud disk. Valid values:
+     * - `PL0`: A single disk can deliver up to 10,000 random read\/write IOPS.
+     * - `PL1`: A single disk can deliver up to 50,000 random read\/write IOPS.
+     * - `PL2`: A single disk can deliver up to 100,000 random read\/write IOPS.
+     * - `PL3`: A single disk can deliver up to 1,000,000 random read\/write IOPS.
+     * > This parameter is required when `DiskCategory` is set to `cloud_essd`.
      */
     readonly performanceLevel?: string | ros.IResolvable;
 
     /**
-     * @Property provisionedIops: The provisioned IOPS for the disk.
+     * @Property provisionedIops: The provisioned read\/write IOPS of the ESSD AutoPL cloud disk. Valid values:
+     * - You cannot set this parameter for disks that are 3 GiB or smaller in size.
+     * - For disks that are 4 GiB or larger in size, the value must be in the range of
+     * `[0, min(1000 * Size - baseline performance, 50000)]`.
+     * baseline performance = `max(min(1800 + 50 * Size, 50000), 3000)`.
+     * > This parameter is valid only when `DiskCategory` is set to `cloud_auto`. For
+     * more information, see ESSD AutoPL cloud disks.
      */
     readonly provisionedIops?: number | ros.IResolvable;
 
@@ -2966,17 +3071,40 @@ export class RosCloneDisks extends ros.RosResource {
 
 
     /**
-     * @Property diskCategory: The category of the disk.
+     * @Property diskCategory: The type of the new disk. Valid values:
+     * - `cloud_essd`: ESSD cloud disk.
+     * - `cloud_auto`: ESSD AutoPL cloud disk.
+     * - `cloud_essd_entry`: ESSD Entry cloud disk.
+     * - `cloud_regional_disk_auto`: regional disk.
+     * > Disk type limits for cloning
+     * >
+     * > - A non-regional disk can be cloned only as a non-regional disk.
+     * >
+     * > - A regional disk can be cloned only as a regional disk.
      */
     public diskCategory: string | ros.IResolvable;
 
     /**
-     * @Property multiAttach: Whether to enable multi-attach for the disk. Valid values: Enabled, Disabled.
+     * @Property multiAttach: Specifies whether to enable the multi-attach feature for the new disk. Valid
+     * values:
+     * - `Disabled`: Disables the multi-attach feature.
+     * - `Enabled`: Enables the multi-attach feature. You can set this parameter to
+     * `Enabled` only for ESSD cloud disks.
      */
     public multiAttach: string | ros.IResolvable;
 
     /**
-     * @Property size: The size of the disk in GiB.
+     * @Property size: The size of the new disk, in GiB. The value must be greater than or equal to the
+     * size of the source disk. The value range varies based on the `DiskCategory`
+     * value:
+     * - `cloud_essd`: The value range depends on the `PerformanceLevel` value.
+     * - `PL0`: 1 to 65,536
+     * - `PL1`: 20 to 65,536
+     * - `PL2`: 461 to 65,536
+     * - `PL3`: 1,261 to 65,536
+     * - `cloud_auto`: 1 to 65,536
+     * - `cloud_essd_entry`: 10 to 32,768
+     * - `cloud_regional_disk_auto`: 10 to 65,536
      */
     public size: number | ros.IResolvable;
 
@@ -2986,17 +3114,27 @@ export class RosCloneDisks extends ros.RosResource {
     public sourceDiskId: string | ros.IResolvable;
 
     /**
-     * @Property burstingEnabled: Whether to enable bursting for the disk.
+     * @Property burstingEnabled: Specifies whether to enable performance bursting for the new disk. Valid values:
+     * - `true`: Enables performance bursting.
+     * - `false`: Disables performance bursting.
+     * > This parameter is valid only when `DiskCategory` is set to `cloud_auto`. For
+     * more information, see ESSD AutoPL cloud disks.
      */
     public burstingEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property diskName: The name of the disk.
+     * @Property diskName: The name of the new disk. The name must be 2 to 128 characters in length. It must
+     * start with a letter and can contain letters, digits, colons (:), underscores (_),
+     * periods (.), and hyphens (-).
+     * Default value: none.
      */
     public diskName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property encrypted: Whether to encrypt the disk.
+     * @Property encrypted: Specifies whether to encrypt the new disk. Valid values:
+     * - `true`: The disk is encrypted.
+     * - `false`: The disk is not encrypted.
+     * Default value: false.
      */
     public encrypted: boolean | ros.IResolvable | undefined;
 
@@ -3006,12 +3144,23 @@ export class RosCloneDisks extends ros.RosResource {
     public kmsKeyId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property performanceLevel: The performance level of the disk.
+     * @Property performanceLevel: The performance level of the new ESSD cloud disk. Valid values:
+     * - `PL0`: A single disk can deliver up to 10,000 random read\/write IOPS.
+     * - `PL1`: A single disk can deliver up to 50,000 random read\/write IOPS.
+     * - `PL2`: A single disk can deliver up to 100,000 random read\/write IOPS.
+     * - `PL3`: A single disk can deliver up to 1,000,000 random read\/write IOPS.
+     * > This parameter is required when `DiskCategory` is set to `cloud_essd`.
      */
     public performanceLevel: string | ros.IResolvable | undefined;
 
     /**
-     * @Property provisionedIops: The provisioned IOPS for the disk.
+     * @Property provisionedIops: The provisioned read\/write IOPS of the ESSD AutoPL cloud disk. Valid values:
+     * - You cannot set this parameter for disks that are 3 GiB or smaller in size.
+     * - For disks that are 4 GiB or larger in size, the value must be in the range of
+     * `[0, min(1000 * Size - baseline performance, 50000)]`.
+     * baseline performance = `max(min(1800 + 50 * Size, 50000), 3000)`.
+     * > This parameter is valid only when `DiskCategory` is set to `cloud_auto`. For
+     * more information, see ESSD AutoPL cloud disks.
      */
     public provisionedIops: number | ros.IResolvable | undefined;
 
@@ -3252,7 +3401,7 @@ function rosCommandPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Command`, which is used to create a Cloud Assistant command.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Command`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Command` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-command
  */
@@ -3532,7 +3681,7 @@ function rosCopyImagePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CopyImage`, which is used to copy a custom image from one region to another region.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CopyImage`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CopyImage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-copyimage
  */
@@ -3862,7 +4011,7 @@ function rosCustomImagePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CustomImage`, which is used to create a custom image.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CustomImage`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomImage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-customimage
  */
@@ -4201,12 +4350,20 @@ function rosCustomImageTagPropertyToRosTemplate(properties: any): any {
 export interface RosDedicatedHostProps {
 
     /**
-     * @Property dedicatedHostType: The instance type of host.
+     * @Property dedicatedHostType: The dedicated host type. You can call the [DescribeDedicatedHostTypes]()
+     * operation to query the most recent list of dedicated host types.
      */
     readonly dedicatedHostType: string | ros.IResolvable;
 
     /**
-     * @Property actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop.
+     * @Property actionOnMaintenance: The policy for migrating the instances deployed on the dedicated host when the
+     * dedicated host fails or needs to be repaired online. Valid values:
+     * - Migrate: The instances are migrated to another physical machine and then
+     * restarted.
+     * If cloud disks are attached to the dedicated host, the default value is Migrate.
+     * - Stop: The instances are stopped. If the dedicated host cannot be repaired, the
+     * instances are migrated to another physical machine and then restarted.
+     * If local disks are attached to the dedicated host, the default value is Stop.
      */
     readonly actionOnMaintenance?: string | ros.IResolvable;
 
@@ -4216,7 +4373,13 @@ export interface RosDedicatedHostProps {
     readonly autoPlacement?: string | ros.IResolvable;
 
     /**
-     * @Property autoReleaseTime: Auto release time for created host, Follow ISO8601 standard using UTC time. format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
+     * @Property autoReleaseTime: The time when to automatically release the dedicated host. Specify the time in
+     * the `ISO 8601` standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in
+     * UTC.
+     * >
+     * - It must be at least half an hour later than the current time.
+     * - It must be at most three years later than the current time.
+     * - If the value of seconds (ss) is not 00, it is automatically set to 00.
      */
     readonly autoReleaseTime?: string | ros.IResolvable;
 
@@ -4236,7 +4399,19 @@ export interface RosDedicatedHostProps {
     readonly chargeType?: string | ros.IResolvable;
 
     /**
-     * @Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+     * @Property cpuOverCommitRatio: The CPU overcommit ratio. You can configure CPU overcommit ratios only for the
+     * following dedicated host types: g6s, c6s, and r6s. Valid values: 1 to 5.
+     * The CPU overcommit ratio affects the number of available vCPUs on a dedicated
+     * host. You can use the following formula to calculate the number of available
+     * vCPUs on a dedicated host: Number of available vCPUs = Number of physical CPU
+     * cores * 2 * CPU overcommit ratio. For example, the number of physical CPU cores
+     * on each g6s dedicated host is 52. If you set the CPU overcommit ratio of a g6s
+     * dedicated host to 4, the number of available vCPUs on the dedicated host is 416.
+     * For scenarios that have minimal requirements on CPU stability or where CPU load
+     * is not heavy, such as development and test environments, you can increase the
+     * number of available vCPUs on a dedicated host by increasing the CPU overcommit
+     * ratio. This way, you can deploy more ECS instances of the same specifications on
+     * the dedicated host and reduce the unit deployment cost.
      */
     readonly cpuOverCommitRatio?: number | ros.IResolvable;
 
@@ -4246,17 +4421,22 @@ export interface RosDedicatedHostProps {
     readonly dedicatedHostClusterId?: string | ros.IResolvable;
 
     /**
-     * @Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
+     * @Property dedicatedHostName: The name of the dedicated host. The name must be 2 to 128 characters in length
+     * and can contain letters and digits. The name can contain colons (:), underscores
+     * (_), periods (.), and hyphens (-).
      */
     readonly dedicatedHostName?: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of host.
+     * @Property description: The description of the dedicated host. The description must be 2 to 256
+     * characters in length and cannot start with `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property minQuantity: The minimum number of dedicated hosts that you want to create.
+     * @Property minQuantity: The minimum number of dedicated hosts to create. Valid values: 1 to 100.
+     * > If the number of available dedicated hosts is less than the minimum number of
+     * dedicated hosts to create, the dedicated hosts fail to be created.
      */
     readonly minQuantity?: number | ros.IResolvable;
 
@@ -4296,7 +4476,9 @@ export interface RosDedicatedHostProps {
     readonly tags?: RosDedicatedHost.TagsProperty[];
 
     /**
-     * @Property zoneId: The zone to create the host.
+     * @Property zoneId: The ID of the zone in which to create the dedicated host.
+     * This parameter is empty by default. If you do not specify a zone, the system
+     * selects a zone.
      */
     readonly zoneId?: string | ros.IResolvable;
 }
@@ -4450,7 +4632,7 @@ function rosDedicatedHostPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DedicatedHost`, which is used to create dedicated hosts.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DedicatedHost`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHost` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
  */
@@ -4479,12 +4661,20 @@ export class RosDedicatedHost extends ros.RosResource {
 
 
     /**
-     * @Property dedicatedHostType: The instance type of host.
+     * @Property dedicatedHostType: The dedicated host type. You can call the [DescribeDedicatedHostTypes]()
+     * operation to query the most recent list of dedicated host types.
      */
     public dedicatedHostType: string | ros.IResolvable;
 
     /**
-     * @Property actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop.
+     * @Property actionOnMaintenance: The policy for migrating the instances deployed on the dedicated host when the
+     * dedicated host fails or needs to be repaired online. Valid values:
+     * - Migrate: The instances are migrated to another physical machine and then
+     * restarted.
+     * If cloud disks are attached to the dedicated host, the default value is Migrate.
+     * - Stop: The instances are stopped. If the dedicated host cannot be repaired, the
+     * instances are migrated to another physical machine and then restarted.
+     * If local disks are attached to the dedicated host, the default value is Stop.
      */
     public actionOnMaintenance: string | ros.IResolvable | undefined;
 
@@ -4494,7 +4684,13 @@ export class RosDedicatedHost extends ros.RosResource {
     public autoPlacement: string | ros.IResolvable | undefined;
 
     /**
-     * @Property autoReleaseTime: Auto release time for created host, Follow ISO8601 standard using UTC time. format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
+     * @Property autoReleaseTime: The time when to automatically release the dedicated host. Specify the time in
+     * the `ISO 8601` standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in
+     * UTC.
+     * >
+     * - It must be at least half an hour later than the current time.
+     * - It must be at most three years later than the current time.
+     * - If the value of seconds (ss) is not 00, it is automatically set to 00.
      */
     public autoReleaseTime: string | ros.IResolvable | undefined;
 
@@ -4514,7 +4710,19 @@ export class RosDedicatedHost extends ros.RosResource {
     public chargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+     * @Property cpuOverCommitRatio: The CPU overcommit ratio. You can configure CPU overcommit ratios only for the
+     * following dedicated host types: g6s, c6s, and r6s. Valid values: 1 to 5.
+     * The CPU overcommit ratio affects the number of available vCPUs on a dedicated
+     * host. You can use the following formula to calculate the number of available
+     * vCPUs on a dedicated host: Number of available vCPUs = Number of physical CPU
+     * cores * 2 * CPU overcommit ratio. For example, the number of physical CPU cores
+     * on each g6s dedicated host is 52. If you set the CPU overcommit ratio of a g6s
+     * dedicated host to 4, the number of available vCPUs on the dedicated host is 416.
+     * For scenarios that have minimal requirements on CPU stability or where CPU load
+     * is not heavy, such as development and test environments, you can increase the
+     * number of available vCPUs on a dedicated host by increasing the CPU overcommit
+     * ratio. This way, you can deploy more ECS instances of the same specifications on
+     * the dedicated host and reduce the unit deployment cost.
      */
     public cpuOverCommitRatio: number | ros.IResolvable | undefined;
 
@@ -4524,17 +4732,22 @@ export class RosDedicatedHost extends ros.RosResource {
     public dedicatedHostClusterId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
+     * @Property dedicatedHostName: The name of the dedicated host. The name must be 2 to 128 characters in length
+     * and can contain letters and digits. The name can contain colons (:), underscores
+     * (_), periods (.), and hyphens (-).
      */
     public dedicatedHostName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property description: The description of host.
+     * @Property description: The description of the dedicated host. The description must be 2 to 256
+     * characters in length and cannot start with `http:\/\/` or `https:\/\/`.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property minQuantity: The minimum number of dedicated hosts that you want to create.
+     * @Property minQuantity: The minimum number of dedicated hosts to create. Valid values: 1 to 100.
+     * > If the number of available dedicated hosts is less than the minimum number of
+     * dedicated hosts to create, the dedicated hosts fail to be created.
      */
     public minQuantity: number | ros.IResolvable | undefined;
 
@@ -4574,7 +4787,9 @@ export class RosDedicatedHost extends ros.RosResource {
     public tags: RosDedicatedHost.TagsProperty[] | undefined;
 
     /**
-     * @Property zoneId: The zone to create the host.
+     * @Property zoneId: The ID of the zone in which to create the dedicated host.
+     * This parameter is empty by default. If you do not specify a zone, the system
+     * selects a zone.
      */
     public zoneId: string | ros.IResolvable | undefined;
 
@@ -4964,19 +5179,22 @@ export interface RosDeploymentSetProps {
     readonly groupCount?: number | ros.IResolvable;
 
     /**
-     * @Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set. Valid values:
-     * CancelMembershipAndStart: restarts the instances immediately after they are shut down
-     * and migrated to other deployment sets. This is the default value.
-     * KeepStopped: keeps the instances shut down and restarts them after the deployment
-     * set is replenished.
+     * @Property onUnableToRedeployFailedInstance: The policy to use when an instance fails over but cannot be redeployed due to
+     * insufficient resources. Valid values:
+     * - CancelMembershipAndStart: Removes the instance from the deployment set and
+     * starts the instance immediately after failover.
+     * - KeepStopped: Keeps the instance's deployment set membership and leaves it in
+     * the Stopped state.
+     * Default value: CancelMembershipAndStart.
      */
     readonly onUnableToRedeployFailedInstance?: string | ros.IResolvable;
 
     /**
-     * @Property strategy: Deployment strategy. Ranges:
-     * Availability: High availability strategy.
-     * AvailabilityGroup: Deployment group high availability strategy.
-     * LowLatency: Network low latency strategy.
+     * @Property strategy: The deployment strategy. Valid values:
+     * - Availability: A high availability strategy.
+     * - AvailabilityGroup: A high availability strategy for a deployment set group.
+     * - LowLatency: A low-latency strategy.
+     * Default value: Availability.
      */
     readonly strategy?: string | ros.IResolvable;
 }
@@ -5041,7 +5259,7 @@ function rosDeploymentSetPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DeploymentSet`, which is used to create a deployment set in a region.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DeploymentSet`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeploymentSet` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-deploymentset
  */
@@ -5080,19 +5298,22 @@ export class RosDeploymentSet extends ros.RosResource {
     public groupCount: number | ros.IResolvable | undefined;
 
     /**
-     * @Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set. Valid values:
-     * CancelMembershipAndStart: restarts the instances immediately after they are shut down
-     * and migrated to other deployment sets. This is the default value.
-     * KeepStopped: keeps the instances shut down and restarts them after the deployment
-     * set is replenished.
+     * @Property onUnableToRedeployFailedInstance: The policy to use when an instance fails over but cannot be redeployed due to
+     * insufficient resources. Valid values:
+     * - CancelMembershipAndStart: Removes the instance from the deployment set and
+     * starts the instance immediately after failover.
+     * - KeepStopped: Keeps the instance's deployment set membership and leaves it in
+     * the Stopped state.
+     * Default value: CancelMembershipAndStart.
      */
     public onUnableToRedeployFailedInstance: string | ros.IResolvable | undefined;
 
     /**
-     * @Property strategy: Deployment strategy. Ranges:
-     * Availability: High availability strategy.
-     * AvailabilityGroup: Deployment group high availability strategy.
-     * LowLatency: Network low latency strategy.
+     * @Property strategy: The deployment strategy. Valid values:
+     * - Availability: A high availability strategy.
+     * - AvailabilityGroup: A high availability strategy for a deployment set group.
+     * - LowLatency: A low-latency strategy.
+     * Default value: Availability.
      */
     public strategy: string | ros.IResolvable | undefined;
 
@@ -5140,7 +5361,11 @@ export interface RosDiskProps {
     readonly autoSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
-     * @Property burstingEnabled: Whether enable bursting.
+     * @Property burstingEnabled: Specifies whether to enable performance bursting. Valid values:
+     * - true
+     * - false
+     * > This parameter is available only for ESSD AutoPL disks (`cloud_auto`). For more
+     * information, see [ESSD AutoPL disks]().
      */
     readonly burstingEnabled?: boolean | ros.IResolvable;
 
@@ -5160,7 +5385,11 @@ export interface RosDiskProps {
     readonly diskCategory?: string | ros.IResolvable;
 
     /**
-     * @Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * @Property diskName: The name of the disk. The name must be 2 to 128 characters in length. It must
+     * start with a letter as defined by Unicode and can contain letters (including
+     * English and Chinese characters), digits (0-9), colons (:), underscores (_),
+     * periods (.), and hyphens (-).
+     * Default value: empty.
      */
     readonly diskName?: string | ros.IResolvable;
 
@@ -5170,15 +5399,32 @@ export interface RosDiskProps {
     readonly encrypted?: boolean | ros.IResolvable;
 
     /**
-     * @Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
-     * - Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.
-     * - You cannot specify both ZoneId and InstanceId.
-     * Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.
+     * @Property instanceId: Creates a subscription disk and automatically attaches it to the specified
+     * subscription instance.
+     * - If you set this parameter, the `ResourceGroupId`, `Tag.N.Key`, `Tag.N.Value`,
+     * `ClientToken`, and `KMSKeyId` parameters are ignored.
+     * - You cannot specify both `ZoneId` and `InstanceId`.
+     * Default value: empty. An empty value indicates that you are creating a
+     * pay-as-you-go disk. The disk's location is determined by `RegionId` and `ZoneId`.
      */
     readonly instanceId?: string | ros.IResolvable;
 
     /**
-     * @Property kmsKeyId: KMS key ID used by the cloud disk.
+     * @Property kmsKeyId: The ID of the KMS key to use for the disk.
+     * > If `Encrypted` is set to true and you do not specify `KMSKeyId`, a default key
+     * is used for encryption. The `KMSKeyId` is returned in the response after the
+     * instance is created.
+     * >
+     * > - - If the disk is created from an unshared encrypted snapshot, the encryption
+     * key used by that snapshot is used by default.
+     * >
+     * > - - If the disk is created from a shared encrypted snapshot, the service key is
+     * used by default.
+     * >
+     * > - - If the disk is created in a region with account-level default encryption
+     * enabled, the specified account-level key is used by default.
+     * >
+     * > - - In other cases, the service key is used by default.
      */
     readonly kmsKeyId?: string | ros.IResolvable;
 
@@ -5196,7 +5442,12 @@ export interface RosDiskProps {
     readonly performanceLevel?: string | ros.IResolvable;
 
     /**
-     * @Property provisionedIops: Provisioning IOPS.
+     * @Property provisionedIops: The provisioned read\/write IOPS of a single ESSD AutoPL disk. Valid values:
+     * - Capacity <= 3 GiB: You cannot set provisioned performance.
+     * - Capacity >= 4 GiB: 0 to min(1,000 IOPS\/GiB × Capacity - Baseline IOPS, 50,000).
+     * Baseline IOPS = max(min(1,800 + 50 × Capacity, 50,000), 3,000).
+     * > This parameter is available only for ESSD AutoPL disks (`cloud_auto`). For more
+     * information, see [ESSD AutoPL disks]().
      */
     readonly provisionedIops?: number | ros.IResolvable;
 
@@ -5206,22 +5457,55 @@ export interface RosDiskProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property size: The size of the disk unit in GB.
+     * @Property size: The capacity of the disk, in GiB. You must specify a value for this parameter.
+     * Value range:
+     * - `cloud`: 5 to 2,000
+     * - `cloud_efficiency`: 20 to 32,768
+     * - `cloud_ssd`: 20 to 32,768
+     * - `PerformanceLevel`
+     * - PL0: 1 to 65,536
+     * - PL1: 20 to 65,536
+     * - PL2: 461 to 65,536
+     * - PL3: 1,261 to 65,536
+     * - `cloud_auto`: 1 to 65,536
+     * - `cloud_essd_entry`: 10 to 32,768
+     * - `cloud_regional_disk_auto`: 10 to 65,536
+     * - `elastic_ephemeral_disk_standard`: 64 to 8,192
+     * - `elastic_ephemeral_disk_premium`: 64 to 8,192
+     * If you specify `SnapshotId`, the following limits apply to `SnapshotId` and
+     * `Size`:
+     * - If the snapshot capacity is greater than the specified `Size`, the actual disk
+     * size is the snapshot capacity.
+     * - If the snapshot capacity is smaller than the specified `Size`, the actual disk
+     * size is the specified `Size`.
      */
     readonly size?: number | ros.IResolvable;
 
     /**
-     * @Property snapshotId: If specified, the backup used as the source to create disk.
+     * @Property snapshotId: The ID of the snapshot used to create the disk. Snapshots created on or before
+     * July 15, 2013 cannot be used to create disks.
+     * The `SnapshotId` and `Size` parameters have the following limits:
+     * - If the snapshot capacity is greater than the specified `Size`, the actual disk
+     * size is the snapshot capacity.
+     * - If the snapshot capacity is smaller than the specified `Size`, the actual disk
+     * size is the specified `Size`.
      */
     readonly snapshotId?: string | ros.IResolvable;
 
     /**
-     * @Property storageSetId: Storage set ID.
+     * @Property storageSetId: The ID of the storage set.
+     * > You can specify either storage set parameters (`StorageSetId` and
+     * `StorageSetPartitionNumber`) or the dedicated block storage cluster parameter
+     * (`StorageClusterId`), but not both. The request fails if you specify parameters
+     * for both.
      */
     readonly storageSetId?: string | ros.IResolvable;
 
     /**
-     * @Property storageSetPartitionNumber: The number of storage set partitions.
+     * @Property storageSetPartitionNumber: The number of partitions in the storage set. The value must be greater than or
+     * equal to 2 and cannot exceed the quota returned by the
+     * [DescribeAccountAttributes]() operation.
+     * Default value: 2.
      */
     readonly storageSetPartitionNumber?: number | ros.IResolvable;
 
@@ -5231,9 +5515,11 @@ export interface RosDiskProps {
     readonly tags?: RosDisk.TagsProperty[];
 
     /**
-     * @Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
-     * - If you do not set InstanceId, ZoneId is required.
-     * - You cannot specify both ZoneId and InstanceId.
+     * @Property zoneId: The ID of the zone in which to create the pay-as-you-go disk.
+     * - If you do not set `InstanceId`, this parameter is required.
+     * - You cannot specify both `ZoneId` and `InstanceId`.
+     * > ESSD zone-redundant disks (`cloud_regional_disk_auto`) do not require a zone
+     * ID.
      */
     readonly zoneId?: string | ros.IResolvable;
 }
@@ -5327,7 +5613,7 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Disk`, which is used to create a cloud disk in Elastic Compute Service (ECS).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Disk`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Disk` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
  */
@@ -5356,7 +5642,11 @@ export class RosDisk extends ros.RosResource {
     public autoSnapshotPolicyId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property burstingEnabled: Whether enable bursting.
+     * @Property burstingEnabled: Specifies whether to enable performance bursting. Valid values:
+     * - true
+     * - false
+     * > This parameter is available only for ESSD AutoPL disks (`cloud_auto`). For more
+     * information, see [ESSD AutoPL disks]().
      */
     public burstingEnabled: boolean | ros.IResolvable | undefined;
 
@@ -5376,7 +5666,11 @@ export class RosDisk extends ros.RosResource {
     public diskCategory: string | ros.IResolvable | undefined;
 
     /**
-     * @Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * @Property diskName: The name of the disk. The name must be 2 to 128 characters in length. It must
+     * start with a letter as defined by Unicode and can contain letters (including
+     * English and Chinese characters), digits (0-9), colons (:), underscores (_),
+     * periods (.), and hyphens (-).
+     * Default value: empty.
      */
     public diskName: string | ros.IResolvable | undefined;
 
@@ -5386,15 +5680,32 @@ export class RosDisk extends ros.RosResource {
     public encrypted: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
-     * - Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.
-     * - You cannot specify both ZoneId and InstanceId.
-     * Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.
+     * @Property instanceId: Creates a subscription disk and automatically attaches it to the specified
+     * subscription instance.
+     * - If you set this parameter, the `ResourceGroupId`, `Tag.N.Key`, `Tag.N.Value`,
+     * `ClientToken`, and `KMSKeyId` parameters are ignored.
+     * - You cannot specify both `ZoneId` and `InstanceId`.
+     * Default value: empty. An empty value indicates that you are creating a
+     * pay-as-you-go disk. The disk's location is determined by `RegionId` and `ZoneId`.
      */
     public instanceId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property kmsKeyId: KMS key ID used by the cloud disk.
+     * @Property kmsKeyId: The ID of the KMS key to use for the disk.
+     * > If `Encrypted` is set to true and you do not specify `KMSKeyId`, a default key
+     * is used for encryption. The `KMSKeyId` is returned in the response after the
+     * instance is created.
+     * >
+     * > - - If the disk is created from an unshared encrypted snapshot, the encryption
+     * key used by that snapshot is used by default.
+     * >
+     * > - - If the disk is created from a shared encrypted snapshot, the service key is
+     * used by default.
+     * >
+     * > - - If the disk is created in a region with account-level default encryption
+     * enabled, the specified account-level key is used by default.
+     * >
+     * > - - In other cases, the service key is used by default.
      */
     public kmsKeyId: string | ros.IResolvable | undefined;
 
@@ -5412,7 +5723,12 @@ export class RosDisk extends ros.RosResource {
     public performanceLevel: string | ros.IResolvable | undefined;
 
     /**
-     * @Property provisionedIops: Provisioning IOPS.
+     * @Property provisionedIops: The provisioned read\/write IOPS of a single ESSD AutoPL disk. Valid values:
+     * - Capacity <= 3 GiB: You cannot set provisioned performance.
+     * - Capacity >= 4 GiB: 0 to min(1,000 IOPS\/GiB × Capacity - Baseline IOPS, 50,000).
+     * Baseline IOPS = max(min(1,800 + 50 × Capacity, 50,000), 3,000).
+     * > This parameter is available only for ESSD AutoPL disks (`cloud_auto`). For more
+     * information, see [ESSD AutoPL disks]().
      */
     public provisionedIops: number | ros.IResolvable | undefined;
 
@@ -5422,22 +5738,55 @@ export class RosDisk extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property size: The size of the disk unit in GB.
+     * @Property size: The capacity of the disk, in GiB. You must specify a value for this parameter.
+     * Value range:
+     * - `cloud`: 5 to 2,000
+     * - `cloud_efficiency`: 20 to 32,768
+     * - `cloud_ssd`: 20 to 32,768
+     * - `PerformanceLevel`
+     * - PL0: 1 to 65,536
+     * - PL1: 20 to 65,536
+     * - PL2: 461 to 65,536
+     * - PL3: 1,261 to 65,536
+     * - `cloud_auto`: 1 to 65,536
+     * - `cloud_essd_entry`: 10 to 32,768
+     * - `cloud_regional_disk_auto`: 10 to 65,536
+     * - `elastic_ephemeral_disk_standard`: 64 to 8,192
+     * - `elastic_ephemeral_disk_premium`: 64 to 8,192
+     * If you specify `SnapshotId`, the following limits apply to `SnapshotId` and
+     * `Size`:
+     * - If the snapshot capacity is greater than the specified `Size`, the actual disk
+     * size is the snapshot capacity.
+     * - If the snapshot capacity is smaller than the specified `Size`, the actual disk
+     * size is the specified `Size`.
      */
     public size: number | ros.IResolvable | undefined;
 
     /**
-     * @Property snapshotId: If specified, the backup used as the source to create disk.
+     * @Property snapshotId: The ID of the snapshot used to create the disk. Snapshots created on or before
+     * July 15, 2013 cannot be used to create disks.
+     * The `SnapshotId` and `Size` parameters have the following limits:
+     * - If the snapshot capacity is greater than the specified `Size`, the actual disk
+     * size is the snapshot capacity.
+     * - If the snapshot capacity is smaller than the specified `Size`, the actual disk
+     * size is the specified `Size`.
      */
     public snapshotId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property storageSetId: Storage set ID.
+     * @Property storageSetId: The ID of the storage set.
+     * > You can specify either storage set parameters (`StorageSetId` and
+     * `StorageSetPartitionNumber`) or the dedicated block storage cluster parameter
+     * (`StorageClusterId`), but not both. The request fails if you specify parameters
+     * for both.
      */
     public storageSetId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property storageSetPartitionNumber: The number of storage set partitions.
+     * @Property storageSetPartitionNumber: The number of partitions in the storage set. The value must be greater than or
+     * equal to 2 and cannot exceed the quota returned by the
+     * [DescribeAccountAttributes]() operation.
+     * Default value: 2.
      */
     public storageSetPartitionNumber: number | ros.IResolvable | undefined;
 
@@ -5447,9 +5796,11 @@ export class RosDisk extends ros.RosResource {
     public tags: RosDisk.TagsProperty[] | undefined;
 
     /**
-     * @Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
-     * - If you do not set InstanceId, ZoneId is required.
-     * - You cannot specify both ZoneId and InstanceId.
+     * @Property zoneId: The ID of the zone in which to create the pay-as-you-go disk.
+     * - If you do not set `InstanceId`, this parameter is required.
+     * - You cannot specify both `ZoneId` and `InstanceId`.
+     * > ESSD zone-redundant disks (`cloud_regional_disk_auto`) do not require a zone
+     * ID.
      */
     public zoneId: string | ros.IResolvable | undefined;
 
@@ -5678,7 +6029,7 @@ function rosDiskAttachmentPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DiskAttachment`, which is used to attach a disk to an Elastic Compute Service (ECS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DiskAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DiskAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
  */
@@ -5823,12 +6174,19 @@ export interface RosElasticityAssuranceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
-     * @Property autoRenew: Whether to enable automatic renewal.
+     * @Property autoRenew: Specifies whether to enable auto-renewal for the elasticity assurance. Valid
+     * values:
+     * - true
+     * - false
+     * Default value: false.
      */
     readonly autoRenew?: boolean | ros.IResolvable;
 
     /**
-     * @Property autoRenewPeriod: The period for automatic renewal.
+     * @Property autoRenewPeriod: The auto-renewal period. Unit: month. Valid values: 1, 2, 3, 6, 12, 24, and 36.
+     * - Default value when `PeriodUnit` is set to Month: 1.
+     * - Default value when `PeriodUnit` is set to Year: 12.
+     * > If you set `AutoRenew` to `true`, you must specify this parameter.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
@@ -5839,22 +6197,31 @@ export interface RosElasticityAssuranceProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property instanceCpuCoreCount: The number of CPU cores for the instance.
+     * @Property instanceCpuCoreCount: > This parameter is no longer used.
      */
     readonly instanceCpuCoreCount?: number | ros.IResolvable;
 
     /**
-     * @Property period: The effective duration of the elasticity assurance. The unit of the effective duration is determined by the PeriodUnit value. Valid values:
-     * When the PeriodUnit parameter is set to Month, the valid values are 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-     * When the PeriodUnit parameter is set to Year, the valid values are 1, 2, 3, 4, and 5.
-     * Default value: 1.
+     * @Property period: The validity period of the elasticity assurance. The unit of the validity period
+     * is determined by the value of `PeriodUnit`. Specifies whether to check the image
+     * used by the instance supports hot migration. Valid values:
+     * - When the value of `PeriodUnit` is `Month`, the valid values are 1, 2, 3, 4, 5,
+     * 6, 7, 8, and 9.
+     * - When the value of `PeriodUnit` is `Year`, the valid values are 1, 2, 3, 4, and
+     * 5.
+     * - When the value of `PeriodUnit` is `Day`, the valid values are 1 to 365.
+     * Default value: 1
      */
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: The unit of the effective duration of the elasticity assurance. Valid values:
-     * Month
-     * Year
+     * @Property periodUnit: The unit of the validity period of the elasticity assurance. Valid values:
+     * - Month
+     * - Year
+     * - Day
+     * \*\*
+     * Note If you set `PeriodUnit` to `Day`, you must specify RecurrenceRules to create
+     * a time-segmented elasticity assurance.
      * Default value: Year.
      */
     readonly periodUnit?: string | ros.IResolvable;
@@ -5865,7 +6232,9 @@ export interface RosElasticityAssuranceProps {
     readonly privatePoolOptions?: RosElasticityAssurance.PrivatePoolOptionsProperty | ros.IResolvable;
 
     /**
-     * @Property recurrenceRules: Recurrence rules for the elasticity assurance.
+     * @Property recurrenceRules: The assurance schedules based on which the capacity reservation takes effect.
+     * > Time-segmented elasticity assurances are available only in specific regions and
+     * to specific users. To use time-segmented elasticity assurances, submit a ticket.
      */
     readonly recurrenceRules?: Array<RosElasticityAssurance.RecurrenceRulesProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -5911,6 +6280,13 @@ function RosElasticityAssurancePropsValidator(properties: any): ros.ValidationRe
           }));
     }
     errors.collect(ros.propertyValidator('recurrenceRules', ros.listValidator(RosElasticityAssurance_RecurrenceRulesPropertyValidator))(properties.recurrenceRules));
+    if(properties.instanceCpuCoreCount && (typeof properties.instanceCpuCoreCount) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceCpuCoreCount', ros.validateRange)({
+            data: properties.instanceCpuCoreCount,
+            min: 1,
+            max: undefined,
+          }));
+    }
     errors.collect(ros.propertyValidator('instanceCpuCoreCount', ros.validateNumber)(properties.instanceCpuCoreCount));
     errors.collect(ros.propertyValidator('instanceAmount', ros.requiredValidator)(properties.instanceAmount));
     if(properties.instanceAmount && (typeof properties.instanceAmount) !== 'object') {
@@ -5981,7 +6357,7 @@ function rosElasticityAssurancePropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ElasticityAssurance`, which is used to create an elasticity assurance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ElasticityAssurance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ElasticityAssurance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-elasticityassurance
  */
@@ -6016,12 +6392,19 @@ export class RosElasticityAssurance extends ros.RosResource {
     public zoneId: string | ros.IResolvable;
 
     /**
-     * @Property autoRenew: Whether to enable automatic renewal.
+     * @Property autoRenew: Specifies whether to enable auto-renewal for the elasticity assurance. Valid
+     * values:
+     * - true
+     * - false
+     * Default value: false.
      */
     public autoRenew: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property autoRenewPeriod: The period for automatic renewal.
+     * @Property autoRenewPeriod: The auto-renewal period. Unit: month. Valid values: 1, 2, 3, 6, 12, 24, and 36.
+     * - Default value when `PeriodUnit` is set to Month: 1.
+     * - Default value when `PeriodUnit` is set to Year: 12.
+     * > If you set `AutoRenew` to `true`, you must specify this parameter.
      */
     public autoRenewPeriod: number | ros.IResolvable | undefined;
 
@@ -6032,22 +6415,31 @@ export class RosElasticityAssurance extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceCpuCoreCount: The number of CPU cores for the instance.
+     * @Property instanceCpuCoreCount: > This parameter is no longer used.
      */
     public instanceCpuCoreCount: number | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The effective duration of the elasticity assurance. The unit of the effective duration is determined by the PeriodUnit value. Valid values:
-     * When the PeriodUnit parameter is set to Month, the valid values are 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-     * When the PeriodUnit parameter is set to Year, the valid values are 1, 2, 3, 4, and 5.
-     * Default value: 1.
+     * @Property period: The validity period of the elasticity assurance. The unit of the validity period
+     * is determined by the value of `PeriodUnit`. Specifies whether to check the image
+     * used by the instance supports hot migration. Valid values:
+     * - When the value of `PeriodUnit` is `Month`, the valid values are 1, 2, 3, 4, 5,
+     * 6, 7, 8, and 9.
+     * - When the value of `PeriodUnit` is `Year`, the valid values are 1, 2, 3, 4, and
+     * 5.
+     * - When the value of `PeriodUnit` is `Day`, the valid values are 1 to 365.
+     * Default value: 1
      */
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: The unit of the effective duration of the elasticity assurance. Valid values:
-     * Month
-     * Year
+     * @Property periodUnit: The unit of the validity period of the elasticity assurance. Valid values:
+     * - Month
+     * - Year
+     * - Day
+     * \*\*
+     * Note If you set `PeriodUnit` to `Day`, you must specify RecurrenceRules to create
+     * a time-segmented elasticity assurance.
      * Default value: Year.
      */
     public periodUnit: string | ros.IResolvable | undefined;
@@ -6058,7 +6450,9 @@ export class RosElasticityAssurance extends ros.RosResource {
     public privatePoolOptions: RosElasticityAssurance.PrivatePoolOptionsProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property recurrenceRules: Recurrence rules for the elasticity assurance.
+     * @Property recurrenceRules: The assurance schedules based on which the capacity reservation takes effect.
+     * > Time-segmented elasticity assurances are available only in specific regions and
+     * to specific users. To use time-segmented elasticity assurances, submit a ticket.
      */
     public recurrenceRules: Array<RosElasticityAssurance.RecurrenceRulesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -6395,7 +6789,7 @@ function rosForwardEntryPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ForwardEntry`, which is used to configure the Destination Network Address Translation (DNAT) table of a Network Address Translation (NAT) gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ForwardEntry`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ForwardEntry` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-forwardentry
  */
@@ -6498,9 +6892,9 @@ export class RosForwardEntry extends ros.RosResource {
 export interface RosHpcClusterProps {
 
     /**
-     * @Property name: The name of the HPC cluster. The name must be 2 to 128 characters in length. It must
-     * start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters,
-     * digits, colons (:), underscores (_), and hyphens (-).
+     * @Property name: The name of the HPC cluster. The name must be 2 to 128 characters in length, and
+     * can contain letters, digits, underscores (_), and hyphens (-). The name must
+     * start with a letter but cannot start with `http:\/\/` or `https:\/\/`.
      */
     readonly name: string | ros.IResolvable;
 
@@ -6547,7 +6941,7 @@ function rosHpcClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::HpcCluster`, which is used to create a High Performance Computing (HPC) cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::HpcCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HpcCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-hpccluster
  */
@@ -6571,9 +6965,9 @@ export class RosHpcCluster extends ros.RosResource {
 
 
     /**
-     * @Property name: The name of the HPC cluster. The name must be 2 to 128 characters in length. It must
-     * start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters,
-     * digits, colons (:), underscores (_), and hyphens (-).
+     * @Property name: The name of the HPC cluster. The name must be 2 to 128 characters in length, and
+     * can contain letters, digits, underscores (_), and hyphens (-). The name must
+     * start with a letter but cannot start with `http:\/\/` or `https:\/\/`.
      */
     public name: string | ros.IResolvable;
 
@@ -6617,12 +7011,22 @@ export class RosHpcCluster extends ros.RosResource {
 export interface RosImageComponentProps {
 
     /**
-     * @Property content: The content of the image component. The content consists of up to 127 commands.
+     * @Property content: The content of the image component. The image component consists of multiple
+     * commands. The command content cannot exceed 16 KB in size. For information about
+     * the commands supported by Image Builder and the formats of the commands, see
+     * [Commands supported by Image Builder]().
      */
     readonly content: string | ros.IResolvable;
 
     /**
-     * @Property componentType: The type of the image component. Only image build components are supported. Set the value to Build.Default value: Build.
+     * @Property componentType: The type of the image component. Only image building components and image test
+     * components are supported.
+     * Valid values:
+     * - Build
+     * - Test
+     * Default value: Build.
+     * > Image building components can be used only in image building templates. Image
+     * test components can be used only in image test templates.
      */
     readonly componentType?: string | ros.IResolvable;
 
@@ -6643,7 +7047,11 @@ export interface RosImageComponentProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property systemType: The operating system type supported by the image component. Only Linux is supported. Set the value to Linux.Default value: Linux.
+     * @Property systemType: The type of the operating system supported by the image component.
+     * Valid values:
+     * - Linux
+     * - Windows
+     * Default value: Linux.
      */
     readonly systemType?: string | ros.IResolvable;
 
@@ -6718,7 +7126,7 @@ function rosImageComponentPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ImageComponent`, which is used to create an image component.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ImageComponent`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImageComponent` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagecomponent
  */
@@ -6737,12 +7145,22 @@ export class RosImageComponent extends ros.RosResource {
 
 
     /**
-     * @Property content: The content of the image component. The content consists of up to 127 commands.
+     * @Property content: The content of the image component. The image component consists of multiple
+     * commands. The command content cannot exceed 16 KB in size. For information about
+     * the commands supported by Image Builder and the formats of the commands, see
+     * [Commands supported by Image Builder]().
      */
     public content: string | ros.IResolvable;
 
     /**
-     * @Property componentType: The type of the image component. Only image build components are supported. Set the value to Build.Default value: Build.
+     * @Property componentType: The type of the image component. Only image building components and image test
+     * components are supported.
+     * Valid values:
+     * - Build
+     * - Test
+     * Default value: Build.
+     * > Image building components can be used only in image building templates. Image
+     * test components can be used only in image test templates.
      */
     public componentType: string | ros.IResolvable | undefined;
 
@@ -6763,7 +7181,11 @@ export class RosImageComponent extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property systemType: The operating system type supported by the image component. Only Linux is supported. Set the value to Linux.Default value: Linux.
+     * @Property systemType: The type of the operating system supported by the image component.
+     * Valid values:
+     * - Linux
+     * - Windows
+     * Default value: Linux.
      */
     public systemType: string | ros.IResolvable | undefined;
 
@@ -6862,16 +7284,20 @@ function rosImageComponentTagsPropertyToRosTemplate(properties: any): any {
 export interface RosImagePipelineProps {
 
     /**
-     * @Property baseImage: The source image.
-     * If you set BaseImageType to IMAGE, set the BaseImage parameter to the ID of a custom image.
-     * If you set BaseImageType to IMAGE_FAMILY, set the BaseImage parameter to the name of an image family.
+     * @Property baseImage: The base image. The value of this parameter varies based on the value of
+     * `BaseImageType`:
+     * - If `BaseImageType` is `IMAGE`, specify the ID of the base image.
+     * - If `BaseImageType` is `IMAGE_FAMILY`, specify the name of the base image
+     * family.
+     * - If `BaseImageType` is `OSS`, this parameter is not required.
      */
     readonly baseImage: string | ros.IResolvable;
 
     /**
-     * @Property baseImageType: The type of the source image. Valid values:
-     * IMAGE: image
-     * IMAGE_FAMILY: image family
+     * @Property baseImageType: The type of the base image. Valid values:
+     * - IMAGE: An ECS image.
+     * - IMAGE_FAMILY: An image family.
+     * - OSS: An OSS object.
      */
     readonly baseImageType: string | ros.IResolvable;
 
@@ -6905,8 +7331,9 @@ export interface RosImagePipelineProps {
     readonly executePipeline?: boolean | ros.IResolvable;
 
     /**
-     * @Property imageName: The prefix of the image name. The prefix must be 2 to 64 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
-     * The system generates the final complete image name that consists of the specified prefix and the ID of the build task (ExecutionId) in the format of {ImageName}_{ExecutionId}.
+     * @Property imageName: The prefix of the destination image name.
+     * ><notice>This parameter is deprecated. Use `ImageOptions.ImageName`
+     * instead.><\/notice>
      */
     readonly imageName?: string | ros.IResolvable;
 
@@ -6923,8 +7350,12 @@ export interface RosImagePipelineProps {
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
 
     /**
-     * @Property name: The name of the image template. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
-     * Note If you do not specify the Name parameter, the return value of ImagePipelineId is used.
+     * @Property name: The name of the image pipeline. It must be 2 to 128 characters long, start with a
+     * letter or a Chinese character, and cannot start with `http:\/\/` or `https:\/\/`.
+     * Allowed characters include letters, digits, Chinese characters, colons (:),
+     * underscores (_), periods (.), and hyphens (-).
+     * > If you do not specify this parameter, the value of `ImagePipelineId` is used as
+     * the name.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -7049,7 +7480,7 @@ function rosImagePipelinePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ImagePipeline`, which is used to create an image template.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ImagePipeline`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImagePipeline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagepipeline
  */
@@ -7068,16 +7499,20 @@ export class RosImagePipeline extends ros.RosResource {
 
 
     /**
-     * @Property baseImage: The source image.
-     * If you set BaseImageType to IMAGE, set the BaseImage parameter to the ID of a custom image.
-     * If you set BaseImageType to IMAGE_FAMILY, set the BaseImage parameter to the name of an image family.
+     * @Property baseImage: The base image. The value of this parameter varies based on the value of
+     * `BaseImageType`:
+     * - If `BaseImageType` is `IMAGE`, specify the ID of the base image.
+     * - If `BaseImageType` is `IMAGE_FAMILY`, specify the name of the base image
+     * family.
+     * - If `BaseImageType` is `OSS`, this parameter is not required.
      */
     public baseImage: string | ros.IResolvable;
 
     /**
-     * @Property baseImageType: The type of the source image. Valid values:
-     * IMAGE: image
-     * IMAGE_FAMILY: image family
+     * @Property baseImageType: The type of the base image. Valid values:
+     * - IMAGE: An ECS image.
+     * - IMAGE_FAMILY: An image family.
+     * - OSS: An OSS object.
      */
     public baseImageType: string | ros.IResolvable;
 
@@ -7111,8 +7546,9 @@ export class RosImagePipeline extends ros.RosResource {
     public executePipeline: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property imageName: The prefix of the image name. The prefix must be 2 to 64 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
-     * The system generates the final complete image name that consists of the specified prefix and the ID of the build task (ExecutionId) in the format of {ImageName}_{ExecutionId}.
+     * @Property imageName: The prefix of the destination image name.
+     * ><notice>This parameter is deprecated. Use `ImageOptions.ImageName`
+     * instead.><\/notice>
      */
     public imageName: string | ros.IResolvable | undefined;
 
@@ -7129,8 +7565,12 @@ export class RosImagePipeline extends ros.RosResource {
     public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
 
     /**
-     * @Property name: The name of the image template. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
-     * Note If you do not specify the Name parameter, the return value of ImagePipelineId is used.
+     * @Property name: The name of the image pipeline. It must be 2 to 128 characters long, start with a
+     * letter or a Chinese character, and cannot start with `http:\/\/` or `https:\/\/`.
+     * Allowed characters include letters, digits, Chinese characters, colons (:),
+     * underscores (_), periods (.), and hyphens (-).
+     * > If you do not specify this parameter, the value of `ImagePipelineId` is used as
+     * the name.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -7270,7 +7710,13 @@ function rosImagePipelineTagsPropertyToRosTemplate(properties: any): any {
 export interface RosImageSharePermissionProps {
 
     /**
-     * @Property imageId: The shared custom image ID.
+     * @Property imageId: The ID of the custom image.
+     * ><notice>
+     * You can no longer share images that are encrypted by using a service key. You can
+     * share only images that are encrypted by using a customer managed key (CMK). If
+     * you attempt to share an image that is encrypted by using a service key, the
+     * request fails.
+     * ><\/notice>
      */
     readonly imageId: string | ros.IResolvable;
 
@@ -7280,8 +7726,11 @@ export interface RosImageSharePermissionProps {
     readonly accounts?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property isPublic: Whether to publish or remove community mirrors. 
-     * If this property is not set, no changes will be made to the community image
+     * @Property isPublic: Specifies whether to publish or unpublish the community image. Valid values:
+     * - true: publishes the image as a community image.
+     * - false: unpublishes the community image. The image becomes a custom image. If
+     * the image is a custom image, this setting has no effect.
+     * Default value: false.
      */
     readonly isPublic?: boolean | ros.IResolvable;
 
@@ -7357,7 +7806,13 @@ export class RosImageSharePermission extends ros.RosResource {
 
 
     /**
-     * @Property imageId: The shared custom image ID.
+     * @Property imageId: The ID of the custom image.
+     * ><notice>
+     * You can no longer share images that are encrypted by using a service key. You can
+     * share only images that are encrypted by using a customer managed key (CMK). If
+     * you attempt to share an image that is encrypted by using a service key, the
+     * request fails.
+     * ><\/notice>
      */
     public imageId: string | ros.IResolvable;
 
@@ -7367,8 +7822,11 @@ export class RosImageSharePermission extends ros.RosResource {
     public accounts: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property isPublic: Whether to publish or remove community mirrors. 
-     * If this property is not set, no changes will be made to the community image
+     * @Property isPublic: Specifies whether to publish or unpublish the community image. Valid values:
+     * - true: publishes the image as a community image.
+     * - false: unpublishes the community image. The image becomes a custom image. If
+     * the image is a custom image, this setting has no effect.
+     * Default value: false.
      */
     public isPublic: boolean | ros.IResolvable | undefined;
 
@@ -7449,7 +7907,11 @@ export interface RosInstanceProps {
     readonly creditSpecification?: string | ros.IResolvable;
 
     /**
-     * @Property dedicatedHostId: which dedicated host will be deployed
+     * @Property dedicatedHostId: The ID of the dedicated host.
+     * You can call the [DescribeDedicatedHosts]() operation to query the list of
+     * dedicated host IDs.
+     * > Spot instances cannot be created on dedicated hosts. If you specify
+     * DedicatedHostId, SpotStrategy and SpotPriceLimit are automatically ignored.
      */
     readonly dedicatedHostId?: string | ros.IResolvable;
 
@@ -7485,7 +7947,11 @@ export interface RosInstanceProps {
     readonly hostName?: string | ros.IResolvable;
 
     /**
-     * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.
+     * @Property hpcClusterId: The ID of the high performance computing (HPC) cluster to which the instance
+     * belongs.
+     * This parameter is required when you create instances of a Supper Computing
+     * Cluster (SCC) instance type. For information about how to create an HPC cluster,
+     * see [CreateHpcCluster]().
      */
     readonly hpcClusterId?: string | ros.IResolvable;
 
@@ -7513,7 +7979,16 @@ export interface RosInstanceProps {
     readonly imageFamily?: string | ros.IResolvable;
 
     /**
-     * @Property imageId: Image ID to create ecs instance.
+     * @Property imageId: The image ID.
+     * <details>
+     * <summary>
+     * Naming convention for image IDs
+     * <\/summary>
+     * - Public images: Named based on the operating system version, architecture,
+     * language, and published date.
+     * - Custom images, shared images, cloud marketplace images, and community
+     * images: Start with the letter `m`.
+     * <\/details>
      */
     readonly imageId?: string | ros.IResolvable;
 
@@ -7533,12 +8008,17 @@ export interface RosInstanceProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
+     * @Property internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit\/s. Valid values: 0 to 100.
+     * Default value: 0.
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
 
     /**
-     * @Property ioOptimized: The 'optimized' instance can provide better IO performance. Support 'none' and 'optimized' only, default is 'optimized'.
+     * @Property ioOptimized: Specifies whether the instance is I\/O optimized. For instances of [retired
+     * instance types](), the default value is none. For instances of other instance
+     * types, the default value is optimized. Valid values:
+     * - none: The instance is not I\/O optimized.
+     * - optimized: The instance is I\/O optimized.
      */
     readonly ioOptimized?: string | ros.IResolvable;
 
@@ -7553,7 +8033,12 @@ export interface RosInstanceProps {
     readonly password?: string | ros.IResolvable;
 
     /**
-     * @Property passwordInherit: Specifies whether to use the password preset in the image. To use the PasswordInherit parameter, the Password parameter must be empty and you must make sure that the selected image has a password configured.
+     * @Property passwordInherit: Specifies whether to use the password preset in the image. Valid values:
+     * - true: uses the preset password.
+     * - false: does not use the preset password.
+     * Default value: false.
+     * > If you set this parameter to true, make sure that you leave the Password
+     * parameter empty and the selected image has a preset password.
      */
     readonly passwordInherit?: boolean | ros.IResolvable;
 
@@ -7588,7 +8073,11 @@ export interface RosInstanceProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property securityEnhancementStrategy:
+     * @Property securityEnhancementStrategy: Specifies whether to enable security hardening. Valid values:
+     * - Active: enables security hardening. This value is applicable only to public
+     * images.
+     * - Deactive: does not enable security hardening. This value is applicable to all
+     * images.
      */
     readonly securityEnhancementStrategy?: string | ros.IResolvable;
 
@@ -7603,15 +8092,29 @@ export interface RosInstanceProps {
     readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
-     * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
-     * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+     * @Property spotDuration: The protection period of the spot instance. Unit: hours. Valid values:
+     * - 1: After a spot instance is created, the system ensures that the instance is not
+     * automatically released within 1 hour. After the 1-hour protection period ends, the system
+     * compares the bid price with the market price and checks the resource inventory to
+     * determine whether to retain or release the instance.
+     * - 0: After a spot instance is created, the system does not ensure that the instance
+     * can run for one hour. The system compares the biding price with the market prices and
+     * checks the resource inventory to determine whether to retain or release the instance.
      * Default value: 1.
+     * >
+     * - You can set this parameter only to 0 or 1.
+     * - The spot instance is billed by second. Specify an appropriate protection period.
+     * - The system sends an ECS system event to notify you 5 minutes before the instance is
+     * released.
      */
     readonly spotDuration?: number | ros.IResolvable;
 
     /**
-     * @Property spotInterruptionBehavior: The interruption mode of the preemptible instance. Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+     * @Property spotInterruptionBehavior: The interruption mode of the spot instance. Valid values:
+     * - Terminate: The instance is released.
+     * - Stop: The instance is stopped in economical mode.
+     * For information about the economical mode, see [Economical mode]().
+     * Default value: Terminate.
      */
     readonly spotInterruptionBehavior?: string | ros.IResolvable;
 
@@ -7631,7 +8134,8 @@ export interface RosInstanceProps {
     readonly storageSetId?: string | ros.IResolvable;
 
     /**
-     * @Property storageSetPartitionNumber: The maximum number of partitions in the storage set. The value must be greater than or equal to 2.
+     * @Property storageSetPartitionNumber: The maximum number of partitions in the storage set. Valid values: integers
+     * greater than or equal to 2.
      */
     readonly storageSetPartitionNumber?: number | ros.IResolvable;
 
@@ -7684,7 +8188,15 @@ export interface RosInstanceProps {
     readonly useAdditionalService?: boolean | ros.IResolvable;
 
     /**
-     * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+     * @Property userData: The user data of the instance. You must specify Base64-encoded data. The instance
+     * user data cannot exceed 32 KB in size before Base64 encoding.
+     * For information about the limits, formats, and running frequencies of instance
+     * user data, see [Instance user data]().
+     * > To ensure security, we recommend that you do not use plaintext to pass in
+     * confidential information, such as passwords or private keys, as user data. If you
+     * need to pass in confidential information, we recommend that you encrypt and
+     * encode the information in Base64 and then decode and decrypt the information in
+     * the same manner in the instance.
      */
     readonly userData?: string | ros.IResolvable;
 
@@ -7694,7 +8206,17 @@ export interface RosInstanceProps {
     readonly vpcId?: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The vSwitch Id to create ecs instance.
+     * @Property vSwitchId: The ID of the vSwitch to which to connect to the instance. You must set this
+     * parameter when you create an instance of the VPC type. The specified vSwitch and
+     * security group must belong to the same VPC. You can call the
+     * [DescribeVSwitches]() operation to query available vSwitches.
+     * Take note of the following items:
+     * - If you specify the `VSwitchId` parameter, the zone specified by the `ZoneId`
+     * parameter must be the zone where the specified vSwitch is located. You can also
+     * leave the `ZoneId` parameter empty. Then, the system selects the zone where the
+     * specified vSwitch resides.
+     * - If `NetworkInterface.N.InstanceType` is set to `Primary`, you cannot specify
+     * `VSwitchId` but can specify `NetworkInterface.N.VSwitchId`.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 
@@ -7969,7 +8491,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Instance`The , which resource type creates an Elastic Compute Service (ECS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instance
  */
@@ -8058,7 +8580,11 @@ export class RosInstance extends ros.RosResource {
     public creditSpecification: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dedicatedHostId: which dedicated host will be deployed
+     * @Property dedicatedHostId: The ID of the dedicated host.
+     * You can call the [DescribeDedicatedHosts]() operation to query the list of
+     * dedicated host IDs.
+     * > Spot instances cannot be created on dedicated hosts. If you specify
+     * DedicatedHostId, SpotStrategy and SpotPriceLimit are automatically ignored.
      */
     public dedicatedHostId: string | ros.IResolvable | undefined;
 
@@ -8094,7 +8620,11 @@ export class RosInstance extends ros.RosResource {
     public hostName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.
+     * @Property hpcClusterId: The ID of the high performance computing (HPC) cluster to which the instance
+     * belongs.
+     * This parameter is required when you create instances of a Supper Computing
+     * Cluster (SCC) instance type. For information about how to create an HPC cluster,
+     * see [CreateHpcCluster]().
      */
     public hpcClusterId: string | ros.IResolvable | undefined;
 
@@ -8122,7 +8652,16 @@ export class RosInstance extends ros.RosResource {
     public imageFamily: string | ros.IResolvable | undefined;
 
     /**
-     * @Property imageId: Image ID to create ecs instance.
+     * @Property imageId: The image ID.
+     * <details>
+     * <summary>
+     * Naming convention for image IDs
+     * <\/summary>
+     * - Public images: Named based on the operating system version, architecture,
+     * language, and published date.
+     * - Custom images, shared images, cloud marketplace images, and community
+     * images: Start with the letter `m`.
+     * <\/details>
      */
     public imageId: string | ros.IResolvable | undefined;
 
@@ -8142,12 +8681,17 @@ export class RosInstance extends ros.RosResource {
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
+     * @Property internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit\/s. Valid values: 0 to 100.
+     * Default value: 0.
      */
     public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
 
     /**
-     * @Property ioOptimized: The 'optimized' instance can provide better IO performance. Support 'none' and 'optimized' only, default is 'optimized'.
+     * @Property ioOptimized: Specifies whether the instance is I\/O optimized. For instances of [retired
+     * instance types](), the default value is none. For instances of other instance
+     * types, the default value is optimized. Valid values:
+     * - none: The instance is not I\/O optimized.
+     * - optimized: The instance is I\/O optimized.
      */
     public ioOptimized: string | ros.IResolvable | undefined;
 
@@ -8162,7 +8706,12 @@ export class RosInstance extends ros.RosResource {
     public password: string | ros.IResolvable | undefined;
 
     /**
-     * @Property passwordInherit: Specifies whether to use the password preset in the image. To use the PasswordInherit parameter, the Password parameter must be empty and you must make sure that the selected image has a password configured.
+     * @Property passwordInherit: Specifies whether to use the password preset in the image. Valid values:
+     * - true: uses the preset password.
+     * - false: does not use the preset password.
+     * Default value: false.
+     * > If you set this parameter to true, make sure that you leave the Password
+     * parameter empty and the selected image has a preset password.
      */
     public passwordInherit: boolean | ros.IResolvable | undefined;
 
@@ -8197,7 +8746,11 @@ export class RosInstance extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityEnhancementStrategy:
+     * @Property securityEnhancementStrategy: Specifies whether to enable security hardening. Valid values:
+     * - Active: enables security hardening. This value is applicable only to public
+     * images.
+     * - Deactive: does not enable security hardening. This value is applicable to all
+     * images.
      */
     public securityEnhancementStrategy: string | ros.IResolvable | undefined;
 
@@ -8212,15 +8765,29 @@ export class RosInstance extends ros.RosResource {
     public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
-     * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
-     * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+     * @Property spotDuration: The protection period of the spot instance. Unit: hours. Valid values:
+     * - 1: After a spot instance is created, the system ensures that the instance is not
+     * automatically released within 1 hour. After the 1-hour protection period ends, the system
+     * compares the bid price with the market price and checks the resource inventory to
+     * determine whether to retain or release the instance.
+     * - 0: After a spot instance is created, the system does not ensure that the instance
+     * can run for one hour. The system compares the biding price with the market prices and
+     * checks the resource inventory to determine whether to retain or release the instance.
      * Default value: 1.
+     * >
+     * - You can set this parameter only to 0 or 1.
+     * - The spot instance is billed by second. Specify an appropriate protection period.
+     * - The system sends an ECS system event to notify you 5 minutes before the instance is
+     * released.
      */
     public spotDuration: number | ros.IResolvable | undefined;
 
     /**
-     * @Property spotInterruptionBehavior: The interruption mode of the preemptible instance. Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+     * @Property spotInterruptionBehavior: The interruption mode of the spot instance. Valid values:
+     * - Terminate: The instance is released.
+     * - Stop: The instance is stopped in economical mode.
+     * For information about the economical mode, see [Economical mode]().
+     * Default value: Terminate.
      */
     public spotInterruptionBehavior: string | ros.IResolvable | undefined;
 
@@ -8240,7 +8807,8 @@ export class RosInstance extends ros.RosResource {
     public storageSetId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property storageSetPartitionNumber: The maximum number of partitions in the storage set. The value must be greater than or equal to 2.
+     * @Property storageSetPartitionNumber: The maximum number of partitions in the storage set. Valid values: integers
+     * greater than or equal to 2.
      */
     public storageSetPartitionNumber: number | ros.IResolvable | undefined;
 
@@ -8293,7 +8861,15 @@ export class RosInstance extends ros.RosResource {
     public useAdditionalService: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+     * @Property userData: The user data of the instance. You must specify Base64-encoded data. The instance
+     * user data cannot exceed 32 KB in size before Base64 encoding.
+     * For information about the limits, formats, and running frequencies of instance
+     * user data, see [Instance user data]().
+     * > To ensure security, we recommend that you do not use plaintext to pass in
+     * confidential information, such as passwords or private keys, as user data. If you
+     * need to pass in confidential information, we recommend that you encrypt and
+     * encode the information in Base64 and then decode and decrypt the information in
+     * the same manner in the instance.
      */
     public userData: string | ros.IResolvable | undefined;
 
@@ -8303,7 +8879,17 @@ export class RosInstance extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vSwitchId: The vSwitch Id to create ecs instance.
+     * @Property vSwitchId: The ID of the vSwitch to which to connect to the instance. You must set this
+     * parameter when you create an instance of the VPC type. The specified vSwitch and
+     * security group must belong to the same VPC. You can call the
+     * [DescribeVSwitches]() operation to query available vSwitches.
+     * Take note of the following items:
+     * - If you specify the `VSwitchId` parameter, the zone specified by the `ZoneId`
+     * parameter must be the zone where the specified vSwitch is located. You can also
+     * leave the `ZoneId` parameter empty. Then, the system selects the zone where the
+     * specified vSwitch resides.
+     * - If `NetworkInterface.N.InstanceType` is set to `Primary`, you cannot specify
+     * `VSwitchId` but can specify `NetworkInterface.N.VSwitchId`.
      */
     public vSwitchId: string | ros.IResolvable | undefined;
 
@@ -8656,7 +9242,14 @@ export interface RosInstanceCloneProps {
     readonly backendServerWeight?: number | ros.IResolvable;
 
     /**
-     * @Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
+     * @Property deletionProtection: Specifies whether to enable release protection for the instance. This parameter
+     * determines whether you can use the ECS console or call the [DeleteInstance]()
+     * operation to release the instance. Valid values:
+     * - true: enables release protection for the instance.
+     * - false: disables release protection for the instance.
+     * Default value: false.
+     * > This parameter is applicable to only pay-as-you-go instances. It can protect
+     * instances against manual releases, but not against automatic releases.
      */
     readonly deletionProtection?: boolean | ros.IResolvable;
 
@@ -8873,7 +9466,7 @@ function rosInstanceClonePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceClone`, which is used to clone an Elastic Compute Service (ECS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceClone`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceClone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instanceclone
  */
@@ -8937,7 +9530,14 @@ export class RosInstanceClone extends ros.RosResource {
     public backendServerWeight: number | ros.IResolvable | undefined;
 
     /**
-     * @Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
+     * @Property deletionProtection: Specifies whether to enable release protection for the instance. This parameter
+     * determines whether you can use the ECS console or call the [DeleteInstance]()
+     * operation to release the instance. Valid values:
+     * - true: enables release protection for the instance.
+     * - false: disables release protection for the instance.
+     * Default value: false.
+     * > This parameter is applicable to only pay-as-you-go instances. It can protect
+     * instances against manual releases, but not against automatic releases.
      */
     public deletionProtection: boolean | ros.IResolvable | undefined;
 
@@ -9281,7 +9881,11 @@ export interface RosInstanceGroupProps {
     readonly creditSpecification?: string | ros.IResolvable;
 
     /**
-     * @Property dedicatedHostId: which dedicated host will be deployed
+     * @Property dedicatedHostId: The ID of the dedicated host.
+     * You can call the [DescribeDedicatedHosts]() operation to query the list of
+     * dedicated host IDs.
+     * > Spot instances cannot be created on dedicated hosts. If you specify
+     * DedicatedHostId, SpotStrategy and SpotPriceLimit are automatically ignored.
      */
     readonly dedicatedHostId?: string | ros.IResolvable;
 
@@ -9375,7 +9979,16 @@ export interface RosInstanceGroupProps {
     readonly imageFamily?: string | ros.IResolvable;
 
     /**
-     * @Property imageId: Image ID to create ecs instance.
+     * @Property imageId: The image ID.
+     * <details>
+     * <summary>
+     * Naming convention for image IDs
+     * <\/summary>
+     * - Public images: Named based on the operating system version, architecture,
+     * language, and published date.
+     * - Custom images, shared images, cloud marketplace images, and community
+     * images: Start with the letter `m`.
+     * <\/details>
      */
     readonly imageId?: string | ros.IResolvable;
 
@@ -9410,12 +10023,17 @@ export interface RosInstanceGroupProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
+     * @Property internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit\/s. Valid values: 0 to 100.
+     * Default value: 0.
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
 
     /**
-     * @Property ioOptimized: The 'optimized' instance can provide better IO performance. Support 'none' and 'optimized' only, default is 'optimized'.
+     * @Property ioOptimized: Specifies whether the instance is I\/O optimized. For instances of [retired
+     * instance types](), the default value is none. For instances of other instance
+     * types, the default value is optimized. Valid values:
+     * - none: The instance is not I\/O optimized.
+     * - optimized: The instance is I\/O optimized.
      */
     readonly ioOptimized?: string | ros.IResolvable;
 
@@ -9517,7 +10135,11 @@ export interface RosInstanceGroupProps {
     readonly schedulerOptions?: RosInstanceGroup.SchedulerOptionsProperty | ros.IResolvable;
 
     /**
-     * @Property securityEnhancementStrategy:
+     * @Property securityEnhancementStrategy: Specifies whether to enable security hardening. Valid values:
+     * - Active: enables security hardening. This value is applicable only to public
+     * images.
+     * - Deactive: does not enable security hardening. This value is applicable to all
+     * images.
      */
     readonly securityEnhancementStrategy?: string | ros.IResolvable;
 
@@ -9537,15 +10159,29 @@ export interface RosInstanceGroupProps {
     readonly securityOptions?: RosInstanceGroup.SecurityOptionsProperty | ros.IResolvable;
 
     /**
-     * @Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
-     * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
-     * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+     * @Property spotDuration: The protection period of the spot instance. Unit: hours. Valid values:
+     * - 1: After a spot instance is created, the system ensures that the instance is not
+     * automatically released within 1 hour. After the 1-hour protection period ends, the system
+     * compares the bid price with the market price and checks the resource inventory to
+     * determine whether to retain or release the instance.
+     * - 0: After a spot instance is created, the system does not ensure that the instance
+     * can run for one hour. The system compares the biding price with the market prices and
+     * checks the resource inventory to determine whether to retain or release the instance.
      * Default value: 1.
+     * >
+     * - You can set this parameter only to 0 or 1.
+     * - The spot instance is billed by second. Specify an appropriate protection period.
+     * - The system sends an ECS system event to notify you 5 minutes before the instance is
+     * released.
      */
     readonly spotDuration?: number | ros.IResolvable;
 
     /**
-     * @Property spotInterruptionBehavior: The interruption mode of the preemptible instance. Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+     * @Property spotInterruptionBehavior: The interruption mode of the spot instance. Valid values:
+     * - Terminate: The instance is released.
+     * - Stop: The instance is stopped in economical mode.
+     * For information about the economical mode, see [Economical mode]().
+     * Default value: Terminate.
      */
     readonly spotInterruptionBehavior?: string | ros.IResolvable;
 
@@ -9565,7 +10201,8 @@ export interface RosInstanceGroupProps {
     readonly storageSetId?: string | ros.IResolvable;
 
     /**
-     * @Property storageSetPartitionNumber: The maximum number of partitions in the storage set. The value must be greater than or equal to 2.
+     * @Property storageSetPartitionNumber: The maximum number of partitions in the storage set. Valid values: integers
+     * greater than or equal to 2.
      */
     readonly storageSetPartitionNumber?: number | ros.IResolvable;
 
@@ -9676,7 +10313,15 @@ export interface RosInstanceGroupProps {
     readonly useAdditionalService?: boolean | ros.IResolvable;
 
     /**
-     * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+     * @Property userData: The user data of the instance. You must specify Base64-encoded data. The instance
+     * user data cannot exceed 32 KB in size before Base64 encoding.
+     * For information about the limits, formats, and running frequencies of instance
+     * user data, see [Instance user data]().
+     * > To ensure security, we recommend that you do not use plaintext to pass in
+     * confidential information, such as passwords or private keys, as user data. If you
+     * need to pass in confidential information, we recommend that you encrypt and
+     * encode the information in Base64 and then decode and decrypt the information in
+     * the same manner in the instance.
      */
     readonly userData?: string | ros.IResolvable;
 
@@ -9686,7 +10331,17 @@ export interface RosInstanceGroupProps {
     readonly vpcId?: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The vSwitch Id to create ecs instance.
+     * @Property vSwitchId: The ID of the vSwitch to which to connect to the instance. You must set this
+     * parameter when you create an instance of the VPC type. The specified vSwitch and
+     * security group must belong to the same VPC. You can call the
+     * [DescribeVSwitches]() operation to query available vSwitches.
+     * Take note of the following items:
+     * - If you specify the `VSwitchId` parameter, the zone specified by the `ZoneId`
+     * parameter must be the zone where the specified vSwitch is located. You can also
+     * leave the `ZoneId` parameter empty. Then, the system selects the zone where the
+     * specified vSwitch resides.
+     * - If `NetworkInterface.N.InstanceType` is set to `Primary`, you cannot specify
+     * `VSwitchId` but can specify `NetworkInterface.N.VSwitchId`.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 
@@ -10065,7 +10720,7 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroup`The , which resource creates a group of ECS instances that share identical configurations.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
@@ -10174,7 +10829,11 @@ export class RosInstanceGroup extends ros.RosResource {
     public creditSpecification: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dedicatedHostId: which dedicated host will be deployed
+     * @Property dedicatedHostId: The ID of the dedicated host.
+     * You can call the [DescribeDedicatedHosts]() operation to query the list of
+     * dedicated host IDs.
+     * > Spot instances cannot be created on dedicated hosts. If you specify
+     * DedicatedHostId, SpotStrategy and SpotPriceLimit are automatically ignored.
      */
     public dedicatedHostId: string | ros.IResolvable | undefined;
 
@@ -10268,7 +10927,16 @@ export class RosInstanceGroup extends ros.RosResource {
     public imageFamily: string | ros.IResolvable | undefined;
 
     /**
-     * @Property imageId: Image ID to create ecs instance.
+     * @Property imageId: The image ID.
+     * <details>
+     * <summary>
+     * Naming convention for image IDs
+     * <\/summary>
+     * - Public images: Named based on the operating system version, architecture,
+     * language, and published date.
+     * - Custom images, shared images, cloud marketplace images, and community
+     * images: Start with the letter `m`.
+     * <\/details>
      */
     public imageId: string | ros.IResolvable | undefined;
 
@@ -10303,12 +10971,17 @@ export class RosInstanceGroup extends ros.RosResource {
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
+     * @Property internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit\/s. Valid values: 0 to 100.
+     * Default value: 0.
      */
     public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
 
     /**
-     * @Property ioOptimized: The 'optimized' instance can provide better IO performance. Support 'none' and 'optimized' only, default is 'optimized'.
+     * @Property ioOptimized: Specifies whether the instance is I\/O optimized. For instances of [retired
+     * instance types](), the default value is none. For instances of other instance
+     * types, the default value is optimized. Valid values:
+     * - none: The instance is not I\/O optimized.
+     * - optimized: The instance is I\/O optimized.
      */
     public ioOptimized: string | ros.IResolvable | undefined;
 
@@ -10410,7 +11083,11 @@ export class RosInstanceGroup extends ros.RosResource {
     public schedulerOptions: RosInstanceGroup.SchedulerOptionsProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property securityEnhancementStrategy:
+     * @Property securityEnhancementStrategy: Specifies whether to enable security hardening. Valid values:
+     * - Active: enables security hardening. This value is applicable only to public
+     * images.
+     * - Deactive: does not enable security hardening. This value is applicable to all
+     * images.
      */
     public securityEnhancementStrategy: string | ros.IResolvable | undefined;
 
@@ -10430,15 +11107,29 @@ export class RosInstanceGroup extends ros.RosResource {
     public securityOptions: RosInstanceGroup.SecurityOptionsProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
-     * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
-     * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+     * @Property spotDuration: The protection period of the spot instance. Unit: hours. Valid values:
+     * - 1: After a spot instance is created, the system ensures that the instance is not
+     * automatically released within 1 hour. After the 1-hour protection period ends, the system
+     * compares the bid price with the market price and checks the resource inventory to
+     * determine whether to retain or release the instance.
+     * - 0: After a spot instance is created, the system does not ensure that the instance
+     * can run for one hour. The system compares the biding price with the market prices and
+     * checks the resource inventory to determine whether to retain or release the instance.
      * Default value: 1.
+     * >
+     * - You can set this parameter only to 0 or 1.
+     * - The spot instance is billed by second. Specify an appropriate protection period.
+     * - The system sends an ECS system event to notify you 5 minutes before the instance is
+     * released.
      */
     public spotDuration: number | ros.IResolvable | undefined;
 
     /**
-     * @Property spotInterruptionBehavior: The interruption mode of the preemptible instance. Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+     * @Property spotInterruptionBehavior: The interruption mode of the spot instance. Valid values:
+     * - Terminate: The instance is released.
+     * - Stop: The instance is stopped in economical mode.
+     * For information about the economical mode, see [Economical mode]().
+     * Default value: Terminate.
      */
     public spotInterruptionBehavior: string | ros.IResolvable | undefined;
 
@@ -10458,7 +11149,8 @@ export class RosInstanceGroup extends ros.RosResource {
     public storageSetId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property storageSetPartitionNumber: The maximum number of partitions in the storage set. The value must be greater than or equal to 2.
+     * @Property storageSetPartitionNumber: The maximum number of partitions in the storage set. Valid values: integers
+     * greater than or equal to 2.
      */
     public storageSetPartitionNumber: number | ros.IResolvable | undefined;
 
@@ -10569,7 +11261,15 @@ export class RosInstanceGroup extends ros.RosResource {
     public useAdditionalService: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+     * @Property userData: The user data of the instance. You must specify Base64-encoded data. The instance
+     * user data cannot exceed 32 KB in size before Base64 encoding.
+     * For information about the limits, formats, and running frequencies of instance
+     * user data, see [Instance user data]().
+     * > To ensure security, we recommend that you do not use plaintext to pass in
+     * confidential information, such as passwords or private keys, as user data. If you
+     * need to pass in confidential information, we recommend that you encrypt and
+     * encode the information in Base64 and then decode and decrypt the information in
+     * the same manner in the instance.
      */
     public userData: string | ros.IResolvable | undefined;
 
@@ -10579,7 +11279,17 @@ export class RosInstanceGroup extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vSwitchId: The vSwitch Id to create ecs instance.
+     * @Property vSwitchId: The ID of the vSwitch to which to connect to the instance. You must set this
+     * parameter when you create an instance of the VPC type. The specified vSwitch and
+     * security group must belong to the same VPC. You can call the
+     * [DescribeVSwitches]() operation to query available vSwitches.
+     * Take note of the following items:
+     * - If you specify the `VSwitchId` parameter, the zone specified by the `ZoneId`
+     * parameter must be the zone where the specified vSwitch is located. You can also
+     * leave the `ZoneId` parameter empty. Then, the system selects the zone where the
+     * specified vSwitch resides.
+     * - If `NetworkInterface.N.InstanceType` is set to `Primary`, you cannot specify
+     * `VSwitchId` but can specify `NetworkInterface.N.VSwitchId`.
      */
     public vSwitchId: string | ros.IResolvable | undefined;
 
@@ -10802,6 +11512,13 @@ export namespace RosInstanceGroup {
          * @Property core: The number of CPU cores. This parameter cannot be specified but only uses its default value.
          */
         readonly core?: number | ros.IResolvable;
+        /**
+         * @Property nestedVirtualization: Specifies whether to enable nested virtualization. Valid values:
+     * - **enabled**: enables nested virtualization.
+     * - **disabled**: disables nested virtualization.
+     * This parameter is currently under invitation testing and is not yet available for use.
+         */
+        readonly nestedVirtualization?: string | ros.IResolvable;
     }
 }
 /**
@@ -10816,6 +11533,13 @@ function RosInstanceGroup_CpuOptionsPropertyValidator(properties: any): ros.Vali
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('threadsPerCore', ros.validateNumber)(properties.threadsPerCore));
     errors.collect(ros.propertyValidator('core', ros.validateNumber)(properties.core));
+    if(properties.nestedVirtualization && (typeof properties.nestedVirtualization) !== 'object') {
+        errors.collect(ros.propertyValidator('nestedVirtualization', ros.validateAllowedValues)({
+          data: properties.nestedVirtualization,
+          allowedValues: ["enabled","disabled"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('nestedVirtualization', ros.validateString)(properties.nestedVirtualization));
     return errors.wrap('supplied properties not correct for "CpuOptionsProperty"');
 }
 
@@ -10833,6 +11557,7 @@ function rosInstanceGroupCpuOptionsPropertyToRosTemplate(properties: any): any {
     return {
       'ThreadsPerCore': ros.numberToRosTemplate(properties.threadsPerCore),
       'Core': ros.numberToRosTemplate(properties.core),
+      'NestedVirtualization': ros.stringToRosTemplate(properties.nestedVirtualization),
     };
 }
 
@@ -11457,7 +12182,14 @@ export interface RosInstanceGroupCloneProps {
     readonly cpuOptions?: RosInstanceGroupClone.CpuOptionsProperty | ros.IResolvable;
 
     /**
-     * @Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
+     * @Property deletionProtection: Specifies whether to enable release protection for the instance. This parameter
+     * determines whether you can use the ECS console or call the [DeleteInstance]()
+     * operation to release the instance. Valid values:
+     * - true: enables release protection for the instance.
+     * - false: disables release protection for the instance.
+     * Default value: false.
+     * > This parameter is applicable to only pay-as-you-go instances. It can protect
+     * instances against manual releases, but not against automatic releases.
      */
     readonly deletionProtection?: boolean | ros.IResolvable;
 
@@ -11994,7 +12726,7 @@ function rosInstanceGroupClonePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroupClone`Use , which to clone a group of ECS instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroupClone`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceGroupClone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
  */
@@ -12088,7 +12820,14 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public cpuOptions: RosInstanceGroupClone.CpuOptionsProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
+     * @Property deletionProtection: Specifies whether to enable release protection for the instance. This parameter
+     * determines whether you can use the ECS console or call the [DeleteInstance]()
+     * operation to release the instance. Valid values:
+     * - true: enables release protection for the instance.
+     * - false: disables release protection for the instance.
+     * Default value: false.
+     * > This parameter is applicable to only pay-as-you-go instances. It can protect
+     * instances against manual releases, but not against automatic releases.
      */
     public deletionProtection: boolean | ros.IResolvable | undefined;
 
@@ -12506,6 +13245,13 @@ export namespace RosInstanceGroupClone {
          * @Property core: The number of CPU cores. This parameter cannot be specified but only uses its default value.
          */
         readonly core?: number | ros.IResolvable;
+        /**
+         * @Property nestedVirtualization: Specifies whether to enable nested virtualization. Valid values:
+     * - **enabled**: enables nested virtualization.
+     * - **disabled**: disables nested virtualization.
+     * This parameter is currently under invitation testing and is not yet available for use.
+         */
+        readonly nestedVirtualization?: string | ros.IResolvable;
     }
 }
 /**
@@ -12520,6 +13266,13 @@ function RosInstanceGroupClone_CpuOptionsPropertyValidator(properties: any): ros
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('threadsPerCore', ros.validateNumber)(properties.threadsPerCore));
     errors.collect(ros.propertyValidator('core', ros.validateNumber)(properties.core));
+    if(properties.nestedVirtualization && (typeof properties.nestedVirtualization) !== 'object') {
+        errors.collect(ros.propertyValidator('nestedVirtualization', ros.validateAllowedValues)({
+          data: properties.nestedVirtualization,
+          allowedValues: ["enabled","disabled"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('nestedVirtualization', ros.validateString)(properties.nestedVirtualization));
     return errors.wrap('supplied properties not correct for "CpuOptionsProperty"');
 }
 
@@ -12537,6 +13290,7 @@ function rosInstanceGroupCloneCpuOptionsPropertyToRosTemplate(properties: any): 
     return {
       'ThreadsPerCore': ros.numberToRosTemplate(properties.threadsPerCore),
       'Core': ros.numberToRosTemplate(properties.core),
+      'NestedVirtualization': ros.stringToRosTemplate(properties.nestedVirtualization),
     };
 }
 
@@ -13222,7 +13976,7 @@ function rosInvocationPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Invocation`, which is used to run a Cloud Assistant command on Elastic Compute Service (ECS) instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Invocation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Invocation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-invocation
  */
@@ -13524,7 +14278,7 @@ function rosJoinSecurityGroupPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::JoinSecurityGroup`, which is used to add one or more ECS instances to a specified security group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::JoinSecurityGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `JoinSecurityGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-joinsecuritygroup
  */
@@ -14037,7 +14791,7 @@ function rosLaunchTemplatePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::LaunchTemplate`, which is used to create a launch template. You can use a launch template to create an Elastic Compute Service (ECS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::LaunchTemplate`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LaunchTemplate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-launchtemplate
  */
@@ -15645,7 +16399,13 @@ function rosLaunchTemplateVersionTagsPropertyToRosTemplate(properties: any): any
 export interface RosNetworkInterfaceProps {
 
     /**
-     * @Property vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
+     * @Property vSwitchId: The ID of the VSwitch for the elastic network interface. The private IP addresses
+     * for the elastic network interface are assigned from the available CIDR block of
+     * the VSwitch.
+     * ><notice>
+     * The elastic network interface and the instance to be attached must be in the same
+     * availability zone but can belong to different VSwitches.
+     * ><\/notice>
      */
     readonly vSwitchId: string | ros.IResolvable;
 
@@ -15655,7 +16415,9 @@ export interface RosNetworkInterfaceProps {
     readonly deleteOnRelease?: boolean | ros.IResolvable;
 
     /**
-     * @Property description: Description of your ENI. It is a string of [2, 256] English or Chinese characters.
+     * @Property description: The description of the elastic network interface. The description must be 2 to
+     * 256 characters long and cannot start with `http:\/\/` or `https:\/\/`.
+     * Default value: empty.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -15671,7 +16433,10 @@ export interface RosNetworkInterfaceProps {
     readonly ipv4Prefixes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+     * @Property ipv6AddressCount: The number of random IPv6 addresses to assign to the elastic network interface.
+     * Valid values: 1 to 10.
+     * > You must specify either `Ipv6Address.N` or `Ipv6AddressCount`, but not both, to
+     * assign IPv6 addresses.
      */
     readonly ipv6AddressCount?: number | ros.IResolvable;
 
@@ -15697,9 +16462,13 @@ export interface RosNetworkInterfaceProps {
     readonly networkInterfaceName?: string | ros.IResolvable;
 
     /**
-     * @Property networkInterfaceTrafficMode: The communication mode of the ENI. Valid values:
-     * Standard: uses the TCP communication mode.
-     * HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+     * @Property networkInterfaceTrafficMode: The traffic mode of the elastic network interface. Valid values:
+     * - `Standard`: uses the TCP traffic mode.
+     * - `HighPerformance`: enables the Elastic RDMA Interface (ERI) and uses the RDMA
+     * traffic mode.
+     * > An elastic network interface in RDMA traffic mode can be attached only to an
+     * ERI-supported instance type. The number of these elastic network interfaces that
+     * can be attached is limited by the instance family. Default value: `Standard`.
      */
     readonly networkInterfaceTrafficMode?: string | ros.IResolvable;
 
@@ -15738,12 +16507,20 @@ export interface RosNetworkInterfaceProps {
     readonly secondaryPrivateIpAddressCount?: number | ros.IResolvable;
 
     /**
-     * @Property securityGroupId: The ID of the security group that the ENI joins. The security group and the ENI must be in a same VPC.
+     * @Property securityGroupId: The ID of the security group for the elastic network interface. The security
+     * group and the elastic network interface must be in the same VPC.
+     * > You must specify either `SecurityGroupId` or `SecurityGroupIds.N`, but not
+     * both.
      */
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property securityGroupIds: The IDs of the security groups that the ENI joins. The security groups and the ENI must belong to the same VPC.
+     * @Property securityGroupIds: The IDs of one or more security groups to which to add the elastic network
+     * interface. The security groups and the elastic network interface must be in the
+     * same VPC. The valid values of N depend on the maximum number of security groups
+     * to which an elastic network interface can be added. 
+     * > You must specify either `SecurityGroupId` or `SecurityGroupIds.N`, but not
+     * both.
      */
     readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -15865,6 +16642,13 @@ function RosNetworkInterfacePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('txQueueSize', ros.validateNumber)(properties.txQueueSize));
+    if(properties.ipv6AddressCount && (typeof properties.ipv6AddressCount) !== 'object') {
+        errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateRange)({
+            data: properties.ipv6AddressCount,
+            min: 1,
+            max: undefined,
+          }));
+    }
     errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateNumber)(properties.ipv6AddressCount));
     if(properties.rxQueueSize && (typeof properties.rxQueueSize) !== 'object') {
         errors.collect(ros.propertyValidator('rxQueueSize', ros.validateRange)({
@@ -15924,7 +16708,7 @@ function rosNetworkInterfacePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::NetworkInterface`, which is used to create an elastic network interface (ENI).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::NetworkInterface`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkInterface` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
  */
@@ -15963,7 +16747,13 @@ export class RosNetworkInterface extends ros.RosResource {
 
 
     /**
-     * @Property vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
+     * @Property vSwitchId: The ID of the VSwitch for the elastic network interface. The private IP addresses
+     * for the elastic network interface are assigned from the available CIDR block of
+     * the VSwitch.
+     * ><notice>
+     * The elastic network interface and the instance to be attached must be in the same
+     * availability zone but can belong to different VSwitches.
+     * ><\/notice>
      */
     public vSwitchId: string | ros.IResolvable;
 
@@ -15973,7 +16763,9 @@ export class RosNetworkInterface extends ros.RosResource {
     public deleteOnRelease: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property description: Description of your ENI. It is a string of [2, 256] English or Chinese characters.
+     * @Property description: The description of the elastic network interface. The description must be 2 to
+     * 256 characters long and cannot start with `http:\/\/` or `https:\/\/`.
+     * Default value: empty.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -15989,7 +16781,10 @@ export class RosNetworkInterface extends ros.RosResource {
     public ipv4Prefixes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+     * @Property ipv6AddressCount: The number of random IPv6 addresses to assign to the elastic network interface.
+     * Valid values: 1 to 10.
+     * > You must specify either `Ipv6Address.N` or `Ipv6AddressCount`, but not both, to
+     * assign IPv6 addresses.
      */
     public ipv6AddressCount: number | ros.IResolvable | undefined;
 
@@ -16015,9 +16810,13 @@ export class RosNetworkInterface extends ros.RosResource {
     public networkInterfaceName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property networkInterfaceTrafficMode: The communication mode of the ENI. Valid values:
-     * Standard: uses the TCP communication mode.
-     * HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+     * @Property networkInterfaceTrafficMode: The traffic mode of the elastic network interface. Valid values:
+     * - `Standard`: uses the TCP traffic mode.
+     * - `HighPerformance`: enables the Elastic RDMA Interface (ERI) and uses the RDMA
+     * traffic mode.
+     * > An elastic network interface in RDMA traffic mode can be attached only to an
+     * ERI-supported instance type. The number of these elastic network interfaces that
+     * can be attached is limited by the instance family. Default value: `Standard`.
      */
     public networkInterfaceTrafficMode: string | ros.IResolvable | undefined;
 
@@ -16056,12 +16855,20 @@ export class RosNetworkInterface extends ros.RosResource {
     public secondaryPrivateIpAddressCount: number | ros.IResolvable | undefined;
 
     /**
-     * @Property securityGroupId: The ID of the security group that the ENI joins. The security group and the ENI must be in a same VPC.
+     * @Property securityGroupId: The ID of the security group for the elastic network interface. The security
+     * group and the elastic network interface must be in the same VPC.
+     * > You must specify either `SecurityGroupId` or `SecurityGroupIds.N`, but not
+     * both.
      */
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityGroupIds: The IDs of the security groups that the ENI joins. The security groups and the ENI must belong to the same VPC.
+     * @Property securityGroupIds: The IDs of one or more security groups to which to add the elastic network
+     * interface. The security groups and the elastic network interface must be in the
+     * same VPC. The valid values of N depend on the maximum number of security groups
+     * to which an elastic network interface can be added. 
+     * > You must specify either `SecurityGroupId` or `SecurityGroupIds.N`, but not
+     * both.
      */
     public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -16267,7 +17074,7 @@ function rosNetworkInterfaceAttachmentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::NetworkInterfaceAttachment`, which is used to bind an elastic network interface (ENI) to an Elastic Compute Service (ECS) instance in a virtual private cloud (VPC).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::NetworkInterfaceAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkInterfaceAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfaceattachment
  */
@@ -16354,7 +17161,8 @@ export class RosNetworkInterfaceAttachment extends ros.RosResource {
 export interface RosNetworkInterfacePermissionProps {
 
     /**
-     * @Property accountId: the account id
+     * @Property accountId: The ID of the account to which the permission is granted. The
+     * account can be a cloud partner (certified ISV) or an individual user.
      */
     readonly accountId: string | ros.IResolvable;
 
@@ -16364,7 +17172,10 @@ export interface RosNetworkInterfacePermissionProps {
     readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
-     * @Property permission: the permission
+     * @Property permission: The permission to grant. The only supported value is InstanceAttach.
+     * InstanceAttach: Allows an authorized account to attach your elastic network
+     * interface to one of its ECS instances. The ECS instance and the elastic network
+     * interface must be in the same availability zone.
      */
     readonly permission: string | ros.IResolvable;
 }
@@ -16409,7 +17220,7 @@ function rosNetworkInterfacePermissionPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::NetworkInterfacePermission`, which is used to grant an account the permission to attach an elastic network interface (ENI) to an instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::NetworkInterfacePermission`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkInterfacePermission` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfacepermission
  */
@@ -16428,7 +17239,8 @@ export class RosNetworkInterfacePermission extends ros.RosResource {
 
 
     /**
-     * @Property accountId: the account id
+     * @Property accountId: The ID of the account to which the permission is granted. The
+     * account can be a cloud partner (certified ISV) or an individual user.
      */
     public accountId: string | ros.IResolvable;
 
@@ -16438,7 +17250,10 @@ export class RosNetworkInterfacePermission extends ros.RosResource {
     public networkInterfaceId: string | ros.IResolvable;
 
     /**
-     * @Property permission: the permission
+     * @Property permission: The permission to grant. The only supported value is InstanceAttach.
+     * InstanceAttach: Allows an authorized account to attach your elastic network
+     * interface to one of its ECS instances. The ECS instance and the elastic network
+     * interface must be in the same availability zone.
      */
     public permission: string | ros.IResolvable;
 
@@ -16477,7 +17292,9 @@ export class RosNetworkInterfacePermission extends ros.RosResource {
 export interface RosPrefixListProps {
 
     /**
-     * @Property addressFamily: The IP address family. Valid values: IPv4 IPv6
+     * @Property addressFamily: The IP address family. Valid values:
+     * - IPv4
+     * - IPv6
      */
     readonly addressFamily: string | ros.IResolvable;
 
@@ -16566,7 +17383,7 @@ function rosPrefixListPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::PrefixList`, which is used to create a prefix list.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::PrefixList`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrefixList` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-prefixlist
  */
@@ -16585,7 +17402,9 @@ export class RosPrefixList extends ros.RosResource {
 
 
     /**
-     * @Property addressFamily: The IP address family. Valid values: IPv4 IPv6
+     * @Property addressFamily: The IP address family. Valid values:
+     * - IPv4
+     * - IPv6
      */
     public addressFamily: string | ros.IResolvable;
 
@@ -16771,7 +17590,7 @@ function rosRamRoleAttachmentPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::RamRoleAttachment`, which is used to attach an instance Resource Access Management (RAM) role to Elastic Compute Service (ECS) instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::RamRoleAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RamRoleAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-ramroleattachment
  */
@@ -16846,7 +17665,14 @@ export class RosRamRoleAttachment extends ros.RosResource {
 export interface RosRouteProps {
 
     /**
-     * @Property destinationCidrBlock: The RouteEntry's target network segment.
+     * @Property destinationCidrBlock: The destination CIDR block of the custom route entry. IPv4 CIDR blocks, IPv6 CIDR
+     * blocks, and prefix lists are supported. You must specify one of the following
+     * parameters: `DestinationCidrBlock` and `DestinationPrefixListId`. The following
+     * requirements apply:
+     * - The destination CIDR block cannot be 100.64.0.0\/10 or a subset of
+     * 100.64.0.0\/10.
+     * - The destination CIDR block of a route entry cannot be the same as the
+     * destination CIDR block of another route entry in the same route table.
      */
     readonly destinationCidrBlock: string | ros.IResolvable;
 
@@ -16856,7 +17682,10 @@ export interface RosRouteProps {
     readonly routeTableId: string | ros.IResolvable;
 
     /**
-     * @Property nextHopId: The route entry's next hop. When the NextHopList is specified, the value will be ignored.
+     * @Property nextHopId: The ID of the next hop.
+     * > ## If `NextHopType` is set to `Ecr`, you can obtain the `AssociationId` by
+     * calling the DescribeExpressConnectRouterAssociation operation and use the ID
+     * as the next hop ID.
      */
     readonly nextHopId?: string | ros.IResolvable;
 
@@ -16929,7 +17758,7 @@ function rosRoutePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Route`The , which resource type creates custom route entries.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Route`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Route` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-route
  */
@@ -16948,7 +17777,14 @@ export class RosRoute extends ros.RosResource {
 
 
     /**
-     * @Property destinationCidrBlock: The RouteEntry's target network segment.
+     * @Property destinationCidrBlock: The destination CIDR block of the custom route entry. IPv4 CIDR blocks, IPv6 CIDR
+     * blocks, and prefix lists are supported. You must specify one of the following
+     * parameters: `DestinationCidrBlock` and `DestinationPrefixListId`. The following
+     * requirements apply:
+     * - The destination CIDR block cannot be 100.64.0.0\/10 or a subset of
+     * 100.64.0.0\/10.
+     * - The destination CIDR block of a route entry cannot be the same as the
+     * destination CIDR block of another route entry in the same route table.
      */
     public destinationCidrBlock: string | ros.IResolvable;
 
@@ -16958,7 +17794,10 @@ export class RosRoute extends ros.RosResource {
     public routeTableId: string | ros.IResolvable;
 
     /**
-     * @Property nextHopId: The route entry's next hop. When the NextHopList is specified, the value will be ignored.
+     * @Property nextHopId: The ID of the next hop.
+     * > ## If `NextHopType` is set to `Ecr`, you can obtain the `AssociationId` by
+     * calling the DescribeExpressConnectRouterAssociation operation and use the ID
+     * as the next hop ID.
      */
     public nextHopId: string | ros.IResolvable | undefined;
 
@@ -17343,7 +18182,7 @@ function rosRunCommandPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::RunCommand`The , which resource type executes a Shell, PowerShell, or Batch script on one or more ECS instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::RunCommand`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RunCommand` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-runcommand
  */
@@ -18186,17 +19025,50 @@ export interface RosSNatEntryProps {
     readonly sNatTableId: string | ros.IResolvable;
 
     /**
-     * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
+     * @Property snatEntryName: The name of the SNAT entry.
+     * The name must be 2 to 128 characters in length. It must start with a letter but
+     * cannot start with `http:\/\/` or `https:\/\/`.
      */
     readonly snatEntryName?: string | ros.IResolvable;
 
     /**
-     * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1\/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+     * @Property sourceCidr: You can specify the CIDR block of a VPC, a vSwitch, or an ECS instance or enter a
+     * custom CIDR block.
+     * You can specify an SNAT entry in the following ways:
+     * *   You can specify the CIDR block of the VPC where the NAT gateway is deployed.
+     * Then, all ECS instances in the VPC can access the Internet or external networks
+     * by using SNAT.
+     * *   You can specify the CIDR block of a vSwitch, for example, 192.168.1.0\/24.
+     * Then, the ECS instances in the vSwitch can access the Internet or external
+     * networks by using SNAT.
+     * *   You can specify the IP address of an ECS instance, for example,
+     * 192.168.1.1\/32. Then, the ECS instance can access the Internet or external
+     * networks by using SNAT.
+     * *   You can specify a custom CIDR block. Then, all ECS instances within the
+     * specified CIDR block can access the Internet or external networks by using SNAT.
+     * When you add an SNAT entry to an Internet NAT gateway, if SnatIp is set to an
+     * EIP, the ECS instance uses the specified EIP to access the Internet.
+     * If SnatIp is set to multiple EIPs, the ECS instance randomly selects an EIP
+     * specified in the SnatIp parameter to access the Internet.
+     * You cannot specify this parameter and SourceVSwtichId at the same time. If
+     * SourceVSwitchId is specified, you cannot specify SourceCIDR. If SourceCIDR is
+     * specified, you cannot specify SourceVSwitchId.
      */
     readonly sourceCidr?: string | ros.IResolvable;
 
     /**
-     * @Property sourceVSwitchId: Allow which switch can access internet.
+     * @Property sourceVSwitchId: The ID of the vSwitch.
+     * *   When you add an SNAT entry to an Internet NAT gateway, this parameter
+     * specifies that ECS instances in the vSwitch can use the SNAT entry to access the
+     * Internet. If you select multiple elastic IP addresses (EIPs) to create an SNAT
+     * address pool, connections are hashed to these EIPs. Network traffic may not be
+     * evenly distributed to the EIPs because the amount of traffic that passes through
+     * each connection varies. We recommend that you associate these EIPs with the same
+     * EIP bandwidth plan to prevent service interruptions due to the bandwidth limits
+     * on individual EIPs.
+     * *   When you add an SNAT entry to a VPC NAT gateway, this parameter specifies
+     * that ECS instances in the vSwitch can use the SNAT entry to access external
+     * networks.
      */
     readonly sourceVSwitchId?: string | ros.IResolvable;
 }
@@ -18244,7 +19116,7 @@ function rosSNatEntryPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SNatEntry`, which is used to configure the Source Network Address Translation (SNAT) table of a NAT gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SNatEntry`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SNatEntry` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snatentry
  */
@@ -18273,17 +19145,50 @@ export class RosSNatEntry extends ros.RosResource {
     public sNatTableId: string | ros.IResolvable;
 
     /**
-     * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
+     * @Property snatEntryName: The name of the SNAT entry.
+     * The name must be 2 to 128 characters in length. It must start with a letter but
+     * cannot start with `http:\/\/` or `https:\/\/`.
      */
     public snatEntryName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1\/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+     * @Property sourceCidr: You can specify the CIDR block of a VPC, a vSwitch, or an ECS instance or enter a
+     * custom CIDR block.
+     * You can specify an SNAT entry in the following ways:
+     * *   You can specify the CIDR block of the VPC where the NAT gateway is deployed.
+     * Then, all ECS instances in the VPC can access the Internet or external networks
+     * by using SNAT.
+     * *   You can specify the CIDR block of a vSwitch, for example, 192.168.1.0\/24.
+     * Then, the ECS instances in the vSwitch can access the Internet or external
+     * networks by using SNAT.
+     * *   You can specify the IP address of an ECS instance, for example,
+     * 192.168.1.1\/32. Then, the ECS instance can access the Internet or external
+     * networks by using SNAT.
+     * *   You can specify a custom CIDR block. Then, all ECS instances within the
+     * specified CIDR block can access the Internet or external networks by using SNAT.
+     * When you add an SNAT entry to an Internet NAT gateway, if SnatIp is set to an
+     * EIP, the ECS instance uses the specified EIP to access the Internet.
+     * If SnatIp is set to multiple EIPs, the ECS instance randomly selects an EIP
+     * specified in the SnatIp parameter to access the Internet.
+     * You cannot specify this parameter and SourceVSwtichId at the same time. If
+     * SourceVSwitchId is specified, you cannot specify SourceCIDR. If SourceCIDR is
+     * specified, you cannot specify SourceVSwitchId.
      */
     public sourceCidr: string | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceVSwitchId: Allow which switch can access internet.
+     * @Property sourceVSwitchId: The ID of the vSwitch.
+     * *   When you add an SNAT entry to an Internet NAT gateway, this parameter
+     * specifies that ECS instances in the vSwitch can use the SNAT entry to access the
+     * Internet. If you select multiple elastic IP addresses (EIPs) to create an SNAT
+     * address pool, connections are hashed to these EIPs. Network traffic may not be
+     * evenly distributed to the EIPs because the amount of traffic that passes through
+     * each connection varies. We recommend that you associate these EIPs with the same
+     * EIP bandwidth plan to prevent service interruptions due to the bandwidth limits
+     * on individual EIPs.
+     * *   When you add an SNAT entry to a VPC NAT gateway, this parameter specifies
+     * that ECS instances in the vSwitch can use the SNAT entry to access external
+     * networks.
      */
     public sourceVSwitchId: string | ros.IResolvable | undefined;
 
@@ -18326,7 +19231,10 @@ export class RosSNatEntry extends ros.RosResource {
 export interface RosSSHKeyPairProps {
 
     /**
-     * @Property keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http:\/\/, or https:\/\/. It can contain digits, ".", "_", or "-".
+     * @Property keyPairName: The name of the key pair. The name must be unique. It must be 2 to 128 characters
+     * in length. It must start with a letter and cannot start with http\:\/\/ or
+     * https\:\/\/. It can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).
      */
     readonly keyPairName: string | ros.IResolvable;
 
@@ -18393,7 +19301,7 @@ function rosSSHKeyPairPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPair`, which is used to create an SSH key pair or import an existing SSH key pair.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPair`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SSHKeyPair` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
  */
@@ -18427,7 +19335,10 @@ export class RosSSHKeyPair extends ros.RosResource {
 
 
     /**
-     * @Property keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http:\/\/, or https:\/\/. It can contain digits, ".", "_", or "-".
+     * @Property keyPairName: The name of the key pair. The name must be unique. It must be 2 to 128 characters
+     * in length. It must start with a letter and cannot start with http\:\/\/ or
+     * https\:\/\/. It can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).
      */
     public keyPairName: string | ros.IResolvable;
 
@@ -18534,7 +19445,9 @@ function rosSSHKeyPairTagsPropertyToRosTemplate(properties: any): any {
 export interface RosSSHKeyPairAttachmentProps {
 
     /**
-     * @Property instanceIds: The comma delimited ECS instance id list. Only support Linux.
+     * @Property instanceIds: The IDs of instances to which you want to bind the SSH key pair. The value can be
+     * a JSON array that consists of up to 50 instance IDs. Separate multiple instance
+     * IDs with commas (,).
      */
     readonly instanceIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
@@ -18589,7 +19502,7 @@ function rosSSHKeyPairAttachmentPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPairAttachment`, which is used to bind an SSH key pair to Elastic Compute Service (ECS) instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPairAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SSHKeyPairAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypairattachment
  */
@@ -18603,7 +19516,9 @@ export class RosSSHKeyPairAttachment extends ros.RosResource {
 
 
     /**
-     * @Property instanceIds: The comma delimited ECS instance id list. Only support Linux.
+     * @Property instanceIds: The IDs of instances to which you want to bind the SSH key pair. The value can be
+     * a JSON array that consists of up to 50 instance IDs. Separate multiple instance
+     * IDs with commas (,).
      */
     public instanceIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
@@ -18652,7 +19567,9 @@ export class RosSSHKeyPairAttachment extends ros.RosResource {
 export interface RosSecurityGroupProps {
 
     /**
-     * @Property description: Description of the security group, [2, 256] characters. Do not fill or empty, the default is empty.
+     * @Property description: The description of the security group. The description must be 2 to 256
+     * characters in length. It cannot start with `http:\/\/` or `https:\/\/`.
+     * By default, this parameter is left empty.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -18672,14 +19589,18 @@ export interface RosSecurityGroupProps {
     readonly securityGroupIngress?: Array<RosSecurityGroup.SecurityGroupIngressProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * @Property securityGroupName: The name of the security group. The name must be 2 to 128 characters in length.
+     * The name must start with a letter and cannot start with `http:\/\/` or `https:\/\/`.
+     * The name can contain letters, digits, colons (:), underscores (_), periods (.),
+     * and hyphens (-).
      */
     readonly securityGroupName?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupType: The type of the security group. Valid values:
-     * normal: basic security group
-     * enterprise: advanced security group
+     * - normal: basic security group
+     * - enterprise: advanced security group 
+     * Default value: normal.
      */
     readonly securityGroupType?: string | ros.IResolvable;
 
@@ -18689,7 +19610,9 @@ export interface RosSecurityGroupProps {
     readonly tags?: RosSecurityGroup.TagsProperty[];
 
     /**
-     * @Property vpcId: Physical ID of the VPC.
+     * @Property vpcId: The ID of the VPC in which you want to create the security group.
+     * > The VpcId parameter is required only if you want to create security groups of
+     * the VPC type.
      */
     readonly vpcId?: string | ros.IResolvable;
 }
@@ -18754,7 +19677,7 @@ function rosSecurityGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroup`The , which resource is used to create a security group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroup
  */
@@ -18778,7 +19701,9 @@ export class RosSecurityGroup extends ros.RosResource {
 
 
     /**
-     * @Property description: Description of the security group, [2, 256] characters. Do not fill or empty, the default is empty.
+     * @Property description: The description of the security group. The description must be 2 to 256
+     * characters in length. It cannot start with `http:\/\/` or `https:\/\/`.
+     * By default, this parameter is left empty.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -18798,14 +19723,18 @@ export class RosSecurityGroup extends ros.RosResource {
     public securityGroupIngress: Array<RosSecurityGroup.SecurityGroupIngressProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * @Property securityGroupName: The name of the security group. The name must be 2 to 128 characters in length.
+     * The name must start with a letter and cannot start with `http:\/\/` or `https:\/\/`.
+     * The name can contain letters, digits, colons (:), underscores (_), periods (.),
+     * and hyphens (-).
      */
     public securityGroupName: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupType: The type of the security group. Valid values:
-     * normal: basic security group
-     * enterprise: advanced security group
+     * - normal: basic security group
+     * - enterprise: advanced security group 
+     * Default value: normal.
      */
     public securityGroupType: string | ros.IResolvable | undefined;
 
@@ -18815,7 +19744,9 @@ export class RosSecurityGroup extends ros.RosResource {
     public tags: RosSecurityGroup.TagsProperty[] | undefined;
 
     /**
-     * @Property vpcId: Physical ID of the VPC.
+     * @Property vpcId: The ID of the VPC in which you want to create the security group.
+     * > The VpcId parameter is required only if you want to create security groups of
+     * the VPC type.
      */
     public vpcId: string | ros.IResolvable | undefined;
 
@@ -19252,7 +20183,9 @@ export interface RosSecurityGroupCloneProps {
     readonly sourceSecurityGroupId: string | ros.IResolvable;
 
     /**
-     * @Property description: Description of the security group, [2, 256] characters. Do not fill or empty, the default is empty.
+     * @Property description: The description of the security group. The description must be 2 to 256
+     * characters in length. It cannot start with `http:\/\/` or `https:\/\/`.
+     * By default, this parameter is left empty.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -19272,19 +20205,25 @@ export interface RosSecurityGroupCloneProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * @Property securityGroupName: The name of the security group. The name must be 2 to 128 characters in length.
+     * The name must start with a letter and cannot start with `http:\/\/` or `https:\/\/`.
+     * The name can contain letters, digits, colons (:), underscores (_), periods (.),
+     * and hyphens (-).
      */
     readonly securityGroupName?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupType: The type of the security group. Valid values:
-     * normal: basic security group
-     * enterprise: advanced security group
+     * - normal: basic security group
+     * - enterprise: advanced security group 
+     * Default value: normal.
      */
     readonly securityGroupType?: string | ros.IResolvable;
 
     /**
-     * @Property vpcId: Physical ID of the VPC.
+     * @Property vpcId: The ID of the VPC in which you want to create the security group.
+     * > The VpcId parameter is required only if you want to create security groups of
+     * the VPC type.
      */
     readonly vpcId?: string | ros.IResolvable;
 }
@@ -19349,7 +20288,7 @@ function rosSecurityGroupClonePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupClone`, which is used to clone a security group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupClone`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupClone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupclone
  */
@@ -19373,7 +20312,9 @@ export class RosSecurityGroupClone extends ros.RosResource {
     public sourceSecurityGroupId: string | ros.IResolvable;
 
     /**
-     * @Property description: Description of the security group, [2, 256] characters. Do not fill or empty, the default is empty.
+     * @Property description: The description of the security group. The description must be 2 to 256
+     * characters in length. It cannot start with `http:\/\/` or `https:\/\/`.
+     * By default, this parameter is left empty.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -19393,19 +20334,25 @@ export class RosSecurityGroupClone extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * @Property securityGroupName: The name of the security group. The name must be 2 to 128 characters in length.
+     * The name must start with a letter and cannot start with `http:\/\/` or `https:\/\/`.
+     * The name can contain letters, digits, colons (:), underscores (_), periods (.),
+     * and hyphens (-).
      */
     public securityGroupName: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupType: The type of the security group. Valid values:
-     * normal: basic security group
-     * enterprise: advanced security group
+     * - normal: basic security group
+     * - enterprise: advanced security group 
+     * Default value: normal.
      */
     public securityGroupType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vpcId: Physical ID of the VPC.
+     * @Property vpcId: The ID of the VPC in which you want to create the security group.
+     * > The VpcId parameter is required only if you want to create security groups of
+     * the VPC type.
      */
     public vpcId: string | ros.IResolvable | undefined;
 
@@ -19613,7 +20560,7 @@ function rosSecurityGroupEgressPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupEgress`, which is used to create an outbound access rule for a security group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupEgress`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupEgress` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupegress
  */
@@ -19802,7 +20749,7 @@ function rosSecurityGroupEgressesPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupEgresses`, which is used to associate multiple outbound rules with a security group at a time.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupEgresses`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupEgresses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupegresses
  */
@@ -20188,7 +21135,7 @@ function rosSecurityGroupIngressPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupIngress`The , which resource type creates an inbound security group rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupIngress`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupIngress` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupingress
  */
@@ -20377,7 +21324,7 @@ function rosSecurityGroupIngressesPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupIngresses`, which is used to associate multiple inbound rules with a security group at a time.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupIngresses`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupIngresses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupingresses
  */
@@ -20599,26 +21546,30 @@ export interface RosSnapshotProps {
     readonly diskId: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:\/\/ or https:\/\/. The description will appear on the console. By default, the value is zero.
+     * @Property description: The snapshot description must be 2 to 256 characters in length and cannot start
+     * with `http:\/\/` or `https:\/\/`.
+     * This parameter is empty by default.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property instantAccess: Specifies whether to enable the instant access feature. Valid values: 
-     * true: enables the instant access feature. This feature can be enabled only for enhanced SSDs (ESSDs) 
-     * false: disables the instant access feature. If InstantAccess is set to false, normal snapshots are created.
+     * @Property instantAccess: Specifies whether to enable the Instant Access feature. Valid values:
+     * - true: Enables the Instant Access feature. This feature can be enabled only for
+     * snapshots of ESSD cloud disks.
+     * - false: Disables the Instant Access feature. A standard snapshot is created.
      * Default value: false.
-     * Note This parameter and the Category parameter cannot be specified at the same time. 
-     * For more information, see the "Description" section in this topic.
+     * > This parameter is deprecated. standard snapshots for ESSD cloud disks now
+     * include the [Instant Access]() feature by default at no additional cost.
      */
     readonly instantAccess?: boolean | ros.IResolvable;
 
     /**
-     * @Property instantAccessRetentionDays: Specifies the retention period of the instant access feature. After the retention period ends, 
-     * the snapshot is automatically released. This parameter takes effect only when InstantAccess 
-     * is set to true. Unit: days.
-     * Valid values: 1 to 65535. By default, the value of 
-     * this parameter is the same as that of RetentionDays.
+     * @Property instantAccessRetentionDays: The retention period for the Instant Access feature, in days. The snapshot is
+     * automatically deleted when this retention period expires. This parameter takes
+     * effect only when `InstantAccess` is set to `true`. Valid values: 1 to 65,535.
+     * Defaults to the value of `RetentionDays`.
+     * > This parameter is deprecated. standard snapshots for ESSD cloud disks now
+     * include the [Instant Access]() feature by default at no additional cost.
      */
     readonly instantAccessRetentionDays?: number | ros.IResolvable;
 
@@ -20628,13 +21579,18 @@ export interface RosSnapshotProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property retentionDays: Set the retention period of a snapshot in days. The snapshot will be automatically released after the retention period expires.
-     * The value ranges from 1 to 65536.
+     * @Property retentionDays: The retention period of the snapshot, in days. Valid values: 1 to 65,536. The
+     * snapshot is automatically deleted when the retention period expires.
+     * If this parameter is not specified, the snapshot is retained indefinitely.
      */
     readonly retentionDays?: number | ros.IResolvable;
 
     /**
-     * @Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
+     * @Property snapshotName: The snapshot name must be 2 to 128 characters long. It must start with a letter
+     * or a Chinese character and can contain letters, digits, colons (:), underscores
+     * (_), periods (.), and hyphens (-).
+     * > The name cannot start with `http:\/\/` or `https:\/\/`. To avoid conflicts with
+     * auto snapshot names, the name cannot start with `auto`.
      */
     readonly snapshotName?: string | ros.IResolvable;
 
@@ -20720,7 +21676,7 @@ function rosSnapshotPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Snapshot`, which is used to create a snapshot for a disk.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Snapshot`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Snapshot` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshot
  */
@@ -20749,26 +21705,30 @@ export class RosSnapshot extends ros.RosResource {
     public diskId: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:\/\/ or https:\/\/. The description will appear on the console. By default, the value is zero.
+     * @Property description: The snapshot description must be 2 to 256 characters in length and cannot start
+     * with `http:\/\/` or `https:\/\/`.
+     * This parameter is empty by default.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property instantAccess: Specifies whether to enable the instant access feature. Valid values: 
-     * true: enables the instant access feature. This feature can be enabled only for enhanced SSDs (ESSDs) 
-     * false: disables the instant access feature. If InstantAccess is set to false, normal snapshots are created.
+     * @Property instantAccess: Specifies whether to enable the Instant Access feature. Valid values:
+     * - true: Enables the Instant Access feature. This feature can be enabled only for
+     * snapshots of ESSD cloud disks.
+     * - false: Disables the Instant Access feature. A standard snapshot is created.
      * Default value: false.
-     * Note This parameter and the Category parameter cannot be specified at the same time. 
-     * For more information, see the "Description" section in this topic.
+     * > This parameter is deprecated. standard snapshots for ESSD cloud disks now
+     * include the [Instant Access]() feature by default at no additional cost.
      */
     public instantAccess: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property instantAccessRetentionDays: Specifies the retention period of the instant access feature. After the retention period ends, 
-     * the snapshot is automatically released. This parameter takes effect only when InstantAccess 
-     * is set to true. Unit: days.
-     * Valid values: 1 to 65535. By default, the value of 
-     * this parameter is the same as that of RetentionDays.
+     * @Property instantAccessRetentionDays: The retention period for the Instant Access feature, in days. The snapshot is
+     * automatically deleted when this retention period expires. This parameter takes
+     * effect only when `InstantAccess` is set to `true`. Valid values: 1 to 65,535.
+     * Defaults to the value of `RetentionDays`.
+     * > This parameter is deprecated. standard snapshots for ESSD cloud disks now
+     * include the [Instant Access]() feature by default at no additional cost.
      */
     public instantAccessRetentionDays: number | ros.IResolvable | undefined;
 
@@ -20778,13 +21738,18 @@ export class RosSnapshot extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property retentionDays: Set the retention period of a snapshot in days. The snapshot will be automatically released after the retention period expires.
-     * The value ranges from 1 to 65536.
+     * @Property retentionDays: The retention period of the snapshot, in days. Valid values: 1 to 65,536. The
+     * snapshot is automatically deleted when the retention period expires.
+     * If this parameter is not specified, the snapshot is retained indefinitely.
      */
     public retentionDays: number | ros.IResolvable | undefined;
 
     /**
-     * @Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
+     * @Property snapshotName: The snapshot name must be 2 to 128 characters long. It must start with a letter
+     * or a Chinese character and can contain letters, digits, colons (:), underscores
+     * (_), periods (.), and hyphens (-).
+     * > The name cannot start with `http:\/\/` or `https:\/\/`. To avoid conflicts with
+     * auto snapshot names, the name cannot start with `auto`.
      */
     public snapshotName: string | ros.IResolvable | undefined;
 
@@ -20993,7 +21958,7 @@ function rosSnapshotGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SnapshotGroup`, which is used to create a snapshot-consistent group for cloud disks that are attached to an Elastic Compute Service (ECS) instance. A snapshot-consistent group contains snapshots of one or more cloud disks.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SnapshotGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SnapshotGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshotgroup
  */
@@ -21279,7 +22244,7 @@ function rosVPCPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::VPC`Use , which to create a virtual private cloud (VPC).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::VPC`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VPC` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vpc
  */
@@ -21591,7 +22556,7 @@ function rosVSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::VSwitch`The , which resource creates a vSwitch.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::VSwitch`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VSwitch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vswitch
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterAddons`, which is used to install components in a cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterAddons`.
 type RosClusterAddons interface {
 	alicloudroscdkcore.RosResource
 	Addons() interface{}
@@ -38,6 +38,8 @@ type RosClusterAddons interface {
 	LogicalId() *string
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	OverrideExisting() interface{}
+	SetOverrideExisting(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -272,6 +274,16 @@ func (j *jsiiProxy_RosClusterAddons) Node() alicloudroscdkcore.ConstructNode {
 	return returns
 }
 
+func (j *jsiiProxy_RosClusterAddons) OverrideExisting() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"overrideExisting",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosClusterAddons) Ref() *string {
 	var returns *string
 	_jsii_.Get(
@@ -430,6 +442,17 @@ func (j *jsiiProxy_RosClusterAddons)SetInstalledIgnore(val interface{}) {
 	_jsii_.Set(
 		j,
 		"installedIgnore",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosClusterAddons)SetOverrideExisting(val interface{}) {
+	if err := j.validateSetOverrideExistingParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"overrideExisting",
 		val,
 	)
 }

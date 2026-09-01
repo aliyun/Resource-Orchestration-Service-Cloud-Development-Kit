@@ -10,12 +10,23 @@ export { RosSubscription as SubscriptionProperty };
 export interface SubscriptionProps {
 
     /**
-     * Property endpoint: Terminal address of the message recipient for the created subscription.
-     * Currently, four types of endpoints are supported: 
-     * 1. HttpEndpoint, which must be prefixed with "http:\/\/"; 
-     * 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues\/{QueueName}; 
-     * 3. MailEndpoint, in the format of mail:directmail:{MailAddress}; 
-     * 4. SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.
+     * Property endpoint: ## The message delivery endpoint.
+     * The format varies based on the `PushType` value:
+     * - If `PushType` is `http`: An HTTP\/HTTPS callback URL, such as
+     * `http:\/\/example.com\/callback` or `https:\/\/example.com\/callback`.
+     * - If `PushType` is `queue`: The ARN of the destination queue, in the format
+     * `acs:mns:{RegionId}:{account ID}:queues\/{QueueName}`.
+     * - If `PushType` is `dm`: The endpoint for email push, in the fixed format
+     * `smq-ep:dm:{account ID}:__dynamic`. Replace `{account
+     * ID}` with your account ID.
+     * - If `PushType` is `dysms`: The endpoint for SMS push, in the format
+     * `smq-ep:dysms:{account ID}:{MobileNumber}`.
+     * - If `PushType` is `kafka`: The Kafka push endpoint.
+     * - If `PushType` is `fc`: The endpoint for Function Compute, in the format
+     * `acs:fc:{RegionId}:{account
+     * ID}:services\/{ServiceName}\/functions\/{FunctionName}`.
+     * - If `PushType` is `eventbus`: The endpoint for EventBridge, in the format
+     * `acs:eventbridge:{RegionId}:{account ID}:eventbus\/{EventBusName}`.
      */
     readonly endpoint: string | ros.IResolvable;
 
@@ -80,7 +91,7 @@ export interface ISubscription extends ros.IResource {
     readonly attrTopicName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Subscription`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Subscription`, which is used to describe a subscription relationship, including the subscribed topic and the endpoint that the subscriber uses to receive messages.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSubscription`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
  */

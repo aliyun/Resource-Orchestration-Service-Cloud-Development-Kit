@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fnf;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::FNF::Flow</code>, which is used to create a flow.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::FNF::Flow</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:08:10.258Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:15:33.475Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.Flow")
 public class Flow extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fnf.IFlow {
 
@@ -157,24 +157,44 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property name: The name of the flow created.
+         * Property name: The name of the flow.
          * <p>
-         * This name is unique under the account.
+         * The name must be unique within the same region and cannot
+         * be changed after the flow is created. The name must meet the following
+         * requirements:
+         * <p>
+         * <ul>
+         * <li>It can contain letters (a to z and A to Z), digits (0 to 9), underscores (_),
+         * and hyphens (-).</li>
+         * <li>It must start with a letter or an underscore (_).</li>
+         * <li>It is case-sensitive.</li>
+         * <li>It must be 1 to 128 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the flow created. This parameter is required.
+         * @param name Property name: The name of the flow. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
         /**
-         * Property name: The name of the flow created.
+         * Property name: The name of the flow.
          * <p>
-         * This name is unique under the account.
+         * The name must be unique within the same region and cannot
+         * be changed after the flow is created. The name must meet the following
+         * requirements:
+         * <p>
+         * <ul>
+         * <li>It can contain letters (a to z and A to Z), digits (0 to 9), underscores (_),
+         * and hyphens (-).</li>
+         * <li>It must start with a letter or an underscore (_).</li>
+         * <li>It is case-sensitive.</li>
+         * <li>It must be 1 to 128 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the flow created. This parameter is required.
+         * @param name Property name: The name of the flow. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-rule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.340Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:44:47.162Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RuleProps")
 @software.amazon.jsii.Jsii.Proxy(RuleProps.Jsii$Proxy.class)
 public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,11 +25,44 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property ruleList: The forwarding rules to add.
+     * <p>
+     * You can add up to 10 forwarding rules in a single
+     * request. Each forwarding rule consists of the following parameters:
+     * <p>
+     * <ul>
+     * <li>RuleName (Required): String. The name of the forwarding rule. The name must be
+     * 1 to 40 characters in length and can contain letters, digits, hyphens (-),
+     * forward slashes (/), periods (.), and underscores (_). Rule names must be unique
+     * within the same listener.</li>
+     * <li>Domain (Optional): String. The domain name to associate with the forwarding
+     * rule. You must specify at least one of this parameter and the Url parameter.</li>
+     * <li>Url (Optional): String. The URL path. The path must be 1 to 80 characters in
+     * length. It can contain Chinese characters, letters, digits, and the following
+     * special characters: <code>- \/ . % ? # &amp;</code>. The URL path must start with a forward slash
+     * (/), but cannot be a single forward slash (/). You must specify at least one of
+     * this parameter and the Domain parameter.</li>
+     * <li>VServerGroupId (Required): String. The ID of the target vServer group for the
+     * forwarding rule.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * You must specify the <code>Domain</code> parameter, the <code>Url</code> parameter, or both. The
+     * combination of a <code>Domain</code> and a <code>Url</code> must be unique within the same listener.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRuleList();
 
     /**
-     * Property listenerProtocol: The frontend protocol that is used by the SLB instance.
+     * Property listenerProtocol: The frontend protocol of the listener.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required if you configure listeners that use different
+     * protocols on the same port.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getListenerProtocol() {
         return null;
@@ -97,6 +130,31 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link RuleProps#getRuleList}
          * @param ruleList Property ruleList: The forwarding rules to add. This parameter is required.
+         *                 You can add up to 10 forwarding rules in a single
+         *                 request. Each forwarding rule consists of the following parameters:
+         *                 <p>
+         *                 <ul>
+         *                 <li>RuleName (Required): String. The name of the forwarding rule. The name must be
+         *                 1 to 40 characters in length and can contain letters, digits, hyphens (-),
+         *                 forward slashes (/), periods (.), and underscores (_). Rule names must be unique
+         *                 within the same listener.</li>
+         *                 <li>Domain (Optional): String. The domain name to associate with the forwarding
+         *                 rule. You must specify at least one of this parameter and the Url parameter.</li>
+         *                 <li>Url (Optional): String. The URL path. The path must be 1 to 80 characters in
+         *                 length. It can contain Chinese characters, letters, digits, and the following
+         *                 special characters: <code>- \/ . % ? # &amp;</code>. The URL path must start with a forward slash
+         *                 (/), but cannot be a single forward slash (/). You must specify at least one of
+         *                 this parameter and the Domain parameter.</li>
+         *                 <li>VServerGroupId (Required): String. The ID of the target vServer group for the
+         *                 forwarding rule.</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 You must specify the <code>Domain</code> parameter, the <code>Url</code> parameter, or both. The
+         *                 combination of a <code>Domain</code> and a <code>Url</code> must be unique within the same listener.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder ruleList(com.aliyun.ros.cdk.core.IResolvable ruleList) {
@@ -107,6 +165,31 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link RuleProps#getRuleList}
          * @param ruleList Property ruleList: The forwarding rules to add. This parameter is required.
+         *                 You can add up to 10 forwarding rules in a single
+         *                 request. Each forwarding rule consists of the following parameters:
+         *                 <p>
+         *                 <ul>
+         *                 <li>RuleName (Required): String. The name of the forwarding rule. The name must be
+         *                 1 to 40 characters in length and can contain letters, digits, hyphens (-),
+         *                 forward slashes (/), periods (.), and underscores (_). Rule names must be unique
+         *                 within the same listener.</li>
+         *                 <li>Domain (Optional): String. The domain name to associate with the forwarding
+         *                 rule. You must specify at least one of this parameter and the Url parameter.</li>
+         *                 <li>Url (Optional): String. The URL path. The path must be 1 to 80 characters in
+         *                 length. It can contain Chinese characters, letters, digits, and the following
+         *                 special characters: <code>- \/ . % ? # &amp;</code>. The URL path must start with a forward slash
+         *                 (/), but cannot be a single forward slash (/). You must specify at least one of
+         *                 this parameter and the Domain parameter.</li>
+         *                 <li>VServerGroupId (Required): String. The ID of the target vServer group for the
+         *                 forwarding rule.</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 You must specify the <code>Domain</code> parameter, the <code>Url</code> parameter, or both. The
+         *                 combination of a <code>Domain</code> and a <code>Url</code> must be unique within the same listener.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder ruleList(java.util.List<? extends java.lang.Object> ruleList) {
@@ -116,7 +199,13 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RuleProps#getListenerProtocol}
-         * @param listenerProtocol Property listenerProtocol: The frontend protocol that is used by the SLB instance.
+         * @param listenerProtocol Property listenerProtocol: The frontend protocol of the listener.
+         *                         <blockquote>
+         *                         <p>
+         *                         This parameter is required if you configure listeners that use different
+         *                         protocols on the same port.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder listenerProtocol(java.lang.String listenerProtocol) {
@@ -126,7 +215,13 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RuleProps#getListenerProtocol}
-         * @param listenerProtocol Property listenerProtocol: The frontend protocol that is used by the SLB instance.
+         * @param listenerProtocol Property listenerProtocol: The frontend protocol of the listener.
+         *                         <blockquote>
+         *                         <p>
+         *                         This parameter is required if you configure listeners that use different
+         *                         protocols on the same port.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder listenerProtocol(com.aliyun.ros.cdk.core.IResolvable listenerProtocol) {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::EdgeContainerAppRecord`The , which type creates an associated domain name for an edge container application.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::EdgeContainerAppRecord`.
 type EdgeContainerAppRecord interface {
 	alicloudroscdkcore.Resource
 	IEdgeContainerAppRecord

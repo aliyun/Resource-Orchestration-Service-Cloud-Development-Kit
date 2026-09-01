@@ -15,7 +15,9 @@ export interface EnterpriseDBClusterProps {
     readonly engine: string | ros.IResolvable;
 
     /**
-     * Property nodeCount: The number of nodes.
+     * Property nodeCount: The number of nodes. Valid values: 2 to 16. This parameter is required when you
+     * configure an elastic scaling range by using the `NodeScaleMin` and `NodeScaleMax`
+     * parameters.
      */
     readonly nodeCount: number | ros.IResolvable;
 
@@ -55,7 +57,7 @@ export interface EnterpriseDBClusterProps {
     readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
-     * Property dbTimeZone: The time zone of the database.
+     * Property dbTimeZone: The time zone of the database, which must be an IANA time zone identifier.
      */
     readonly dbTimeZone?: string | ros.IResolvable;
 
@@ -80,7 +82,8 @@ export interface EnterpriseDBClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property sourceDbInstanceId: The ID of the source database instance.
+     * Property sourceDbInstanceId: The ID of the source instance. This parameter is required when restoring from a
+     * backup.
      */
     readonly sourceDbInstanceId?: string | ros.IResolvable;
 

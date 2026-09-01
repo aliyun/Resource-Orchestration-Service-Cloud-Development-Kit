@@ -11,7 +11,9 @@ type DeploymentProps struct {
 	GroupId interface{} `field:"required" json:"groupId" yaml:"groupId"`
 	// Property stageName: Bind traffic in this stage.
 	StageName interface{} `field:"required" json:"stageName" yaml:"stageName"`
-	// Property description: Description of the deployment, less than 180 characters.
+	// Property description: The description.
+	//
+	// The description can be up to 200 characters in length.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property historyVersion: The history version.
 	HistoryVersion interface{} `field:"optional" json:"historyVersion" yaml:"historyVersion"`

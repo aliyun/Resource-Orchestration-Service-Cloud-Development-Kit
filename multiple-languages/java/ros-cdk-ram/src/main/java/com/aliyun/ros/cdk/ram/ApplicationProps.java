@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ram;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-application
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.245Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:56:20.184Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.ApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ApplicationProps.Jsii$Proxy.class)
 public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -76,14 +76,16 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property refreshTokenValidity: The validity period of the refreshed token.
+     * Property refreshTokenValidity: The validity period of the refresh token.
      * <p>
      * Valid values: 7200 to 31536000. Unit: seconds.
      * Default value:
      * <p>
      * <ul>
-     * <li>For applications of the WebApp and ServerApp types, if this parameter is left empty, the value 2592000 is used. The value 2592000 indicates that the validity period of the refreshed token is 30 days.</li>
-     * <li>For applications of the NativeApp type, if this parameter is left empty, the value 7776000 is used. The value 7776000 indicates that the validity period of the refreshed token is 90 days.</li>
+     * <li>If not specified, the default value is 2,592,000 seconds (30 days) for
+     * NativeApp and ServerApp applications.</li>
+     * <li>If not specified, the default value is 7,776,000 seconds (90 days) for WebApp
+     * applications.</li>
      * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshTokenValidity() {
@@ -312,13 +314,15 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getRefreshTokenValidity}
-         * @param refreshTokenValidity Property refreshTokenValidity: The validity period of the refreshed token.
+         * @param refreshTokenValidity Property refreshTokenValidity: The validity period of the refresh token.
          *                             Valid values: 7200 to 31536000. Unit: seconds.
          *                             Default value:
          *                             <p>
          *                             <ul>
-         *                             <li>For applications of the WebApp and ServerApp types, if this parameter is left empty, the value 2592000 is used. The value 2592000 indicates that the validity period of the refreshed token is 30 days.</li>
-         *                             <li>For applications of the NativeApp type, if this parameter is left empty, the value 7776000 is used. The value 7776000 indicates that the validity period of the refreshed token is 90 days.</li>
+         *                             <li>If not specified, the default value is 2,592,000 seconds (30 days) for
+         *                             NativeApp and ServerApp applications.</li>
+         *                             <li>If not specified, the default value is 7,776,000 seconds (90 days) for WebApp
+         *                             applications.</li>
          *                             </ul>
          * @return {@code this}
          */
@@ -329,13 +333,15 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getRefreshTokenValidity}
-         * @param refreshTokenValidity Property refreshTokenValidity: The validity period of the refreshed token.
+         * @param refreshTokenValidity Property refreshTokenValidity: The validity period of the refresh token.
          *                             Valid values: 7200 to 31536000. Unit: seconds.
          *                             Default value:
          *                             <p>
          *                             <ul>
-         *                             <li>For applications of the WebApp and ServerApp types, if this parameter is left empty, the value 2592000 is used. The value 2592000 indicates that the validity period of the refreshed token is 30 days.</li>
-         *                             <li>For applications of the NativeApp type, if this parameter is left empty, the value 7776000 is used. The value 7776000 indicates that the validity period of the refreshed token is 90 days.</li>
+         *                             <li>If not specified, the default value is 2,592,000 seconds (30 days) for
+         *                             NativeApp and ServerApp applications.</li>
+         *                             <li>If not specified, the default value is 7,776,000 seconds (90 days) for WebApp
+         *                             applications.</li>
          *                             </ul>
          * @return {@code this}
          */

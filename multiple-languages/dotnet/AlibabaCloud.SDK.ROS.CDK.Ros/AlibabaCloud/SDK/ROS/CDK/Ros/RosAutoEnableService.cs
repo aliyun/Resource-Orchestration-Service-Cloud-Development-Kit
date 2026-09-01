@@ -85,9 +85,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// DCDN: Dynamic Route for CDN
         /// EDAS: Enterprise Distributed Application Service
         /// EMAS: Enterprise Mobile Application Studio
+        /// EMR\/AICenter: EMR Serverless Spark AI Center
         /// FC: Function Compute
         /// FNF: Serverless Workflow
         /// MaxCompute: MaxCompute
+        /// Milvus\/Function: Milvus Function
         /// NAS: Network Attached Storage
         /// MNS: Message Service (MNS)
         /// HBR: Hybrid Backup Recovery
@@ -139,6 +141,103 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
                     }
                 }
                 SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: serviceParameters: The parameters that are required to enable the service. WorkspaceId is required when ServiceName is EMR\/AICenter.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "serviceParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ros.RosAutoEnableService.ServiceParametersProperty\"}]}}", isOptional: true)]
+        public virtual object? ServiceParameters
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Ros.RosAutoEnableService.IServiceParametersProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ros.RosAutoEnableService.IServiceParametersProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IServiceParametersProperty), fullyQualifiedName: "@alicloud/ros-cdk-ros.RosAutoEnableService.ServiceParametersProperty")]
+        public interface IServiceParametersProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: workspaceId: The ID of the EMR Serverless Spark workspace.
+            /// </remarks>
+            [JsiiProperty(name: "workspaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object WorkspaceId
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IServiceParametersProperty), fullyQualifiedName: "@alicloud/ros-cdk-ros.RosAutoEnableService.ServiceParametersProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ros.RosAutoEnableService.IServiceParametersProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: workspaceId: The ID of the EMR Serverless Spark workspace.
+                /// </remarks>
+                [JsiiProperty(name: "workspaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object WorkspaceId
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-ros.RosAutoEnableService.ServiceParametersProperty")]
+        public class ServiceParametersProperty : AlibabaCloud.SDK.ROS.CDK.Ros.RosAutoEnableService.IServiceParametersProperty
+        {
+            private object _workspaceId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: workspaceId: The ID of the EMR Serverless Spark workspace.
+            /// </remarks>
+            [JsiiProperty(name: "workspaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object WorkspaceId
+            {
+                get => _workspaceId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _workspaceId = value;
+                }
             }
         }
     }

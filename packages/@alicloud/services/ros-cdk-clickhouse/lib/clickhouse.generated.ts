@@ -85,7 +85,11 @@ export interface RosDBClusterProps {
     readonly encryptionType?: string | ros.IResolvable;
 
     /**
-     * @Property period: The unit of the subscription duration.
+     * @Property period: The subscription duration unit.
+     * ><notice>This parameter is required only when `PayType` is set to
+     * `Prepaid`.><\/notice>
+     * - Year: Measured in years.
+     * - Month: Measured in months.
      */
     readonly period?: string | ros.IResolvable;
 
@@ -236,7 +240,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::DBCluster`, which is used to create an ApsaraDB for ClickHouse cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::DBCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-dbcluster
  */
@@ -481,7 +485,11 @@ export class RosDBCluster extends ros.RosResource {
     public encryptionType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The unit of the subscription duration.
+     * @Property period: The subscription duration unit.
+     * ><notice>This parameter is required only when `PayType` is set to
+     * `Prepaid`.><\/notice>
+     * - Year: Measured in years.
+     * - Month: Measured in months.
      */
     public period: string | ros.IResolvable | undefined;
 
@@ -631,7 +639,9 @@ export interface RosEnterpriseDBClusterProps {
     readonly engine: string | ros.IResolvable;
 
     /**
-     * @Property nodeCount: The number of nodes.
+     * @Property nodeCount: The number of nodes. Valid values: 2 to 16. This parameter is required when you
+     * configure an elastic scaling range by using the `NodeScaleMin` and `NodeScaleMax`
+     * parameters.
      */
     readonly nodeCount: number | ros.IResolvable;
 
@@ -671,7 +681,7 @@ export interface RosEnterpriseDBClusterProps {
     readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
-     * @Property dbTimeZone: The time zone of the database.
+     * @Property dbTimeZone: The time zone of the database, which must be an IANA time zone identifier.
      */
     readonly dbTimeZone?: string | ros.IResolvable;
 
@@ -696,7 +706,8 @@ export interface RosEnterpriseDBClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property sourceDbInstanceId: The ID of the source database instance.
+     * @Property sourceDbInstanceId: The ID of the source instance. This parameter is required when restoring from a
+     * backup.
      */
     readonly sourceDbInstanceId?: string | ros.IResolvable;
 
@@ -878,7 +889,9 @@ export class RosEnterpriseDBCluster extends ros.RosResource {
     public engine: string | ros.IResolvable;
 
     /**
-     * @Property nodeCount: The number of nodes.
+     * @Property nodeCount: The number of nodes. Valid values: 2 to 16. This parameter is required when you
+     * configure an elastic scaling range by using the `NodeScaleMin` and `NodeScaleMax`
+     * parameters.
      */
     public nodeCount: number | ros.IResolvable;
 
@@ -918,7 +931,7 @@ export class RosEnterpriseDBCluster extends ros.RosResource {
     public dbInstanceDescription: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dbTimeZone: The time zone of the database.
+     * @Property dbTimeZone: The time zone of the database, which must be an IANA time zone identifier.
      */
     public dbTimeZone: string | ros.IResolvable | undefined;
 
@@ -943,7 +956,8 @@ export class RosEnterpriseDBCluster extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceDbInstanceId: The ID of the source database instance.
+     * @Property sourceDbInstanceId: The ID of the source instance. This parameter is required when restoring from a
+     * backup.
      */
     public sourceDbInstanceId: string | ros.IResolvable | undefined;
 
@@ -1881,7 +1895,7 @@ function rosSynDbPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::SynDb`, which is used to create a synchronization task for an ApsaraDB for ClickHouse Community-compatible Edition cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::SynDb`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SynDb` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-syndb
  */

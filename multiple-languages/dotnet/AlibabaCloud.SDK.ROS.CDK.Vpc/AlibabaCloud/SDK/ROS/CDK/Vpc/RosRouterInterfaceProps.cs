@@ -113,10 +113,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _autoPay;
 
         /// <remarks>
-        /// <strong>Property</strong>: autoPay: Indicates whether automatic payment is enabled. Valid values:
-        /// false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
-        /// true: Automatic payment is enabled. The payment is automatically made.
-        /// Default: true.
+        /// <strong>Property</strong>: autoPay: Specifies whether to enable automatic payment. Valid values:
+        /// *   false (default): The automatic payment is disabled. If you select this
+        /// option, you must go to the Order Center to complete the payment after an order is
+        /// generated.
+        /// *   true: The automatic payment is enabled. Payments are automatically complete
+        /// after an order is generated.
+        /// >  This parameter is required if InstanceChargeType is set to PrePaid.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -316,7 +319,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _instanceChargeType;
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceChargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go)
+        /// <strong>Property</strong>: instanceChargeType: The billing method of the router interface.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -699,7 +702,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _routerType;
 
         /// <remarks>
-        /// <strong>Property</strong>: routerType: Router type. Now support 'VRouter|VBR'
+        /// <strong>Property</strong>: routerType: The type of router that is associated with the router interface. Valid values:
+        /// *   VRouter
+        /// *   VBR
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "routerType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -732,7 +737,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _spec;
 
         /// <remarks>
-        /// <strong>Property</strong>: spec: RouterInterface specification. If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
+        /// <strong>Property</strong>: spec: The specification of the router interface and the corresponding bandwidth. Valid
+        /// values:
+        /// *   Mini.2: 2 Mbit\/s
+        /// *   Mini.5: 5 Mbit\/s
+        /// *   Small.1: 10 Mbit\/s
+        /// *   Small.2: 20 Mbit\/s
+        /// *   Small.5: 50 Mbit\/s
+        /// *   Middle.1: 100 Mbit\/s
+        /// *   Middle.2: 200 Mbit\/s
+        /// *   Middle.5: 500 Mbit\/s
+        /// *   Large.1: 1,000 Mbit\/s
+        /// *   Large.2: 2,000 Mbit\/s
+        /// *   Large.5: 5,000 Mbit\/s
+        /// *   Xlarge.1: 10,000 Mbit\/s
+        /// >  If Role is set to AcceptingSide, set Spec to Negative. This indicates that you
+        /// do not need to specify the specification when you create an acceptor router
+        /// interface.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

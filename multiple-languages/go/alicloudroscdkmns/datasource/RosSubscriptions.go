@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Subscriptions`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Subscriptions`Queries information about Message Service (MNS) subscriptions.
 type RosSubscriptions interface {
 	alicloudroscdkcore.RosResource
 	AttrSubscriptionIds() alicloudroscdkcore.IResolvable

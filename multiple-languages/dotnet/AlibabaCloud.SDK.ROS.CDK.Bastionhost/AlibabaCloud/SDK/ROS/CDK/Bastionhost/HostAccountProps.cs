@@ -15,7 +15,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bastionhost
     {
         private object _hostAccountName;
 
-        /// <summary>Property hostAccountName: The name of the host account.</summary>
+        /// <summary>Property hostAccountName: The name of the new host account.</summary>
+        /// <remarks>
+        /// The name can be up to 128 characters long.
+        /// </remarks>
         [JsiiProperty(name: "hostAccountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object HostAccountName
         {
@@ -240,9 +243,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bastionhost
 
         private object? _privateKey;
 
-        /// <summary>Property privateKey: The private key of the host account.</summary>
+        /// <summary>Property privateKey: The private key of the new host account.</summary>
         /// <remarks>
-        /// This parameter is required when the protocol is SSH.
+        /// The value is a Base64-encoded string.
+        ///
+        ///     This parameter is used only when ProtocolName is set to SSH. You do not need to
+        ///     set this parameter if ProtocolName is set to RDP. You can set both a password and
+        ///     a private key for the host account. When connecting to the asset, Bastionhost
+        ///     prioritizes the private key for the connection.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "privateKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -274,9 +282,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bastionhost
 
         private object? _privilegeType;
 
-        /// <summary>Property privilegeType: The privilege type of the host account.</summary>
+        /// <summary>Property privilegeType: The permission type of the account.</summary>
         /// <remarks>
-        /// Valid values: Normal, Administrator.
+        /// If you do not set this parameter, the default
+        /// value is Normal.
+        ///
+        /// <list type="bullet">
+        /// <description>Privileged: privileged account</description>
+        /// <description>Normal: normal account</description>
+        /// </list>
+        ///
+        ///     This parameter is supported only in Bastionhost V3.2.47 and later.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "privilegeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -308,9 +324,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bastionhost
 
         private object? _rotationMode;
 
-        /// <summary>Property rotationMode: The rotation mode of the host account.</summary>
+        /// <summary>Property rotationMode: The password change mode for the account.</summary>
         /// <remarks>
-        /// Valid values: Manual, Automatic.
+        /// If you do not set this parameter, the
+        /// default value is Self.
+        ///
+        /// <list type="bullet">
+        /// <description>Privileged: Use a privileged account to change the password.</description>
+        /// <description>Self: Do not use a privileged account to change the password.</description>
+        /// </list>
+        ///
+        ///     This parameter is supported only in Bastionhost V3.2.47 and later.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "rotationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

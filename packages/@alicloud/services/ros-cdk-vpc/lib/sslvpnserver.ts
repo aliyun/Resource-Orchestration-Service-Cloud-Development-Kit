@@ -10,15 +10,34 @@ export { RosSslVpnServer as SslVpnServerProperty };
 export interface SslVpnServerProps {
 
     /**
-     * Property clientIpPool: It is the address segment that assigns the access address to the client virtual NIC. It does not refer to the existing intranet segment of the client.
-     * When the client accesses the local end through an SSL-VPN connection, the VPN gateway allocates an IP address to the client from the specified client network segment.
-     * The network segment cannot conflict with the LocalSubnet address segment.
+     * Property clientIpPool: The client CIDR block.
+     * The CIDR block from which an IP address is allocated to the virtual network
+     * interface controller (NIC) of the client, rather than the private CIDR block.
+     * If the client accesses the SSL server over an SSL-VPN connection, the VPN gateway
+     * assigns an IP address from the specified client CIDR block for the client to
+     * access cloud resources.
+     * Make sure that the number of IP addresses in the client CIDR block is at least
+     * four times the maximum number of SSL-VPN connections supported by the VPN
+     * gateway.
+     * ... (omitted for brevity; see metadata URL) ...
+     * *   The subnet mask of the client CIDR block must be 16 to 29 bits in length.
+     * *   Make sure that the client CIDR block does not overlap with the local CIDR
+     * block, the VPC CIDR block, or route CIDR blocks associated with the client.
      */
     readonly clientIpPool: string | ros.IResolvable;
 
     /**
-     * Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection.
-     * The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS\/OSS.
+     * Property localSubnet: The local CIDR block.
+     * The CIDR block that your client needs to access by using the SSL-VPN connection.
+     * This value can be the CIDR block of a VPC, a vSwitch, a data center that is
+     * connected to a VPC by using an Express Connect circuit, or a cloud
+     * service such as Object Storage Service (OSS).
+     * The subnet mask of the specified local CIDR block must be 8 to 32 bits in length.
+     * You cannot specify the following CIDR blocks as the local CIDR blocks:
+     * *   127.0.0.0~127.255.255.255
+     * *   169.254.0.0~169.254.255.255
+     * *   224.0.0.0~239.255.255.255
+     * *   255.0.0.0~255.255.255.255
      */
     readonly localSubnet: string | ros.IResolvable;
 
@@ -59,8 +78,9 @@ export interface SslVpnServerProps {
     readonly iDaaSRegionId?: string | ros.IResolvable;
 
     /**
-     * Property name: The name of the SSL-VPN server. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
-     * But it can't start with http:\/\/ or https:\/\/.
+     * Property name: The SSL server name.
+     * The name must be 1 to 100 characters in length and cannot start with `http:\/\/` or
+     * `https:\/\/`.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -71,7 +91,9 @@ export interface SslVpnServerProps {
     readonly port?: number | ros.IResolvable;
 
     /**
-     * Property proto: The protocol used by the SSL-VPN server. Allowed values: UDP (default) | TCP.
+     * Property proto: The protocol that is used by the SSL server. Valid values:
+     * *   TCP (default)
+     * *   UDP
      */
     readonly proto?: string | ros.IResolvable;
 }

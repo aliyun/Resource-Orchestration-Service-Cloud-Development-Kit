@@ -8,6 +8,7 @@ type RosClusterAddonsProps struct {
 	Addons interface{} `field:"required" json:"addons" yaml:"addons"`
 	ClusterId interface{} `field:"required" json:"clusterId" yaml:"clusterId"`
 	InstalledIgnore interface{} `field:"optional" json:"installedIgnore" yaml:"installedIgnore"`
+	OverrideExisting interface{} `field:"optional" json:"overrideExisting" yaml:"overrideExisting"`
 	RolePolicy interface{} `field:"optional" json:"rolePolicy" yaml:"rolePolicy"`
 	ValidationMode interface{} `field:"optional" json:"validationMode" yaml:"validationMode"`
 	WaitUntil interface{} `field:"optional" json:"waitUntil" yaml:"waitUntil"`

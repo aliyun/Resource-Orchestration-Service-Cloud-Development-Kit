@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DNS::AddressPool</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.838Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:23:04.429Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.AddressPool")
 public class AddressPool extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dns.IAddressPool {
 
@@ -154,24 +154,34 @@ public class AddressPool extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property lbaStrategy: The load balancing strategy.
+         * Property lbaStrategy: The load balancing policy.
          * <p>
-         * Valid values: RoundRobin, Weighted, FallbackToFirst.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ALL_RR: returns all addresses.</li>
+         * <li>RATIO: returns addresses by weight.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param lbaStrategy Property lbaStrategy: The load balancing strategy. This parameter is required.
+         * @param lbaStrategy Property lbaStrategy: The load balancing policy. This parameter is required.
          */
         public Builder lbaStrategy(final java.lang.String lbaStrategy) {
             this.props.lbaStrategy(lbaStrategy);
             return this;
         }
         /**
-         * Property lbaStrategy: The load balancing strategy.
+         * Property lbaStrategy: The load balancing policy.
          * <p>
-         * Valid values: RoundRobin, Weighted, FallbackToFirst.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ALL_RR: returns all addresses.</li>
+         * <li>RATIO: returns addresses by weight.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param lbaStrategy Property lbaStrategy: The load balancing strategy. This parameter is required.
+         * @param lbaStrategy Property lbaStrategy: The load balancing policy. This parameter is required.
          */
         public Builder lbaStrategy(final com.aliyun.ros.cdk.core.IResolvable lbaStrategy) {
             this.props.lbaStrategy(lbaStrategy);
@@ -202,7 +212,13 @@ public class AddressPool extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property type: The type of the address pool.
          * <p>
-         * Valid values: Ipv4, Ipv6, Domain.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>IPV4: IPv4 address</li>
+         * <li>IPV6: IPv6 address</li>
+         * <li>DOMAIN: domain name</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param type Property type: The type of the address pool. This parameter is required.
@@ -214,7 +230,13 @@ public class AddressPool extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property type: The type of the address pool.
          * <p>
-         * Valid values: Ipv4, Ipv6, Domain.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>IPV4: IPv4 address</li>
+         * <li>IPV6: IPv6 address</li>
+         * <li>DOMAIN: domain name</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param type Property type: The type of the address pool. This parameter is required.
@@ -288,20 +310,92 @@ public class AddressPool extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property monitorExtendInfo: The extended information of the health check.
+         * Property monitorExtendInfo: The extended information.
+         * <p>
+         * This parameter is a JSON string. The required
+         * parameters vary based on the health check protocol:
+         * <p>
+         * <ul>
+         * <li>HTTP and HTTPS:</li>
+         * <li>port: The health check port.</li>
+         * <li>host: The host settings.</li>
+         * <li>path: The URL path.</li>
+         * <li>code: The return code. A response with a status code greater than this value is
+         * considered abnormal. Valid values: 400 and 500.</li>
+         * <li>failureRate: The failure rate.</li>
+         * <li>sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+         * is available only for the HTTPS protocol.</li>
+         * <li>true: Enable SNI.</li>
+         * <li>Other values: Disable SNI.</li>
+         * <li>nodeType: The type of the health check node when the address pool type is
+         * DOMAIN. Valid values:</li>
+         * <li>IPV4</li>
+         * <li>IPV6</li>
+         * <li>PING:</li>
+         * <li>failureRate: The failure rate.</li>
+         * <li>packetNum: The number of ping packets.</li>
+         * <li>packetLossRate: The packet loss rate.</li>
+         * <li>nodeType: The type of the health check node when the address pool type is
+         * DOMAIN. Valid values:</li>
+         * <li>IPV4</li>
+         * <li>IPV6</li>
+         * <li>TCP:</li>
+         * <li>port: The health check port.</li>
+         * <li>failureRate: The failure rate.</li>
+         * <li>nodeType: The type of the health check node when the address pool type is
+         * DOMAIN. Valid values:</li>
+         * <li>IPV4</li>
+         * <li>IPV6</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param monitorExtendInfo Property monitorExtendInfo: The extended information of the health check. This parameter is required.
+         * @param monitorExtendInfo Property monitorExtendInfo: The extended information. This parameter is required.
          */
         public Builder monitorExtendInfo(final com.aliyun.ros.cdk.core.IResolvable monitorExtendInfo) {
             this.props.monitorExtendInfo(monitorExtendInfo);
             return this;
         }
         /**
-         * Property monitorExtendInfo: The extended information of the health check.
+         * Property monitorExtendInfo: The extended information.
+         * <p>
+         * This parameter is a JSON string. The required
+         * parameters vary based on the health check protocol:
+         * <p>
+         * <ul>
+         * <li>HTTP and HTTPS:</li>
+         * <li>port: The health check port.</li>
+         * <li>host: The host settings.</li>
+         * <li>path: The URL path.</li>
+         * <li>code: The return code. A response with a status code greater than this value is
+         * considered abnormal. Valid values: 400 and 500.</li>
+         * <li>failureRate: The failure rate.</li>
+         * <li>sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+         * is available only for the HTTPS protocol.</li>
+         * <li>true: Enable SNI.</li>
+         * <li>Other values: Disable SNI.</li>
+         * <li>nodeType: The type of the health check node when the address pool type is
+         * DOMAIN. Valid values:</li>
+         * <li>IPV4</li>
+         * <li>IPV6</li>
+         * <li>PING:</li>
+         * <li>failureRate: The failure rate.</li>
+         * <li>packetNum: The number of ping packets.</li>
+         * <li>packetLossRate: The packet loss rate.</li>
+         * <li>nodeType: The type of the health check node when the address pool type is
+         * DOMAIN. Valid values:</li>
+         * <li>IPV4</li>
+         * <li>IPV6</li>
+         * <li>TCP:</li>
+         * <li>port: The health check port.</li>
+         * <li>failureRate: The failure rate.</li>
+         * <li>nodeType: The type of the health check node when the address pool type is
+         * DOMAIN. Valid values:</li>
+         * <li>IPV4</li>
+         * <li>IPV6</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param monitorExtendInfo Property monitorExtendInfo: The extended information of the health check. This parameter is required.
+         * @param monitorExtendInfo Property monitorExtendInfo: The extended information. This parameter is required.
          */
         public Builder monitorExtendInfo(final java.util.Map<java.lang.String, ? extends java.lang.Object> monitorExtendInfo) {
             this.props.monitorExtendInfo(monitorExtendInfo);
@@ -309,20 +403,38 @@ public class AddressPool extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property monitorStatus: The monitoring status of the address pool.
+         * Property monitorStatus: The status of the health check feature.
+         * <p>
+         * Default value: CLOSE. If you set this
+         * parameter to OPEN, the health check configuration is verified. Otherwise, the
+         * configuration is ignored.
+         * <p>
+         * <ul>
+         * <li>OPEN: enabled</li>
+         * <li>CLOSE: disabled</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param monitorStatus Property monitorStatus: The monitoring status of the address pool. This parameter is required.
+         * @param monitorStatus Property monitorStatus: The status of the health check feature. This parameter is required.
          */
         public Builder monitorStatus(final java.lang.String monitorStatus) {
             this.props.monitorStatus(monitorStatus);
             return this;
         }
         /**
-         * Property monitorStatus: The monitoring status of the address pool.
+         * Property monitorStatus: The status of the health check feature.
+         * <p>
+         * Default value: CLOSE. If you set this
+         * parameter to OPEN, the health check configuration is verified. Otherwise, the
+         * configuration is ignored.
+         * <p>
+         * <ul>
+         * <li>OPEN: enabled</li>
+         * <li>CLOSE: disabled</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param monitorStatus Property monitorStatus: The monitoring status of the address pool. This parameter is required.
+         * @param monitorStatus Property monitorStatus: The status of the health check feature. This parameter is required.
          */
         public Builder monitorStatus(final com.aliyun.ros.cdk.core.IResolvable monitorStatus) {
             this.props.monitorStatus(monitorStatus);

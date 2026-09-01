@@ -168,9 +168,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object? _orderType;
 
         /// <remarks>
-        /// <strong>Property</strong>: orderType: The billing method for the network instance. Valid values:
-        /// - PayByCenOwner: The fees incurred by the network instance are paid by the owner of the CEN instance.
-        /// - PayByResourceOwner: The fees incurred by the network instance are paid by the owner of the network instance.
+        /// <strong>Property</strong>: orderType: The entity that pays the fees of the network instance. Valid values:
+        /// - PayByCenOwner: the account that owns the CEN instance.
+        /// - PayByResourceOwner: the account that owns the network instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "orderType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

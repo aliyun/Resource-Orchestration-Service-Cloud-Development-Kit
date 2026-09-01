@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.edsuser;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edsuser-user
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:39:34.926Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:41:49.076Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edsuser.$Module.class, fqn = "@alicloud/ros-cdk-edsuser.UserProps")
 @software.amazon.jsii.Jsii.Proxy(UserProps.Jsii$Proxy.class)
 public interface UserProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,7 +27,7 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property businessChannel: The channel.
+     * Property businessChannel: The business channel.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBusinessChannel() {
         return null;
@@ -181,7 +181,7 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link UserProps#getBusinessChannel}
-         * @param businessChannel Property businessChannel: The channel.
+         * @param businessChannel Property businessChannel: The business channel.
          * @return {@code this}
          */
         public Builder businessChannel(java.lang.String businessChannel) {
@@ -191,7 +191,7 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link UserProps#getBusinessChannel}
-         * @param businessChannel Property businessChannel: The channel.
+         * @param businessChannel Property businessChannel: The business channel.
          * @return {@code this}
          */
         public Builder businessChannel(com.aliyun.ros.cdk.core.IResolvable businessChannel) {

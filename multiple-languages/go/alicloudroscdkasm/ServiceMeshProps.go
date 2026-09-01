@@ -9,7 +9,12 @@ type ServiceMeshProps struct {
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	// Property vSwitches: The ID of the vSwitch, eg: ["vsw-xzegf5dndkbf4m6eg****"].
 	VSwitches interface{} `field:"required" json:"vSwitches" yaml:"vSwitches"`
-	// Property accessLogEnabled: Specifies whether to enable access logging.
+	// Property accessLogEnabled: Specifies whether to enable access log.
+	//
+	// Valid values:
+	// - `true`: Enables access log.
+	// - `false`: Disables access log.
+	// Default value: `false`.
 	AccessLogEnabled interface{} `field:"optional" json:"accessLogEnabled" yaml:"accessLogEnabled"`
 	// Property accessLogFile: Enable and disable access logs.
 	//
@@ -17,7 +22,16 @@ type ServiceMeshProps struct {
 	// - "" : Turn off access logs.
 	// - \/dev\/stdout: Enables access logging.
 	AccessLogFile interface{} `field:"optional" json:"accessLogFile" yaml:"accessLogFile"`
-	// Property accessLogFormat: The format of access logs.
+	// Property accessLogFormat: The custom format of access logs.
+	//
+	// This parameter is available only if you enable
+	// access log. The value must be a JSON string that contains the following keys:
+	// authority_for, bytes_received, bytes_sent, downstream_local_address,
+	// downstream_remote_address, duration, istio_policy_status, method, path, protocol,
+	// requested_server_name, response_code, response_flags, route_name, start_time,
+	// trace_id, upstream_cluster, upstream_host, upstream_local_address,
+	// upstream_service_time, upstream_transport_failure_reason, user_agent, and
+	// x_forwarded_for.
 	AccessLogFormat interface{} `field:"optional" json:"accessLogFormat" yaml:"accessLogFormat"`
 	// Property accessLogProject: The Log Service project for access logs.
 	AccessLogProject interface{} `field:"optional" json:"accessLogProject" yaml:"accessLogProject"`
@@ -52,9 +66,14 @@ type ServiceMeshProps struct {
 	// - true: Automatic renewal.
 	// - false: No automatic renewal.
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
-	// Property autoRenewPeriod: ChargeType is a PrePay.
+	// Property autoRenewPeriod: This parameter is valid only if you set `ChargeType` to `PrePay`.
 	//
-	// Indicates the automatic renewal time when purchasing a CLB of the year and month type. If the purchase is less than 1 year old, this parameter indicates how many months the auto-renewal will take. If the purchase is longer than 1 year, this parameter indicates how many years the automatic renewal will be made.
+	// The
+	// auto-renewal period. If the subscription duration is less than one year, the
+	// value of this parameter indicates the number of months for which you want to
+	// renew the instance. If the subscription duration is more than one year, the value
+	// of this parameter indicates the number of years for which you want to renew the
+	// instance.
 	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
 	// Property certChain: The certificate chain from CaCert to RootCert contains at least two certificates.
 	CertChain interface{} `field:"optional" json:"certChain" yaml:"certChain"`
@@ -78,19 +97,44 @@ type ServiceMeshProps struct {
 	ConfigSourceEnabled interface{} `field:"optional" json:"configSourceEnabled" yaml:"configSourceEnabled"`
 	// Property configSourceNacosId: The Nacos ID for config source.
 	ConfigSourceNacosId interface{} `field:"optional" json:"configSourceNacosId" yaml:"configSourceNacosId"`
-	// Property controlPlaneLogEnabled: Specifies whether to enable control plane logging.
+	// Property controlPlaneLogEnabled: Specifies whether to enable control plane log collection.
+	//
+	// Valid values:
+	// - `true`: Enables control plane log collection.
+	// - `false`: Disables control plane log collection.
+	// Default value: `false`.
 	ControlPlaneLogEnabled interface{} `field:"optional" json:"controlPlaneLogEnabled" yaml:"controlPlaneLogEnabled"`
 	// Property controlPlaneLogProject: The Log Service project for control plane logs.
 	ControlPlaneLogProject interface{} `field:"optional" json:"controlPlaneLogProject" yaml:"controlPlaneLogProject"`
 	// Property crAggregationEnabled: Whether to enable Kubernetes API for data plane cluster to access Istio resources (ASM instance v1.9.7.93 or later). Value: - true: Enable data plane cluster Kubernetes API to access Istio resources. - false: Data plane cluster Kubernetes API is not enabled to access Istio resources. Default value: false.
 	CrAggregationEnabled interface{} `field:"optional" json:"crAggregationEnabled" yaml:"crAggregationEnabled"`
-	// Property customizedPrometheus: Specifies whether to use a customized Prometheus system.
+	// Property customizedPrometheus: Specifies whether to use a self-managed Prometheus system.
+	//
+	// Valid values:
+	// - `true`: Uses a self-managed Prometheus system.
+	// - `false`: Does not use a self-managed Prometheus system.
+	// Default value: `false`.
 	CustomizedPrometheus interface{} `field:"optional" json:"customizedPrometheus" yaml:"customizedPrometheus"`
-	// Property customizedZipkin: Specifies whether to use a user-created Zipkin system.
+	// Property customizedZipkin: Specifies whether to use a self-managed Zipkin system.
+	//
+	// Valid values:
+	// - `true`: Uses a self-managed Zipkin system.
+	// - `false`: Uses Tracing Analysis.
+	// Default value: `false`.
 	CustomizedZipkin interface{} `field:"optional" json:"customizedZipkin" yaml:"customizedZipkin"`
-	// Property dnsProxyingEnabled: Specifies whether to enable DNS proxying.
+	// Property dnsProxyingEnabled: Specifies whether to enable DNS proxy.
+	//
+	// Valid values:
+	// - `true`: Enables DNS proxy.
+	// - `false`: Disables DNS proxy.
+	// Default value: `false`.
 	DnsProxyingEnabled interface{} `field:"optional" json:"dnsProxyingEnabled" yaml:"dnsProxyingEnabled"`
-	// Property dubboFilterEnabled: Specifies whether to enable Dubbo filter.
+	// Property dubboFilterEnabled: Specifies whether to enable the Dubbo filter.
+	//
+	// Valid values:
+	// - `true`: Enables the Dubbo filter.
+	// - `false`: Disables the Dubbo filter.
+	// Default value: `false`.
 	DubboFilterEnabled interface{} `field:"optional" json:"dubboFilterEnabled" yaml:"dubboFilterEnabled"`
 	// Property edition: The edition of the ASM instance.
 	Edition interface{} `field:"optional" json:"edition" yaml:"edition"`
@@ -104,9 +148,19 @@ type ServiceMeshProps struct {
 	// that you have activated Alibaba Cloud Log Service.
 	// Valid values: true and false. Default value: false.
 	EnableAudit interface{} `field:"optional" json:"enableAudit" yaml:"enableAudit"`
-	// Property enableCrHistory: Specifies whether to enable CR history.
+	// Property enableCrHistory: Specifies whether to enable the history version management feature for Istio resources in ASM.
+	//
+	// Valid values:
+	// - `true`: Enables the history version management feature.
+	// - `false`: Disables the history version management feature.
+	// Default value: `false`.
 	EnableCrHistory interface{} `field:"optional" json:"enableCrHistory" yaml:"enableCrHistory"`
-	// Property enableSdsServer: Specifies whether to enable SDS server.
+	// Property enableSdsServer: Specifies whether to enable the Secret Discovery Service (SDS).
+	//
+	// Valid values:
+	// - `true`: Enables SDS.
+	// - `false`: Disables SDS.
+	// Default value: `false`.
 	EnableSdsServer interface{} `field:"optional" json:"enableSdsServer" yaml:"enableSdsServer"`
 	// Property excludeInboundPorts: The inbound ports to exclude from traffic management.
 	ExcludeInboundPorts interface{} `field:"optional" json:"excludeInboundPorts" yaml:"excludeInboundPorts"`
@@ -118,23 +172,52 @@ type ServiceMeshProps struct {
 	ExistingCaCert interface{} `field:"optional" json:"existingCaCert" yaml:"existingCaCert"`
 	// Property existingCaKey: The existing CA key.
 	ExistingCaKey interface{} `field:"optional" json:"existingCaKey" yaml:"existingCaKey"`
-	// Property existingCaType: The type of existing CA.
+	// Property existingCaType: The type of the existing certificate: - 1: A self-signed certificate of Istiod.
+	//
+	// This corresponds to the istio-ca-secret
+	// secret in the istio-system namespace. If you use this type, you must also provide
+	// the `ExistingCaCert` and `ExsitingCaKey` parameters.
+	// - 2: An external certificate of Istiod. For more information, see plugin ca cert.
+	// This generally corresponds to the cacerts secret in the istio-system namespace.
+	// If you use this type, you must also provide the `ExisingRootCaCert` and
+	// `ExisingRootCaKey` parameters.
 	ExistingCaType interface{} `field:"optional" json:"existingCaType" yaml:"existingCaType"`
 	// Property existingRootCaCert: The existing root CA certificate.
 	ExistingRootCaCert interface{} `field:"optional" json:"existingRootCaCert" yaml:"existingRootCaCert"`
 	// Property existingRootCaKey: The existing root CA key.
 	ExistingRootCaKey interface{} `field:"optional" json:"existingRootCaKey" yaml:"existingRootCaKey"`
-	// Property filterGatewayClusterConfig: Specifies whether to filter gateway cluster configuration.
+	// Property filterGatewayClusterConfig: Specifies whether to enable gateway configuration filtering.
+	//
+	// Valid values:
+	// - `true`: Enables gateway configuration filtering.
+	// - `false`: Disables gateway configuration filtering.
+	// Default value: `false`.
 	FilterGatewayClusterConfig interface{} `field:"optional" json:"filterGatewayClusterConfig" yaml:"filterGatewayClusterConfig"`
-	// Property gatewayApiEnabled: Specifies whether to enable Gateway API.
+	// Property gatewayApiEnabled: Specifies whether to enable the Gateway API.
+	//
+	// Valid values:
+	// - `true`: Enables the Gateway API.
+	// - `false`: Disables the Gateway API.
+	// Default value: `false`.
 	GatewayApiEnabled interface{} `field:"optional" json:"gatewayApiEnabled" yaml:"gatewayApiEnabled"`
-	// Property guestCluster: The guest cluster configuration.
+	// Property guestCluster: When you create a Service Mesh instance, you can add a cluster to the instance.
+	//
+	// If you do not specify this parameter, no cluster is added. The cluster must be in
+	// the same VPC and vSwitch as the Service Mesh instance, and must have the same
+	// domain name.
 	GuestCluster interface{} `field:"optional" json:"guestCluster" yaml:"guestCluster"`
-	// Property includeIpRanges: The Classless Inter-Domain Routing (CIDR) block in the ASM instance that are denied to access external services.
+	// Property includeIpRanges: The IP address ranges that are allowed to access the proxy.
 	IncludeIpRanges interface{} `field:"optional" json:"includeIpRanges" yaml:"includeIpRanges"`
 	// Property istioVersion: The Istio version of the ASM instance.
 	IstioVersion interface{} `field:"optional" json:"istioVersion" yaml:"istioVersion"`
-	// Property kialiEnabled: Specifies whether to enable Kiali.
+	// Property kialiEnabled: Specifies whether to enable the mesh topology feature.
+	//
+	// To enable this feature,
+	// you must first enable Prometheus monitoring. If Prometheus monitoring is
+	// disabled, this feature is forcibly disabled. Valid values:
+	// - `true`: Enables the mesh topology feature.
+	// - `false`: Disables the mesh topology feature.
+	// Default value: `false`.
 	KialiEnabled interface{} `field:"optional" json:"kialiEnabled" yaml:"kialiEnabled"`
 	// Property localityLbConf: The locality load balancing configuration.
 	LocalityLbConf interface{} `field:"optional" json:"localityLbConf" yaml:"localityLbConf"`
@@ -142,25 +225,55 @@ type ServiceMeshProps struct {
 	//
 	// Valid values: true and false. Default value: false.
 	LocalityLoadBalancing interface{} `field:"optional" json:"localityLoadBalancing" yaml:"localityLoadBalancing"`
-	// Property mseEnabled: Specifies whether to enable MSE.
+	// Property mseEnabled: Specifies whether to enable Microservices Engine (MSE).
+	//
+	// Valid values:
+	// - `true`: Enables MSE.
+	// - `false`: Disables MSE.
+	// Default value: `false`.
 	MseEnabled interface{} `field:"optional" json:"mseEnabled" yaml:"mseEnabled"`
-	// Property multiBufferEnabled: Specifies whether to enable multi-buffer.
+	// Property multiBufferEnabled: Specifies whether to enable TLS performance optimization that is based on MultiBuffer.
+	//
+	// Valid values:
+	// - `true`: Enables the feature.
+	// - `false`: Disables the feature.
+	// Default value: `true`.
 	MultiBufferEnabled interface{} `field:"optional" json:"multiBufferEnabled" yaml:"multiBufferEnabled"`
-	// Property multiBufferPollDelay: The poll delay for multi-buffer.
+	// Property multiBufferPollDelay: The synchronization period of the MultiBuffer enabling status.
+	//
+	// Default value:
+	// `30s`.
 	MultiBufferPollDelay interface{} `field:"optional" json:"multiBufferPollDelay" yaml:"multiBufferPollDelay"`
-	// Property mysqlFilterEnabled: Specifies whether to enable MySQL filter.
+	// Property mysqlFilterEnabled: Specifies whether to enable the MySQL filter.
+	//
+	// Valid values:
+	// - `true`: Enables the MySQL filter.
+	// - `false`: Disables the MySQL filter.
+	// Default value: `false`.
 	MysqlFilterEnabled interface{} `field:"optional" json:"mysqlFilterEnabled" yaml:"mysqlFilterEnabled"`
 	// Property name: The name of the ASM instance.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	// Property opa: OPA settings.
 	Opa interface{} `field:"optional" json:"opa" yaml:"opa"`
 	// Property opaEnabled: Specifies whether to enable OPA.
+	//
+	// Valid values:
+	// - `true`: Enables OPA.
+	// - `false`: Disables OPA.
+	// Default value: `false`.
 	OpaEnabled interface{} `field:"optional" json:"opaEnabled" yaml:"opaEnabled"`
 	// Property outboundTrafficPolicy: The outbound traffic policy of the ASM instance.
 	OutboundTrafficPolicy interface{} `field:"optional" json:"outboundTrafficPolicy" yaml:"outboundTrafficPolicy"`
-	// Property period: The subscription period.
+	// Property period: This parameter is valid only if you set `ChargeType` to `PrePay`.
+	//
+	// The
+	// subscription duration of the SLB instance. Unit: months. If you want to purchase
+	// the instance for one year, enter 12.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
-	// Property pilotLoadBalancerSpec: The specification for the pilot load balancer.
+	// Property pilotLoadBalancerSpec: The specification of the SLB instance that is bound to Istio Pilot of the control plane.
+	//
+	// Valid values: `slb.s1.small`, `slb.s2.small`, `slb.s2.medium`,
+	// `slb.s3.small`, `slb.s3.medium`, and `slb.s3.large`.
 	PilotLoadBalancerSpec interface{} `field:"optional" json:"pilotLoadBalancerSpec" yaml:"pilotLoadBalancerSpec"`
 	// Property pilotPublicEip: Specifies whether to expose Istio Pilot to the Internet.
 	//
@@ -168,7 +281,12 @@ type ServiceMeshProps struct {
 	// If you do not set this parameter, only clusters in the same VPC as the ASM instance
 	// can access Istio Pilot of the instance.
 	PilotPublicEip interface{} `field:"optional" json:"pilotPublicEip" yaml:"pilotPublicEip"`
-	// Property playgroundScene: The playground scene configuration.
+	// Property playgroundScene: The playground scenario.
+	//
+	// If you specify this parameter, an ASM playground
+	// instance is created. Valid value:
+	// - ewmaLb: the exponentially weighted moving average (EWMA) load balancing
+	// scenario.
 	PlaygroundScene interface{} `field:"optional" json:"playgroundScene" yaml:"playgroundScene"`
 	// Property prometheusUrl: The URL for Prometheus.
 	PrometheusUrl interface{} `field:"optional" json:"prometheusUrl" yaml:"prometheusUrl"`
@@ -176,7 +294,11 @@ type ServiceMeshProps struct {
 	Proxy interface{} `field:"optional" json:"proxy" yaml:"proxy"`
 	// Property telemetry: Specifies whether to enable Prometheus monitoring.
 	//
-	// We recommend that you use Application Real-Time Monitoring Service (ARMS).
+	// We recommend that you use
+	// Managed Service for Prometheus. Valid values:
+	// - `true`: Enables Prometheus monitoring.
+	// - `false`: Disables Prometheus monitoring.
+	// Default value: `false`.
 	Telemetry interface{} `field:"optional" json:"telemetry" yaml:"telemetry"`
 	// Property traceSampling: The sampling percentage of tracing.
 	TraceSampling interface{} `field:"optional" json:"traceSampling" yaml:"traceSampling"`
@@ -188,7 +310,12 @@ type ServiceMeshProps struct {
 	Tracing interface{} `field:"optional" json:"tracing" yaml:"tracing"`
 	// Property useExistingCa: Specifies whether to use an existing CA.
 	UseExistingCa interface{} `field:"optional" json:"useExistingCa" yaml:"useExistingCa"`
-	// Property webAssemblyFilterEnabled: Specifies whether to enable WebAssembly filter.
+	// Property webAssemblyFilterEnabled: Specifies whether to enable the WebAssembly filter.
+	//
+	// Valid values:
+	// - `true`: Enables the WebAssembly filter.
+	// - `false`: Disables the WebAssembly filter.
+	// Default value: `false`.
 	WebAssemblyFilterEnabled interface{} `field:"optional" json:"webAssemblyFilterEnabled" yaml:"webAssemblyFilterEnabled"`
 }
 

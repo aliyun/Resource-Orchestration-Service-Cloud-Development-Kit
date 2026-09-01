@@ -67,11 +67,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
         }
 
+        /// <summary>Property endpointIpVersion: The IP address protocol version of the backend service.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// IPv4
+        /// IPv6
+        /// ProtocolAffinity
+        /// </remarks>
+        [JsiiProperty(name: "endpointIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EndpointIpVersion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property endpointProtocolVersion: The protocol version of the backend service.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// HTTP1.1
+        /// HTTP2
+        /// Note This parameter is valid only when the listener uses HTTPS.
+        /// </remarks>
+        [JsiiProperty(name: "endpointProtocolVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EndpointProtocolVersion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property endpointRequestProtocol: The protocol used by the backend service.</summary>
         /// <remarks>
         /// Valid values:
-        /// http: This is the default value.
-        /// https
+        /// HTTP: This is the default value.
+        /// HTTPS
         /// Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
         /// For an HTTP listener, the backend service protocol must be HTTP.
         /// </remarks>
@@ -89,6 +123,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         [JsiiProperty(name: "healthCheckEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? HealthCheckEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property healthCheckHost: The domain name that is used for health checks.</summary>
+        [JsiiProperty(name: "healthCheckHost", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? HealthCheckHost
         {
             get
             {
@@ -152,6 +197,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Name
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property portOverrides: The port mapping relationship of the endpoint group.</summary>
+        [JsiiProperty(name: "portOverrides", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ga.RosEndpointGroup.PortOverridesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PortOverrides
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property tags: Tags to attach to endpoint group.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create endpoint group. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ga.RosEndpointGroup.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Ga.RosEndpointGroup.ITagsProperty[]? Tags
         {
             get
             {
@@ -245,11 +315,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property endpointIpVersion: The IP address protocol version of the backend service.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// IPv4
+            /// IPv6
+            /// ProtocolAffinity
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "endpointIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EndpointIpVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property endpointProtocolVersion: The protocol version of the backend service.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// HTTP1.1
+            /// HTTP2
+            /// Note This parameter is valid only when the listener uses HTTPS.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "endpointProtocolVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EndpointProtocolVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property endpointRequestProtocol: The protocol used by the backend service.</summary>
             /// <remarks>
             /// Valid values:
-            /// http: This is the default value.
-            /// https
+            /// HTTP: This is the default value.
+            /// HTTPS
             /// Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
             /// For an HTTP listener, the backend service protocol must be HTTP.
             /// </remarks>
@@ -264,6 +362,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             [JsiiOptional]
             [JsiiProperty(name: "healthCheckEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? HealthCheckEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property healthCheckHost: The domain name that is used for health checks.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "healthCheckHost", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? HealthCheckHost
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -314,6 +420,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             public object? Name
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property portOverrides: The port mapping relationship of the endpoint group.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "portOverrides", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ga.RosEndpointGroup.PortOverridesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? PortOverrides
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tags: Tags to attach to endpoint group.</summary>
+            /// <remarks>
+            /// Max support 20 tags to add during create endpoint group. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ga.RosEndpointGroup.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Ga.RosEndpointGroup.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ga.RosEndpointGroup.ITagsProperty[]?>();
             }
 
             /// <summary>Property thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.</summary>

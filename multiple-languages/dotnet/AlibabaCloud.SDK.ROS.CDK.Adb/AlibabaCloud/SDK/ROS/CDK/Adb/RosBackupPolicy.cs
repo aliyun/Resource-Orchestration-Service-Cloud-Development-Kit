@@ -144,7 +144,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: preferredBackupTime: The preferred backup time. Format: HH:mmZ-HH:mmZ. Example: 02:00Z-03:00Z
+        /// <strong>Property</strong>: preferredBackupTime: The start time of the full backup within a time range. Specify the time range in
+        /// the HH:mmZ-HH:mmZ format. The time must be in UTC.
+        /// >  The time range is 1 hour.
         /// </remarks>
         [JsiiProperty(name: "preferredBackupTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object PreferredBackupTime
@@ -174,7 +176,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: backupRetentionPeriod: The number of days for which backup files are retained. Valid values: 7 to 730.
+        /// <strong>Property</strong>: backupRetentionPeriod: The number of days for which to retain full backup files. Valid values: 7 to 730.
+        /// >  If you do not specify this parameter, the default value 7 is used.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "backupRetentionPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -225,7 +228,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: enableBackupLog: Whether to enable log backup. Valid values: Enable, Disable.
+        /// <strong>Property</strong>: enableBackupLog: Specifies whether to enable real-time log backup. Valid values:
+        /// *   Enable
+        /// *   Disable
+        /// > If you leave this parameter empty, the default value Enable is used.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "enableBackupLog", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -256,7 +262,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: logBackupRetentionPeriod: The number of days for which log backup files are retained. Valid values: 7 to 730.
+        /// <strong>Property</strong>: logBackupRetentionPeriod: The number of days for which to retain log backup files. Valid values: 7 to 730.
+        /// >  If you do not specify this parameter, the default value 7 is used.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "logBackupRetentionPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

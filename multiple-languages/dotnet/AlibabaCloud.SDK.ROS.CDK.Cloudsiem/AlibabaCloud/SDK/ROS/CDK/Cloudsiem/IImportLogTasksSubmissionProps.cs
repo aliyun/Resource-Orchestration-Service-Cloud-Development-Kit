@@ -11,7 +11,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudsiem
     [JsiiInterface(nativeType: typeof(IImportLogTasksSubmissionProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudsiem.ImportLogTasksSubmissionProps")]
     public interface IImportLogTasksSubmissionProps
     {
-        /// <summary>Property accounts: The list of accounts to be submitted.</summary>
+        /// <summary>Property accounts: The list of accounts for log ingestion.</summary>
+        /// <remarks>
+        /// The value must be a JSON array. Valid
+        /// values:
+        ///
+        /// <list type="bullet">
+        /// <description>AccountId: The ID of the account.</description>
+        /// <description>Imported: Specifies whether to enable or disable log ingestion for the account.
+        /// Valid values:</description>
+        /// <description>0: Disable ingestion.</description>
+        /// <description>1: Enable ingestion.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "accounts", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         object Accounts
         {
@@ -59,7 +71,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudsiem
             {
             }
 
-            /// <summary>Property accounts: The list of accounts to be submitted.</summary>
+            /// <summary>Property accounts: The list of accounts for log ingestion.</summary>
+            /// <remarks>
+            /// The value must be a JSON array. Valid
+            /// values:
+            ///
+            /// <list type="bullet">
+            /// <description>AccountId: The ID of the account.</description>
+            /// <description>Imported: Specifies whether to enable or disable log ingestion for the account.
+            /// Valid values:</description>
+            /// <description>0: Disable ingestion.</description>
+            /// <description>1: Enable ingestion.</description>
+            /// </list>
+            /// </remarks>
             [JsiiProperty(name: "accounts", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
             public object Accounts
             {

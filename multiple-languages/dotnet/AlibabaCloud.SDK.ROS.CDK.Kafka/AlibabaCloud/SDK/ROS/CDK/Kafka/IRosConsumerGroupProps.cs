@@ -12,10 +12,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
     public interface IRosConsumerGroupProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: consumerId: Group name. Value:
-        /// Can only contain letters, numbers, dashes (-), underscores (_), and at least one English or number.
-        /// The length is limited to 3 to 128 characters, and more than 128 characters will be automatically intercepted.
-        /// Once the group name is created, it cannot be modified.
+        /// <strong></strong>: ._\*$#^!&-", limited to 1-249 characters.
+        ///
+        /// <strong>Property</strong>: consumerId: Group name.
+        /// - Reserved instance: Supports uppercase and lowercase letters, numbers,
+        /// underscores (_), hyphens (-), and periods (.), limited to 3-64 characters.
+        /// - Serverless instance: Can only contain letters, numbers, and special characters
+        /// "
         /// </remarks>
         [JsiiProperty(name: "consumerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ConsumerId
@@ -70,10 +73,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: consumerId: Group name. Value:
-            /// Can only contain letters, numbers, dashes (-), underscores (_), and at least one English or number.
-            /// The length is limited to 3 to 128 characters, and more than 128 characters will be automatically intercepted.
-            /// Once the group name is created, it cannot be modified.
+            /// <strong></strong>: ._\*$#^!&-", limited to 1-249 characters.
+            ///
+            /// <strong>Property</strong>: consumerId: Group name.
+            /// - Reserved instance: Supports uppercase and lowercase letters, numbers,
+            /// underscores (_), hyphens (-), and periods (.), limited to 3-64 characters.
+            /// - Serverless instance: Can only contain letters, numbers, and special characters
+            /// "
             /// </remarks>
             [JsiiProperty(name: "consumerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ConsumerId

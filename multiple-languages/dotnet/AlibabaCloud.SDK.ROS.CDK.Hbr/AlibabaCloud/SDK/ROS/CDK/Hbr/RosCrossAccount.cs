@@ -67,7 +67,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: alias: The alias of the cross-account authorization.
+        /// <strong>Property</strong>: alias: The alias. The maximum length is 32 characters. This parameter is not required
+        /// for cross-account backups that are configured based on a resource directory.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "alias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -98,7 +99,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.
+        /// <strong>Property</strong>: crossAccountRoleName: The name of the RAM role for the account to back up. This parameter is used when
+        /// you configure a cross-account backup by assuming a RAM role.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "crossAccountRoleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

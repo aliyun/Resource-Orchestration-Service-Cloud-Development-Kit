@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::RetcodeApp`, which is used to create a browser monitoring task.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::RetcodeApp`.
 type RetcodeApp interface {
 	alicloudroscdkcore.Resource
 	IRetcodeApp

@@ -146,7 +146,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object _weight;
 
         /// <remarks>
-        /// <strong>Property</strong>: weight: The weight of the destination route. Valid values: 0|100.
+        /// <strong>Property</strong>: weight: The weight of the destination-based route. Valid values:
+        /// *   100: a high priority
+        /// *   0: a low priority
         /// </remarks>
         [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Weight
@@ -198,7 +200,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _description;
 
         /// <remarks>
-        /// <strong>Property</strong>: description: The description of the VPN destination route.
+        /// <strong>Property</strong>: description: The description of the destination-based route.
+        /// The description must be 1 to 100 characters in length, and cannot start with
+        /// `http:\/\/` or `https:\/\/`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -231,7 +235,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _overlayMode;
 
         /// <remarks>
-        /// <strong>Property</strong>: overlayMode: The overlay mode.
+        /// <strong>Property</strong>: overlayMode: The tunneling protocol. The value is set to Ipsec, which indicates the IPsec
+        /// tunneling protocol.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "overlayMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -19,6 +19,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
         }
 
         /// <summary>Property nodeCount: The number of nodes.</summary>
+        /// <remarks>
+        /// Valid values: 2 to 16. This parameter is required when you
+        /// configure an elastic scaling range by using the <c>NodeScaleMin</c> and <c>NodeScaleMax</c>
+        /// parameters.
+        /// </remarks>
         [JsiiProperty(name: "nodeCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object NodeCount
         {
@@ -82,7 +87,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             }
         }
 
-        /// <summary>Property dbTimeZone: The time zone of the database.</summary>
+        /// <summary>Property dbTimeZone: The time zone of the database, which must be an IANA time zone identifier.</summary>
         [JsiiProperty(name: "dbTimeZone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DbTimeZone
@@ -137,7 +142,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             }
         }
 
-        /// <summary>Property sourceDbInstanceId: The ID of the source database instance.</summary>
+        /// <summary>Property sourceDbInstanceId: The ID of the source instance.</summary>
+        /// <remarks>
+        /// This parameter is required when restoring from a
+        /// backup.
+        /// </remarks>
         [JsiiProperty(name: "sourceDbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SourceDbInstanceId
@@ -203,6 +212,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             }
 
             /// <summary>Property nodeCount: The number of nodes.</summary>
+            /// <remarks>
+            /// Valid values: 2 to 16. This parameter is required when you
+            /// configure an elastic scaling range by using the <c>NodeScaleMin</c> and <c>NodeScaleMax</c>
+            /// parameters.
+            /// </remarks>
             [JsiiProperty(name: "nodeCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object NodeCount
             {
@@ -260,7 +274,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property dbTimeZone: The time zone of the database.</summary>
+            /// <summary>Property dbTimeZone: The time zone of the database, which must be an IANA time zone identifier.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "dbTimeZone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DbTimeZone
@@ -300,7 +314,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property sourceDbInstanceId: The ID of the source database instance.</summary>
+            /// <summary>Property sourceDbInstanceId: The ID of the source instance.</summary>
+            /// <remarks>
+            /// This parameter is required when restoring from a
+            /// backup.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "sourceDbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SourceDbInstanceId

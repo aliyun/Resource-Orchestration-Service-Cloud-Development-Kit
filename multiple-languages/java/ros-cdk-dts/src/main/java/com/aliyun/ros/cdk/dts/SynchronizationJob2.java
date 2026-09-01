@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::SynchronizationJob2</code>, which is used to configure a data synchronization task.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::SynchronizationJob2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:29:50.849Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:27:15.002Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.SynchronizationJob2")
 public class SynchronizationJob2 extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dts.ISynchronizationJob2 {
 
@@ -408,7 +408,16 @@ public class SynchronizationJob2 extends com.aliyun.ros.cdk.core.Resource implem
         /**
          * Property delayRuleTime: The threshold for latency alerts.
          * <p>
-         * Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+         * Unit: seconds. The value must be an integer.
+         * You can set the threshold based on your business requirements. To prevent
+         * unstable latency caused by network and database overloads, we recommend that you
+         * set the threshold to more than 10 seconds.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If DelayNotice is set to true, this parameter is required.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param delayRuleTime Property delayRuleTime: The threshold for latency alerts. This parameter is required.
@@ -420,7 +429,16 @@ public class SynchronizationJob2 extends com.aliyun.ros.cdk.core.Resource implem
         /**
          * Property delayRuleTime: The threshold for latency alerts.
          * <p>
-         * Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+         * Unit: seconds. The value must be an integer.
+         * You can set the threshold based on your business requirements. To prevent
+         * unstable latency caused by network and database overloads, we recommend that you
+         * set the threshold to more than 10 seconds.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If DelayNotice is set to true, this parameter is required.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param delayRuleTime Property delayRuleTime: The threshold for latency alerts. This parameter is required.
@@ -638,24 +656,24 @@ public class SynchronizationJob2 extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property maxDu: The upper limit of DU.
+         * Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
          * <p>
-         * This parameter is supported only for serverless instances.
+         * Currently, this feature is not supported, please do not pass in parameters.
          * <p>
          * @return {@code this}
-         * @param maxDu Property maxDu: The upper limit of DU. This parameter is required.
+         * @param maxDu Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16. This parameter is required.
          */
         public Builder maxDu(final java.lang.Number maxDu) {
             this.props.maxDu(maxDu);
             return this;
         }
         /**
-         * Property maxDu: The upper limit of DU.
+         * Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
          * <p>
-         * This parameter is supported only for serverless instances.
+         * Currently, this feature is not supported, please do not pass in parameters.
          * <p>
          * @return {@code this}
-         * @param maxDu Property maxDu: The upper limit of DU. This parameter is required.
+         * @param maxDu Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16. This parameter is required.
          */
         public Builder maxDu(final com.aliyun.ros.cdk.core.IResolvable maxDu) {
             this.props.maxDu(maxDu);
@@ -663,24 +681,24 @@ public class SynchronizationJob2 extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property minDu: The lower limit of DU.
+         * Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.
          * <p>
-         * This parameter is supported only for serverless instances.
+         * This feature is currently not supported, please do not pass in parameters.
          * <p>
          * @return {@code this}
-         * @param minDu Property minDu: The lower limit of DU. This parameter is required.
+         * @param minDu Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16. This parameter is required.
          */
         public Builder minDu(final java.lang.Number minDu) {
             this.props.minDu(minDu);
             return this;
         }
         /**
-         * Property minDu: The lower limit of DU.
+         * Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.
          * <p>
-         * This parameter is supported only for serverless instances.
+         * This feature is currently not supported, please do not pass in parameters.
          * <p>
          * @return {@code this}
-         * @param minDu Property minDu: The lower limit of DU. This parameter is required.
+         * @param minDu Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16. This parameter is required.
          */
         public Builder minDu(final com.aliyun.ros.cdk.core.IResolvable minDu) {
             this.props.minDu(minDu);

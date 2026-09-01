@@ -226,7 +226,7 @@ function rosAclsPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::GA::Acls`, which is used to query access control lists (ACLs).
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::GA::Acls`Queries access control lists (ACLs).
  * @Note This class does not contain additional functions, so it is recommended to use the `Acls` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-acls
  */
@@ -602,7 +602,7 @@ function rosBandwidthPackagesPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::GA::BandwidthPackages`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::GA::BandwidthPackages`, which is used to query the information about bandwidth plans.
  * @Note This class does not contain additional functions, so it is recommended to use the `BandwidthPackages` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-bandwidthpackages
  */

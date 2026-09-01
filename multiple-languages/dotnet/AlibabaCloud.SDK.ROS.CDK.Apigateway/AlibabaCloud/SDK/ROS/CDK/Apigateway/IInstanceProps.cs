@@ -49,12 +49,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             get;
         }
 
-        /// <summary>Property autoPay: Indicates whether automatic payment is enabled.</summary>
+        /// <summary>Property autoPay: Specifies whether to enable auto-payment for renewals.</summary>
         /// <remarks>
         /// Valid values:
-        /// false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
-        /// true: Automatic payment is enabled. The payment is automatically made.
-        /// Default true.
+        ///
+        /// <list type="bullet">
+        /// <description>True: Auto-payment is enabled. Make sure that your account has a sufficient
+        /// balance.</description>
+        /// <description>False: Manual payment is required. To pay for an order, log on to the console.
+        /// In the upper-right corner, choose Billing &gt; User Center. On the Order Management
+        /// page, find the order and complete the payment.
+        /// Default value: False.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -94,9 +100,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
         }
 
-        /// <summary>Property duration: Prepaid time period.</summary>
+        /// <summary>Property duration: The subscription duration of the instance.</summary>
         /// <remarks>
-        /// It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>If PricingCycle is set to Month, the valid values are 1 to 9.</description>
+        /// <description>If PricingCycle is set to Year, the valid values are 1 to 3.</description>
+        /// </list>
+        ///
+        ///     This parameter is required and takes effect only if you set ChargeType to
+        ///     PrePaid.
         /// </remarks>
         [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -108,9 +122,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
         }
 
-        /// <summary>Property pricingCycle: Unit of the payment cycle.</summary>
+        /// <summary>Property pricingCycle: The billing cycle of the subscription instance.</summary>
         /// <remarks>
-        /// It could be Month (default) or Year.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>year</description>
+        /// <description>month</description>
+        /// </list>
+        ///
+        ///     This parameter is required if you set ChargeType to PrePaid.
         /// </remarks>
         [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -185,12 +206,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property autoPay: Indicates whether automatic payment is enabled.</summary>
+            /// <summary>Property autoPay: Specifies whether to enable auto-payment for renewals.</summary>
             /// <remarks>
             /// Valid values:
-            /// false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
-            /// true: Automatic payment is enabled. The payment is automatically made.
-            /// Default true.
+            ///
+            /// <list type="bullet">
+            /// <description>True: Auto-payment is enabled. Make sure that your account has a sufficient
+            /// balance.</description>
+            /// <description>False: Manual payment is required. To pay for an order, log on to the console.
+            /// In the upper-right corner, choose Billing &gt; User Center. On the Order Management
+            /// page, find the order and complete the payment.
+            /// Default value: False.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -221,9 +248,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property duration: Prepaid time period.</summary>
+            /// <summary>Property duration: The subscription duration of the instance.</summary>
             /// <remarks>
-            /// It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>If PricingCycle is set to Month, the valid values are 1 to 9.</description>
+            /// <description>If PricingCycle is set to Year, the valid values are 1 to 3.</description>
+            /// </list>
+            ///
+            ///     This parameter is required and takes effect only if you set ChargeType to
+            ///     PrePaid.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -232,9 +267,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property pricingCycle: Unit of the payment cycle.</summary>
+            /// <summary>Property pricingCycle: The billing cycle of the subscription instance.</summary>
             /// <remarks>
-            /// It could be Month (default) or Year.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>year</description>
+            /// <description>month</description>
+            /// </list>
+            ///
+            ///     This parameter is required if you set ChargeType to PrePaid.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

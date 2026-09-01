@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroupClone`Use , which to clone a group of ECS instances.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroupClone`.
 type InstanceGroupClone interface {
 	alicloudroscdkcore.Resource
 	IInstanceGroupClone

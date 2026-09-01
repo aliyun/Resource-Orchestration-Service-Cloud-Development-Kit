@@ -19,10 +19,11 @@ type InstanceProps struct {
 	Log interface{} `field:"optional" json:"log" yaml:"log"`
 	// Property logStorage: Log storage.
 	LogStorage interface{} `field:"optional" json:"logStorage" yaml:"logStorage"`
-	// Property period: The subscription duration of the KMS instance.
+	// Property period: The subscription duration.
 	//
-	// If PeriodUnit is Month, the valid range is 1, 2, 3, 6, 12, 24, 36
-	// If PeriodUnit is Year, the valid range is 1, 2, 3.
+	// Unit: month. The value must be an integral multiple of
+	// 12.
+	// >  This parameter is required if you create a subscription instance.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	// Property periodUnit: The unit of the subscription duration.
 	//
@@ -31,7 +32,11 @@ type InstanceProps struct {
 	// Year
 	// Default value: Month.
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
-	// Property renewPeriod: Automatic renewal period, in months.
+	// Property renewPeriod: The auto-renewal period.
+	//
+	// Unit: month.
+	// >  This parameter is required if the RenewalStatus parameter is set to
+	// AutoRenewal.
 	RenewPeriod interface{} `field:"optional" json:"renewPeriod" yaml:"renewPeriod"`
 	// Property renewStatus: Renewal options (manual renewal, automatic renewal, no renewal).
 	RenewStatus interface{} `field:"optional" json:"renewStatus" yaml:"renewStatus"`

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::Flow`, which is used to create a flow.
+// This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::Flow`.
 type Flow interface {
 	alicloudroscdkcore.Resource
 	IFlow

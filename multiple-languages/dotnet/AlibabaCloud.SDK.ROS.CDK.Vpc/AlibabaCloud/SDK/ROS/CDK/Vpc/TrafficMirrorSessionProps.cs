@@ -256,9 +256,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object? _packetLength;
 
-        /// <summary>Property packetLength: The maximum transmission unit (MTU).</summary>
+        /// <summary>Property packetLength: The maximum transmission unit.</summary>
         /// <remarks>
-        /// Default value: <strong>1500</strong>.
+        /// Valid values: 64 to 9600. Default value: 1500.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "packetLength", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

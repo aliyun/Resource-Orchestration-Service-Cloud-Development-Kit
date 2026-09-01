@@ -174,7 +174,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
 
         private object? _rdcEnterpriseId;
 
-        /// <summary>Property rdcEnterpriseId: Enterprise ID.</summary>
+        /// <summary>Property rdcEnterpriseId: The Apsara DevOps enterprise ID.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "rdcEnterpriseId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? RdcEnterpriseId

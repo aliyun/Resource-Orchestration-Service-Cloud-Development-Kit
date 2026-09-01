@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bpstudio;
 /**
  * Represents a <code>Application</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:37:10.201Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:20:19.440Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bpstudio.$Module.class, fqn = "@alicloud/ros-cdk-bpstudio.IApplication")
 @software.amazon.jsii.Jsii.Proxy(IApplication.Jsii$Proxy.class)
 public interface IApplication extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

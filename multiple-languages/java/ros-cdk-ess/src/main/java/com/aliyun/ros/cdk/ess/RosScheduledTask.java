@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::ScheduledTask</code>, which is used to create a scheduled task by specifying properties.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::ScheduledTask</code>, which creates a scheduled task based on specified properties.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:56:08.495Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:06:45.639Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScheduledTask")
 public class RosScheduledTask extends com.aliyun.ros.cdk.core.RosResource {
 

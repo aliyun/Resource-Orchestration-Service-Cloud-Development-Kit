@@ -215,12 +215,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _copiedSnapshotsRetentionDays;
 
-        /// <summary>Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies.</summary>
+        /// <summary>Property copiedSnapshotsRetentionDays: The retention period of the snapshot copy in the destination region.</summary>
         /// <remarks>
-        /// Range:
-        /// -1: Permanent storage
-        /// 1-65535: Specifies the number of days to save
-        /// Default value: -1
+        /// Unit: days.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>-1: The snapshot copy is retained until it is deleted.</description>
+        /// <description>1 to 65535: The snapshot copy is retained for the specified number of days.
+        /// After the retention period of the snapshot copy expires, the snapshot copy is
+        /// automatically deleted.
+        /// Default value: -1.</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "copiedSnapshotsRetentionDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

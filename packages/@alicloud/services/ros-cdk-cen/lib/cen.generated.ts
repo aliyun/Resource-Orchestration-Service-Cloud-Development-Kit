@@ -9,7 +9,7 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosCenBandwidthLimitProps {
 
     /**
-     * @Property bandwidthLimit: The bandwidth configured for the interconnected regions communication. Minimal value: 1
+     * @Property bandwidthLimit: The inter-region bandwidth between the two regions. Unit: Mbps.
      */
     readonly bandwidthLimit: number | ros.IResolvable;
 
@@ -29,7 +29,8 @@ export interface RosCenBandwidthLimitProps {
     readonly oppositeRegionId: string | ros.IResolvable;
 
     /**
-     * @Property bandwidthType: Bandwidth allocation mode. Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+     * @Property bandwidthType: The method used to allocate bandwidth. Valid value:
+     * - BandwidthPackage (default): allocates bandwidth from a bandwidth plan.
      */
     readonly bandwidthType?: string | ros.IResolvable;
 }
@@ -86,7 +87,7 @@ function rosCenBandwidthLimitPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`, which is used to configure the bandwidth for cross-region interconnection in a bandwidth plan.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthLimit` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
  */
@@ -100,7 +101,7 @@ export class RosCenBandwidthLimit extends ros.RosResource {
 
 
     /**
-     * @Property bandwidthLimit: The bandwidth configured for the interconnected regions communication. Minimal value: 1
+     * @Property bandwidthLimit: The inter-region bandwidth between the two regions. Unit: Mbps.
      */
     public bandwidthLimit: number | ros.IResolvable;
 
@@ -120,7 +121,8 @@ export class RosCenBandwidthLimit extends ros.RosResource {
     public oppositeRegionId: string | ros.IResolvable;
 
     /**
-     * @Property bandwidthType: Bandwidth allocation mode. Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+     * @Property bandwidthType: The method used to allocate bandwidth. Valid value:
+     * - BandwidthPackage (default): allocates bandwidth from a bandwidth plan.
      */
     public bandwidthType: string | ros.IResolvable | undefined;
 
@@ -162,7 +164,8 @@ export class RosCenBandwidthLimit extends ros.RosResource {
 export interface RosCenBandwidthPackageProps {
 
     /**
-     * @Property bandwidth: The bandwidth in Mbps of the bandwidth package. The bandwidth cannot be less than 2 Mbps.
+     * @Property bandwidth: The maximum bandwidth of the bandwidth plan. Unit: Mbps. Valid values: 2 to
+     * 10000.
      */
     readonly bandwidth: number | ros.IResolvable;
 
@@ -179,9 +182,12 @@ export interface RosCenBandwidthPackageProps {
     readonly geographicRegionBId: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: Whether to automatically pay the bill. Valid value:
-     * true (default)
-     * false
+     * @Property autoPay: Specifies whether to enable automatic payment. Valid values:
+     * - true: yes.
+     * - false (default): no.
+     * If you disable automatic payment, you must go to the Order Hub in the console to
+     * complete the payment after you call this operation. Otherwise, the instance
+     * cannot be created.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -201,19 +207,24 @@ export interface RosCenBandwidthPackageProps {
     readonly bandwidthPackageChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of the bandwidth package.
-     * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:\/\/ or https:\/\/.
+     * @Property description: The description of the bandwidth plan.
+     * The description can be empty or 1 to 256 characters in length. It cannot start
+     * with http\:\/\/ or https\:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the bandwidth package.
-     * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:\/\/ or https:\/\/.
+     * @Property name: The name of the bandwidth plan.
+     * The name can be empty or 1 to 128 characters in length. It cannot start with
+     * http\:\/\/ or https\:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
     /**
-     * @Property period: The purchase period. The default value is 1.
+     * @Property period: The subscription duration of the bandwidth plan. Default value: 1.
+     * - If you set PricingCycle to Month, valid values for Period are 1 to 3 and 6.
+     * - If you set PricingCycle to Year, valid values for Period are 1 to 3.
+     * > This parameter is required if you set BandwidthPackageChargeType to PREPAY.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -337,7 +348,7 @@ function rosCenBandwidthPackagePropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackage`, which is used to purchase a bandwidth plan before you use Cloud Enterprise Network (CEN) to connect network instances that reside in different regions.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackage`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthPackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage
  */
@@ -361,7 +372,8 @@ export class RosCenBandwidthPackage extends ros.RosResource {
 
 
     /**
-     * @Property bandwidth: The bandwidth in Mbps of the bandwidth package. The bandwidth cannot be less than 2 Mbps.
+     * @Property bandwidth: The maximum bandwidth of the bandwidth plan. Unit: Mbps. Valid values: 2 to
+     * 10000.
      */
     public bandwidth: number | ros.IResolvable;
 
@@ -378,9 +390,12 @@ export class RosCenBandwidthPackage extends ros.RosResource {
     public geographicRegionBId: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: Whether to automatically pay the bill. Valid value:
-     * true (default)
-     * false
+     * @Property autoPay: Specifies whether to enable automatic payment. Valid values:
+     * - true: yes.
+     * - false (default): no.
+     * If you disable automatic payment, you must go to the Order Hub in the console to
+     * complete the payment after you call this operation. Otherwise, the instance
+     * cannot be created.
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 
@@ -400,19 +415,24 @@ export class RosCenBandwidthPackage extends ros.RosResource {
     public bandwidthPackageChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property description: The description of the bandwidth package.
-     * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:\/\/ or https:\/\/.
+     * @Property description: The description of the bandwidth plan.
+     * The description can be empty or 1 to 256 characters in length. It cannot start
+     * with http\:\/\/ or https\:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property name: The name of the bandwidth package.
-     * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:\/\/ or https:\/\/.
+     * @Property name: The name of the bandwidth plan.
+     * The name can be empty or 1 to 128 characters in length. It cannot start with
+     * http\:\/\/ or https\:\/\/.
      */
     public name: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The purchase period. The default value is 1.
+     * @Property period: The subscription duration of the bandwidth plan. Default value: 1.
+     * - If you set PricingCycle to Month, valid values for Period are 1 to 3 and 6.
+     * - If you set PricingCycle to Year, valid values for Period are 1 to 3.
+     * > This parameter is required if you set BandwidthPackageChargeType to PREPAY.
      */
     public period: number | ros.IResolvable | undefined;
 
@@ -582,7 +602,7 @@ function rosCenBandwidthPackageAssociationPropsToRosTemplate(properties: any, en
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackageAssociation`, which is used to associate a bandwidth plan with a Cloud Enterprise Network (CEN) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackageAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthPackageAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackageassociation
  */
@@ -637,21 +657,23 @@ export class RosCenBandwidthPackageAssociation extends ros.RosResource {
 export interface RosCenInstanceProps {
 
     /**
-     * @Property description: The description of the instance.
-     * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:\/\/ or https:\/\/.
+     * @Property description: The description of the CEN instance.
+     * The description can be empty or 1 to 256 characters in length. It cannot start
+     * with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the instance.
-     * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:\/\/ or https:\/\/.
+     * @Property name: The name of the CEN instance.
+     * The name can be empty or 1 to 128 characters in length. It cannot start with
+     * http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
     /**
-     * @Property protectionLevel: The level of CIDR block overlapping. 
-     * Set the value to REDUCED. REDUCED indicates that the 
-     * CIDR blocks can overlap with each other but must not be the same.
+     * @Property protectionLevel: The level of CIDR block overlap.
+     * Set the value to REDUCED. This is the default value. This value specifies that
+     * CIDR blocks can overlap but cannot be identical.
      */
     readonly protectionLevel?: string | ros.IResolvable;
 
@@ -714,7 +736,7 @@ function rosCenInstancePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstance`, which is used to create a Cloud Enterprise Network (CEN) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstance
  */
@@ -738,21 +760,23 @@ export class RosCenInstance extends ros.RosResource {
 
 
     /**
-     * @Property description: The description of the instance.
-     * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:\/\/ or https:\/\/.
+     * @Property description: The description of the CEN instance.
+     * The description can be empty or 1 to 256 characters in length. It cannot start
+     * with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property name: The name of the instance.
-     * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:\/\/ or https:\/\/.
+     * @Property name: The name of the CEN instance.
+     * The name can be empty or 1 to 128 characters in length. It cannot start with
+     * http:\/\/ or https:\/\/.
      */
     public name: string | ros.IResolvable | undefined;
 
     /**
-     * @Property protectionLevel: The level of CIDR block overlapping. 
-     * Set the value to REDUCED. REDUCED indicates that the 
-     * CIDR blocks can overlap with each other but must not be the same.
+     * @Property protectionLevel: The level of CIDR block overlap.
+     * Set the value to REDUCED. This is the default value. This value specifies that
+     * CIDR blocks can overlap but cannot be identical.
      */
     public protectionLevel: string | ros.IResolvable | undefined;
 
@@ -864,7 +888,9 @@ export interface RosCenInstanceAttachmentProps {
     readonly childInstanceId: string | ros.IResolvable;
 
     /**
-     * @Property childInstanceRegionId: The ID of the region where the network is located. The ID of the region where the network is located.
+     * @Property childInstanceRegionId: The ID of the region where the network instance is deployed.
+     * You can call the [DescribeRegions]() operation to query the most recent region
+     * list.
      */
     readonly childInstanceRegionId: string | ros.IResolvable;
 
@@ -874,7 +900,9 @@ export interface RosCenInstanceAttachmentProps {
     readonly childInstanceType: string | ros.IResolvable;
 
     /**
-     * @Property childInstanceOwnerId: The account ID to which the network belongs.
+     * @Property childInstanceOwnerId: The ID of the account to which the network instance belongs.
+     * > If the network instance and the CEN instance belong to different accounts,
+     * this parameter is required.
      */
     readonly childInstanceOwnerId?: number | ros.IResolvable;
 }
@@ -930,7 +958,7 @@ function rosCenInstanceAttachmentPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`, which is used to attach a network instance to a Cloud Enterprise Network (CEN) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenInstanceAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstanceattachment
  */
@@ -954,7 +982,9 @@ export class RosCenInstanceAttachment extends ros.RosResource {
     public childInstanceId: string | ros.IResolvable;
 
     /**
-     * @Property childInstanceRegionId: The ID of the region where the network is located. The ID of the region where the network is located.
+     * @Property childInstanceRegionId: The ID of the region where the network instance is deployed.
+     * You can call the [DescribeRegions]() operation to query the most recent region
+     * list.
      */
     public childInstanceRegionId: string | ros.IResolvable;
 
@@ -964,7 +994,9 @@ export class RosCenInstanceAttachment extends ros.RosResource {
     public childInstanceType: string | ros.IResolvable;
 
     /**
-     * @Property childInstanceOwnerId: The account ID to which the network belongs.
+     * @Property childInstanceOwnerId: The ID of the account to which the network instance belongs.
+     * > If the network instance and the CEN instance belong to different accounts,
+     * this parameter is required.
      */
     public childInstanceOwnerId: number | ros.IResolvable | undefined;
 
@@ -1277,7 +1309,7 @@ function rosCenRouteMapPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenRouteMap`, which is used to create a routing policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenRouteMap`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenRouteMap` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenroutemap
  */
@@ -1569,7 +1601,10 @@ export interface RosCenRouteServiceProps {
     readonly cenId: string | ros.IResolvable;
 
     /**
-     * @Property host: The domain or IP address of the cloud service.
+     * @Property host: The IP addresses or CIDR blocks of the cloud service.
+     * > In most cases, multiple IP addresses or CIDR blocks are assigned to a cloud
+     * service. We recommend that you call this operation multiple times to add all IP
+     * addresses and CIDR blocks of the cloud service.
      */
     readonly host: string | ros.IResolvable;
 
@@ -1593,6 +1628,8 @@ export interface RosCenRouteServiceProps {
 
     /**
      * @Property description: The description of the cloud service.
+     * This parameter is optional. If you enter a description, it must be 1 to 256
+     * characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 }
@@ -1647,7 +1684,7 @@ function rosCenRouteServicePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenRouteService`, which is used to access an Alibaba Cloud service.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenRouteService`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenRouteService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenrouteservice
  */
@@ -1676,7 +1713,10 @@ export class RosCenRouteService extends ros.RosResource {
     public cenId: string | ros.IResolvable;
 
     /**
-     * @Property host: The domain or IP address of the cloud service.
+     * @Property host: The IP addresses or CIDR blocks of the cloud service.
+     * > In most cases, multiple IP addresses or CIDR blocks are assigned to a cloud
+     * service. We recommend that you call this operation multiple times to add all IP
+     * addresses and CIDR blocks of the cloud service.
      */
     public host: string | ros.IResolvable;
 
@@ -1700,6 +1740,8 @@ export class RosCenRouteService extends ros.RosResource {
 
     /**
      * @Property description: The description of the cloud service.
+     * This parameter is optional. If you enter a description, it must be 1 to 256
+     * characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -1837,7 +1879,7 @@ function rosCenVbrHealthCheckPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`, which is used to enable the health check feature or modify the health check configurations for a virtual border router (VBR).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenVbrHealthCheck` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenvbrhealthcheck
  */
@@ -2045,7 +2087,7 @@ function rosChildInstanceRouteEntryToAttachmentPropsToRosTemplate(properties: an
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`, which is used to add a route to a network instance that is connected to an Enterprise Edition transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ChildInstanceRouteEntryToAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-childinstancerouteentrytoattachment
  */
@@ -2301,7 +2343,7 @@ function rosFlowlogPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::Flowlog`The , which type creates a flow log.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::Flowlog`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Flowlog` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-flowlog
  */
@@ -3088,7 +3130,7 @@ function rosRouteEntryPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::RouteEntry`, which is used to advertise a route of an attached virtual private cloud (VPC) or virtual border router (VBR) to a Cloud Enterprise Network (CEN) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::RouteEntry`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RouteEntry` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-routeentry
  */
@@ -3224,7 +3266,7 @@ function rosTransitRouterPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouter`, which is used to create an Enterprise Edition transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouter`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouter
  */
@@ -3564,9 +3606,9 @@ export interface RosTransitRouterGrantAttachmentProps {
     readonly instanceType: string | ros.IResolvable;
 
     /**
-     * @Property orderType: The billing method for the network instance. Valid values:
-     * - PayByCenOwner: The fees incurred by the network instance are paid by the owner of the CEN instance.
-     * - PayByResourceOwner: The fees incurred by the network instance are paid by the owner of the network instance.
+     * @Property orderType: The entity that pays the fees of the network instance. Valid values:
+     * - PayByCenOwner: the account that owns the CEN instance.
+     * - PayByResourceOwner: the account that owns the network instance.
      */
     readonly orderType?: string | ros.IResolvable;
 }
@@ -3628,7 +3670,7 @@ function rosTransitRouterGrantAttachmentPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterGrantAttachment`The , which resource grants a transit router permissions on a network instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterGrantAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterGrantAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutergrantattachment
  */
@@ -3666,9 +3708,9 @@ export class RosTransitRouterGrantAttachment extends ros.RosResource {
     public instanceType: string | ros.IResolvable;
 
     /**
-     * @Property orderType: The billing method for the network instance. Valid values:
-     * - PayByCenOwner: The fees incurred by the network instance are paid by the owner of the CEN instance.
-     * - PayByResourceOwner: The fees incurred by the network instance are paid by the owner of the network instance.
+     * @Property orderType: The entity that pays the fees of the network instance. Valid values:
+     * - PayByCenOwner: the account that owns the CEN instance.
+     * - PayByResourceOwner: the account that owns the network instance.
      */
     public orderType: string | ros.IResolvable | undefined;
 
@@ -4033,7 +4075,7 @@ function rosTransitRouterPeerAttachmentPropsToRosTemplate(properties: any, enabl
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`The , which type creates an inter-region connection for an Enterprise Edition transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterPeerAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterpeerattachment
  */
@@ -4320,7 +4362,7 @@ function rosTransitRouterRouteEntryPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteEntry`, which is used to add routes to a route table of an Enterprise Edition transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteEntry`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteEntry` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterrouteentry
  */
@@ -4504,7 +4546,7 @@ function rosTransitRouterRouteTablePropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTable`, which is used to create a custom route table for an Enterprise Edition transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTable`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTable` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetable
  */
@@ -4649,7 +4691,7 @@ function rosTransitRouterRouteTableAssociationPropsToRosTemplate(properties: any
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociation`, which is used to create an associated forwarding correlation.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTableAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetableassociation
  */
@@ -4775,7 +4817,7 @@ function rosTransitRouterRouteTableAssociationReplacementPropsToRosTemplate(prop
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociationReplacement`The , which resource replaces the transit router route table associated with a network instance connection.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociationReplacement`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTableAssociationReplacement` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetableassociationreplacement
  */
@@ -4883,7 +4925,7 @@ function rosTransitRouterRouteTablePropagationPropsToRosTemplate(properties: any
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTablePropagation`, which is used to create a route learning correlation.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTablePropagation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTablePropagation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetablepropagation
  */
@@ -5043,7 +5085,7 @@ function rosTransitRouterVbrAttachmentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`, which is used to create a virtual border router (VBR) connection on an Enterprise Edition transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterVbrAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervbrattachment
  */
@@ -5208,7 +5250,10 @@ export interface RosTransitRouterVpcAttachmentProps {
     readonly autoCreateVpcRoute?: boolean | ros.IResolvable;
 
     /**
-     * @Property autoPublishRouteEnabled: Whether to automatically publish routes.
+     * @Property autoPublishRouteEnabled: Specifies whether to enable the Enterprise Edition transit router to
+     * automatically advertise routes to the VPC instance.
+     * - false (default): Do not automatically advertise routes.
+     * - true: Automatically advertise routes.
      */
     readonly autoPublishRouteEnabled?: boolean | ros.IResolvable;
 
@@ -5238,12 +5283,16 @@ export interface RosTransitRouterVpcAttachmentProps {
     readonly routeTablePropagationEnabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
+     * @Property transitRouterAttachmentDescription: The description of the VPC connection.
+     * The description can be empty or 1 to 256 characters long, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
 
     /**
-     * @Property transitRouterAttachmentName: The name of the transit router VPC attachment.
+     * @Property transitRouterAttachmentName: The name of the VPC connection.
+     * The name can be empty or 1 to 128 characters long, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly transitRouterAttachmentName?: string | ros.IResolvable;
 
@@ -5253,12 +5302,16 @@ export interface RosTransitRouterVpcAttachmentProps {
     readonly transitRouterId?: string | ros.IResolvable;
 
     /**
-     * @Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+     * @Property transitRouterVpcAttachmentOptions: The properties of the VPC connection. This parameter is deprecated. We recommend
+     * that you use the `Options` parameter instead.
      */
     readonly transitRouterVpcAttachmentOptions?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property vpcOwnerId: The owner ID of the VPC.
+     * @Property vpcOwnerId: The ID of the account (root account) that owns the VPC instance. By
+     * default, this is the ID of the current account.
+     * > This parameter is required if you want to attach a cross-account network
+     * instance.
      */
     readonly vpcOwnerId?: number | ros.IResolvable;
 }
@@ -5337,7 +5390,7 @@ function rosTransitRouterVpcAttachmentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterVpcAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
@@ -5406,7 +5459,10 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
     public autoCreateVpcRoute: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property autoPublishRouteEnabled: Whether to automatically publish routes.
+     * @Property autoPublishRouteEnabled: Specifies whether to enable the Enterprise Edition transit router to
+     * automatically advertise routes to the VPC instance.
+     * - false (default): Do not automatically advertise routes.
+     * - true: Automatically advertise routes.
      */
     public autoPublishRouteEnabled: boolean | ros.IResolvable | undefined;
 
@@ -5436,12 +5492,16 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
     public routeTablePropagationEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
+     * @Property transitRouterAttachmentDescription: The description of the VPC connection.
+     * The description can be empty or 1 to 256 characters long, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     public transitRouterAttachmentDescription: string | ros.IResolvable | undefined;
 
     /**
-     * @Property transitRouterAttachmentName: The name of the transit router VPC attachment.
+     * @Property transitRouterAttachmentName: The name of the VPC connection.
+     * The name can be empty or 1 to 128 characters long, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     public transitRouterAttachmentName: string | ros.IResolvable | undefined;
 
@@ -5451,12 +5511,16 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
     public transitRouterId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+     * @Property transitRouterVpcAttachmentOptions: The properties of the VPC connection. This parameter is deprecated. We recommend
+     * that you use the `Options` parameter instead.
      */
     public transitRouterVpcAttachmentOptions: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
-     * @Property vpcOwnerId: The owner ID of the VPC.
+     * @Property vpcOwnerId: The ID of the account (root account) that owns the VPC instance. By
+     * default, this is the ID of the current account.
+     * > This parameter is required if you want to attach a cross-account network
+     * instance.
      */
     public vpcOwnerId: number | ros.IResolvable | undefined;
 
@@ -5608,12 +5672,16 @@ export interface RosTransitRouterVpnAttachmentProps {
     readonly tags?: RosTransitRouterVpnAttachment.TagsProperty[];
 
     /**
-     * @Property transitRouterAttachmentDescription: Description of the VPN connection.
+     * @Property transitRouterAttachmentDescription: The description of the VPN connection.
+     * The description can be empty or 1 to 256 characters in length, and cannot start
+     * with http:\/\/ or https:\/\/.
      */
     readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
 
     /**
      * @Property transitRouterAttachmentName: The name of the VPN connection.
+     * The name can be empty or 1 to 128 characters in length, and cannot start with
+     * http:\/\/ or https:\/\/.
      */
     readonly transitRouterAttachmentName?: string | ros.IResolvable;
 
@@ -5623,7 +5691,11 @@ export interface RosTransitRouterVpnAttachmentProps {
     readonly transitRouterId?: string | ros.IResolvable;
 
     /**
-     * @Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
+     * @Property vpnOwnerId: The ID of the account to which the IPsec-VPN connection belongs.
+     * - If you do not specify this parameter, the ID of the current account
+     * is used.
+     * - This parameter is required if you want to connect to a cross-account IPsec-VPN
+     * connection.
      */
     readonly vpnOwnerId?: string | ros.IResolvable;
 
@@ -5696,7 +5768,7 @@ function rosTransitRouterVpnAttachmentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`, which is used to create a VPN connection.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterVpnAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpnattachment
  */
@@ -5750,12 +5822,16 @@ export class RosTransitRouterVpnAttachment extends ros.RosResource {
     public tags: RosTransitRouterVpnAttachment.TagsProperty[] | undefined;
 
     /**
-     * @Property transitRouterAttachmentDescription: Description of the VPN connection.
+     * @Property transitRouterAttachmentDescription: The description of the VPN connection.
+     * The description can be empty or 1 to 256 characters in length, and cannot start
+     * with http:\/\/ or https:\/\/.
      */
     public transitRouterAttachmentDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property transitRouterAttachmentName: The name of the VPN connection.
+     * The name can be empty or 1 to 128 characters in length, and cannot start with
+     * http:\/\/ or https:\/\/.
      */
     public transitRouterAttachmentName: string | ros.IResolvable | undefined;
 
@@ -5765,7 +5841,11 @@ export class RosTransitRouterVpnAttachment extends ros.RosResource {
     public transitRouterId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
+     * @Property vpnOwnerId: The ID of the account to which the IPsec-VPN connection belongs.
+     * - If you do not specify this parameter, the ID of the current account
+     * is used.
+     * - This parameter is required if you want to connect to a cross-account IPsec-VPN
+     * connection.
      */
     public vpnOwnerId: string | ros.IResolvable | undefined;
 

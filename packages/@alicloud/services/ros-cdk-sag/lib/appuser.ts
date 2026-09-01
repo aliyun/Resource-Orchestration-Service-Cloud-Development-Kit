@@ -10,7 +10,8 @@ export { RosAppUser as AppUserProperty };
 export interface AppUserProps {
 
     /**
-     * Property bandwidth: The bandwidth. Unit: Kbit\/s. Maximum bandwidth: 2,000 Kbit\/s.
+     * Property bandwidth: The maximum bandwidth value. Unit: Kbit\/s. Valid values: 1 to 20000. Default
+     * value: 2000.
      */
     readonly bandwidth: number | ros.IResolvable;
 
@@ -41,15 +42,21 @@ export interface AppUserProps {
     readonly disable?: boolean | ros.IResolvable;
 
     /**
-     * Property password: The password used to log on to SAG APP.
-     * For a client account, if you specify the username, you must also specify the password.
+     * Property password: The password that is used to log on to the SAG app.
+     * The password must be 8 to 32 characters in length. It can contain letters,
+     * digits, underscores (_), at signs (@), and hyphens (-). It must start with a
+     * letter or a digit.
      */
     readonly password?: string | ros.IResolvable;
 
     /**
-     * Property userName: The username of the client account. Usernames of client accounts added to the same
-     * SAG APP instance must be unique.
-     * For a client account, if you specify the username, you must also specify the password.
+     * Property userName: The username of the client account. The usernames of client accounts added to the
+     * same SAG app instance must be unique.
+     * The username must be 7 to 33 characters in length, and can contain letters,
+     * digits, underscores (_), at signs (@), periods (.), and hyphens (-). It must
+     * start with a letter or a digit.
+     * >  For a client account, if you specify the username, you must also specify the
+     * password. If you specify the password, you must specify the username.
      */
     readonly userName?: string | ros.IResolvable;
 }

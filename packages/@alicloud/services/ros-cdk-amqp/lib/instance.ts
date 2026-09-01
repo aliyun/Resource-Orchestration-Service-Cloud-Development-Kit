@@ -10,12 +10,17 @@ export { RosInstance as InstanceProperty };
 export interface InstanceProps {
 
     /**
-     * Property instanceName: The instance name.
+     * Property instanceName: The name of the instance. The name can be up to 64 characters long.
      */
     readonly instanceName?: string | ros.IResolvable;
 
     /**
-     * Property instanceType: The Instance Type. Valid values: professional, enterprise, vip.
+     * Property instanceType: The instance type.
+     * This parameter is required for subscription instances. Valid values:
+     * - `professional`: Professional Edition
+     * - `enterprise`: Enterprise Edition
+     * - `vip`: Platinum Edition
+     * You do not need to specify this parameter for serverless instances.
      */
     readonly instanceType?: string | ros.IResolvable;
 
@@ -72,20 +77,29 @@ export interface InstanceProps {
     readonly storageSize?: number | ros.IResolvable;
 
     /**
-     * Property supportEip: Whether to support EIP. Valid values: true, false.
+     * Property supportEip: Specifies whether to enable access over the public network. Valid values:
+     * - `true`: Enables access over the public network.
+     * - `false`: Disables access over the public network.
      */
     readonly supportEip?: string | ros.IResolvable;
 
     /**
-     * Property supportTracing: Whether to support tracing. Valid values: true, false.
+     * Property supportTracing: Specifies whether to enable the message trace feature. Valid values:
+     * - `true`: Enables the message trace feature.
+     * - `false`: Disables the message trace feature.
+     * > * The message trace feature is included for 15 days at no charge on Platinum
+     * Edition instances. For these instances, you must enable this feature and set the
+     * retention period to 15 days.
+     * - For other instance types, you can enable or disable this feature.
      */
     readonly supportTracing?: string | ros.IResolvable;
 
     /**
-     * Property tracingStorageTime: The retention period of message traces was set. Valid values: 3, 7, 15.
-     * If instance_type=vip, the valid values is 15.
-     * If instance_type!=vip, the valid values is 3, 7, 15.
-     * If support_tracing == tracing_false, the valid values is 0.
+     * Property tracingStorageTime: The retention period of message traces. Unit: days. Valid values:
+     * - `3`
+     * - `7`
+     * - `15`
+     * This parameter is required if you set `SupportTracing` to `true`.
      */
     readonly tracingStorageTime?: number | ros.IResolvable;
 }
@@ -117,7 +131,7 @@ export interface IInstance extends ros.IResource {
     readonly attrPublicEndpoint: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Instance`, which is used to create an ApsaraMQ for RabbitMQ instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Instance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-instance
  */

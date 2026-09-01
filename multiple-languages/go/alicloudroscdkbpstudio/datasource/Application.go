@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::BPStudio::Application`, which is used to query the information about an application.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::BPStudio::Application`.
 type Application interface {
 	alicloudroscdkcore.Resource
 	IApplication

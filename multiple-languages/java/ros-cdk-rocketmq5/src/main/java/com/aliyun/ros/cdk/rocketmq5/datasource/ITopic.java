@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq5.datasource;
 /**
  * Represents a <code>Topic</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:40:34.133Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:21:18.899Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.datasource.ITopic")
 @software.amazon.jsii.Jsii.Proxy(ITopic.Jsii$Proxy.class)
 public interface ITopic extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

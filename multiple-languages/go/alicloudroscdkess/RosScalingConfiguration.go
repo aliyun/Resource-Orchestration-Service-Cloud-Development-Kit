@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingConfiguration`, which is used to create a scaling configuration for a scaling group.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingConfiguration`, which creates a scaling configuration for an Auto Scaling group.
 type RosScalingConfiguration interface {
 	alicloudroscdkcore.RosResource
 	Affinity() interface{}
@@ -18,6 +18,8 @@ type RosScalingConfiguration interface {
 	AttrScalingGroupId() alicloudroscdkcore.IResolvable
 	Cpu() interface{}
 	SetCpu(val interface{})
+	CpuOptions() interface{}
+	SetCpuOptions(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -321,6 +323,16 @@ func (j *jsiiProxy_RosScalingConfiguration) Cpu() interface{} {
 	_jsii_.Get(
 		j,
 		"cpu",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosScalingConfiguration) CpuOptions() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"cpuOptions",
 		&returns,
 	)
 	return returns
@@ -1032,6 +1044,17 @@ func (j *jsiiProxy_RosScalingConfiguration)SetCpu(val interface{}) {
 	_jsii_.Set(
 		j,
 		"cpu",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosScalingConfiguration)SetCpuOptions(val interface{}) {
+	if err := j.validateSetCpuOptionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"cpuOptions",
 		val,
 	)
 }

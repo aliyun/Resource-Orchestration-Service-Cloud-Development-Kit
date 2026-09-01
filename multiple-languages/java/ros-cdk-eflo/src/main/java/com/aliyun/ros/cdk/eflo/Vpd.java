@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eflo;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Eflo::Vpd</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:40:50.407Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:44:16.739Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eflo.$Module.class, fqn = "@alicloud/ros-cdk-eflo.Vpd")
 public class Vpd extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.eflo.IVpd {
 

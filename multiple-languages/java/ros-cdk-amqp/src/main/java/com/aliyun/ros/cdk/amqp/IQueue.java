@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * Represents a <code>Queue</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:25:35.808Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:03:33.241Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.IQueue")
 @software.amazon.jsii.Jsii.Proxy(IQueue.Jsii$Proxy.class)
 public interface IQueue extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

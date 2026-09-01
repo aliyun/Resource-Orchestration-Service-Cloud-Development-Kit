@@ -11,7 +11,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
     [JsiiInterface(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-amqp.InstanceProps")]
     public interface IInstanceProps
     {
-        /// <summary>Property instanceName: The instance name.</summary>
+        /// <summary>Property instanceName: The name of the instance.</summary>
+        /// <remarks>
+        /// The name can be up to 64 characters long.
+        /// </remarks>
         [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? InstanceName
@@ -22,9 +25,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             }
         }
 
-        /// <summary>Property instanceType: The Instance Type.</summary>
+        /// <summary>Property instanceType: The instance type.</summary>
         /// <remarks>
-        /// Valid values: professional, enterprise, vip.
+        /// This parameter is required for subscription instances. Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><c>professional</c>: Professional Edition</description>
+        /// <description><c>enterprise</c>: Enterprise Edition</description>
+        /// <description><c>vip</c>: Platinum Edition
+        /// You do not need to specify this parameter for serverless instances.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -154,9 +164,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             }
         }
 
-        /// <summary>Property supportEip: Whether to support EIP.</summary>
+        /// <summary>Property supportEip: Specifies whether to enable access over the public network.</summary>
         /// <remarks>
-        /// Valid values: true, false.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><c>true</c>: Enables access over the public network.</description>
+        /// <description><c>false</c>: Disables access over the public network.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "supportEip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -168,9 +183,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             }
         }
 
-        /// <summary>Property supportTracing: Whether to support tracing.</summary>
+        /// <summary>Property supportTracing: Specifies whether to enable the message trace feature.</summary>
         /// <remarks>
-        /// Valid values: true, false.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><c>true</c>: Enables the message trace feature.</description>
+        /// <description><c>false</c>: Disables the message trace feature.</description>
+        /// </list>
+        ///
+        ///     <list type="bullet">
+        ///     <description>The message trace feature is included for 15 days at no charge on Platinum
+        ///     Edition instances. For these instances, you must enable this feature and set the
+        ///     retention period to 15 days.</description>
+        ///     </list>
+        ///
+        /// <list type="bullet">
+        /// <description>For other instance types, you can enable or disable this feature.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "supportTracing", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -182,12 +212,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             }
         }
 
-        /// <summary>Property tracingStorageTime: The retention period of message traces was set.</summary>
+        /// <summary>Property tracingStorageTime: The retention period of message traces.</summary>
         /// <remarks>
-        /// Valid values: 3, 7, 15.
-        /// If instance_type=vip, the valid values is 15.
-        /// If instance_type!=vip, the valid values is 3, 7, 15.
-        /// If support_tracing == tracing_false, the valid values is 0.
+        /// Unit: days. Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><c>3</c></description>
+        /// <description><c>7</c></description>
+        /// <description><c>15</c>
+        /// This parameter is required if you set <c>SupportTracing</c> to <c>true</c>.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "tracingStorageTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -210,7 +244,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             {
             }
 
-            /// <summary>Property instanceName: The instance name.</summary>
+            /// <summary>Property instanceName: The name of the instance.</summary>
+            /// <remarks>
+            /// The name can be up to 64 characters long.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceName
@@ -218,9 +255,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property instanceType: The Instance Type.</summary>
+            /// <summary>Property instanceType: The instance type.</summary>
             /// <remarks>
-            /// Valid values: professional, enterprise, vip.
+            /// This parameter is required for subscription instances. Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description><c>professional</c>: Professional Edition</description>
+            /// <description><c>enterprise</c>: Enterprise Edition</description>
+            /// <description><c>vip</c>: Platinum Edition
+            /// You do not need to specify this parameter for serverless instances.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -323,9 +367,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property supportEip: Whether to support EIP.</summary>
+            /// <summary>Property supportEip: Specifies whether to enable access over the public network.</summary>
             /// <remarks>
-            /// Valid values: true, false.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description><c>true</c>: Enables access over the public network.</description>
+            /// <description><c>false</c>: Disables access over the public network.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "supportEip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -334,9 +383,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property supportTracing: Whether to support tracing.</summary>
+            /// <summary>Property supportTracing: Specifies whether to enable the message trace feature.</summary>
             /// <remarks>
-            /// Valid values: true, false.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description><c>true</c>: Enables the message trace feature.</description>
+            /// <description><c>false</c>: Disables the message trace feature.</description>
+            /// </list>
+            ///
+            ///     <list type="bullet">
+            ///     <description>The message trace feature is included for 15 days at no charge on Platinum
+            ///     Edition instances. For these instances, you must enable this feature and set the
+            ///     retention period to 15 days.</description>
+            ///     </list>
+            ///
+            /// <list type="bullet">
+            /// <description>For other instance types, you can enable or disable this feature.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "supportTracing", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -345,12 +409,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property tracingStorageTime: The retention period of message traces was set.</summary>
+            /// <summary>Property tracingStorageTime: The retention period of message traces.</summary>
             /// <remarks>
-            /// Valid values: 3, 7, 15.
-            /// If instance_type=vip, the valid values is 15.
-            /// If instance_type!=vip, the valid values is 3, 7, 15.
-            /// If support_tracing == tracing_false, the valid values is 0.
+            /// Unit: days. Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description><c>3</c></description>
+            /// <description><c>7</c></description>
+            /// <description><c>15</c>
+            /// This parameter is required if you set <c>SupportTracing</c> to <c>true</c>.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "tracingStorageTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

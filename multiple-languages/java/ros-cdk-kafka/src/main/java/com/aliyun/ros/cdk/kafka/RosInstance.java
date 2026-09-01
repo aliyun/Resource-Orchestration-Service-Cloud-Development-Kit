@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::KAFKA::Instance</code>, which is used to create an ApsaraMQ for Kafka instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:37:40.603Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:51:39.112Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -380,16 +380,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getDeployModule();
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getConfig() {
             return null;
         }
@@ -398,6 +388,13 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getCrossZone() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDeployModule() {
             return null;
         }
 
@@ -495,6 +492,13 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchIds() {
             return null;
         }
@@ -518,10 +522,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DeployOptionProperty> {
-            java.lang.Object deployModule;
-            java.lang.Object vSwitchId;
             java.lang.Object config;
             java.lang.Object crossZone;
+            java.lang.Object deployModule;
             java.lang.Object isEipInner;
             java.lang.Object isForceSelectedZones;
             java.lang.Object isSetUserAndPassword;
@@ -535,52 +538,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object username;
             java.lang.Object userPhoneNum;
             java.lang.Object vpcId;
+            java.lang.Object vSwitchId;
             java.lang.Object vSwitchIds;
             java.lang.Object zoneId;
-
-            /**
-             * Sets the value of {@link DeployOptionProperty#getDeployModule}
-             * @param deployModule the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder deployModule(java.lang.String deployModule) {
-                this.deployModule = deployModule;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link DeployOptionProperty#getDeployModule}
-             * @param deployModule the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder deployModule(com.aliyun.ros.cdk.core.IResolvable deployModule) {
-                this.deployModule = deployModule;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link DeployOptionProperty#getVSwitchId}
-             * @param vSwitchId the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder vSwitchId(java.lang.String vSwitchId) {
-                this.vSwitchId = vSwitchId;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link DeployOptionProperty#getVSwitchId}
-             * @param vSwitchId the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
-                this.vSwitchId = vSwitchId;
-                return this;
-            }
 
             /**
              * Sets the value of {@link DeployOptionProperty#getConfig}
@@ -623,6 +583,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder crossZone(com.aliyun.ros.cdk.core.IResolvable crossZone) {
                 this.crossZone = crossZone;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeployOptionProperty#getDeployModule}
+             * @param deployModule the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deployModule(java.lang.String deployModule) {
+                this.deployModule = deployModule;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeployOptionProperty#getDeployModule}
+             * @param deployModule the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deployModule(com.aliyun.ros.cdk.core.IResolvable deployModule) {
+                this.deployModule = deployModule;
                 return this;
             }
 
@@ -913,6 +895,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DeployOptionProperty#getVSwitchId}
+             * @param vSwitchId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchId(java.lang.String vSwitchId) {
+                this.vSwitchId = vSwitchId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeployOptionProperty#getVSwitchId}
+             * @param vSwitchId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+                this.vSwitchId = vSwitchId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DeployOptionProperty#getVSwitchIds}
              * @param vSwitchIds the value to be set.
              * @return {@code this}
@@ -974,10 +978,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DeployOptionProperty {
-            private final java.lang.Object deployModule;
-            private final java.lang.Object vSwitchId;
             private final java.lang.Object config;
             private final java.lang.Object crossZone;
+            private final java.lang.Object deployModule;
             private final java.lang.Object isEipInner;
             private final java.lang.Object isForceSelectedZones;
             private final java.lang.Object isSetUserAndPassword;
@@ -991,6 +994,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object username;
             private final java.lang.Object userPhoneNum;
             private final java.lang.Object vpcId;
+            private final java.lang.Object vSwitchId;
             private final java.lang.Object vSwitchIds;
             private final java.lang.Object zoneId;
 
@@ -1000,10 +1004,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.deployModule = software.amazon.jsii.Kernel.get(this, "deployModule", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.config = software.amazon.jsii.Kernel.get(this, "config", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.crossZone = software.amazon.jsii.Kernel.get(this, "crossZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.deployModule = software.amazon.jsii.Kernel.get(this, "deployModule", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.isEipInner = software.amazon.jsii.Kernel.get(this, "isEipInner", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.isForceSelectedZones = software.amazon.jsii.Kernel.get(this, "isForceSelectedZones", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.isSetUserAndPassword = software.amazon.jsii.Kernel.get(this, "isSetUserAndPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1017,6 +1020,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 this.username = software.amazon.jsii.Kernel.get(this, "username", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.userPhoneNum = software.amazon.jsii.Kernel.get(this, "userPhoneNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
@@ -1026,10 +1030,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.deployModule = java.util.Objects.requireNonNull(builder.deployModule, "deployModule is required");
-                this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
                 this.config = builder.config;
                 this.crossZone = builder.crossZone;
+                this.deployModule = builder.deployModule;
                 this.isEipInner = builder.isEipInner;
                 this.isForceSelectedZones = builder.isForceSelectedZones;
                 this.isSetUserAndPassword = builder.isSetUserAndPassword;
@@ -1043,18 +1046,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 this.username = builder.username;
                 this.userPhoneNum = builder.userPhoneNum;
                 this.vpcId = builder.vpcId;
+                this.vSwitchId = builder.vSwitchId;
                 this.vSwitchIds = builder.vSwitchIds;
                 this.zoneId = builder.zoneId;
-            }
-
-            @Override
-            public final java.lang.Object getDeployModule() {
-                return this.deployModule;
-            }
-
-            @Override
-            public final java.lang.Object getVSwitchId() {
-                return this.vSwitchId;
             }
 
             @Override
@@ -1065,6 +1059,11 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getCrossZone() {
                 return this.crossZone;
+            }
+
+            @Override
+            public final java.lang.Object getDeployModule() {
+                return this.deployModule;
             }
 
             @Override
@@ -1133,6 +1132,11 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getVSwitchId() {
+                return this.vSwitchId;
+            }
+
+            @Override
             public final java.lang.Object getVSwitchIds() {
                 return this.vSwitchIds;
             }
@@ -1148,13 +1152,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("deployModule", om.valueToTree(this.getDeployModule()));
-                data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
                 if (this.getConfig() != null) {
                     data.set("config", om.valueToTree(this.getConfig()));
                 }
                 if (this.getCrossZone() != null) {
                     data.set("crossZone", om.valueToTree(this.getCrossZone()));
+                }
+                if (this.getDeployModule() != null) {
+                    data.set("deployModule", om.valueToTree(this.getDeployModule()));
                 }
                 if (this.getIsEipInner() != null) {
                     data.set("isEipInner", om.valueToTree(this.getIsEipInner()));
@@ -1195,6 +1200,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getVpcId() != null) {
                     data.set("vpcId", om.valueToTree(this.getVpcId()));
                 }
+                if (this.getVSwitchId() != null) {
+                    data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
+                }
                 if (this.getVSwitchIds() != null) {
                     data.set("vSwitchIds", om.valueToTree(this.getVSwitchIds()));
                 }
@@ -1219,10 +1227,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
                 DeployOptionProperty.Jsii$Proxy that = (DeployOptionProperty.Jsii$Proxy) o;
 
-                if (!deployModule.equals(that.deployModule)) return false;
-                if (!vSwitchId.equals(that.vSwitchId)) return false;
                 if (this.config != null ? !this.config.equals(that.config) : that.config != null) return false;
                 if (this.crossZone != null ? !this.crossZone.equals(that.crossZone) : that.crossZone != null) return false;
+                if (this.deployModule != null ? !this.deployModule.equals(that.deployModule) : that.deployModule != null) return false;
                 if (this.isEipInner != null ? !this.isEipInner.equals(that.isEipInner) : that.isEipInner != null) return false;
                 if (this.isForceSelectedZones != null ? !this.isForceSelectedZones.equals(that.isForceSelectedZones) : that.isForceSelectedZones != null) return false;
                 if (this.isSetUserAndPassword != null ? !this.isSetUserAndPassword.equals(that.isSetUserAndPassword) : that.isSetUserAndPassword != null) return false;
@@ -1236,16 +1243,16 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.username != null ? !this.username.equals(that.username) : that.username != null) return false;
                 if (this.userPhoneNum != null ? !this.userPhoneNum.equals(that.userPhoneNum) : that.userPhoneNum != null) return false;
                 if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
+                if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
                 if (this.vSwitchIds != null ? !this.vSwitchIds.equals(that.vSwitchIds) : that.vSwitchIds != null) return false;
                 return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.deployModule.hashCode();
-                result = 31 * result + (this.vSwitchId.hashCode());
-                result = 31 * result + (this.config != null ? this.config.hashCode() : 0);
+                int result = this.config != null ? this.config.hashCode() : 0;
                 result = 31 * result + (this.crossZone != null ? this.crossZone.hashCode() : 0);
+                result = 31 * result + (this.deployModule != null ? this.deployModule.hashCode() : 0);
                 result = 31 * result + (this.isEipInner != null ? this.isEipInner.hashCode() : 0);
                 result = 31 * result + (this.isForceSelectedZones != null ? this.isForceSelectedZones.hashCode() : 0);
                 result = 31 * result + (this.isSetUserAndPassword != null ? this.isSetUserAndPassword.hashCode() : 0);
@@ -1259,6 +1266,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.username != null ? this.username.hashCode() : 0);
                 result = 31 * result + (this.userPhoneNum != null ? this.userPhoneNum.hashCode() : 0);
                 result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
+                result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
                 result = 31 * result + (this.vSwitchIds != null ? this.vSwitchIds.hashCode() : 0);
                 result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
                 return result;

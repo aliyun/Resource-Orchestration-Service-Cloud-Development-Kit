@@ -39,7 +39,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
         }
 
-        /// <summary>Property dkmsInstanceId: The ID of the dedicated KMS instance.</summary>
+        /// <summary>Property dkmsInstanceId: The ID of the KMS instance.</summary>
+        /// <remarks>
+        ///     This parameter is required when you create a key for a KMS instance. This
+        ///     parameter is not required when you create a default key (master key).
+        /// </remarks>
         [JsiiProperty(name: "dkmsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DkmsInstanceId
@@ -134,11 +138,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
         }
 
-        /// <summary>Property protectionLevel: The protection level of the CMK to create.</summary>
+        /// <summary>Property protectionLevel: You do not need to specify this parameter.</summary>
         /// <remarks>
-        /// Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
-        /// If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
-        /// If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
+        /// KMS automatically sets an appropriate
+        /// protection level for your key.
+        /// The protection level of the key. Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>SOFTWARE</description>
+        /// <description>HSM</description>
+        /// </list>
+        ///
+        ///     <list type="bullet">
+        ///     <description>If you specify DKMSInstanceId, this parameter is ignored. If the instance is
+        ///     a software key management instance, the protection level is SOFTWARE. If the
+        ///     instance is a hardware key management instance, the protection level is HSM.</description>
+        ///     </list>
+        ///
+        /// <list type="bullet">
+        /// <description>If you do not specify DKMSInstanceId, leave this parameter empty. KMS sets the
+        /// protection level. If a managed HSM is available in the region, KMS sets this
+        /// parameter to HSM. Otherwise, KMS sets this parameter to SOFTWARE. For more
+        /// information, see <a href="">Managed HSM overview</a>.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "protectionLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -150,9 +172,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
         }
 
-        /// <summary>Property rotationInterval: The time period for automatic rotation.</summary>
+        /// <summary>Property rotationInterval: The automatic rotation period.</summary>
         /// <remarks>
-        /// The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
+        /// The format is <c>integer[unit]</c>. <c>integer</c>
+        /// indicates the length of the period. <c>unit</c> indicates the unit of time. Valid
+        /// units: d (day), h (hour), m (minute), and s (second). For example, both 7d and
+        /// 604800s represent a period of 7 days.
+        ///
+        /// <list type="bullet">
+        /// <description>If the key is a default key, the value is 365d.</description>
+        /// <description>If the key is a software-protected key, the value can be from 7d to 365d.</description>
+        /// <description>If the key is a hardware-protected key, automatic rotation is not supported.</description>
+        /// </list>
+        ///
+        ///     This parameter is required if you set EnableAutomaticRotation to true.
         /// </remarks>
         [JsiiProperty(name: "rotationInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -211,7 +244,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property dkmsInstanceId: The ID of the dedicated KMS instance.</summary>
+            /// <summary>Property dkmsInstanceId: The ID of the KMS instance.</summary>
+            /// <remarks>
+            ///     This parameter is required when you create a key for a KMS instance. This
+            ///     parameter is not required when you create a default key (master key).
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dkmsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DkmsInstanceId
@@ -285,11 +322,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property protectionLevel: The protection level of the CMK to create.</summary>
+            /// <summary>Property protectionLevel: You do not need to specify this parameter.</summary>
             /// <remarks>
-            /// Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
-            /// If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
-            /// If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
+            /// KMS automatically sets an appropriate
+            /// protection level for your key.
+            /// The protection level of the key. Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>SOFTWARE</description>
+            /// <description>HSM</description>
+            /// </list>
+            ///
+            ///     <list type="bullet">
+            ///     <description>If you specify DKMSInstanceId, this parameter is ignored. If the instance is
+            ///     a software key management instance, the protection level is SOFTWARE. If the
+            ///     instance is a hardware key management instance, the protection level is HSM.</description>
+            ///     </list>
+            ///
+            /// <list type="bullet">
+            /// <description>If you do not specify DKMSInstanceId, leave this parameter empty. KMS sets the
+            /// protection level. If a managed HSM is available in the region, KMS sets this
+            /// parameter to HSM. Otherwise, KMS sets this parameter to SOFTWARE. For more
+            /// information, see <a href="">Managed HSM overview</a>.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "protectionLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -298,9 +353,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property rotationInterval: The time period for automatic rotation.</summary>
+            /// <summary>Property rotationInterval: The automatic rotation period.</summary>
             /// <remarks>
-            /// The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
+            /// The format is <c>integer[unit]</c>. <c>integer</c>
+            /// indicates the length of the period. <c>unit</c> indicates the unit of time. Valid
+            /// units: d (day), h (hour), m (minute), and s (second). For example, both 7d and
+            /// 604800s represent a period of 7 days.
+            ///
+            /// <list type="bullet">
+            /// <description>If the key is a default key, the value is 365d.</description>
+            /// <description>If the key is a software-protected key, the value can be from 7d to 365d.</description>
+            /// <description>If the key is a hardware-protected key, automatic rotation is not supported.</description>
+            /// </list>
+            ///
+            ///     This parameter is required if you set EnableAutomaticRotation to true.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "rotationInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

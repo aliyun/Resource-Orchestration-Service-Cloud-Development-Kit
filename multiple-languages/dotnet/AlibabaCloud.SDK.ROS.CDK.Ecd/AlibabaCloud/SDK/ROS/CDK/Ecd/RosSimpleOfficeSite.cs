@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecd
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`, which is used to create a workspace of the convenience account type.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `SimpleOfficeSite` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
@@ -212,7 +212,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0\/12, 172.16.0.0\/12, 192.168.0.0\/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0\/12 or 172.16.0.0\/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0\/16, the mask is 1624 bits in length.
+        /// <strong>Property</strong>: cidrBlock: The IPv4 CIDR block for the office site's Virtual Private Cloud (VPC). This
+        /// parameter is required for standard office sites. The system automatically creates
+        /// a VPC based on the specified IPv4 CIDR block. Use one of the following CIDR
+        /// blocks or their subnets:
+        /// - `10.0.0.0\/12` (The valid mask range is 12 to 24 bits.)
+        /// - `172.16.0.0\/12` (The valid mask range is 12 to 24 bits.)
+        /// - `192.168.0.0\/16` (The valid mask range is 16 to 24 bits.)
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "cidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

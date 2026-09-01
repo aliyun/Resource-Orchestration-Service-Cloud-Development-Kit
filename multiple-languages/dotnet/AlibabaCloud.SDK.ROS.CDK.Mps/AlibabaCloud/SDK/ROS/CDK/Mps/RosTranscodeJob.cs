@@ -76,7 +76,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mps
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: input: The input configuration of the job. For more information, see Input details.
+        /// <strong>Property</strong>: input: Job input.
+        /// > - In ApsaraVideo Media Processing APIs, the Object value must be URL-encoded
+        /// using UTF-8 encoding.
+        /// - The OSS region must match the region where MPS is deployed.
         /// </remarks>
         [JsiiProperty(name: "input", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}")]
         public virtual object Input
@@ -196,7 +199,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mps
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: outputLocation: The region of the OSS bucket where the output files are stored.
+        /// <strong>Property</strong>: outputLocation: The OSS region (OSS Region) where the output bucket resides.
+        /// - The OSS bucket must be in the same region as the ApsaraVideo Media Processing
+        /// service.
+        /// - Follows the OSS bucket definition.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "outputLocation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

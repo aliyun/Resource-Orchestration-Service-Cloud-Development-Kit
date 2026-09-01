@@ -35,12 +35,14 @@ type ApplicationProps struct {
 	PredefinedScopes interface{} `field:"optional" json:"predefinedScopes" yaml:"predefinedScopes"`
 	// Property redirectUris: List of the callback URLs.
 	RedirectUris interface{} `field:"optional" json:"redirectUris" yaml:"redirectUris"`
-	// Property refreshTokenValidity: The validity period of the refreshed token.
+	// Property refreshTokenValidity: The validity period of the refresh token.
 	//
 	// Valid values: 7200 to 31536000. Unit: seconds.
 	// Default value:
-	// - For applications of the WebApp and ServerApp types, if this parameter is left empty, the value 2592000 is used. The value 2592000 indicates that the validity period of the refreshed token is 30 days.
-	// - For applications of the NativeApp type, if this parameter is left empty, the value 7776000 is used. The value 7776000 indicates that the validity period of the refreshed token is 90 days.
+	// - If not specified, the default value is 2,592,000 seconds (30 days) for
+	// NativeApp and ServerApp applications.
+	// - If not specified, the default value is 7,776,000 seconds (90 days) for WebApp
+	// applications.
 	RefreshTokenValidity interface{} `field:"optional" json:"refreshTokenValidity" yaml:"refreshTokenValidity"`
 	// Property requiredScopes: Required scope of application permissions.
 	//

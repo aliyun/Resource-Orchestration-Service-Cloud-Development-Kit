@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudstoragegateway;
 /**
  * Represents a <code>ExpressSync</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:55:20.334Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:43:59.786Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudstoragegateway.$Module.class, fqn = "@alicloud/ros-cdk-cloudstoragegateway.IExpressSync")
 @software.amazon.jsii.Jsii.Proxy(IExpressSync.Jsii$Proxy.class)
 public interface IExpressSync extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

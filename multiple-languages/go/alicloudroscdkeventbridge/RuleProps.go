@@ -7,7 +7,11 @@ package alicloudroscdkeventbridge
 type RuleProps struct {
 	// Property eventBusName: The name of the event bus.
 	EventBusName interface{} `field:"required" json:"eventBusName" yaml:"eventBusName"`
-	// Property filterPattern: The event pattern, in the JSON format.
+	// Property filterPattern: The event pattern, in JSON format.
+	//
+	// Supported pattern types are `stringEqual` and
+	// `stringExpression`. Each field can contain a maximum of five expressions in a map
+	// structure.
 	FilterPattern interface{} `field:"required" json:"filterPattern" yaml:"filterPattern"`
 	// Property ruleName: The name of the event rule.
 	RuleName interface{} `field:"required" json:"ruleName" yaml:"ruleName"`

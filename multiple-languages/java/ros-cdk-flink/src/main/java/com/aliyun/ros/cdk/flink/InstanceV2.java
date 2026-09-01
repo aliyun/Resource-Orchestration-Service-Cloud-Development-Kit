@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.flink;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::Flink::InstanceV2</code>The , which resource creates a fully managed Flink workspace.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::Flink::InstanceV2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:06:21.241Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:13:20.915Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.InstanceV2")
 public class InstanceV2 extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.flink.IInstanceV2 {
 
@@ -153,20 +153,26 @@ public class InstanceV2 extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property instanceName: The name of instance.
+         * Property instanceName: The name of the workspace.
+         * <p>
+         * The name must start with a lowercase letter, can
+         * contain lowercase letters, digits, and hyphens (-), and cannot end with a hyphen.
          * <p>
          * @return {@code this}
-         * @param instanceName Property instanceName: The name of instance. This parameter is required.
+         * @param instanceName Property instanceName: The name of the workspace. This parameter is required.
          */
         public Builder instanceName(final java.lang.String instanceName) {
             this.props.instanceName(instanceName);
             return this;
         }
         /**
-         * Property instanceName: The name of instance.
+         * Property instanceName: The name of the workspace.
+         * <p>
+         * The name must start with a lowercase letter, can
+         * contain lowercase letters, digits, and hyphens (-), and cannot end with a hyphen.
          * <p>
          * @return {@code this}
-         * @param instanceName Property instanceName: The name of instance. This parameter is required.
+         * @param instanceName Property instanceName: The name of the workspace. This parameter is required.
          */
         public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
             this.props.instanceName(instanceName);
@@ -174,24 +180,20 @@ public class InstanceV2 extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property storage: Resource specifications.
-         * <p>
-         * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+         * Property storage: The storage parameters.
          * <p>
          * @return {@code this}
-         * @param storage Property storage: Resource specifications. This parameter is required.
+         * @param storage Property storage: The storage parameters. This parameter is required.
          */
         public Builder storage(final com.aliyun.ros.cdk.core.IResolvable storage) {
             this.props.storage(storage);
             return this;
         }
         /**
-         * Property storage: Resource specifications.
-         * <p>
-         * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+         * Property storage: The storage parameters.
          * <p>
          * @return {@code this}
-         * @param storage Property storage: Resource specifications. This parameter is required.
+         * @param storage Property storage: The storage parameters. This parameter is required.
          */
         public Builder storage(final com.aliyun.ros.cdk.flink.RosInstanceV2.StorageProperty storage) {
             this.props.storage(storage);
@@ -262,24 +264,46 @@ public class InstanceV2 extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal.
+         * Property autoRenew: Specifies whether to enable auto-renewal.
          * <p>
-         * false: Manual renewal.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: Auto-renewal is enabled.</li>
+         * <li>false: Auto-renewal is disabled. This is the default value.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter does not take effect for pay-as-you-go instances.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoRenew Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal. This parameter is required.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal. This parameter is required.
          */
         public Builder autoRenew(final java.lang.Boolean autoRenew) {
             this.props.autoRenew(autoRenew);
             return this;
         }
         /**
-         * Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal.
+         * Property autoRenew: Specifies whether to enable auto-renewal.
          * <p>
-         * false: Manual renewal.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: Auto-renewal is enabled.</li>
+         * <li>false: Auto-renewal is disabled. This is the default value.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter does not take effect for pay-as-you-go instances.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoRenew Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal. This parameter is required.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal. This parameter is required.
          */
         public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
             this.props.autoRenew(autoRenew);

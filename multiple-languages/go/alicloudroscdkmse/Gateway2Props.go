@@ -25,13 +25,13 @@ type Gateway2Props struct {
 	// privatenet: private network
 	// privatepubnet: Internet and private network.
 	ClbNetworkType interface{} `field:"optional" json:"clbNetworkType" yaml:"clbNetworkType"`
-	// Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.
+	// Property enableHardwareAcceleration: Specifies whether to enable hardware acceleration.
 	EnableHardwareAcceleration interface{} `field:"optional" json:"enableHardwareAcceleration" yaml:"enableHardwareAcceleration"`
 	// Property enableSls: Specifies whether to activate Log Service.
 	EnableSls interface{} `field:"optional" json:"enableSls" yaml:"enableSls"`
 	// Property enableXtrace: Whether to activate Tracing Analysis.
 	EnableXtrace interface{} `field:"optional" json:"enableXtrace" yaml:"enableXtrace"`
-	// Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.
+	// Property enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group.
 	EnterpriseSecurityGroup interface{} `field:"optional" json:"enterpriseSecurityGroup" yaml:"enterpriseSecurityGroup"`
 	// Property internetSlb: Public network SLB specifications (for normal instances).
 	//
@@ -45,11 +45,11 @@ type Gateway2Props struct {
 	InternetSlb interface{} `field:"optional" json:"internetSlb" yaml:"internetSlb"`
 	// Property managedEntryNetworkType: Gateway entrance type (applicable to the mse_premium instance) pubnet: public network privatenet: privatenet privatepubnet: public + private network.
 	ManagedEntryNetworkType interface{} `field:"optional" json:"managedEntryNetworkType" yaml:"managedEntryNetworkType"`
-	// Property mserVersion: The MSE gateway instance type.
+	// Property mserVersion: The edition of the gateway.
 	//
-	// Valid values:
-	// mse_pro: normal instance
-	// mse_premium: professional normal instancemse_serverless: serverless instance.
+	// - `mse_premium`: Professional Edition
+	// - `mse_pro`: Standard Edition
+	// - `mse_serverless`: Serverless Edition.
 	MserVersion interface{} `field:"optional" json:"mserVersion" yaml:"mserVersion"`
 	// Property name: The name of the created gateway.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`

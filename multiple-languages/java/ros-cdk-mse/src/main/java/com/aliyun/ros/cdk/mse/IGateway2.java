@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * Represents a <code>Gateway2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.343Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:13:41.701Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.IGateway2")
 @software.amazon.jsii.Jsii.Proxy(IGateway2.Jsii$Proxy.class)
 public interface IGateway2 extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

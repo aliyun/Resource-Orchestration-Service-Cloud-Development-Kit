@@ -5,15 +5,16 @@ package com.aliyun.ros.cdk.kms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-alias
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:39:52.846Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:55:06.309Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.AliasProps")
 @software.amazon.jsii.Jsii.Proxy(AliasProps.Jsii$Proxy.class)
 public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property aliasName: - The display name of the key.
+     * Property aliasName: The alias of the CMK.
      * <p>
-     * You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
+     * The alias must be 1 to 255 characters in length and must contain the prefix
+     * <code>alias\/</code>. The alias cannot be prefixed with the reserved word <code>alias\/acs</code>.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAliasName();
 
@@ -37,8 +38,9 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AliasProps#getAliasName}
-         * @param aliasName Property aliasName: - The display name of the key. This parameter is required.
-         *                  You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
+         * @param aliasName Property aliasName: The alias of the CMK. This parameter is required.
+         *                  The alias must be 1 to 255 characters in length and must contain the prefix
+         *                  <code>alias\/</code>. The alias cannot be prefixed with the reserved word <code>alias\/acs</code>.
          * @return {@code this}
          */
         public Builder aliasName(java.lang.String aliasName) {
@@ -48,8 +50,9 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AliasProps#getAliasName}
-         * @param aliasName Property aliasName: - The display name of the key. This parameter is required.
-         *                  You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
+         * @param aliasName Property aliasName: The alias of the CMK. This parameter is required.
+         *                  The alias must be 1 to 255 characters in length and must contain the prefix
+         *                  <code>alias\/</code>. The alias cannot be prefixed with the reserved word <code>alias\/acs</code>.
          * @return {@code this}
          */
         public Builder aliasName(com.aliyun.ros.cdk.core.IResolvable aliasName) {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-customdomains
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:13:35.454Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:20:02.240Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.datasource.RosCustomDomainsProps")
 @software.amazon.jsii.Jsii.Proxy(RosCustomDomainsProps.Jsii$Proxy.class)
 public interface RosCustomDomainsProps extends software.amazon.jsii.JsiiSerializable {

@@ -131,7 +131,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 
         private object? _clientIds;
 
-        /// <summary>Property clientIds: The list of the client IDs, max length is 20.</summary>
+        /// <summary>Property clientIds: The ID of the client, which is provided by the external IdP.</summary>
+        /// <remarks>
+        /// If you want to
+        /// specify multiple client IDs, separate the client IDs with commas (,).
+        /// The client ID can contain letters, digits, and special characters and cannot
+        /// start with the special characters. The special characters are <c>periods (.), hyphens (-), underscores (_), colons (:), and forward slashes (\/)</c>.``
+        /// The client ID can be up to 128 characters in length.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "clientIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? ClientIds

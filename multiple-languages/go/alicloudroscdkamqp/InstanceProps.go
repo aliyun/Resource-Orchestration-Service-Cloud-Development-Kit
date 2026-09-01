@@ -5,11 +5,17 @@ package alicloudroscdkamqp
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-instance
 type InstanceProps struct {
-	// Property instanceName: The instance name.
-	InstanceName interface{} `field:"optional" json:"instanceName" yaml:"instanceName"`
-	// Property instanceType: The Instance Type.
+	// Property instanceName: The name of the instance.
 	//
-	// Valid values: professional, enterprise, vip.
+	// The name can be up to 64 characters long.
+	InstanceName interface{} `field:"optional" json:"instanceName" yaml:"instanceName"`
+	// Property instanceType: The instance type.
+	//
+	// This parameter is required for subscription instances. Valid values:
+	// - `professional`: Professional Edition
+	// - `enterprise`: Enterprise Edition
+	// - `vip`: Platinum Edition
+	// You do not need to specify this parameter for serverless instances.
 	InstanceType interface{} `field:"optional" json:"instanceType" yaml:"instanceType"`
 	// Property maxEipTps: The max eip tps.
 	//
@@ -50,20 +56,29 @@ type InstanceProps struct {
 	// It is valid when instance_type is vip.
 	// If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
 	StorageSize interface{} `field:"optional" json:"storageSize" yaml:"storageSize"`
-	// Property supportEip: Whether to support EIP.
+	// Property supportEip: Specifies whether to enable access over the public network.
 	//
-	// Valid values: true, false.
+	// Valid values:
+	// - `true`: Enables access over the public network.
+	// - `false`: Disables access over the public network.
 	SupportEip interface{} `field:"optional" json:"supportEip" yaml:"supportEip"`
-	// Property supportTracing: Whether to support tracing.
+	// Property supportTracing: Specifies whether to enable the message trace feature.
 	//
-	// Valid values: true, false.
+	// Valid values:
+	// - `true`: Enables the message trace feature.
+	// - `false`: Disables the message trace feature.
+	// > * The message trace feature is included for 15 days at no charge on Platinum
+	// Edition instances. For these instances, you must enable this feature and set the
+	// retention period to 15 days.
+	// - For other instance types, you can enable or disable this feature.
 	SupportTracing interface{} `field:"optional" json:"supportTracing" yaml:"supportTracing"`
-	// Property tracingStorageTime: The retention period of message traces was set.
+	// Property tracingStorageTime: The retention period of message traces.
 	//
-	// Valid values: 3, 7, 15.
-	// If instance_type=vip, the valid values is 15.
-	// If instance_type!=vip, the valid values is 3, 7, 15.
-	// If support_tracing == tracing_false, the valid values is 0.
+	// Unit: days. Valid values:
+	// - `3`
+	// - `7`
+	// - `15`
+	// This parameter is required if you set `SupportTracing` to `true`.
 	TracingStorageTime interface{} `field:"optional" json:"tracingStorageTime" yaml:"tracingStorageTime"`
 }
 

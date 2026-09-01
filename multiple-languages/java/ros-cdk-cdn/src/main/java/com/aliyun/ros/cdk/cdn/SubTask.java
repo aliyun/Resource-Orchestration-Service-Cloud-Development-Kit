@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDN::SubTask</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:42:42.271Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:28:08.627Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.SubTask")
 public class SubTask extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cdn.ISubTask {
 
@@ -104,24 +104,60 @@ public class SubTask extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property reportIds: The report IDs.
+         * Property reportIds: The IDs of the metrics that you want to include in the report.
          * <p>
-         * The value can be up to 128 bytes in length.
+         * Separate multiple
+         * IDs with commas (,). Valid values:
+         * <p>
+         * <ul>
+         * <li>1: frequently requested URLs (ranked by the number of requests)</li>
+         * <li>3: frequently requested URLs (ranked by the amount of network traffic)</li>
+         * <li>5: frequently used Referer headers (ranked by the number of requests)</li>
+         * <li>7: frequently used Referer headers (ranked by the amount of network traffic)</li>
+         * <li>9: frequently requested URLs that are redirected to the origin (ranked by the
+         * number of requests)</li>
+         * <li>11: frequently requested URLs that are redirected to the origin (ranked by the
+         * amount of network traffic)</li>
+         * <li>13: top client IP addresses (ranked by the number of requests)</li>
+         * <li>15: top client IP addresses (ranked by the amount of network traffic)</li>
+         * <li>17: domain names ranked by the amount of network traffic</li>
+         * <li>19: page views and unique visitors</li>
+         * <li>21: regions from which requests are initiated</li>
+         * <li>23: Internet service providers (ISPs)</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param reportIds Property reportIds: The report IDs. This parameter is required.
+         * @param reportIds Property reportIds: The IDs of the metrics that you want to include in the report. This parameter is required.
          */
         public Builder reportIds(final com.aliyun.ros.cdk.core.IResolvable reportIds) {
             this.props.reportIds(reportIds);
             return this;
         }
         /**
-         * Property reportIds: The report IDs.
+         * Property reportIds: The IDs of the metrics that you want to include in the report.
          * <p>
-         * The value can be up to 128 bytes in length.
+         * Separate multiple
+         * IDs with commas (,). Valid values:
+         * <p>
+         * <ul>
+         * <li>1: frequently requested URLs (ranked by the number of requests)</li>
+         * <li>3: frequently requested URLs (ranked by the amount of network traffic)</li>
+         * <li>5: frequently used Referer headers (ranked by the number of requests)</li>
+         * <li>7: frequently used Referer headers (ranked by the amount of network traffic)</li>
+         * <li>9: frequently requested URLs that are redirected to the origin (ranked by the
+         * number of requests)</li>
+         * <li>11: frequently requested URLs that are redirected to the origin (ranked by the
+         * amount of network traffic)</li>
+         * <li>13: top client IP addresses (ranked by the number of requests)</li>
+         * <li>15: top client IP addresses (ranked by the amount of network traffic)</li>
+         * <li>17: domain names ranked by the amount of network traffic</li>
+         * <li>19: page views and unique visitors</li>
+         * <li>21: regions from which requests are initiated</li>
+         * <li>23: Internet service providers (ISPs)</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param reportIds Property reportIds: The report IDs. This parameter is required.
+         * @param reportIds Property reportIds: The IDs of the metrics that you want to include in the report. This parameter is required.
          */
         public Builder reportIds(final java.util.List<? extends java.lang.Object> reportIds) {
             this.props.reportIds(reportIds);
@@ -129,20 +165,42 @@ public class SubTask extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property domainName: The domain name.
+         * Property domainName: The domain names to be tracked.
+         * <p>
+         * Separate multiple domain names with commas (,).
+         * You can specify up to 500 domain names. If you want to specify more than 500
+         * domain names, submit a ticket.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you do not specify a domain name, the custom operations report is created
+         * for all domain names that belong to your account.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param domainName Property domainName: The domain name. This parameter is required.
+         * @param domainName Property domainName: The domain names to be tracked. This parameter is required.
          */
         public Builder domainName(final java.lang.String domainName) {
             this.props.domainName(domainName);
             return this;
         }
         /**
-         * Property domainName: The domain name.
+         * Property domainName: The domain names to be tracked.
+         * <p>
+         * Separate multiple domain names with commas (,).
+         * You can specify up to 500 domain names. If you want to specify more than 500
+         * domain names, submit a ticket.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you do not specify a domain name, the custom operations report is created
+         * for all domain names that belong to your account.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param domainName Property domainName: The domain name. This parameter is required.
+         * @param domainName Property domainName: The domain names to be tracked. This parameter is required.
          */
         public Builder domainName(final com.aliyun.ros.cdk.core.IResolvable domainName) {
             this.props.domainName(domainName);

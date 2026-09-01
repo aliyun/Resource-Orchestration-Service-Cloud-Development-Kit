@@ -40,7 +40,7 @@ export interface IClusterNodePools extends ros.IResource {
     readonly attrNodePools: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterNodePools`, which is used to query the information about all node pools in a Container Service for Kubernetes (ACK) cluster.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterNodePools`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterNodePools`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusternodepools
  */

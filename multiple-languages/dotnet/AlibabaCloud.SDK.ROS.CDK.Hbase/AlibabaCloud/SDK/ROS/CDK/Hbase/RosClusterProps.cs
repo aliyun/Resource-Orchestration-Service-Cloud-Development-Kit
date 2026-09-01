@@ -118,11 +118,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
         private object _nodeCount;
 
         /// <remarks>
-        /// <strong>Property</strong>: nodeCount: The number of nodes. Valid values: 1 to 100.
-        /// ApsaraDB for HBase in single-node mode: one node
-        /// ApsaraDB for HBase that runs in cluster mode and uses disks: at least two nodes
-        /// ApsaraDB for HBase that runs in cluster mode and uses local disks: at least three
-        /// nodes
+        /// <strong>Property</strong>: nodeCount: The number of core nodes. Valid values are as follows:
+        /// <ul>
+        /// <li>If the instance is a single node, the number of core nodes is fixed at
+        /// 1.<\/li>
+        /// <li>If the instance uses disks, the number of core nodes ranges from 2 to
+        /// 100.<\/li>
+        /// <li>If the instance uses local disks, the number of core nodes ranges from 4 to
+        /// 100.<\/li>
+        /// <\/ul>
         /// </remarks>
         [JsiiProperty(name: "nodeCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object NodeCount
@@ -297,9 +301,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
         private object? _clusterName;
 
         /// <remarks>
-        /// <strong>Property</strong>: clusterName: The name of the instance.
-        /// The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-        /// (.), underscores (_), and hyphens (-). It must start with a letter.
+        /// <strong>Property</strong>: clusterName: Instance name. The naming convention is as follows:
+        /// - Length must be 2 to 128 characters.
+        /// - Must start with a letter (uppercase or lowercase) or a Chinese character.
+        /// - Can contain digits or special characters. Valid special characters include the
+        /// period (.), hyphen (-), and underscore (_).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -332,10 +338,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
         private object? _coldStorageSize;
 
         /// <remarks>
-        /// <strong>Property</strong>: coldStorageSize: The size of cold data storage.
-        /// If this parameter is set to 0, cold data storage is disabled.
-        /// If this parameter is set to a value greater than 0, cold data storage is enabled.
-        /// The storage size ranges from 800 GB to 100,000 GB and the step size is 10 GB.
+        /// <strong>Property</strong>: coldStorageSize: The cold storage capacity of the instance, in GB. Valid values are as follows:
+        /// - 0: Indicates that cold storage is disabled.
+        /// - 800 to 1 000 000: Indicates that cold storage is enabled.
+        /// > Cold storage is effective only when the engine type of the instance is hbaseue.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "coldStorageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -595,12 +601,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
         private object? _period;
 
         /// <remarks>
-        /// <strong>Property</strong>: period: The subscription period.
-        /// This parameter only takes effect when the PayType parameter is set to Prepaid.
-        /// When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-        /// from 1 to 5.
-        /// When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-        /// from 1 to 9.
+        /// <strong>Property</strong>: period: The subscription duration of a subscription instance. Valid values:
+        /// - When PeriodUnit is year, the value range is 1 to 3.
+        /// - When PeriodUnit is month, the value range is 1 to 9.
+        /// > This parameter is required only when the payment type of the instance is
+        /// Prepaid.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -653,9 +658,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
         private object? _periodUnit;
 
         /// <remarks>
-        /// <strong>Property</strong>: periodUnit: The unit of the subscription period. Valid values:
-        /// year
-        /// month
+        /// <strong>Property</strong>: periodUnit: The purchase unit for subscription instances. Valid values:
+        /// - year: Year.
+        /// - month: Month.
+        /// > This parameter is required only when the payment type of the instance is
+        /// Prepaid.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -723,8 +730,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
         private object? _securityIpList;
 
         /// <remarks>
-        /// <strong>Property</strong>: securityIpList: The IP addresses in the whitelist. Example: 192.168.*.*\/24. The 0.0.0.0\/0 value cannot
-        /// be added to the whitelist. Separate multiple IP addresses with commas (,).
+        /// <strong>Property</strong>: securityIpList: The IP addresses to add to the instance whitelist. Separate multiple IP addresses
+        /// with commas (,).
+        /// > If the IP address is set to 127.0.0.1, access to the instance from all IP
+        /// addresses is denied. For example, if the IP address is set to 192.168.0.0\/24, all
+        /// IP addresses in the range 192.168.0.XX are allowed to access the instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

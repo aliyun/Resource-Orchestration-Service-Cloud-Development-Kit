@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::AppFlow::UserAuthConfigs`, which is used to query the configurations of user credentials.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::AppFlow::UserAuthConfigs`.
 type UserAuthConfigs interface {
 	alicloudroscdkcore.Resource
 	IUserAuthConfigs

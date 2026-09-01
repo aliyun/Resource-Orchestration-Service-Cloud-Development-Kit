@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.hbr;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-nasbackupplan
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.771Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.150Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.NasBackupPlanProps")
 @software.amazon.jsii.Jsii.Proxy(NasBackupPlanProps.Jsii$Proxy.class)
 public interface NasBackupPlanProps extends software.amazon.jsii.JsiiSerializable {
@@ -40,9 +40,20 @@ public interface NasBackupPlanProps extends software.amazon.jsii.JsiiSerializabl
     @org.jetbrains.annotations.NotNull java.lang.Object getRetention();
 
     /**
-     * Property schedule: Backup strategy.
+     * Property schedule: The backup policy.
      * <p>
-     * Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     * The format is <code>I|{startTime}|{interval}</code>. This specifies that
+     * a backup job runs at an interval of <code>{interval}</code>, starting from <code>{startTime}</code>.
+     * Overdue backup jobs are not retried. If the previous backup job is not complete,
+     * the next backup job is not triggered. For example, <code>I|1631685600|P1D</code> indicates
+     * that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+     * <p>
+     * <ul>
+     * <li>startTime: The start time for the backup, specified as a UNIX timestamp in
+     * seconds.</li>
+     * <li>interval: The backup interval, specified in the ISO 8601 duration format. For
+     * example, <code>PT1H</code> represents one hour and <code>P1D</code> represents one day.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSchedule();
 
@@ -219,8 +230,19 @@ public interface NasBackupPlanProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link NasBackupPlanProps#getSchedule}
-         * @param schedule Property schedule: Backup strategy. This parameter is required.
-         *                 Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+         * @param schedule Property schedule: The backup policy. This parameter is required.
+         *                 The format is <code>I|{startTime}|{interval}</code>. This specifies that
+         *                 a backup job runs at an interval of <code>{interval}</code>, starting from <code>{startTime}</code>.
+         *                 Overdue backup jobs are not retried. If the previous backup job is not complete,
+         *                 the next backup job is not triggered. For example, <code>I|1631685600|P1D</code> indicates
+         *                 that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+         *                 <p>
+         *                 <ul>
+         *                 <li>startTime: The start time for the backup, specified as a UNIX timestamp in
+         *                 seconds.</li>
+         *                 <li>interval: The backup interval, specified in the ISO 8601 duration format. For
+         *                 example, <code>PT1H</code> represents one hour and <code>P1D</code> represents one day.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder schedule(java.lang.String schedule) {
@@ -230,8 +252,19 @@ public interface NasBackupPlanProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link NasBackupPlanProps#getSchedule}
-         * @param schedule Property schedule: Backup strategy. This parameter is required.
-         *                 Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+         * @param schedule Property schedule: The backup policy. This parameter is required.
+         *                 The format is <code>I|{startTime}|{interval}</code>. This specifies that
+         *                 a backup job runs at an interval of <code>{interval}</code>, starting from <code>{startTime}</code>.
+         *                 Overdue backup jobs are not retried. If the previous backup job is not complete,
+         *                 the next backup job is not triggered. For example, <code>I|1631685600|P1D</code> indicates
+         *                 that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+         *                 <p>
+         *                 <ul>
+         *                 <li>startTime: The start time for the backup, specified as a UNIX timestamp in
+         *                 seconds.</li>
+         *                 <li>interval: The backup interval, specified in the ISO 8601 duration format. For
+         *                 example, <code>PT1H</code> represents one hour and <code>P1D</code> represents one day.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder schedule(com.aliyun.ros.cdk.core.IResolvable schedule) {

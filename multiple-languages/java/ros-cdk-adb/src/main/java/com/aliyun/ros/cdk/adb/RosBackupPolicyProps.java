@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.adb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-backuppolicy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:14:30.243Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:53:53.119Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.RosBackupPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosBackupPolicyProps.Jsii$Proxy.class)
 public interface RosBackupPolicyProps extends software.amazon.jsii.JsiiSerializable {

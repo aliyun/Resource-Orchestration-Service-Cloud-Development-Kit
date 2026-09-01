@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::FC::Service`, which is used to create a service in Function Compute.
+// This class encapsulates and extends the ROS resource type `ALIYUN::FC::Service`.
 type Service interface {
 	alicloudroscdkcore.Resource
 	IService

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshot
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.266Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.663Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SnapshotProps")
 @software.amazon.jsii.Jsii.Proxy(SnapshotProps.Jsii$Proxy.class)
 public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,36 +16,51 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDiskId();
 
     /**
-     * Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://.
+     * Property description: The snapshot description must be 2 to 256 characters in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
      * <p>
-     * The description will appear on the console. By default, the value is zero.
+     * This parameter is empty by default.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
-     * Property instantAccess: Specifies whether to enable the instant access feature.
+     * Property instantAccess: Specifies whether to enable the Instant Access feature.
      * <p>
      * Valid values:
-     * true: enables the instant access feature. This feature can be enabled only for enhanced SSDs (ESSDs)
-     * false: disables the instant access feature. If InstantAccess is set to false, normal snapshots are created.
-     * Default value: false.
-     * Note This parameter and the Category parameter cannot be specified at the same time.
-     * For more information, see the "Description" section in this topic.
+     * <p>
+     * <ul>
+     * <li>true: Enables the Instant Access feature. This feature can be enabled only for
+     * snapshots of ESSD cloud disks.</li>
+     * <li>false: Disables the Instant Access feature. A standard snapshot is created.
+     * Default value: false.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is deprecated. standard snapshots for ESSD cloud disks now
+     * include the <a href="">Instant Access</a> feature by default at no additional cost.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstantAccess() {
         return null;
     }
 
     /**
-     * Property instantAccessRetentionDays: Specifies the retention period of the instant access feature.
+     * Property instantAccessRetentionDays: The retention period for the Instant Access feature, in days.
      * <p>
-     * After the retention period ends,
-     * the snapshot is automatically released. This parameter takes effect only when InstantAccess
-     * is set to true. Unit: days.
-     * Valid values: 1 to 65535. By default, the value of
-     * this parameter is the same as that of RetentionDays.
+     * The snapshot is
+     * automatically deleted when this retention period expires. This parameter takes
+     * effect only when <code>InstantAccess</code> is set to <code>true</code>. Valid values: 1 to 65,535.
+     * Defaults to the value of <code>RetentionDays</code>.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is deprecated. standard snapshots for ESSD cloud disks now
+     * include the <a href="">Instant Access</a> feature by default at no additional cost.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstantAccessRetentionDays() {
         return null;
@@ -59,19 +74,29 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property retentionDays: Set the retention period of a snapshot in days.
+     * Property retentionDays: The retention period of the snapshot, in days.
      * <p>
-     * The snapshot will be automatically released after the retention period expires.
-     * The value ranges from 1 to 65536.
+     * Valid values: 1 to 65,536. The
+     * snapshot is automatically deleted when the retention period expires.
+     * If this parameter is not specified, the snapshot is retained indefinitely.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRetentionDays() {
         return null;
     }
 
     /**
-     * Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters.
+     * Property snapshotName: The snapshot name must be 2 to 128 characters long.
      * <p>
-     * It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+     * It must start with a letter
+     * or a Chinese character and can contain letters, digits, colons (:), underscores
+     * (_), periods (.), and hyphens (-).
+     * <p>
+     * <blockquote>
+     * <p>
+     * The name cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>. To avoid conflicts with
+     * auto snapshot names, the name cannot start with <code>auto</code>.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotName() {
         return null;
@@ -135,8 +160,8 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SnapshotProps#getDescription}
-         * @param description Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://.
-         *                    The description will appear on the console. By default, the value is zero.
+         * @param description Property description: The snapshot description must be 2 to 256 characters in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         *                    This parameter is empty by default.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -146,8 +171,8 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SnapshotProps#getDescription}
-         * @param description Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://.
-         *                    The description will appear on the console. By default, the value is zero.
+         * @param description Property description: The snapshot description must be 2 to 256 characters in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         *                    This parameter is empty by default.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -157,13 +182,22 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SnapshotProps#getInstantAccess}
-         * @param instantAccess Property instantAccess: Specifies whether to enable the instant access feature.
+         * @param instantAccess Property instantAccess: Specifies whether to enable the Instant Access feature.
          *                      Valid values:
-         *                      true: enables the instant access feature. This feature can be enabled only for enhanced SSDs (ESSDs)
-         *                      false: disables the instant access feature. If InstantAccess is set to false, normal snapshots are created.
-         *                      Default value: false.
-         *                      Note This parameter and the Category parameter cannot be specified at the same time.
-         *                      For more information, see the "Description" section in this topic.
+         *                      <p>
+         *                      <ul>
+         *                      <li>true: Enables the Instant Access feature. This feature can be enabled only for
+         *                      snapshots of ESSD cloud disks.</li>
+         *                      <li>false: Disables the Instant Access feature. A standard snapshot is created.
+         *                      Default value: false.</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      This parameter is deprecated. standard snapshots for ESSD cloud disks now
+         *                      include the <a href="">Instant Access</a> feature by default at no additional cost.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder instantAccess(java.lang.Boolean instantAccess) {
@@ -173,13 +207,22 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SnapshotProps#getInstantAccess}
-         * @param instantAccess Property instantAccess: Specifies whether to enable the instant access feature.
+         * @param instantAccess Property instantAccess: Specifies whether to enable the Instant Access feature.
          *                      Valid values:
-         *                      true: enables the instant access feature. This feature can be enabled only for enhanced SSDs (ESSDs)
-         *                      false: disables the instant access feature. If InstantAccess is set to false, normal snapshots are created.
-         *                      Default value: false.
-         *                      Note This parameter and the Category parameter cannot be specified at the same time.
-         *                      For more information, see the "Description" section in this topic.
+         *                      <p>
+         *                      <ul>
+         *                      <li>true: Enables the Instant Access feature. This feature can be enabled only for
+         *                      snapshots of ESSD cloud disks.</li>
+         *                      <li>false: Disables the Instant Access feature. A standard snapshot is created.
+         *                      Default value: false.</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      This parameter is deprecated. standard snapshots for ESSD cloud disks now
+         *                      include the <a href="">Instant Access</a> feature by default at no additional cost.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder instantAccess(com.aliyun.ros.cdk.core.IResolvable instantAccess) {
@@ -189,12 +232,18 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SnapshotProps#getInstantAccessRetentionDays}
-         * @param instantAccessRetentionDays Property instantAccessRetentionDays: Specifies the retention period of the instant access feature.
-         *                                   After the retention period ends,
-         *                                   the snapshot is automatically released. This parameter takes effect only when InstantAccess
-         *                                   is set to true. Unit: days.
-         *                                   Valid values: 1 to 65535. By default, the value of
-         *                                   this parameter is the same as that of RetentionDays.
+         * @param instantAccessRetentionDays Property instantAccessRetentionDays: The retention period for the Instant Access feature, in days.
+         *                                   The snapshot is
+         *                                   automatically deleted when this retention period expires. This parameter takes
+         *                                   effect only when <code>InstantAccess</code> is set to <code>true</code>. Valid values: 1 to 65,535.
+         *                                   Defaults to the value of <code>RetentionDays</code>.
+         *                                   <p>
+         *                                   <blockquote>
+         *                                   <p>
+         *                                   This parameter is deprecated. standard snapshots for ESSD cloud disks now
+         *                                   include the <a href="">Instant Access</a> feature by default at no additional cost.
+         *                                   <p>
+         *                                   </blockquote>
          * @return {@code this}
          */
         public Builder instantAccessRetentionDays(java.lang.Number instantAccessRetentionDays) {
@@ -204,12 +253,18 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SnapshotProps#getInstantAccessRetentionDays}
-         * @param instantAccessRetentionDays Property instantAccessRetentionDays: Specifies the retention period of the instant access feature.
-         *                                   After the retention period ends,
-         *                                   the snapshot is automatically released. This parameter takes effect only when InstantAccess
-         *                                   is set to true. Unit: days.
-         *                                   Valid values: 1 to 65535. By default, the value of
-         *                                   this parameter is the same as that of RetentionDays.
+         * @param instantAccessRetentionDays Property instantAccessRetentionDays: The retention period for the Instant Access feature, in days.
+         *                                   The snapshot is
+         *                                   automatically deleted when this retention period expires. This parameter takes
+         *                                   effect only when <code>InstantAccess</code> is set to <code>true</code>. Valid values: 1 to 65,535.
+         *                                   Defaults to the value of <code>RetentionDays</code>.
+         *                                   <p>
+         *                                   <blockquote>
+         *                                   <p>
+         *                                   This parameter is deprecated. standard snapshots for ESSD cloud disks now
+         *                                   include the <a href="">Instant Access</a> feature by default at no additional cost.
+         *                                   <p>
+         *                                   </blockquote>
          * @return {@code this}
          */
         public Builder instantAccessRetentionDays(com.aliyun.ros.cdk.core.IResolvable instantAccessRetentionDays) {
@@ -239,9 +294,10 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SnapshotProps#getRetentionDays}
-         * @param retentionDays Property retentionDays: Set the retention period of a snapshot in days.
-         *                      The snapshot will be automatically released after the retention period expires.
-         *                      The value ranges from 1 to 65536.
+         * @param retentionDays Property retentionDays: The retention period of the snapshot, in days.
+         *                      Valid values: 1 to 65,536. The
+         *                      snapshot is automatically deleted when the retention period expires.
+         *                      If this parameter is not specified, the snapshot is retained indefinitely.
          * @return {@code this}
          */
         public Builder retentionDays(java.lang.Number retentionDays) {
@@ -251,9 +307,10 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SnapshotProps#getRetentionDays}
-         * @param retentionDays Property retentionDays: Set the retention period of a snapshot in days.
-         *                      The snapshot will be automatically released after the retention period expires.
-         *                      The value ranges from 1 to 65536.
+         * @param retentionDays Property retentionDays: The retention period of the snapshot, in days.
+         *                      Valid values: 1 to 65,536. The
+         *                      snapshot is automatically deleted when the retention period expires.
+         *                      If this parameter is not specified, the snapshot is retained indefinitely.
          * @return {@code this}
          */
         public Builder retentionDays(com.aliyun.ros.cdk.core.IResolvable retentionDays) {
@@ -263,8 +320,17 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SnapshotProps#getSnapshotName}
-         * @param snapshotName Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters.
-         *                     It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+         * @param snapshotName Property snapshotName: The snapshot name must be 2 to 128 characters long.
+         *                     It must start with a letter
+         *                     or a Chinese character and can contain letters, digits, colons (:), underscores
+         *                     (_), periods (.), and hyphens (-).
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     The name cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>. To avoid conflicts with
+         *                     auto snapshot names, the name cannot start with <code>auto</code>.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder snapshotName(java.lang.String snapshotName) {
@@ -274,8 +340,17 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SnapshotProps#getSnapshotName}
-         * @param snapshotName Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters.
-         *                     It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+         * @param snapshotName Property snapshotName: The snapshot name must be 2 to 128 characters long.
+         *                     It must start with a letter
+         *                     or a Chinese character and can contain letters, digits, colons (:), underscores
+         *                     (_), periods (.), and hyphens (-).
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     The name cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>. To avoid conflicts with
+         *                     auto snapshot names, the name cannot start with <code>auto</code>.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder snapshotName(com.aliyun.ros.cdk.core.IResolvable snapshotName) {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dfs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-mountpoint
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:20:44.381Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:15:26.646Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.MountPointProps")
 @software.amazon.jsii.Jsii.Proxy(MountPointProps.Jsii$Proxy.class)
 public interface MountPointProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,7 +38,9 @@ public interface MountPointProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
     /**
-     * Property description: The description of the Mount Point.
+     * Property description: Description of the mount target.
+     * <p>
+     * The length cannot exceed 32 characters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -175,7 +177,8 @@ public interface MountPointProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MountPointProps#getDescription}
-         * @param description Property description: The description of the Mount Point.
+         * @param description Property description: Description of the mount target.
+         *                    The length cannot exceed 32 characters.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -185,7 +188,8 @@ public interface MountPointProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MountPointProps#getDescription}
-         * @param description Property description: The description of the Mount Point.
+         * @param description Property description: Description of the mount target.
+         *                    The length cannot exceed 32 characters.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {

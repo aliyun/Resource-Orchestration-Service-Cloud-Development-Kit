@@ -151,7 +151,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _autoRenew;
 
-        /// <summary>Property autoRenew: Whether to enable automatic renewal.</summary>
+        /// <summary>Property autoRenew: Specifies whether to enable auto-renewal for the elasticity assurance.</summary>
+        /// <remarks>
+        /// Valid
+        /// values:
+        ///
+        /// <list type="bullet">
+        /// <description>true</description>
+        /// <description>false
+        /// Default value: false.</description>
+        /// </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AutoRenew
@@ -182,7 +192,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _autoRenewPeriod;
 
-        /// <summary>Property autoRenewPeriod: The period for automatic renewal.</summary>
+        /// <summary>Property autoRenewPeriod: The auto-renewal period.</summary>
+        /// <remarks>
+        /// Unit: month. Valid values: 1, 2, 3, 6, 12, 24, and 36.
+        ///
+        /// <list type="bullet">
+        /// <description>Default value when <c>PeriodUnit</c> is set to Month: 1.</description>
+        /// <description>Default value when <c>PeriodUnit</c> is set to Year: 12.</description>
+        /// </list>
+        ///
+        ///     If you set <c>AutoRenew</c> to <c>true</c>, you must specify this parameter.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AutoRenewPeriod
@@ -268,7 +288,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _instanceCpuCoreCount;
 
-        /// <summary>Property instanceCpuCoreCount: The number of CPU cores for the instance.</summary>
+        /// <summary>Property instanceCpuCoreCount: &gt; This parameter is no longer used.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "instanceCpuCoreCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? InstanceCpuCoreCount
@@ -319,12 +339,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _period;
 
-        /// <summary>Property period: The effective duration of the elasticity assurance.</summary>
+        /// <summary>Property period: The validity period of the elasticity assurance.</summary>
         /// <remarks>
-        /// The unit of the effective duration is determined by the PeriodUnit value. Valid values:
-        /// When the PeriodUnit parameter is set to Month, the valid values are 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-        /// When the PeriodUnit parameter is set to Year, the valid values are 1, 2, 3, 4, and 5.
-        /// Default value: 1.
+        /// The unit of the validity period
+        /// is determined by the value of <c>PeriodUnit</c>. Specifies whether to check the image
+        /// used by the instance supports hot migration. Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>When the value of <c>PeriodUnit</c> is <c>Month</c>, the valid values are 1, 2, 3, 4, 5,
+        /// 6, 7, 8, and 9.</description>
+        /// <description>When the value of <c>PeriodUnit</c> is <c>Year</c>, the valid values are 1, 2, 3, 4, and</description>
+        /// </list>
+        ///
+        /// <list type="number">
+        /// <description></description>
+        /// </list>
+        ///
+        /// <list type="bullet">
+        /// <description>When the value of <c>PeriodUnit</c> is <c>Day</c>, the valid values are 1 to 365.
+        /// Default value: 1</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -376,12 +410,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _periodUnit;
 
-        /// <summary>Property periodUnit: The unit of the effective duration of the elasticity assurance.</summary>
+        /// <summary>Property periodUnit: The unit of the validity period of the elasticity assurance.</summary>
         /// <remarks>
         /// Valid values:
-        /// Month
-        /// Year
-        /// Default value: Year.
+        ///
+        /// <list type="bullet">
+        /// <description>Month</description>
+        /// <description>Year</description>
+        /// <description>Day
+        /// **
+        /// Note If you set <c>PeriodUnit</c> to <c>Day</c>, you must specify RecurrenceRules to create
+        /// a time-segmented elasticity assurance.
+        /// Default value: Year.</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -444,7 +485,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _recurrenceRules;
 
-        /// <summary>Property recurrenceRules: Recurrence rules for the elasticity assurance.</summary>
+        /// <summary>Property recurrenceRules: The assurance schedules based on which the capacity reservation takes effect.</summary>
+        /// <remarks>
+        ///     Time-segmented elasticity assurances are available only in specific regions and
+        ///     to specific users. To use time-segmented elasticity assurances, submit a ticket.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "recurrenceRules", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosElasticityAssurance.RecurrenceRulesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? RecurrenceRules

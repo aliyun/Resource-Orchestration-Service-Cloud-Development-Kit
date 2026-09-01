@@ -20,7 +20,10 @@ export interface CenRouteServiceProps {
     readonly cenId: string | ros.IResolvable;
 
     /**
-     * Property host: The domain or IP address of the cloud service.
+     * Property host: The IP addresses or CIDR blocks of the cloud service.
+     * > In most cases, multiple IP addresses or CIDR blocks are assigned to a cloud
+     * service. We recommend that you call this operation multiple times to add all IP
+     * addresses and CIDR blocks of the cloud service.
      */
     readonly host: string | ros.IResolvable;
 
@@ -44,6 +47,8 @@ export interface CenRouteServiceProps {
 
     /**
      * Property description: The description of the cloud service.
+     * This parameter is optional. If you enter a description, it must be 1 to 256
+     * characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 }
@@ -60,7 +65,7 @@ export interface ICenRouteService extends ros.IResource {
     readonly attrId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenRouteService`, which is used to access an Alibaba Cloud service.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenRouteService`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenRouteService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenrouteservice
  */

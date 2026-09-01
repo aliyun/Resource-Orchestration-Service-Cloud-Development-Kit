@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::DynamicTagGroup</code>, which is used to create a tag rule based on which cloud resources are automatically added to an application group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::DynamicTagGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.919Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.162Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.DynamicTagGroup")
 public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IDynamicTagGroup {
 
@@ -120,20 +120,36 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property contactGroupList: Alarm contacts.
+         * Property contactGroupList: The alert contact groups.
+         * <p>
+         * The value of N can be from 1 to 100. Alert
+         * notifications for the application group are sent to the alert contacts in these
+         * alert contact groups.
+         * An alert contact group can contain one or more alert contacts. For more
+         * information about how to create alert contacts and alert contact groups, see
+         * PutContact and PutContactGroup. For more information about how to obtain
+         * alert contact groups, see DescribeContactGroupList.
          * <p>
          * @return {@code this}
-         * @param contactGroupList Property contactGroupList: Alarm contacts. This parameter is required.
+         * @param contactGroupList Property contactGroupList: The alert contact groups. This parameter is required.
          */
         public Builder contactGroupList(final com.aliyun.ros.cdk.core.IResolvable contactGroupList) {
             this.props.contactGroupList(contactGroupList);
             return this;
         }
         /**
-         * Property contactGroupList: Alarm contacts.
+         * Property contactGroupList: The alert contact groups.
+         * <p>
+         * The value of N can be from 1 to 100. Alert
+         * notifications for the application group are sent to the alert contacts in these
+         * alert contact groups.
+         * An alert contact group can contain one or more alert contacts. For more
+         * information about how to create alert contacts and alert contact groups, see
+         * PutContact and PutContactGroup. For more information about how to obtain
+         * alert contact groups, see DescribeContactGroupList.
          * <p>
          * @return {@code this}
-         * @param contactGroupList Property contactGroupList: Alarm contacts. This parameter is required.
+         * @param contactGroupList Property contactGroupList: The alert contact groups. This parameter is required.
          */
         public Builder contactGroupList(final java.util.List<? extends java.lang.Object> contactGroupList) {
             this.props.contactGroupList(contactGroupList);
@@ -193,28 +209,36 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property enableSubscribeEvent: Whether the event subscription is enabled.
+         * Property enableSubscribeEvent: Specifies whether to automatically subscribe to event notifications for the application group.
          * <p>
-         * Values are
-         * :true: enable event subscription
-         * false: disable event subscription
+         * When a critical or warning event occurs on a resource in the
+         * application group, CloudMonitor sends an alert notification. Valid values:
+         * <p>
+         * <ul>
+         * <li>true: enabled.</li>
+         * <li>false (default): disabled.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param enableSubscribeEvent Property enableSubscribeEvent: Whether the event subscription is enabled. This parameter is required.
+         * @param enableSubscribeEvent Property enableSubscribeEvent: Specifies whether to automatically subscribe to event notifications for the application group. This parameter is required.
          */
         public Builder enableSubscribeEvent(final java.lang.Boolean enableSubscribeEvent) {
             this.props.enableSubscribeEvent(enableSubscribeEvent);
             return this;
         }
         /**
-         * Property enableSubscribeEvent: Whether the event subscription is enabled.
+         * Property enableSubscribeEvent: Specifies whether to automatically subscribe to event notifications for the application group.
          * <p>
-         * Values are
-         * :true: enable event subscription
-         * false: disable event subscription
+         * When a critical or warning event occurs on a resource in the
+         * application group, CloudMonitor sends an alert notification. Valid values:
+         * <p>
+         * <ul>
+         * <li>true: enabled.</li>
+         * <li>false (default): disabled.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param enableSubscribeEvent Property enableSubscribeEvent: Whether the event subscription is enabled. This parameter is required.
+         * @param enableSubscribeEvent Property enableSubscribeEvent: Specifies whether to automatically subscribe to event notifications for the application group. This parameter is required.
          */
         public Builder enableSubscribeEvent(final com.aliyun.ros.cdk.core.IResolvable enableSubscribeEvent) {
             this.props.enableSubscribeEvent(enableSubscribeEvent);
@@ -222,24 +246,20 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property matchExpress: Matching list.
-         * <p>
-         * Only supports one currently.
+         * Property matchExpress: The match expressions that are used to create an application group from tags.
          * <p>
          * @return {@code this}
-         * @param matchExpress Property matchExpress: Matching list. This parameter is required.
+         * @param matchExpress Property matchExpress: The match expressions that are used to create an application group from tags. This parameter is required.
          */
         public Builder matchExpress(final com.aliyun.ros.cdk.core.IResolvable matchExpress) {
             this.props.matchExpress(matchExpress);
             return this;
         }
         /**
-         * Property matchExpress: Matching list.
-         * <p>
-         * Only supports one currently.
+         * Property matchExpress: The match expressions that are used to create an application group from tags.
          * <p>
          * @return {@code this}
-         * @param matchExpress Property matchExpress: Matching list. This parameter is required.
+         * @param matchExpress Property matchExpress: The match expressions that are used to create an application group from tags. This parameter is required.
          */
         public Builder matchExpress(final java.util.List<? extends java.lang.Object> matchExpress) {
             this.props.matchExpress(matchExpress);
@@ -247,30 +267,36 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property matchExpressFilterRelation: The relationship between the conditional expressions.
+         * Property matchExpressFilterRelation: The relationship between the conditional expressions for the tag values.
          * <p>
-         * Values are:
-         * and: the relationship between
-         * or: the relationship or the
-         * Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>and (default)</li>
+         * <li>or</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param matchExpressFilterRelation Property matchExpressFilterRelation: The relationship between the conditional expressions. This parameter is required.
+         * @param matchExpressFilterRelation Property matchExpressFilterRelation: The relationship between the conditional expressions for the tag values. This parameter is required.
          */
         public Builder matchExpressFilterRelation(final java.lang.String matchExpressFilterRelation) {
             this.props.matchExpressFilterRelation(matchExpressFilterRelation);
             return this;
         }
         /**
-         * Property matchExpressFilterRelation: The relationship between the conditional expressions.
+         * Property matchExpressFilterRelation: The relationship between the conditional expressions for the tag values.
          * <p>
-         * Values are:
-         * and: the relationship between
-         * or: the relationship or the
-         * Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>and (default)</li>
+         * <li>or</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param matchExpressFilterRelation Property matchExpressFilterRelation: The relationship between the conditional expressions. This parameter is required.
+         * @param matchExpressFilterRelation Property matchExpressFilterRelation: The relationship between the conditional expressions for the tag values. This parameter is required.
          */
         public Builder matchExpressFilterRelation(final com.aliyun.ros.cdk.core.IResolvable matchExpressFilterRelation) {
             this.props.matchExpressFilterRelation(matchExpressFilterRelation);
@@ -278,24 +304,26 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property templateIdList: Alarm template ID list.
+         * Property templateIdList: The ID of the alert template.
          * <p>
-         * When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
+         * For more information about how to query the IDs of alert templates, see
+         * DescribeMetricRuleTemplateList.
          * <p>
          * @return {@code this}
-         * @param templateIdList Property templateIdList: Alarm template ID list. This parameter is required.
+         * @param templateIdList Property templateIdList: The ID of the alert template. This parameter is required.
          */
         public Builder templateIdList(final com.aliyun.ros.cdk.core.IResolvable templateIdList) {
             this.props.templateIdList(templateIdList);
             return this;
         }
         /**
-         * Property templateIdList: Alarm template ID list.
+         * Property templateIdList: The ID of the alert template.
          * <p>
-         * When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
+         * For more information about how to query the IDs of alert templates, see
+         * DescribeMetricRuleTemplateList.
          * <p>
          * @return {@code this}
-         * @param templateIdList Property templateIdList: Alarm template ID list. This parameter is required.
+         * @param templateIdList Property templateIdList: The ID of the alert template. This parameter is required.
          */
         public Builder templateIdList(final java.util.List<? extends java.lang.Object> templateIdList) {
             this.props.templateIdList(templateIdList);

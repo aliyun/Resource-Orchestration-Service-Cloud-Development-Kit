@@ -20,7 +20,11 @@ export interface ScheduleProps {
     readonly flowName: string | ros.IResolvable;
 
     /**
-     * Property scheduleName: Schedule name.
+     * Property scheduleName: The name of the timed schedule. The name must meet the following requirements:
+     * - It can contain letters (a-z and A-Z), digits (0-9), underscores (_), and
+     * hyphens (-).
+     * - It is case-sensitive.
+     * - It must be 1 to 128 characters in length.
      */
     readonly scheduleName: string | ros.IResolvable;
 
@@ -35,7 +39,8 @@ export interface ScheduleProps {
     readonly enable?: boolean | ros.IResolvable;
 
     /**
-     * Property payload: Payload.
+     * Property payload: The trigger message of the timed schedule. The message must be in the JSON
+     * format.
      */
     readonly payload?: string | ros.IResolvable;
 }

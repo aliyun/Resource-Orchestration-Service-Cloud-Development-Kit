@@ -68,13 +68,14 @@ export interface AutoScaleConfigProps {
     readonly imageId?: string | ros.IResolvable;
 
     /**
-     * Property maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster.
-     * Default value: 100
+     * Property maxNodesInCluster: The maximum number of compute nodes that can be added to the cluster. Valid
+     * values: 0 to 500.
+     * Default value: 100.
      */
     readonly maxNodesInCluster?: number | ros.IResolvable;
 
     /**
-     * Property queues:
+     * Property queues: The information about the queue.
      */
     readonly queues?: Array<RosAutoScaleConfig.QueuesProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -85,8 +86,9 @@ export interface AutoScaleConfigProps {
     readonly shrinkIdleTimes?: number | ros.IResolvable;
 
     /**
-     * Property shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in. Unit: minutes.
-     * Default value: 2
+     * Property shrinkIntervalInMinutes: The interval between two consecutive rounds of scale-in. Unit: minutes.
+     * Valid values: 2 to 10.
+     * Default value: 2.
      */
     readonly shrinkIntervalInMinutes?: number | ros.IResolvable;
 
@@ -117,7 +119,7 @@ export interface IAutoScaleConfig extends ros.IResource {
     readonly attrClusterId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::AutoScaleConfig`, which is used to configure the auto scaling settings of a cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::AutoScaleConfig`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoScaleConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-autoscaleconfig
  */

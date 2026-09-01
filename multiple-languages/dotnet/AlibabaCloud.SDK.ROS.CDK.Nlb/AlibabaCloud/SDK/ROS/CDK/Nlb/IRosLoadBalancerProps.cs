@@ -41,7 +41,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: addressIpVersion: The version of IP address that the NLB instance uses to provide services.
+        /// <strong>Property</strong>: addressIpVersion: The version of IP addresses used for the NLB instance. Valid values:
+        /// - ipv4 (default)
+        /// - DualStack
         /// </remarks>
         [JsiiProperty(name: "addressIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -54,7 +56,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidthPackageId: Attach common bandwidth package to load balancer.
+        /// <strong>Property</strong>: bandwidthPackageId: The ID of the Internet Shared Bandwidth instance that is associated with the
+        /// Internet-facing NLB instance.
         /// </remarks>
         [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -120,7 +123,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: loadBalancerType: The type of the NLB instance.
+        /// <strong>Property</strong>: loadBalancerType: The type of the Server Load Balancer (SLB) instance. Set the value to network,
+        /// which indicates an NLB instance.
         /// </remarks>
         [JsiiProperty(name: "loadBalancerType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -225,7 +229,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: addressIpVersion: The version of IP address that the NLB instance uses to provide services.
+            /// <strong>Property</strong>: addressIpVersion: The version of IP addresses used for the NLB instance. Valid values:
+            /// - ipv4 (default)
+            /// - DualStack
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "addressIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -235,7 +241,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: bandwidthPackageId: Attach common bandwidth package to load balancer.
+            /// <strong>Property</strong>: bandwidthPackageId: The ID of the Internet Shared Bandwidth instance that is associated with the
+            /// Internet-facing NLB instance.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -286,7 +293,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: loadBalancerType: The type of the NLB instance.
+            /// <strong>Property</strong>: loadBalancerType: The type of the Server Load Balancer (SLB) instance. Set the value to network,
+            /// which indicates an NLB instance.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "loadBalancerType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

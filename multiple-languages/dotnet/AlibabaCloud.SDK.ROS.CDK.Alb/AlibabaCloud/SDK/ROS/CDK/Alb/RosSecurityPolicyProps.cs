@@ -16,9 +16,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         private object _ciphers;
 
         /// <remarks>
-        /// <strong>Property</strong>: ciphers: The supported cipher suites, which are determined by the TLS protocol version.
-        /// The specified cipher suites must be supported by at least one TLS protocol version that you specify.
-        /// Note For example, if you set the TLSVersions parameter to TLSv1.3, you must specify cipher suites that are supported by TLS 1.3.
+        /// <strong>Property</strong>: ciphers: The supported cipher suites.
         /// </remarks>
         [JsiiProperty(name: "ciphers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         public object Ciphers
@@ -68,8 +66,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <remarks>
         /// <strong>Property</strong>: securityPolicyName: The name of the security policy.
-        /// The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-        /// (.), underscores (_), and hyphens (-). The name must start with a letter.
+        /// The name must be 2 to 128 characters in length, and can contain letters, digits,
+        /// Chinese characters, periods (.), underscores (_), hyphens (-), and spaces.
         /// </remarks>
         [JsiiProperty(name: "securityPolicyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SecurityPolicyName

@@ -11,9 +11,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     [JsiiInterface(nativeType: typeof(ISSHKeyPairAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.SSHKeyPairAttachmentProps")]
     public interface ISSHKeyPairAttachmentProps
     {
-        /// <summary>Property instanceIds: The comma delimited ECS instance id list.</summary>
+        /// <summary>Property instanceIds: The IDs of instances to which you want to bind the SSH key pair.</summary>
         /// <remarks>
-        /// Only support Linux.
+        /// The value can be
+        /// a JSON array that consists of up to 50 instance IDs. Separate multiple instance
+        /// IDs with commas (,).
         /// </remarks>
         [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object InstanceIds
@@ -53,9 +55,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             {
             }
 
-            /// <summary>Property instanceIds: The comma delimited ECS instance id list.</summary>
+            /// <summary>Property instanceIds: The IDs of instances to which you want to bind the SSH key pair.</summary>
             /// <remarks>
-            /// Only support Linux.
+            /// The value can be
+            /// a JSON array that consists of up to 50 instance IDs. Separate multiple instance
+            /// IDs with commas (,).
             /// </remarks>
             [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceIds

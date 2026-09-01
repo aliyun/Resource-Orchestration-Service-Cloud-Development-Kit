@@ -5,15 +5,18 @@ package alicloudroscdkcdn
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domain
 type DomainProps struct {
-	// Property cdnType: The business type.
+	// Property cdnType: The business type of the domain name.
 	//
-	// Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
+	// Valid values:
+	// - web: images and small files.
+	// - download: large files.
+	// - video: on-demand video and audio streaming.
 	CdnType interface{} `field:"required" json:"cdnType" yaml:"cdnType"`
 	// Property domainName: The CDN domain name.
 	//
 	// Wildcard domain names that start with periods (.) are supported. For example, .a.com.
 	DomainName interface{} `field:"required" json:"domainName" yaml:"domainName"`
-	// Property checkUrl: The validation of the origin.
+	// Property checkUrl: The health check URL.
 	CheckUrl interface{} `field:"optional" json:"checkUrl" yaml:"checkUrl"`
 	// Property originServers: The list of origin URLs.
 	//
@@ -23,9 +26,12 @@ type DomainProps struct {
 	//
 	// If this is left blank, the system automatically fills in the ID of the default resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
-	// Property scope: Valid values: domestic, overseas, and global.
+	// Property scope: The acceleration region.
 	//
-	// Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
+	// Valid values:
+	// - domestic (default): Chinese mainland only.
+	// - overseas: global (excluding the Chinese mainland).
+	// - global: global.
 	Scope interface{} `field:"optional" json:"scope" yaml:"scope"`
 	// Property sources: The list of origin URLs.
 	Sources interface{} `field:"optional" json:"sources" yaml:"sources"`

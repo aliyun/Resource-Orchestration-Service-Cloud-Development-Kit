@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.987Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.283Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.ResourceMetricRuleProps")
 @software.amazon.jsii.Jsii.Proxy(ResourceMetricRuleProps.Jsii$Proxy.class)
 public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -43,9 +43,14 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
     @org.jetbrains.annotations.NotNull java.lang.Object getResources();
 
     /**
-     * Property compositeExpression: The trigger conditions for multiple metrics.
+     * Property compositeExpression: The alert conditions for multiple metrics.
      * <p>
-     * Note: The trigger conditions for a single metric and multiple metrics are mutually exclusive. You cannot specify trigger conditions for a single metric and multiple metrics at the same time.
+     * <blockquote>
+     * <p>
+     * The settings for a single metric and multiple metrics are mutually exclusive.
+     * You cannot configure both.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCompositeExpression() {
         return null;
@@ -92,7 +97,16 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
-     * Property labels:.
+     * Property labels: Labels to add to a triggered alert.
+     * <p>
+     * These labels appear in the alert
+     * notification.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This feature is equivalent to the <code>label</code> feature in Prometheus alerting.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLabels() {
         return null;
@@ -131,9 +145,14 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
-     * Property prometheus: The Prometheus alert rule.
+     * Property prometheus: The configurations for a Prometheus alert rule.
      * <p>
-     * Note: This parameter is required only when you create a Prometheus alert rule for Hybrid Cloud Monitoring.
+     * <blockquote>
+     * <p>
+     * You need to configure this parameter only when you create a Prometheus alert
+     * rule for CloudMonitor for Enterprise.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrometheus() {
         return null;
@@ -306,8 +325,13 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ResourceMetricRuleProps#getCompositeExpression}
-         * @param compositeExpression Property compositeExpression: The trigger conditions for multiple metrics.
-         *                            Note: The trigger conditions for a single metric and multiple metrics are mutually exclusive. You cannot specify trigger conditions for a single metric and multiple metrics at the same time.
+         * @param compositeExpression Property compositeExpression: The alert conditions for multiple metrics.
+         *                            <blockquote>
+         *                            <p>
+         *                            The settings for a single metric and multiple metrics are mutually exclusive.
+         *                            You cannot configure both.
+         *                            <p>
+         *                            </blockquote>
          * @return {@code this}
          */
         public Builder compositeExpression(com.aliyun.ros.cdk.core.IResolvable compositeExpression) {
@@ -317,8 +341,13 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ResourceMetricRuleProps#getCompositeExpression}
-         * @param compositeExpression Property compositeExpression: The trigger conditions for multiple metrics.
-         *                            Note: The trigger conditions for a single metric and multiple metrics are mutually exclusive. You cannot specify trigger conditions for a single metric and multiple metrics at the same time.
+         * @param compositeExpression Property compositeExpression: The alert conditions for multiple metrics.
+         *                            <blockquote>
+         *                            <p>
+         *                            The settings for a single metric and multiple metrics are mutually exclusive.
+         *                            You cannot configure both.
+         *                            <p>
+         *                            </blockquote>
          * @return {@code this}
          */
         public Builder compositeExpression(com.aliyun.ros.cdk.cms.RosResourceMetricRule.CompositeExpressionProperty compositeExpression) {
@@ -434,7 +463,15 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ResourceMetricRuleProps#getLabels}
-         * @param labels Property labels:.
+         * @param labels Property labels: Labels to add to a triggered alert.
+         *               These labels appear in the alert
+         *               notification.
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This feature is equivalent to the <code>label</code> feature in Prometheus alerting.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder labels(com.aliyun.ros.cdk.core.IResolvable labels) {
@@ -444,7 +481,15 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ResourceMetricRuleProps#getLabels}
-         * @param labels Property labels:.
+         * @param labels Property labels: Labels to add to a triggered alert.
+         *               These labels appear in the alert
+         *               notification.
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This feature is equivalent to the <code>label</code> feature in Prometheus alerting.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder labels(java.util.List<? extends java.lang.Object> labels) {
@@ -532,8 +577,13 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ResourceMetricRuleProps#getPrometheus}
-         * @param prometheus Property prometheus: The Prometheus alert rule.
-         *                   Note: This parameter is required only when you create a Prometheus alert rule for Hybrid Cloud Monitoring.
+         * @param prometheus Property prometheus: The configurations for a Prometheus alert rule.
+         *                   <blockquote>
+         *                   <p>
+         *                   You need to configure this parameter only when you create a Prometheus alert
+         *                   rule for CloudMonitor for Enterprise.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder prometheus(com.aliyun.ros.cdk.core.IResolvable prometheus) {
@@ -543,8 +593,13 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ResourceMetricRuleProps#getPrometheus}
-         * @param prometheus Property prometheus: The Prometheus alert rule.
-         *                   Note: This parameter is required only when you create a Prometheus alert rule for Hybrid Cloud Monitoring.
+         * @param prometheus Property prometheus: The configurations for a Prometheus alert rule.
+         *                   <blockquote>
+         *                   <p>
+         *                   You need to configure this parameter only when you create a Prometheus alert
+         *                   rule for CloudMonitor for Enterprise.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder prometheus(com.aliyun.ros.cdk.cms.RosResourceMetricRule.PrometheusProperty prometheus) {

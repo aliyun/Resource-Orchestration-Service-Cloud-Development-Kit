@@ -255,11 +255,13 @@ export interface RosApplicationProps {
     readonly redirectUris?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property refreshTokenValidity: The validity period of the refreshed token.
+     * @Property refreshTokenValidity: The validity period of the refresh token.
      * Valid values: 7200 to 31536000. Unit: seconds.
      * Default value:
-     * - For applications of the WebApp and ServerApp types, if this parameter is left empty, the value 2592000 is used. The value 2592000 indicates that the validity period of the refreshed token is 30 days.
-     * - For applications of the NativeApp type, if this parameter is left empty, the value 7776000 is used. The value 7776000 indicates that the validity period of the refreshed token is 90 days.
+     * - If not specified, the default value is 2,592,000 seconds (30 days) for
+     * NativeApp and ServerApp applications.
+     * - If not specified, the default value is 7,776,000 seconds (90 days) for WebApp
+     * applications.
      */
     readonly refreshTokenValidity?: number | ros.IResolvable;
 
@@ -425,11 +427,13 @@ export class RosApplication extends ros.RosResource {
     public redirectUris: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property refreshTokenValidity: The validity period of the refreshed token.
+     * @Property refreshTokenValidity: The validity period of the refresh token.
      * Valid values: 7200 to 31536000. Unit: seconds.
      * Default value:
-     * - For applications of the WebApp and ServerApp types, if this parameter is left empty, the value 2592000 is used. The value 2592000 indicates that the validity period of the refreshed token is 30 days.
-     * - For applications of the NativeApp type, if this parameter is left empty, the value 7776000 is used. The value 7776000 indicates that the validity period of the refreshed token is 90 days.
+     * - If not specified, the default value is 2,592,000 seconds (30 days) for
+     * NativeApp and ServerApp applications.
+     * - If not specified, the default value is 7,776,000 seconds (90 days) for WebApp
+     * applications.
      */
     public refreshTokenValidity: number | ros.IResolvable | undefined;
 
@@ -502,7 +506,9 @@ export interface RosAttachPolicyToGroupProps {
     readonly groupName: string | ros.IResolvable;
 
     /**
-     * @Property policyName: Authorization policy name.
+     * @Property policyName: The name of the policy.
+     * The name must be 1 to 128 characters in length and can contain letters, digits,
+     * and hyphens (-).
      */
     readonly policyName: string | ros.IResolvable;
 
@@ -587,7 +593,9 @@ export class RosAttachPolicyToGroup extends ros.RosResource {
     public groupName: string | ros.IResolvable;
 
     /**
-     * @Property policyName: Authorization policy name.
+     * @Property policyName: The name of the policy.
+     * The name must be 1 to 128 characters in length and can contain letters, digits,
+     * and hyphens (-).
      */
     public policyName: string | ros.IResolvable;
 
@@ -1253,6 +1261,10 @@ export namespace RosGroup {
          */
         readonly resource?: Array<any | ros.IResolvable> | ros.IResolvable;
         /**
+         * @Property notAction: What actions are exceptions to the allow or deny effect.
+         */
+        readonly notAction?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property effect: What the effect will be when the user requests access-either allow or deny.
          */
         readonly effect?: string | ros.IResolvable;
@@ -1271,6 +1283,7 @@ function RosGroup_StatementPropertyValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('condition', ros.hashValidator(ros.validateAny))(properties.condition));
     errors.collect(ros.propertyValidator('action', ros.listValidator(ros.validateAny))(properties.action));
     errors.collect(ros.propertyValidator('resource', ros.listValidator(ros.validateAny))(properties.resource));
+    errors.collect(ros.propertyValidator('notAction', ros.listValidator(ros.validateAny))(properties.notAction));
     errors.collect(ros.propertyValidator('effect', ros.validateString)(properties.effect));
     return errors.wrap('supplied properties not correct for "StatementProperty"');
 }
@@ -1290,6 +1303,7 @@ function rosGroupStatementPropertyToRosTemplate(properties: any): any {
       'Condition': ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
       'Action': ros.listMapper(ros.objectToRosTemplate)(properties.action),
       'Resource': ros.listMapper(ros.objectToRosTemplate)(properties.resource),
+      'NotAction': ros.listMapper(ros.objectToRosTemplate)(properties.notAction),
       'Effect': ros.stringToRosTemplate(properties.effect),
     };
 }
@@ -1318,7 +1332,8 @@ export interface RosLoginProfileProps {
     readonly mfaBindRequired?: boolean | ros.IResolvable;
 
     /**
-     * @Property password: The password of the RAM user.
+     * @Property password: The logon password for the RAM user.
+     * The password must meet the password policy.
      */
     readonly password?: string | ros.IResolvable;
 
@@ -1328,9 +1343,9 @@ export interface RosLoginProfileProps {
     readonly passwordResetRequired?: boolean | ros.IResolvable;
 
     /**
-     * @Property status: Enable or disable console password login. Valid values:
-     * - Activate (default): Enable.
-     * - Inactivate: Disable.
+     * @Property status: Specifies whether to enable password-based logon to the console. Valid values:
+     * - Active (default): Enable
+     * - Inactive: Disable
      */
     readonly status?: string | ros.IResolvable;
 }
@@ -1421,7 +1436,8 @@ export class RosLoginProfile extends ros.RosResource {
     public mfaBindRequired: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property password: The password of the RAM user.
+     * @Property password: The logon password for the RAM user.
+     * The password must meet the password policy.
      */
     public password: string | ros.IResolvable | undefined;
 
@@ -1431,9 +1447,9 @@ export class RosLoginProfile extends ros.RosResource {
     public passwordResetRequired: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property status: Enable or disable console password login. Valid values:
-     * - Activate (default): Enable.
-     * - Inactivate: Disable.
+     * @Property status: Specifies whether to enable password-based logon to the console. Valid values:
+     * - Active (default): Enable
+     * - Inactive: Disable
      */
     public status: string | ros.IResolvable | undefined;
 
@@ -1749,6 +1765,10 @@ export namespace RosManagedPolicy {
          */
         readonly resource?: Array<any | ros.IResolvable> | ros.IResolvable;
         /**
+         * @Property notAction: What actions are exceptions to the allow or deny effect.
+         */
+        readonly notAction?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property effect: What the effect will be when the user requests access-either allow or deny.
          */
         readonly effect?: string | ros.IResolvable;
@@ -1767,6 +1787,7 @@ function RosManagedPolicy_StatementPropertyValidator(properties: any): ros.Valid
     errors.collect(ros.propertyValidator('condition', ros.hashValidator(ros.validateAny))(properties.condition));
     errors.collect(ros.propertyValidator('action', ros.listValidator(ros.validateAny))(properties.action));
     errors.collect(ros.propertyValidator('resource', ros.listValidator(ros.validateAny))(properties.resource));
+    errors.collect(ros.propertyValidator('notAction', ros.listValidator(ros.validateAny))(properties.notAction));
     errors.collect(ros.propertyValidator('effect', ros.validateString)(properties.effect));
     return errors.wrap('supplied properties not correct for "StatementProperty"');
 }
@@ -1786,6 +1807,7 @@ function rosManagedPolicyStatementPropertyToRosTemplate(properties: any): any {
       'Condition': ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
       'Action': ros.listMapper(ros.objectToRosTemplate)(properties.action),
       'Resource': ros.listMapper(ros.objectToRosTemplate)(properties.resource),
+      'NotAction': ros.listMapper(ros.objectToRosTemplate)(properties.notAction),
       'Effect': ros.stringToRosTemplate(properties.effect),
     };
 }
@@ -1816,7 +1838,12 @@ export interface RosOIDCProviderProps {
     readonly oidcProviderName: string | ros.IResolvable;
 
     /**
-     * @Property clientIds: The list of the client IDs, max length is 20
+     * @Property clientIds: The ID of the client, which is provided by the external IdP. If you want to
+     * specify multiple client IDs, separate the client IDs with commas (,).
+     * The client ID can contain letters, digits, and special characters and cannot
+     * start with the special characters. The special characters are `periods (.),
+     * hyphens (-), underscores (_), colons (:), and forward slashes (\/)`.\`\`
+     * The client ID can be up to 128 characters in length.
      */
     readonly clientIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -1966,7 +1993,12 @@ The name can be up to 128 characters in length.
     public oidcProviderName: string | ros.IResolvable;
 
     /**
-     * @Property clientIds: The list of the client IDs, max length is 20
+     * @Property clientIds: The ID of the client, which is provided by the external IdP. If you want to
+     * specify multiple client IDs, separate the client IDs with commas (,).
+     * The client ID can contain letters, digits, and special characters and cannot
+     * start with the special characters. The special characters are `periods (.),
+     * hyphens (-), underscores (_), colons (:), and forward slashes (\/)`.\`\`
+     * The client ID can be up to 128 characters in length.
      */
     public clientIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -2136,7 +2168,11 @@ export class RosRamAccountAlias extends ros.RosResource {
 export interface RosRoleProps {
 
     /**
-     * @Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role.
+     * @Property assumeRolePolicyDocument: The trust policy that specifies one or more trusted entities allowed to assume
+     * the RAM role. Trusted entities can be cloud accounts, cloud
+     * services, or identity providers (IdPs).
+     * > RAM users cannot assume RAM roles whose trusted entity is a cloud
+     * service.
      */
     readonly assumeRolePolicyDocument: RosRole.AssumeRolePolicyDocumentProperty | ros.IResolvable;
 
@@ -2287,7 +2323,11 @@ export class RosRole extends ros.RosResource {
 
 
     /**
-     * @Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role.
+     * @Property assumeRolePolicyDocument: The trust policy that specifies one or more trusted entities allowed to assume
+     * the RAM role. Trusted entities can be cloud accounts, cloud
+     * services, or identity providers (IdPs).
+     * > RAM users cannot assume RAM roles whose trusted entity is a cloud
+     * service.
      */
     public assumeRolePolicyDocument: RosRole.AssumeRolePolicyDocumentProperty | ros.IResolvable;
 
@@ -2794,6 +2834,10 @@ export namespace RosRole {
          */
         readonly resource?: Array<any | ros.IResolvable> | ros.IResolvable;
         /**
+         * @Property notAction: What actions are exceptions to the allow or deny effect.
+         */
+        readonly notAction?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property effect: What the effect will be when the user requests access-either allow or deny.
          */
         readonly effect?: string | ros.IResolvable;
@@ -2812,6 +2856,7 @@ function RosRole_PolicyDocumentStatementPropertyValidator(properties: any): ros.
     errors.collect(ros.propertyValidator('condition', ros.hashValidator(ros.validateAny))(properties.condition));
     errors.collect(ros.propertyValidator('action', ros.listValidator(ros.validateAny))(properties.action));
     errors.collect(ros.propertyValidator('resource', ros.listValidator(ros.validateAny))(properties.resource));
+    errors.collect(ros.propertyValidator('notAction', ros.listValidator(ros.validateAny))(properties.notAction));
     errors.collect(ros.propertyValidator('effect', ros.validateString)(properties.effect));
     return errors.wrap('supplied properties not correct for "PolicyDocumentStatementProperty"');
 }
@@ -2831,6 +2876,7 @@ function rosRolePolicyDocumentStatementPropertyToRosTemplate(properties: any): a
       'Condition': ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
       'Action': ros.listMapper(ros.objectToRosTemplate)(properties.action),
       'Resource': ros.listMapper(ros.objectToRosTemplate)(properties.resource),
+      'NotAction': ros.listMapper(ros.objectToRosTemplate)(properties.notAction),
       'Effect': ros.stringToRosTemplate(properties.effect),
     };
 }
@@ -3963,6 +4009,10 @@ export namespace RosUser {
          */
         readonly resource?: Array<any | ros.IResolvable> | ros.IResolvable;
         /**
+         * @Property notAction: What actions are exceptions to the allow or deny effect.
+         */
+        readonly notAction?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property effect: What the effect will be when the user requests access-either allow or deny.
          */
         readonly effect?: string | ros.IResolvable;
@@ -3981,6 +4031,7 @@ function RosUser_StatementPropertyValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('condition', ros.hashValidator(ros.validateAny))(properties.condition));
     errors.collect(ros.propertyValidator('action', ros.listValidator(ros.validateAny))(properties.action));
     errors.collect(ros.propertyValidator('resource', ros.listValidator(ros.validateAny))(properties.resource));
+    errors.collect(ros.propertyValidator('notAction', ros.listValidator(ros.validateAny))(properties.notAction));
     errors.collect(ros.propertyValidator('effect', ros.validateString)(properties.effect));
     return errors.wrap('supplied properties not correct for "StatementProperty"');
 }
@@ -4000,6 +4051,7 @@ function rosUserStatementPropertyToRosTemplate(properties: any): any {
       'Condition': ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
       'Action': ros.listMapper(ros.objectToRosTemplate)(properties.action),
       'Resource': ros.listMapper(ros.objectToRosTemplate)(properties.resource),
+      'NotAction': ros.listMapper(ros.objectToRosTemplate)(properties.notAction),
       'Effect': ros.stringToRosTemplate(properties.effect),
     };
 }

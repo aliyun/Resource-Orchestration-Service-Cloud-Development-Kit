@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Represents a <code>AccessRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.498Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:15:39.318Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.IAccessRule")
 @software.amazon.jsii.Jsii.Proxy(IAccessRule.Jsii$Proxy.class)
 public interface IAccessRule extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

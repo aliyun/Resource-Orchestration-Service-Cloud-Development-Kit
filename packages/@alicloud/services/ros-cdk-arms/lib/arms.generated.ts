@@ -78,7 +78,7 @@ function rosAddonReleasePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::AddonRelease`, which is used to install an add-on release.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::AddonRelease`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AddonRelease` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-addonrelease
  */
@@ -244,7 +244,7 @@ function rosApplyAlertRuleTemplatePropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ApplyAlertRuleTemplate`, which is used to create an alert rule of Alibaba Cloud Managed Service for Prometheus.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ApplyAlertRuleTemplate`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplyAlertRuleTemplate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-applyalertruletemplate
  */
@@ -401,7 +401,7 @@ function rosDeliverTaskPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::DeliverTask`, which is used to create a delivery task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::DeliverTask`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeliverTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-delivertask
  */
@@ -1164,7 +1164,7 @@ function rosEnvironmentPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Environment`, which is used to create an environment.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Environment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Environment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environment
  */
@@ -1460,7 +1460,7 @@ function rosEnvironmentFeaturePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`, which is used to install a feature.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EnvironmentFeature` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environmentfeature
  */
@@ -1555,7 +1555,12 @@ export class RosEnvironmentFeature extends ros.RosResource {
 export interface RosManagedPrometheusProps {
 
     /**
-     * @Property clusterType: The type of the cluster. Currently, only ask, ecs and one clusters are supported. Default is ecs.
+     * @Property clusterType: The cluster type.
+     * Valid values:
+     * *   ecs: ECS
+     * *   one: ACK One
+     * *   ask: ASK
+     * *   pro: Container Monitoring Pro
      */
     readonly clusterType: string | ros.IResolvable;
 
@@ -1585,7 +1590,9 @@ export interface RosManagedPrometheusProps {
     readonly clusterName?: string | ros.IResolvable;
 
     /**
-     * @Property grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster. When empty or "free", binds to the shared version of Grafana.
+     * @Property grafanaInstanceId: The ID of the managed Grafana workspace that is associated with the cluster. If
+     * you set this parameter to free or leave this parameter empty, the cluster is
+     * associated with a shared Grafana workspace.
      */
     readonly grafanaInstanceId?: string | ros.IResolvable;
 }
@@ -1612,7 +1619,7 @@ function RosManagedPrometheusPropsValidator(properties: any): ros.ValidationResu
     if(properties.clusterType && (typeof properties.clusterType) !== 'object') {
         errors.collect(ros.propertyValidator('clusterType', ros.validateAllowedValues)({
           data: properties.clusterType,
-          allowedValues: ["ecs","ask","one"],
+          allowedValues: ["ecs","ask","one","pro"],
         }));
     }
     errors.collect(ros.propertyValidator('clusterType', ros.validateString)(properties.clusterType));
@@ -1645,7 +1652,7 @@ function rosManagedPrometheusPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`, which is used to install a Prometheus instance to monitor a serverless Kubernetes (ASK) cluster or an Elastic Compute Service (ECS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedPrometheus` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */
@@ -1669,7 +1676,12 @@ export class RosManagedPrometheus extends ros.RosResource {
 
 
     /**
-     * @Property clusterType: The type of the cluster. Currently, only ask, ecs and one clusters are supported. Default is ecs.
+     * @Property clusterType: The cluster type.
+     * Valid values:
+     * *   ecs: ECS
+     * *   one: ACK One
+     * *   ask: ASK
+     * *   pro: Container Monitoring Pro
      */
     public clusterType: string | ros.IResolvable;
 
@@ -1699,7 +1711,9 @@ export class RosManagedPrometheus extends ros.RosResource {
     public clusterName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster. When empty or "free", binds to the shared version of Grafana.
+     * @Property grafanaInstanceId: The ID of the managed Grafana workspace that is associated with the cluster. If
+     * you set this parameter to free or leave this parameter empty, the cluster is
+     * associated with a shared Grafana workspace.
      */
     public grafanaInstanceId: string | ros.IResolvable | undefined;
 
@@ -1808,7 +1822,7 @@ function rosRetcodeAppPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::RetcodeApp`, which is used to create a browser monitoring task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::RetcodeApp`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RetcodeApp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-retcodeapp
  */
@@ -1888,7 +1902,7 @@ export interface RosRumProps {
     readonly appName: string | ros.IResolvable;
 
     /**
-     * @Property siteType: The type of the website.
+     * @Property siteType: The application type. Valid values: web, miniapp, ios, and android.
      */
     readonly siteType: string | ros.IResolvable;
 
@@ -1913,12 +1927,14 @@ export interface RosRumProps {
     readonly nickName?: string | ros.IResolvable;
 
     /**
-     * @Property packageName: The package name of the RUM application.
+     * @Property packageName: The name of the Android application package. This parameter is required if you
+     * create an Android application.
      */
     readonly packageName?: string | ros.IResolvable;
 
     /**
-     * @Property realRegionId: The actual region ID for internal use.
+     * @Property realRegionId: The region where the application resides. You can leave this parameter empty or
+     * set it to China East 2 Finance.
      */
     readonly realRegionId?: string | ros.IResolvable;
 
@@ -1928,7 +1944,7 @@ export interface RosRumProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property source: The source of the RUM application.
+     * @Property source: The source. This is a reserved parameter.
      */
     readonly source?: string | ros.IResolvable;
 
@@ -2036,7 +2052,7 @@ export class RosRum extends ros.RosResource {
     public appName: string | ros.IResolvable;
 
     /**
-     * @Property siteType: The type of the website.
+     * @Property siteType: The application type. Valid values: web, miniapp, ios, and android.
      */
     public siteType: string | ros.IResolvable;
 
@@ -2061,12 +2077,14 @@ export class RosRum extends ros.RosResource {
     public nickName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property packageName: The package name of the RUM application.
+     * @Property packageName: The name of the Android application package. This parameter is required if you
+     * create an Android application.
      */
     public packageName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property realRegionId: The actual region ID for internal use.
+     * @Property realRegionId: The region where the application resides. You can leave this parameter empty or
+     * set it to China East 2 Finance.
      */
     public realRegionId: string | ros.IResolvable | undefined;
 
@@ -2076,7 +2094,7 @@ export class RosRum extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property source: The source of the RUM application.
+     * @Property source: The source. This is a reserved parameter.
      */
     public source: string | ros.IResolvable | undefined;
 
@@ -2181,6 +2199,138 @@ function rosRumTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosTraceResource`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-traceresource
+ */
+export interface RosTraceResourceProps {
+
+    /**
+     * @Property appType: The application type of the trace resource. Allowed values: default, trace, cms.
+     */
+    readonly appType?: string | ros.IResolvable;
+
+    /**
+     * @Property createAllResource: Whether to create all trace resources.
+     */
+    readonly createAllResource?: boolean | ros.IResolvable;
+
+    /**
+     * @Property workspace: The workspace of the trace resource.
+     */
+    readonly workspace?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTraceResourceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTraceResourceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTraceResourcePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('createAllResource', ros.validateBoolean)(properties.createAllResource));
+    if(properties.appType && (typeof properties.appType) !== 'object') {
+        errors.collect(ros.propertyValidator('appType', ros.validateAllowedValues)({
+          data: properties.appType,
+          allowedValues: ["default","trace","cms"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('appType', ros.validateString)(properties.appType));
+    errors.collect(ros.propertyValidator('workspace', ros.validateString)(properties.workspace));
+    return errors.wrap('supplied properties not correct for "RosTraceResourceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::TraceResource` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTraceResourceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::TraceResource` resource.
+ */
+// @ts-ignore TS6133
+function rosTraceResourcePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTraceResourcePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AppType': ros.stringToRosTemplate(properties.appType),
+      'CreateAllResource': ros.booleanToRosTemplate(properties.createAllResource),
+      'Workspace': ros.stringToRosTemplate(properties.workspace),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::TraceResource`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TraceResource` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-traceresource
+ */
+export class RosTraceResource extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::TraceResource";
+
+    /**
+     * @Attribute SlsEndpointDesc: The sls endpoint description of the trace resource.
+     */
+    public readonly attrSlsEndpointDesc: ros.IResolvable;
+
+    /**
+     * @Attribute TraceEndpointDesc: The trace endpoint description of the trace resource.
+     */
+    public readonly attrTraceEndpointDesc: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property appType: The application type of the trace resource. Allowed values: default, trace, cms.
+     */
+    public appType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property createAllResource: Whether to create all trace resources.
+     */
+    public createAllResource: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property workspace: The workspace of the trace resource.
+     */
+    public workspace: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTraceResourceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTraceResource.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrSlsEndpointDesc = this.getAtt('SlsEndpointDesc');
+        this.attrTraceEndpointDesc = this.getAtt('TraceEndpointDesc');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.appType = props.appType;
+        this.createAllResource = props.createAllResource;
+        this.workspace = props.workspace;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            appType: this.appType,
+            createAllResource: this.createAllResource,
+            workspace: this.workspace,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTraceResourcePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosXTraceApp`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-xtraceapp
  */
@@ -2247,7 +2397,7 @@ function rosXTraceAppPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::XTraceApp`, which is used to create an application monitoring task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::XTraceApp`.
  * @Note This class does not contain additional functions, so it is recommended to use the `XTraceApp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-xtraceapp
  */

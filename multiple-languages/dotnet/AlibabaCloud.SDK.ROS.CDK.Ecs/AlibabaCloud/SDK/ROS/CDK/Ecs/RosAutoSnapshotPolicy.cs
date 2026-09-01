@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoSnapshotPolicy`, which is used to create an automatic snapshot policy.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoSnapshotPolicy`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AutoSnapshotPolicy` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
@@ -274,10 +274,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies. Range:
-        /// -1: Permanent storage
-        /// 1-65535: Specifies the number of days to save
-        /// Default value: -1
+        /// <strong>Property</strong>: copiedSnapshotsRetentionDays: The retention period of the snapshot copy in the destination region. Unit: days.
+        /// Valid values:
+        /// - -1: The snapshot copy is retained until it is deleted.
+        /// - 1 to 65535: The snapshot copy is retained for the specified number of days.
+        /// After the retention period of the snapshot copy expires, the snapshot copy is
+        /// automatically deleted.
+        /// Default value: -1.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "copiedSnapshotsRetentionDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -92,6 +92,10 @@ func (j *jsiiProxy_RosScalingConfiguration) validateSetCpuParameters(val interfa
 	return nil
 }
 
+func (j *jsiiProxy_RosScalingConfiguration) validateSetCpuOptionsParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosScalingConfiguration) validateSetCreditSpecificationParameters(val interface{}) error {
 	return nil
 }

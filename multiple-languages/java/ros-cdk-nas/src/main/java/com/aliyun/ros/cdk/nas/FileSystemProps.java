@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.489Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:15:39.307Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.FileSystemProps")
 @software.amazon.jsii.Jsii.Proxy(FileSystemProps.Jsii$Proxy.class)
 public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,9 +37,16 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property capacity: File system capacity, the unit is GB.
+     * Property capacity: Specify the capacity of the file system.
      * <p>
-     * Required and valid when FileSystemType=extreme or cpfs.
+     * Unit: GiB. This parameter is required
+     * and valid when FileSystemType is set to extreme, cpfs, or cpfsse.
+     * Specify a value based on the specifications on the following buy page:
+     * <p>
+     * <ul>
+     * <li>Extreme NAS (Pay-as-you-go)</li>
+     * <li>CPFS (Pay-as-you-go)</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCapacity() {
         return null;
@@ -62,7 +69,15 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property description: File system description (space characters are not allowed).
+     * Property description: The description of the file system.
+     * <p>
+     * Limits:
+     * <p>
+     * <ul>
+     * <li>Must be 2 to 128 characters in length.</li>
+     * <li>Must start with a letter but cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+     * <li>Can contain digits, colons (:), underscores (_), and hyphens (-).</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -79,11 +94,28 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property encryptType: Specifies whether to encrypt data.
+     * Property encryptType: Specifies whether to encrypt data in the file system.
      * <p>
-     * You can use keys that are hosted by Key Management Service (KMS) to encrypt data stored on a file system. Data is automatically decrypted when you access encrypted data. Valid values:
-     * 0: specifies that no encryption is applied to data on the file system.
-     * 1: specifies that encryption is applied to data on the file system.
+     * You can use the keys that are managed by Key Management Service (KMS) to encrypt
+     * data in a file system. When you read and write the encrypted data, the data is
+     * automatically decrypted.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>0 (default): The data in the file system is not encrypted.</li>
+     * <li>1: A NAS-managed key is used to encrypt the data in the file system. This
+     * value is valid if FileSystemType is set to standard or extreme.</li>
+     * <li>2: A KMS-managed key is used to encrypt the data in the file system. This
+     * value is valid if the FileSystemType parameter is set to standard or extreme.</li>
+     * </ul>
+     * <p>
+     * <blockquote></blockquote>
+     * <p>
+     * <ul>
+     * <li>Extreme NAS: All regions except China East 1 Finance support KMS-managed
+     * keys.</li>
+     * <li>General-purpose NAS: All regions support KMS-managed keys.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEncryptType() {
         return null;
@@ -106,7 +138,19 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property snapshotId: Snapshot ID.
+     * Property snapshotId: The snapshot ID.
+     * <p>
+     * This parameter is available only for advanced Extreme NAS file systems.
+     * <p>
+     * <blockquote>
+     * <p>
+     * You can create a file system from a snapshot. The version of the file system is
+     * the same as that of the source file system. For example, the source file system
+     * of the snapshot uses version 1. To create a file system of version 2, create File
+     * System A from the snapshot and create File System B of version 2. Then copy the
+     * data and migrate your business from File System A to File System B.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotId() {
         return null;
@@ -122,21 +166,48 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property vpcId: Vpc ID.
+     * Property vpcId: The VPC ID.
+     * <p>
+     * <ul>
+     * <li>This parameter is required if FileSystemType is set to cpfs or cpfsse.</li>
+     * <li>This parameter is reserved and not required if FileSystemType is set to
+     * standard or extreme.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
-     * Property vSwitchId: VSwitch ID.
+     * Property vSwitchId: The vSwitch ID.
+     * <p>
+     * <ul>
+     * <li>This parameter is required if FileSystemType is set to cpfs.</li>
+     * <li>If FileSystemType is not set to cpfs, this parameter is reserved and not
+     * required.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
     /**
-     * Property zoneId: Zone ID.
+     * Property zoneId: The ID of the zone.
+     * <p>
+     * Each region has multiple isolated locations known as zones. Each zone has its own
+     * independent power supply and network.
+     * This parameter is not required if FileSystemType is set to standard. By default,
+     * a random zone is selected based on the protocol type and storage type.
+     * This parameter is required if FileSystemType is set to extreme or cpfs.
+     * <p>
+     * <blockquote></blockquote>
+     * <p>
+     * <ul>
+     * <li>An Elastic Compute Service (ECS) instance and a file system that reside in
+     * different zones of the same region can access each other.</li>
+     * <li>We recommend that you select the zone where the ECS instance resides. This
+     * prevents cross-zone latency between the file system and the ECS instance.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
@@ -243,8 +314,15 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getCapacity}
-         * @param capacity Property capacity: File system capacity, the unit is GB.
-         *                 Required and valid when FileSystemType=extreme or cpfs.
+         * @param capacity Property capacity: Specify the capacity of the file system.
+         *                 Unit: GiB. This parameter is required
+         *                 and valid when FileSystemType is set to extreme, cpfs, or cpfsse.
+         *                 Specify a value based on the specifications on the following buy page:
+         *                 <p>
+         *                 <ul>
+         *                 <li>Extreme NAS (Pay-as-you-go)</li>
+         *                 <li>CPFS (Pay-as-you-go)</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder capacity(java.lang.Number capacity) {
@@ -254,8 +332,15 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getCapacity}
-         * @param capacity Property capacity: File system capacity, the unit is GB.
-         *                 Required and valid when FileSystemType=extreme or cpfs.
+         * @param capacity Property capacity: Specify the capacity of the file system.
+         *                 Unit: GiB. This parameter is required
+         *                 and valid when FileSystemType is set to extreme, cpfs, or cpfsse.
+         *                 Specify a value based on the specifications on the following buy page:
+         *                 <p>
+         *                 <ul>
+         *                 <li>Extreme NAS (Pay-as-you-go)</li>
+         *                 <li>CPFS (Pay-as-you-go)</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder capacity(com.aliyun.ros.cdk.core.IResolvable capacity) {
@@ -307,7 +392,14 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getDescription}
-         * @param description Property description: File system description (space characters are not allowed).
+         * @param description Property description: The description of the file system.
+         *                    Limits:
+         *                    <p>
+         *                    <ul>
+         *                    <li>Must be 2 to 128 characters in length.</li>
+         *                    <li>Must start with a letter but cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         *                    <li>Can contain digits, colons (:), underscores (_), and hyphens (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -317,7 +409,14 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getDescription}
-         * @param description Property description: File system description (space characters are not allowed).
+         * @param description Property description: The description of the file system.
+         *                    Limits:
+         *                    <p>
+         *                    <ul>
+         *                    <li>Must be 2 to 128 characters in length.</li>
+         *                    <li>Must start with a letter but cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         *                    <li>Can contain digits, colons (:), underscores (_), and hyphens (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -351,10 +450,27 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getEncryptType}
-         * @param encryptType Property encryptType: Specifies whether to encrypt data.
-         *                    You can use keys that are hosted by Key Management Service (KMS) to encrypt data stored on a file system. Data is automatically decrypted when you access encrypted data. Valid values:
-         *                    0: specifies that no encryption is applied to data on the file system.
-         *                    1: specifies that encryption is applied to data on the file system.
+         * @param encryptType Property encryptType: Specifies whether to encrypt data in the file system.
+         *                    You can use the keys that are managed by Key Management Service (KMS) to encrypt
+         *                    data in a file system. When you read and write the encrypted data, the data is
+         *                    automatically decrypted.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>0 (default): The data in the file system is not encrypted.</li>
+         *                    <li>1: A NAS-managed key is used to encrypt the data in the file system. This
+         *                    value is valid if FileSystemType is set to standard or extreme.</li>
+         *                    <li>2: A KMS-managed key is used to encrypt the data in the file system. This
+         *                    value is valid if the FileSystemType parameter is set to standard or extreme.</li>
+         *                    </ul>
+         *                    <p>
+         *                    <blockquote></blockquote>
+         *                    <p>
+         *                    <ul>
+         *                    <li>Extreme NAS: All regions except China East 1 Finance support KMS-managed
+         *                    keys.</li>
+         *                    <li>General-purpose NAS: All regions support KMS-managed keys.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder encryptType(java.lang.Number encryptType) {
@@ -364,10 +480,27 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getEncryptType}
-         * @param encryptType Property encryptType: Specifies whether to encrypt data.
-         *                    You can use keys that are hosted by Key Management Service (KMS) to encrypt data stored on a file system. Data is automatically decrypted when you access encrypted data. Valid values:
-         *                    0: specifies that no encryption is applied to data on the file system.
-         *                    1: specifies that encryption is applied to data on the file system.
+         * @param encryptType Property encryptType: Specifies whether to encrypt data in the file system.
+         *                    You can use the keys that are managed by Key Management Service (KMS) to encrypt
+         *                    data in a file system. When you read and write the encrypted data, the data is
+         *                    automatically decrypted.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>0 (default): The data in the file system is not encrypted.</li>
+         *                    <li>1: A NAS-managed key is used to encrypt the data in the file system. This
+         *                    value is valid if FileSystemType is set to standard or extreme.</li>
+         *                    <li>2: A KMS-managed key is used to encrypt the data in the file system. This
+         *                    value is valid if the FileSystemType parameter is set to standard or extreme.</li>
+         *                    </ul>
+         *                    <p>
+         *                    <blockquote></blockquote>
+         *                    <p>
+         *                    <ul>
+         *                    <li>Extreme NAS: All regions except China East 1 Finance support KMS-managed
+         *                    keys.</li>
+         *                    <li>General-purpose NAS: All regions support KMS-managed keys.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder encryptType(com.aliyun.ros.cdk.core.IResolvable encryptType) {
@@ -419,7 +552,18 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getSnapshotId}
-         * @param snapshotId Property snapshotId: Snapshot ID.
+         * @param snapshotId Property snapshotId: The snapshot ID.
+         *                   This parameter is available only for advanced Extreme NAS file systems.
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   You can create a file system from a snapshot. The version of the file system is
+         *                   the same as that of the source file system. For example, the source file system
+         *                   of the snapshot uses version 1. To create a file system of version 2, create File
+         *                   System A from the snapshot and create File System B of version 2. Then copy the
+         *                   data and migrate your business from File System A to File System B.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder snapshotId(java.lang.String snapshotId) {
@@ -429,7 +573,18 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getSnapshotId}
-         * @param snapshotId Property snapshotId: Snapshot ID.
+         * @param snapshotId Property snapshotId: The snapshot ID.
+         *                   This parameter is available only for advanced Extreme NAS file systems.
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   You can create a file system from a snapshot. The version of the file system is
+         *                   the same as that of the source file system. For example, the source file system
+         *                   of the snapshot uses version 1. To create a file system of version 2, create File
+         *                   System A from the snapshot and create File System B of version 2. Then copy the
+         *                   data and migrate your business from File System A to File System B.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder snapshotId(com.aliyun.ros.cdk.core.IResolvable snapshotId) {
@@ -451,7 +606,12 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getVpcId}
-         * @param vpcId Property vpcId: Vpc ID.
+         * @param vpcId Property vpcId: The VPC ID.
+         *              <ul>
+         *              <li>This parameter is required if FileSystemType is set to cpfs or cpfsse.</li>
+         *              <li>This parameter is reserved and not required if FileSystemType is set to
+         *              standard or extreme.</li>
+         *              </ul>
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
@@ -461,7 +621,12 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getVpcId}
-         * @param vpcId Property vpcId: Vpc ID.
+         * @param vpcId Property vpcId: The VPC ID.
+         *              <ul>
+         *              <li>This parameter is required if FileSystemType is set to cpfs or cpfsse.</li>
+         *              <li>This parameter is reserved and not required if FileSystemType is set to
+         *              standard or extreme.</li>
+         *              </ul>
          * @return {@code this}
          */
         public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
@@ -471,7 +636,12 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: VSwitch ID.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID.
+         *                  <ul>
+         *                  <li>This parameter is required if FileSystemType is set to cpfs.</li>
+         *                  <li>If FileSystemType is not set to cpfs, this parameter is reserved and not
+         *                  required.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -481,7 +651,12 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: VSwitch ID.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID.
+         *                  <ul>
+         *                  <li>This parameter is required if FileSystemType is set to cpfs.</li>
+         *                  <li>If FileSystemType is not set to cpfs, this parameter is reserved and not
+         *                  required.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
@@ -491,7 +666,21 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getZoneId}
-         * @param zoneId Property zoneId: Zone ID.
+         * @param zoneId Property zoneId: The ID of the zone.
+         *               Each region has multiple isolated locations known as zones. Each zone has its own
+         *               independent power supply and network.
+         *               This parameter is not required if FileSystemType is set to standard. By default,
+         *               a random zone is selected based on the protocol type and storage type.
+         *               This parameter is required if FileSystemType is set to extreme or cpfs.
+         *               <p>
+         *               <blockquote></blockquote>
+         *               <p>
+         *               <ul>
+         *               <li>An Elastic Compute Service (ECS) instance and a file system that reside in
+         *               different zones of the same region can access each other.</li>
+         *               <li>We recommend that you select the zone where the ECS instance resides. This
+         *               prevents cross-zone latency between the file system and the ECS instance.</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
@@ -501,7 +690,21 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getZoneId}
-         * @param zoneId Property zoneId: Zone ID.
+         * @param zoneId Property zoneId: The ID of the zone.
+         *               Each region has multiple isolated locations known as zones. Each zone has its own
+         *               independent power supply and network.
+         *               This parameter is not required if FileSystemType is set to standard. By default,
+         *               a random zone is selected based on the protocol type and storage type.
+         *               This parameter is required if FileSystemType is set to extreme or cpfs.
+         *               <p>
+         *               <blockquote></blockquote>
+         *               <p>
+         *               <ul>
+         *               <li>An Elastic Compute Service (ECS) instance and a file system that reside in
+         *               different zones of the same region can access each other.</li>
+         *               <li>We recommend that you select the zone where the ECS instance resides. This
+         *               prevents cross-zone latency between the file system and the ECS instance.</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {

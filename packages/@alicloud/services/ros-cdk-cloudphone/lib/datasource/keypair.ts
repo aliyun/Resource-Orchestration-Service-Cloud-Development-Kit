@@ -45,7 +45,7 @@ export interface IKeyPair extends ros.IResource {
     readonly attrKeyPairName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CloudPhone::KeyPair`, which is used to query the information about a key pair.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CloudPhone::KeyPair`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKeyPair`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-keypair
  */

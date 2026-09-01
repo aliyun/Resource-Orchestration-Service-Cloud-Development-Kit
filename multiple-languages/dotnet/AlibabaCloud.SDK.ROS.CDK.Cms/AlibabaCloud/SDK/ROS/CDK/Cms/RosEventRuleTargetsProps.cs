@@ -48,7 +48,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         private object? _contactParameters;
 
         /// <remarks>
-        /// <strong>Property</strong>: contactParameters: CONTACT configuration.A maximum of 5 parameters
+        /// <strong>Property</strong>: contactParameters: The information about the alert contact groups that receive alert notifications.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "contactParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosEventRuleTargets.ContactParametersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -298,7 +298,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         private object? _webhookParameters;
 
         /// <remarks>
-        /// <strong>Property</strong>: webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
+        /// <strong>Property</strong>: webhookParameters: The information about the callback URLs that are used to receive alert
+        /// notifications.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "webhookParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosEventRuleTargets.WebhookParametersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

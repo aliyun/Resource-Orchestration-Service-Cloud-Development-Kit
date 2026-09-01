@@ -15,14 +15,16 @@ export interface SiteMonitorProps {
     readonly address: string | ros.IResolvable;
 
     /**
-     * Property taskName: The name of the site monitoring task. The name must be 4 to 100 characters in length.
-     * It can contain letters, digits, and underscores (_).
+     * Property taskName: The name of the monitoring task.
+     * The name must be 4 to 100 characters long and can contain letters, digits,
+     * underscores (_), and Chinese characters.
      */
     readonly taskName: string | ros.IResolvable;
 
     /**
-     * Property taskType: The protocol used by the site monitoring task. Valid values: HTTP, HTTPS, PING, TCP,
-     * UDP, DNS, SMTP, POP3, and FTP.
+     * Property taskType: The type of monitoring task.
+     * Valid protocols include HTTP(S), PING, TCP, UDP, DNS, SMTP, POP3, FTP, and
+     * WEBSOCKET.
      */
     readonly taskType: string | ros.IResolvable;
 
@@ -32,8 +34,9 @@ export interface SiteMonitorProps {
     readonly alertIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property interval: The interval at which detection requests are sent. Valid values: 1, 5, and 15. Unit:
-     * minutes. Default value: 1.
+     * Property interval: The monitoring frequency in minutes.
+     * Valid values: 1, 5, 15, 30, and 60.
+     * Default: 1.
      */
     readonly interval?: number | ros.IResolvable;
 
@@ -66,7 +69,7 @@ export interface ISiteMonitor extends ros.IResource {
     readonly attrTaskId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring task.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SiteMonitor`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSiteMonitor`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
  */

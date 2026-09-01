@@ -10,7 +10,9 @@ export { RosSSHKeyPairAttachment as SSHKeyPairAttachmentProperty };
 export interface SSHKeyPairAttachmentProps {
 
     /**
-     * Property instanceIds: The comma delimited ECS instance id list. Only support Linux.
+     * Property instanceIds: The IDs of instances to which you want to bind the SSH key pair. The value can be
+     * a JSON array that consists of up to 50 instance IDs. Separate multiple instance
+     * IDs with commas (,).
      */
     readonly instanceIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
@@ -33,7 +35,7 @@ export interface ISSHKeyPairAttachment extends ros.IResource {
     readonly props: SSHKeyPairAttachmentProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SSHKeyPairAttachment`, which is used to bind an SSH key pair to Elastic Compute Service (ECS) instances.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SSHKeyPairAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSSHKeyPairAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypairattachment
  */

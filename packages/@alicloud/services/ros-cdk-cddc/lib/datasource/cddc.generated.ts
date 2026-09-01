@@ -64,7 +64,7 @@ function rosDedicatedHostGroupPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CDDC::DedicatedHostGroup`, which is used to query the information about a dedicated cluster.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CDDC::DedicatedHostGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHostGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cddc-dedicatedhostgroup
  */
@@ -357,7 +357,7 @@ function rosDedicatedHostGroupsPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CDDC::DedicatedHostGroups`, which is used to query the information about resources in dedicated clusters.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CDDC::DedicatedHostGroups`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHostGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cddc-dedicatedhostgroups
  */

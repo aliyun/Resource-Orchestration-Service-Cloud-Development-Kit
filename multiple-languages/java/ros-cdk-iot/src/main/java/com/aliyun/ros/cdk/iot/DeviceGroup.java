@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::IOT::DeviceGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:35:50.683Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:45:11.632Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.DeviceGroup")
 public class DeviceGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.iot.IDeviceGroup {
 
@@ -122,7 +122,8 @@ public class DeviceGroup extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property groupName: The name of the group.
          * <p>
-         * The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
+         * The alias must be 4 to 30 characters in length, and can
+         * contain letters, digits, and underscores (_).
          * <p>
          * @return {@code this}
          * @param groupName Property groupName: The name of the group. This parameter is required.
@@ -134,7 +135,8 @@ public class DeviceGroup extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property groupName: The name of the group.
          * <p>
-         * The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
+         * The alias must be 4 to 30 characters in length, and can
+         * contain letters, digits, and underscores (_).
          * <p>
          * @return {@code this}
          * @param groupName Property groupName: The name of the group. This parameter is required.

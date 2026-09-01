@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudsso;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSSO::PermissionPolicyToAccessConfigurationAddition</code>, which is used to add a policy to an access configuration.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSSO::PermissionPolicyToAccessConfigurationAddition</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:53:18.929Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:42:02.335Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.PermissionPolicyToAccessConfigurationAddition")
 public class PermissionPolicyToAccessConfigurationAddition extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudsso.IPermissionPolicyToAccessConfigurationAddition {
 
@@ -146,30 +146,38 @@ public class PermissionPolicyToAccessConfigurationAddition extends com.aliyun.ro
         }
 
         /**
-         * Property permissionPolicyName: The name of the permission policy.
+         * Property permissionPolicyName: The name of the policy.
          * <p>
          * <ul>
-         * <li>If you set PermissionPolicyType to System, you must set this parameter to the name of the system policy. You can obtain the name of the system policy from RAM.</li>
-         * <li>If you set PermissionPolicyType to Inline, you must set this parameter to the name of the inline policy. A custom value is supported.</li>
+         * <li>If you set <code>PermissionPolicyType</code> to <code>System</code>, you must set
+         * PermissionPolicyName to the name of a system policy. You can obtain the name of
+         * the system policy from RAM.</li>
+         * <li>If you set <code>PermissionPolicyType</code> to <code>Inline</code>, you must set
+         * PermissionPolicyName to the name of an inline policy. A custom value is
+         * supported. The value can be up to 32 characters in length.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param permissionPolicyName Property permissionPolicyName: The name of the permission policy. This parameter is required.
+         * @param permissionPolicyName Property permissionPolicyName: The name of the policy. This parameter is required.
          */
         public Builder permissionPolicyName(final java.lang.String permissionPolicyName) {
             this.props.permissionPolicyName(permissionPolicyName);
             return this;
         }
         /**
-         * Property permissionPolicyName: The name of the permission policy.
+         * Property permissionPolicyName: The name of the policy.
          * <p>
          * <ul>
-         * <li>If you set PermissionPolicyType to System, you must set this parameter to the name of the system policy. You can obtain the name of the system policy from RAM.</li>
-         * <li>If you set PermissionPolicyType to Inline, you must set this parameter to the name of the inline policy. A custom value is supported.</li>
+         * <li>If you set <code>PermissionPolicyType</code> to <code>System</code>, you must set
+         * PermissionPolicyName to the name of a system policy. You can obtain the name of
+         * the system policy from RAM.</li>
+         * <li>If you set <code>PermissionPolicyType</code> to <code>Inline</code>, you must set
+         * PermissionPolicyName to the name of an inline policy. A custom value is
+         * supported. The value can be up to 32 characters in length.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param permissionPolicyName Property permissionPolicyName: The name of the permission policy. This parameter is required.
+         * @param permissionPolicyName Property permissionPolicyName: The name of the policy. This parameter is required.
          */
         public Builder permissionPolicyName(final com.aliyun.ros.cdk.core.IResolvable permissionPolicyName) {
             this.props.permissionPolicyName(permissionPolicyName);

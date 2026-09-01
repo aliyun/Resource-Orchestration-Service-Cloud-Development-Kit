@@ -15,7 +15,10 @@ export interface DBInstanceProps {
     readonly engineVersion: string | ros.IResolvable;
 
     /**
-     * Property vSwitchId: The vSwitch ID of the instance.
+     * Property vSwitchId: The vSwitch ID.
+     * > - This parameter is required.
+     * >
+     * > - The vSwitch must be in the zone specified by `ZoneId`.
      */
     readonly vSwitchId: string | ros.IResolvable;
 
@@ -36,7 +39,7 @@ export interface DBInstanceProps {
     readonly backupId?: string | ros.IResolvable;
 
     /**
-     * Property cacheStorageSize: Cache storage size.
+     * Property cacheStorageSize: The cache size for a serverless instance, in GB.
      */
     readonly cacheStorageSize?: string | ros.IResolvable;
 
@@ -48,13 +51,17 @@ export interface DBInstanceProps {
     readonly createSampleData?: boolean | ros.IResolvable;
 
     /**
-     * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
-     * This parameter must be passed in to create a storage reservation mode instance.
+     * Property dbInstanceCategory: The instance edition. Valid values:
+     * - HighAvailability: High-availability Edition
+     * - Basic: Basic Edition
+     * > This parameter is required for instances in elastic storage mode.
      */
     readonly dbInstanceCategory?: string | ros.IResolvable;
 
     /**
-     * Property dbInstanceClass: The instance type.
+     * Property dbInstanceClass: The instance type. For more information, see the description of the
+     * `DBInstanceClass` parameter.
+     * > This parameter is required for instances in reserved storage mode.
      */
     readonly dbInstanceClass?: string | ros.IResolvable;
 
@@ -64,8 +71,9 @@ export interface DBInstanceProps {
     readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
-     * Property dbInstanceGroupCount: The number of compute nodes in the instance.
-     * The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+     * Property dbInstanceGroupCount: The number of compute groups. Valid values: 2, 4, 8, 12, 16, 24, 32, 64, 96, and
+     * 128.
+     * > This parameter is required for instances in reserved storage mode.
      */
     readonly dbInstanceGroupCount?: number | ros.IResolvable;
 
@@ -75,7 +83,13 @@ export interface DBInstanceProps {
     readonly dbInstanceMode?: string | ros.IResolvable;
 
     /**
-     * Property deployMode: The deployment mode of the instance.
+     * Property deployMode: The deployment mode. Valid values:
+     * - multiple: multi-AZ deployment.
+     * - single: single-AZ deployment.
+     * > * If this parameter is not specified, the default value is single.
+     * >
+     * > * Defaults to `single` (single-AZ deployment), which is the only mode currently
+     * supported.
      */
     readonly deployMode?: string | ros.IResolvable;
 
@@ -98,16 +112,29 @@ export interface DBInstanceProps {
     readonly encryptionType?: string | ros.IResolvable;
 
     /**
-     * Property idleTime: Idle release wait time. That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+     * Property idleTime: The period of inactivity, in seconds, after which the instance is considered
+     * idle. Minimum value: 60. Default value: 600.
+     * > This parameter is required only for serverless instances that use
+     * auto-scheduling.
      */
     readonly idleTime?: number | ros.IResolvable;
 
     /**
-     * Property instanceSpec: The specification of segment nodes.
-     * - When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.
-     * - When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.
-     * - When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
-     * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
+     * Property instanceSpec: The instance type for the compute nodes.
+     * Valid values for a High-availability Edition instance in elastic storage mode:
+     * - 2C16G
+     * - 4C32G
+     * - 16C128G
+     * Valid values for a Basic Edition instance in elastic storage mode:
+     * - 2C8G
+     * - 4C16G
+     * - 8C32G
+     * - 16C64G
+     * Valid values for a serverless instance:
+     * - 4C16G
+     * - 8C32G
+     * > This parameter is required for instances in elastic storage mode or serverless
+     * mode.
      */
     readonly instanceSpec?: string | ros.IResolvable;
 
@@ -117,7 +144,13 @@ export interface DBInstanceProps {
     readonly masterAiSpec?: string | ros.IResolvable;
 
     /**
-     * Property masterCu: Master resources. Default is 8.
+     * Property masterCu: The resources for the coordinator node. Valid values:
+     * - 2 CU
+     * - 4 CU
+     * - 8 CU
+     * - 16 CU
+     * - 32 CU
+     * > You are charged for coordinator node resources of 8 CUs or more.
      */
     readonly masterCu?: number | ros.IResolvable;
 
@@ -144,7 +177,7 @@ export interface DBInstanceProps {
     readonly periodUnit?: string | ros.IResolvable;
 
     /**
-     * Property privateIpAddress: Private IP address.
+     * Property privateIpAddress: This parameter is deprecated.
      */
     readonly privateIpAddress?: string | ros.IResolvable;
 
@@ -159,14 +192,21 @@ export interface DBInstanceProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
-     * 127.0.0.1.
+     * Property securityIpList: The IP address whitelist for the instance.
+     * A value of 127.0.0.1 blocks all external access. After you create the instance,
+     * you can call the [ModifySecurityIps]() operation to modify the IP address
+     * whitelist.
      */
     readonly securityIpList?: string | ros.IResolvable;
 
     /**
-     * Property segDiskPerformanceLevel: Seg disk performance level. The value can be:
-     * pl0、pl1 and pl2
+     * Property segDiskPerformanceLevel: The performance level of the ESSDs. Valid values:
+     * - pl0: PL0
+     * - pl1: PL1
+     * - pl2: PL2
+     * > * This parameter applies only if the segment node storage type is ESSD.
+     * >
+     * > * If this parameter is not specified, pl1 is used by default.
      */
     readonly segDiskPerformanceLevel?: string | ros.IResolvable;
 
@@ -193,8 +233,10 @@ export interface DBInstanceProps {
     readonly serverlessMode?: string | ros.IResolvable;
 
     /**
-     * Property serverlessResource: Computing resource threshold. The value ranges from 8 to 32. The step length is 8.
-     * The unit is ACU. The default value is 32.
+     * Property serverlessResource: The threshold for computing resources, in AnalyticDB Compute Units (ACUs). The
+     * value must be a multiple of 8, ranging from 8 to 32. The default value is 32.
+     * > This parameter is required only for serverless instances that use
+     * auto-scheduling.
      */
     readonly serverlessResource?: number | ros.IResolvable;
 
@@ -204,17 +246,27 @@ export interface DBInstanceProps {
     readonly srcDbInstanceName?: string | ros.IResolvable;
 
     /**
-     * Property standbyVSwitchId: The standby VSwitch ID of the instance.
+     * Property standbyVSwitchId: The ID of the vSwitch in the standby zone.
+     * > - This parameter is required only for a multi-AZ deployment.
+     * >
+     * > - The vSwitch must be in the standby zone specified in `StandbyZoneId`.
      */
     readonly standbyVSwitchId?: string | ros.IResolvable;
 
     /**
-     * Property standbyZoneId: The standby zone ID of the instance.
+     * Property standbyZoneId: The ID of the standby zone.
+     * > - This parameter is required only for a multi-AZ deployment.
+     * >
+     * > - You can call the [DescribeRegions]() operation to query the IDs of available
+     * zones.
+     * >
+     * > - The standby zone must be different from the primary zone.
      */
     readonly standbyZoneId?: string | ros.IResolvable;
 
     /**
-     * Property storageSize: The storage capacity of per segment node. Unit: GB. Minimum is 50, max is 4000, step is 50.
+     * Property storageSize: The storage capacity for the instance, in GB. Valid values: .
+     * > This parameter is required for instances in elastic storage mode.
      */
     readonly storageSize?: number | ros.IResolvable;
 
@@ -269,7 +321,7 @@ export interface IDBInstance extends ros.IResource {
     readonly attrPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::DBInstance`Use the , which resource to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::DBInstance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */

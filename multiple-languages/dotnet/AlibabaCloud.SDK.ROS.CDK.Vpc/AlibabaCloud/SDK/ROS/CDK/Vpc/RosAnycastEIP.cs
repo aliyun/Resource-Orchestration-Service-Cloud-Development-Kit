@@ -103,7 +103,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidth: Anycast EIP instance bandwidth
+        /// <strong>Property</strong>: bandwidth: The peak bandwidth of the Anycast EIP instance. Unit: Mbps.
+        /// Valid values: 200 to 1000.
+        /// Default value: 1000.
+        /// > The peak bandwidth is for reference only and is not a guaranteed value. It
+        /// serves as the upper limit for bandwidth.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -154,7 +158,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: description: Anycast EIP instance description
+        /// <strong>Property</strong>: description: The description of the Anycast EIP instance.
+        /// The description must be 0 to 256 characters in length and cannot start with
+        /// `http:\/\/` or `https:\/\/`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -185,7 +191,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceChargeType: Anycast EIP instance charge type
+        /// <strong>Property</strong>: instanceChargeType: The billing method of the Anycast EIP instance.
+        /// Set the value to PostPaid. This value specifies the pay-as-you-go billing method.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -216,7 +223,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: internetChargeType: Anycast EIP instance access public network billing method
+        /// <strong>Property</strong>: internetChargeType: The metering method for Internet data transfer.
+        /// Set the value to PayByTraffic. This value specifies the pay-by-data-transfer
+        /// metering method.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -247,7 +256,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: name: Anycast EIP instance name
+        /// <strong>Property</strong>: name: The name of the Anycast EIP instance.
+        /// The name must be 0 to 128 characters in length. It must start with a letter or a
+        /// Chinese character and can contain digits, underscores (_), and hyphens (-).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

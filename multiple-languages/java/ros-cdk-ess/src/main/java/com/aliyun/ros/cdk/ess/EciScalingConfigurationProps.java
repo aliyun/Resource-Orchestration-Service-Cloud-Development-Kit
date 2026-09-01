@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-eciscalingconfiguration
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:56:08.385Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:06:45.537Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.EciScalingConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(EciScalingConfigurationProps.Jsii$Proxy.class)
 public interface EciScalingConfigurationProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,8 +18,12 @@ public interface EciScalingConfigurationProps extends software.amazon.jsii.JsiiS
     /**
      * Property scalingConfigurationName: The name of the scaling configuration.
      * <p>
-     * The name must be 2 to 64 characters in length and can contain letters, digits, underscores (_), hyphens (-), and periods (.). The name must start with a letter or a digit.
-     * The name of the scaling configuration must be unique in a region. If you do not specify this parameter, the scaling configuration ID is used.
+     * The name must be 2 to 64 characters in
+     * length and can contain letters, digits, underscores (_), hyphens (-), and periods
+     * (.). The name must start with a letter or a digit.
+     * The name of the scaling configuration must be unique within a scaling group in a
+     * region. If you do not specify this parameter, the value of the
+     * ScalingConfigurationId parameter is used.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getScalingConfigurationName();
 
@@ -153,11 +157,11 @@ public interface EciScalingConfigurationProps extends software.amazon.jsii.JsiiS
     }
 
     /**
-     * Property dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching.
+     * Property dataCacheProvisionedIops: The provisioned read/write input/output operations per second (IOPS) for the ESSD AutoPL disk when data caching uses an ESSD AutoPL disk.
      * <p>
-     * Valid values: 0 to min{50000, 1000 × Capacity - Baseline IOPS}, where Baseline IOPS = min{1800 + 50 × Capacity - 50000}.
-     * Note
-     * For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+     * Valid values: 0 to
+     * min{50000, 1000 × capacity − baseline performance}, where baseline performance =
+     * min{1800 + 50 × capacity, 50000}.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDataCacheProvisionedIops() {
         return null;
@@ -198,7 +202,7 @@ public interface EciScalingConfigurationProps extends software.amazon.jsii.JsiiS
     /**
      * Property egressBandwidth: The maximum outbound bandwidth.
      * <p>
-     * Unit: bytes.
+     * Unit: bit/s.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEgressBandwidth() {
         return null;
@@ -253,7 +257,7 @@ public interface EciScalingConfigurationProps extends software.amazon.jsii.JsiiS
     /**
      * Property ingressBandwidth: The maximum inbound bandwidth.
      * <p>
-     * Unit: bytes.
+     * Unit: bit/s.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIngressBandwidth() {
         return null;
@@ -481,8 +485,12 @@ public interface EciScalingConfigurationProps extends software.amazon.jsii.JsiiS
         /**
          * Sets the value of {@link EciScalingConfigurationProps#getScalingConfigurationName}
          * @param scalingConfigurationName Property scalingConfigurationName: The name of the scaling configuration. This parameter is required.
-         *                                 The name must be 2 to 64 characters in length and can contain letters, digits, underscores (_), hyphens (-), and periods (.). The name must start with a letter or a digit.
-         *                                 The name of the scaling configuration must be unique in a region. If you do not specify this parameter, the scaling configuration ID is used.
+         *                                 The name must be 2 to 64 characters in
+         *                                 length and can contain letters, digits, underscores (_), hyphens (-), and periods
+         *                                 (.). The name must start with a letter or a digit.
+         *                                 The name of the scaling configuration must be unique within a scaling group in a
+         *                                 region. If you do not specify this parameter, the value of the
+         *                                 ScalingConfigurationId parameter is used.
          * @return {@code this}
          */
         public Builder scalingConfigurationName(java.lang.String scalingConfigurationName) {
@@ -493,8 +501,12 @@ public interface EciScalingConfigurationProps extends software.amazon.jsii.JsiiS
         /**
          * Sets the value of {@link EciScalingConfigurationProps#getScalingConfigurationName}
          * @param scalingConfigurationName Property scalingConfigurationName: The name of the scaling configuration. This parameter is required.
-         *                                 The name must be 2 to 64 characters in length and can contain letters, digits, underscores (_), hyphens (-), and periods (.). The name must start with a letter or a digit.
-         *                                 The name of the scaling configuration must be unique in a region. If you do not specify this parameter, the scaling configuration ID is used.
+         *                                 The name must be 2 to 64 characters in
+         *                                 length and can contain letters, digits, underscores (_), hyphens (-), and periods
+         *                                 (.). The name must start with a letter or a digit.
+         *                                 The name of the scaling configuration must be unique within a scaling group in a
+         *                                 region. If you do not specify this parameter, the value of the
+         *                                 ScalingConfigurationId parameter is used.
          * @return {@code this}
          */
         public Builder scalingConfigurationName(com.aliyun.ros.cdk.core.IResolvable scalingConfigurationName) {
@@ -838,10 +850,10 @@ public interface EciScalingConfigurationProps extends software.amazon.jsii.JsiiS
 
         /**
          * Sets the value of {@link EciScalingConfigurationProps#getDataCacheProvisionedIops}
-         * @param dataCacheProvisionedIops Property dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching.
-         *                                 Valid values: 0 to min{50000, 1000 × Capacity - Baseline IOPS}, where Baseline IOPS = min{1800 + 50 × Capacity - 50000}.
-         *                                 Note
-         *                                 For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+         * @param dataCacheProvisionedIops Property dataCacheProvisionedIops: The provisioned read/write input/output operations per second (IOPS) for the ESSD AutoPL disk when data caching uses an ESSD AutoPL disk.
+         *                                 Valid values: 0 to
+         *                                 min{50000, 1000 × capacity − baseline performance}, where baseline performance =
+         *                                 min{1800 + 50 × capacity, 50000}.
          * @return {@code this}
          */
         public Builder dataCacheProvisionedIops(java.lang.Number dataCacheProvisionedIops) {
@@ -851,10 +863,10 @@ public interface EciScalingConfigurationProps extends software.amazon.jsii.JsiiS
 
         /**
          * Sets the value of {@link EciScalingConfigurationProps#getDataCacheProvisionedIops}
-         * @param dataCacheProvisionedIops Property dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching.
-         *                                 Valid values: 0 to min{50000, 1000 × Capacity - Baseline IOPS}, where Baseline IOPS = min{1800 + 50 × Capacity - 50000}.
-         *                                 Note
-         *                                 For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+         * @param dataCacheProvisionedIops Property dataCacheProvisionedIops: The provisioned read/write input/output operations per second (IOPS) for the ESSD AutoPL disk when data caching uses an ESSD AutoPL disk.
+         *                                 Valid values: 0 to
+         *                                 min{50000, 1000 × capacity − baseline performance}, where baseline performance =
+         *                                 min{1800 + 50 × capacity, 50000}.
          * @return {@code this}
          */
         public Builder dataCacheProvisionedIops(com.aliyun.ros.cdk.core.IResolvable dataCacheProvisionedIops) {
@@ -951,7 +963,7 @@ public interface EciScalingConfigurationProps extends software.amazon.jsii.JsiiS
         /**
          * Sets the value of {@link EciScalingConfigurationProps#getEgressBandwidth}
          * @param egressBandwidth Property egressBandwidth: The maximum outbound bandwidth.
-         *                        Unit: bytes.
+         *                        Unit: bit/s.
          * @return {@code this}
          */
         public Builder egressBandwidth(java.lang.Number egressBandwidth) {
@@ -962,7 +974,7 @@ public interface EciScalingConfigurationProps extends software.amazon.jsii.JsiiS
         /**
          * Sets the value of {@link EciScalingConfigurationProps#getEgressBandwidth}
          * @param egressBandwidth Property egressBandwidth: The maximum outbound bandwidth.
-         *                        Unit: bytes.
+         *                        Unit: bit/s.
          * @return {@code this}
          */
         public Builder egressBandwidth(com.aliyun.ros.cdk.core.IResolvable egressBandwidth) {
@@ -1097,7 +1109,7 @@ public interface EciScalingConfigurationProps extends software.amazon.jsii.JsiiS
         /**
          * Sets the value of {@link EciScalingConfigurationProps#getIngressBandwidth}
          * @param ingressBandwidth Property ingressBandwidth: The maximum inbound bandwidth.
-         *                         Unit: bytes.
+         *                         Unit: bit/s.
          * @return {@code this}
          */
         public Builder ingressBandwidth(java.lang.Number ingressBandwidth) {
@@ -1108,7 +1120,7 @@ public interface EciScalingConfigurationProps extends software.amazon.jsii.JsiiS
         /**
          * Sets the value of {@link EciScalingConfigurationProps#getIngressBandwidth}
          * @param ingressBandwidth Property ingressBandwidth: The maximum inbound bandwidth.
-         *                         Unit: bytes.
+         *                         Unit: bit/s.
          * @return {@code this}
          */
         public Builder ingressBandwidth(com.aliyun.ros.cdk.core.IResolvable ingressBandwidth) {

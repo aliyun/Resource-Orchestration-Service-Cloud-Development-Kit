@@ -21,7 +21,7 @@ export interface ContainerGroupProps {
     readonly containerGroupName: string | ros.IResolvable;
 
     /**
-     * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     * Property acrRegistryInfo: A list of ACR Enterprise instances.
      */
     readonly acrRegistryInfo?: Array<RosContainerGroup.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -31,7 +31,8 @@ export interface ContainerGroupProps {
     readonly activeDeadlineSeconds?: number | ros.IResolvable;
 
     /**
-     * Property autoMatchImageCache: Specifies whether to automatically match the image cache.
+     * Property autoMatchImageCache: Specifies whether to automatically match the image cache. The default value is
+     * false.
      */
     readonly autoMatchImageCache?: boolean | ros.IResolvable;
 
@@ -61,7 +62,7 @@ export interface ContainerGroupProps {
     readonly imageRegistryCredential?: Array<RosContainerGroup.ImageRegistryCredentialProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property imageSnapshotId: Image cache ID or snapshot ID.
+     * Property imageSnapshotId: The ID of the image cache.
      */
     readonly imageSnapshotId?: string | ros.IResolvable;
 
@@ -71,12 +72,14 @@ export interface ContainerGroupProps {
     readonly initContainer?: Array<RosContainerGroup.InitContainerProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property instanceType: The type of the ECS instance.
+     * Property instanceType: The ECS instance type. You can specify multiple instance types. For more
+     * information, see [Create an instance by specifying an ECS instance type]().
      */
     readonly instanceType?: string | ros.IResolvable;
 
     /**
-     * Property ipv6AddressCount: The number of IPv6 addresses.
+     * Property ipv6AddressCount: The number of IPv6 addresses. The value is fixed at 1, which indicates that one
+     * IPv6 address can be bound to an ECI instance.
      */
     readonly ipv6AddressCount?: number | ros.IResolvable;
 
@@ -150,9 +153,15 @@ export interface ContainerGroupProps {
     readonly volume?: Array<RosContainerGroup.VolumeProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property vSwitchId: The ID of the specified VSwitch.
-     * If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
-     * If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+     * Property vSwitchId: The ID of the vSwitch to which the instance belongs. You can specify up to 10
+     * vSwitch IDs. Separate multiple IDs with commas (,), for example, `vsw-*,vsw-*`.
+     * If you do not specify a vSwitch, the system uses the default vSwitch in the
+     * default VPC of the selected region. If you do not have a default VPC and a
+     * default vSwitch in the region, the system creates a default VPC and a default
+     * vSwitch.
+     * > The number of IP addresses in the vSwitch CIDR block determines the maximum
+     * number of ECI instances that can be created in the vSwitch. Plan the CIDR block
+     * in advance.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 
@@ -219,7 +228,7 @@ export interface IContainerGroup extends ros.IResource {
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECI::ContainerGroup`, which is used to create a container group. A container group is an elastic container instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECI::ContainerGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosContainerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
  */

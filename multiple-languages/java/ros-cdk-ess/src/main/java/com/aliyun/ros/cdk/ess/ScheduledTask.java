@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScheduledTask</code>, which is used to create a scheduled task by specifying properties.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScheduledTask</code>, which creates a scheduled task based on specified properties.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:56:08.546Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:06:45.699Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScheduledTask")
 public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ess.IScheduledTask {
 
@@ -162,24 +162,34 @@ public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property desiredCapacity: The ID of the scaling group whose number of instances must be modified when the scheduled task is triggered.
+         * Property desiredCapacity: The expected number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances.
          * <p>
-         * If you specify the <strong>ScalingGroupId</strong> parameter for a scheduled task, you must specify the minimum, maximum, or expected numbers of instances for a scaling group in the scheduled task. That is, you must specify at least one of the <strong>MinValue</strong>, <strong>MaxValue</strong>, and <strong>DesiredCapacity</strong> parameters.
+         * <blockquote>
+         * <p>
+         * You must specify the <code>DesiredCapacity</code> parameter when you create a scaling
+         * group.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param desiredCapacity Property desiredCapacity: The ID of the scaling group whose number of instances must be modified when the scheduled task is triggered. This parameter is required.
+         * @param desiredCapacity Property desiredCapacity: The expected number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances. This parameter is required.
          */
         public Builder desiredCapacity(final java.lang.Number desiredCapacity) {
             this.props.desiredCapacity(desiredCapacity);
             return this;
         }
         /**
-         * Property desiredCapacity: The ID of the scaling group whose number of instances must be modified when the scheduled task is triggered.
+         * Property desiredCapacity: The expected number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances.
          * <p>
-         * If you specify the <strong>ScalingGroupId</strong> parameter for a scheduled task, you must specify the minimum, maximum, or expected numbers of instances for a scaling group in the scheduled task. That is, you must specify at least one of the <strong>MinValue</strong>, <strong>MaxValue</strong>, and <strong>DesiredCapacity</strong> parameters.
+         * <blockquote>
+         * <p>
+         * You must specify the <code>DesiredCapacity</code> parameter when you create a scaling
+         * group.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param desiredCapacity Property desiredCapacity: The ID of the scaling group whose number of instances must be modified when the scheduled task is triggered. This parameter is required.
+         * @param desiredCapacity Property desiredCapacity: The expected number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances. This parameter is required.
          */
         public Builder desiredCapacity(final com.aliyun.ros.cdk.core.IResolvable desiredCapacity) {
             this.props.desiredCapacity(desiredCapacity);
@@ -214,24 +224,20 @@ public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property maxValue: The expected number of instances in the scaling group if you specify the ScalingGroupId parameter.
-         * <p>
-         * <strong>Note</strong>: You must specify the <strong>DesiredCapacity</strong> parameter when you create a scaling group.
+         * Property maxValue: The maximum number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances.
          * <p>
          * @return {@code this}
-         * @param maxValue Property maxValue: The expected number of instances in the scaling group if you specify the ScalingGroupId parameter. This parameter is required.
+         * @param maxValue Property maxValue: The maximum number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances. This parameter is required.
          */
         public Builder maxValue(final java.lang.Number maxValue) {
             this.props.maxValue(maxValue);
             return this;
         }
         /**
-         * Property maxValue: The expected number of instances in the scaling group if you specify the ScalingGroupId parameter.
-         * <p>
-         * <strong>Note</strong>: You must specify the <strong>DesiredCapacity</strong> parameter when you create a scaling group.
+         * Property maxValue: The maximum number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances.
          * <p>
          * @return {@code this}
-         * @param maxValue Property maxValue: The expected number of instances in the scaling group if you specify the ScalingGroupId parameter. This parameter is required.
+         * @param maxValue Property maxValue: The maximum number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances. This parameter is required.
          */
         public Builder maxValue(final com.aliyun.ros.cdk.core.IResolvable maxValue) {
             this.props.maxValue(maxValue);
@@ -239,20 +245,20 @@ public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property minValue: The maximum number of instances in the scaling group if you specify the ScalingGroupId parameter.
+         * Property minValue: The minimum number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances.
          * <p>
          * @return {@code this}
-         * @param minValue Property minValue: The maximum number of instances in the scaling group if you specify the ScalingGroupId parameter. This parameter is required.
+         * @param minValue Property minValue: The minimum number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances. This parameter is required.
          */
         public Builder minValue(final java.lang.Number minValue) {
             this.props.minValue(minValue);
             return this;
         }
         /**
-         * Property minValue: The maximum number of instances in the scaling group if you specify the ScalingGroupId parameter.
+         * Property minValue: The minimum number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances.
          * <p>
          * @return {@code this}
-         * @param minValue Property minValue: The maximum number of instances in the scaling group if you specify the ScalingGroupId parameter. This parameter is required.
+         * @param minValue Property minValue: The minimum number of instances in the scaling group if the scaling method of the scaling group is to specify the number of instances. This parameter is required.
          */
         public Builder minValue(final com.aliyun.ros.cdk.core.IResolvable minValue) {
             this.props.minValue(minValue);
@@ -260,28 +266,30 @@ public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property recurrenceEndTime: End time of the scheduled task to be repeated.
+         * Property recurrenceEndTime: The end time of the scheduled task.
          * <p>
-         * The date format follows the ISO8601 standard and uses UTC time. It is in the format of YYYY-MM-DDThh:mmZ.
-         * A time point 90 days after creation or modification cannot be entered.
-         * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
+         * Specify the time in the ISO 8601 standard in
+         * the YYYY-MM-DDThh:mmZ format.
+         * The time must be in UTC. You cannot enter a point in time that is later than 365
+         * days from the point in time at which the scheduled task is created.
          * <p>
          * @return {@code this}
-         * @param recurrenceEndTime Property recurrenceEndTime: End time of the scheduled task to be repeated. This parameter is required.
+         * @param recurrenceEndTime Property recurrenceEndTime: The end time of the scheduled task. This parameter is required.
          */
         public Builder recurrenceEndTime(final java.lang.String recurrenceEndTime) {
             this.props.recurrenceEndTime(recurrenceEndTime);
             return this;
         }
         /**
-         * Property recurrenceEndTime: End time of the scheduled task to be repeated.
+         * Property recurrenceEndTime: The end time of the scheduled task.
          * <p>
-         * The date format follows the ISO8601 standard and uses UTC time. It is in the format of YYYY-MM-DDThh:mmZ.
-         * A time point 90 days after creation or modification cannot be entered.
-         * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
+         * Specify the time in the ISO 8601 standard in
+         * the YYYY-MM-DDThh:mmZ format.
+         * The time must be in UTC. You cannot enter a point in time that is later than 365
+         * days from the point in time at which the scheduled task is created.
          * <p>
          * @return {@code this}
-         * @param recurrenceEndTime Property recurrenceEndTime: End time of the scheduled task to be repeated. This parameter is required.
+         * @param recurrenceEndTime Property recurrenceEndTime: The end time of the scheduled task. This parameter is required.
          */
         public Builder recurrenceEndTime(final com.aliyun.ros.cdk.core.IResolvable recurrenceEndTime) {
             this.props.recurrenceEndTime(recurrenceEndTime);
@@ -289,40 +297,42 @@ public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property recurrenceType: Type of the scheduled task to be repeated.
+         * Property recurrenceType: The interval at which the scheduled task is repeatedly executed.
          * <p>
-         * Optional values:
+         * Valid values:
          * <p>
          * <ul>
-         * <li>Daily: Recurrence interval by day for a scheduled task.</li>
-         * <li>Weekly: Recurrence interval by week for a scheduled task.</li>
-         * <li>Monthly: Recurrence interval by month for a scheduled task.</li>
+         * <li>Daily: The scheduled task is executed once every specified number of days.</li>
+         * <li>Weekly: The scheduled task is executed on each specified day of a week.</li>
+         * <li>Monthly: The scheduled task is executed on each specified day of a month.</li>
          * <li>Cron: The scheduled task is executed based on the specified cron expression.
-         * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
+         * You must specify the <code>RecurrenceType</code> and <code>RecurrenceValue</code> parameters at the
+         * same time.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param recurrenceType Property recurrenceType: Type of the scheduled task to be repeated. This parameter is required.
+         * @param recurrenceType Property recurrenceType: The interval at which the scheduled task is repeatedly executed. This parameter is required.
          */
         public Builder recurrenceType(final java.lang.String recurrenceType) {
             this.props.recurrenceType(recurrenceType);
             return this;
         }
         /**
-         * Property recurrenceType: Type of the scheduled task to be repeated.
+         * Property recurrenceType: The interval at which the scheduled task is repeatedly executed.
          * <p>
-         * Optional values:
+         * Valid values:
          * <p>
          * <ul>
-         * <li>Daily: Recurrence interval by day for a scheduled task.</li>
-         * <li>Weekly: Recurrence interval by week for a scheduled task.</li>
-         * <li>Monthly: Recurrence interval by month for a scheduled task.</li>
+         * <li>Daily: The scheduled task is executed once every specified number of days.</li>
+         * <li>Weekly: The scheduled task is executed on each specified day of a week.</li>
+         * <li>Monthly: The scheduled task is executed on each specified day of a month.</li>
          * <li>Cron: The scheduled task is executed based on the specified cron expression.
-         * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
+         * You must specify the <code>RecurrenceType</code> and <code>RecurrenceValue</code> parameters at the
+         * same time.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param recurrenceType Property recurrenceType: Type of the scheduled task to be repeated. This parameter is required.
+         * @param recurrenceType Property recurrenceType: The interval at which the scheduled task is repeatedly executed. This parameter is required.
          */
         public Builder recurrenceType(final com.aliyun.ros.cdk.core.IResolvable recurrenceType) {
             this.props.recurrenceType(recurrenceType);
@@ -367,26 +377,44 @@ public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property scalingGroupId: The globally unique ID of the scheduled task.
+         * Property scalingGroupId: The ID of the scaling group whose number of instances is changed when the scheduled task is triggered.
          * <p>
-         * The globally unique ID is generated by the system.
-         * <strong>Note</strong>: You cannot specify the <strong>ScheduledAction</strong> and <strong>ScalingGroupId</strong> parameters at the same time.
+         * If you specify the <code>ScalingGroupId</code> parameter for a
+         * scheduled task, the scaling method of the scheduled task is to specify the number
+         * of instances in the scaling group. In this case, you must specify at least one of
+         * the <code>MinValue</code>, <code>MaxValue</code>, and <code>DesiredCapacity</code> parameters.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You cannot specify the <code>ScheduledAction</code> and <code>ScalingGroupId</code> parameters at
+         * the same time.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scalingGroupId Property scalingGroupId: The globally unique ID of the scheduled task. This parameter is required.
+         * @param scalingGroupId Property scalingGroupId: The ID of the scaling group whose number of instances is changed when the scheduled task is triggered. This parameter is required.
          */
         public Builder scalingGroupId(final java.lang.String scalingGroupId) {
             this.props.scalingGroupId(scalingGroupId);
             return this;
         }
         /**
-         * Property scalingGroupId: The globally unique ID of the scheduled task.
+         * Property scalingGroupId: The ID of the scaling group whose number of instances is changed when the scheduled task is triggered.
          * <p>
-         * The globally unique ID is generated by the system.
-         * <strong>Note</strong>: You cannot specify the <strong>ScheduledAction</strong> and <strong>ScalingGroupId</strong> parameters at the same time.
+         * If you specify the <code>ScalingGroupId</code> parameter for a
+         * scheduled task, the scaling method of the scheduled task is to specify the number
+         * of instances in the scaling group. In this case, you must specify at least one of
+         * the <code>MinValue</code>, <code>MaxValue</code>, and <code>DesiredCapacity</code> parameters.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You cannot specify the <code>ScheduledAction</code> and <code>ScalingGroupId</code> parameters at
+         * the same time.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scalingGroupId Property scalingGroupId: The globally unique ID of the scheduled task. This parameter is required.
+         * @param scalingGroupId Property scalingGroupId: The ID of the scaling group whose number of instances is changed when the scheduled task is triggered. This parameter is required.
          */
         public Builder scalingGroupId(final com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
             this.props.scalingGroupId(scalingGroupId);
@@ -394,26 +422,42 @@ public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property scheduledAction: Operations performed when the scheduled task is triggered.
+         * Property scheduledAction: The scaling rule that you want to execute when the scheduled task is triggered.
          * <p>
-         * Fill in the unique identifier of the scaling rule.
-         * <strong>Note</strong>: You cannot specify the <strong>ScheduledAction</strong> and <strong>ScalingGroupId</strong> parameters at the same time.
+         * Specify the unique identifier of the scaling rule. If you specify the
+         * <code>ScheduledAction</code> parameter, you must select an existing scaling rule for the
+         * scheduled task.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You cannot specify the <code>ScheduledAction</code> and <code>ScalingGroupId</code> parameters at
+         * the same time.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scheduledAction Property scheduledAction: Operations performed when the scheduled task is triggered. This parameter is required.
+         * @param scheduledAction Property scheduledAction: The scaling rule that you want to execute when the scheduled task is triggered. This parameter is required.
          */
         public Builder scheduledAction(final java.lang.String scheduledAction) {
             this.props.scheduledAction(scheduledAction);
             return this;
         }
         /**
-         * Property scheduledAction: Operations performed when the scheduled task is triggered.
+         * Property scheduledAction: The scaling rule that you want to execute when the scheduled task is triggered.
          * <p>
-         * Fill in the unique identifier of the scaling rule.
-         * <strong>Note</strong>: You cannot specify the <strong>ScheduledAction</strong> and <strong>ScalingGroupId</strong> parameters at the same time.
+         * Specify the unique identifier of the scaling rule. If you specify the
+         * <code>ScheduledAction</code> parameter, you must select an existing scaling rule for the
+         * scheduled task.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You cannot specify the <code>ScheduledAction</code> and <code>ScalingGroupId</code> parameters at
+         * the same time.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scheduledAction Property scheduledAction: Operations performed when the scheduled task is triggered. This parameter is required.
+         * @param scheduledAction Property scheduledAction: The scaling rule that you want to execute when the scheduled task is triggered. This parameter is required.
          */
         public Builder scheduledAction(final com.aliyun.ros.cdk.core.IResolvable scheduledAction) {
             this.props.scheduledAction(scheduledAction);
@@ -421,28 +465,32 @@ public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long.
+         * Property scheduledTaskName: The name of the scheduled task.
          * <p>
-         * It must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
-         * The account name is unique in the same region.
-         * If this parameter is not specified, the default value ScheduledScalingTaskId is used.
+         * The name must be 2 to 64 characters in length and
+         * can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+         * name must start with a letter or a digit. The name of the scheduled task must be
+         * unique in the region and within the account.
+         * By default, the value of the <code>ScheduledTaskId</code> parameter is used.
          * <p>
          * @return {@code this}
-         * @param scheduledTaskName Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long. This parameter is required.
+         * @param scheduledTaskName Property scheduledTaskName: The name of the scheduled task. This parameter is required.
          */
         public Builder scheduledTaskName(final java.lang.String scheduledTaskName) {
             this.props.scheduledTaskName(scheduledTaskName);
             return this;
         }
         /**
-         * Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long.
+         * Property scheduledTaskName: The name of the scheduled task.
          * <p>
-         * It must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
-         * The account name is unique in the same region.
-         * If this parameter is not specified, the default value ScheduledScalingTaskId is used.
+         * The name must be 2 to 64 characters in length and
+         * can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+         * name must start with a letter or a digit. The name of the scheduled task must be
+         * unique in the region and within the account.
+         * By default, the value of the <code>ScheduledTaskId</code> parameter is used.
          * <p>
          * @return {@code this}
-         * @param scheduledTaskName Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long. This parameter is required.
+         * @param scheduledTaskName Property scheduledTaskName: The name of the scheduled task. This parameter is required.
          */
         public Builder scheduledTaskName(final com.aliyun.ros.cdk.core.IResolvable scheduledTaskName) {
             this.props.scheduledTaskName(scheduledTaskName);

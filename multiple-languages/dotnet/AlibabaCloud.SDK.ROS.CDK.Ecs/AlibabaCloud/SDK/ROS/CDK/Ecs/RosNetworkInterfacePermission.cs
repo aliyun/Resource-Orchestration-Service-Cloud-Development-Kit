@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::NetworkInterfacePermission`, which is used to grant an account the permission to attach an elastic network interface (ENI) to an instance.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::NetworkInterfacePermission`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `NetworkInterfacePermission` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfacepermission
@@ -69,7 +69,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: accountId: the account id
+        /// <strong>Property</strong>: accountId: The ID of the account to which the permission is granted. The
+        /// account can be a cloud partner (certified ISV) or an individual user.
         /// </remarks>
         [JsiiProperty(name: "accountId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AccountId
@@ -136,7 +137,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: permission: the permission
+        /// <strong>Property</strong>: permission: The permission to grant. The only supported value is InstanceAttach.
+        /// InstanceAttach: Allows an authorized account to attach your elastic network
+        /// interface to one of its ECS instances. The ECS instance and the elastic network
+        /// interface must be in the same availability zone.
         /// </remarks>
         [JsiiProperty(name: "permission", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Permission

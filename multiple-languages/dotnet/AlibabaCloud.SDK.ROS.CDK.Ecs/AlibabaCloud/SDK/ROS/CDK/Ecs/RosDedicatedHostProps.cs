@@ -16,7 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object _dedicatedHostType;
 
         /// <remarks>
-        /// <strong>Property</strong>: dedicatedHostType: The instance type of host.
+        /// <strong>Property</strong>: dedicatedHostType: The dedicated host type. You can call the [DescribeDedicatedHostTypes]()
+        /// operation to query the most recent list of dedicated host types.
         /// </remarks>
         [JsiiProperty(name: "dedicatedHostType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DedicatedHostType
@@ -48,7 +49,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _actionOnMaintenance;
 
         /// <remarks>
-        /// <strong>Property</strong>: actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop.
+        /// <strong>Property</strong>: actionOnMaintenance: The policy for migrating the instances deployed on the dedicated host when the
+        /// dedicated host fails or needs to be repaired online. Valid values:
+        /// - Migrate: The instances are migrated to another physical machine and then
+        /// restarted.
+        /// If cloud disks are attached to the dedicated host, the default value is Migrate.
+        /// - Stop: The instances are stopped. If the dedicated host cannot be repaired, the
+        /// instances are migrated to another physical machine and then restarted.
+        /// If local disks are attached to the dedicated host, the default value is Stop.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "actionOnMaintenance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -114,7 +122,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _autoReleaseTime;
 
         /// <remarks>
-        /// <strong>Property</strong>: autoReleaseTime: Auto release time for created host, Follow ISO8601 standard using UTC time. format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
+        /// <strong>Property</strong>: autoReleaseTime: The time when to automatically release the dedicated host. Specify the time in
+        /// the `ISO 8601` standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in
+        /// UTC.
+        /// >
+        /// - It must be at least half an hour later than the current time.
+        /// - It must be at most three years later than the current time.
+        /// - If the value of seconds (ss) is not 00, it is automatically set to 00.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoReleaseTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -266,7 +280,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _cpuOverCommitRatio;
 
         /// <remarks>
-        /// <strong>Property</strong>: cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+        /// <strong>Property</strong>: cpuOverCommitRatio: The CPU overcommit ratio. You can configure CPU overcommit ratios only for the
+        /// following dedicated host types: g6s, c6s, and r6s. Valid values: 1 to 5.
+        /// The CPU overcommit ratio affects the number of available vCPUs on a dedicated
+        /// host. You can use the following formula to calculate the number of available
+        /// vCPUs on a dedicated host: Number of available vCPUs = Number of physical CPU
+        /// cores * 2 * CPU overcommit ratio. For example, the number of physical CPU cores
+        /// on each g6s dedicated host is 52. If you set the CPU overcommit ratio of a g6s
+        /// dedicated host to 4, the number of available vCPUs on the dedicated host is 416.
+        /// For scenarios that have minimal requirements on CPU stability or where CPU load
+        /// is not heavy, such as development and test environments, you can increase the
+        /// number of available vCPUs on a dedicated host by increasing the CPU overcommit
+        /// ratio. This way, you can deploy more ECS instances of the same specifications on
+        /// the dedicated host and reduce the unit deployment cost.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "cpuOverCommitRatio", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -352,7 +378,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _dedicatedHostName;
 
         /// <remarks>
-        /// <strong>Property</strong>: dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
+        /// <strong>Property</strong>: dedicatedHostName: The name of the dedicated host. The name must be 2 to 128 characters in length
+        /// and can contain letters and digits. The name can contain colons (:), underscores
+        /// (_), periods (.), and hyphens (-).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dedicatedHostName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -385,7 +413,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _description;
 
         /// <remarks>
-        /// <strong>Property</strong>: description: The description of host.
+        /// <strong>Property</strong>: description: The description of the dedicated host. The description must be 2 to 256
+        /// characters in length and cannot start with `http:\/\/` or `https:\/\/`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -418,7 +447,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _minQuantity;
 
         /// <remarks>
-        /// <strong>Property</strong>: minQuantity: The minimum number of dedicated hosts that you want to create.
+        /// <strong>Property</strong>: minQuantity: The minimum number of dedicated hosts to create. Valid values: 1 to 100.
+        /// > If the number of available dedicated hosts is less than the minimum number of
+        /// dedicated hosts to create, the dedicated hosts fail to be created.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "minQuantity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -760,7 +791,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _zoneId;
 
         /// <remarks>
-        /// <strong>Property</strong>: zoneId: The zone to create the host.
+        /// <strong>Property</strong>: zoneId: The ID of the zone in which to create the dedicated host.
+        /// This parameter is empty by default. If you do not specify a zone, the system
+        /// selects a zone.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

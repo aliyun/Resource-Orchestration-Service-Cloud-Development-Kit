@@ -12,7 +12,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public interface IRosPrefixListProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: addressFamily: The IP address family. Valid values: IPv4 IPv6
+        /// <strong>Property</strong>: addressFamily: The IP address family. Valid values:
+        /// - IPv4
+        /// - IPv6
         /// </remarks>
         [JsiiProperty(name: "addressFamily", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AddressFamily
@@ -76,7 +78,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: addressFamily: The IP address family. Valid values: IPv4 IPv6
+            /// <strong>Property</strong>: addressFamily: The IP address family. Valid values:
+            /// - IPv4
+            /// - IPv6
             /// </remarks>
             [JsiiProperty(name: "addressFamily", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AddressFamily

@@ -9,7 +9,11 @@ type DBInstanceProps struct {
 	//
 	// For example: 6.0、7.0
 	EngineVersion interface{} `field:"required" json:"engineVersion" yaml:"engineVersion"`
-	// Property vSwitchId: The vSwitch ID of the instance.
+	// Property vSwitchId: The vSwitch ID.
+	//
+	// > - This parameter is required.
+	// >
+	// > - The vSwitch must be in the zone specified by `ZoneId`.
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
 	// Property zoneId: The zone ID of the instance, such as cn-hangzhou-d.
 	//
@@ -22,7 +26,7 @@ type DBInstanceProps struct {
 	//
 	// You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
 	BackupId interface{} `field:"optional" json:"backupId" yaml:"backupId"`
-	// Property cacheStorageSize: Cache storage size.
+	// Property cacheStorageSize: The cache size for a serverless instance, in GB.
 	CacheStorageSize interface{} `field:"optional" json:"cacheStorageSize" yaml:"cacheStorageSize"`
 	// Property createSampleData: Whether to load the sample data set after the instance is created.
 	//
@@ -30,25 +34,42 @@ type DBInstanceProps struct {
 	// true: load the sample dataset.
 	// false: not to load the sample dataset.
 	CreateSampleData interface{} `field:"optional" json:"createSampleData" yaml:"createSampleData"`
-	// Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+	// Property dbInstanceCategory: The instance edition.
 	//
-	// This parameter must be passed in to create a storage reservation mode instance.
+	// Valid values:
+	// - HighAvailability: High-availability Edition
+	// - Basic: Basic Edition
+	// > This parameter is required for instances in elastic storage mode.
 	DbInstanceCategory interface{} `field:"optional" json:"dbInstanceCategory" yaml:"dbInstanceCategory"`
 	// Property dbInstanceClass: The instance type.
+	//
+	// For more information, see the description of the
+	// `DBInstanceClass` parameter.
+	// > This parameter is required for instances in reserved storage mode.
 	DbInstanceClass interface{} `field:"optional" json:"dbInstanceClass" yaml:"dbInstanceClass"`
 	// Property dbInstanceDescription: The description of the instance.
 	//
 	// The description cannot exceed 256 characters in length.
 	DbInstanceDescription interface{} `field:"optional" json:"dbInstanceDescription" yaml:"dbInstanceDescription"`
-	// Property dbInstanceGroupCount: The number of compute nodes in the instance.
+	// Property dbInstanceGroupCount: The number of compute groups.
 	//
-	// The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+	// Valid values: 2, 4, 8, 12, 16, 24, 32, 64, 96, and
+	// 128.
+	// > This parameter is required for instances in reserved storage mode.
 	DbInstanceGroupCount interface{} `field:"optional" json:"dbInstanceGroupCount" yaml:"dbInstanceGroupCount"`
 	// Property dbInstanceMode: The db instance mode.
 	//
 	// Valid values: StorageElastic, Serverless, Classic.
 	DbInstanceMode interface{} `field:"optional" json:"dbInstanceMode" yaml:"dbInstanceMode"`
-	// Property deployMode: The deployment mode of the instance.
+	// Property deployMode: The deployment mode.
+	//
+	// Valid values:
+	// - multiple: multi-AZ deployment.
+	// - single: single-AZ deployment.
+	// > * If this parameter is not specified, the default value is single.
+	// >
+	// > * Defaults to `single` (single-AZ deployment), which is the only mode currently
+	// supported.
 	DeployMode interface{} `field:"optional" json:"deployMode" yaml:"deployMode"`
 	// Property enableSsl: Whether to enable SSL encryption.
 	//
@@ -65,24 +86,42 @@ type DBInstanceProps struct {
 	// CloudDisk: Encryption is enabled on disks and the encryption key is specified by using the EncryptionKey parameter.
 	// Note: Disk encryption cannot be disabled after it is enabled.
 	EncryptionType interface{} `field:"optional" json:"encryptionType" yaml:"encryptionType"`
-	// Property idleTime: Idle release wait time.
+	// Property idleTime: The period of inactivity, in seconds, after which the instance is considered idle.
 	//
-	// That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+	// Minimum value: 60. Default value: 600.
+	// > This parameter is required only for serverless instances that use
+	// auto-scheduling.
 	IdleTime interface{} `field:"optional" json:"idleTime" yaml:"idleTime"`
-	// Property instanceSpec: The specification of segment nodes.
+	// Property instanceSpec: The instance type for the compute nodes.
 	//
-	// - When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.
-	// - When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.
-	// - When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
-	// This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
+	// Valid values for a High-availability Edition instance in elastic storage mode:
+	// - 2C16G
+	// - 4C32G
+	// - 16C128G
+	// Valid values for a Basic Edition instance in elastic storage mode:
+	// - 2C8G
+	// - 4C16G
+	// - 8C32G
+	// - 16C64G
+	// Valid values for a serverless instance:
+	// - 4C16G
+	// - 8C32G
+	// > This parameter is required for instances in elastic storage mode or serverless
+	// mode.
 	InstanceSpec interface{} `field:"optional" json:"instanceSpec" yaml:"instanceSpec"`
 	// Property masterAiSpec: If you need to change the Master node to MasterAI node, specify this parameter.
 	//
 	// This parameter cannot be specified at the same time as MasterCU. Only some regions and availability zones support changing the Master node to MasterAI node. Only Basic edition instances of AnalyticDB PostgreSQL 7.0 support MasterAI nodes. You can query all possible values of this parameter on the Master node reconfiguration sales page.
 	MasterAiSpec interface{} `field:"optional" json:"masterAiSpec" yaml:"masterAiSpec"`
-	// Property masterCu: Master resources.
+	// Property masterCu: The resources for the coordinator node.
 	//
-	// Default is 8.
+	// Valid values:
+	// - 2 CU
+	// - 4 CU
+	// - 8 CU
+	// - 16 CU
+	// - 32 CU
+	// > You are charged for coordinator node resources of 8 CUs or more.
 	MasterCu interface{} `field:"optional" json:"masterCu" yaml:"masterCu"`
 	// Property masterNodeNum: The number of master nodes.
 	//
@@ -102,7 +141,7 @@ type DBInstanceProps struct {
 	//
 	// Default value is Month.
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
-	// Property privateIpAddress: Private IP address.
+	// Property privateIpAddress: This parameter is deprecated.
 	PrivateIpAddress interface{} `field:"optional" json:"privateIpAddress" yaml:"privateIpAddress"`
 	// Property prodType: Prod type.
 	//
@@ -110,15 +149,21 @@ type DBInstanceProps struct {
 	ProdType interface{} `field:"optional" json:"prodType" yaml:"prodType"`
 	// Property resourceGroupId: The ID of the resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
-	// Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
+	// Property securityIpList: The IP address whitelist for the instance.
 	//
-	// Default value:
-	// 127.0.0.1.
+	// A value of 127.0.0.1 blocks all external access. After you create the instance,
+	// you can call the [ModifySecurityIps]() operation to modify the IP address
+	// whitelist.
 	SecurityIpList interface{} `field:"optional" json:"securityIpList" yaml:"securityIpList"`
-	// Property segDiskPerformanceLevel: Seg disk performance level.
+	// Property segDiskPerformanceLevel: The performance level of the ESSDs.
 	//
-	// The value can be:
-	// pl0、pl1 and pl2.
+	// Valid values:
+	// - pl0: PL0
+	// - pl1: PL1
+	// - pl2: PL2
+	// > * This parameter applies only if the segment node storage type is ESSD.
+	// >
+	// > * If this parameter is not specified, pl1 is used by default.
 	SegDiskPerformanceLevel interface{} `field:"optional" json:"segDiskPerformanceLevel" yaml:"segDiskPerformanceLevel"`
 	// Property segNodeNum: Calculate the number of nodes.
 	//
@@ -139,22 +184,36 @@ type DBInstanceProps struct {
 	// Manual: manual scheduling is the default value.
 	// Auto: indicates automatic scheduling.
 	ServerlessMode interface{} `field:"optional" json:"serverlessMode" yaml:"serverlessMode"`
-	// Property serverlessResource: Computing resource threshold.
+	// Property serverlessResource: The threshold for computing resources, in AnalyticDB Compute Units (ACUs).
 	//
-	// The value ranges from 8 to 32. The step length is 8.
-	// The unit is ACU. The default value is 32.
+	// The
+	// value must be a multiple of 8, ranging from 8 to 32. The default value is 32.
+	// > This parameter is required only for serverless instances that use
+	// auto-scheduling.
 	ServerlessResource interface{} `field:"optional" json:"serverlessResource" yaml:"serverlessResource"`
 	// Property srcDbInstanceName: Clone source instance ID.
 	//
 	// You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
 	SrcDbInstanceName interface{} `field:"optional" json:"srcDbInstanceName" yaml:"srcDbInstanceName"`
-	// Property standbyVSwitchId: The standby VSwitch ID of the instance.
-	StandbyVSwitchId interface{} `field:"optional" json:"standbyVSwitchId" yaml:"standbyVSwitchId"`
-	// Property standbyZoneId: The standby zone ID of the instance.
-	StandbyZoneId interface{} `field:"optional" json:"standbyZoneId" yaml:"standbyZoneId"`
-	// Property storageSize: The storage capacity of per segment node.
+	// Property standbyVSwitchId: The ID of the vSwitch in the standby zone.
 	//
-	// Unit: GB. Minimum is 50, max is 4000, step is 50.
+	// > - This parameter is required only for a multi-AZ deployment.
+	// >
+	// > - The vSwitch must be in the standby zone specified in `StandbyZoneId`.
+	StandbyVSwitchId interface{} `field:"optional" json:"standbyVSwitchId" yaml:"standbyVSwitchId"`
+	// Property standbyZoneId: The ID of the standby zone.
+	//
+	// > - This parameter is required only for a multi-AZ deployment.
+	// >
+	// > - You can call the [DescribeRegions]() operation to query the IDs of available
+	// zones.
+	// >
+	// > - The standby zone must be different from the primary zone.
+	StandbyZoneId interface{} `field:"optional" json:"standbyZoneId" yaml:"standbyZoneId"`
+	// Property storageSize: The storage capacity for the instance, in GB.
+	//
+	// Valid values: .
+	// > This parameter is required for instances in elastic storage mode.
 	StorageSize interface{} `field:"optional" json:"storageSize" yaml:"storageSize"`
 	// Property tags: The list of instance tags in the form of key\/value pairs.
 	//

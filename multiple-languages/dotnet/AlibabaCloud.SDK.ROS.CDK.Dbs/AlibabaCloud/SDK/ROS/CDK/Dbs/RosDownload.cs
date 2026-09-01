@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dbs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::Download`, which is used to create an advanced download task.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::Download`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Download` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
@@ -103,8 +103,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: formatType: The format to which the downloaded backup set is converted.
-        /// Valid values: CSV|SQL|Parquet
+        /// <strong>Property</strong>: formatType: The target format of the downloaded data. Valid values:
+        /// - CSV
+        /// - SQL
+        /// - Parquet
+        /// - Bson
+        /// - qp.xb
+        /// > This parameter is required. The `Bson` format is available only for MongoDB
+        /// instances. The `qp.xb` format is available only for ApsaraDB RDS for MySQL
+        /// instances.
         /// </remarks>
         [JsiiProperty(name: "formatType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object FormatType

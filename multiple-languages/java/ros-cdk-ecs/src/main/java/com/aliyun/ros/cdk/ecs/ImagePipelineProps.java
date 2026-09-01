@@ -5,25 +5,36 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagepipeline
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.932Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.304Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ImagePipelineProps")
 @software.amazon.jsii.Jsii.Proxy(ImagePipelineProps.Jsii$Proxy.class)
 public interface ImagePipelineProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property baseImage: The source image.
+     * Property baseImage: The base image.
      * <p>
-     * If you set BaseImageType to IMAGE, set the BaseImage parameter to the ID of a custom image.
-     * If you set BaseImageType to IMAGE_FAMILY, set the BaseImage parameter to the name of an image family.
+     * The value of this parameter varies based on the value of
+     * <code>BaseImageType</code>:
+     * <p>
+     * <ul>
+     * <li>If <code>BaseImageType</code> is <code>IMAGE</code>, specify the ID of the base image.</li>
+     * <li>If <code>BaseImageType</code> is <code>IMAGE_FAMILY</code>, specify the name of the base image
+     * family.</li>
+     * <li>If <code>BaseImageType</code> is <code>OSS</code>, this parameter is not required.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getBaseImage();
 
     /**
-     * Property baseImageType: The type of the source image.
+     * Property baseImageType: The type of the base image.
      * <p>
      * Valid values:
-     * IMAGE: image
-     * IMAGE_FAMILY: image family
+     * <p>
+     * <ul>
+     * <li>IMAGE: An ECS image.</li>
+     * <li>IMAGE_FAMILY: An image family.</li>
+     * <li>OSS: An OSS object.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getBaseImageType();
 
@@ -77,10 +88,14 @@ public interface ImagePipelineProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property imageName: The prefix of the image name.
+     * Property imageName: The prefix of the destination image name.
      * <p>
-     * The prefix must be 2 to 64 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (<em>), periods (.), and hyphens (-).
-     * The system generates the final complete image name that consists of the specified prefix and the ID of the build task (ExecutionId) in the format of {ImageName}</em>{ExecutionId}.
+     * <blockquote>
+     * <p>
+     * <notice>This parameter is deprecated. Use <code>ImageOptions.ImageName</code>
+     * instead.&gt;</notice>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getImageName() {
         return null;
@@ -107,10 +122,19 @@ public interface ImagePipelineProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property name: The name of the image template.
+     * Property name: The name of the image pipeline.
      * <p>
-     * The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
-     * Note If you do not specify the Name parameter, the return value of ImagePipelineId is used.
+     * It must be 2 to 128 characters long, start with a
+     * letter or a Chinese character, and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+     * Allowed characters include letters, digits, Chinese characters, colons (:),
+     * underscores (_), periods (.), and hyphens (-).
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you do not specify this parameter, the value of <code>ImagePipelineId</code> is used as
+     * the name.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
@@ -188,9 +212,16 @@ public interface ImagePipelineProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ImagePipelineProps#getBaseImage}
-         * @param baseImage Property baseImage: The source image. This parameter is required.
-         *                  If you set BaseImageType to IMAGE, set the BaseImage parameter to the ID of a custom image.
-         *                  If you set BaseImageType to IMAGE_FAMILY, set the BaseImage parameter to the name of an image family.
+         * @param baseImage Property baseImage: The base image. This parameter is required.
+         *                  The value of this parameter varies based on the value of
+         *                  <code>BaseImageType</code>:
+         *                  <p>
+         *                  <ul>
+         *                  <li>If <code>BaseImageType</code> is <code>IMAGE</code>, specify the ID of the base image.</li>
+         *                  <li>If <code>BaseImageType</code> is <code>IMAGE_FAMILY</code>, specify the name of the base image
+         *                  family.</li>
+         *                  <li>If <code>BaseImageType</code> is <code>OSS</code>, this parameter is not required.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder baseImage(java.lang.String baseImage) {
@@ -200,9 +231,16 @@ public interface ImagePipelineProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ImagePipelineProps#getBaseImage}
-         * @param baseImage Property baseImage: The source image. This parameter is required.
-         *                  If you set BaseImageType to IMAGE, set the BaseImage parameter to the ID of a custom image.
-         *                  If you set BaseImageType to IMAGE_FAMILY, set the BaseImage parameter to the name of an image family.
+         * @param baseImage Property baseImage: The base image. This parameter is required.
+         *                  The value of this parameter varies based on the value of
+         *                  <code>BaseImageType</code>:
+         *                  <p>
+         *                  <ul>
+         *                  <li>If <code>BaseImageType</code> is <code>IMAGE</code>, specify the ID of the base image.</li>
+         *                  <li>If <code>BaseImageType</code> is <code>IMAGE_FAMILY</code>, specify the name of the base image
+         *                  family.</li>
+         *                  <li>If <code>BaseImageType</code> is <code>OSS</code>, this parameter is not required.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder baseImage(com.aliyun.ros.cdk.core.IResolvable baseImage) {
@@ -212,10 +250,14 @@ public interface ImagePipelineProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ImagePipelineProps#getBaseImageType}
-         * @param baseImageType Property baseImageType: The type of the source image. This parameter is required.
+         * @param baseImageType Property baseImageType: The type of the base image. This parameter is required.
          *                      Valid values:
-         *                      IMAGE: image
-         *                      IMAGE_FAMILY: image family
+         *                      <p>
+         *                      <ul>
+         *                      <li>IMAGE: An ECS image.</li>
+         *                      <li>IMAGE_FAMILY: An image family.</li>
+         *                      <li>OSS: An OSS object.</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder baseImageType(java.lang.String baseImageType) {
@@ -225,10 +267,14 @@ public interface ImagePipelineProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ImagePipelineProps#getBaseImageType}
-         * @param baseImageType Property baseImageType: The type of the source image. This parameter is required.
+         * @param baseImageType Property baseImageType: The type of the base image. This parameter is required.
          *                      Valid values:
-         *                      IMAGE: image
-         *                      IMAGE_FAMILY: image family
+         *                      <p>
+         *                      <ul>
+         *                      <li>IMAGE: An ECS image.</li>
+         *                      <li>IMAGE_FAMILY: An image family.</li>
+         *                      <li>OSS: An OSS object.</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder baseImageType(com.aliyun.ros.cdk.core.IResolvable baseImageType) {
@@ -356,9 +402,13 @@ public interface ImagePipelineProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ImagePipelineProps#getImageName}
-         * @param imageName Property imageName: The prefix of the image name.
-         *                  The prefix must be 2 to 64 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (<em>), periods (.), and hyphens (-).
-         *                  The system generates the final complete image name that consists of the specified prefix and the ID of the build task (ExecutionId) in the format of {ImageName}</em>{ExecutionId}.
+         * @param imageName Property imageName: The prefix of the destination image name.
+         *                  <blockquote>
+         *                  <p>
+         *                  <notice>This parameter is deprecated. Use <code>ImageOptions.ImageName</code>
+         *                  instead.&gt;</notice>
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder imageName(java.lang.String imageName) {
@@ -368,9 +418,13 @@ public interface ImagePipelineProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ImagePipelineProps#getImageName}
-         * @param imageName Property imageName: The prefix of the image name.
-         *                  The prefix must be 2 to 64 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (<em>), periods (.), and hyphens (-).
-         *                  The system generates the final complete image name that consists of the specified prefix and the ID of the build task (ExecutionId) in the format of {ImageName}</em>{ExecutionId}.
+         * @param imageName Property imageName: The prefix of the destination image name.
+         *                  <blockquote>
+         *                  <p>
+         *                  <notice>This parameter is deprecated. Use <code>ImageOptions.ImageName</code>
+         *                  instead.&gt;</notice>
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder imageName(com.aliyun.ros.cdk.core.IResolvable imageName) {
@@ -428,9 +482,18 @@ public interface ImagePipelineProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ImagePipelineProps#getName}
-         * @param name Property name: The name of the image template.
-         *             The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
-         *             Note If you do not specify the Name parameter, the return value of ImagePipelineId is used.
+         * @param name Property name: The name of the image pipeline.
+         *             It must be 2 to 128 characters long, start with a
+         *             letter or a Chinese character, and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         *             Allowed characters include letters, digits, Chinese characters, colons (:),
+         *             underscores (_), periods (.), and hyphens (-).
+         *             <p>
+         *             <blockquote>
+         *             <p>
+         *             If you do not specify this parameter, the value of <code>ImagePipelineId</code> is used as
+         *             the name.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -440,9 +503,18 @@ public interface ImagePipelineProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ImagePipelineProps#getName}
-         * @param name Property name: The name of the image template.
-         *             The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
-         *             Note If you do not specify the Name parameter, the return value of ImagePipelineId is used.
+         * @param name Property name: The name of the image pipeline.
+         *             It must be 2 to 128 characters long, start with a
+         *             letter or a Chinese character, and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         *             Allowed characters include letters, digits, Chinese characters, colons (:),
+         *             underscores (_), periods (.), and hyphens (-).
+         *             <p>
+         *             <blockquote>
+         *             <p>
+         *             If you do not specify this parameter, the value of <code>ImagePipelineId</code> is used as
+         *             the name.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

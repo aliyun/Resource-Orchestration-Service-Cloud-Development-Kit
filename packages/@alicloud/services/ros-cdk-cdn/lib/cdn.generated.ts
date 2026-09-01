@@ -9,7 +9,8 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosDeliverTaskProps {
 
     /**
-     * @Property deliver: The deliver of the CDN deliver task.
+     * @Property deliver: The method that is used to send operations reports. Operations reports are sent
+     * to you only by email. The settings must be escaped in JSON.
      */
     readonly deliver: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -19,12 +20,14 @@ export interface RosDeliverTaskProps {
     readonly name: string | ros.IResolvable;
 
     /**
-     * @Property reports: The reports of the CDN deliver task.
+     * @Property reports: The operations reports that are tracked by the task. The data must be escaped in
+     * JSON.
      */
     readonly reports: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property schedule: The schedule of the CDN deliver task.
+     * @Property schedule: The parameters that specify the time interval at which the tracking task sends
+     * operations reports. The settings must be escaped in JSON.
      */
     readonly schedule: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -105,7 +108,8 @@ export class RosDeliverTask extends ros.RosResource {
 
 
     /**
-     * @Property deliver: The deliver of the CDN deliver task.
+     * @Property deliver: The method that is used to send operations reports. Operations reports are sent
+     * to you only by email. The settings must be escaped in JSON.
      */
     public deliver: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -115,12 +119,14 @@ export class RosDeliverTask extends ros.RosResource {
     public name: string | ros.IResolvable;
 
     /**
-     * @Property reports: The reports of the CDN deliver task.
+     * @Property reports: The operations reports that are tracked by the task. The data must be escaped in
+     * JSON.
      */
     public reports: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property schedule: The schedule of the CDN deliver task.
+     * @Property schedule: The parameters that specify the time interval at which the tracking task sends
+     * operations reports. The settings must be escaped in JSON.
      */
     public schedule: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -168,7 +174,10 @@ export class RosDeliverTask extends ros.RosResource {
 export interface RosDomainProps {
 
     /**
-     * @Property cdnType: The business type. Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
+     * @Property cdnType: The business type of the domain name. Valid values:
+     * - web: images and small files.
+     * - download: large files.
+     * - video: on-demand video and audio streaming.
      */
     readonly cdnType: string | ros.IResolvable;
 
@@ -178,7 +187,7 @@ export interface RosDomainProps {
     readonly domainName: string | ros.IResolvable;
 
     /**
-     * @Property checkUrl: The validation of the origin.
+     * @Property checkUrl: The health check URL.
      */
     readonly checkUrl?: string | ros.IResolvable;
 
@@ -193,7 +202,10 @@ export interface RosDomainProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property scope: Valid values: domestic, overseas, and global. Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
+     * @Property scope: The acceleration region. Valid values:
+     * - domestic (default): Chinese mainland only.
+     * - overseas: global (excluding the Chinese mainland).
+     * - global: global.
      */
     readonly scope?: string | ros.IResolvable;
 
@@ -284,7 +296,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CDN::Domain`, which is used to add an accelerated domain name.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDN::Domain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domain
  */
@@ -313,7 +325,10 @@ export class RosDomain extends ros.RosResource {
 
 
     /**
-     * @Property cdnType: The business type. Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
+     * @Property cdnType: The business type of the domain name. Valid values:
+     * - web: images and small files.
+     * - download: large files.
+     * - video: on-demand video and audio streaming.
      */
     public cdnType: string | ros.IResolvable;
 
@@ -323,7 +338,7 @@ export class RosDomain extends ros.RosResource {
     public domainName: string | ros.IResolvable;
 
     /**
-     * @Property checkUrl: The validation of the origin.
+     * @Property checkUrl: The health check URL.
      */
     public checkUrl: string | ros.IResolvable | undefined;
 
@@ -338,7 +353,10 @@ export class RosDomain extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property scope: Valid values: domestic, overseas, and global. Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
+     * @Property scope: The acceleration region. Valid values:
+     * - domestic (default): Chinese mainland only.
+     * - overseas: global (excluding the Chinese mainland).
+     * - global: global.
      */
     public scope: string | ros.IResolvable | undefined;
 
@@ -542,7 +560,11 @@ function rosDomainTagsPropertyToRosTemplate(properties: any): any {
 export interface RosDomainConfigProps {
 
     /**
-     * @Property domainNames: Your accelerated domain name, separated by commas in English.
+     * @Property domainNames: The domain names to configure for acceleration. Separate multiple domain names
+     * with a comma (,). Note the following limits:
+     * - You can specify up to 20 domain names.
+     * - The number of domain names multiplied by the number of features cannot exceed
+     * 50.
      */
     readonly domainNames: string | ros.IResolvable;
 
@@ -588,7 +610,7 @@ function rosDomainConfigPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CDN::DomainConfig`, which is used to configure multiple domain names at a time.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDN::DomainConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domainconfig
  */
@@ -602,7 +624,11 @@ export class RosDomainConfig extends ros.RosResource {
 
 
     /**
-     * @Property domainNames: Your accelerated domain name, separated by commas in English.
+     * @Property domainNames: The domain names to configure for acceleration. Separate multiple domain names
+     * with a comma (,). Note the following limits:
+     * - You can specify up to 20 domain names.
+     * - The number of domain names multiplied by the number of features cannot exceed
+     * 50.
      */
     public domainNames: string | ros.IResolvable;
 
@@ -923,7 +949,7 @@ export class RosFcTrigger extends ros.RosResource {
 export interface RosStagingConfigProps {
 
     /**
-     * @Property domainName: The domain name of the CDN.
+     * @Property domainName: The accelerated domain name. Only one domain name can be configured at a time.
      */
     readonly domainName: string | ros.IResolvable;
 
@@ -994,7 +1020,7 @@ export class RosStagingConfig extends ros.RosResource {
 
 
     /**
-     * @Property domainName: The domain name of the CDN.
+     * @Property domainName: The accelerated domain name. Only one domain name can be configured at a time.
      */
     public domainName: string | ros.IResolvable;
 
@@ -1037,13 +1063,31 @@ export class RosStagingConfig extends ros.RosResource {
 export interface RosSubTaskProps {
 
     /**
-     * @Property reportIds: The report IDs.
-     * The value can be up to 128 bytes in length.
+     * @Property reportIds: The IDs of the metrics that you want to include in the report. Separate multiple
+     * IDs with commas (,). Valid values:
+     * - 1: frequently requested URLs (ranked by the number of requests)
+     * - 3: frequently requested URLs (ranked by the amount of network traffic)
+     * - 5: frequently used Referer headers (ranked by the number of requests)
+     * - 7: frequently used Referer headers (ranked by the amount of network traffic)
+     * - 9: frequently requested URLs that are redirected to the origin (ranked by the
+     * number of requests)
+     * - 11: frequently requested URLs that are redirected to the origin (ranked by the
+     * amount of network traffic)
+     * - 13: top client IP addresses (ranked by the number of requests)
+     * - 15: top client IP addresses (ranked by the amount of network traffic)
+     * - 17: domain names ranked by the amount of network traffic
+     * - 19: page views and unique visitors
+     * - 21: regions from which requests are initiated
+     * - 23: Internet service providers (ISPs)
      */
     readonly reportIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property domainName: The domain name.
+     * @Property domainName: The domain names to be tracked. Separate multiple domain names with commas (,).
+     * You can specify up to 500 domain names. If you want to specify more than 500
+     * domain names, submit a ticket.
+     * > If you do not specify a domain name, the custom operations report is created
+     * for all domain names that belong to your account.
      */
     readonly domainName?: string | ros.IResolvable;
 }
@@ -1105,13 +1149,31 @@ export class RosSubTask extends ros.RosResource {
 
 
     /**
-     * @Property reportIds: The report IDs.
-     * The value can be up to 128 bytes in length.
+     * @Property reportIds: The IDs of the metrics that you want to include in the report. Separate multiple
+     * IDs with commas (,). Valid values:
+     * - 1: frequently requested URLs (ranked by the number of requests)
+     * - 3: frequently requested URLs (ranked by the amount of network traffic)
+     * - 5: frequently used Referer headers (ranked by the number of requests)
+     * - 7: frequently used Referer headers (ranked by the amount of network traffic)
+     * - 9: frequently requested URLs that are redirected to the origin (ranked by the
+     * number of requests)
+     * - 11: frequently requested URLs that are redirected to the origin (ranked by the
+     * amount of network traffic)
+     * - 13: top client IP addresses (ranked by the number of requests)
+     * - 15: top client IP addresses (ranked by the amount of network traffic)
+     * - 17: domain names ranked by the amount of network traffic
+     * - 19: page views and unique visitors
+     * - 21: regions from which requests are initiated
+     * - 23: Internet service providers (ISPs)
      */
     public reportIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property domainName: The domain name.
+     * @Property domainName: The domain names to be tracked. Separate multiple domain names with commas (,).
+     * You can specify up to 500 domain names. If you want to specify more than 500
+     * domain names, submit a ticket.
+     * > If you do not specify a domain name, the custom operations report is created
+     * for all domain names that belong to your account.
      */
     public domainName: string | ros.IResolvable | undefined;
 

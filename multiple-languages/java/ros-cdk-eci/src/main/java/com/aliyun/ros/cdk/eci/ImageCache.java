@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.eci;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECI::ImageCache</code>, which is used to create an image cache.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECI::ImageCache</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:35:20.502Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:35:35.448Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.ImageCache")
 public class ImageCache extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.eci.IImageCache {
 
@@ -112,20 +112,20 @@ public class ImageCache extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property image: The image list to be cached.
+         * Property image: The container images used to create the image cache.
          * <p>
          * @return {@code this}
-         * @param image Property image: The image list to be cached. This parameter is required.
+         * @param image Property image: The container images used to create the image cache. This parameter is required.
          */
         public Builder image(final com.aliyun.ros.cdk.core.IResolvable image) {
             this.props.image(image);
             return this;
         }
         /**
-         * Property image: The image list to be cached.
+         * Property image: The container images used to create the image cache.
          * <p>
          * @return {@code this}
-         * @param image Property image: The image list to be cached. This parameter is required.
+         * @param image Property image: The container images used to create the image cache. This parameter is required.
          */
         public Builder image(final java.util.List<? extends java.lang.Object> image) {
             this.props.image(image);
@@ -175,20 +175,26 @@ public class ImageCache extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property vSwitchId: VSwitch ID.
+         * Property vSwitchId: The ID of the vSwitch.
+         * <p>
+         * You can specify up to 10 vSwitch IDs, separated by commas
+         * (,). For example, <code>vsw-*,vsw-*</code>.
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: VSwitch ID. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: VSwitch ID.
+         * Property vSwitchId: The ID of the vSwitch.
+         * <p>
+         * You can specify up to 10 vSwitch IDs, separated by commas
+         * (,). For example, <code>vsw-*,vsw-*</code>.
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: VSwitch ID. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
@@ -196,20 +202,20 @@ public class ImageCache extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+         * Property acrRegistryInfo: The information about the ACR instance.
          * <p>
          * @return {@code this}
-         * @param acrRegistryInfo Property acrRegistryInfo: Enterprise Edition access credential configuration information. This parameter is required.
+         * @param acrRegistryInfo Property acrRegistryInfo: The information about the ACR instance. This parameter is required.
          */
         public Builder acrRegistryInfo(final com.aliyun.ros.cdk.core.IResolvable acrRegistryInfo) {
             this.props.acrRegistryInfo(acrRegistryInfo);
             return this;
         }
         /**
-         * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+         * Property acrRegistryInfo: The information about the ACR instance.
          * <p>
          * @return {@code this}
-         * @param acrRegistryInfo Property acrRegistryInfo: Enterprise Edition access credential configuration information. This parameter is required.
+         * @param acrRegistryInfo Property acrRegistryInfo: The information about the ACR instance. This parameter is required.
          */
         public Builder acrRegistryInfo(final java.util.List<? extends java.lang.Object> acrRegistryInfo) {
             this.props.acrRegistryInfo(acrRegistryInfo);
@@ -296,24 +302,20 @@ public class ImageCache extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property imageRegistryCredential: Private image password.
-         * <p>
-         * Alibaba Cloud ACR image can be left blank.
+         * Property imageRegistryCredential: The credentials of the image repository.
          * <p>
          * @return {@code this}
-         * @param imageRegistryCredential Property imageRegistryCredential: Private image password. This parameter is required.
+         * @param imageRegistryCredential Property imageRegistryCredential: The credentials of the image repository. This parameter is required.
          */
         public Builder imageRegistryCredential(final com.aliyun.ros.cdk.core.IResolvable imageRegistryCredential) {
             this.props.imageRegistryCredential(imageRegistryCredential);
             return this;
         }
         /**
-         * Property imageRegistryCredential: Private image password.
-         * <p>
-         * Alibaba Cloud ACR image can be left blank.
+         * Property imageRegistryCredential: The credentials of the image repository.
          * <p>
          * @return {@code this}
-         * @param imageRegistryCredential Property imageRegistryCredential: Private image password. This parameter is required.
+         * @param imageRegistryCredential Property imageRegistryCredential: The credentials of the image repository. This parameter is required.
          */
         public Builder imageRegistryCredential(final java.util.List<? extends java.lang.Object> imageRegistryCredential) {
             this.props.imageRegistryCredential(imageRegistryCredential);

@@ -16,7 +16,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
         private object _accountName;
 
         /// <remarks>
-        /// <strong>Property</strong>: accountName: The name of the account.
+        /// <strong>Property</strong>: accountName: The database account name. The name must meet the following requirements:
+        /// - Start with a lowercase letter and end with a lowercase letter or digit.
+        /// - Contain only lowercase letters, digits, or underscores (_).
+        /// - Be 2 to 16 characters long.
+        /// - Not use reserved usernames such as root, admin, or opsadmin.
         /// </remarks>
         [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AccountName
@@ -48,13 +52,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
         private object _accountPassword;
 
         /// <remarks>
-        /// <strong></strong>: # $ % ^ & * ()  _ + - and =
-        /// The password must be 8 to 32 characters in length.
-        ///
-        /// <strong>Property</strong>: accountPassword: The password of the account.
-        /// The password must contain uppercase letters, lowercase letters, digits, and special
-        /// characters.
-        /// Special characters include !
+        /// <strong>Property</strong>: accountPassword: The database account password.
+        /// - Use any three of the following character types: uppercase letters, lowercase
+        /// letters, digits, and special characters.
+        /// - Special characters include the following: `!@#$%^&*()_+-=`
+        /// - Be 8 to 32 characters long.
         /// </remarks>
         [JsiiProperty(name: "accountPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AccountPassword

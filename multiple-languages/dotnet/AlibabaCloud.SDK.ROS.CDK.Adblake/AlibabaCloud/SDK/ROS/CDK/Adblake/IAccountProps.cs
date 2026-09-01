@@ -46,7 +46,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
             get;
         }
 
-        /// <summary>Property accountDescription: The description of the account.</summary>
+        /// <summary>Property accountDescription: The account description.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>Must not start with <c>http:\/\/</c> or <c>https:\/\/</c>.</description>
+        /// <description>Be no longer than 256 characters.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "accountDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AccountDescription
@@ -114,7 +120,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property accountDescription: The description of the account.</summary>
+            /// <summary>Property accountDescription: The account description.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>Must not start with <c>http:\/\/</c> or <c>https:\/\/</c>.</description>
+            /// <description>Be no longer than 256 characters.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "accountDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AccountDescription

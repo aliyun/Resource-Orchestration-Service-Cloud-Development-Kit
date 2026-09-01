@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ehpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::EHPC::AutoScaleConfig</code>, which is used to configure the auto scaling settings of a cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::EHPC::AutoScaleConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:42:12.631Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:50:32.887Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.AutoScaleConfig")
 public class AutoScaleConfig extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ehpc.IAutoScaleConfig {
 
@@ -353,24 +353,28 @@ public class AutoScaleConfig extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster.
+         * Property maxNodesInCluster: The maximum number of compute nodes that can be added to the cluster.
          * <p>
-         * Default value: 100
+         * Valid
+         * values: 0 to 500.
+         * Default value: 100.
          * <p>
          * @return {@code this}
-         * @param maxNodesInCluster Property maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster. This parameter is required.
+         * @param maxNodesInCluster Property maxNodesInCluster: The maximum number of compute nodes that can be added to the cluster. This parameter is required.
          */
         public Builder maxNodesInCluster(final java.lang.Number maxNodesInCluster) {
             this.props.maxNodesInCluster(maxNodesInCluster);
             return this;
         }
         /**
-         * Property maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster.
+         * Property maxNodesInCluster: The maximum number of compute nodes that can be added to the cluster.
          * <p>
-         * Default value: 100
+         * Valid
+         * values: 0 to 500.
+         * Default value: 100.
          * <p>
          * @return {@code this}
-         * @param maxNodesInCluster Property maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster. This parameter is required.
+         * @param maxNodesInCluster Property maxNodesInCluster: The maximum number of compute nodes that can be added to the cluster. This parameter is required.
          */
         public Builder maxNodesInCluster(final com.aliyun.ros.cdk.core.IResolvable maxNodesInCluster) {
             this.props.maxNodesInCluster(maxNodesInCluster);
@@ -378,20 +382,20 @@ public class AutoScaleConfig extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property queues:.
+         * Property queues: The information about the queue.
          * <p>
          * @return {@code this}
-         * @param queues Property queues:. This parameter is required.
+         * @param queues Property queues: The information about the queue. This parameter is required.
          */
         public Builder queues(final com.aliyun.ros.cdk.core.IResolvable queues) {
             this.props.queues(queues);
             return this;
         }
         /**
-         * Property queues:.
+         * Property queues: The information about the queue.
          * <p>
          * @return {@code this}
-         * @param queues Property queues:. This parameter is required.
+         * @param queues Property queues: The information about the queue. This parameter is required.
          */
         public Builder queues(final java.util.List<? extends java.lang.Object> queues) {
             this.props.queues(queues);
@@ -424,26 +428,28 @@ public class AutoScaleConfig extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in.
+         * Property shrinkIntervalInMinutes: The interval between two consecutive rounds of scale-in.
          * <p>
          * Unit: minutes.
-         * Default value: 2
+         * Valid values: 2 to 10.
+         * Default value: 2.
          * <p>
          * @return {@code this}
-         * @param shrinkIntervalInMinutes Property shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in. This parameter is required.
+         * @param shrinkIntervalInMinutes Property shrinkIntervalInMinutes: The interval between two consecutive rounds of scale-in. This parameter is required.
          */
         public Builder shrinkIntervalInMinutes(final java.lang.Number shrinkIntervalInMinutes) {
             this.props.shrinkIntervalInMinutes(shrinkIntervalInMinutes);
             return this;
         }
         /**
-         * Property shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in.
+         * Property shrinkIntervalInMinutes: The interval between two consecutive rounds of scale-in.
          * <p>
          * Unit: minutes.
-         * Default value: 2
+         * Valid values: 2 to 10.
+         * Default value: 2.
          * <p>
          * @return {@code this}
-         * @param shrinkIntervalInMinutes Property shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in. This parameter is required.
+         * @param shrinkIntervalInMinutes Property shrinkIntervalInMinutes: The interval between two consecutive rounds of scale-in. This parameter is required.
          */
         public Builder shrinkIntervalInMinutes(final com.aliyun.ros.cdk.core.IResolvable shrinkIntervalInMinutes) {
             this.props.shrinkIntervalInMinutes(shrinkIntervalInMinutes);

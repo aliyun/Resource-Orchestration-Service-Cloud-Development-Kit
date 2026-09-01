@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dms.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dms-database
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:25:54.826Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:21:15.648Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.datasource.RosDatabaseProps")
 @software.amazon.jsii.Jsii.Proxy(RosDatabaseProps.Jsii$Proxy.class)
 public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable {

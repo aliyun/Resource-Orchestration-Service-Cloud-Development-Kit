@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.814Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.164Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AssignIpv6AddressesProps")
 @software.amazon.jsii.Jsii.Proxy(AssignIpv6AddressesProps.Jsii$Proxy.class)
 public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,9 +16,16 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
     @org.jetbrains.annotations.NotNull java.lang.Object getNetworkInterfaceId();
 
     /**
-     * Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
+     * Property ipv6AddressCount: The number of IPv6 addresses to randomly generate for the ENI.
      * <p>
-     * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
+     * Valid values: 1 to
+     * 10.
+     * <p>
+     * <blockquote>
+     * <p>
+     * You must specify <code>Ipv6Addresses.N</code> or <code>Ipv6AddressCount</code>, but not both.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressCount() {
         return null;
@@ -35,7 +42,16 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+     * Property ipv6PrefixCount: The number of IPv6 prefixes to assign to the ENI.
+     * <p>
+     * Valid values: 1 to 10.
+     * <p>
+     * <blockquote>
+     * <p>
+     * To assign IPv6 prefixes to the ENI, you must specify Ipv6Prefix.N or
+     * Ipv6PrefixCount, but not both.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6PrefixCount() {
         return null;
@@ -86,8 +102,15 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link AssignIpv6AddressesProps#getIpv6AddressCount}
-         * @param ipv6AddressCount Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
-         *                         Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
+         * @param ipv6AddressCount Property ipv6AddressCount: The number of IPv6 addresses to randomly generate for the ENI.
+         *                         Valid values: 1 to
+         *                         10.
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         You must specify <code>Ipv6Addresses.N</code> or <code>Ipv6AddressCount</code>, but not both.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder ipv6AddressCount(java.lang.Number ipv6AddressCount) {
@@ -97,8 +120,15 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link AssignIpv6AddressesProps#getIpv6AddressCount}
-         * @param ipv6AddressCount Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
-         *                         Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
+         * @param ipv6AddressCount Property ipv6AddressCount: The number of IPv6 addresses to randomly generate for the ENI.
+         *                         Valid values: 1 to
+         *                         10.
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         You must specify <code>Ipv6Addresses.N</code> or <code>Ipv6AddressCount</code>, but not both.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder ipv6AddressCount(com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
@@ -132,7 +162,15 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link AssignIpv6AddressesProps#getIpv6PrefixCount}
-         * @param ipv6PrefixCount Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+         * @param ipv6PrefixCount Property ipv6PrefixCount: The number of IPv6 prefixes to assign to the ENI.
+         *                        Valid values: 1 to 10.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        To assign IPv6 prefixes to the ENI, you must specify Ipv6Prefix.N or
+         *                        Ipv6PrefixCount, but not both.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder ipv6PrefixCount(java.lang.Number ipv6PrefixCount) {
@@ -142,7 +180,15 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link AssignIpv6AddressesProps#getIpv6PrefixCount}
-         * @param ipv6PrefixCount Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+         * @param ipv6PrefixCount Property ipv6PrefixCount: The number of IPv6 prefixes to assign to the ENI.
+         *                        Valid values: 1 to 10.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        To assign IPv6 prefixes to the ENI, you must specify Ipv6Prefix.N or
+         *                        Ipv6PrefixCount, but not both.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder ipv6PrefixCount(com.aliyun.ros.cdk.core.IResolvable ipv6PrefixCount) {

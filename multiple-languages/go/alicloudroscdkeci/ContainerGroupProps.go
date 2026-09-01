@@ -11,11 +11,14 @@ type ContainerGroupProps struct {
 	//
 	// The length is [2,128] English lowercase letters, numbers or hyphens (-), cannot begin or end with a hyphens.
 	ContainerGroupName interface{} `field:"required" json:"containerGroupName" yaml:"containerGroupName"`
-	// Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+	// Property acrRegistryInfo: A list of ACR Enterprise instances.
 	AcrRegistryInfo interface{} `field:"optional" json:"acrRegistryInfo" yaml:"acrRegistryInfo"`
 	// Property activeDeadlineSeconds: The validity period in seconds.
 	ActiveDeadlineSeconds interface{} `field:"optional" json:"activeDeadlineSeconds" yaml:"activeDeadlineSeconds"`
 	// Property autoMatchImageCache: Specifies whether to automatically match the image cache.
+	//
+	// The default value is
+	// false.
 	AutoMatchImageCache interface{} `field:"optional" json:"autoMatchImageCache" yaml:"autoMatchImageCache"`
 	// Property cpu: CPU size.
 	Cpu interface{} `field:"optional" json:"cpu" yaml:"cpu"`
@@ -27,13 +30,19 @@ type ContainerGroupProps struct {
 	HostAliase interface{} `field:"optional" json:"hostAliase" yaml:"hostAliase"`
 	// Property imageRegistryCredential: The information that you need to log on to the container image repository, including the server address, username, and password.
 	ImageRegistryCredential interface{} `field:"optional" json:"imageRegistryCredential" yaml:"imageRegistryCredential"`
-	// Property imageSnapshotId: Image cache ID or snapshot ID.
+	// Property imageSnapshotId: The ID of the image cache.
 	ImageSnapshotId interface{} `field:"optional" json:"imageSnapshotId" yaml:"imageSnapshotId"`
 	// Property initContainer: The containers that constitute the container group for initializing.
 	InitContainer interface{} `field:"optional" json:"initContainer" yaml:"initContainer"`
-	// Property instanceType: The type of the ECS instance.
+	// Property instanceType: The ECS instance type.
+	//
+	// You can specify multiple instance types. For more
+	// information, see [Create an instance by specifying an ECS instance type]().
 	InstanceType interface{} `field:"optional" json:"instanceType" yaml:"instanceType"`
 	// Property ipv6AddressCount: The number of IPv6 addresses.
+	//
+	// The value is fixed at 1, which indicates that one
+	// IPv6 address can be bound to an ECI instance.
 	Ipv6AddressCount interface{} `field:"optional" json:"ipv6AddressCount" yaml:"ipv6AddressCount"`
 	// Property memory: memory size.
 	Memory interface{} `field:"optional" json:"memory" yaml:"memory"`
@@ -84,10 +93,17 @@ type ContainerGroupProps struct {
 	//
 	// You can specify a maximum of 20 data volumes.
 	Volume interface{} `field:"optional" json:"volume" yaml:"volume"`
-	// Property vSwitchId: The ID of the specified VSwitch.
+	// Property vSwitchId: The ID of the vSwitch to which the instance belongs.
 	//
-	// If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
-	// If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch.
+	// You can specify up to 10
+	// vSwitch IDs. Separate multiple IDs with commas (,), for example, `vsw-*,vsw-*`.
+	// If you do not specify a vSwitch, the system uses the default vSwitch in the
+	// default VPC of the selected region. If you do not have a default VPC and a
+	// default vSwitch in the region, the system creates a default VPC and a default
+	// vSwitch.
+	// > The number of IP addresses in the vSwitch CIDR block determines the maximum
+	// number of ECI instances that can be created in the vSwitch. Plan the CIDR block
+	// in advance.
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`
 	// Property zoneId: The ID of the zone in which the instance resides.
 	//

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bastionhost;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::BastionHost::HostAccount</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:35:53.474Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:18:29.185Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.HostAccount")
 public class HostAccount extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.bastionhost.IHostAccount {
 
@@ -112,20 +112,24 @@ public class HostAccount extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property hostAccountName: The name of the host account.
+         * Property hostAccountName: The name of the new host account.
+         * <p>
+         * The name can be up to 128 characters long.
          * <p>
          * @return {@code this}
-         * @param hostAccountName Property hostAccountName: The name of the host account. This parameter is required.
+         * @param hostAccountName Property hostAccountName: The name of the new host account. This parameter is required.
          */
         public Builder hostAccountName(final java.lang.String hostAccountName) {
             this.props.hostAccountName(hostAccountName);
             return this;
         }
         /**
-         * Property hostAccountName: The name of the host account.
+         * Property hostAccountName: The name of the new host account.
+         * <p>
+         * The name can be up to 128 characters long.
          * <p>
          * @return {@code this}
-         * @param hostAccountName Property hostAccountName: The name of the host account. This parameter is required.
+         * @param hostAccountName Property hostAccountName: The name of the new host account. This parameter is required.
          */
         public Builder hostAccountName(final com.aliyun.ros.cdk.core.IResolvable hostAccountName) {
             this.props.hostAccountName(hostAccountName);
@@ -275,24 +279,42 @@ public class HostAccount extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property privateKey: The private key of the host account.
+         * Property privateKey: The private key of the new host account.
          * <p>
-         * This parameter is required when the protocol is SSH.
+         * The value is a Base64-encoded string.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is used only when ProtocolName is set to SSH. You do not need to
+         * set this parameter if ProtocolName is set to RDP. You can set both a password and
+         * a private key for the host account. When connecting to the asset, Bastionhost
+         * prioritizes the private key for the connection.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param privateKey Property privateKey: The private key of the host account. This parameter is required.
+         * @param privateKey Property privateKey: The private key of the new host account. This parameter is required.
          */
         public Builder privateKey(final java.lang.String privateKey) {
             this.props.privateKey(privateKey);
             return this;
         }
         /**
-         * Property privateKey: The private key of the host account.
+         * Property privateKey: The private key of the new host account.
          * <p>
-         * This parameter is required when the protocol is SSH.
+         * The value is a Base64-encoded string.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is used only when ProtocolName is set to SSH. You do not need to
+         * set this parameter if ProtocolName is set to RDP. You can set both a password and
+         * a private key for the host account. When connecting to the asset, Bastionhost
+         * prioritizes the private key for the connection.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param privateKey Property privateKey: The private key of the host account. This parameter is required.
+         * @param privateKey Property privateKey: The private key of the new host account. This parameter is required.
          */
         public Builder privateKey(final com.aliyun.ros.cdk.core.IResolvable privateKey) {
             this.props.privateKey(privateKey);
@@ -300,24 +322,48 @@ public class HostAccount extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property privilegeType: The privilege type of the host account.
+         * Property privilegeType: The permission type of the account.
          * <p>
-         * Valid values: Normal, Administrator.
+         * If you do not set this parameter, the default
+         * value is Normal.
+         * <p>
+         * <ul>
+         * <li>Privileged: privileged account</li>
+         * <li>Normal: normal account</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only in Bastionhost V3.2.47 and later.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param privilegeType Property privilegeType: The privilege type of the host account. This parameter is required.
+         * @param privilegeType Property privilegeType: The permission type of the account. This parameter is required.
          */
         public Builder privilegeType(final java.lang.String privilegeType) {
             this.props.privilegeType(privilegeType);
             return this;
         }
         /**
-         * Property privilegeType: The privilege type of the host account.
+         * Property privilegeType: The permission type of the account.
          * <p>
-         * Valid values: Normal, Administrator.
+         * If you do not set this parameter, the default
+         * value is Normal.
+         * <p>
+         * <ul>
+         * <li>Privileged: privileged account</li>
+         * <li>Normal: normal account</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only in Bastionhost V3.2.47 and later.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param privilegeType Property privilegeType: The privilege type of the host account. This parameter is required.
+         * @param privilegeType Property privilegeType: The permission type of the account. This parameter is required.
          */
         public Builder privilegeType(final com.aliyun.ros.cdk.core.IResolvable privilegeType) {
             this.props.privilegeType(privilegeType);
@@ -325,24 +371,48 @@ public class HostAccount extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property rotationMode: The rotation mode of the host account.
+         * Property rotationMode: The password change mode for the account.
          * <p>
-         * Valid values: Manual, Automatic.
+         * If you do not set this parameter, the
+         * default value is Self.
+         * <p>
+         * <ul>
+         * <li>Privileged: Use a privileged account to change the password.</li>
+         * <li>Self: Do not use a privileged account to change the password.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only in Bastionhost V3.2.47 and later.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param rotationMode Property rotationMode: The rotation mode of the host account. This parameter is required.
+         * @param rotationMode Property rotationMode: The password change mode for the account. This parameter is required.
          */
         public Builder rotationMode(final java.lang.String rotationMode) {
             this.props.rotationMode(rotationMode);
             return this;
         }
         /**
-         * Property rotationMode: The rotation mode of the host account.
+         * Property rotationMode: The password change mode for the account.
          * <p>
-         * Valid values: Manual, Automatic.
+         * If you do not set this parameter, the
+         * default value is Self.
+         * <p>
+         * <ul>
+         * <li>Privileged: Use a privileged account to change the password.</li>
+         * <li>Self: Do not use a privileged account to change the password.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only in Bastionhost V3.2.47 and later.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param rotationMode Property rotationMode: The rotation mode of the host account. This parameter is required.
+         * @param rotationMode Property rotationMode: The password change mode for the account. This parameter is required.
          */
         public Builder rotationMode(final com.aliyun.ros.cdk.core.IResolvable rotationMode) {
             this.props.rotationMode(rotationMode);

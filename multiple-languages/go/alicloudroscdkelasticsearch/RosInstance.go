@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearch::Instance`The , which resource is used to create an Elasticsearch instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearch::Instance`.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrArn() alicloudroscdkcore.IResolvable

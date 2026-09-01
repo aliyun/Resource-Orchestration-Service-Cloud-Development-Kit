@@ -5,9 +5,13 @@ package alicloudroscdkarms
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
 type ManagedPrometheusProps struct {
-	// Property clusterType: The type of the cluster.
+	// Property clusterType: The cluster type.
 	//
-	// Currently, only ask, ecs and one clusters are supported. Default is ecs.
+	// Valid values:
+	// *   ecs: ECS
+	// *   one: ACK One
+	// *   ask: ASK
+	// *   pro: Container Monitoring Pro.
 	ClusterType interface{} `field:"required" json:"clusterType" yaml:"clusterType"`
 	// Property securityGroupId: The security group ID of the cluster.
 	SecurityGroupId interface{} `field:"required" json:"securityGroupId" yaml:"securityGroupId"`
@@ -21,9 +25,11 @@ type ManagedPrometheusProps struct {
 	//
 	// Required when the ClusterType is ecs.
 	ClusterName interface{} `field:"optional" json:"clusterName" yaml:"clusterName"`
-	// Property grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster.
+	// Property grafanaInstanceId: The ID of the managed Grafana workspace that is associated with the cluster.
 	//
-	// When empty or "free", binds to the shared version of Grafana.
+	// If
+	// you set this parameter to free or leave this parameter empty, the cluster is
+	// associated with a shared Grafana workspace.
 	GrafanaInstanceId interface{} `field:"optional" json:"grafanaInstanceId" yaml:"grafanaInstanceId"`
 }
 

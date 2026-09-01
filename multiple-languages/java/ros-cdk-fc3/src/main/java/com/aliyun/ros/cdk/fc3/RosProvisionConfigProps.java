@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc3;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-provisionconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:03:30.911Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:11:11.823Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosProvisionConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosProvisionConfigProps.Jsii$Proxy.class)
 public interface RosProvisionConfigProps extends software.amazon.jsii.JsiiSerializable {

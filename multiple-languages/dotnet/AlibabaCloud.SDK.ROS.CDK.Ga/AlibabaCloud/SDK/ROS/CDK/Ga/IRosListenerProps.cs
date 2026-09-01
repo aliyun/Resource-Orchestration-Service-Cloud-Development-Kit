@@ -86,6 +86,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: httpVersion: The maximum version of the HTTP protocol. Valid values:
+        /// http1.1
+        /// http2
+        /// http3
+        /// Note Only HTTPS listeners support this parameter.
+        /// </remarks>
+        [JsiiProperty(name: "httpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? HttpVersion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: idleTimeout: The connection idle timeout period. Unit: seconds.
+        /// Valid values:
+        /// TCP listener: 10 to 900
+        /// UDP listener: 10 to 20
+        /// HTTP or HTTPS listener: 1 to 60
+        /// Note Only listeners support this parameter.
+        /// </remarks>
+        [JsiiProperty(name: "idleTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IdleTimeout
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: name: The name of the listener.
         /// The name must be 2 to 128 characters in length and can contain letters, digits, underscores
         /// (_), and hyphens (-). It must start with a letter or Chinese character.
@@ -116,6 +151,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: requestTimeout: The HTTP request timeout period. Unit: seconds. Valid values: 1 to 180. Default value: 60.
+        /// Note Only HTTP and HTTPS listeners support this parameter.
+        /// </remarks>
+        [JsiiProperty(name: "requestTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RequestTimeout
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: securityPolicyId: The ID of the security policy. Valid values:
         /// tls_cipher_policy_1_0
         /// tls_cipher_policy_1_1
@@ -127,6 +176,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         [JsiiProperty(name: "securityPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SecurityPolicyId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: type: The listener routing type. Valid values:
+        /// Standard: the standard routing type
+        /// CustomRouting: the custom routing type
+        /// </remarks>
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Type
         {
             get
             {
@@ -224,6 +288,35 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: httpVersion: The maximum version of the HTTP protocol. Valid values:
+            /// http1.1
+            /// http2
+            /// http3
+            /// Note Only HTTPS listeners support this parameter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "httpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? HttpVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: idleTimeout: The connection idle timeout period. Unit: seconds.
+            /// Valid values:
+            /// TCP listener: 10 to 900
+            /// UDP listener: 10 to 20
+            /// HTTP or HTTPS listener: 1 to 60
+            /// Note Only listeners support this parameter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "idleTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IdleTimeout
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: name: The name of the listener.
             /// The name must be 2 to 128 characters in length and can contain letters, digits, underscores
             /// (_), and hyphens (-). It must start with a letter or Chinese character.
@@ -248,6 +341,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: requestTimeout: The HTTP request timeout period. Unit: seconds. Valid values: 1 to 180. Default value: 60.
+            /// Note Only HTTP and HTTPS listeners support this parameter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "requestTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RequestTimeout
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: securityPolicyId: The ID of the security policy. Valid values:
             /// tls_cipher_policy_1_0
             /// tls_cipher_policy_1_1
@@ -259,6 +363,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             [JsiiOptional]
             [JsiiProperty(name: "securityPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SecurityPolicyId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: type: The listener routing type. Valid values:
+            /// Standard: the standard routing type
+            /// CustomRouting: the custom routing type
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Type
             {
                 get => GetInstanceProperty<object?>();
             }

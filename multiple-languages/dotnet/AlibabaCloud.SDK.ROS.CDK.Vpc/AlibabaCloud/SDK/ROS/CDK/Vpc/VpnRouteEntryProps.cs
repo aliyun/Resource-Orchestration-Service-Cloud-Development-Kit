@@ -140,9 +140,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object _weight;
 
-        /// <summary>Property weight: The weight of the destination route.</summary>
+        /// <summary>Property weight: The weight of the destination-based route.</summary>
         /// <remarks>
-        /// Valid values: 0|100.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>100: a high priority</description>
+        /// <description>0: a low priority</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Weight
@@ -193,7 +198,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object? _description;
 
-        /// <summary>Property description: The description of the VPN destination route.</summary>
+        /// <summary>Property description: The description of the destination-based route.</summary>
+        /// <remarks>
+        /// The description must be 1 to 100 characters in length, and cannot start with
+        /// <c>http:\/\/</c> or <c>https:\/\/</c>.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Description
@@ -224,7 +233,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object? _overlayMode;
 
-        /// <summary>Property overlayMode: The overlay mode.</summary>
+        /// <summary>Property overlayMode: The tunneling protocol.</summary>
+        /// <remarks>
+        /// The value is set to Ipsec, which indicates the IPsec
+        /// tunneling protocol.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "overlayMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? OverlayMode

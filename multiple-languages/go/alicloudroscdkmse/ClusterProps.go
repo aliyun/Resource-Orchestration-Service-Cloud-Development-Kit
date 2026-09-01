@@ -37,16 +37,14 @@ type ClusterProps struct {
 	// - `NACOS_2_0_0`: Nacos 2.x version.
 	// - `ZooKeeper_3_8_0`: ZooKeeper 3.8.x version.
 	ClusterVersion interface{} `field:"required" json:"clusterVersion" yaml:"clusterVersion"`
-	// Property instanceCount: Number of instance nodes. Range: 1~15.
+	// Property instanceCount: Number of instance nodes, with a range limit of 1 to 9.
 	//
 	// [Professional Edition]
-	// - Must be >=3 and odd number.
-	//
-	// [Development Edition]
-	// - Only 1 allowed.
-	//
+	// - The number of instances must be 3 or more and must be an odd number.
+	// [Developer Edition]
+	// - The number of instances can only be 1.
 	// [Serverless Edition]
-	// - Ignore this parameter.
+	// Ignore this parameter.
 	InstanceCount interface{} `field:"required" json:"instanceCount" yaml:"instanceCount"`
 	// Property netType: Network type.
 	//
@@ -66,7 +64,7 @@ type ClusterProps struct {
 	//
 	// some regions only support `single_eni` for Development Edition.
 	ConnectionType interface{} `field:"optional" json:"connectionType" yaml:"connectionType"`
-	// Property eipEnabled: Effective when ConnectionType is `single_eni`, indicates whether to enable public access (elastic IP).
+	// Property eipEnabled: Valid when `ConnectionType` is `single_eni`, indicating whether to enable public network access (Elastic IP).
 	EipEnabled interface{} `field:"optional" json:"eipEnabled" yaml:"eipEnabled"`
 	// Property mseVersion: Must be filled unless special circumstances.
 	//
@@ -83,7 +81,7 @@ type ClusterProps struct {
 	RequestPars interface{} `field:"optional" json:"requestPars" yaml:"requestPars"`
 	// Property resourceGroupId: Resource group id.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
-	// Property securityGroupType: Effective when ConnectionType is `single_eni`, represents the security group type of the instance.
+	// Property securityGroupType: Valid when `ConnectionType` is `single_eni`, indicating the security group type of the instance.
 	SecurityGroupType interface{} `field:"optional" json:"securityGroupType" yaml:"securityGroupType"`
 	// Property tags: Tags to attach to cluster.
 	//

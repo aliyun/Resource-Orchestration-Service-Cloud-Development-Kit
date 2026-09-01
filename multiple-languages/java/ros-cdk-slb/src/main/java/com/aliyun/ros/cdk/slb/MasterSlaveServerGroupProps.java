@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-masterslaveservergroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.294Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:44:47.102Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.MasterSlaveServerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(MasterSlaveServerGroupProps.Jsii$Proxy.class)
 public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,9 +16,46 @@ public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSe
     @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId();
 
     /**
-     * Property masterSlaveBackendServers: A list of active/standby server group.
+     * Property masterSlaveBackendServers: The backend servers in the primary/secondary server group.
      * <p>
-     * An active/standby server group can only contain two backend servers.
+     * Each primary/secondary
+     * server group consists of two backend servers.
+     * Configure the following parameters:
+     * <p>
+     * <ul>
+     * <li>ServerId: required. The IDs of the backend servers. Specify the IDs in a
+     * string. You can specify the IDs of Elastic Compute Service (ECS) instances,
+     * elastic network interfaces (ENIs), and elastic container instances. If you set
+     * ServerId to the IDs of ENIs or elastic container instances, you must configure
+     * the Type parameter.</li>
+     * <li>Weight: the weight of the backend server. Valid values: 0 to 100. Default
+     * value: 100. If you set the weight of a backend server to 0, no requests are
+     * forwarded to the backend server.</li>
+     * <li>Description: optional. The description of the backend servers. Specify the
+     * description in a string. The description must be 1 to 80 characters in length,
+     * and can contain letters, digits, hyphens (-), forward slashes (/). periods (.),
+     * and underscores (_).</li>
+     * <li>Type: the type of the backend server. Valid values:</li>
+     * <li>ecs (default): ECS instance</li>
+     * <li>eni: ENI</li>
+     * <li>eci: elastic container instance</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * You can specify ENIs and elastic container instances as backend servers only
+     * for high-performance CLB instances.
+     * <p>
+     * </blockquote>
+     * <p>
+     * <ul>
+     * <li>ServerIp: the IP address of the ENI or elastic container instance.</li>
+     * <li>Port: the backend port.</li>
+     * <li>ServerType: Specify the primary and secondary backend servers in a string.
+     * Valid values:</li>
+     * <li>Master: primary server</li>
+     * <li>Slave: secondary server</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getMasterSlaveBackendServers();
 
@@ -65,8 +102,45 @@ public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link MasterSlaveServerGroupProps#getMasterSlaveBackendServers}
-         * @param masterSlaveBackendServers Property masterSlaveBackendServers: A list of active/standby server group. This parameter is required.
-         *                                  An active/standby server group can only contain two backend servers.
+         * @param masterSlaveBackendServers Property masterSlaveBackendServers: The backend servers in the primary/secondary server group. This parameter is required.
+         *                                  Each primary/secondary
+         *                                  server group consists of two backend servers.
+         *                                  Configure the following parameters:
+         *                                  <p>
+         *                                  <ul>
+         *                                  <li>ServerId: required. The IDs of the backend servers. Specify the IDs in a
+         *                                  string. You can specify the IDs of Elastic Compute Service (ECS) instances,
+         *                                  elastic network interfaces (ENIs), and elastic container instances. If you set
+         *                                  ServerId to the IDs of ENIs or elastic container instances, you must configure
+         *                                  the Type parameter.</li>
+         *                                  <li>Weight: the weight of the backend server. Valid values: 0 to 100. Default
+         *                                  value: 100. If you set the weight of a backend server to 0, no requests are
+         *                                  forwarded to the backend server.</li>
+         *                                  <li>Description: optional. The description of the backend servers. Specify the
+         *                                  description in a string. The description must be 1 to 80 characters in length,
+         *                                  and can contain letters, digits, hyphens (-), forward slashes (/). periods (.),
+         *                                  and underscores (_).</li>
+         *                                  <li>Type: the type of the backend server. Valid values:</li>
+         *                                  <li>ecs (default): ECS instance</li>
+         *                                  <li>eni: ENI</li>
+         *                                  <li>eci: elastic container instance</li>
+         *                                  </ul>
+         *                                  <p>
+         *                                  <blockquote>
+         *                                  <p>
+         *                                  You can specify ENIs and elastic container instances as backend servers only
+         *                                  for high-performance CLB instances.
+         *                                  <p>
+         *                                  </blockquote>
+         *                                  <p>
+         *                                  <ul>
+         *                                  <li>ServerIp: the IP address of the ENI or elastic container instance.</li>
+         *                                  <li>Port: the backend port.</li>
+         *                                  <li>ServerType: Specify the primary and secondary backend servers in a string.
+         *                                  Valid values:</li>
+         *                                  <li>Master: primary server</li>
+         *                                  <li>Slave: secondary server</li>
+         *                                  </ul>
          * @return {@code this}
          */
         public Builder masterSlaveBackendServers(com.aliyun.ros.cdk.core.IResolvable masterSlaveBackendServers) {
@@ -76,8 +150,45 @@ public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link MasterSlaveServerGroupProps#getMasterSlaveBackendServers}
-         * @param masterSlaveBackendServers Property masterSlaveBackendServers: A list of active/standby server group. This parameter is required.
-         *                                  An active/standby server group can only contain two backend servers.
+         * @param masterSlaveBackendServers Property masterSlaveBackendServers: The backend servers in the primary/secondary server group. This parameter is required.
+         *                                  Each primary/secondary
+         *                                  server group consists of two backend servers.
+         *                                  Configure the following parameters:
+         *                                  <p>
+         *                                  <ul>
+         *                                  <li>ServerId: required. The IDs of the backend servers. Specify the IDs in a
+         *                                  string. You can specify the IDs of Elastic Compute Service (ECS) instances,
+         *                                  elastic network interfaces (ENIs), and elastic container instances. If you set
+         *                                  ServerId to the IDs of ENIs or elastic container instances, you must configure
+         *                                  the Type parameter.</li>
+         *                                  <li>Weight: the weight of the backend server. Valid values: 0 to 100. Default
+         *                                  value: 100. If you set the weight of a backend server to 0, no requests are
+         *                                  forwarded to the backend server.</li>
+         *                                  <li>Description: optional. The description of the backend servers. Specify the
+         *                                  description in a string. The description must be 1 to 80 characters in length,
+         *                                  and can contain letters, digits, hyphens (-), forward slashes (/). periods (.),
+         *                                  and underscores (_).</li>
+         *                                  <li>Type: the type of the backend server. Valid values:</li>
+         *                                  <li>ecs (default): ECS instance</li>
+         *                                  <li>eni: ENI</li>
+         *                                  <li>eci: elastic container instance</li>
+         *                                  </ul>
+         *                                  <p>
+         *                                  <blockquote>
+         *                                  <p>
+         *                                  You can specify ENIs and elastic container instances as backend servers only
+         *                                  for high-performance CLB instances.
+         *                                  <p>
+         *                                  </blockquote>
+         *                                  <p>
+         *                                  <ul>
+         *                                  <li>ServerIp: the IP address of the ENI or elastic container instance.</li>
+         *                                  <li>Port: the backend port.</li>
+         *                                  <li>ServerType: Specify the primary and secondary backend servers in a string.
+         *                                  Valid values:</li>
+         *                                  <li>Master: primary server</li>
+         *                                  <li>Slave: secondary server</li>
+         *                                  </ul>
          * @return {@code this}
          */
         public Builder masterSlaveBackendServers(java.util.List<? extends java.lang.Object> masterSlaveBackendServers) {

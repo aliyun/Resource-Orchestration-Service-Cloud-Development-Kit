@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ComputeNest::IntranetConnectorEndpoint`, which is used to create an endpoint.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ComputeNest::IntranetConnectorEndpoint`.
 type IntranetConnectorEndpoint interface {
 	alicloudroscdkcore.Resource
 	IIntranetConnectorEndpoint

@@ -27,8 +27,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: description: Description of the address pool instance.
-        /// The length is 0-256 characters, and you cannot start with http:\/\/ or https: \/\/.
+        /// <strong>Property</strong>: description: The description of the IP address pool.
+        /// The description must be 0 to 256 characters in length and cannot start with
+        /// `http:\/\/` or `https:\/\/`.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -67,8 +68,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: name: The name of the address pool instance.
-        /// The length is 0-128 characters, and you cannot start with http: \/\/ or https: \/\/.
+        /// <strong>Property</strong>: name: The name of the IP address pool.
+        /// The name must be 0 to 128 characters in length and cannot start with `http:\/\/` or
+        /// `https:\/\/`.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -159,8 +161,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: description: Description of the address pool instance.
-            /// The length is 0-256 characters, and you cannot start with http:\/\/ or https: \/\/.
+            /// <strong>Property</strong>: description: The description of the IP address pool.
+            /// The description must be 0 to 256 characters in length and cannot start with
+            /// `http:\/\/` or `https:\/\/`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -193,8 +196,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: name: The name of the address pool instance.
-            /// The length is 0-128 characters, and you cannot start with http: \/\/ or https: \/\/.
+            /// <strong>Property</strong>: name: The name of the IP address pool.
+            /// The name must be 0 to 128 characters in length and cannot start with `http:\/\/` or
+            /// `https:\/\/`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

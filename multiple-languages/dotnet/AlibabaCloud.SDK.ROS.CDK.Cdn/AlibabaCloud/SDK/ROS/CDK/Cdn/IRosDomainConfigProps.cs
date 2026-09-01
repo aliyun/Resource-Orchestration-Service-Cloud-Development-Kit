@@ -12,7 +12,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
     public interface IRosDomainConfigProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: domainNames: Your accelerated domain name, separated by commas in English.
+        /// <strong>Property</strong>: domainNames: The domain names to configure for acceleration. Separate multiple domain names
+        /// with a comma (,). Note the following limits:
+        /// - You can specify up to 20 domain names.
+        /// - The number of domain names multiplied by the number of features cannot exceed
+        /// 50.
         /// </remarks>
         [JsiiProperty(name: "domainNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object DomainNames
@@ -45,7 +49,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: domainNames: Your accelerated domain name, separated by commas in English.
+            /// <strong>Property</strong>: domainNames: The domain names to configure for acceleration. Separate multiple domain names
+            /// with a comma (,). Note the following limits:
+            /// - You can specify up to 20 domain names.
+            /// - The number of domain names multiplied by the number of features cannot exceed
+            /// 50.
             /// </remarks>
             [JsiiProperty(name: "domainNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DomainNames

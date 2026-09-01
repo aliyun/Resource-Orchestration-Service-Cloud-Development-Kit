@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.esa;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESA::WaitingRoomEvent</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:49:07.897Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:03:27.804Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.RosWaitingRoomEvent")
 public class RosWaitingRoomEvent extends com.aliyun.ros.cdk.core.RosResource {
 

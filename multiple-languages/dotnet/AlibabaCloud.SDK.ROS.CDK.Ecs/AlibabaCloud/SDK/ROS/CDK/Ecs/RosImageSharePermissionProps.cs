@@ -16,7 +16,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object _imageId;
 
         /// <remarks>
-        /// <strong>Property</strong>: imageId: The shared custom image ID.
+        /// <strong>Property</strong>: imageId: The ID of the custom image.
+        /// ><notice>
+        /// You can no longer share images that are encrypted by using a service key. You can
+        /// share only images that are encrypted by using a customer managed key (CMK). If
+        /// you attempt to share an image that is encrypted by using a service key, the
+        /// request fails.
+        /// ><\/notice>
         /// </remarks>
         [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ImageId
@@ -98,8 +104,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _isPublic;
 
         /// <remarks>
-        /// <strong>Property</strong>: isPublic: Whether to publish or remove community mirrors.
-        /// If this property is not set, no changes will be made to the community image
+        /// <strong>Property</strong>: isPublic: Specifies whether to publish or unpublish the community image. Valid values:
+        /// - true: publishes the image as a community image.
+        /// - false: unpublishes the community image. The image becomes a custom image. If
+        /// the image is a custom image, this setting has no effect.
+        /// Default value: false.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "isPublic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

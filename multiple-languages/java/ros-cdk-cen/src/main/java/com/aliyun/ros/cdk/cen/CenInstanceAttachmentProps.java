@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstanceattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.241Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.582Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenInstanceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(CenInstanceAttachmentProps.Jsii$Proxy.class)
 public interface CenInstanceAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,9 +21,10 @@ public interface CenInstanceAttachmentProps extends software.amazon.jsii.JsiiSer
     @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceId();
 
     /**
-     * Property childInstanceRegionId: The ID of the region where the network is located.
+     * Property childInstanceRegionId: The ID of the region where the network instance is deployed.
      * <p>
-     * The ID of the region where the network is located.
+     * You can call the <a href="">DescribeRegions</a> operation to query the most recent region
+     * list.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceRegionId();
 
@@ -35,7 +36,14 @@ public interface CenInstanceAttachmentProps extends software.amazon.jsii.JsiiSer
     @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceType();
 
     /**
-     * Property childInstanceOwnerId: The account ID to which the network belongs.
+     * Property childInstanceOwnerId: The ID of the account to which the network instance belongs.
+     * <p>
+     * <blockquote>
+     * <p>
+     * If the network instance and the CEN instance belong to different accounts,
+     * this parameter is required.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getChildInstanceOwnerId() {
         return null;
@@ -99,8 +107,9 @@ public interface CenInstanceAttachmentProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link CenInstanceAttachmentProps#getChildInstanceRegionId}
-         * @param childInstanceRegionId Property childInstanceRegionId: The ID of the region where the network is located. This parameter is required.
-         *                              The ID of the region where the network is located.
+         * @param childInstanceRegionId Property childInstanceRegionId: The ID of the region where the network instance is deployed. This parameter is required.
+         *                              You can call the <a href="">DescribeRegions</a> operation to query the most recent region
+         *                              list.
          * @return {@code this}
          */
         public Builder childInstanceRegionId(java.lang.String childInstanceRegionId) {
@@ -110,8 +119,9 @@ public interface CenInstanceAttachmentProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link CenInstanceAttachmentProps#getChildInstanceRegionId}
-         * @param childInstanceRegionId Property childInstanceRegionId: The ID of the region where the network is located. This parameter is required.
-         *                              The ID of the region where the network is located.
+         * @param childInstanceRegionId Property childInstanceRegionId: The ID of the region where the network instance is deployed. This parameter is required.
+         *                              You can call the <a href="">DescribeRegions</a> operation to query the most recent region
+         *                              list.
          * @return {@code this}
          */
         public Builder childInstanceRegionId(com.aliyun.ros.cdk.core.IResolvable childInstanceRegionId) {
@@ -143,7 +153,13 @@ public interface CenInstanceAttachmentProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link CenInstanceAttachmentProps#getChildInstanceOwnerId}
-         * @param childInstanceOwnerId Property childInstanceOwnerId: The account ID to which the network belongs.
+         * @param childInstanceOwnerId Property childInstanceOwnerId: The ID of the account to which the network instance belongs.
+         *                             <blockquote>
+         *                             <p>
+         *                             If the network instance and the CEN instance belong to different accounts,
+         *                             this parameter is required.
+         *                             <p>
+         *                             </blockquote>
          * @return {@code this}
          */
         public Builder childInstanceOwnerId(java.lang.Number childInstanceOwnerId) {
@@ -153,7 +169,13 @@ public interface CenInstanceAttachmentProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link CenInstanceAttachmentProps#getChildInstanceOwnerId}
-         * @param childInstanceOwnerId Property childInstanceOwnerId: The account ID to which the network belongs.
+         * @param childInstanceOwnerId Property childInstanceOwnerId: The ID of the account to which the network instance belongs.
+         *                             <blockquote>
+         *                             <p>
+         *                             If the network instance and the CEN instance belong to different accounts,
+         *                             this parameter is required.
+         *                             <p>
+         *                             </blockquote>
          * @return {@code this}
          */
         public Builder childInstanceOwnerId(com.aliyun.ros.cdk.core.IResolvable childInstanceOwnerId) {

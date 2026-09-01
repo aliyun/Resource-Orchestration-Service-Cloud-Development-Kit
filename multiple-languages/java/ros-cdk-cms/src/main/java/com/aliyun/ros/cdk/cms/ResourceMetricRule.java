@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::ResourceMetricRule</code>, which is used to create a threshold-triggered alert rule for a metric of a resource.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::ResourceMetricRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.983Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.277Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.ResourceMetricRule")
 public class ResourceMetricRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IResourceMetricRule {
 
@@ -228,24 +228,34 @@ public class ResourceMetricRule extends com.aliyun.ros.cdk.core.Resource impleme
         }
 
         /**
-         * Property compositeExpression: The trigger conditions for multiple metrics.
+         * Property compositeExpression: The alert conditions for multiple metrics.
          * <p>
-         * Note: The trigger conditions for a single metric and multiple metrics are mutually exclusive. You cannot specify trigger conditions for a single metric and multiple metrics at the same time.
+         * <blockquote>
+         * <p>
+         * The settings for a single metric and multiple metrics are mutually exclusive.
+         * You cannot configure both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param compositeExpression Property compositeExpression: The trigger conditions for multiple metrics. This parameter is required.
+         * @param compositeExpression Property compositeExpression: The alert conditions for multiple metrics. This parameter is required.
          */
         public Builder compositeExpression(final com.aliyun.ros.cdk.core.IResolvable compositeExpression) {
             this.props.compositeExpression(compositeExpression);
             return this;
         }
         /**
-         * Property compositeExpression: The trigger conditions for multiple metrics.
+         * Property compositeExpression: The alert conditions for multiple metrics.
          * <p>
-         * Note: The trigger conditions for a single metric and multiple metrics are mutually exclusive. You cannot specify trigger conditions for a single metric and multiple metrics at the same time.
+         * <blockquote>
+         * <p>
+         * The settings for a single metric and multiple metrics are mutually exclusive.
+         * You cannot configure both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param compositeExpression Property compositeExpression: The trigger conditions for multiple metrics. This parameter is required.
+         * @param compositeExpression Property compositeExpression: The alert conditions for multiple metrics. This parameter is required.
          */
         public Builder compositeExpression(final com.aliyun.ros.cdk.cms.RosResourceMetricRule.CompositeExpressionProperty compositeExpression) {
             this.props.compositeExpression(compositeExpression);
@@ -368,20 +378,38 @@ public class ResourceMetricRule extends com.aliyun.ros.cdk.core.Resource impleme
         }
 
         /**
-         * Property labels:.
+         * Property labels: Labels to add to a triggered alert.
+         * <p>
+         * These labels appear in the alert
+         * notification.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This feature is equivalent to the <code>label</code> feature in Prometheus alerting.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param labels Property labels:. This parameter is required.
+         * @param labels Property labels: Labels to add to a triggered alert. This parameter is required.
          */
         public Builder labels(final com.aliyun.ros.cdk.core.IResolvable labels) {
             this.props.labels(labels);
             return this;
         }
         /**
-         * Property labels:.
+         * Property labels: Labels to add to a triggered alert.
+         * <p>
+         * These labels appear in the alert
+         * notification.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This feature is equivalent to the <code>label</code> feature in Prometheus alerting.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param labels Property labels:. This parameter is required.
+         * @param labels Property labels: Labels to add to a triggered alert. This parameter is required.
          */
         public Builder labels(final java.util.List<? extends java.lang.Object> labels) {
             this.props.labels(labels);
@@ -474,24 +502,34 @@ public class ResourceMetricRule extends com.aliyun.ros.cdk.core.Resource impleme
         }
 
         /**
-         * Property prometheus: The Prometheus alert rule.
+         * Property prometheus: The configurations for a Prometheus alert rule.
          * <p>
-         * Note: This parameter is required only when you create a Prometheus alert rule for Hybrid Cloud Monitoring.
+         * <blockquote>
+         * <p>
+         * You need to configure this parameter only when you create a Prometheus alert
+         * rule for CloudMonitor for Enterprise.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param prometheus Property prometheus: The Prometheus alert rule. This parameter is required.
+         * @param prometheus Property prometheus: The configurations for a Prometheus alert rule. This parameter is required.
          */
         public Builder prometheus(final com.aliyun.ros.cdk.core.IResolvable prometheus) {
             this.props.prometheus(prometheus);
             return this;
         }
         /**
-         * Property prometheus: The Prometheus alert rule.
+         * Property prometheus: The configurations for a Prometheus alert rule.
          * <p>
-         * Note: This parameter is required only when you create a Prometheus alert rule for Hybrid Cloud Monitoring.
+         * <blockquote>
+         * <p>
+         * You need to configure this parameter only when you create a Prometheus alert
+         * rule for CloudMonitor for Enterprise.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param prometheus Property prometheus: The Prometheus alert rule. This parameter is required.
+         * @param prometheus Property prometheus: The configurations for a Prometheus alert rule. This parameter is required.
          */
         public Builder prometheus(final com.aliyun.ros.cdk.cms.RosResourceMetricRule.PrometheusProperty prometheus) {
             this.props.prometheus(prometheus);

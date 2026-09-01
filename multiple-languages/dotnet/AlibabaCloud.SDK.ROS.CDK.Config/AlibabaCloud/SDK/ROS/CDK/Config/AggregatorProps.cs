@@ -160,7 +160,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
 
         private object? _folderId;
 
-        /// <summary>Property folderId: The folder ID.</summary>
+        /// <summary>Property folderId: The ID of the attached folder.</summary>
+        /// <remarks>
+        /// You can specify multiple folder IDs. Separate the
+        /// IDs with commas (,).
+        /// This parameter is required if you set <c>AggregatorType</c> to <c>FOLDER</c>.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "folderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? FolderId

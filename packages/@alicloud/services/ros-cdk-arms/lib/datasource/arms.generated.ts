@@ -425,7 +425,7 @@ function rosGrafanaWorkspacePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspace`, which is used to query the information about a Grafana workspace.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspace`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrafanaWorkspace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspace
  */
@@ -585,7 +585,7 @@ function rosGrafanaWorkspacesPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`, which is used to query the information about Grafana workspaces.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrafanaWorkspaces` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspaces
  */
@@ -709,7 +709,7 @@ function rosPrometheisPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::Prometheis`, which is used to query Prometheus instances.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::Prometheis`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Prometheis` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheis
  */
@@ -834,7 +834,7 @@ function rosPrometheusPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::Prometheus`, which is used to query the information about a Prometheus instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::Prometheus`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Prometheus` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheus
  */
@@ -1018,7 +1018,7 @@ function rosPrometheusAuthTokenPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::PrometheusAuthToken`, which is used to query an authentication token for read and write over the Internet.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::PrometheusAuthToken`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrometheusAuthToken` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheusauthtoken
  */
@@ -1136,7 +1136,7 @@ function rosPrometheusUrlPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::PrometheusUrl`, which is used to query all URLs of a cluster, including the URLs for remote read, remote write, Pushgateway, and Grafana.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::PrometheusUrl`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrometheusUrl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheusurl
  */
@@ -1327,7 +1327,7 @@ function rosSyntheticTaskPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::SyntheticTask`, which is used to query the information about a scheduled synthetic monitoring task.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::SyntheticTask`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SyntheticTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-synthetictask
  */
@@ -1511,7 +1511,7 @@ function rosSyntheticTasksPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::SyntheticTasks`, which is used to query scheduled synthetic monitoring tasks.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::SyntheticTasks`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SyntheticTasks` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-synthetictasks
  */
@@ -1636,7 +1636,7 @@ function rosXTraceAppPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::XTraceApp`, which is used to query the information about an application monitoring task.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::XTraceApp`.
  * @Note This class does not contain additional functions, so it is recommended to use the `XTraceApp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-xtraceapp
  */
@@ -1778,7 +1778,7 @@ function rosXTraceAppsPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::XTraceApps`, which is used to query all the application monitoring tasks in a region.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::XTraceApps`.
  * @Note This class does not contain additional functions, so it is recommended to use the `XTraceApps` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-xtraceapps
  */

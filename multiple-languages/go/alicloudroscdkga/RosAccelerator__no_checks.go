@@ -96,7 +96,19 @@ func (j *jsiiProxy_RosAccelerator) validateSetAutoUseCouponParameters(val interf
 	return nil
 }
 
+func (j *jsiiProxy_RosAccelerator) validateSetBandwidthParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosAccelerator) validateSetBandwidthBillingTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAccelerator) validateSetCrossBorderModeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAccelerator) validateSetDdosConfigListParameters(val interface{}) error {
 	return nil
 }
 
@@ -129,6 +141,10 @@ func (j *jsiiProxy_RosAccelerator) validateSetResourceGroupIdParameters(val inte
 }
 
 func (j *jsiiProxy_RosAccelerator) validateSetSpecParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAccelerator) validateSetTagsParameters(val *[]*RosAccelerator_TagsProperty) error {
 	return nil
 }
 

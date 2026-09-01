@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::IOT::RuleAction`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::IOT::RuleAction`, which is used to create a rule action for a specified rule.
 type RuleAction interface {
 	alicloudroscdkcore.Resource
 	IRuleAction

@@ -62,7 +62,12 @@ export interface DesktopsProps {
     readonly chargeType?: string | ros.IResolvable;
 
     /**
-     * Property desktopName: The name of the cloud desktop.
+     * Property desktopName: The name of the desktop. The name must meet the following requirements:
+     * - The name cannot exceed 64 characters in length.
+     * - It must start with a letter or a Chinese character. It cannot start
+     * with`http:\/\/` or `https:\/\/`.
+     * - It can contain letters, digits, Chinese characters, colons (:), underscores
+     * (_), periods (.), and hyphens (-).
      */
     readonly desktopName?: string | ros.IResolvable;
 
@@ -191,7 +196,7 @@ Note This parameter is returned only when the ChargeType parameter is set to Pre
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::Desktops`, which is used to create one or more cloud desktops.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::Desktops`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDesktops`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
  */

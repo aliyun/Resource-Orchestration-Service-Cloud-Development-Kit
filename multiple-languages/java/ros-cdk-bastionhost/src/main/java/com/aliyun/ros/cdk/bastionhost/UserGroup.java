@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bastionhost;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::BastionHost::UserGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:35:53.539Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:18:29.242Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.UserGroup")
 public class UserGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.bastionhost.IUserGroup {
 
@@ -133,20 +133,26 @@ public class UserGroup extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property userGroupName: The name of the user group.
+         * Property userGroupName: The name of the user group that you want to create.
+         * <p>
+         * This name can be a up to 128
+         * characters in length.
          * <p>
          * @return {@code this}
-         * @param userGroupName Property userGroupName: The name of the user group. This parameter is required.
+         * @param userGroupName Property userGroupName: The name of the user group that you want to create. This parameter is required.
          */
         public Builder userGroupName(final java.lang.String userGroupName) {
             this.props.userGroupName(userGroupName);
             return this;
         }
         /**
-         * Property userGroupName: The name of the user group.
+         * Property userGroupName: The name of the user group that you want to create.
+         * <p>
+         * This name can be a up to 128
+         * characters in length.
          * <p>
          * @return {@code this}
-         * @param userGroupName Property userGroupName: The name of the user group. This parameter is required.
+         * @param userGroupName Property userGroupName: The name of the user group that you want to create. This parameter is required.
          */
         public Builder userGroupName(final com.aliyun.ros.cdk.core.IResolvable userGroupName) {
             this.props.userGroupName(userGroupName);
@@ -154,20 +160,26 @@ public class UserGroup extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property comment: The comment of the user group.
+         * Property comment: The description of the user group.
+         * <p>
+         * The description can be up to 500 characters in
+         * length.
          * <p>
          * @return {@code this}
-         * @param comment Property comment: The comment of the user group. This parameter is required.
+         * @param comment Property comment: The description of the user group. This parameter is required.
          */
         public Builder comment(final java.lang.String comment) {
             this.props.comment(comment);
             return this;
         }
         /**
-         * Property comment: The comment of the user group.
+         * Property comment: The description of the user group.
+         * <p>
+         * The description can be up to 500 characters in
+         * length.
          * <p>
          * @return {@code this}
-         * @param comment Property comment: The comment of the user group. This parameter is required.
+         * @param comment Property comment: The description of the user group. This parameter is required.
          */
         public Builder comment(final com.aliyun.ros.cdk.core.IResolvable comment) {
             this.props.comment(comment);

@@ -30,7 +30,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: accessLogEnabled: Specifies whether to enable access logging.
+        /// <strong>Property</strong>: accessLogEnabled: Specifies whether to enable access log. Valid values:
+        /// - `true`: Enables access log.
+        /// - `false`: Disables access log.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "accessLogEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -58,7 +61,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: accessLogFormat: The format of access logs.
+        /// <strong>Property</strong>: accessLogFormat: The custom format of access logs. This parameter is available only if you enable
+        /// access log. The value must be a JSON string that contains the following keys:
+        /// authority_for, bytes_received, bytes_sent, downstream_local_address,
+        /// downstream_remote_address, duration, istio_policy_status, method, path, protocol,
+        /// requested_server_name, response_code, response_flags, route_name, start_time,
+        /// trace_id, upstream_cluster, upstream_host, upstream_local_address,
+        /// upstream_service_time, upstream_transport_failure_reason, user_agent, and
+        /// x_forwarded_for.
         /// </remarks>
         [JsiiProperty(name: "accessLogFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -184,7 +194,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: autoRenewPeriod: ChargeType is a PrePay. Indicates the automatic renewal time when purchasing a CLB of the year and month type. If the purchase is less than 1 year old, this parameter indicates how many months the auto-renewal will take. If the purchase is longer than 1 year, this parameter indicates how many years the automatic renewal will be made.
+        /// <strong>Property</strong>: autoRenewPeriod: This parameter is valid only if you set `ChargeType` to `PrePay`. The
+        /// auto-renewal period. If the subscription duration is less than one year, the
+        /// value of this parameter indicates the number of months for which you want to
+        /// renew the instance. If the subscription duration is more than one year, the value
+        /// of this parameter indicates the number of years for which you want to renew the
+        /// instance.
         /// </remarks>
         [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -270,7 +285,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: controlPlaneLogEnabled: Specifies whether to enable control plane logging.
+        /// <strong>Property</strong>: controlPlaneLogEnabled: Specifies whether to enable control plane log collection. Valid values:
+        /// - `true`: Enables control plane log collection.
+        /// - `false`: Disables control plane log collection.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "controlPlaneLogEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -312,7 +330,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: customizedPrometheus: Specifies whether to use a customized Prometheus system.
+        /// <strong>Property</strong>: customizedPrometheus: Specifies whether to use a self-managed Prometheus system. Valid values:
+        /// - `true`: Uses a self-managed Prometheus system.
+        /// - `false`: Does not use a self-managed Prometheus system.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "customizedPrometheus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -325,7 +346,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: customizedZipkin: Specifies whether to use a user-created Zipkin system.
+        /// <strong>Property</strong>: customizedZipkin: Specifies whether to use a self-managed Zipkin system. Valid values:
+        /// - `true`: Uses a self-managed Zipkin system.
+        /// - `false`: Uses Tracing Analysis.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "customizedZipkin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -338,7 +362,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: dnsProxyingEnabled: Specifies whether to enable DNS proxying.
+        /// <strong>Property</strong>: dnsProxyingEnabled: Specifies whether to enable DNS proxy. Valid values:
+        /// - `true`: Enables DNS proxy.
+        /// - `false`: Disables DNS proxy.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "dnsProxyingEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -351,7 +378,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: dubboFilterEnabled: Specifies whether to enable Dubbo filter.
+        /// <strong>Property</strong>: dubboFilterEnabled: Specifies whether to enable the Dubbo filter. Valid values:
+        /// - `true`: Enables the Dubbo filter.
+        /// - `false`: Disables the Dubbo filter.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "dubboFilterEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -418,7 +448,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: enableCrHistory: Specifies whether to enable CR history.
+        /// <strong>Property</strong>: enableCrHistory: Specifies whether to enable the history version management feature for Istio
+        /// resources in ASM. Valid values:
+        /// - `true`: Enables the history version management feature.
+        /// - `false`: Disables the history version management feature.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "enableCrHistory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -431,7 +465,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: enableSdsServer: Specifies whether to enable SDS server.
+        /// <strong>Property</strong>: enableSdsServer: Specifies whether to enable the Secret Discovery Service (SDS). Valid values:
+        /// - `true`: Enables SDS.
+        /// - `false`: Disables SDS.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "enableSdsServer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -509,7 +546,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: existingCaType: The type of existing CA.
+        /// <strong>Property</strong>: existingCaType: The type of the existing certificate:
+        /// - 1: A self-signed certificate of Istiod. This corresponds to the istio-ca-secret
+        /// secret in the istio-system namespace. If you use this type, you must also provide
+        /// the `ExistingCaCert` and `ExsitingCaKey` parameters.
+        /// - 2: An external certificate of Istiod. For more information, see plugin ca cert.
+        /// This generally corresponds to the cacerts secret in the istio-system namespace.
+        /// If you use this type, you must also provide the `ExisingRootCaCert` and
+        /// `ExisingRootCaKey` parameters.
         /// </remarks>
         [JsiiProperty(name: "existingCaType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -548,7 +592,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: filterGatewayClusterConfig: Specifies whether to filter gateway cluster configuration.
+        /// <strong>Property</strong>: filterGatewayClusterConfig: Specifies whether to enable gateway configuration filtering. Valid values:
+        /// - `true`: Enables gateway configuration filtering.
+        /// - `false`: Disables gateway configuration filtering.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "filterGatewayClusterConfig", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -561,7 +608,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: gatewayApiEnabled: Specifies whether to enable Gateway API.
+        /// <strong>Property</strong>: gatewayApiEnabled: Specifies whether to enable the Gateway API. Valid values:
+        /// - `true`: Enables the Gateway API.
+        /// - `false`: Disables the Gateway API.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "gatewayApiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -574,7 +624,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: guestCluster: The guest cluster configuration.
+        /// <strong>Property</strong>: guestCluster: When you create a Service Mesh instance, you can add a cluster to the instance.
+        /// If you do not specify this parameter, no cluster is added. The cluster must be in
+        /// the same VPC and vSwitch as the Service Mesh instance, and must have the same
+        /// domain name.
         /// </remarks>
         [JsiiProperty(name: "guestCluster", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -587,8 +640,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: includeIpRanges: The Classless Inter-Domain Routing (CIDR) block in the ASM instance that are denied
-        /// to access external services.
+        /// <strong>Property</strong>: includeIpRanges: The IP address ranges that are allowed to access the proxy.
         /// </remarks>
         [JsiiProperty(name: "includeIpRanges", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -614,7 +666,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: kialiEnabled: Specifies whether to enable Kiali.
+        /// <strong>Property</strong>: kialiEnabled: Specifies whether to enable the mesh topology feature. To enable this feature,
+        /// you must first enable Prometheus monitoring. If Prometheus monitoring is
+        /// disabled, this feature is forcibly disabled. Valid values:
+        /// - `true`: Enables the mesh topology feature.
+        /// - `false`: Disables the mesh topology feature.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "kialiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -654,7 +711,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: mseEnabled: Specifies whether to enable MSE.
+        /// <strong>Property</strong>: mseEnabled: Specifies whether to enable Microservices Engine (MSE). Valid values:
+        /// - `true`: Enables MSE.
+        /// - `false`: Disables MSE.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "mseEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -667,7 +727,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: multiBufferEnabled: Specifies whether to enable multi-buffer.
+        /// <strong>Property</strong>: multiBufferEnabled: Specifies whether to enable TLS performance optimization that is based on
+        /// MultiBuffer. Valid values:
+        /// - `true`: Enables the feature.
+        /// - `false`: Disables the feature.
+        /// Default value: `true`.
         /// </remarks>
         [JsiiProperty(name: "multiBufferEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -680,7 +744,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: multiBufferPollDelay: The poll delay for multi-buffer.
+        /// <strong>Property</strong>: multiBufferPollDelay: The synchronization period of the MultiBuffer enabling status. Default value:
+        /// `30s`.
         /// </remarks>
         [JsiiProperty(name: "multiBufferPollDelay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -693,7 +758,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: mysqlFilterEnabled: Specifies whether to enable MySQL filter.
+        /// <strong>Property</strong>: mysqlFilterEnabled: Specifies whether to enable the MySQL filter. Valid values:
+        /// - `true`: Enables the MySQL filter.
+        /// - `false`: Disables the MySQL filter.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "mysqlFilterEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -732,7 +800,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: opaEnabled: Specifies whether to enable OPA.
+        /// <strong>Property</strong>: opaEnabled: Specifies whether to enable OPA. Valid values:
+        /// - `true`: Enables OPA.
+        /// - `false`: Disables OPA.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "opaEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -758,7 +829,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: period: The subscription period.
+        /// <strong>Property</strong>: period: This parameter is valid only if you set `ChargeType` to `PrePay`. The
+        /// subscription duration of the SLB instance. Unit: months. If you want to purchase
+        /// the instance for one year, enter 12.
         /// </remarks>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -771,7 +844,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: pilotLoadBalancerSpec: The specification for the pilot load balancer.
+        /// <strong>Property</strong>: pilotLoadBalancerSpec: The specification of the SLB instance that is bound to Istio Pilot of the control
+        /// plane. Valid values: `slb.s1.small`, `slb.s2.small`, `slb.s2.medium`,
+        /// `slb.s3.small`, `slb.s3.medium`, and `slb.s3.large`.
         /// </remarks>
         [JsiiProperty(name: "pilotLoadBalancerSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -800,7 +875,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: playgroundScene: The playground scene configuration.
+        /// <strong>Property</strong>: playgroundScene: The playground scenario. If you specify this parameter, an ASM playground
+        /// instance is created. Valid value:
+        /// - ewmaLb: the exponentially weighted moving average (EWMA) load balancing
+        /// scenario
         /// </remarks>
         [JsiiProperty(name: "playgroundScene", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -839,7 +917,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: telemetry: Specifies whether to enable Prometheus monitoring. We recommend that you use Application Real-Time Monitoring Service (ARMS).
+        /// <strong>Property</strong>: telemetry: Specifies whether to enable Prometheus monitoring. We recommend that you use
+        /// Managed Service for Prometheus. Valid values:
+        /// - `true`: Enables Prometheus monitoring.
+        /// - `false`: Disables Prometheus monitoring.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "telemetry", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -893,7 +975,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: webAssemblyFilterEnabled: Specifies whether to enable WebAssembly filter.
+        /// <strong>Property</strong>: webAssemblyFilterEnabled: Specifies whether to enable the WebAssembly filter. Valid values:
+        /// - `true`: Enables the WebAssembly filter.
+        /// - `false`: Disables the WebAssembly filter.
+        /// Default value: `false`.
         /// </remarks>
         [JsiiProperty(name: "webAssemblyFilterEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -935,7 +1020,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: accessLogEnabled: Specifies whether to enable access logging.
+            /// <strong>Property</strong>: accessLogEnabled: Specifies whether to enable access log. Valid values:
+            /// - `true`: Enables access log.
+            /// - `false`: Disables access log.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "accessLogEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -957,7 +1045,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: accessLogFormat: The format of access logs.
+            /// <strong>Property</strong>: accessLogFormat: The custom format of access logs. This parameter is available only if you enable
+            /// access log. The value must be a JSON string that contains the following keys:
+            /// authority_for, bytes_received, bytes_sent, downstream_local_address,
+            /// downstream_remote_address, duration, istio_policy_status, method, path, protocol,
+            /// requested_server_name, response_code, response_flags, route_name, start_time,
+            /// trace_id, upstream_cluster, upstream_host, upstream_local_address,
+            /// upstream_service_time, upstream_transport_failure_reason, user_agent, and
+            /// x_forwarded_for.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "accessLogFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1056,7 +1151,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: autoRenewPeriod: ChargeType is a PrePay. Indicates the automatic renewal time when purchasing a CLB of the year and month type. If the purchase is less than 1 year old, this parameter indicates how many months the auto-renewal will take. If the purchase is longer than 1 year, this parameter indicates how many years the automatic renewal will be made.
+            /// <strong>Property</strong>: autoRenewPeriod: This parameter is valid only if you set `ChargeType` to `PrePay`. The
+            /// auto-renewal period. If the subscription duration is less than one year, the
+            /// value of this parameter indicates the number of months for which you want to
+            /// renew the instance. If the subscription duration is more than one year, the value
+            /// of this parameter indicates the number of years for which you want to renew the
+            /// instance.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1124,7 +1224,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: controlPlaneLogEnabled: Specifies whether to enable control plane logging.
+            /// <strong>Property</strong>: controlPlaneLogEnabled: Specifies whether to enable control plane log collection. Valid values:
+            /// - `true`: Enables control plane log collection.
+            /// - `false`: Disables control plane log collection.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "controlPlaneLogEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1157,7 +1260,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: customizedPrometheus: Specifies whether to use a customized Prometheus system.
+            /// <strong>Property</strong>: customizedPrometheus: Specifies whether to use a self-managed Prometheus system. Valid values:
+            /// - `true`: Uses a self-managed Prometheus system.
+            /// - `false`: Does not use a self-managed Prometheus system.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "customizedPrometheus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1167,7 +1273,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: customizedZipkin: Specifies whether to use a user-created Zipkin system.
+            /// <strong>Property</strong>: customizedZipkin: Specifies whether to use a self-managed Zipkin system. Valid values:
+            /// - `true`: Uses a self-managed Zipkin system.
+            /// - `false`: Uses Tracing Analysis.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "customizedZipkin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1177,7 +1286,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: dnsProxyingEnabled: Specifies whether to enable DNS proxying.
+            /// <strong>Property</strong>: dnsProxyingEnabled: Specifies whether to enable DNS proxy. Valid values:
+            /// - `true`: Enables DNS proxy.
+            /// - `false`: Disables DNS proxy.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dnsProxyingEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1187,7 +1299,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: dubboFilterEnabled: Specifies whether to enable Dubbo filter.
+            /// <strong>Property</strong>: dubboFilterEnabled: Specifies whether to enable the Dubbo filter. Valid values:
+            /// - `true`: Enables the Dubbo filter.
+            /// - `false`: Disables the Dubbo filter.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dubboFilterEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1239,7 +1354,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: enableCrHistory: Specifies whether to enable CR history.
+            /// <strong>Property</strong>: enableCrHistory: Specifies whether to enable the history version management feature for Istio
+            /// resources in ASM. Valid values:
+            /// - `true`: Enables the history version management feature.
+            /// - `false`: Disables the history version management feature.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "enableCrHistory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1249,7 +1368,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: enableSdsServer: Specifies whether to enable SDS server.
+            /// <strong>Property</strong>: enableSdsServer: Specifies whether to enable the Secret Discovery Service (SDS). Valid values:
+            /// - `true`: Enables SDS.
+            /// - `false`: Disables SDS.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "enableSdsServer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1309,7 +1431,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: existingCaType: The type of existing CA.
+            /// <strong>Property</strong>: existingCaType: The type of the existing certificate:
+            /// - 1: A self-signed certificate of Istiod. This corresponds to the istio-ca-secret
+            /// secret in the istio-system namespace. If you use this type, you must also provide
+            /// the `ExistingCaCert` and `ExsitingCaKey` parameters.
+            /// - 2: An external certificate of Istiod. For more information, see plugin ca cert.
+            /// This generally corresponds to the cacerts secret in the istio-system namespace.
+            /// If you use this type, you must also provide the `ExisingRootCaCert` and
+            /// `ExisingRootCaKey` parameters.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "existingCaType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1339,7 +1468,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: filterGatewayClusterConfig: Specifies whether to filter gateway cluster configuration.
+            /// <strong>Property</strong>: filterGatewayClusterConfig: Specifies whether to enable gateway configuration filtering. Valid values:
+            /// - `true`: Enables gateway configuration filtering.
+            /// - `false`: Disables gateway configuration filtering.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "filterGatewayClusterConfig", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1349,7 +1481,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: gatewayApiEnabled: Specifies whether to enable Gateway API.
+            /// <strong>Property</strong>: gatewayApiEnabled: Specifies whether to enable the Gateway API. Valid values:
+            /// - `true`: Enables the Gateway API.
+            /// - `false`: Disables the Gateway API.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "gatewayApiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1359,7 +1494,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: guestCluster: The guest cluster configuration.
+            /// <strong>Property</strong>: guestCluster: When you create a Service Mesh instance, you can add a cluster to the instance.
+            /// If you do not specify this parameter, no cluster is added. The cluster must be in
+            /// the same VPC and vSwitch as the Service Mesh instance, and must have the same
+            /// domain name.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "guestCluster", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1369,8 +1507,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: includeIpRanges: The Classless Inter-Domain Routing (CIDR) block in the ASM instance that are denied
-            /// to access external services.
+            /// <strong>Property</strong>: includeIpRanges: The IP address ranges that are allowed to access the proxy.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "includeIpRanges", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1390,7 +1527,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: kialiEnabled: Specifies whether to enable Kiali.
+            /// <strong>Property</strong>: kialiEnabled: Specifies whether to enable the mesh topology feature. To enable this feature,
+            /// you must first enable Prometheus monitoring. If Prometheus monitoring is
+            /// disabled, this feature is forcibly disabled. Valid values:
+            /// - `true`: Enables the mesh topology feature.
+            /// - `false`: Disables the mesh topology feature.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "kialiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1421,7 +1563,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: mseEnabled: Specifies whether to enable MSE.
+            /// <strong>Property</strong>: mseEnabled: Specifies whether to enable Microservices Engine (MSE). Valid values:
+            /// - `true`: Enables MSE.
+            /// - `false`: Disables MSE.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "mseEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1431,7 +1576,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: multiBufferEnabled: Specifies whether to enable multi-buffer.
+            /// <strong>Property</strong>: multiBufferEnabled: Specifies whether to enable TLS performance optimization that is based on
+            /// MultiBuffer. Valid values:
+            /// - `true`: Enables the feature.
+            /// - `false`: Disables the feature.
+            /// Default value: `true`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "multiBufferEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1441,7 +1590,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: multiBufferPollDelay: The poll delay for multi-buffer.
+            /// <strong>Property</strong>: multiBufferPollDelay: The synchronization period of the MultiBuffer enabling status. Default value:
+            /// `30s`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "multiBufferPollDelay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1451,7 +1601,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: mysqlFilterEnabled: Specifies whether to enable MySQL filter.
+            /// <strong>Property</strong>: mysqlFilterEnabled: Specifies whether to enable the MySQL filter. Valid values:
+            /// - `true`: Enables the MySQL filter.
+            /// - `false`: Disables the MySQL filter.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "mysqlFilterEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1481,7 +1634,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: opaEnabled: Specifies whether to enable OPA.
+            /// <strong>Property</strong>: opaEnabled: Specifies whether to enable OPA. Valid values:
+            /// - `true`: Enables OPA.
+            /// - `false`: Disables OPA.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "opaEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1501,7 +1657,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: period: The subscription period.
+            /// <strong>Property</strong>: period: This parameter is valid only if you set `ChargeType` to `PrePay`. The
+            /// subscription duration of the SLB instance. Unit: months. If you want to purchase
+            /// the instance for one year, enter 12.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1511,7 +1669,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: pilotLoadBalancerSpec: The specification for the pilot load balancer.
+            /// <strong>Property</strong>: pilotLoadBalancerSpec: The specification of the SLB instance that is bound to Istio Pilot of the control
+            /// plane. Valid values: `slb.s1.small`, `slb.s2.small`, `slb.s2.medium`,
+            /// `slb.s3.small`, `slb.s3.medium`, and `slb.s3.large`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "pilotLoadBalancerSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1534,7 +1694,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: playgroundScene: The playground scene configuration.
+            /// <strong>Property</strong>: playgroundScene: The playground scenario. If you specify this parameter, an ASM playground
+            /// instance is created. Valid value:
+            /// - ewmaLb: the exponentially weighted moving average (EWMA) load balancing
+            /// scenario
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "playgroundScene", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1564,7 +1727,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: telemetry: Specifies whether to enable Prometheus monitoring. We recommend that you use Application Real-Time Monitoring Service (ARMS).
+            /// <strong>Property</strong>: telemetry: Specifies whether to enable Prometheus monitoring. We recommend that you use
+            /// Managed Service for Prometheus. Valid values:
+            /// - `true`: Enables Prometheus monitoring.
+            /// - `false`: Disables Prometheus monitoring.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "telemetry", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1606,7 +1773,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: webAssemblyFilterEnabled: Specifies whether to enable WebAssembly filter.
+            /// <strong>Property</strong>: webAssemblyFilterEnabled: Specifies whether to enable the WebAssembly filter. Valid values:
+            /// - `true`: Enables the WebAssembly filter.
+            /// - `false`: Disables the WebAssembly filter.
+            /// Default value: `false`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "webAssemblyFilterEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

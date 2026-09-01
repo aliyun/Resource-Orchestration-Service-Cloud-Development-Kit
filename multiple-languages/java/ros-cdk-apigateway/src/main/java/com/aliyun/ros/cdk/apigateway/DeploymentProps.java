@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apigateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-deployment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.538Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:56.932Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.DeploymentProps")
 @software.amazon.jsii.Jsii.Proxy(DeploymentProps.Jsii$Proxy.class)
 public interface DeploymentProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,7 +26,9 @@ public interface DeploymentProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getStageName();
 
     /**
-     * Property description: Description of the deployment, less than 180 characters.
+     * Property description: The description.
+     * <p>
+     * The description can be up to 200 characters in length.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -117,7 +119,8 @@ public interface DeploymentProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DeploymentProps#getDescription}
-         * @param description Property description: Description of the deployment, less than 180 characters.
+         * @param description Property description: The description.
+         *                    The description can be up to 200 characters in length.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -127,7 +130,8 @@ public interface DeploymentProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DeploymentProps#getDescription}
-         * @param description Property description: Description of the deployment, less than 180 characters.
+         * @param description Property description: The description.
+         *                    The description can be up to 200 characters in length.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {

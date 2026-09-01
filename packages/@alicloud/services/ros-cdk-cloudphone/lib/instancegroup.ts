@@ -81,9 +81,9 @@ export interface InstanceGroupProps {
     readonly keyPairName?: string | ros.IResolvable;
 
     /**
-     * Property period: Prepaid time period. While PeriodUnit is month, it could be 1, 2, 3, 6.
-     * While PeriodUnit is year, it could be from 1 to 5Default value is 1.
-     *
+     * Property period: The subscription duration. Default value: 1.
+     * *   Valid values if you set PeriodUnit to Month: 1, 2, 3, and 6.
+     * *   Valid values if you set PeriodUnit to Year: 1, 2, 3, 4, and 5.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -138,7 +138,7 @@ export interface IInstanceGroup extends ros.IResource {
     readonly attrTradePrice: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start cloud phones.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
  */

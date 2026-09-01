@@ -66,7 +66,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.</summary>
+        /// <summary>Property enableHardwareAcceleration: Specifies whether to enable hardware acceleration.</summary>
         [JsiiProperty(name: "enableHardwareAcceleration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EnableHardwareAcceleration
@@ -99,7 +99,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.</summary>
+        /// <summary>Property enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group.</summary>
         [JsiiProperty(name: "enterpriseSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EnterpriseSecurityGroup
@@ -141,11 +141,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Property mserVersion: The MSE gateway instance type.</summary>
+        /// <summary>Property mserVersion: The edition of the gateway.</summary>
         /// <remarks>
-        /// Valid values:
-        /// mse_pro: normal instance
-        /// mse_premium: professional normal instancemse_serverless: serverless instance
+        /// <list type="bullet">
+        /// <description><c>mse_premium</c>: Professional Edition</description>
+        /// <description><c>mse_pro</c>: Standard Edition</description>
+        /// <description><c>mse_serverless</c>: Serverless Edition</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "mserVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -393,7 +395,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.</summary>
+            /// <summary>Property enableHardwareAcceleration: Specifies whether to enable hardware acceleration.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "enableHardwareAcceleration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnableHardwareAcceleration
@@ -417,7 +419,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.</summary>
+            /// <summary>Property enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "enterpriseSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnterpriseSecurityGroup
@@ -450,11 +452,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property mserVersion: The MSE gateway instance type.</summary>
+            /// <summary>Property mserVersion: The edition of the gateway.</summary>
             /// <remarks>
-            /// Valid values:
-            /// mse_pro: normal instance
-            /// mse_premium: professional normal instancemse_serverless: serverless instance
+            /// <list type="bullet">
+            /// <description><c>mse_premium</c>: Professional Edition</description>
+            /// <description><c>mse_pro</c>: Standard Edition</description>
+            /// <description><c>mse_serverless</c>: Serverless Edition</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "mserVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

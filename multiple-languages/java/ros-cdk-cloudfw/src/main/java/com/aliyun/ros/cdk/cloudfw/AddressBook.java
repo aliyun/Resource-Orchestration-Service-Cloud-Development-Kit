@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::AddressBook</code>The , which resource type is used to create address books for security access control, such as IP address books, ECS tag-based address books, port address books, and domain name address books.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::AddressBook</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:48:07.033Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:36:02.079Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.AddressBook")
 public class AddressBook extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudfw.IAddressBook {
 
@@ -339,20 +339,20 @@ public class AddressBook extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property tagList:.
+         * Property tagList: The list of ECS tags.
          * <p>
          * @return {@code this}
-         * @param tagList Property tagList:. This parameter is required.
+         * @param tagList Property tagList: The list of ECS tags. This parameter is required.
          */
         public Builder tagList(final com.aliyun.ros.cdk.core.IResolvable tagList) {
             this.props.tagList(tagList);
             return this;
         }
         /**
-         * Property tagList:.
+         * Property tagList: The list of ECS tags.
          * <p>
          * @return {@code this}
-         * @param tagList Property tagList:. This parameter is required.
+         * @param tagList Property tagList: The list of ECS tags. This parameter is required.
          */
         public Builder tagList(final java.util.List<? extends java.lang.Object> tagList) {
             this.props.tagList(tagList);

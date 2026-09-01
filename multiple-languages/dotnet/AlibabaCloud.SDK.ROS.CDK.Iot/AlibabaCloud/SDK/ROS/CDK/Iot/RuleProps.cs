@@ -15,11 +15,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
     {
         private object _name;
 
-        /// <summary>Property name: The name of the rule.</summary>
+        /// <summary>Property name: The name of the data forwarding rule.</summary>
         /// <remarks>
-        /// The name must be 1 to 30 characters in length and can contain
-        /// English letters, digits, underscores (_), and hyphens (-). Chinese language is also
-        /// supported. Each Chinese symbol occupies 2 characters.
+        /// The rule name must be 1 to 30 characters in
+        /// length, and can contain letters, digits, underscores (_), and hyphens (-).
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Name
@@ -158,10 +157,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
 
         /// <summary>Property resourceGroupId: The ID of the resource group to which the rule is assigned.</summary>
         /// <remarks>
-        /// You can view the resource
-        /// group information in the Resource Management console.
-        /// If you do not specify this parameter, the rule is assigned to the default resource
-        /// group.
+        /// You can view the
+        /// resource group information in the Resource Management console.
+        ///
+        ///     You can specify a value for this parameter only if you have activated Resource
+        ///     Management.
+        ///     If you do not specify this parameter, the rule is assigned to the default
+        ///     resource group.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

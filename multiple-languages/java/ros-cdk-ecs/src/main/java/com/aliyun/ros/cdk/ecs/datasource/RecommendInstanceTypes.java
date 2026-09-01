@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ECS::RecommendInstanceTypes</code>, which is used to query the recommended instance types of Elastic Compute Service (ECS) instances.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ECS::RecommendInstanceTypes</code>Queries recommended Elastic Compute Service (ECS) instance types.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.390Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.785Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RecommendInstanceTypes")
 public class RecommendInstanceTypes extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.datasource.IRecommendInstanceTypes {
 

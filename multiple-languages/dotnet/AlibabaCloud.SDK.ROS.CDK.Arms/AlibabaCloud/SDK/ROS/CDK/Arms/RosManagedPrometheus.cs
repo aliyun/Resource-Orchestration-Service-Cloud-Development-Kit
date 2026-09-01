@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Arms
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`, which is used to install a Prometheus instance to monitor a serverless Kubernetes (ASK) cluster or an Elastic Compute Service (ECS) instance.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ManagedPrometheus` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
@@ -78,7 +78,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: clusterType: The type of the cluster. Currently, only ask, ecs and one clusters are supported. Default is ecs.
+        /// <strong>Property</strong>: clusterType: The cluster type.
+        /// Valid values:
+        /// *   ecs: ECS
+        /// *   one: ACK One
+        /// *   ask: ASK
+        /// *   pro: Container Monitoring Pro
         /// </remarks>
         [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ClusterType
@@ -267,7 +272,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster. When empty or "free", binds to the shared version of Grafana.
+        /// <strong>Property</strong>: grafanaInstanceId: The ID of the managed Grafana workspace that is associated with the cluster. If
+        /// you set this parameter to free or leave this parameter empty, the cluster is
+        /// associated with a shared Grafana workspace.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "grafanaInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

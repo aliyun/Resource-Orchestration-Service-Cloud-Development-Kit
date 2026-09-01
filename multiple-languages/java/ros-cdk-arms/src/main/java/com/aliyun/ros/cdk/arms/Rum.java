@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ARMS::Rum</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:31:39.115Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:12:12.758Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.Rum")
 public class Rum extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.arms.IRum {
 
@@ -153,20 +153,24 @@ public class Rum extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property siteType: The type of the website.
+         * Property siteType: The application type.
+         * <p>
+         * Valid values: web, miniapp, ios, and android.
          * <p>
          * @return {@code this}
-         * @param siteType Property siteType: The type of the website. This parameter is required.
+         * @param siteType Property siteType: The application type. This parameter is required.
          */
         public Builder siteType(final java.lang.String siteType) {
             this.props.siteType(siteType);
             return this;
         }
         /**
-         * Property siteType: The type of the website.
+         * Property siteType: The application type.
+         * <p>
+         * Valid values: web, miniapp, ios, and android.
          * <p>
          * @return {@code this}
-         * @param siteType Property siteType: The type of the website. This parameter is required.
+         * @param siteType Property siteType: The application type. This parameter is required.
          */
         public Builder siteType(final com.aliyun.ros.cdk.core.IResolvable siteType) {
             this.props.siteType(siteType);
@@ -258,20 +262,26 @@ public class Rum extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property packageName: The package name of the RUM application.
+         * Property packageName: The name of the Android application package.
+         * <p>
+         * This parameter is required if you
+         * create an Android application.
          * <p>
          * @return {@code this}
-         * @param packageName Property packageName: The package name of the RUM application. This parameter is required.
+         * @param packageName Property packageName: The name of the Android application package. This parameter is required.
          */
         public Builder packageName(final java.lang.String packageName) {
             this.props.packageName(packageName);
             return this;
         }
         /**
-         * Property packageName: The package name of the RUM application.
+         * Property packageName: The name of the Android application package.
+         * <p>
+         * This parameter is required if you
+         * create an Android application.
          * <p>
          * @return {@code this}
-         * @param packageName Property packageName: The package name of the RUM application. This parameter is required.
+         * @param packageName Property packageName: The name of the Android application package. This parameter is required.
          */
         public Builder packageName(final com.aliyun.ros.cdk.core.IResolvable packageName) {
             this.props.packageName(packageName);
@@ -279,20 +289,26 @@ public class Rum extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property realRegionId: The actual region ID for internal use.
+         * Property realRegionId: The region where the application resides.
+         * <p>
+         * You can leave this parameter empty or
+         * set it to China East 2 Finance.
          * <p>
          * @return {@code this}
-         * @param realRegionId Property realRegionId: The actual region ID for internal use. This parameter is required.
+         * @param realRegionId Property realRegionId: The region where the application resides. This parameter is required.
          */
         public Builder realRegionId(final java.lang.String realRegionId) {
             this.props.realRegionId(realRegionId);
             return this;
         }
         /**
-         * Property realRegionId: The actual region ID for internal use.
+         * Property realRegionId: The region where the application resides.
+         * <p>
+         * You can leave this parameter empty or
+         * set it to China East 2 Finance.
          * <p>
          * @return {@code this}
-         * @param realRegionId Property realRegionId: The actual region ID for internal use. This parameter is required.
+         * @param realRegionId Property realRegionId: The region where the application resides. This parameter is required.
          */
         public Builder realRegionId(final com.aliyun.ros.cdk.core.IResolvable realRegionId) {
             this.props.realRegionId(realRegionId);
@@ -321,20 +337,24 @@ public class Rum extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property source: The source of the RUM application.
+         * Property source: The source.
+         * <p>
+         * This is a reserved parameter.
          * <p>
          * @return {@code this}
-         * @param source Property source: The source of the RUM application. This parameter is required.
+         * @param source Property source: The source. This parameter is required.
          */
         public Builder source(final java.lang.String source) {
             this.props.source(source);
             return this;
         }
         /**
-         * Property source: The source of the RUM application.
+         * Property source: The source.
+         * <p>
+         * This is a reserved parameter.
          * <p>
          * @return {@code this}
-         * @param source Property source: The source of the RUM application. This parameter is required.
+         * @param source Property source: The source. This parameter is required.
          */
         public Builder source(final com.aliyun.ros.cdk.core.IResolvable source) {
             this.props.source(source);

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.adblake;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADBLake::DBCluster</code>, which type is used to create an AnalyticDB for MySQL Data Lakehouse Edition cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADBLake::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:17:27.674Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:55:45.894Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.adblake.IDBCluster {
 
@@ -274,20 +274,32 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property cloneSourceRegionId: The ID of the source region where the cluster is located.
+         * Property cloneSourceRegionId: The region ID of the source cluster.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for cross-region cloning.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param cloneSourceRegionId Property cloneSourceRegionId: The ID of the source region where the cluster is located. This parameter is required.
+         * @param cloneSourceRegionId Property cloneSourceRegionId: The region ID of the source cluster. This parameter is required.
          */
         public Builder cloneSourceRegionId(final java.lang.String cloneSourceRegionId) {
             this.props.cloneSourceRegionId(cloneSourceRegionId);
             return this;
         }
         /**
-         * Property cloneSourceRegionId: The ID of the source region where the cluster is located.
+         * Property cloneSourceRegionId: The region ID of the source cluster.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for cross-region cloning.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param cloneSourceRegionId Property cloneSourceRegionId: The ID of the source region where the cluster is located. This parameter is required.
+         * @param cloneSourceRegionId Property cloneSourceRegionId: The region ID of the source cluster. This parameter is required.
          */
         public Builder cloneSourceRegionId(final com.aliyun.ros.cdk.core.IResolvable cloneSourceRegionId) {
             this.props.cloneSourceRegionId(cloneSourceRegionId);
@@ -434,20 +446,34 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property kmsId:.
+         * Property kmsId: The ID of the key used to encrypt data on cloud disks.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter takes effect only when disk encryption is enabled for the
+         * AnalyticDB for MySQL cluster.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param kmsId Property kmsId:. This parameter is required.
+         * @param kmsId Property kmsId: The ID of the key used to encrypt data on cloud disks. This parameter is required.
          */
         public Builder kmsId(final java.lang.String kmsId) {
             this.props.kmsId(kmsId);
             return this;
         }
         /**
-         * Property kmsId:.
+         * Property kmsId: The ID of the key used to encrypt data on cloud disks.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter takes effect only when disk encryption is enabled for the
+         * AnalyticDB for MySQL cluster.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param kmsId Property kmsId:. This parameter is required.
+         * @param kmsId Property kmsId: The ID of the key used to encrypt data on cloud disks. This parameter is required.
          */
         public Builder kmsId(final com.aliyun.ros.cdk.core.IResolvable kmsId) {
             this.props.kmsId(kmsId);
@@ -455,28 +481,46 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property period: The subscription duration of the subscription cluster.
+         * Property period: The unit of the subscription duration.
          * <p>
-         * Valid values when Period is set to Year: 1 to 3 (integer).
-         * Valid values when Period is set to Month: 1 to 9 (integer).
-         * Note This parameter must be specified when PayType is set to Prepaid.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Year</li>
+         * <li>Month</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you set <code>PayType</code> to <code>Prepaid</code>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription duration of the subscription cluster. This parameter is required.
+         * @param period Property period: The unit of the subscription duration. This parameter is required.
          */
         public Builder period(final java.lang.String period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The subscription duration of the subscription cluster.
+         * Property period: The unit of the subscription duration.
          * <p>
-         * Valid values when Period is set to Year: 1 to 3 (integer).
-         * Valid values when Period is set to Month: 1 to 9 (integer).
-         * Note This parameter must be specified when PayType is set to Prepaid.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Year</li>
+         * <li>Month</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you set <code>PayType</code> to <code>Prepaid</code>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription duration of the subscription cluster. This parameter is required.
+         * @param period Property period: The unit of the subscription duration. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
@@ -515,20 +559,34 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property productForm: Valid values: IntegrationForm LegacyForm.
+         * Property productForm: The product form.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>IntegrationForm: Integration Form.</li>
+         * <li>LegacyForm: Data Lakehouse Edition.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param productForm Property productForm: Valid values: IntegrationForm LegacyForm. This parameter is required.
+         * @param productForm Property productForm: The product form. This parameter is required.
          */
         public Builder productForm(final java.lang.String productForm) {
             this.props.productForm(productForm);
             return this;
         }
         /**
-         * Property productForm: Valid values: IntegrationForm LegacyForm.
+         * Property productForm: The product form.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>IntegrationForm: Integration Form.</li>
+         * <li>LegacyForm: Data Lakehouse Edition.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param productForm Property productForm: Valid values: IntegrationForm LegacyForm. This parameter is required.
+         * @param productForm Property productForm: The product form. This parameter is required.
          */
         public Builder productForm(final com.aliyun.ros.cdk.core.IResolvable productForm) {
             this.props.productForm(productForm);
@@ -559,8 +617,24 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         /**
          * Property reservedNodeCount: The number of reserved nodes.
          * <p>
-         * Must be 1 for basic version and multiple
-         * of 3 for enterprise version.
+         * <ul>
+         * <li>For Enterprise Edition, the value must be a multiple of 3. The default value is</li>
+         * </ul>
+         * <p>
+         * <ol>
+         * <li></li>
+         * </ol>
+         * <p>
+         * <ul>
+         * <li>For Basic Edition, the default value is 1.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is available only when <code>ProductForm</code> is set to
+         * <code>IntegrationForm</code>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param reservedNodeCount Property reservedNodeCount: The number of reserved nodes. This parameter is required.
@@ -572,8 +646,24 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         /**
          * Property reservedNodeCount: The number of reserved nodes.
          * <p>
-         * Must be 1 for basic version and multiple
-         * of 3 for enterprise version.
+         * <ul>
+         * <li>For Enterprise Edition, the value must be a multiple of 3. The default value is</li>
+         * </ul>
+         * <p>
+         * <ol>
+         * <li></li>
+         * </ol>
+         * <p>
+         * <ul>
+         * <li>For Basic Edition, the default value is 1.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is available only when <code>ProductForm</code> is set to
+         * <code>IntegrationForm</code>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param reservedNodeCount Property reservedNodeCount: The number of reserved nodes. This parameter is required.
@@ -584,20 +674,20 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property reservedNodeSize: The size of each reserved node.
+         * Property reservedNodeSize: The resource specification of each reserved node, in ACUs.
          * <p>
          * @return {@code this}
-         * @param reservedNodeSize Property reservedNodeSize: The size of each reserved node. This parameter is required.
+         * @param reservedNodeSize Property reservedNodeSize: The resource specification of each reserved node, in ACUs. This parameter is required.
          */
         public Builder reservedNodeSize(final java.lang.Number reservedNodeSize) {
             this.props.reservedNodeSize(reservedNodeSize);
             return this;
         }
         /**
-         * Property reservedNodeSize: The size of each reserved node.
+         * Property reservedNodeSize: The resource specification of each reserved node, in ACUs.
          * <p>
          * @return {@code this}
-         * @param reservedNodeSize Property reservedNodeSize: The size of each reserved node. This parameter is required.
+         * @param reservedNodeSize Property reservedNodeSize: The resource specification of each reserved node, in ACUs. This parameter is required.
          */
         public Builder reservedNodeSize(final com.aliyun.ros.cdk.core.IResolvable reservedNodeSize) {
             this.props.reservedNodeSize(reservedNodeSize);
@@ -626,20 +716,26 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property restoreToTime: The point in time to which you want to restore data from the backup set.
+         * Property restoreToTime: The point in time to which you want to restore the cluster.
+         * <p>
+         * Specify the time in
+         * the <code>YYYY-MM-DDThh:mm:ssZ</code> format. The time must be in UTC.
          * <p>
          * @return {@code this}
-         * @param restoreToTime Property restoreToTime: The point in time to which you want to restore data from the backup set. This parameter is required.
+         * @param restoreToTime Property restoreToTime: The point in time to which you want to restore the cluster. This parameter is required.
          */
         public Builder restoreToTime(final java.lang.String restoreToTime) {
             this.props.restoreToTime(restoreToTime);
             return this;
         }
         /**
-         * Property restoreToTime: The point in time to which you want to restore data from the backup set.
+         * Property restoreToTime: The point in time to which you want to restore the cluster.
+         * <p>
+         * Specify the time in
+         * the <code>YYYY-MM-DDThh:mm:ssZ</code> format. The time must be in UTC.
          * <p>
          * @return {@code this}
-         * @param restoreToTime Property restoreToTime: The point in time to which you want to restore data from the backup set. This parameter is required.
+         * @param restoreToTime Property restoreToTime: The point in time to which you want to restore the cluster. This parameter is required.
          */
         public Builder restoreToTime(final com.aliyun.ros.cdk.core.IResolvable restoreToTime) {
             this.props.restoreToTime(restoreToTime);
@@ -676,20 +772,34 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+         * Property secondaryVSwitchId: The ID of the secondary vSwitch.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The value of this parameter cannot be the same as the value of the <code>VSwitchId</code>
+         * parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param secondaryVSwitchId Property secondaryVSwitchId: The secondary vSwitch ID of the cluster. This parameter is required.
+         * @param secondaryVSwitchId Property secondaryVSwitchId: The ID of the secondary vSwitch. This parameter is required.
          */
         public Builder secondaryVSwitchId(final java.lang.String secondaryVSwitchId) {
             this.props.secondaryVSwitchId(secondaryVSwitchId);
             return this;
         }
         /**
-         * Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+         * Property secondaryVSwitchId: The ID of the secondary vSwitch.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The value of this parameter cannot be the same as the value of the <code>VSwitchId</code>
+         * parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param secondaryVSwitchId Property secondaryVSwitchId: The secondary vSwitch ID of the cluster. This parameter is required.
+         * @param secondaryVSwitchId Property secondaryVSwitchId: The ID of the secondary vSwitch. This parameter is required.
          */
         public Builder secondaryVSwitchId(final com.aliyun.ros.cdk.core.IResolvable secondaryVSwitchId) {
             this.props.secondaryVSwitchId(secondaryVSwitchId);
@@ -697,20 +807,34 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property secondaryZoneId: The secondary zone ID.
+         * Property secondaryZoneId: The ID of the secondary availability zone.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The value of this parameter cannot be the same as the value of the <code>ZoneId</code>
+         * parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param secondaryZoneId Property secondaryZoneId: The secondary zone ID. This parameter is required.
+         * @param secondaryZoneId Property secondaryZoneId: The ID of the secondary availability zone. This parameter is required.
          */
         public Builder secondaryZoneId(final java.lang.String secondaryZoneId) {
             this.props.secondaryZoneId(secondaryZoneId);
             return this;
         }
         /**
-         * Property secondaryZoneId: The secondary zone ID.
+         * Property secondaryZoneId: The ID of the secondary availability zone.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The value of this parameter cannot be the same as the value of the <code>ZoneId</code>
+         * parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param secondaryZoneId Property secondaryZoneId: The secondary zone ID. This parameter is required.
+         * @param secondaryZoneId Property secondaryZoneId: The ID of the secondary availability zone. This parameter is required.
          */
         public Builder secondaryZoneId(final com.aliyun.ros.cdk.core.IResolvable secondaryZoneId) {
             this.props.secondaryZoneId(secondaryZoneId);

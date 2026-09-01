@@ -5,11 +5,10 @@ package alicloudroscdkiot
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-rule
 type RuleProps struct {
-	// Property name: The name of the rule.
+	// Property name: The name of the data forwarding rule.
 	//
-	// The name must be 1 to 30 characters in length and can contain
-	// English letters, digits, underscores (_), and hyphens (-). Chinese language is also
-	// supported. Each Chinese symbol occupies 2 characters.
+	// The rule name must be 1 to 30 characters in
+	// length, and can contain letters, digits, underscores (_), and hyphens (-).
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	// Property dataType: The format of the data to be processed by the rule.
 	//
@@ -30,10 +29,12 @@ type RuleProps struct {
 	ProductKey interface{} `field:"optional" json:"productKey" yaml:"productKey"`
 	// Property resourceGroupId: The ID of the resource group to which the rule is assigned.
 	//
-	// You can view the resource
-	// group information in the Resource Management console.
-	// If you do not specify this parameter, the rule is assigned to the default resource
-	// group.
+	// You can view the
+	// resource group information in the Resource Management console.
+	// >You can specify a value for this parameter only if you have activated Resource
+	// Management.
+	// If you do not specify this parameter, the rule is assigned to the default
+	// resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property ruleAction:.
 	RuleAction interface{} `field:"optional" json:"ruleAction" yaml:"ruleAction"`

@@ -16,7 +16,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Imm
         private object _projectName;
 
         /// <remarks>
-        /// <strong>Property</strong>: projectName: The name of project.
+        /// <strong>Property</strong>: projectName: The project name. The naming convention is as follows:
+        /// - The name must be 1 to 128 characters in length.
+        /// - It can contain only letters, digits, hyphens (-), and underscores (_).
+        /// - It must start with a letter or an underscore (_).
         /// </remarks>
         [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ProjectName
@@ -101,7 +104,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Imm
         private object? _datasetMaxEntityCount;
 
         /// <remarks>
-        /// <strong>Property</strong>: datasetMaxEntityCount: The maximum number of metadata entities in each dataset. Default value: 10000000000.
+        /// <strong>Property</strong>: datasetMaxEntityCount: The maximum number of metadata entities in each dataset. The default value is
+        /// 10,000,000,000.
+        /// > This configuration is reserved and is not currently enforced.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "datasetMaxEntityCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -207,7 +212,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Imm
         private object? _datasetMaxRelationCount;
 
         /// <remarks>
-        /// <strong>Property</strong>: datasetMaxRelationCount: The maximum number of metadata entities in each dataset. Default value: 100000000000.
+        /// <strong>Property</strong>: datasetMaxRelationCount: The maximum number of metadata relations in each dataset. The default value is
+        /// 100,000,000,000.
+        /// > This configuration is reserved and is not currently enforced.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "datasetMaxRelationCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

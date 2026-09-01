@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Represents a <code>VCUInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:18:52.608Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:26:08.302Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.IVCUInstance")
 @software.amazon.jsii.Jsii.Proxy(IVCUInstance.Jsii$Proxy.class)
 public interface IVCUInstance extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

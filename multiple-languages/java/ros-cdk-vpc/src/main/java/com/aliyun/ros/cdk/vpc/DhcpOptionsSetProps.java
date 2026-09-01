@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionsset
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.372Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.180Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.DhcpOptionsSetProps")
 @software.amazon.jsii.Jsii.Proxy(DhcpOptionsSetProps.Jsii$Proxy.class)
 public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,7 +13,8 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
     /**
      * Property dhcpOptionsSetDescription: The description of the DHCP options set.
      * <p>
-     * The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+     * The description must be 1 to 256 characters in length. It must start with a
+     * letter and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDhcpOptionsSetDescription() {
         return null;
@@ -22,7 +23,8 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
     /**
      * Property dhcpOptionsSetName: The name of the DHCP options set.
      * <p>
-     * The name must be 2 to 128 characters in length and can contain letters, Chinese characters, digits, underscores (_), and hyphens (-). It must start with a letter or a Chinese character.
+     * The name must be 1 to 128 characters in length and can contain letters, digits,
+     * underscores (_), and hyphens (-). It must start with a letter.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDhcpOptionsSetName() {
         return null;
@@ -45,14 +47,20 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
-     * Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.
+     * Property ipv6LeaseTime: The lease time of the IPv6 addresses for the DHCP options set.
      * <p>
      * <ul>
-     * <li>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>24h</strong>.</li>
-     * <li>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>1d</strong>.</li>
+     * <li>If you use hours as the unit, valid values are 24h to 1176h and 87600h to
+     * 175200h. Default value: 87600h.</li>
+     * <li>If you use days as the unit, valid values are 1d to 49d and 3650d to 7300d.
+     * Default value: 3650d.</li>
      * </ul>
      * <p>
-     * When specifying parameter values, you must include the unit.
+     * <blockquote>
+     * <p>
+     * When you enter a value, you must also specify the unit.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6LeaseTime() {
         return null;
@@ -100,7 +108,8 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link DhcpOptionsSetProps#getDhcpOptionsSetDescription}
          * @param dhcpOptionsSetDescription Property dhcpOptionsSetDescription: The description of the DHCP options set.
-         *                                  The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+         *                                  The description must be 1 to 256 characters in length. It must start with a
+         *                                  letter and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder dhcpOptionsSetDescription(java.lang.String dhcpOptionsSetDescription) {
@@ -111,7 +120,8 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link DhcpOptionsSetProps#getDhcpOptionsSetDescription}
          * @param dhcpOptionsSetDescription Property dhcpOptionsSetDescription: The description of the DHCP options set.
-         *                                  The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+         *                                  The description must be 1 to 256 characters in length. It must start with a
+         *                                  letter and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder dhcpOptionsSetDescription(com.aliyun.ros.cdk.core.IResolvable dhcpOptionsSetDescription) {
@@ -122,7 +132,8 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link DhcpOptionsSetProps#getDhcpOptionsSetName}
          * @param dhcpOptionsSetName Property dhcpOptionsSetName: The name of the DHCP options set.
-         *                           The name must be 2 to 128 characters in length and can contain letters, Chinese characters, digits, underscores (_), and hyphens (-). It must start with a letter or a Chinese character.
+         *                           The name must be 1 to 128 characters in length and can contain letters, digits,
+         *                           underscores (_), and hyphens (-). It must start with a letter.
          * @return {@code this}
          */
         public Builder dhcpOptionsSetName(java.lang.String dhcpOptionsSetName) {
@@ -133,7 +144,8 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link DhcpOptionsSetProps#getDhcpOptionsSetName}
          * @param dhcpOptionsSetName Property dhcpOptionsSetName: The name of the DHCP options set.
-         *                           The name must be 2 to 128 characters in length and can contain letters, Chinese characters, digits, underscores (_), and hyphens (-). It must start with a letter or a Chinese character.
+         *                           The name must be 1 to 128 characters in length and can contain letters, digits,
+         *                           underscores (_), and hyphens (-). It must start with a letter.
          * @return {@code this}
          */
         public Builder dhcpOptionsSetName(com.aliyun.ros.cdk.core.IResolvable dhcpOptionsSetName) {
@@ -185,13 +197,19 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link DhcpOptionsSetProps#getIpv6LeaseTime}
-         * @param ipv6LeaseTime Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.
+         * @param ipv6LeaseTime Property ipv6LeaseTime: The lease time of the IPv6 addresses for the DHCP options set.
          *                      <ul>
-         *                      <li>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>24h</strong>.</li>
-         *                      <li>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>1d</strong>.</li>
+         *                      <li>If you use hours as the unit, valid values are 24h to 1176h and 87600h to
+         *                      175200h. Default value: 87600h.</li>
+         *                      <li>If you use days as the unit, valid values are 1d to 49d and 3650d to 7300d.
+         *                      Default value: 3650d.</li>
          *                      </ul>
          *                      <p>
-         *                      When specifying parameter values, you must include the unit.
+         *                      <blockquote>
+         *                      <p>
+         *                      When you enter a value, you must also specify the unit.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder ipv6LeaseTime(java.lang.String ipv6LeaseTime) {
@@ -201,13 +219,19 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link DhcpOptionsSetProps#getIpv6LeaseTime}
-         * @param ipv6LeaseTime Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.
+         * @param ipv6LeaseTime Property ipv6LeaseTime: The lease time of the IPv6 addresses for the DHCP options set.
          *                      <ul>
-         *                      <li>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>24h</strong>.</li>
-         *                      <li>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>1d</strong>.</li>
+         *                      <li>If you use hours as the unit, valid values are 24h to 1176h and 87600h to
+         *                      175200h. Default value: 87600h.</li>
+         *                      <li>If you use days as the unit, valid values are 1d to 49d and 3650d to 7300d.
+         *                      Default value: 3650d.</li>
          *                      </ul>
          *                      <p>
-         *                      When specifying parameter values, you must include the unit.
+         *                      <blockquote>
+         *                      <p>
+         *                      When you enter a value, you must also specify the unit.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder ipv6LeaseTime(com.aliyun.ros.cdk.core.IResolvable ipv6LeaseTime) {

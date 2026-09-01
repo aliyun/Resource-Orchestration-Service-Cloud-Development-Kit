@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterVpnAttachment</code>, which is used to create a VPN connection.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterVpnAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.411Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.773Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVpnAttachment")
 public class TransitRouterVpnAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ITransitRouterVpnAttachment {
 
@@ -255,20 +255,26 @@ public class TransitRouterVpnAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property transitRouterAttachmentDescription: Description of the VPN connection.
+         * Property transitRouterAttachmentDescription: The description of the VPN connection.
+         * <p>
+         * The description can be empty or 1 to 256 characters in length, and cannot start
+         * with http:// or https://.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: Description of the VPN connection. This parameter is required.
+         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the VPN connection. This parameter is required.
          */
         public Builder transitRouterAttachmentDescription(final java.lang.String transitRouterAttachmentDescription) {
             this.props.transitRouterAttachmentDescription(transitRouterAttachmentDescription);
             return this;
         }
         /**
-         * Property transitRouterAttachmentDescription: Description of the VPN connection.
+         * Property transitRouterAttachmentDescription: The description of the VPN connection.
+         * <p>
+         * The description can be empty or 1 to 256 characters in length, and cannot start
+         * with http:// or https://.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: Description of the VPN connection. This parameter is required.
+         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the VPN connection. This parameter is required.
          */
         public Builder transitRouterAttachmentDescription(final com.aliyun.ros.cdk.core.IResolvable transitRouterAttachmentDescription) {
             this.props.transitRouterAttachmentDescription(transitRouterAttachmentDescription);
@@ -277,6 +283,9 @@ public class TransitRouterVpnAttachment extends com.aliyun.ros.cdk.core.Resource
 
         /**
          * Property transitRouterAttachmentName: The name of the VPN connection.
+         * <p>
+         * The name can be empty or 1 to 128 characters in length, and cannot start with
+         * http:// or https://.
          * <p>
          * @return {@code this}
          * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the VPN connection. This parameter is required.
@@ -287,6 +296,9 @@ public class TransitRouterVpnAttachment extends com.aliyun.ros.cdk.core.Resource
         }
         /**
          * Property transitRouterAttachmentName: The name of the VPN connection.
+         * <p>
+         * The name can be empty or 1 to 128 characters in length, and cannot start with
+         * http:// or https://.
          * <p>
          * @return {@code this}
          * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the VPN connection. This parameter is required.
@@ -318,20 +330,34 @@ public class TransitRouterVpnAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
+         * Property vpnOwnerId: The ID of the account to which the IPsec-VPN connection belongs.
+         * <p>
+         * <ul>
+         * <li>If you do not specify this parameter, the ID of the current account
+         * is used.</li>
+         * <li>This parameter is required if you want to connect to a cross-account IPsec-VPN
+         * connection.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param vpnOwnerId Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs. This parameter is required.
+         * @param vpnOwnerId Property vpnOwnerId: The ID of the account to which the IPsec-VPN connection belongs. This parameter is required.
          */
         public Builder vpnOwnerId(final java.lang.String vpnOwnerId) {
             this.props.vpnOwnerId(vpnOwnerId);
             return this;
         }
         /**
-         * Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
+         * Property vpnOwnerId: The ID of the account to which the IPsec-VPN connection belongs.
+         * <p>
+         * <ul>
+         * <li>If you do not specify this parameter, the ID of the current account
+         * is used.</li>
+         * <li>This parameter is required if you want to connect to a cross-account IPsec-VPN
+         * connection.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param vpnOwnerId Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs. This parameter is required.
+         * @param vpnOwnerId Property vpnOwnerId: The ID of the account to which the IPsec-VPN connection belongs. This parameter is required.
          */
         public Builder vpnOwnerId(final com.aliyun.ros.cdk.core.IResolvable vpnOwnerId) {
             this.props.vpnOwnerId(vpnOwnerId);

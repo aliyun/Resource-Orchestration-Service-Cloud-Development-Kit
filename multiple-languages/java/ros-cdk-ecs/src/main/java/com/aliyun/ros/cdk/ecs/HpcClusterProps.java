@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-hpccluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.885Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.255Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.HpcClusterProps")
 @software.amazon.jsii.Jsii.Proxy(HpcClusterProps.Jsii$Proxy.class)
 public interface HpcClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,9 +13,9 @@ public interface HpcClusterProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property name: The name of the HPC cluster.
      * <p>
-     * The name must be 2 to 128 characters in length. It must
-     * start with a letter but cannot start with http:// or https://. It can contain letters,
-     * digits, colons (:), underscores (_), and hyphens (-).
+     * The name must be 2 to 128 characters in length, and
+     * can contain letters, digits, underscores (_), and hyphens (-). The name must
+     * start with a letter but cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
@@ -45,9 +45,9 @@ public interface HpcClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link HpcClusterProps#getName}
          * @param name Property name: The name of the HPC cluster. This parameter is required.
-         *             The name must be 2 to 128 characters in length. It must
-         *             start with a letter but cannot start with http:// or https://. It can contain letters,
-         *             digits, colons (:), underscores (_), and hyphens (-).
+         *             The name must be 2 to 128 characters in length, and
+         *             can contain letters, digits, underscores (_), and hyphens (-). The name must
+         *             start with a letter but cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -58,9 +58,9 @@ public interface HpcClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link HpcClusterProps#getName}
          * @param name Property name: The name of the HPC cluster. This parameter is required.
-         *             The name must be 2 to 128 characters in length. It must
-         *             start with a letter but cannot start with http:// or https://. It can contain letters,
-         *             digits, colons (:), underscores (_), and hyphens (-).
+         *             The name must be 2 to 128 characters in length, and
+         *             can contain letters, digits, underscores (_), and hyphens (-). The name must
+         *             start with a letter but cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

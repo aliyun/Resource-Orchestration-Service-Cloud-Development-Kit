@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`The , which resource type creates an ACK Serverless cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`.
 type RosASKCluster interface {
 	alicloudroscdkcore.RosResource
 	Addons() interface{}

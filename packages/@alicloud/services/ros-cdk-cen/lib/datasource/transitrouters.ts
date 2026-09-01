@@ -51,7 +51,7 @@ export interface ITransitRouters extends ros.IResource {
     readonly attrTransitRouters: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::TransitRouters`, which is used to query the information about transit routers of a Cloud Enterprise Network (CEN) instance.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::TransitRouters`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouters
  */

@@ -380,7 +380,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::Cluster`, which is used to create an E-MapReduce (EMR) cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::Cluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster
  */
@@ -1184,12 +1184,16 @@ export interface RosCluster2Props {
     readonly clusterName: string | ros.IResolvable;
 
     /**
-     * @Property clusterType: Cluster type.Ranges:
-     * DATALAKE: The new version of the data lake.
-     * OLAP: Data analysis.
-     * DATAFLOW: Real -time data stream.
-     * DATASERVING: Data service.
-     * HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+     * @Property clusterType: The cluster type. Valid values:
+     * - DATALAKE: new data lake.
+     * - OLAP: data analytics.
+     * - DATAFLOW: real-time data stream.
+     * - DATASERVING: data serving.
+     * - CUSTOM: custom cluster.
+     * - HADOOP: earlier-version data lake. We recommend that you use the new data lake.
+     * If you create an EMR cluster for the first time after 17:00 (UTC+8) on December
+     * 19, 2022, you cannot select HADOOP, DATA_SCIENCE, PRESTO, or ZOOKEEPER as the
+     * cluster type.
      */
     readonly clusterType: string | ros.IResolvable;
 
@@ -1204,7 +1208,8 @@ export interface RosCluster2Props {
     readonly nodeGroups: Array<RosCluster2.NodeGroupsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property releaseVersion: EMR release version.View EMR distribution versions can be viewed through the EMR cluster.
+     * @Property releaseVersion: The EMR release version. You can find the EMR release versions on the EMR cluster
+     * purchase page.
      */
     readonly releaseVersion: string | ros.IResolvable;
 
@@ -1360,7 +1365,7 @@ function rosCluster2PropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::Cluster2`, which is used to create an E-MapReduce (EMR) cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::Cluster2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster2
  */
@@ -1394,12 +1399,16 @@ export class RosCluster2 extends ros.RosResource {
     public clusterName: string | ros.IResolvable;
 
     /**
-     * @Property clusterType: Cluster type.Ranges:
-     * DATALAKE: The new version of the data lake.
-     * OLAP: Data analysis.
-     * DATAFLOW: Real -time data stream.
-     * DATASERVING: Data service.
-     * HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+     * @Property clusterType: The cluster type. Valid values:
+     * - DATALAKE: new data lake.
+     * - OLAP: data analytics.
+     * - DATAFLOW: real-time data stream.
+     * - DATASERVING: data serving.
+     * - CUSTOM: custom cluster.
+     * - HADOOP: earlier-version data lake. We recommend that you use the new data lake.
+     * If you create an EMR cluster for the first time after 17:00 (UTC+8) on December
+     * 19, 2022, you cannot select HADOOP, DATA_SCIENCE, PRESTO, or ZOOKEEPER as the
+     * cluster type.
      */
     public clusterType: string | ros.IResolvable;
 
@@ -1414,7 +1423,8 @@ export class RosCluster2 extends ros.RosResource {
     public nodeGroups: Array<RosCluster2.NodeGroupsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property releaseVersion: EMR release version.View EMR distribution versions can be viewed through the EMR cluster.
+     * @Property releaseVersion: The EMR release version. You can find the EMR release versions on the EMR cluster
+     * purchase page.
      */
     public releaseVersion: string | ros.IResolvable;
 
@@ -2588,7 +2598,7 @@ function rosClusterServiceConfigsPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::ClusterServiceConfigs`, which is used to create or modify the configurations of a specified service in a cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::ClusterServiceConfigs`Creates or modifies the configurations of a specified service in a cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterServiceConfigs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-clusterserviceconfigs
  */
@@ -2794,7 +2804,7 @@ function rosFlowProjectPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::FlowProject`, which is used to create a data development project.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::FlowProject`Creates a data development project.
  * @Note This class does not contain additional functions, so it is recommended to use the `FlowProject` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-flowproject
  */
@@ -2883,6 +2893,1186 @@ export class RosFlowProject extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosFlowProjectPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosLivyCompute`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-livycompute
+ */
+export interface RosLivyComputeProps {
+
+    /**
+     * @Property authType: The authentication method.
+     */
+    readonly authType: string | ros.IResolvable;
+
+    /**
+     * @Property cpuLimit: The number of CPU cores for the Livy server.
+     */
+    readonly cpuLimit: string | ros.IResolvable;
+
+    /**
+     * @Property displayReleaseVersion: The version number of the Spark engine.
+     */
+    readonly displayReleaseVersion: string | ros.IResolvable;
+
+    /**
+     * @Property livyVersion: The Livy version.
+     */
+    readonly livyVersion: string | ros.IResolvable;
+
+    /**
+     * @Property memoryLimit: The memory size of the Livy server.
+     */
+    readonly memoryLimit: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the Livy Gateway.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property queueName: The name of the submission queue.
+     */
+    readonly queueName: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceBizId: The business ID of the workspace.
+     */
+    readonly workspaceBizId: string | ros.IResolvable;
+
+    /**
+     * @Property autoStartConfiguration: The automatic startup configuration.
+     */
+    readonly autoStartConfiguration?: RosLivyCompute.AutoStartConfigurationProperty | ros.IResolvable;
+
+    /**
+     * @Property autoStopConfiguration: The automatic stop configuration.
+     */
+    readonly autoStopConfiguration?: RosLivyCompute.AutoStopConfigurationProperty | ros.IResolvable;
+
+    /**
+     * @Property enablePublic: Whether to enable the public endpoint.
+     */
+    readonly enablePublic?: boolean | ros.IResolvable;
+
+    /**
+     * @Property environmentId: The ID of the runtime environment.
+     */
+    readonly environmentId?: string | ros.IResolvable;
+
+    /**
+     * @Property fusion: Whether to enable acceleration with the Fusion engine.
+     */
+    readonly fusion?: boolean | ros.IResolvable;
+
+    /**
+     * @Property livyServerConf: The Livy Gateway configuration. The value must be a JSON-formatted string that supports sparkDefaultsConf, sparkBlackListConf, livyConf, and livyClientConf.
+     */
+    readonly livyServerConf?: string | ros.IResolvable;
+
+    /**
+     * @Property networkName: The name of the network connection.
+     */
+    readonly networkName?: string | ros.IResolvable;
+
+    /**
+     * @Property releaseVersion: The deprecated Spark engine version. Use DisplayReleaseVersion instead.
+     */
+    readonly releaseVersion?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosLivyComputeProps`
+ *
+ * @param properties - the TypeScript properties of a `RosLivyComputeProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosLivyComputePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('autoStartConfiguration', RosLivyCompute_AutoStartConfigurationPropertyValidator)(properties.autoStartConfiguration));
+    errors.collect(ros.propertyValidator('workspaceBizId', ros.requiredValidator)(properties.workspaceBizId));
+    errors.collect(ros.propertyValidator('workspaceBizId', ros.validateString)(properties.workspaceBizId));
+    errors.collect(ros.propertyValidator('networkName', ros.validateString)(properties.networkName));
+    errors.collect(ros.propertyValidator('livyServerConf', ros.validateString)(properties.livyServerConf));
+    errors.collect(ros.propertyValidator('cpuLimit', ros.requiredValidator)(properties.cpuLimit));
+    if(properties.cpuLimit && (typeof properties.cpuLimit) !== 'object') {
+        errors.collect(ros.propertyValidator('cpuLimit', ros.validateAllowedValues)({
+          data: properties.cpuLimit,
+          allowedValues: ["1","2","4"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('cpuLimit', ros.validateString)(properties.cpuLimit));
+    errors.collect(ros.propertyValidator('autoStopConfiguration', RosLivyCompute_AutoStopConfigurationPropertyValidator)(properties.autoStopConfiguration));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('releaseVersion', ros.validateString)(properties.releaseVersion));
+    errors.collect(ros.propertyValidator('enablePublic', ros.validateBoolean)(properties.enablePublic));
+    errors.collect(ros.propertyValidator('memoryLimit', ros.requiredValidator)(properties.memoryLimit));
+    if(properties.memoryLimit && (typeof properties.memoryLimit) !== 'object') {
+        errors.collect(ros.propertyValidator('memoryLimit', ros.validateAllowedValues)({
+          data: properties.memoryLimit,
+          allowedValues: ["4Gi","8Gi","16Gi"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('memoryLimit', ros.validateString)(properties.memoryLimit));
+    errors.collect(ros.propertyValidator('displayReleaseVersion', ros.requiredValidator)(properties.displayReleaseVersion));
+    errors.collect(ros.propertyValidator('displayReleaseVersion', ros.validateString)(properties.displayReleaseVersion));
+    errors.collect(ros.propertyValidator('environmentId', ros.validateString)(properties.environmentId));
+    errors.collect(ros.propertyValidator('livyVersion', ros.requiredValidator)(properties.livyVersion));
+    if(properties.livyVersion && (typeof properties.livyVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('livyVersion', ros.validateAllowedValues)({
+          data: properties.livyVersion,
+          allowedValues: ["0.8.0"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('livyVersion', ros.validateString)(properties.livyVersion));
+    errors.collect(ros.propertyValidator('authType', ros.requiredValidator)(properties.authType));
+    if(properties.authType && (typeof properties.authType) !== 'object') {
+        errors.collect(ros.propertyValidator('authType', ros.validateAllowedValues)({
+          data: properties.authType,
+          allowedValues: ["Token"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('authType', ros.validateString)(properties.authType));
+    errors.collect(ros.propertyValidator('queueName', ros.requiredValidator)(properties.queueName));
+    if(properties.queueName && (typeof properties.queueName) !== 'object') {
+        errors.collect(ros.propertyValidator('queueName', ros.validateAllowedValues)({
+          data: properties.queueName,
+          allowedValues: ["dev_queue","root_queue"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('queueName', ros.validateString)(properties.queueName));
+    errors.collect(ros.propertyValidator('fusion', ros.validateBoolean)(properties.fusion));
+    return errors.wrap('supplied properties not correct for "RosLivyComputeProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::LivyCompute` resource
+ *
+ * @param properties - the TypeScript properties of a `RosLivyComputeProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::LivyCompute` resource.
+ */
+// @ts-ignore TS6133
+function rosLivyComputePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosLivyComputePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AuthType': ros.stringToRosTemplate(properties.authType),
+      'CpuLimit': ros.stringToRosTemplate(properties.cpuLimit),
+      'DisplayReleaseVersion': ros.stringToRosTemplate(properties.displayReleaseVersion),
+      'LivyVersion': ros.stringToRosTemplate(properties.livyVersion),
+      'MemoryLimit': ros.stringToRosTemplate(properties.memoryLimit),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'QueueName': ros.stringToRosTemplate(properties.queueName),
+      'WorkspaceBizId': ros.stringToRosTemplate(properties.workspaceBizId),
+      'AutoStartConfiguration': rosLivyComputeAutoStartConfigurationPropertyToRosTemplate(properties.autoStartConfiguration),
+      'AutoStopConfiguration': rosLivyComputeAutoStopConfigurationPropertyToRosTemplate(properties.autoStopConfiguration),
+      'EnablePublic': ros.booleanToRosTemplate(properties.enablePublic),
+      'EnvironmentId': ros.stringToRosTemplate(properties.environmentId),
+      'Fusion': ros.booleanToRosTemplate(properties.fusion),
+      'LivyServerConf': ros.stringToRosTemplate(properties.livyServerConf),
+      'NetworkName': ros.stringToRosTemplate(properties.networkName),
+      'ReleaseVersion': ros.stringToRosTemplate(properties.releaseVersion),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::LivyCompute`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LivyCompute` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-livycompute
+ */
+export class RosLivyCompute extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EMR::LivyCompute";
+
+    /**
+     * @Attribute Endpoint: The public endpoint of the Livy Gateway.
+     */
+    public readonly attrEndpoint: ros.IResolvable;
+
+    /**
+     * @Attribute EndpointInner: The internal endpoint of the Livy Gateway.
+     */
+    public readonly attrEndpointInner: ros.IResolvable;
+
+    /**
+     * @Attribute LivyComputeId: The ID of the Livy Gateway.
+     */
+    public readonly attrLivyComputeId: ros.IResolvable;
+
+    /**
+     * @Attribute Status: The status of the Livy Gateway.
+     */
+    public readonly attrStatus: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property authType: The authentication method.
+     */
+    public authType: string | ros.IResolvable;
+
+    /**
+     * @Property cpuLimit: The number of CPU cores for the Livy server.
+     */
+    public cpuLimit: string | ros.IResolvable;
+
+    /**
+     * @Property displayReleaseVersion: The version number of the Spark engine.
+     */
+    public displayReleaseVersion: string | ros.IResolvable;
+
+    /**
+     * @Property livyVersion: The Livy version.
+     */
+    public livyVersion: string | ros.IResolvable;
+
+    /**
+     * @Property memoryLimit: The memory size of the Livy server.
+     */
+    public memoryLimit: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the Livy Gateway.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property queueName: The name of the submission queue.
+     */
+    public queueName: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceBizId: The business ID of the workspace.
+     */
+    public workspaceBizId: string | ros.IResolvable;
+
+    /**
+     * @Property autoStartConfiguration: The automatic startup configuration.
+     */
+    public autoStartConfiguration: RosLivyCompute.AutoStartConfigurationProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoStopConfiguration: The automatic stop configuration.
+     */
+    public autoStopConfiguration: RosLivyCompute.AutoStopConfigurationProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property enablePublic: Whether to enable the public endpoint.
+     */
+    public enablePublic: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property environmentId: The ID of the runtime environment.
+     */
+    public environmentId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property fusion: Whether to enable acceleration with the Fusion engine.
+     */
+    public fusion: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property livyServerConf: The Livy Gateway configuration. The value must be a JSON-formatted string that supports sparkDefaultsConf, sparkBlackListConf, livyConf, and livyClientConf.
+     */
+    public livyServerConf: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property networkName: The name of the network connection.
+     */
+    public networkName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property releaseVersion: The deprecated Spark engine version. Use DisplayReleaseVersion instead.
+     */
+    public releaseVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosLivyComputeProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosLivyCompute.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrEndpoint = this.getAtt('Endpoint');
+        this.attrEndpointInner = this.getAtt('EndpointInner');
+        this.attrLivyComputeId = this.getAtt('LivyComputeId');
+        this.attrStatus = this.getAtt('Status');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.authType = props.authType;
+        this.cpuLimit = props.cpuLimit;
+        this.displayReleaseVersion = props.displayReleaseVersion;
+        this.livyVersion = props.livyVersion;
+        this.memoryLimit = props.memoryLimit;
+        this.name = props.name;
+        this.queueName = props.queueName;
+        this.workspaceBizId = props.workspaceBizId;
+        this.autoStartConfiguration = props.autoStartConfiguration;
+        this.autoStopConfiguration = props.autoStopConfiguration;
+        this.enablePublic = props.enablePublic;
+        this.environmentId = props.environmentId;
+        this.fusion = props.fusion;
+        this.livyServerConf = props.livyServerConf;
+        this.networkName = props.networkName;
+        this.releaseVersion = props.releaseVersion;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            authType: this.authType,
+            cpuLimit: this.cpuLimit,
+            displayReleaseVersion: this.displayReleaseVersion,
+            livyVersion: this.livyVersion,
+            memoryLimit: this.memoryLimit,
+            name: this.name,
+            queueName: this.queueName,
+            workspaceBizId: this.workspaceBizId,
+            autoStartConfiguration: this.autoStartConfiguration,
+            autoStopConfiguration: this.autoStopConfiguration,
+            enablePublic: this.enablePublic,
+            environmentId: this.environmentId,
+            fusion: this.fusion,
+            livyServerConf: this.livyServerConf,
+            networkName: this.networkName,
+            releaseVersion: this.releaseVersion,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosLivyComputePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosLivyCompute {
+    /**
+     * @stability external
+     */
+    export interface AutoStartConfigurationProperty {
+        /**
+         * @Property enable: Whether to automatically start the Livy Gateway.
+         */
+        readonly enable: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AutoStartConfigurationProperty`
+ *
+ * @param properties - the TypeScript properties of a `AutoStartConfigurationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosLivyCompute_AutoStartConfigurationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enable', ros.requiredValidator)(properties.enable));
+    errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
+    return errors.wrap('supplied properties not correct for "AutoStartConfigurationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::LivyCompute.AutoStartConfiguration` resource
+ *
+ * @param properties - the TypeScript properties of a `AutoStartConfigurationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::LivyCompute.AutoStartConfiguration` resource.
+ */
+// @ts-ignore TS6133
+function rosLivyComputeAutoStartConfigurationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosLivyCompute_AutoStartConfigurationPropertyValidator(properties).assertSuccess();
+    return {
+      'Enable': ros.booleanToRosTemplate(properties.enable),
+    };
+}
+
+export namespace RosLivyCompute {
+    /**
+     * @stability external
+     */
+    export interface AutoStopConfigurationProperty {
+        /**
+         * @Property enable: Whether to automatically stop the Livy Gateway.
+         */
+        readonly enable: boolean | ros.IResolvable;
+        /**
+         * @Property idleTimeoutMinutes: The idle timeout in minutes before automatic stop.
+         */
+        readonly idleTimeoutMinutes?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AutoStopConfigurationProperty`
+ *
+ * @param properties - the TypeScript properties of a `AutoStopConfigurationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosLivyCompute_AutoStopConfigurationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enable', ros.requiredValidator)(properties.enable));
+    errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
+    errors.collect(ros.propertyValidator('idleTimeoutMinutes', ros.validateNumber)(properties.idleTimeoutMinutes));
+    return errors.wrap('supplied properties not correct for "AutoStopConfigurationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::LivyCompute.AutoStopConfiguration` resource
+ *
+ * @param properties - the TypeScript properties of a `AutoStopConfigurationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::LivyCompute.AutoStopConfiguration` resource.
+ */
+// @ts-ignore TS6133
+function rosLivyComputeAutoStopConfigurationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosLivyCompute_AutoStopConfigurationPropertyValidator(properties).assertSuccess();
+    return {
+      'Enable': ros.booleanToRosTemplate(properties.enable),
+      'IdleTimeoutMinutes': ros.numberToRosTemplate(properties.idleTimeoutMinutes),
+    };
+}
+
+/**
+ * Properties for defining a `RosSparkWorkspace`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-sparkworkspace
+ */
+export interface RosSparkWorkspaceProps {
+
+    /**
+     * @Property ossBucket: The OSS bucket path of the workspace. The path must start with oss:\/\/<bucket-name>\/.
+     */
+    readonly ossBucket: string | ros.IResolvable;
+
+    /**
+     * @Property paymentType: The billing method of the workspace.
+     */
+    readonly paymentType: string | ros.IResolvable;
+
+    /**
+     * @Property ramRoleName: The RAM role used to run Spark jobs.
+     */
+    readonly ramRoleName: string | ros.IResolvable;
+
+    /**
+     * @Property resourceSpec: The resource specifications of the workspace.
+     */
+    readonly resourceSpec: RosSparkWorkspace.ResourceSpecProperty | ros.IResolvable;
+
+    /**
+     * @Property workspaceName: The workspace name. The name must be 1 to 64 characters in length and can contain Chinese characters, letters, digits, hyphens (-), and underscores (_).
+     */
+    readonly workspaceName: string | ros.IResolvable;
+
+    /**
+     * @Property autoRenew: Whether to enable automatic renewal for a subscription.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoRenewPeriod: The automatic renewal duration.
+     */
+    readonly autoRenewPeriod?: string | ros.IResolvable;
+
+    /**
+     * @Property autoRenewPeriodUnit: The unit of the automatic renewal duration.
+     */
+    readonly autoRenewPeriodUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property autoStartSessionCluster: Whether to automatically start a session cluster.
+     */
+    readonly autoStartSessionCluster?: boolean | ros.IResolvable;
+
+    /**
+     * @Property dlfCatalogId: The ID of the DLF catalog.
+     */
+    readonly dlfCatalogId?: string | ros.IResolvable;
+
+    /**
+     * @Property dlfType: The DLF type bound to the workspace.
+     */
+    readonly dlfType?: string | ros.IResolvable;
+
+    /**
+     * @Property duration: The subscription duration.
+     */
+    readonly duration?: string | ros.IResolvable;
+
+    /**
+     * @Property gpuSpec: The GPU instance types of the workspace.
+     */
+    readonly gpuSpec?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property gpuSubscription: The GPU subscription configuration. This configuration is applied after the workspace is created.
+     */
+    readonly gpuSubscription?: RosSparkWorkspace.GpuSubscriptionProperty | ros.IResolvable;
+
+    /**
+     * @Property ipWhiteList: The IP whitelist of the workspace. This configuration is applied after the workspace is created.
+     */
+    readonly ipWhiteList?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property paymentDurationUnit: The unit of the subscription duration.
+     */
+    readonly paymentDurationUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property releaseType: The release type of the workspace.
+     */
+    readonly releaseType?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property subscription: The configuration used to convert a pay-as-you-go workspace to a subscription workspace. This configuration is applied after the workspace is created.
+     */
+    readonly subscription?: RosSparkWorkspace.SubscriptionProperty | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to workspace. Max support 20 tags to add during create workspace. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosSparkWorkspace.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSparkWorkspaceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSparkWorkspaceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSparkWorkspacePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedPattern)({
+          data: properties.autoRenewPeriod,
+          reg: /^[1-9]\d*$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateString)(properties.autoRenewPeriod));
+    errors.collect(ros.propertyValidator('releaseType', ros.validateString)(properties.releaseType));
+    errors.collect(ros.propertyValidator('dlfType', ros.validateString)(properties.dlfType));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('resourceSpec', ros.requiredValidator)(properties.resourceSpec));
+    errors.collect(ros.propertyValidator('resourceSpec', RosSparkWorkspace_ResourceSpecPropertyValidator)(properties.resourceSpec));
+    errors.collect(ros.propertyValidator('ossBucket', ros.requiredValidator)(properties.ossBucket));
+    if(properties.ossBucket && (typeof properties.ossBucket) !== 'object') {
+        errors.collect(ros.propertyValidator('ossBucket', ros.validateAllowedPattern)({
+          data: properties.ossBucket,
+          reg: /^oss:\/\/[^\/]+\/.*$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('ossBucket', ros.validateString)(properties.ossBucket));
+    if(properties.paymentDurationUnit && (typeof properties.paymentDurationUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('paymentDurationUnit', ros.validateAllowedValues)({
+          data: properties.paymentDurationUnit,
+          allowedValues: ["MONTH"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('paymentDurationUnit', ros.validateString)(properties.paymentDurationUnit));
+    errors.collect(ros.propertyValidator('ipWhiteList', ros.listValidator(ros.validateString))(properties.ipWhiteList));
+    if(properties.duration && (typeof properties.duration) !== 'object') {
+        errors.collect(ros.propertyValidator('duration', ros.validateAllowedPattern)({
+          data: properties.duration,
+          reg: /^[1-9]\d*$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('duration', ros.validateString)(properties.duration));
+    errors.collect(ros.propertyValidator('gpuSubscription', RosSparkWorkspace_GpuSubscriptionPropertyValidator)(properties.gpuSubscription));
+    errors.collect(ros.propertyValidator('ramRoleName', ros.requiredValidator)(properties.ramRoleName));
+    errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
+    errors.collect(ros.propertyValidator('gpuSpec', ros.listValidator(ros.validateString))(properties.gpuSpec));
+    errors.collect(ros.propertyValidator('workspaceName', ros.requiredValidator)(properties.workspaceName));
+    if(properties.workspaceName && (Array.isArray(properties.workspaceName) || (typeof properties.workspaceName) === 'string')) {
+        errors.collect(ros.propertyValidator('workspaceName', ros.validateLength)({
+            data: properties.workspaceName.length,
+            min: 1,
+            max: 64,
+          }));
+    }
+    if(properties.workspaceName && (typeof properties.workspaceName) !== 'object') {
+        errors.collect(ros.propertyValidator('workspaceName', ros.validateAllowedPattern)({
+          data: properties.workspaceName,
+          reg: /^[a-zA-Z0-9一-龥_-]+$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('workspaceName', ros.validateString)(properties.workspaceName));
+    errors.collect(ros.propertyValidator('paymentType', ros.requiredValidator)(properties.paymentType));
+    if(properties.paymentType && (typeof properties.paymentType) !== 'object') {
+        errors.collect(ros.propertyValidator('paymentType', ros.validateAllowedValues)({
+          data: properties.paymentType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE","Pre"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('paymentType', ros.validateString)(properties.paymentType));
+    errors.collect(ros.propertyValidator('autoStartSessionCluster', ros.validateBoolean)(properties.autoStartSessionCluster));
+    errors.collect(ros.propertyValidator('subscription', RosSparkWorkspace_SubscriptionPropertyValidator)(properties.subscription));
+    errors.collect(ros.propertyValidator('dlfCatalogId', ros.validateString)(properties.dlfCatalogId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosSparkWorkspace_TagsPropertyValidator))(properties.tags));
+    if(properties.autoRenewPeriodUnit && (typeof properties.autoRenewPeriodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriodUnit', ros.validateAllowedValues)({
+          data: properties.autoRenewPeriodUnit,
+          allowedValues: ["MONTH"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewPeriodUnit', ros.validateString)(properties.autoRenewPeriodUnit));
+    return errors.wrap('supplied properties not correct for "RosSparkWorkspaceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::SparkWorkspace` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSparkWorkspaceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::SparkWorkspace` resource.
+ */
+// @ts-ignore TS6133
+function rosSparkWorkspacePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSparkWorkspacePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'OssBucket': ros.stringToRosTemplate(properties.ossBucket),
+      'PaymentType': ros.stringToRosTemplate(properties.paymentType),
+      'RamRoleName': ros.stringToRosTemplate(properties.ramRoleName),
+      'ResourceSpec': rosSparkWorkspaceResourceSpecPropertyToRosTemplate(properties.resourceSpec),
+      'WorkspaceName': ros.stringToRosTemplate(properties.workspaceName),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'AutoRenewPeriod': ros.stringToRosTemplate(properties.autoRenewPeriod),
+      'AutoRenewPeriodUnit': ros.stringToRosTemplate(properties.autoRenewPeriodUnit),
+      'AutoStartSessionCluster': ros.booleanToRosTemplate(properties.autoStartSessionCluster),
+      'DlfCatalogId': ros.stringToRosTemplate(properties.dlfCatalogId),
+      'DlfType': ros.stringToRosTemplate(properties.dlfType),
+      'Duration': ros.stringToRosTemplate(properties.duration),
+      'GpuSpec': ros.listMapper(ros.stringToRosTemplate)(properties.gpuSpec),
+      'GpuSubscription': rosSparkWorkspaceGpuSubscriptionPropertyToRosTemplate(properties.gpuSubscription),
+      'IpWhiteList': ros.listMapper(ros.stringToRosTemplate)(properties.ipWhiteList),
+      'PaymentDurationUnit': ros.stringToRosTemplate(properties.paymentDurationUnit),
+      'ReleaseType': ros.stringToRosTemplate(properties.releaseType),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Subscription': rosSparkWorkspaceSubscriptionPropertyToRosTemplate(properties.subscription),
+      'Tags': ros.listMapper(rosSparkWorkspaceTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::SparkWorkspace`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SparkWorkspace` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-sparkworkspace
+ */
+export class RosSparkWorkspace extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EMR::SparkWorkspace";
+
+    /**
+     * @Attribute Storage: The OSS storage path of the workspace.
+     */
+    public readonly attrStorage: ros.IResolvable;
+
+    /**
+     * @Attribute WorkspaceId: The ID of the workspace.
+     */
+    public readonly attrWorkspaceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property ossBucket: The OSS bucket path of the workspace. The path must start with oss:\/\/<bucket-name>\/.
+     */
+    public ossBucket: string | ros.IResolvable;
+
+    /**
+     * @Property paymentType: The billing method of the workspace.
+     */
+    public paymentType: string | ros.IResolvable;
+
+    /**
+     * @Property ramRoleName: The RAM role used to run Spark jobs.
+     */
+    public ramRoleName: string | ros.IResolvable;
+
+    /**
+     * @Property resourceSpec: The resource specifications of the workspace.
+     */
+    public resourceSpec: RosSparkWorkspace.ResourceSpecProperty | ros.IResolvable;
+
+    /**
+     * @Property workspaceName: The workspace name. The name must be 1 to 64 characters in length and can contain Chinese characters, letters, digits, hyphens (-), and underscores (_).
+     */
+    public workspaceName: string | ros.IResolvable;
+
+    /**
+     * @Property autoRenew: Whether to enable automatic renewal for a subscription.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenewPeriod: The automatic renewal duration.
+     */
+    public autoRenewPeriod: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenewPeriodUnit: The unit of the automatic renewal duration.
+     */
+    public autoRenewPeriodUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoStartSessionCluster: Whether to automatically start a session cluster.
+     */
+    public autoStartSessionCluster: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property dlfCatalogId: The ID of the DLF catalog.
+     */
+    public dlfCatalogId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dlfType: The DLF type bound to the workspace.
+     */
+    public dlfType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property duration: The subscription duration.
+     */
+    public duration: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property gpuSpec: The GPU instance types of the workspace.
+     */
+    public gpuSpec: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property gpuSubscription: The GPU subscription configuration. This configuration is applied after the workspace is created.
+     */
+    public gpuSubscription: RosSparkWorkspace.GpuSubscriptionProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipWhiteList: The IP whitelist of the workspace. This configuration is applied after the workspace is created.
+     */
+    public ipWhiteList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property paymentDurationUnit: The unit of the subscription duration.
+     */
+    public paymentDurationUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property releaseType: The release type of the workspace.
+     */
+    public releaseType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property subscription: The configuration used to convert a pay-as-you-go workspace to a subscription workspace. This configuration is applied after the workspace is created.
+     */
+    public subscription: RosSparkWorkspace.SubscriptionProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to workspace. Max support 20 tags to add during create workspace. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosSparkWorkspace.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSparkWorkspaceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSparkWorkspace.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrStorage = this.getAtt('Storage');
+        this.attrWorkspaceId = this.getAtt('WorkspaceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.ossBucket = props.ossBucket;
+        this.paymentType = props.paymentType;
+        this.ramRoleName = props.ramRoleName;
+        this.resourceSpec = props.resourceSpec;
+        this.workspaceName = props.workspaceName;
+        this.autoRenew = props.autoRenew;
+        this.autoRenewPeriod = props.autoRenewPeriod;
+        this.autoRenewPeriodUnit = props.autoRenewPeriodUnit;
+        this.autoStartSessionCluster = props.autoStartSessionCluster;
+        this.dlfCatalogId = props.dlfCatalogId;
+        this.dlfType = props.dlfType;
+        this.duration = props.duration;
+        this.gpuSpec = props.gpuSpec;
+        this.gpuSubscription = props.gpuSubscription;
+        this.ipWhiteList = props.ipWhiteList;
+        this.paymentDurationUnit = props.paymentDurationUnit;
+        this.releaseType = props.releaseType;
+        this.resourceGroupId = props.resourceGroupId;
+        this.subscription = props.subscription;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            ossBucket: this.ossBucket,
+            paymentType: this.paymentType,
+            ramRoleName: this.ramRoleName,
+            resourceSpec: this.resourceSpec,
+            workspaceName: this.workspaceName,
+            autoRenew: this.autoRenew,
+            autoRenewPeriod: this.autoRenewPeriod,
+            autoRenewPeriodUnit: this.autoRenewPeriodUnit,
+            autoStartSessionCluster: this.autoStartSessionCluster,
+            dlfCatalogId: this.dlfCatalogId,
+            dlfType: this.dlfType,
+            duration: this.duration,
+            gpuSpec: this.gpuSpec,
+            gpuSubscription: this.gpuSubscription,
+            ipWhiteList: this.ipWhiteList,
+            paymentDurationUnit: this.paymentDurationUnit,
+            releaseType: this.releaseType,
+            resourceGroupId: this.resourceGroupId,
+            subscription: this.subscription,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSparkWorkspacePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSparkWorkspace {
+    /**
+     * @stability external
+     */
+    export interface GpuSubscriptionProperty {
+        /**
+         * @Property instanceId: The GPU subscription instance ID.
+         */
+        readonly instanceId?: string | ros.IResolvable;
+        /**
+         * @Property autoRenew: Whether to enable automatic renewal.
+         */
+        readonly autoRenew?: boolean | ros.IResolvable;
+        /**
+         * @Property paymentDurationUnit: The unit of the subscription duration.
+         */
+        readonly paymentDurationUnit?: string | ros.IResolvable;
+        /**
+         * @Property instanceTypeId: The GPU instance type.
+         */
+        readonly instanceTypeId?: string | ros.IResolvable;
+        /**
+         * @Property duration: The subscription duration.
+         */
+        readonly duration?: number | ros.IResolvable;
+        /**
+         * @Property operation: The operation type.
+         */
+        readonly operation?: string | ros.IResolvable;
+        /**
+         * @Property gpuMachineNum: The number of GPU machines.
+         */
+        readonly gpuMachineNum?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `GpuSubscriptionProperty`
+ *
+ * @param properties - the TypeScript properties of a `GpuSubscriptionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSparkWorkspace_GpuSubscriptionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    if(properties.paymentDurationUnit && (typeof properties.paymentDurationUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('paymentDurationUnit', ros.validateAllowedValues)({
+          data: properties.paymentDurationUnit,
+          allowedValues: ["MONTH"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('paymentDurationUnit', ros.validateString)(properties.paymentDurationUnit));
+    errors.collect(ros.propertyValidator('instanceTypeId', ros.validateString)(properties.instanceTypeId));
+    if(properties.duration && (typeof properties.duration) !== 'object') {
+        errors.collect(ros.propertyValidator('duration', ros.validateRange)({
+            data: properties.duration,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
+    if(properties.operation && (typeof properties.operation) !== 'object') {
+        errors.collect(ros.propertyValidator('operation', ros.validateAllowedValues)({
+          data: properties.operation,
+          allowedValues: ["BUY","UPGRADE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('operation', ros.validateString)(properties.operation));
+    if(properties.gpuMachineNum && (typeof properties.gpuMachineNum) !== 'object') {
+        errors.collect(ros.propertyValidator('gpuMachineNum', ros.validateRange)({
+            data: properties.gpuMachineNum,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('gpuMachineNum', ros.validateNumber)(properties.gpuMachineNum));
+    return errors.wrap('supplied properties not correct for "GpuSubscriptionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::SparkWorkspace.GpuSubscription` resource
+ *
+ * @param properties - the TypeScript properties of a `GpuSubscriptionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::SparkWorkspace.GpuSubscription` resource.
+ */
+// @ts-ignore TS6133
+function rosSparkWorkspaceGpuSubscriptionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSparkWorkspace_GpuSubscriptionPropertyValidator(properties).assertSuccess();
+    return {
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'PaymentDurationUnit': ros.stringToRosTemplate(properties.paymentDurationUnit),
+      'InstanceTypeId': ros.stringToRosTemplate(properties.instanceTypeId),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'Operation': ros.stringToRosTemplate(properties.operation),
+      'GpuMachineNum': ros.numberToRosTemplate(properties.gpuMachineNum),
+    };
+}
+
+export namespace RosSparkWorkspace {
+    /**
+     * @stability external
+     */
+    export interface ResourceSpecProperty {
+        /**
+         * @Property cu: The maximum number of compute units.
+         */
+        readonly cu: string | ros.IResolvable;
+        /**
+         * @Property gpu: The number of GPUs.
+         */
+        readonly gpu?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourceSpecProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourceSpecProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSparkWorkspace_ResourceSpecPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('cu', ros.requiredValidator)(properties.cu));
+    if(properties.cu && (typeof properties.cu) !== 'object') {
+        errors.collect(ros.propertyValidator('cu', ros.validateAllowedPattern)({
+          data: properties.cu,
+          reg: /^[1-9]\d*$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('cu', ros.validateString)(properties.cu));
+    if(properties.gpu && (typeof properties.gpu) !== 'object') {
+        errors.collect(ros.propertyValidator('gpu', ros.validateRange)({
+            data: properties.gpu,
+            min: 0,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('gpu', ros.validateNumber)(properties.gpu));
+    return errors.wrap('supplied properties not correct for "ResourceSpecProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::SparkWorkspace.ResourceSpec` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourceSpecProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::SparkWorkspace.ResourceSpec` resource.
+ */
+// @ts-ignore TS6133
+function rosSparkWorkspaceResourceSpecPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSparkWorkspace_ResourceSpecPropertyValidator(properties).assertSuccess();
+    return {
+      'Cu': ros.stringToRosTemplate(properties.cu),
+      'Gpu': ros.numberToRosTemplate(properties.gpu),
+    };
+}
+
+export namespace RosSparkWorkspace {
+    /**
+     * @stability external
+     */
+    export interface SubscriptionProperty {
+        /**
+         * @Property autoRenewPeriod: The automatic renewal duration.
+         */
+        readonly autoRenewPeriod?: string | ros.IResolvable;
+        /**
+         * @Property autoRenew: Whether to enable automatic renewal.
+         */
+        readonly autoRenew?: boolean | ros.IResolvable;
+        /**
+         * @Property paymentDurationUnit: The unit of the subscription duration.
+         */
+        readonly paymentDurationUnit?: string | ros.IResolvable;
+        /**
+         * @Property duration: The subscription duration.
+         */
+        readonly duration?: string | ros.IResolvable;
+        /**
+         * @Property queue: The queues to convert to the subscription plan.
+         */
+        readonly queue?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property autoRenewPeriodUnit: The unit of the automatic renewal duration.
+         */
+        readonly autoRenewPeriodUnit?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SubscriptionProperty`
+ *
+ * @param properties - the TypeScript properties of a `SubscriptionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSparkWorkspace_SubscriptionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedPattern)({
+          data: properties.autoRenewPeriod,
+          reg: /^[1-9]\d*$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateString)(properties.autoRenewPeriod));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    if(properties.paymentDurationUnit && (typeof properties.paymentDurationUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('paymentDurationUnit', ros.validateAllowedValues)({
+          data: properties.paymentDurationUnit,
+          allowedValues: ["MONTH"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('paymentDurationUnit', ros.validateString)(properties.paymentDurationUnit));
+    if(properties.duration && (typeof properties.duration) !== 'object') {
+        errors.collect(ros.propertyValidator('duration', ros.validateAllowedPattern)({
+          data: properties.duration,
+          reg: /^[1-9]\d*$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('duration', ros.validateString)(properties.duration));
+    errors.collect(ros.propertyValidator('queue', ros.listValidator(ros.validateString))(properties.queue));
+    if(properties.autoRenewPeriodUnit && (typeof properties.autoRenewPeriodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriodUnit', ros.validateAllowedValues)({
+          data: properties.autoRenewPeriodUnit,
+          allowedValues: ["MONTH"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewPeriodUnit', ros.validateString)(properties.autoRenewPeriodUnit));
+    return errors.wrap('supplied properties not correct for "SubscriptionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::SparkWorkspace.Subscription` resource
+ *
+ * @param properties - the TypeScript properties of a `SubscriptionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::SparkWorkspace.Subscription` resource.
+ */
+// @ts-ignore TS6133
+function rosSparkWorkspaceSubscriptionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSparkWorkspace_SubscriptionPropertyValidator(properties).assertSuccess();
+    return {
+      'AutoRenewPeriod': ros.stringToRosTemplate(properties.autoRenewPeriod),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'PaymentDurationUnit': ros.stringToRosTemplate(properties.paymentDurationUnit),
+      'Duration': ros.stringToRosTemplate(properties.duration),
+      'Queue': ros.listMapper(ros.stringToRosTemplate)(properties.queue),
+      'AutoRenewPeriodUnit': ros.stringToRosTemplate(properties.autoRenewPeriodUnit),
+    };
+}
+
+export namespace RosSparkWorkspace {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSparkWorkspace_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::SparkWorkspace.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::SparkWorkspace.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosSparkWorkspaceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSparkWorkspace_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -3168,7 +4358,7 @@ function rosStarRocksInstancePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::StarRocksInstance`The , which type is used to create a serverless StarRocks instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::StarRocksInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StarRocksInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-starrocksinstance
  */

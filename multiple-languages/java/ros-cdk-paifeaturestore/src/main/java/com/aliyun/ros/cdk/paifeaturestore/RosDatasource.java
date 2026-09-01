@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paifeaturestore;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::PaiFeatureStore::Datasource</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:25:42.658Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:36:56.785Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paifeaturestore.$Module.class, fqn = "@alicloud/ros-cdk-paifeaturestore.RosDatasource")
 public class RosDatasource extends com.aliyun.ros.cdk.core.RosResource {
 

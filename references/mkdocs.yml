@@ -7,7 +7,15 @@ theme:
     - navigation.tabs.sticky
   palette:
     primary: deep orange
+  font: false
+plugins:
+  - search:
+      indexing: 'titles'
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
 extra:
   generator: false
-  search:
-    language: 'en, de, ru'

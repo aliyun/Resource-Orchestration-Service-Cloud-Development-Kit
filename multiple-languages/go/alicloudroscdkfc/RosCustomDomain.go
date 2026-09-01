@@ -10,7 +10,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::FC::CustomDomain`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::FC::CustomDomain`, which is used to create a custom domain name.
 type RosCustomDomain interface {
 	alicloudroscdkcore.RosResource
 	ApiVersion() interface{}

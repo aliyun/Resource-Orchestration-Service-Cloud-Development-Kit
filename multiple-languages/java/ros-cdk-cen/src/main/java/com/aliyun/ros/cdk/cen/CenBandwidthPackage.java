@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::CenBandwidthPackage</code>, which is used to purchase a bandwidth plan before you use Cloud Enterprise Network (CEN) to connect network instances that reside in different regions.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::CenBandwidthPackage</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.228Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.565Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthPackage")
 public class CenBandwidthPackage extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ICenBandwidthPackage {
 
@@ -120,24 +120,26 @@ public class CenBandwidthPackage extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property bandwidth: The bandwidth in Mbps of the bandwidth package.
+         * Property bandwidth: The maximum bandwidth of the bandwidth plan.
          * <p>
-         * The bandwidth cannot be less than 2 Mbps.
+         * Unit: Mbps. Valid values: 2 to
+         * 10000.
          * <p>
          * @return {@code this}
-         * @param bandwidth Property bandwidth: The bandwidth in Mbps of the bandwidth package. This parameter is required.
+         * @param bandwidth Property bandwidth: The maximum bandwidth of the bandwidth plan. This parameter is required.
          */
         public Builder bandwidth(final java.lang.Number bandwidth) {
             this.props.bandwidth(bandwidth);
             return this;
         }
         /**
-         * Property bandwidth: The bandwidth in Mbps of the bandwidth package.
+         * Property bandwidth: The maximum bandwidth of the bandwidth plan.
          * <p>
-         * The bandwidth cannot be less than 2 Mbps.
+         * Unit: Mbps. Valid values: 2 to
+         * 10000.
          * <p>
          * @return {@code this}
-         * @param bandwidth Property bandwidth: The bandwidth in Mbps of the bandwidth package. This parameter is required.
+         * @param bandwidth Property bandwidth: The maximum bandwidth of the bandwidth plan. This parameter is required.
          */
         public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
             this.props.bandwidth(bandwidth);
@@ -195,28 +197,40 @@ public class CenBandwidthPackage extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property autoPay: Whether to automatically pay the bill.
+         * Property autoPay: Specifies whether to enable automatic payment.
          * <p>
-         * Valid value:
-         * true (default)
-         * false
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: yes.</li>
+         * <li>false (default): no.
+         * If you disable automatic payment, you must go to the Order Hub in the console to
+         * complete the payment after you call this operation. Otherwise, the instance
+         * cannot be created.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoPay Property autoPay: Whether to automatically pay the bill. This parameter is required.
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment. This parameter is required.
          */
         public Builder autoPay(final java.lang.Boolean autoPay) {
             this.props.autoPay(autoPay);
             return this;
         }
         /**
-         * Property autoPay: Whether to automatically pay the bill.
+         * Property autoPay: Specifies whether to enable automatic payment.
          * <p>
-         * Valid value:
-         * true (default)
-         * false
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: yes.</li>
+         * <li>false (default): no.
+         * If you disable automatic payment, you must go to the Order Hub in the console to
+         * complete the payment after you call this operation. Otherwise, the instance
+         * cannot be created.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoPay Property autoPay: Whether to automatically pay the bill. This parameter is required.
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment. This parameter is required.
          */
         public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
             this.props.autoPay(autoPay);
@@ -299,24 +313,26 @@ public class CenBandwidthPackage extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property description: The description of the bandwidth package.
+         * Property description: The description of the bandwidth plan.
          * <p>
-         * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
+         * The description can be empty or 1 to 256 characters in length. It cannot start
+         * with http:// or https://.
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of the bandwidth package. This parameter is required.
+         * @param description Property description: The description of the bandwidth plan. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: The description of the bandwidth package.
+         * Property description: The description of the bandwidth plan.
          * <p>
-         * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
+         * The description can be empty or 1 to 256 characters in length. It cannot start
+         * with http:// or https://.
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of the bandwidth package. This parameter is required.
+         * @param description Property description: The description of the bandwidth plan. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
@@ -324,24 +340,26 @@ public class CenBandwidthPackage extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property name: The name of the bandwidth package.
+         * Property name: The name of the bandwidth plan.
          * <p>
-         * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
+         * The name can be empty or 1 to 128 characters in length. It cannot start with
+         * http:// or https://.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the bandwidth package. This parameter is required.
+         * @param name Property name: The name of the bandwidth plan. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
         /**
-         * Property name: The name of the bandwidth package.
+         * Property name: The name of the bandwidth plan.
          * <p>
-         * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
+         * The name can be empty or 1 to 128 characters in length. It cannot start with
+         * http:// or https://.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the bandwidth package. This parameter is required.
+         * @param name Property name: The name of the bandwidth plan. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
@@ -349,24 +367,46 @@ public class CenBandwidthPackage extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property period: The purchase period.
+         * Property period: The subscription duration of the bandwidth plan.
          * <p>
-         * The default value is 1.
+         * Default value: 1.
+         * <p>
+         * <ul>
+         * <li>If you set PricingCycle to Month, valid values for Period are 1 to 3 and 6.</li>
+         * <li>If you set PricingCycle to Year, valid values for Period are 1 to 3.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you set BandwidthPackageChargeType to PREPAY.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The purchase period. This parameter is required.
+         * @param period Property period: The subscription duration of the bandwidth plan. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The purchase period.
+         * Property period: The subscription duration of the bandwidth plan.
          * <p>
-         * The default value is 1.
+         * Default value: 1.
+         * <p>
+         * <ul>
+         * <li>If you set PricingCycle to Month, valid values for Period are 1 to 3 and 6.</li>
+         * <li>If you set PricingCycle to Year, valid values for Period are 1 to 3.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you set BandwidthPackageChargeType to PREPAY.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The purchase period. This parameter is required.
+         * @param period Property period: The subscription duration of the bandwidth plan. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);

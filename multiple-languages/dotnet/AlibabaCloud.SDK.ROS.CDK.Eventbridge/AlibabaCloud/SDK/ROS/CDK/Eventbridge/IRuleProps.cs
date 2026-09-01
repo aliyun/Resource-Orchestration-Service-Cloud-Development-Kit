@@ -18,7 +18,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
             get;
         }
 
-        /// <summary>Property filterPattern: The event pattern, in the JSON format.</summary>
+        /// <summary>Property filterPattern: The event pattern, in JSON format.</summary>
+        /// <remarks>
+        /// Supported pattern types are <c>stringEqual</c> and
+        /// <c>stringExpression</c>. Each field can contain a maximum of five expressions in a map
+        /// structure.
+        /// </remarks>
         [JsiiProperty(name: "filterPattern", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}")]
         object FilterPattern
         {
@@ -84,7 +89,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property filterPattern: The event pattern, in the JSON format.</summary>
+            /// <summary>Property filterPattern: The event pattern, in JSON format.</summary>
+            /// <remarks>
+            /// Supported pattern types are <c>stringEqual</c> and
+            /// <c>stringExpression</c>. Each field can contain a maximum of five expressions in a map
+            /// structure.
+            /// </remarks>
             [JsiiProperty(name: "filterPattern", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}")]
             public object FilterPattern
             {

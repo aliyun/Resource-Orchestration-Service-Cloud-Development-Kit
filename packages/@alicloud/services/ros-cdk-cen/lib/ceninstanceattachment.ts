@@ -20,7 +20,9 @@ export interface CenInstanceAttachmentProps {
     readonly childInstanceId: string | ros.IResolvable;
 
     /**
-     * Property childInstanceRegionId: The ID of the region where the network is located. The ID of the region where the network is located.
+     * Property childInstanceRegionId: The ID of the region where the network instance is deployed.
+     * You can call the [DescribeRegions]() operation to query the most recent region
+     * list.
      */
     readonly childInstanceRegionId: string | ros.IResolvable;
 
@@ -30,7 +32,9 @@ export interface CenInstanceAttachmentProps {
     readonly childInstanceType: string | ros.IResolvable;
 
     /**
-     * Property childInstanceOwnerId: The account ID to which the network belongs.
+     * Property childInstanceOwnerId: The ID of the account to which the network instance belongs.
+     * > If the network instance and the CEN instance belong to different accounts,
+     * this parameter is required.
      */
     readonly childInstanceOwnerId?: number | ros.IResolvable;
 }
@@ -42,7 +46,7 @@ export interface ICenInstanceAttachment extends ros.IResource {
     readonly props: CenInstanceAttachmentProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`, which is used to attach a network instance to a Cloud Enterprise Network (CEN) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenInstanceAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstanceattachment
  */

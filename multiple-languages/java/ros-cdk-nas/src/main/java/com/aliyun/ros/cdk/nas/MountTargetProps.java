@@ -5,20 +5,31 @@ package com.aliyun.ros.cdk.nas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-mounttarget
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.517Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:15:39.333Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.MountTargetProps")
 @software.amazon.jsii.Jsii.Proxy(MountTargetProps.Jsii$Proxy.class)
 public interface MountTargetProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property accessGroupName: Permission group name.
+     * Property accessGroupName: The name of the permission group.
      * <p>
-     * Default to DEFAULT_VPC_GROUP_NAME.
+     * This parameter is required if you create a mount target for a General-purpose NAS
+     * file system or an Extreme NAS file system.
+     * The default permission group for virtual private clouds (VPCs) is named
+     * DEFAULT_VPC_GROUP_NAME.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAccessGroupName();
 
     /**
-     * Property fileSystemId: File system ID.
+     * Property fileSystemId: The ID of the file system.
+     * <p>
+     * <ul>
+     * <li>Sample ID of a General-purpose NAS file system: 31a8e4****.</li>
+     * <li>The IDs of Extreme NAS file systems must start with <code>extreme-</code>, for example,
+     * extreme-0015****.</li>
+     * <li>The IDs of CPFS file systems must start with <code>cpfs-</code>. Example:
+     * cpfs-125487****.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getFileSystemId();
 
@@ -83,8 +94,11 @@ public interface MountTargetProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link MountTargetProps#getAccessGroupName}
-         * @param accessGroupName Property accessGroupName: Permission group name. This parameter is required.
-         *                        Default to DEFAULT_VPC_GROUP_NAME.
+         * @param accessGroupName Property accessGroupName: The name of the permission group. This parameter is required.
+         *                        This parameter is required if you create a mount target for a General-purpose NAS
+         *                        file system or an Extreme NAS file system.
+         *                        The default permission group for virtual private clouds (VPCs) is named
+         *                        DEFAULT_VPC_GROUP_NAME.
          * @return {@code this}
          */
         public Builder accessGroupName(java.lang.String accessGroupName) {
@@ -94,8 +108,11 @@ public interface MountTargetProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link MountTargetProps#getAccessGroupName}
-         * @param accessGroupName Property accessGroupName: Permission group name. This parameter is required.
-         *                        Default to DEFAULT_VPC_GROUP_NAME.
+         * @param accessGroupName Property accessGroupName: The name of the permission group. This parameter is required.
+         *                        This parameter is required if you create a mount target for a General-purpose NAS
+         *                        file system or an Extreme NAS file system.
+         *                        The default permission group for virtual private clouds (VPCs) is named
+         *                        DEFAULT_VPC_GROUP_NAME.
          * @return {@code this}
          */
         public Builder accessGroupName(com.aliyun.ros.cdk.core.IResolvable accessGroupName) {
@@ -105,7 +122,14 @@ public interface MountTargetProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link MountTargetProps#getFileSystemId}
-         * @param fileSystemId Property fileSystemId: File system ID. This parameter is required.
+         * @param fileSystemId Property fileSystemId: The ID of the file system. This parameter is required.
+         *                     <ul>
+         *                     <li>Sample ID of a General-purpose NAS file system: 31a8e4****.</li>
+         *                     <li>The IDs of Extreme NAS file systems must start with <code>extreme-</code>, for example,
+         *                     extreme-0015****.</li>
+         *                     <li>The IDs of CPFS file systems must start with <code>cpfs-</code>. Example:
+         *                     cpfs-125487****.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder fileSystemId(java.lang.String fileSystemId) {
@@ -115,7 +139,14 @@ public interface MountTargetProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link MountTargetProps#getFileSystemId}
-         * @param fileSystemId Property fileSystemId: File system ID. This parameter is required.
+         * @param fileSystemId Property fileSystemId: The ID of the file system. This parameter is required.
+         *                     <ul>
+         *                     <li>Sample ID of a General-purpose NAS file system: 31a8e4****.</li>
+         *                     <li>The IDs of Extreme NAS file systems must start with <code>extreme-</code>, for example,
+         *                     extreme-0015****.</li>
+         *                     <li>The IDs of CPFS file systems must start with <code>cpfs-</code>. Example:
+         *                     cpfs-125487****.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder fileSystemId(com.aliyun.ros.cdk.core.IResolvable fileSystemId) {

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dbs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::RestoreTask`, which is used to create a restoration task of Data Disaster Recovery.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::RestoreTask`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `RestoreTask` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
@@ -99,16 +99,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: destinationEndpointInstanceType: The location of the database. Valid values:
-        /// - rds
-        /// - ecs
-        /// - express: a database connected over express connect, VPN Gateway, or smart gateway.
-        /// - agent: The database connected through the backup Gateway
-        /// - dds: apsaradb for MongoDB
-        /// - kvstore
-        /// - polardb
-        /// - drds
-        /// - dg: the database is directly connected through IP Address: Port.
+        /// <strong>Property</strong>: destinationEndpointInstanceType: The type of the destination endpoint. Valid values:
+        /// - RDS: an ApsaraDB RDS instance.
+        /// - ECS: a self-managed database hosted on an ECS instance.
+        /// - Express: a database connected over a leased line, VPN Gateway, or Smart Access
+        /// Gateway.
+        /// - Agent: a database connected via a backup gateway.
+        /// - DDS: an ApsaraDB for MongoDB (DDS) instance.
+        /// - Other: a database connected over the internet by using a public IP address and
+        /// port.
+        /// - dg: a self-managed database without a public endpoint, connected via Database
+        /// Gateway.
         /// </remarks>
         [JsiiProperty(name: "destinationEndpointInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object DestinationEndpointInstanceType
@@ -387,9 +388,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: destinationEndpointPassword: The password that is used to log on to the RDS instance.
-        /// Note You must specify this parameter when the database type is Redis, or the database location
-        /// is agent and the database type is MSSQL.
+        /// <strong>Property</strong>: destinationEndpointPassword: The password for the destination database account.
+        /// > This parameter is optional if the database engine is Redis, or if
+        /// `DestinationEndpointInstanceType` is set to `Agent` and the database engine is
+        /// MSSQL. In other scenarios, this parameter is required.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "destinationEndpointPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -504,9 +506,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: destinationEndpointUserName: The database account.
-        /// Note You must specify this parameter when the database type is Redis, or the database location
-        /// is agent and the database type is MSSQL.
+        /// <strong>Property</strong>: destinationEndpointUserName: The username for the destination database account.
+        /// > This parameter is optional if the database engine is Redis, or if
+        /// `DestinationEndpointInstanceType` is set to `Agent` and the database engine is
+        /// MSSQL. In other scenarios, this parameter is required.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "destinationEndpointUserName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -570,7 +573,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: restoreDir: DestinationEndpointInstanceType this parameter is required when agent is specified and the backup schedule is MySQL.
+        /// <strong>Property</strong>: restoreDir: The restore directory. This parameter is required if
+        /// DestinationEndpointInstanceType is set to `Agent` and the database type is MySQL.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "restoreDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -632,8 +636,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: restoreObjects: Restore an object.
-        /// Note For details, see the following RestoreObjects if the database is located in an agent, this parameter is required in other scenarios.
+        /// <strong>Property</strong>: restoreObjects: The objects to restore.
+        /// - This parameter is optional if `DestinationEndpointInstanceType` is set to
+        /// `Agent`. In other scenarios, this parameter is required.
+        /// - The value must be a JSON string in the following format: `[{ "DBName":
+        /// "source_database_name", "NewDBName": "destination_database_name" }]`
+        /// > You can use this API operation to restore data only at the database level. To
+        /// restore data at the table level, log on to the console.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "restoreObjects", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -664,7 +673,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: restoreTime: The time when the fault is restored. Set the value to 1554560477000.
+        /// <strong>Property</strong>: restoreTime: The point-in-time for the restore, specified as a UNIX timestamp in milliseconds.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "restoreTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-elasticityassurance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.882Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.244Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ElasticityAssuranceProps")
 @software.amazon.jsii.Jsii.Proxy(ElasticityAssuranceProps.Jsii$Proxy.class)
 public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,14 +32,36 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
     /**
-     * Property autoRenew: Whether to enable automatic renewal.
+     * Property autoRenew: Specifies whether to enable auto-renewal for the elasticity assurance.
+     * <p>
+     * Valid
+     * values:
+     * <p>
+     * <ul>
+     * <li>true</li>
+     * <li>false
+     * Default value: false.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return null;
     }
 
     /**
-     * Property autoRenewPeriod: The period for automatic renewal.
+     * Property autoRenewPeriod: The auto-renewal period.
+     * <p>
+     * Unit: month. Valid values: 1, 2, 3, 6, 12, 24, and 36.
+     * <p>
+     * <ul>
+     * <li>Default value when <code>PeriodUnit</code> is set to Month: 1.</li>
+     * <li>Default value when <code>PeriodUnit</code> is set to Year: 12.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you set <code>AutoRenew</code> to <code>true</code>, you must specify this parameter.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
         return null;
@@ -56,31 +78,52 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property instanceCpuCoreCount: The number of CPU cores for the instance.
+     * Property instanceCpuCoreCount: &gt; This parameter is no longer used.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceCpuCoreCount() {
         return null;
     }
 
     /**
-     * Property period: The effective duration of the elasticity assurance.
+     * Property period: The validity period of the elasticity assurance.
      * <p>
-     * The unit of the effective duration is determined by the PeriodUnit value. Valid values:
-     * When the PeriodUnit parameter is set to Month, the valid values are 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-     * When the PeriodUnit parameter is set to Year, the valid values are 1, 2, 3, 4, and 5.
-     * Default value: 1.
+     * The unit of the validity period
+     * is determined by the value of <code>PeriodUnit</code>. Specifies whether to check the image
+     * used by the instance supports hot migration. Valid values:
+     * <p>
+     * <ul>
+     * <li>When the value of <code>PeriodUnit</code> is <code>Month</code>, the valid values are 1, 2, 3, 4, 5,
+     * 6, 7, 8, and 9.</li>
+     * <li>When the value of <code>PeriodUnit</code> is <code>Year</code>, the valid values are 1, 2, 3, 4, and</li>
+     * </ul>
+     * <p>
+     * <ol>
+     * <li></li>
+     * </ol>
+     * <p>
+     * <ul>
+     * <li>When the value of <code>PeriodUnit</code> is <code>Day</code>, the valid values are 1 to 365.
+     * Default value: 1</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
-     * Property periodUnit: The unit of the effective duration of the elasticity assurance.
+     * Property periodUnit: The unit of the validity period of the elasticity assurance.
      * <p>
      * Valid values:
-     * Month
-     * Year
-     * Default value: Year.
+     * <p>
+     * <ul>
+     * <li>Month</li>
+     * <li>Year</li>
+     * <li>Day
+     * **
+     * Note If you set <code>PeriodUnit</code> to <code>Day</code>, you must specify RecurrenceRules to create
+     * a time-segmented elasticity assurance.
+     * Default value: Year.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
         return null;
@@ -94,7 +137,14 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property recurrenceRules: Recurrence rules for the elasticity assurance.
+     * Property recurrenceRules: The assurance schedules based on which the capacity reservation takes effect.
+     * <p>
+     * <blockquote>
+     * <p>
+     * Time-segmented elasticity assurances are available only in specific regions and
+     * to specific users. To use time-segmented elasticity assurances, submit a ticket.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRecurrenceRules() {
         return null;
@@ -216,7 +266,15 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ElasticityAssuranceProps#getAutoRenew}
-         * @param autoRenew Property autoRenew: Whether to enable automatic renewal.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal for the elasticity assurance.
+         *                  Valid
+         *                  values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>true</li>
+         *                  <li>false
+         *                  Default value: false.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder autoRenew(java.lang.Boolean autoRenew) {
@@ -226,7 +284,15 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ElasticityAssuranceProps#getAutoRenew}
-         * @param autoRenew Property autoRenew: Whether to enable automatic renewal.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal for the elasticity assurance.
+         *                  Valid
+         *                  values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>true</li>
+         *                  <li>false
+         *                  Default value: false.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
@@ -236,7 +302,19 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ElasticityAssuranceProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: The period for automatic renewal.
+         * @param autoRenewPeriod Property autoRenewPeriod: The auto-renewal period.
+         *                        Unit: month. Valid values: 1, 2, 3, 6, 12, 24, and 36.
+         *                        <p>
+         *                        <ul>
+         *                        <li>Default value when <code>PeriodUnit</code> is set to Month: 1.</li>
+         *                        <li>Default value when <code>PeriodUnit</code> is set to Year: 12.</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        If you set <code>AutoRenew</code> to <code>true</code>, you must specify this parameter.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder autoRenewPeriod(java.lang.Number autoRenewPeriod) {
@@ -246,7 +324,19 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ElasticityAssuranceProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: The period for automatic renewal.
+         * @param autoRenewPeriod Property autoRenewPeriod: The auto-renewal period.
+         *                        Unit: month. Valid values: 1, 2, 3, 6, 12, 24, and 36.
+         *                        <p>
+         *                        <ul>
+         *                        <li>Default value when <code>PeriodUnit</code> is set to Month: 1.</li>
+         *                        <li>Default value when <code>PeriodUnit</code> is set to Year: 12.</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        If you set <code>AutoRenew</code> to <code>true</code>, you must specify this parameter.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
@@ -280,7 +370,7 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ElasticityAssuranceProps#getInstanceCpuCoreCount}
-         * @param instanceCpuCoreCount Property instanceCpuCoreCount: The number of CPU cores for the instance.
+         * @param instanceCpuCoreCount Property instanceCpuCoreCount: &gt; This parameter is no longer used.
          * @return {@code this}
          */
         public Builder instanceCpuCoreCount(java.lang.Number instanceCpuCoreCount) {
@@ -290,7 +380,7 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ElasticityAssuranceProps#getInstanceCpuCoreCount}
-         * @param instanceCpuCoreCount Property instanceCpuCoreCount: The number of CPU cores for the instance.
+         * @param instanceCpuCoreCount Property instanceCpuCoreCount: &gt; This parameter is no longer used.
          * @return {@code this}
          */
         public Builder instanceCpuCoreCount(com.aliyun.ros.cdk.core.IResolvable instanceCpuCoreCount) {
@@ -300,11 +390,25 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ElasticityAssuranceProps#getPeriod}
-         * @param period Property period: The effective duration of the elasticity assurance.
-         *               The unit of the effective duration is determined by the PeriodUnit value. Valid values:
-         *               When the PeriodUnit parameter is set to Month, the valid values are 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-         *               When the PeriodUnit parameter is set to Year, the valid values are 1, 2, 3, 4, and 5.
-         *               Default value: 1.
+         * @param period Property period: The validity period of the elasticity assurance.
+         *               The unit of the validity period
+         *               is determined by the value of <code>PeriodUnit</code>. Specifies whether to check the image
+         *               used by the instance supports hot migration. Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>When the value of <code>PeriodUnit</code> is <code>Month</code>, the valid values are 1, 2, 3, 4, 5,
+         *               6, 7, 8, and 9.</li>
+         *               <li>When the value of <code>PeriodUnit</code> is <code>Year</code>, the valid values are 1, 2, 3, 4, and</li>
+         *               </ul>
+         *               <p>
+         *               <ol>
+         *               <li></li>
+         *               </ol>
+         *               <p>
+         *               <ul>
+         *               <li>When the value of <code>PeriodUnit</code> is <code>Day</code>, the valid values are 1 to 365.
+         *               Default value: 1</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -314,11 +418,25 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ElasticityAssuranceProps#getPeriod}
-         * @param period Property period: The effective duration of the elasticity assurance.
-         *               The unit of the effective duration is determined by the PeriodUnit value. Valid values:
-         *               When the PeriodUnit parameter is set to Month, the valid values are 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-         *               When the PeriodUnit parameter is set to Year, the valid values are 1, 2, 3, 4, and 5.
-         *               Default value: 1.
+         * @param period Property period: The validity period of the elasticity assurance.
+         *               The unit of the validity period
+         *               is determined by the value of <code>PeriodUnit</code>. Specifies whether to check the image
+         *               used by the instance supports hot migration. Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>When the value of <code>PeriodUnit</code> is <code>Month</code>, the valid values are 1, 2, 3, 4, 5,
+         *               6, 7, 8, and 9.</li>
+         *               <li>When the value of <code>PeriodUnit</code> is <code>Year</code>, the valid values are 1, 2, 3, 4, and</li>
+         *               </ul>
+         *               <p>
+         *               <ol>
+         *               <li></li>
+         *               </ol>
+         *               <p>
+         *               <ul>
+         *               <li>When the value of <code>PeriodUnit</code> is <code>Day</code>, the valid values are 1 to 365.
+         *               Default value: 1</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
@@ -328,11 +446,18 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ElasticityAssuranceProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: The unit of the effective duration of the elasticity assurance.
+         * @param periodUnit Property periodUnit: The unit of the validity period of the elasticity assurance.
          *                   Valid values:
-         *                   Month
-         *                   Year
-         *                   Default value: Year.
+         *                   <p>
+         *                   <ul>
+         *                   <li>Month</li>
+         *                   <li>Year</li>
+         *                   <li>Day
+         *                   **
+         *                   Note If you set <code>PeriodUnit</code> to <code>Day</code>, you must specify RecurrenceRules to create
+         *                   a time-segmented elasticity assurance.
+         *                   Default value: Year.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder periodUnit(java.lang.String periodUnit) {
@@ -342,11 +467,18 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ElasticityAssuranceProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: The unit of the effective duration of the elasticity assurance.
+         * @param periodUnit Property periodUnit: The unit of the validity period of the elasticity assurance.
          *                   Valid values:
-         *                   Month
-         *                   Year
-         *                   Default value: Year.
+         *                   <p>
+         *                   <ul>
+         *                   <li>Month</li>
+         *                   <li>Year</li>
+         *                   <li>Day
+         *                   **
+         *                   Note If you set <code>PeriodUnit</code> to <code>Day</code>, you must specify RecurrenceRules to create
+         *                   a time-segmented elasticity assurance.
+         *                   Default value: Year.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
@@ -376,7 +508,13 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ElasticityAssuranceProps#getRecurrenceRules}
-         * @param recurrenceRules Property recurrenceRules: Recurrence rules for the elasticity assurance.
+         * @param recurrenceRules Property recurrenceRules: The assurance schedules based on which the capacity reservation takes effect.
+         *                        <blockquote>
+         *                        <p>
+         *                        Time-segmented elasticity assurances are available only in specific regions and
+         *                        to specific users. To use time-segmented elasticity assurances, submit a ticket.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder recurrenceRules(com.aliyun.ros.cdk.core.IResolvable recurrenceRules) {
@@ -386,7 +524,13 @@ public interface ElasticityAssuranceProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link ElasticityAssuranceProps#getRecurrenceRules}
-         * @param recurrenceRules Property recurrenceRules: Recurrence rules for the elasticity assurance.
+         * @param recurrenceRules Property recurrenceRules: The assurance schedules based on which the capacity reservation takes effect.
+         *                        <blockquote>
+         *                        <p>
+         *                        Time-segmented elasticity assurances are available only in specific regions and
+         *                        to specific users. To use time-segmented elasticity assurances, submit a ticket.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder recurrenceRules(java.util.List<? extends java.lang.Object> recurrenceRules) {

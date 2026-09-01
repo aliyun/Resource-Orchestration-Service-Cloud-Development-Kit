@@ -232,9 +232,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: lang: The natural language of the request and response. Valid values:
-        /// zh: Chinese
-        /// en: English
+        /// <strong>Property</strong>: lang: The language of the request and response. Valid values:
+        /// - zh (default): Chinese
+        /// - en: English
         /// </remarks>
         [JsiiProperty(name: "lang", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -576,9 +576,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: lang: The natural language of the request and response. Valid values:
-            /// zh: Chinese
-            /// en: English
+            /// <strong>Property</strong>: lang: The language of the request and response. Valid values:
+            /// - zh (default): Chinese
+            /// - en: English
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "lang", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

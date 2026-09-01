@@ -15,7 +15,8 @@ export interface UserSourceLogConfigProps {
     readonly sourceLogCode: string | ros.IResolvable;
 
     /**
-     * Property sourceLogInfo: The info of log to be added.
+     * Property sourceLogInfo: The detailed information about the Simple Log Service (SLS) log to be collected.
+     * The value is a JSON string.
      */
     readonly sourceLogInfo: RosUserSourceLogConfig.SourceLogInfoProperty | ros.IResolvable;
 
@@ -37,7 +38,7 @@ export interface IUserSourceLogConfig extends ros.IResource {
     readonly props: UserSourceLogConfigProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSiem::UserSourceLogConfig`, which is used to add logs of a cloud service within an account.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSiem::UserSourceLogConfig`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserSourceLogConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsiem-usersourcelogconfig
  */

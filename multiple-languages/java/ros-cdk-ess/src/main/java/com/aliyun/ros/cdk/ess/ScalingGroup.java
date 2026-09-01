@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScalingGroup</code>You can use the , which resource to create a scaling group.
- * <p>
- * A scaling group is a collection of ECS instances that are used for the same application scenario. A scaling group does not take effect immediately after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group. After the scaling group is enabled, it can trigger scaling activities and execute scaling rules.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScalingGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:56:08.527Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:06:45.672Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroup")
 public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ess.IScalingGroup {
 
@@ -130,24 +128,38 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property maxSize: Maximum number of ECS instances in the scaling group.
+         * Property maxSize: The maximum number of ECS instances that can be contained in the scaling group.
          * <p>
-         * Value range: [0, 2000].
+         * If the number of ECS instances in the scaling group is greater than the value of
+         * the <code>MaxSize</code> parameter, Auto Scaling automatically removes ECS instances until
+         * the number of instances in the scaling group is equal to the maximum number.
+         * The value range of the MaxSize parameter varies based on the instance quota. You
+         * can go to Quota Center to check the maximum number of instances that a scaling
+         * group can contain.
+         * For example, if a scaling group can contain up to 2,000 instances, the value
+         * range of the <code>MaxSize</code> parameter is 0 to 2000.
          * <p>
          * @return {@code this}
-         * @param maxSize Property maxSize: Maximum number of ECS instances in the scaling group. This parameter is required.
+         * @param maxSize Property maxSize: The maximum number of ECS instances that can be contained in the scaling group. This parameter is required.
          */
         public Builder maxSize(final java.lang.Number maxSize) {
             this.props.maxSize(maxSize);
             return this;
         }
         /**
-         * Property maxSize: Maximum number of ECS instances in the scaling group.
+         * Property maxSize: The maximum number of ECS instances that can be contained in the scaling group.
          * <p>
-         * Value range: [0, 2000].
+         * If the number of ECS instances in the scaling group is greater than the value of
+         * the <code>MaxSize</code> parameter, Auto Scaling automatically removes ECS instances until
+         * the number of instances in the scaling group is equal to the maximum number.
+         * The value range of the MaxSize parameter varies based on the instance quota. You
+         * can go to Quota Center to check the maximum number of instances that a scaling
+         * group can contain.
+         * For example, if a scaling group can contain up to 2,000 instances, the value
+         * range of the <code>MaxSize</code> parameter is 0 to 2000.
          * <p>
          * @return {@code this}
-         * @param maxSize Property maxSize: Maximum number of ECS instances in the scaling group. This parameter is required.
+         * @param maxSize Property maxSize: The maximum number of ECS instances that can be contained in the scaling group. This parameter is required.
          */
         public Builder maxSize(final com.aliyun.ros.cdk.core.IResolvable maxSize) {
             this.props.maxSize(maxSize);
@@ -327,24 +339,32 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property dbInstanceIds: ID list of an RDS instance.
+         * Property dbInstanceIds: The IDs of the ApsaraDB RDS instances that you want to associate with the scaling group.
          * <p>
-         * A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
+         * The value can be a JSON array that contains multiple ApsaraDB RDS instance
+         * IDs. Separate multiple IDs with commas (,).
+         * You can associate only a limited number of ApsaraDB RDS instances with a scaling
+         * group. Go to Quota Center to check the maximum number of ApsaraDB RDS instances
+         * that you can associate with a scaling group.
          * <p>
          * @return {@code this}
-         * @param dbInstanceIds Property dbInstanceIds: ID list of an RDS instance. This parameter is required.
+         * @param dbInstanceIds Property dbInstanceIds: The IDs of the ApsaraDB RDS instances that you want to associate with the scaling group. This parameter is required.
          */
         public Builder dbInstanceIds(final com.aliyun.ros.cdk.core.IResolvable dbInstanceIds) {
             this.props.dbInstanceIds(dbInstanceIds);
             return this;
         }
         /**
-         * Property dbInstanceIds: ID list of an RDS instance.
+         * Property dbInstanceIds: The IDs of the ApsaraDB RDS instances that you want to associate with the scaling group.
          * <p>
-         * A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
+         * The value can be a JSON array that contains multiple ApsaraDB RDS instance
+         * IDs. Separate multiple IDs with commas (,).
+         * You can associate only a limited number of ApsaraDB RDS instances with a scaling
+         * group. Go to Quota Center to check the maximum number of ApsaraDB RDS instances
+         * that you can associate with a scaling group.
          * <p>
          * @return {@code this}
-         * @param dbInstanceIds Property dbInstanceIds: ID list of an RDS instance. This parameter is required.
+         * @param dbInstanceIds Property dbInstanceIds: The IDs of the ApsaraDB RDS instances that you want to associate with the scaling group. This parameter is required.
          */
         public Builder dbInstanceIds(final java.util.List<? extends java.lang.Object> dbInstanceIds) {
             this.props.dbInstanceIds(dbInstanceIds);
@@ -485,20 +505,36 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property healthCheckTypes: The list of health check type.
+         * Property healthCheckTypes: The health check method for the scaling group.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can specify multiple values for this parameter to enable multiple health
+         * check options. If the <code>HealthCheckType</code> parameter is set, this parameter is
+         * ignored.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param healthCheckTypes Property healthCheckTypes: The list of health check type. This parameter is required.
+         * @param healthCheckTypes Property healthCheckTypes: The health check method for the scaling group. This parameter is required.
          */
         public Builder healthCheckTypes(final com.aliyun.ros.cdk.core.IResolvable healthCheckTypes) {
             this.props.healthCheckTypes(healthCheckTypes);
             return this;
         }
         /**
-         * Property healthCheckTypes: The list of health check type.
+         * Property healthCheckTypes: The health check method for the scaling group.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can specify multiple values for this parameter to enable multiple health
+         * check options. If the <code>HealthCheckType</code> parameter is set, this parameter is
+         * ignored.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param healthCheckTypes Property healthCheckTypes: The list of health check type. This parameter is required.
+         * @param healthCheckTypes Property healthCheckTypes: The health check method for the scaling group. This parameter is required.
          */
         public Builder healthCheckTypes(final java.util.List<? extends java.lang.Object> healthCheckTypes) {
             this.props.healthCheckTypes(healthCheckTypes);
@@ -604,24 +640,32 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property loadBalancerIds: ID list of a Server Load Balancer instance.
+         * Property loadBalancerIds: The IDs of the CLB instances that you want to associate with the scaling group.
          * <p>
-         * A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
+         * The value can be a JSON array that contains multiple CLB instance IDs. Separate
+         * multiple IDs with commas (,).
+         * You can associate only a limited number of CLB instances with a scaling group. Go
+         * to Quota Center to check the maximum number of CLB instances that you can
+         * associate with a scaling group.
          * <p>
          * @return {@code this}
-         * @param loadBalancerIds Property loadBalancerIds: ID list of a Server Load Balancer instance. This parameter is required.
+         * @param loadBalancerIds Property loadBalancerIds: The IDs of the CLB instances that you want to associate with the scaling group. This parameter is required.
          */
         public Builder loadBalancerIds(final com.aliyun.ros.cdk.core.IResolvable loadBalancerIds) {
             this.props.loadBalancerIds(loadBalancerIds);
             return this;
         }
         /**
-         * Property loadBalancerIds: ID list of a Server Load Balancer instance.
+         * Property loadBalancerIds: The IDs of the CLB instances that you want to associate with the scaling group.
          * <p>
-         * A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
+         * The value can be a JSON array that contains multiple CLB instance IDs. Separate
+         * multiple IDs with commas (,).
+         * You can associate only a limited number of CLB instances with a scaling group. Go
+         * to Quota Center to check the maximum number of CLB instances that you can
+         * associate with a scaling group.
          * <p>
          * @return {@code this}
-         * @param loadBalancerIds Property loadBalancerIds: ID list of a Server Load Balancer instance. This parameter is required.
+         * @param loadBalancerIds Property loadBalancerIds: The IDs of the CLB instances that you want to associate with the scaling group. This parameter is required.
          */
         public Builder loadBalancerIds(final java.util.List<? extends java.lang.Object> loadBalancerIds) {
             this.props.loadBalancerIds(loadBalancerIds);
@@ -660,40 +704,72 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property multiAzPolicy: ECS scaling strategy for multi availability zone.
+         * Property multiAzPolicy: The scaling policy for the multi-zone scaling group that contains ECS instances.
          * <p>
-         * Allow value:
+         * Valid values:
          * <p>
-         * <ol>
-         * <li>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</li>
-         * <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</li>
-         * <li>COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
-         * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.</li>
-         * <li>COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.</li>
-         * </ol>
+         * <ul>
+         * <li>PRIORITY: Auto Scaling scales ECS instances based on the priority of the
+         * vSwitch that is specified by the VSwitchIds.N parameter. Auto Scaling
+         * preferentially scales instances in the zone where the vSwitch that has the
+         * highest priority resides. If the scaling fails, Auto Scaling scales instances in
+         * the zone where the vSwitch that has the next highest priority resides.</li>
+         * <li>COST_OPTIMIZED: Auto Scaling preferentially creates ECS instances whose vCPUs
+         * are provided at the lowest price and removes ECS instances whose vCPUs are
+         * provided at the highest price. If preemptible instance types are specified in the
+         * scaling configuration, Auto Scaling preferentially creates preemptible instances.
+         * You can use the CompensateWithOnDemand parameter to specify whether to
+         * automatically create pay-as-you-go instances when preemptible instances cannot be
+         * created due to insufficient resources.
+         * Note The COST_OPTIMIZED **setting takes effect only when you specify multiple
+         * instance types or when you specify at least one preemptible instance type.</li>
+         * <li>BALANCE: Auto Scaling evenly distributes ECS instances across zones that are
+         * specified for the scaling group. If ECS instances are unevenly distributed across
+         * zones due to insufficient resources, you can call the <a href="">RebalanceInstance</a>
+         * operation to evenly distribute the instances across the zones.</li>
+         * <li>COMPOSABLE: You can combine the preceding policies based on your business
+         * requirements.
+         * Default value: PRIORITY.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param multiAzPolicy Property multiAzPolicy: ECS scaling strategy for multi availability zone. This parameter is required.
+         * @param multiAzPolicy Property multiAzPolicy: The scaling policy for the multi-zone scaling group that contains ECS instances. This parameter is required.
          */
         public Builder multiAzPolicy(final java.lang.String multiAzPolicy) {
             this.props.multiAzPolicy(multiAzPolicy);
             return this;
         }
         /**
-         * Property multiAzPolicy: ECS scaling strategy for multi availability zone.
+         * Property multiAzPolicy: The scaling policy for the multi-zone scaling group that contains ECS instances.
          * <p>
-         * Allow value:
+         * Valid values:
          * <p>
-         * <ol>
-         * <li>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</li>
-         * <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</li>
-         * <li>COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
-         * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.</li>
-         * <li>COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.</li>
-         * </ol>
+         * <ul>
+         * <li>PRIORITY: Auto Scaling scales ECS instances based on the priority of the
+         * vSwitch that is specified by the VSwitchIds.N parameter. Auto Scaling
+         * preferentially scales instances in the zone where the vSwitch that has the
+         * highest priority resides. If the scaling fails, Auto Scaling scales instances in
+         * the zone where the vSwitch that has the next highest priority resides.</li>
+         * <li>COST_OPTIMIZED: Auto Scaling preferentially creates ECS instances whose vCPUs
+         * are provided at the lowest price and removes ECS instances whose vCPUs are
+         * provided at the highest price. If preemptible instance types are specified in the
+         * scaling configuration, Auto Scaling preferentially creates preemptible instances.
+         * You can use the CompensateWithOnDemand parameter to specify whether to
+         * automatically create pay-as-you-go instances when preemptible instances cannot be
+         * created due to insufficient resources.
+         * Note The COST_OPTIMIZED **setting takes effect only when you specify multiple
+         * instance types or when you specify at least one preemptible instance type.</li>
+         * <li>BALANCE: Auto Scaling evenly distributes ECS instances across zones that are
+         * specified for the scaling group. If ECS instances are unevenly distributed across
+         * zones due to insufficient resources, you can call the <a href="">RebalanceInstance</a>
+         * operation to evenly distribute the instances across the zones.</li>
+         * <li>COMPOSABLE: You can combine the preceding policies based on your business
+         * requirements.
+         * Default value: PRIORITY.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param multiAzPolicy Property multiAzPolicy: ECS scaling strategy for multi availability zone. This parameter is required.
+         * @param multiAzPolicy Property multiAzPolicy: The scaling policy for the multi-zone scaling group that contains ECS instances. This parameter is required.
          */
         public Builder multiAzPolicy(final com.aliyun.ros.cdk.core.IResolvable multiAzPolicy) {
             this.props.multiAzPolicy(multiAzPolicy);
@@ -865,26 +941,34 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese).
+         * Property scalingGroupName: The name of the scaling group.
          * <p>
-         * The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
-         * If this parameter is not specified, the default value is ScalingGroupId.
+         * The name of each scaling group must be unique in a
+         * region. The name must be 2 to 64 characters in length, and can contain letters,
+         * digits, underscores (_), hyphens (-), and periods (.). The name must start with a
+         * letter or a digit.
+         * If you do not specify this parameter, the value of the ScalingGroupId parameter
+         * is used.
          * <p>
          * @return {@code this}
-         * @param scalingGroupName Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). This parameter is required.
+         * @param scalingGroupName Property scalingGroupName: The name of the scaling group. This parameter is required.
          */
         public Builder scalingGroupName(final java.lang.String scalingGroupName) {
             this.props.scalingGroupName(scalingGroupName);
             return this;
         }
         /**
-         * Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese).
+         * Property scalingGroupName: The name of the scaling group.
          * <p>
-         * The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
-         * If this parameter is not specified, the default value is ScalingGroupId.
+         * The name of each scaling group must be unique in a
+         * region. The name must be 2 to 64 characters in length, and can contain letters,
+         * digits, underscores (_), hyphens (-), and periods (.). The name must start with a
+         * letter or a digit.
+         * If you do not specify this parameter, the value of the ScalingGroupId parameter
+         * is used.
          * <p>
          * @return {@code this}
-         * @param scalingGroupName Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). This parameter is required.
+         * @param scalingGroupName Property scalingGroupName: The name of the scaling group. This parameter is required.
          */
         public Builder scalingGroupName(final com.aliyun.ros.cdk.core.IResolvable scalingGroupName) {
             this.props.scalingGroupName(scalingGroupName);
@@ -1069,20 +1153,26 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
+         * Property vSwitchId: The ID of the vSwitch.
+         * <p>
+         * If you specify the VSwitchId parameter, the network type
+         * of the scaling group is VPC.
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
+         * Property vSwitchId: The ID of the vSwitch.
+         * <p>
+         * If you specify the VSwitchId parameter, the network type
+         * of the scaling group is VPC.
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
@@ -1090,20 +1180,50 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId. The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC. The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority. When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
+         * Property vSwitchIds: The IDs of vSwitches.
+         * <p>
+         * If you specify the VSwitchIds.N parameter, the VSwitchId
+         * parameter is ignored. If you specify the VSwitchIds.N parameter, the network type
+         * of the scaling group is VPC.
+         * If you specify multiple vSwitches, take note of the following items:
+         * <p>
+         * <ul>
+         * <li>The vSwitches must belong to the same VPC.</li>
+         * <li>The vSwitches can belong to different zones.</li>
+         * <li>The vSwitches are sorted in ascending order of priority. The first vSwitch
+         * that is specified by the VSwitchIds.N parameter has the highest priority. If Auto
+         * Scaling fails to create ECS instances in the zone where the vSwitch that has the
+         * highest priority resides, Auto Scaling creates ECS instances in the zone where
+         * the vSwitch that has the next highest priority resides.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param vSwitchIds Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId. The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC. The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority. When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically. This parameter is required.
+         * @param vSwitchIds Property vSwitchIds: The IDs of vSwitches. This parameter is required.
          */
         public Builder vSwitchIds(final com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
             this.props.vSwitchIds(vSwitchIds);
             return this;
         }
         /**
-         * Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId. The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC. The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority. When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
+         * Property vSwitchIds: The IDs of vSwitches.
+         * <p>
+         * If you specify the VSwitchIds.N parameter, the VSwitchId
+         * parameter is ignored. If you specify the VSwitchIds.N parameter, the network type
+         * of the scaling group is VPC.
+         * If you specify multiple vSwitches, take note of the following items:
+         * <p>
+         * <ul>
+         * <li>The vSwitches must belong to the same VPC.</li>
+         * <li>The vSwitches can belong to different zones.</li>
+         * <li>The vSwitches are sorted in ascending order of priority. The first vSwitch
+         * that is specified by the VSwitchIds.N parameter has the highest priority. If Auto
+         * Scaling fails to create ECS instances in the zone where the vSwitch that has the
+         * highest priority resides, Auto Scaling creates ECS instances in the zone where
+         * the vSwitch that has the next highest priority resides.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param vSwitchIds Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId. The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC. The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority. When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically. This parameter is required.
+         * @param vSwitchIds Property vSwitchIds: The IDs of vSwitches. This parameter is required.
          */
         public Builder vSwitchIds(final java.util.List<? extends java.lang.Object> vSwitchIds) {
             this.props.vSwitchIds(vSwitchIds);

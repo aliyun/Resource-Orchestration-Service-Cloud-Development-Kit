@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.bpstudio.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::BPStudio::Template</code>, which is used to query the information about a template, such as the architecture diagram.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::BPStudio::Template</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:37:10.218Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:20:19.457Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bpstudio.$Module.class, fqn = "@alicloud/ros-cdk-bpstudio.datasource.Template")
 public class Template extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.bpstudio.datasource.ITemplate {
 

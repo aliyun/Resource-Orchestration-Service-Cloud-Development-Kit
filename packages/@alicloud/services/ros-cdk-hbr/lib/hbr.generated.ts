@@ -69,7 +69,7 @@ function rosBackupClientsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::BackupClients`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::BackupClients`, which is used to install backup clients on Elastic Compute Service (ECS) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `BackupClients` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-backupclients
  */
@@ -190,12 +190,14 @@ function rosBackupClientsTagsPropertyToRosTemplate(properties: any): any {
 export interface RosCrossAccountProps {
 
     /**
-     * @Property alias: The alias of the cross-account authorization.
+     * @Property alias: The alias. The maximum length is 32 characters. This parameter is not required
+     * for cross-account backups that are configured based on a resource directory.
      */
     readonly alias?: string | ros.IResolvable;
 
     /**
-     * @Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.
+     * @Property crossAccountRoleName: The name of the RAM role for the account to back up. This parameter is used when
+     * you configure a cross-account backup by assuming a RAM role.
      */
     readonly crossAccountRoleName?: string | ros.IResolvable;
 
@@ -269,12 +271,14 @@ export class RosCrossAccount extends ros.RosResource {
 
 
     /**
-     * @Property alias: The alias of the cross-account authorization.
+     * @Property alias: The alias. The maximum length is 32 characters. This parameter is not required
+     * for cross-account backups that are configured based on a resource directory.
      */
     public alias: string | ros.IResolvable | undefined;
 
     /**
-     * @Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.
+     * @Property crossAccountRoleName: The name of the RAM role for the account to back up. This parameter is used when
+     * you configure a cross-account backup by assuming a RAM role.
      */
     public crossAccountRoleName: string | ros.IResolvable | undefined;
 
@@ -709,7 +713,7 @@ function rosDbPlanPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbPlan`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbPlan`Creates a database backup plan.
  * @Note This class does not contain additional functions, so it is recommended to use the `DbPlan` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbplan
  */
@@ -1085,7 +1089,7 @@ function rosDbVaultPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbVault`, which is used to create a mirror vault.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbVault`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DbVault` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbvault
  */
@@ -1259,7 +1263,15 @@ export interface RosEcsBackupPlanProps {
     readonly retention: number | ros.IResolvable;
 
     /**
-     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     * @Property schedule: The backup policy. The format is `I|{startTime}|{interval}`. This specifies that
+     * a backup job runs at an interval of `{interval}`, starting from `{startTime}`.
+     * Overdue backup jobs are not retried. If the previous backup job is not complete,
+     * the next backup job is not triggered. For example, `I|1631685600|P1D` indicates
+     * that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+     * - startTime: The start time for the backup, specified as a UNIX timestamp in
+     * seconds.
+     * - interval: The backup interval, specified in the ISO 8601 duration format. For
+     * example, `PT1H` represents one hour and `P1D` represents one day.
      */
     readonly schedule: string | ros.IResolvable;
 
@@ -1474,7 +1486,15 @@ export class RosEcsBackupPlan extends ros.RosResource {
     public retention: number | ros.IResolvable;
 
     /**
-     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     * @Property schedule: The backup policy. The format is `I|{startTime}|{interval}`. This specifies that
+     * a backup job runs at an interval of `{interval}`, starting from `{startTime}`.
+     * Overdue backup jobs are not retried. If the previous backup job is not complete,
+     * the next backup job is not triggered. For example, `I|1631685600|P1D` indicates
+     * that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+     * - startTime: The start time for the backup, specified as a UNIX timestamp in
+     * seconds.
+     * - interval: The backup interval, specified in the ISO 8601 duration format. For
+     * example, `PT1H` represents one hour and `P1D` represents one day.
      */
     public schedule: string | ros.IResolvable;
 
@@ -1619,7 +1639,15 @@ export interface RosNasBackupPlanProps {
     readonly retention: number | ros.IResolvable;
 
     /**
-     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     * @Property schedule: The backup policy. The format is `I|{startTime}|{interval}`. This specifies that
+     * a backup job runs at an interval of `{interval}`, starting from `{startTime}`.
+     * Overdue backup jobs are not retried. If the previous backup job is not complete,
+     * the next backup job is not triggered. For example, `I|1631685600|P1D` indicates
+     * that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+     * - startTime: The start time for the backup, specified as a UNIX timestamp in
+     * seconds.
+     * - interval: The backup interval, specified in the ISO 8601 duration format. For
+     * example, `PT1H` represents one hour and `P1D` represents one day.
      */
     readonly schedule: string | ros.IResolvable;
 
@@ -1793,7 +1821,15 @@ export class RosNasBackupPlan extends ros.RosResource {
     public retention: number | ros.IResolvable;
 
     /**
-     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     * @Property schedule: The backup policy. The format is `I|{startTime}|{interval}`. This specifies that
+     * a backup job runs at an interval of `{interval}`, starting from `{startTime}`.
+     * Overdue backup jobs are not retried. If the previous backup job is not complete,
+     * the next backup job is not triggered. For example, `I|1631685600|P1D` indicates
+     * that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+     * - startTime: The start time for the backup, specified as a UNIX timestamp in
+     * seconds.
+     * - interval: The backup interval, specified in the ISO 8601 duration format. For
+     * example, `PT1H` represents one hour and `P1D` represents one day.
      */
     public schedule: string | ros.IResolvable;
 
@@ -1900,7 +1936,15 @@ export interface RosOssBackupPlanProps {
     readonly retention: number | ros.IResolvable;
 
     /**
-     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     * @Property schedule: The backup policy. The format is `I|{startTime}|{interval}`. This specifies that
+     * a backup job runs at an interval of `{interval}`, starting from `{startTime}`.
+     * Overdue backup jobs are not retried. If the previous backup job is not complete,
+     * the next backup job is not triggered. For example, `I|1631685600|P1D` indicates
+     * that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+     * - startTime: The start time for the backup, specified as a UNIX timestamp in
+     * seconds.
+     * - interval: The backup interval, specified in the ISO 8601 duration format. For
+     * example, `PT1H` represents one hour and `P1D` represents one day.
      */
     readonly schedule: string | ros.IResolvable;
 
@@ -2059,7 +2103,15 @@ export class RosOssBackupPlan extends ros.RosResource {
     public retention: number | ros.IResolvable;
 
     /**
-     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     * @Property schedule: The backup policy. The format is `I|{startTime}|{interval}`. This specifies that
+     * a backup job runs at an interval of `{interval}`, starting from `{startTime}`.
+     * Overdue backup jobs are not retried. If the previous backup job is not complete,
+     * the next backup job is not triggered. For example, `I|1631685600|P1D` indicates
+     * that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+     * - startTime: The start time for the backup, specified as a UNIX timestamp in
+     * seconds.
+     * - interval: The backup interval, specified in the ISO 8601 duration format. For
+     * example, `PT1H` represents one hour and `P1D` represents one day.
      */
     public schedule: string | ros.IResolvable;
 
@@ -2159,7 +2211,15 @@ export interface RosOtsBackupPlanProps {
     readonly retention: number | ros.IResolvable;
 
     /**
-     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     * @Property schedule: The backup policy. The format is `I|{startTime}|{interval}`. This specifies that
+     * a backup job runs at an interval of `{interval}`, starting from `{startTime}`.
+     * Overdue backup jobs are not retried. If the previous backup job is not complete,
+     * the next backup job is not triggered. For example, `I|1631685600|P1D` indicates
+     * that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+     * - startTime: The start time for the backup, specified as a UNIX timestamp in
+     * seconds.
+     * - interval: The backup interval, specified in the ISO 8601 duration format. For
+     * example, `PT1H` represents one hour and `P1D` represents one day.
      */
     readonly schedule: string | ros.IResolvable;
 
@@ -2331,7 +2391,15 @@ export class RosOtsBackupPlan extends ros.RosResource {
     public retention: number | ros.IResolvable;
 
     /**
-     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     * @Property schedule: The backup policy. The format is `I|{startTime}|{interval}`. This specifies that
+     * a backup job runs at an interval of `{interval}`, starting from `{startTime}`.
+     * Overdue backup jobs are not retried. If the previous backup job is not complete,
+     * the next backup job is not triggered. For example, `I|1631685600|P1D` indicates
+     * that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+     * - startTime: The start time for the backup, specified as a UNIX timestamp in
+     * seconds.
+     * - interval: The backup interval, specified in the ISO 8601 duration format. For
+     * example, `PT1H` represents one hour and `P1D` represents one day.
      */
     public schedule: string | ros.IResolvable;
 
@@ -2552,7 +2620,16 @@ export interface RosPolicyProps {
     readonly policyName: string | ros.IResolvable;
 
     /**
-     * @Property policyType: The type of the policy.
+     * @Property policyType: The type of the backup policy. Valid values:
+     * - STANDARD: A standard backup policy. It supports data sources other than ECS
+     * instance backup.
+     * - UDM_ECS_ONLY: A backup policy that supports only ECS instance backups.
+     * If you do not specify this parameter, Cloud Backup automatically sets the policy
+     * type based on whether a backup vault is specified in the policy rules:
+     * - If a backup vault is specified in the rules, the policy type is set to
+     * STANDARD.
+     * - If no backup vault is specified in the rules, the policy type is set to
+     * UDM_ECS_ONLY.
      */
     readonly policyType: string | ros.IResolvable;
 
@@ -2646,7 +2723,16 @@ export class RosPolicy extends ros.RosResource {
     public policyName: string | ros.IResolvable;
 
     /**
-     * @Property policyType: The type of the policy.
+     * @Property policyType: The type of the backup policy. Valid values:
+     * - STANDARD: A standard backup policy. It supports data sources other than ECS
+     * instance backup.
+     * - UDM_ECS_ONLY: A backup policy that supports only ECS instance backups.
+     * If you do not specify this parameter, Cloud Backup automatically sets the policy
+     * type based on whether a backup vault is specified in the policy rules:
+     * - If a backup vault is specified in the rules, the policy type is set to
+     * STANDARD.
+     * - If no backup vault is specified in the rules, the policy type is set to
+     * UDM_ECS_ONLY.
      */
     public policyType: string | ros.IResolvable;
 
@@ -3117,22 +3203,35 @@ export interface RosReplicationVaultProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property encryptType: The encryption type of the vault.
+     * @Property encryptType: The method that is used to encrypt the source data. This parameter is valid only
+     * if you set the VaultType parameter to STANDARD or OTS_BACKUP. Valid values:
+     * *   HBR_PRIVATE: The source data is encrypted by using the built-in encryption
+     * method of Hybrid Backup Recovery (HBR).
+     * *   KMS: The source data is encrypted by using Key Management Service (KMS).
      */
     readonly encryptType?: string | ros.IResolvable;
 
     /**
-     * @Property kmsKeyId: The KMS key ID used for encryption.
+     * @Property kmsKeyId: The customer master key (CMK) created in KMS or the alias of the key. This
+     * parameter is required only if you set the EncryptType parameter to KMS.
      */
     readonly kmsKeyId?: string | ros.IResolvable;
 
     /**
-     * @Property redundancyType: The redundancy type of the vault.
+     * @Property redundancyType: The data redundancy type of the backup vault. Valid values:
+     * *   LRS: standard locally redundant storage (LRS). Cloud Backup stores the copies
+     * of each object on multiple devices of different facilities in the same zone. This
+     * way, Cloud Backup ensures data durability and availability even if hardware
+     * failures occur.
+     * *   ZRS: standard zone-redundant storage (ZRS). Cloud Backup uses the multi-zone
+     * mechanism to distribute data across three zones within the same region. If a zone
+     * fails, the data that is stored in the other two zones is still accessible.
      */
     readonly redundancyType?: string | ros.IResolvable;
 
     /**
-     * @Property vaultStorageClass: The storage class of the vault.
+     * @Property vaultStorageClass: The storage type of the backup vault. Valid value: STANDARD, which indicates
+     * standard storage.
      */
     readonly vaultStorageClass?: string | ros.IResolvable;
 }
@@ -3258,22 +3357,35 @@ export class RosReplicationVault extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property encryptType: The encryption type of the vault.
+     * @Property encryptType: The method that is used to encrypt the source data. This parameter is valid only
+     * if you set the VaultType parameter to STANDARD or OTS_BACKUP. Valid values:
+     * *   HBR_PRIVATE: The source data is encrypted by using the built-in encryption
+     * method of Hybrid Backup Recovery (HBR).
+     * *   KMS: The source data is encrypted by using Key Management Service (KMS).
      */
     public encryptType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property kmsKeyId: The KMS key ID used for encryption.
+     * @Property kmsKeyId: The customer master key (CMK) created in KMS or the alias of the key. This
+     * parameter is required only if you set the EncryptType parameter to KMS.
      */
     public kmsKeyId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property redundancyType: The redundancy type of the vault.
+     * @Property redundancyType: The data redundancy type of the backup vault. Valid values:
+     * *   LRS: standard locally redundant storage (LRS). Cloud Backup stores the copies
+     * of each object on multiple devices of different facilities in the same zone. This
+     * way, Cloud Backup ensures data durability and availability even if hardware
+     * failures occur.
+     * *   ZRS: standard zone-redundant storage (ZRS). Cloud Backup uses the multi-zone
+     * mechanism to distribute data across three zones within the same region. If a zone
+     * fails, the data that is stored in the other two zones is still accessible.
      */
     public redundancyType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vaultStorageClass: The storage class of the vault.
+     * @Property vaultStorageClass: The storage type of the backup vault. Valid value: STANDARD, which indicates
+     * standard storage.
      */
     public vaultStorageClass: string | ros.IResolvable | undefined;
 
@@ -3357,7 +3469,8 @@ export interface RosRestoreJobProps {
     readonly targetInstanceId: string | ros.IResolvable;
 
     /**
-     * @Property targetPath: Target path. For instance, "\/".
+     * @Property targetPath: The destination path for the restore. This parameter is valid only when
+     * RestoreType is set to ECS_FILE.
      */
     readonly targetPath: string | ros.IResolvable;
 
@@ -3437,7 +3550,7 @@ function rosRestoreJobPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::RestoreJob`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::RestoreJob`, which is used to create a restore job.
  * @Note This class does not contain additional functions, so it is recommended to use the `RestoreJob` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
  */
@@ -3511,7 +3624,8 @@ export class RosRestoreJob extends ros.RosResource {
     public targetInstanceId: string | ros.IResolvable;
 
     /**
-     * @Property targetPath: Target path. For instance, "\/".
+     * @Property targetPath: The destination path for the restore. This parameter is valid only when
+     * RestoreType is set to ECS_FILE.
      */
     public targetPath: string | ros.IResolvable;
 

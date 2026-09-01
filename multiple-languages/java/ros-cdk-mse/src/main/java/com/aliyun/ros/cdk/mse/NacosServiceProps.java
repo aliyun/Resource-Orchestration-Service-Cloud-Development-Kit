@@ -5,13 +5,20 @@ package com.aliyun.ros.cdk.mse;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosservice
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.353Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:13:41.718Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.NacosServiceProps")
 @software.amazon.jsii.Jsii.Proxy(NacosServiceProps.Jsii$Proxy.class)
 public interface NacosServiceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property instanceId: The ID of the instance.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This operation contains both the InstanceId and ClusterId parameters. You must
+     * specify one of them.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
@@ -72,6 +79,12 @@ public interface NacosServiceProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Sets the value of {@link NacosServiceProps#getInstanceId}
          * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
+         *                   <blockquote>
+         *                   <p>
+         *                   This operation contains both the InstanceId and ClusterId parameters. You must
+         *                   specify one of them.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder instanceId(java.lang.String instanceId) {
@@ -82,6 +95,12 @@ public interface NacosServiceProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Sets the value of {@link NacosServiceProps#getInstanceId}
          * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
+         *                   <blockquote>
+         *                   <p>
+         *                   This operation contains both the InstanceId and ClusterId parameters. You must
+         *                   specify one of them.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {

@@ -30,19 +30,22 @@ export interface DeploymentSetProps {
     readonly groupCount?: number | ros.IResolvable;
 
     /**
-     * Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set. Valid values:
-     * CancelMembershipAndStart: restarts the instances immediately after they are shut down
-     * and migrated to other deployment sets. This is the default value.
-     * KeepStopped: keeps the instances shut down and restarts them after the deployment
-     * set is replenished.
+     * Property onUnableToRedeployFailedInstance: The policy to use when an instance fails over but cannot be redeployed due to
+     * insufficient resources. Valid values:
+     * - CancelMembershipAndStart: Removes the instance from the deployment set and
+     * starts the instance immediately after failover.
+     * - KeepStopped: Keeps the instance's deployment set membership and leaves it in
+     * the Stopped state.
+     * Default value: CancelMembershipAndStart.
      */
     readonly onUnableToRedeployFailedInstance?: string | ros.IResolvable;
 
     /**
-     * Property strategy: Deployment strategy. Ranges:
-     * Availability: High availability strategy.
-     * AvailabilityGroup: Deployment group high availability strategy.
-     * LowLatency: Network low latency strategy.
+     * Property strategy: The deployment strategy. Valid values:
+     * - Availability: A high availability strategy.
+     * - AvailabilityGroup: A high availability strategy for a deployment set group.
+     * - LowLatency: A low-latency strategy.
+     * Default value: Availability.
      */
     readonly strategy?: string | ros.IResolvable;
 }
@@ -59,7 +62,7 @@ export interface IDeploymentSet extends ros.IResource {
     readonly attrDeploymentSetId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DeploymentSet`, which is used to create a deployment set in a region.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DeploymentSet`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeploymentSet`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-deploymentset
  */

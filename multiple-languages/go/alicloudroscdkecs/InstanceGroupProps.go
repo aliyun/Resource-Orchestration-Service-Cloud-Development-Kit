@@ -40,7 +40,12 @@ type InstanceGroupProps struct {
 	// - **Standard**: the standard mode.
 	// - **Unlimited**: the unlimited mode.
 	CreditSpecification interface{} `field:"optional" json:"creditSpecification" yaml:"creditSpecification"`
-	// Property dedicatedHostId: which dedicated host will be deployed.
+	// Property dedicatedHostId: The ID of the dedicated host.
+	//
+	// You can call the [DescribeDedicatedHosts]() operation to query the list of
+	// dedicated host IDs.
+	// > Spot instances cannot be created on dedicated hosts. If you specify
+	// DedicatedHostId, SpotStrategy and SpotPriceLimit are automatically ignored.
 	DedicatedHostId interface{} `field:"optional" json:"dedicatedHostId" yaml:"dedicatedHostId"`
 	// Property deletionForce: Whether force delete the instance.
 	//
@@ -114,7 +119,17 @@ type InstanceGroupProps struct {
 	// - **ImageFamily** must be empty if **ImageId** is specified.
 	// - **ImageFamily** can be specified if **ImageId** is not specified.
 	ImageFamily interface{} `field:"optional" json:"imageFamily" yaml:"imageFamily"`
-	// Property imageId: Image ID to create ecs instance.
+	// Property imageId: The image ID.
+	//
+	// <details>
+	// <summary>
+	// Naming convention for image IDs
+	// <\/summary>
+	// - Public images: Named based on the operating system version, architecture,
+	// language, and published date.
+	// - Custom images, shared images, cloud marketplace images, and community
+	// images: Start with the letter `m`.
+	// <\/details>.
 	ImageId interface{} `field:"optional" json:"imageId" yaml:"imageId"`
 	// Property imageOptions: Image options.
 	ImageOptions interface{} `field:"optional" json:"imageOptions" yaml:"imageOptions"`
@@ -126,13 +141,18 @@ type InstanceGroupProps struct {
 	InstanceName interface{} `field:"optional" json:"instanceName" yaml:"instanceName"`
 	// Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByTraffic.
 	InternetChargeType interface{} `field:"optional" json:"internetChargeType" yaml:"internetChargeType"`
-	// Property internetMaxBandwidthOut: Set internet output bandwidth of instance.
+	// Property internetMaxBandwidthOut: The maximum outbound public bandwidth.
 	//
-	// Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
+	// Unit: Mbit\/s. Valid values: 0 to 100.
+	// Default value: 0.
 	InternetMaxBandwidthOut interface{} `field:"optional" json:"internetMaxBandwidthOut" yaml:"internetMaxBandwidthOut"`
-	// Property ioOptimized: The 'optimized' instance can provide better IO performance.
+	// Property ioOptimized: Specifies whether the instance is I\/O optimized.
 	//
-	// Support 'none' and 'optimized' only, default is 'optimized'.
+	// For instances of [retired
+	// instance types](), the default value is none. For instances of other instance
+	// types, the default value is optimized. Valid values:
+	// - none: The instance is not I\/O optimized.
+	// - optimized: The instance is I\/O optimized.
 	IoOptimized interface{} `field:"optional" json:"ioOptimized" yaml:"ioOptimized"`
 	// Property ipv6AddressCount: Specifies the number of randomly generated IPv6 addresses for the elastic NIC.
 	//
@@ -202,7 +222,13 @@ type InstanceGroupProps struct {
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property schedulerOptions: undefined.
 	SchedulerOptions interface{} `field:"optional" json:"schedulerOptions" yaml:"schedulerOptions"`
-	// Property securityEnhancementStrategy:.
+	// Property securityEnhancementStrategy: Specifies whether to enable security hardening.
+	//
+	// Valid values:
+	// - Active: enables security hardening. This value is applicable only to public
+	// images.
+	// - Deactive: does not enable security hardening. This value is applicable to all
+	// images.
 	SecurityEnhancementStrategy interface{} `field:"optional" json:"securityEnhancementStrategy" yaml:"securityEnhancementStrategy"`
 	// Property securityGroupId: Security group to create ecs instance.
 	//
@@ -214,16 +240,30 @@ type InstanceGroupProps struct {
 	SecurityGroupIds interface{} `field:"optional" json:"securityGroupIds" yaml:"securityGroupIds"`
 	// Property securityOptions: Security options.
 	SecurityOptions interface{} `field:"optional" json:"securityOptions" yaml:"securityOptions"`
-	// Property spotDuration: The protection period of the preemptible instance.
+	// Property spotDuration: The protection period of the spot instance.
 	//
-	// Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
-	// Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
-	// If this parameter is set to 0, no protection period is configured for the preemptible instance.
+	// Unit: hours. Valid values:
+	// - 1: After a spot instance is created, the system ensures that the instance is not
+	// automatically released within 1 hour. After the 1-hour protection period ends, the system
+	// compares the bid price with the market price and checks the resource inventory to
+	// determine whether to retain or release the instance.
+	// - 0: After a spot instance is created, the system does not ensure that the instance
+	// can run for one hour. The system compares the biding price with the market prices and
+	// checks the resource inventory to determine whether to retain or release the instance.
 	// Default value: 1.
+	// >
+	// - You can set this parameter only to 0 or 1.
+	// - The spot instance is billed by second. Specify an appropriate protection period.
+	// - The system sends an ECS system event to notify you 5 minutes before the instance is
+	// released.
 	SpotDuration interface{} `field:"optional" json:"spotDuration" yaml:"spotDuration"`
-	// Property spotInterruptionBehavior: The interruption mode of the preemptible instance.
+	// Property spotInterruptionBehavior: The interruption mode of the spot instance.
 	//
-	// Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+	// Valid values:
+	// - Terminate: The instance is released.
+	// - Stop: The instance is stopped in economical mode.
+	// For information about the economical mode, see [Economical mode]().
+	// Default value: Terminate.
 	SpotInterruptionBehavior interface{} `field:"optional" json:"spotInterruptionBehavior" yaml:"spotInterruptionBehavior"`
 	// Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid.
 	//
@@ -237,7 +277,8 @@ type InstanceGroupProps struct {
 	StorageSetId interface{} `field:"optional" json:"storageSetId" yaml:"storageSetId"`
 	// Property storageSetPartitionNumber: The maximum number of partitions in the storage set.
 	//
-	// The value must be greater than or equal to 2.
+	// Valid values: integers
+	// greater than or equal to 2.
 	StorageSetPartitionNumber interface{} `field:"optional" json:"storageSetPartitionNumber" yaml:"storageSetPartitionNumber"`
 	// Property subscriptionDeletionForce: This option is only applicable to subscription instances.
 	//
@@ -312,13 +353,33 @@ type InstanceGroupProps struct {
 	//
 	// System configurations for Windows: NTP and KMS. System configurations for Linux: NTP and YUM.
 	UseAdditionalService interface{} `field:"optional" json:"useAdditionalService" yaml:"useAdditionalService"`
-	// Property userData: User data to pass to instance.
+	// Property userData: The user data of the instance.
 	//
-	// [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+	// You must specify Base64-encoded data. The instance
+	// user data cannot exceed 32 KB in size before Base64 encoding.
+	// For information about the limits, formats, and running frequencies of instance
+	// user data, see [Instance user data]().
+	// > To ensure security, we recommend that you do not use plaintext to pass in
+	// confidential information, such as passwords or private keys, as user data. If you
+	// need to pass in confidential information, we recommend that you encrypt and
+	// encode the information in Base64 and then decode and decrypt the information in
+	// the same manner in the instance.
 	UserData interface{} `field:"optional" json:"userData" yaml:"userData"`
 	// Property vpcId: The VPC id to create ecs instance.
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
-	// Property vSwitchId: The vSwitch Id to create ecs instance.
+	// Property vSwitchId: The ID of the vSwitch to which to connect to the instance.
+	//
+	// You must set this
+	// parameter when you create an instance of the VPC type. The specified vSwitch and
+	// security group must belong to the same VPC. You can call the
+	// [DescribeVSwitches]() operation to query available vSwitches.
+	// Take note of the following items:
+	// - If you specify the `VSwitchId` parameter, the zone specified by the `ZoneId`
+	// parameter must be the zone where the specified vSwitch is located. You can also
+	// leave the `ZoneId` parameter empty. Then, the system selects the zone where the
+	// specified vSwitch resides.
+	// - If `NetworkInterface.N.InstanceType` is set to `Primary`, you cannot specify
+	// `VSwitchId` but can specify `NetworkInterface.N.VSwitchId`.
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`
 	// Property zoneId: The ID of the zone to which the instance belongs.
 	//

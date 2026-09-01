@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cddc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-mybase
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:41:20.832Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:26:11.453Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cddc.$Module.class, fqn = "@alicloud/ros-cdk-cddc.MyBaseProps")
 @software.amazon.jsii.Jsii.Proxy(MyBaseProps.Jsii$Proxy.class)
 public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,14 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getEcsClassList();
 
     /**
-     * Property engine: Database type.
+     * Property engine: The database type.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>mysql</li>
+     * <li>tair</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEngine();
 
@@ -31,7 +38,10 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getPeriod();
 
     /**
-     * Property securityGroupId: The ID of the security group.
+     * Property securityGroupId: The security group ID.
+     * <p>
+     * Specify multiple security groups, separated by commas (,).
+     * Format: sg-t4neld965n89ocvt,sg-t4neld965n89ocvu
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSecurityGroupId();
 
@@ -79,50 +89,80 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property ecsHostName: The host name of the ECS instance.
+     * Property ecsHostName: For Windows operating systems: The host name must be 2 to 15 characters in length and can contain uppercase letters, lowercase letters, and digits.
+     * <p>
+     * It cannot
+     * consist of only digits.
+     * For other operating systems (such as Linux): The host name must be 2 to 64
+     * characters in length and can contain periods (.) to separate multiple segments.
+     * Each segment can contain uppercase letters, lowercase letters, and digits.
+     * Consecutive periods (.) are not allowed. The host name cannot start or end with a
+     * period (.).
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEcsHostName() {
         return null;
     }
 
     /**
-     * Property ecsInstanceName: The name of the ECS instance.
+     * Property ecsInstanceName: The instance name.
+     * <p>
+     * It must be 2 to 128 characters in length. It must start with
+     * an uppercase letter, a lowercase letter, or a Chinese character. It cannot start
+     * with http:// or https://. It can contain Chinese characters, English letters,
+     * digits, colons (:), underscores (_), periods (.), or hyphens (-). The default
+     * value is the instance ID.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEcsInstanceName() {
         return null;
     }
 
     /**
-     * Property ecsUniqueSuffix: The unique suffix of the ECS instance.
+     * Property ecsUniqueSuffix: Automatically add a sequential suffix to the HostName and InstanceName when you create multiple instances.
+     * <p>
+     * The sequential suffix starts from 001 and increments
+     * up to 999. Valid values:
+     * <p>
+     * <ul>
+     * <li>true: Add.</li>
+     * <li>false (default): Do not add.
+     * If HostName or InstanceName is set in a specific sorting format, and the
+     * name_suffix is not set (i.e., the naming format is
+     * name_prefix[begin_number,bits]), UniqueSuffix does not take effect. The names
+     * are sorted only in the specified order.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEcsUniqueSuffix() {
         return null;
     }
 
     /**
-     * Property imageId: The image ID.
+     * Property imageId: The custom image ID.
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you want to use the default image, do not specify this parameter.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
         return null;
     }
 
     /**
-     * Property internetChargeType: Network billing type.
+     * Property internetChargeType: The network billing method.
      * <p>
-     * Value range:
-     * PayByBandwidth: billed based on fixed bandwidth.
-     * PayByTraffic: Pay by traffic usage.
+     * Valid values include the following:
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
-     * Property internetMaxBandwidthOut: Set internet output bandwidth of instance.
+     * Property internetMaxBandwidthOut: The maximum outbound public bandwidth, in Mbit/s.
      * <p>
-     * Unit is Mbps(Mega bit per second).
-     * Range is [0,200]. Default is 1.
-     * While the property is not 0, public ip will be assigned for instance.
+     * Valid values: 0 to 100.
+     * Default value: 0. If you set this parameter to a value greater than 0, a public
+     * IP address is automatically created.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
         return null;
@@ -136,16 +176,46 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property osPassword: Password of created ecs instance.
+     * Property osPassword: The logon password for the host.
      * <p>
-     * Must contain at least 3 types of special character, lower character, upper character, number.
+     * You can set it later. The password must meet the
+     * following requirements:
+     * <p>
+     * <ul>
+     * <li>It must be 8 to 30 characters in length.</li>
+     * <li>It must contain at least three of the following character types: uppercase
+     * letters, lowercase letters, digits, and special characters.</li>
+     * <li>Special characters: <code>()\</code>~!&#64;#$%^&amp;*-_+=|{}[]:;'&lt;&gt;,.?/`</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>If you want to set the logon password later, leave this parameter empty.</li>
+     * <li>If you want to set the logon password, use HTTPS to send requests to prevent
+     * password leakage.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOsPassword() {
         return null;
     }
 
     /**
-     * Property passwordInherit: Whether to inherit the password from the parent cluster.
+     * Property passwordInherit: Use the default password of the image.
+     * <p>
+     * <ul>
+     * <li>false (default): Do not use.</li>
+     * <li>true: Use.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you use the default password of the image, do not specify the OSPassword
+     * parameter.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPasswordInherit() {
         return null;
@@ -173,7 +243,7 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property userDataInBase64: The user data of the ECS instance.
+     * Property userDataInBase64: Indicates whether the custom data is Base64-encoded.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUserDataInBase64() {
         return null;
@@ -237,7 +307,13 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getEngine}
-         * @param engine Property engine: Database type. This parameter is required.
+         * @param engine Property engine: The database type. This parameter is required.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>mysql</li>
+         *               <li>tair</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder engine(java.lang.String engine) {
@@ -247,7 +323,13 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getEngine}
-         * @param engine Property engine: Database type. This parameter is required.
+         * @param engine Property engine: The database type. This parameter is required.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>mysql</li>
+         *               <li>tair</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder engine(com.aliyun.ros.cdk.core.IResolvable engine) {
@@ -297,7 +379,9 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getSecurityGroupId}
-         * @param securityGroupId Property securityGroupId: The ID of the security group. This parameter is required.
+         * @param securityGroupId Property securityGroupId: The security group ID. This parameter is required.
+         *                        Specify multiple security groups, separated by commas (,).
+         *                        Format: sg-t4neld965n89ocvt,sg-t4neld965n89ocvu
          * @return {@code this}
          */
         public Builder securityGroupId(java.lang.String securityGroupId) {
@@ -307,7 +391,9 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getSecurityGroupId}
-         * @param securityGroupId Property securityGroupId: The ID of the security group. This parameter is required.
+         * @param securityGroupId Property securityGroupId: The security group ID. This parameter is required.
+         *                        Specify multiple security groups, separated by commas (,).
+         *                        Format: sg-t4neld965n89ocvt,sg-t4neld965n89ocvu
          * @return {@code this}
          */
         public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
@@ -457,7 +543,14 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getEcsHostName}
-         * @param ecsHostName Property ecsHostName: The host name of the ECS instance.
+         * @param ecsHostName Property ecsHostName: For Windows operating systems: The host name must be 2 to 15 characters in length and can contain uppercase letters, lowercase letters, and digits.
+         *                    It cannot
+         *                    consist of only digits.
+         *                    For other operating systems (such as Linux): The host name must be 2 to 64
+         *                    characters in length and can contain periods (.) to separate multiple segments.
+         *                    Each segment can contain uppercase letters, lowercase letters, and digits.
+         *                    Consecutive periods (.) are not allowed. The host name cannot start or end with a
+         *                    period (.).
          * @return {@code this}
          */
         public Builder ecsHostName(java.lang.String ecsHostName) {
@@ -467,7 +560,14 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getEcsHostName}
-         * @param ecsHostName Property ecsHostName: The host name of the ECS instance.
+         * @param ecsHostName Property ecsHostName: For Windows operating systems: The host name must be 2 to 15 characters in length and can contain uppercase letters, lowercase letters, and digits.
+         *                    It cannot
+         *                    consist of only digits.
+         *                    For other operating systems (such as Linux): The host name must be 2 to 64
+         *                    characters in length and can contain periods (.) to separate multiple segments.
+         *                    Each segment can contain uppercase letters, lowercase letters, and digits.
+         *                    Consecutive periods (.) are not allowed. The host name cannot start or end with a
+         *                    period (.).
          * @return {@code this}
          */
         public Builder ecsHostName(com.aliyun.ros.cdk.core.IResolvable ecsHostName) {
@@ -477,7 +577,12 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getEcsInstanceName}
-         * @param ecsInstanceName Property ecsInstanceName: The name of the ECS instance.
+         * @param ecsInstanceName Property ecsInstanceName: The instance name.
+         *                        It must be 2 to 128 characters in length. It must start with
+         *                        an uppercase letter, a lowercase letter, or a Chinese character. It cannot start
+         *                        with http:// or https://. It can contain Chinese characters, English letters,
+         *                        digits, colons (:), underscores (_), periods (.), or hyphens (-). The default
+         *                        value is the instance ID.
          * @return {@code this}
          */
         public Builder ecsInstanceName(java.lang.String ecsInstanceName) {
@@ -487,7 +592,12 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getEcsInstanceName}
-         * @param ecsInstanceName Property ecsInstanceName: The name of the ECS instance.
+         * @param ecsInstanceName Property ecsInstanceName: The instance name.
+         *                        It must be 2 to 128 characters in length. It must start with
+         *                        an uppercase letter, a lowercase letter, or a Chinese character. It cannot start
+         *                        with http:// or https://. It can contain Chinese characters, English letters,
+         *                        digits, colons (:), underscores (_), periods (.), or hyphens (-). The default
+         *                        value is the instance ID.
          * @return {@code this}
          */
         public Builder ecsInstanceName(com.aliyun.ros.cdk.core.IResolvable ecsInstanceName) {
@@ -497,7 +607,18 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getEcsUniqueSuffix}
-         * @param ecsUniqueSuffix Property ecsUniqueSuffix: The unique suffix of the ECS instance.
+         * @param ecsUniqueSuffix Property ecsUniqueSuffix: Automatically add a sequential suffix to the HostName and InstanceName when you create multiple instances.
+         *                        The sequential suffix starts from 001 and increments
+         *                        up to 999. Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>true: Add.</li>
+         *                        <li>false (default): Do not add.
+         *                        If HostName or InstanceName is set in a specific sorting format, and the
+         *                        name_suffix is not set (i.e., the naming format is
+         *                        name_prefix[begin_number,bits]), UniqueSuffix does not take effect. The names
+         *                        are sorted only in the specified order.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder ecsUniqueSuffix(java.lang.Boolean ecsUniqueSuffix) {
@@ -507,7 +628,18 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getEcsUniqueSuffix}
-         * @param ecsUniqueSuffix Property ecsUniqueSuffix: The unique suffix of the ECS instance.
+         * @param ecsUniqueSuffix Property ecsUniqueSuffix: Automatically add a sequential suffix to the HostName and InstanceName when you create multiple instances.
+         *                        The sequential suffix starts from 001 and increments
+         *                        up to 999. Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>true: Add.</li>
+         *                        <li>false (default): Do not add.
+         *                        If HostName or InstanceName is set in a specific sorting format, and the
+         *                        name_suffix is not set (i.e., the naming format is
+         *                        name_prefix[begin_number,bits]), UniqueSuffix does not take effect. The names
+         *                        are sorted only in the specified order.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder ecsUniqueSuffix(com.aliyun.ros.cdk.core.IResolvable ecsUniqueSuffix) {
@@ -517,7 +649,12 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getImageId}
-         * @param imageId Property imageId: The image ID.
+         * @param imageId Property imageId: The custom image ID.
+         *                <blockquote>
+         *                <p>
+         *                If you want to use the default image, do not specify this parameter.
+         *                <p>
+         *                </blockquote>
          * @return {@code this}
          */
         public Builder imageId(java.lang.String imageId) {
@@ -527,7 +664,12 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getImageId}
-         * @param imageId Property imageId: The image ID.
+         * @param imageId Property imageId: The custom image ID.
+         *                <blockquote>
+         *                <p>
+         *                If you want to use the default image, do not specify this parameter.
+         *                <p>
+         *                </blockquote>
          * @return {@code this}
          */
         public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
@@ -537,10 +679,8 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getInternetChargeType}
-         * @param internetChargeType Property internetChargeType: Network billing type.
-         *                           Value range:
-         *                           PayByBandwidth: billed based on fixed bandwidth.
-         *                           PayByTraffic: Pay by traffic usage.
+         * @param internetChargeType Property internetChargeType: The network billing method.
+         *                           Valid values include the following:
          * @return {@code this}
          */
         public Builder internetChargeType(java.lang.String internetChargeType) {
@@ -550,10 +690,8 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getInternetChargeType}
-         * @param internetChargeType Property internetChargeType: Network billing type.
-         *                           Value range:
-         *                           PayByBandwidth: billed based on fixed bandwidth.
-         *                           PayByTraffic: Pay by traffic usage.
+         * @param internetChargeType Property internetChargeType: The network billing method.
+         *                           Valid values include the following:
          * @return {@code this}
          */
         public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
@@ -563,10 +701,10 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getInternetMaxBandwidthOut}
-         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Set internet output bandwidth of instance.
-         *                                Unit is Mbps(Mega bit per second).
-         *                                Range is [0,200]. Default is 1.
-         *                                While the property is not 0, public ip will be assigned for instance.
+         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: The maximum outbound public bandwidth, in Mbit/s.
+         *                                Valid values: 0 to 100.
+         *                                Default value: 0. If you set this parameter to a value greater than 0, a public
+         *                                IP address is automatically created.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthOut(java.lang.Number internetMaxBandwidthOut) {
@@ -576,10 +714,10 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getInternetMaxBandwidthOut}
-         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Set internet output bandwidth of instance.
-         *                                Unit is Mbps(Mega bit per second).
-         *                                Range is [0,200]. Default is 1.
-         *                                While the property is not 0, public ip will be assigned for instance.
+         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: The maximum outbound public bandwidth, in Mbit/s.
+         *                                Valid values: 0 to 100.
+         *                                Default value: 0. If you set this parameter to a value greater than 0, a public
+         *                                IP address is automatically created.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthOut(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthOut) {
@@ -609,8 +747,26 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getOsPassword}
-         * @param osPassword Property osPassword: Password of created ecs instance.
-         *                   Must contain at least 3 types of special character, lower character, upper character, number.
+         * @param osPassword Property osPassword: The logon password for the host.
+         *                   You can set it later. The password must meet the
+         *                   following requirements:
+         *                   <p>
+         *                   <ul>
+         *                   <li>It must be 8 to 30 characters in length.</li>
+         *                   <li>It must contain at least three of the following character types: uppercase
+         *                   letters, lowercase letters, digits, and special characters.</li>
+         *                   <li>Special characters: <code>()\</code>~!&#64;#$%^&amp;*-_+=|{}[]:;'&lt;&gt;,.?/`</li>
+         *                   </ul>
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   <ul>
+         *                   <li>If you want to set the logon password later, leave this parameter empty.</li>
+         *                   <li>If you want to set the logon password, use HTTPS to send requests to prevent
+         *                   password leakage.</li>
+         *                   </ul>
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder osPassword(java.lang.String osPassword) {
@@ -620,8 +776,26 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getOsPassword}
-         * @param osPassword Property osPassword: Password of created ecs instance.
-         *                   Must contain at least 3 types of special character, lower character, upper character, number.
+         * @param osPassword Property osPassword: The logon password for the host.
+         *                   You can set it later. The password must meet the
+         *                   following requirements:
+         *                   <p>
+         *                   <ul>
+         *                   <li>It must be 8 to 30 characters in length.</li>
+         *                   <li>It must contain at least three of the following character types: uppercase
+         *                   letters, lowercase letters, digits, and special characters.</li>
+         *                   <li>Special characters: <code>()\</code>~!&#64;#$%^&amp;*-_+=|{}[]:;'&lt;&gt;,.?/`</li>
+         *                   </ul>
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   <ul>
+         *                   <li>If you want to set the logon password later, leave this parameter empty.</li>
+         *                   <li>If you want to set the logon password, use HTTPS to send requests to prevent
+         *                   password leakage.</li>
+         *                   </ul>
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder osPassword(com.aliyun.ros.cdk.core.IResolvable osPassword) {
@@ -631,7 +805,18 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getPasswordInherit}
-         * @param passwordInherit Property passwordInherit: Whether to inherit the password from the parent cluster.
+         * @param passwordInherit Property passwordInherit: Use the default password of the image.
+         *                        <ul>
+         *                        <li>false (default): Do not use.</li>
+         *                        <li>true: Use.</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        If you use the default password of the image, do not specify the OSPassword
+         *                        parameter.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder passwordInherit(java.lang.Boolean passwordInherit) {
@@ -641,7 +826,18 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getPasswordInherit}
-         * @param passwordInherit Property passwordInherit: Whether to inherit the password from the parent cluster.
+         * @param passwordInherit Property passwordInherit: Use the default password of the image.
+         *                        <ul>
+         *                        <li>false (default): Do not use.</li>
+         *                        <li>true: Use.</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        If you use the default password of the image, do not specify the OSPassword
+         *                        parameter.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder passwordInherit(com.aliyun.ros.cdk.core.IResolvable passwordInherit) {
@@ -711,7 +907,7 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getUserDataInBase64}
-         * @param userDataInBase64 Property userDataInBase64: The user data of the ECS instance.
+         * @param userDataInBase64 Property userDataInBase64: Indicates whether the custom data is Base64-encoded.
          * @return {@code this}
          */
         public Builder userDataInBase64(java.lang.Boolean userDataInBase64) {
@@ -721,7 +917,7 @@ public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link MyBaseProps#getUserDataInBase64}
-         * @param userDataInBase64 Property userDataInBase64: The user data of the ECS instance.
+         * @param userDataInBase64 Property userDataInBase64: Indicates whether the custom data is Base64-encoded.
          * @return {@code this}
          */
         public Builder userDataInBase64(com.aliyun.ros.cdk.core.IResolvable userDataInBase64) {

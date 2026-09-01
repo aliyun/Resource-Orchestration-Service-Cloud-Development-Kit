@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::DTS::MigrationJobs</code>, which is used to query the information about data migration tasks in Data Transmission Service (DTS).
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::DTS::MigrationJobs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:29:50.880Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:27:15.032Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.datasource.MigrationJobs")
 public class MigrationJobs extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dts.datasource.IMigrationJobs {
 

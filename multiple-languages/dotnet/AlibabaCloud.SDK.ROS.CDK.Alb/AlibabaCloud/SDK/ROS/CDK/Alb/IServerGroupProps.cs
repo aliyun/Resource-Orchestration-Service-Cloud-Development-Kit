@@ -20,9 +20,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <summary>Property serverGroupName: The name of the server group.</summary>
         /// <remarks>
-        /// The name must be 2 to 128 characters in length, and
-        /// can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name
-        /// must start with a letter.
+        /// The name must be 2 to 128 characters in length,
+        /// start with a letter, digit, or Chinese character, and can contain digits, periods
+        /// (.), underscores (_), hyphens (-), and spaces.
         /// </remarks>
         [JsiiProperty(name: "serverGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ServerGroupName
@@ -41,15 +41,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
-        /// <summary>Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing.</summary>
+        /// <summary>Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing for the server group.</summary>
         /// <remarks>
-        /// Valid values:
-        /// true (default)
-        /// false
-        /// Note:
-        /// Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
-        /// Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
-        /// When cross-zone load balancing is disabled, session persistence cannot be enabled.
+        /// Valid
+        /// values:
+        ///
+        /// <list type="bullet">
+        /// <description>true (default): Enables cross-zone load balancing.</description>
+        /// <description>false: Disables cross-zone load balancing.</description>
+        /// </list>
+        ///
+        ///     <list type="bullet">
+        ///     <description>Basic ALB instances cannot be associated with server groups for which
+        ///     cross-zone load balancing is disabled. This feature is supported only by standard
+        ///     and WAF-enabled ALB instances.</description>
+        ///     <description>You can disable cross-zone load balancing for instance-type and IP-type
+        ///     server groups, but not for function-type server groups.</description>
+        ///     <description>You cannot enable sticky sessions if you disable cross-zone load balancing.</description>
+        ///     </list>
         /// </remarks>
         [JsiiProperty(name: "crossZoneEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -211,12 +220,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
-        /// <summary>Property vpcId: The ID of the virtual private cloud (VPC).</summary>
+        /// <summary>Property vpcId: The ID of the VPC where the server group is created.</summary>
         /// <remarks>
-        /// You can add only servers that are deployed
-        /// in the specified VPC to the server group.
-        /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-        /// Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+        /// You can add only servers
+        /// within this VPC to the server group.
+        ///
+        ///     This parameter is valid only when ServerGroupType is set to Instance or Ip.
         /// </remarks>
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -248,9 +257,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
             /// <summary>Property serverGroupName: The name of the server group.</summary>
             /// <remarks>
-            /// The name must be 2 to 128 characters in length, and
-            /// can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name
-            /// must start with a letter.
+            /// The name must be 2 to 128 characters in length,
+            /// start with a letter, digit, or Chinese character, and can contain digits, periods
+            /// (.), underscores (_), hyphens (-), and spaces.
             /// </remarks>
             [JsiiProperty(name: "serverGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServerGroupName
@@ -266,15 +275,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing.</summary>
+            /// <summary>Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing for the server group.</summary>
             /// <remarks>
-            /// Valid values:
-            /// true (default)
-            /// false
-            /// Note:
-            /// Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
-            /// Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
-            /// When cross-zone load balancing is disabled, session persistence cannot be enabled.
+            /// Valid
+            /// values:
+            ///
+            /// <list type="bullet">
+            /// <description>true (default): Enables cross-zone load balancing.</description>
+            /// <description>false: Disables cross-zone load balancing.</description>
+            /// </list>
+            ///
+            ///     <list type="bullet">
+            ///     <description>Basic ALB instances cannot be associated with server groups for which
+            ///     cross-zone load balancing is disabled. This feature is supported only by standard
+            ///     and WAF-enabled ALB instances.</description>
+            ///     <description>You can disable cross-zone load balancing for instance-type and IP-type
+            ///     server groups, but not for function-type server groups.</description>
+            ///     <description>You cannot enable sticky sessions if you disable cross-zone load balancing.</description>
+            ///     </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "crossZoneEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -400,12 +418,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property vpcId: The ID of the virtual private cloud (VPC).</summary>
+            /// <summary>Property vpcId: The ID of the VPC where the server group is created.</summary>
             /// <remarks>
-            /// You can add only servers that are deployed
-            /// in the specified VPC to the server group.
-            /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-            /// Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+            /// You can add only servers
+            /// within this VPC to the server group.
+            ///
+            ///     This parameter is valid only when ServerGroupType is set to Instance or Ip.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

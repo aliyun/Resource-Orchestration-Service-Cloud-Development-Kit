@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hdr;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::HDR::SitePair</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:27:50.025Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:35:53.246Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hdr.$Module.class, fqn = "@alicloud/ros-cdk-hdr.SitePair")
 public class SitePair extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.hdr.ISitePair {
 
@@ -172,8 +172,6 @@ public class SitePair extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property primarySiteType: The type of the primary site.
          * <p>
-         * Valid values: VPC, VSwitch, VRouter.
-         * <p>
          * @return {@code this}
          * @param primarySiteType Property primarySiteType: The type of the primary site. This parameter is required.
          */
@@ -183,8 +181,6 @@ public class SitePair extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
         /**
          * Property primarySiteType: The type of the primary site.
-         * <p>
-         * Valid values: VPC, VSwitch, VRouter.
          * <p>
          * @return {@code this}
          * @param primarySiteType Property primarySiteType: The type of the primary site. This parameter is required.
@@ -260,8 +256,6 @@ public class SitePair extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property secondarySiteType: The type of the secondary site.
          * <p>
-         * Valid values: VPC, VSwitch, VRouter.
-         * <p>
          * @return {@code this}
          * @param secondarySiteType Property secondarySiteType: The type of the secondary site. This parameter is required.
          */
@@ -271,8 +265,6 @@ public class SitePair extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
         /**
          * Property secondarySiteType: The type of the secondary site.
-         * <p>
-         * Valid values: VPC, VSwitch, VRouter.
          * <p>
          * @return {@code this}
          * @param secondarySiteType Property secondarySiteType: The type of the secondary site. This parameter is required.
@@ -306,6 +298,9 @@ public class SitePair extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property primarySiteZoneId: The zone ID of the primary site.
          * <p>
+         * This parameter is valid only when the site pair
+         * type is cross-zone disaster recovery.
+         * <p>
          * @return {@code this}
          * @param primarySiteZoneId Property primarySiteZoneId: The zone ID of the primary site. This parameter is required.
          */
@@ -315,6 +310,9 @@ public class SitePair extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
         /**
          * Property primarySiteZoneId: The zone ID of the primary site.
+         * <p>
+         * This parameter is valid only when the site pair
+         * type is cross-zone disaster recovery.
          * <p>
          * @return {@code this}
          * @param primarySiteZoneId Property primarySiteZoneId: The zone ID of the primary site. This parameter is required.
@@ -327,6 +325,9 @@ public class SitePair extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property secondarySiteZoneId: The zone ID of the secondary site.
          * <p>
+         * This parameter is valid only when the site
+         * pair type is cross-zone disaster recovery.
+         * <p>
          * @return {@code this}
          * @param secondarySiteZoneId Property secondarySiteZoneId: The zone ID of the secondary site. This parameter is required.
          */
@@ -336,6 +337,9 @@ public class SitePair extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
         /**
          * Property secondarySiteZoneId: The zone ID of the secondary site.
+         * <p>
+         * This parameter is valid only when the site
+         * pair type is cross-zone disaster recovery.
          * <p>
          * @return {@code this}
          * @param secondarySiteZoneId Property secondarySiteZoneId: The zone ID of the secondary site. This parameter is required.

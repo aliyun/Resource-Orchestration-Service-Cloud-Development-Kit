@@ -51,8 +51,6 @@ type VpcPeerConnectionProps struct {
 	// (_), and hyphens (-). It must start with a letter.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	// Property resourceGroupId: The ID of the resource group.
-	//
-	// For more information about resource groups, see [What is Resource Group](~~94475~~).
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 }
 

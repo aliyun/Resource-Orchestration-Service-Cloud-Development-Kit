@@ -15,7 +15,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
     {
         private object _assumeRolePolicyDocument;
 
-        /// <summary>Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role.</summary>
+        /// <summary>Property assumeRolePolicyDocument: The trust policy that specifies one or more trusted entities allowed to assume the RAM role.</summary>
+        /// <remarks>
+        /// Trusted entities can be cloud accounts, cloud
+        /// services, or identity providers (IdPs).
+        ///
+        ///     RAM users cannot assume RAM roles whose trusted entity is a cloud
+        ///     service.
+        /// </remarks>
         [JsiiProperty(name: "assumeRolePolicyDocument", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.AssumeRolePolicyDocumentProperty\"}]}}")]
         public object AssumeRolePolicyDocument
         {

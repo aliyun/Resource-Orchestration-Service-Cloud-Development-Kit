@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DATAHUB::Project`, which is used to create a DataHub project.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DATAHUB::Project`.
 type Project interface {
 	alicloudroscdkcore.Resource
 	IProject

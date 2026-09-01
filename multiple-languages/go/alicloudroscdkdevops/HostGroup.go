@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::HostGroup`, which is used to create a host group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::HostGroup`.
 type HostGroup interface {
 	alicloudroscdkcore.Resource
 	IHostGroup

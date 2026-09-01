@@ -15,9 +15,17 @@ type OtsBackupPlanProps struct {
 	PlanName interface{} `field:"required" json:"planName" yaml:"planName"`
 	// Property retention: Backup retention days, the minimum is 1.
 	Retention interface{} `field:"required" json:"retention" yaml:"retention"`
-	// Property schedule: Backup strategy.
+	// Property schedule: The backup policy.
 	//
-	// Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+	// The format is `I|{startTime}|{interval}`. This specifies that
+	// a backup job runs at an interval of `{interval}`, starting from `{startTime}`.
+	// Overdue backup jobs are not retried. If the previous backup job is not complete,
+	// the next backup job is not triggered. For example, `I|1631685600|P1D` indicates
+	// that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+	// - startTime: The start time for the backup, specified as a UNIX timestamp in
+	// seconds.
+	// - interval: The backup interval, specified in the ISO 8601 duration format. For
+	// example, `PT1H` represents one hour and `P1D` represents one day.
 	Schedule interface{} `field:"required" json:"schedule" yaml:"schedule"`
 	// Property vaultId: The ID of backup vault.
 	VaultId interface{} `field:"required" json:"vaultId" yaml:"vaultId"`

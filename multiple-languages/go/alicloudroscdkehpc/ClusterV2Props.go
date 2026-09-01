@@ -5,9 +5,10 @@ package alicloudroscdkehpc
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-clusterv2
 type ClusterV2Props struct {
-	// Property clusterName: Cluster name.
+	// Property clusterName: The cluster name.
 	//
-	// The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+	// The name must be 1 to 128 characters in length and can contain
+	// letters, digits, hyphens (-), and underscores (_).
 	ClusterName interface{} `field:"required" json:"clusterName" yaml:"clusterName"`
 	// Property sharedStorages: The list of shared storage configurations.
 	SharedStorages interface{} `field:"required" json:"sharedStorages" yaml:"sharedStorages"`
@@ -35,9 +36,10 @@ type ClusterV2Props struct {
 	ClusterCredentials interface{} `field:"optional" json:"clusterCredentials" yaml:"clusterCredentials"`
 	// Property clusterCustomConfiguration: Cluster post-processing scripts.
 	ClusterCustomConfiguration interface{} `field:"optional" json:"clusterCustomConfiguration" yaml:"clusterCustomConfiguration"`
-	// Property clusterDescription: Cluster description.
+	// Property clusterDescription: The cluster description.
 	//
-	// The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+	// The description must be 1 to 128 characters in length
+	// and can contain letters, digits, hyphens (-), and underscores (_).
 	ClusterDescription interface{} `field:"optional" json:"clusterDescription" yaml:"clusterDescription"`
 	// Property clusterMode: Cluster deployment type.
 	//

@@ -9,7 +9,11 @@ type CenRouteServiceProps struct {
 	AccessRegionId interface{} `field:"required" json:"accessRegionId" yaml:"accessRegionId"`
 	// Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
 	CenId interface{} `field:"required" json:"cenId" yaml:"cenId"`
-	// Property host: The domain or IP address of the cloud service.
+	// Property host: The IP addresses or CIDR blocks of the cloud service.
+	//
+	// > In most cases, multiple IP addresses or CIDR blocks are assigned to a cloud
+	// service. We recommend that you call this operation multiple times to add all IP
+	// addresses and CIDR blocks of the cloud service.
 	Host interface{} `field:"required" json:"host" yaml:"host"`
 	// Property hostRegionId: The region where the cloud service is deployed.
 	//
@@ -24,6 +28,9 @@ type CenRouteServiceProps struct {
 	// Default false.
 	ConflictIgnore interface{} `field:"optional" json:"conflictIgnore" yaml:"conflictIgnore"`
 	// Property description: The description of the cloud service.
+	//
+	// This parameter is optional. If you enter a description, it must be 1 to 256
+	// characters in length and cannot start with http:\/\/ or https:\/\/.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 }
 

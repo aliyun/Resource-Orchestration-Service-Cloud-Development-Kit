@@ -20,13 +20,13 @@ export interface DrdsDBProps {
     readonly accountName?: string | ros.IResolvable;
 
     /**
-     * Property dbInstanceIsCreating: Check whether the RDS instance is being created.
+     * Property dbInstanceIsCreating: Specifies whether the required ApsaraDB RDS for MySQL instance is being created.
      */
     readonly dbInstanceIsCreating?: boolean | ros.IResolvable;
 
     /**
-     * Property dbInstType: The type of the attached storage. Valid values:
-     * RDS or POLARDB
+     * Property dbInstType: The type of the storage instances that are used by the PolarDB-X 1.0 database.
+     * Set the value to RDS.
      */
     readonly dbInstType?: string | ros.IResolvable;
 
@@ -36,12 +36,12 @@ export interface DrdsDBProps {
     readonly dbName?: string | ros.IResolvable;
 
     /**
-     * Property encode: Encoding used by the database
+     * Property encode: The encoding method that is used by the database.
      */
     readonly encode?: string | ros.IResolvable;
 
     /**
-     * Property instDbName:
+     * Property instDbName: List of databases.
      */
     readonly instDbName?: Array<RosDrdsDB.InstDbNameProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -51,7 +51,7 @@ export interface DrdsDBProps {
     readonly password?: string | ros.IResolvable;
 
     /**
-     * Property rdsInstance: This property is required only for vertical partitioning.
+     * Property rdsInstance: List of RDS instances.
      */
     readonly rdsInstance?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -71,7 +71,7 @@ export interface IDrdsDB extends ros.IResource {
     readonly props: DrdsDBProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DRDS::DrdsDB`, which is used to create a Distributed Relational Database Service (DRDS) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DRDS::DrdsDB`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsDB`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsdb
  */

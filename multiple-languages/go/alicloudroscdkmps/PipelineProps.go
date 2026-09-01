@@ -29,7 +29,9 @@ type PipelineProps struct {
 	// AIVideoTag: video tag (supports regions Shanghai, Beijing, Hangzhou).
 	// Default: Standard.
 	Speed interface{} `field:"optional" json:"speed" yaml:"speed"`
-	// Property speedLevel: Speed level.
+	// Property speedLevel: The level of the MPS queue.
+	//
+	// Valid values: 1 to 3.
 	SpeedLevel interface{} `field:"optional" json:"speedLevel" yaml:"speedLevel"`
 	// Property state: The new state of the MPS queue.
 	//

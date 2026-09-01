@@ -5,15 +5,18 @@ package alicloudroscdkeci
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-imagecache
 type ImageCacheProps struct {
-	// Property image: The image list to be cached.
+	// Property image: The container images used to create the image cache.
 	Image interface{} `field:"required" json:"image" yaml:"image"`
 	// Property imageCacheName: Image cache name.
 	ImageCacheName interface{} `field:"required" json:"imageCacheName" yaml:"imageCacheName"`
 	// Property securityGroupId: Security group ID.
 	SecurityGroupId interface{} `field:"required" json:"securityGroupId" yaml:"securityGroupId"`
-	// Property vSwitchId: VSwitch ID.
+	// Property vSwitchId: The ID of the vSwitch.
+	//
+	// You can specify up to 10 vSwitch IDs, separated by commas
+	// (,). For example, `vsw-*,vsw-*`.
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
-	// Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+	// Property acrRegistryInfo: The information about the ACR instance.
 	AcrRegistryInfo interface{} `field:"optional" json:"acrRegistryInfo" yaml:"acrRegistryInfo"`
 	// Property autoMatchImageCache: Specifies whether to enable reuse of image cache layers.
 	//
@@ -29,9 +32,7 @@ type ImageCacheProps struct {
 	//
 	// Unit: GiB. Default value: 20.
 	ImageCacheSize interface{} `field:"optional" json:"imageCacheSize" yaml:"imageCacheSize"`
-	// Property imageRegistryCredential: Private image password.
-	//
-	// Alibaba Cloud ACR image can be left blank.
+	// Property imageRegistryCredential: The credentials of the image repository.
 	ImageRegistryCredential interface{} `field:"optional" json:"imageRegistryCredential" yaml:"imageRegistryCredential"`
 	// Property resourceGroupId: Resource group id.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

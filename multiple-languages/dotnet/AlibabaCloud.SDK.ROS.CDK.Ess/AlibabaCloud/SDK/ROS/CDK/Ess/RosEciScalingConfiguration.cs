@@ -106,8 +106,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: scalingConfigurationName: The name of the scaling configuration. The name must be 2 to 64 characters in length and can contain letters, digits, underscores (_), hyphens (-), and periods (.). The name must start with a letter or a digit.
-        /// The name of the scaling configuration must be unique in a region. If you do not specify this parameter, the scaling configuration ID is used.
+        /// <strong>Property</strong>: scalingConfigurationName: The name of the scaling configuration. The name must be 2 to 64 characters in
+        /// length and can contain letters, digits, underscores (_), hyphens (-), and periods
+        /// (.). The name must start with a letter or a digit.
+        /// The name of the scaling configuration must be unique within a scaling group in a
+        /// region. If you do not specify this parameter, the value of the
+        /// ScalingConfigurationId parameter is used.
         /// </remarks>
         [JsiiProperty(name: "scalingConfigurationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ScalingConfigurationName
@@ -702,9 +706,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching. Valid values: 0 to min{50000, 1000 × Capacity - Baseline IOPS}, where Baseline IOPS = min{1800 + 50 × Capacity - 50000}.
-        /// Note
-        /// For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+        /// <strong>Property</strong>: dataCacheProvisionedIops: The provisioned read\/write input\/output operations per second (IOPS) for the ESSD
+        /// AutoPL disk when data caching uses an ESSD AutoPL disk. Valid values: 0 to
+        /// min{50000, 1000 × capacity − baseline performance}, where baseline performance =
+        /// min{1800 + 50 × capacity, 50000}.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dataCacheProvisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -932,7 +937,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: egressBandwidth: The maximum outbound bandwidth. Unit: bytes.
+        /// <strong>Property</strong>: egressBandwidth: The maximum outbound bandwidth. Unit: bit\/s.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "egressBandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1243,7 +1248,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: ingressBandwidth: The maximum inbound bandwidth. Unit: bytes.
+        /// <strong>Property</strong>: ingressBandwidth: The maximum inbound bandwidth. Unit: bit\/s.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ingressBandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2463,7 +2468,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: cpu: The number of CPU cores that you want to allocate to the container.
+            /// <strong>Property</strong>: cpu: The number of vCPUs that you want to allocate to the elastic
+            /// container instance. Unit: cores.
             /// </remarks>
             [JsiiProperty(name: "cpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -2953,7 +2959,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: cpu: The number of CPU cores that you want to allocate to the container.
+                /// <strong>Property</strong>: cpu: The number of vCPUs that you want to allocate to the elastic
+                /// container instance. Unit: cores.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "cpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -3471,7 +3478,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             private object? _cpu;
 
             /// <remarks>
-            /// <strong>Property</strong>: cpu: The number of CPU cores that you want to allocate to the container.
+            /// <strong>Property</strong>: cpu: The number of vCPUs that you want to allocate to the elastic
+            /// container instance. Unit: cores.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "cpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

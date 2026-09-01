@@ -10,7 +10,11 @@ export { RosExpressSync as ExpressSyncProperty };
 export interface ExpressSyncProps {
 
     /**
-     * Property bucketName: The name of the OSS bucket.
+     * Property bucketName: The name of the bucket. Note:
+     * - You can specify only one OSS bucket for a synchronization group. All data
+     * changes in the bucket are synchronized to your on-premises environment.
+     * - If you have not created a share for the OSS bucket, you must first create a
+     * share between the file gateway and the OSS bucket.
      */
     readonly bucketName: string | ros.IResolvable;
 
@@ -20,7 +24,10 @@ export interface ExpressSyncProps {
     readonly bucketRegion: string | ros.IResolvable;
 
     /**
-     * Property name: The name of the ExpressSync.
+     * Property name: The name of the express synchronization group. The name must be 1 to 128
+     * characters in length and can contain letters, Chinese characters, digits, periods
+     * (.), underscores (_), and hyphens (-). The name must start with a letter or a
+     * Chinese character.
      */
     readonly name: string | ros.IResolvable;
 
@@ -30,7 +37,8 @@ export interface ExpressSyncProps {
     readonly bucketPrefix?: string | ros.IResolvable;
 
     /**
-     * Property description: The description of the ExpressSync.
+     * Property description: The description of the express synchronization group. The description can be up
+     * to 255 characters in length.
      */
     readonly description?: string | ros.IResolvable;
 }

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cdn;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDN::Domain</code>, which is used to add an accelerated domain name.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDN::Domain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:42:42.226Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:28:08.567Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.Domain")
 public class Domain extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cdn.IDomain {
 
@@ -130,24 +130,36 @@ public class Domain extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property cdnType: The business type.
+         * Property cdnType: The business type of the domain name.
          * <p>
-         * Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>web: images and small files.</li>
+         * <li>download: large files.</li>
+         * <li>video: on-demand video and audio streaming.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param cdnType Property cdnType: The business type. This parameter is required.
+         * @param cdnType Property cdnType: The business type of the domain name. This parameter is required.
          */
         public Builder cdnType(final java.lang.String cdnType) {
             this.props.cdnType(cdnType);
             return this;
         }
         /**
-         * Property cdnType: The business type.
+         * Property cdnType: The business type of the domain name.
          * <p>
-         * Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>web: images and small files.</li>
+         * <li>download: large files.</li>
+         * <li>video: on-demand video and audio streaming.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param cdnType Property cdnType: The business type. This parameter is required.
+         * @param cdnType Property cdnType: The business type of the domain name. This parameter is required.
          */
         public Builder cdnType(final com.aliyun.ros.cdk.core.IResolvable cdnType) {
             this.props.cdnType(cdnType);
@@ -180,20 +192,20 @@ public class Domain extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property checkUrl: The validation of the origin.
+         * Property checkUrl: The health check URL.
          * <p>
          * @return {@code this}
-         * @param checkUrl Property checkUrl: The validation of the origin. This parameter is required.
+         * @param checkUrl Property checkUrl: The health check URL. This parameter is required.
          */
         public Builder checkUrl(final java.lang.String checkUrl) {
             this.props.checkUrl(checkUrl);
             return this;
         }
         /**
-         * Property checkUrl: The validation of the origin.
+         * Property checkUrl: The health check URL.
          * <p>
          * @return {@code this}
-         * @param checkUrl Property checkUrl: The validation of the origin. This parameter is required.
+         * @param checkUrl Property checkUrl: The health check URL. This parameter is required.
          */
         public Builder checkUrl(final com.aliyun.ros.cdk.core.IResolvable checkUrl) {
             this.props.checkUrl(checkUrl);
@@ -251,24 +263,36 @@ public class Domain extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property scope: Valid values: domestic, overseas, and global.
+         * Property scope: The acceleration region.
          * <p>
-         * Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>domestic (default): Chinese mainland only.</li>
+         * <li>overseas: global (excluding the Chinese mainland).</li>
+         * <li>global: global.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param scope Property scope: Valid values: domestic, overseas, and global. This parameter is required.
+         * @param scope Property scope: The acceleration region. This parameter is required.
          */
         public Builder scope(final java.lang.String scope) {
             this.props.scope(scope);
             return this;
         }
         /**
-         * Property scope: Valid values: domestic, overseas, and global.
+         * Property scope: The acceleration region.
          * <p>
-         * Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>domestic (default): Chinese mainland only.</li>
+         * <li>overseas: global (excluding the Chinese mainland).</li>
+         * <li>global: global.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param scope Property scope: Valid values: domestic, overseas, and global. This parameter is required.
+         * @param scope Property scope: The acceleration region. This parameter is required.
          */
         public Builder scope(final com.aliyun.ros.cdk.core.IResolvable scope) {
             this.props.scope(scope);

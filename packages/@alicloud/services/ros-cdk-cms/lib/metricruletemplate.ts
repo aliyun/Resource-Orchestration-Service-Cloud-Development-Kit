@@ -15,7 +15,7 @@ export interface MetricRuleTemplateProps {
     readonly name: string | ros.IResolvable;
 
     /**
-     * Property alertTemplates: Valid values of N: 0 to 200.
+     * Property alertTemplates: The details of the alert template.
      */
     readonly alertTemplates?: Array<RosMetricRuleTemplate.AlertTemplatesProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -49,7 +49,7 @@ export interface IMetricRuleTemplate extends ros.IResource {
     readonly attrId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MetricRuleTemplate`, which is used to create an alert template.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MetricRuleTemplate`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMetricRuleTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplate
  */

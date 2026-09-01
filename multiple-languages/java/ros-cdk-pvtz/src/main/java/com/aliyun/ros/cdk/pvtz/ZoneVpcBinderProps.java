@@ -5,13 +5,19 @@ package com.aliyun.ros.cdk.pvtz;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonevpcbinder
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:32:30.951Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:52:38.664Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.ZoneVpcBinderProps")
 @software.amazon.jsii.Jsii.Proxy(ZoneVpcBinderProps.Jsii$Proxy.class)
 public interface ZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property vpcs:.
+     * Property vpcs: The VPCs.
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you leave this parameter empty, all VPCs bound to the zone are unbound.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVpcs();
 
@@ -35,7 +41,12 @@ public interface ZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ZoneVpcBinderProps#getVpcs}
-         * @param vpcs Property vpcs:. This parameter is required.
+         * @param vpcs Property vpcs: The VPCs. This parameter is required.
+         *             <blockquote>
+         *             <p>
+         *             If you leave this parameter empty, all VPCs bound to the zone are unbound.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder vpcs(com.aliyun.ros.cdk.core.IResolvable vpcs) {
@@ -45,7 +56,12 @@ public interface ZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ZoneVpcBinderProps#getVpcs}
-         * @param vpcs Property vpcs:. This parameter is required.
+         * @param vpcs Property vpcs: The VPCs. This parameter is required.
+         *             <blockquote>
+         *             <p>
+         *             If you leave this parameter empty, all VPCs bound to the zone are unbound.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder vpcs(java.util.List<? extends java.lang.Object> vpcs) {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::SecurityPolicy`, which is used to create a custom security policy.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::SecurityPolicy`.
 type SecurityPolicy interface {
 	alicloudroscdkcore.Resource
 	ISecurityPolicy

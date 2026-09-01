@@ -13,7 +13,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
     {
         /// <summary>Property applicationType: The type of the application.</summary>
         /// <remarks>
-        /// This parameter is required.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>supabase: Creates a managed Supabase application.</description>
+        /// <description>raycluster: Creates a managed Ray Cluster application.</description>
+        /// <description>polarclaw: Creates a managed PolarClaw application.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "applicationType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ApplicationType
@@ -38,7 +44,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             get;
         }
 
-        /// <summary>Property autoCreatePolarFs: Whether to auto create PolarFS.</summary>
+        /// <summary>Property autoCreatePolarFs: Specifies whether to automatically create a PolarFS cold storage instance.</summary>
+        /// <remarks>
+        /// Valid
+        /// values:
+        ///
+        /// <list type="bullet">
+        /// <description>false (default): Does not automatically create the instance.</description>
+        /// <description>true: Automatically creates the instance.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "autoCreatePolarFs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AutoCreatePolarFs
@@ -49,7 +64,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property components: The list of components.</summary>
+        /// <summary>Property components: A list of custom child components for the application.</summary>
         [JsiiProperty(name: "components", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-polardb.RosApplication.ComponentsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Components
@@ -87,7 +102,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property period: The period of the application.</summary>
+        /// <summary>Property period: The subscription period type.</summary>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Period
@@ -98,7 +113,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property polarFsInstanceId: The ID of the PolarFS instance.</summary>
+        /// <summary>Property polarFsInstanceId: The ID of the PolarFileSystem (PolarFS) cold storage or high-performance instance.</summary>
+        /// <remarks>
+        /// This parameter is empty by default. If you specify this parameter, the
+        /// corresponding storage is mounted to the application.
+        /// This feature is currently supported only by the following applications:
+        ///
+        /// <list type="bullet">
+        /// <description>supabase</description>
+        /// <description>raycluster</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "polarFsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PolarFsInstanceId
@@ -120,7 +145,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property securityIpList: The security IP list of the component.</summary>
+        /// <summary>Property securityIpList: The IP address whitelist.</summary>
+        /// <remarks>
+        /// If you do not specify this parameter, the default value
+        /// <c>127.0.0.1</c> is used.
+        /// </remarks>
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SecurityIpList
@@ -142,7 +171,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property vSwitchId: The ID of the VSwitch.</summary>
+        /// <summary>Property vSwitchId: The vSwitch.</summary>
+        /// <remarks>
+        /// The default value is the current vSwitch in the primary zone of the
+        /// instance.
+        /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? VSwitchId
@@ -153,7 +186,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property zoneId: The ID of the zone.</summary>
+        /// <summary>Property zoneId: The zone.</summary>
+        /// <remarks>
+        /// The default value is the primary zone of the instance.
+        /// </remarks>
         [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ZoneId
@@ -177,7 +213,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 
             /// <summary>Property applicationType: The type of the application.</summary>
             /// <remarks>
-            /// This parameter is required.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>supabase: Creates a managed Supabase application.</description>
+            /// <description>raycluster: Creates a managed Ray Cluster application.</description>
+            /// <description>polarclaw: Creates a managed PolarClaw application.</description>
+            /// </list>
             /// </remarks>
             [JsiiProperty(name: "applicationType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ApplicationType
@@ -202,7 +244,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property autoCreatePolarFs: Whether to auto create PolarFS.</summary>
+            /// <summary>Property autoCreatePolarFs: Specifies whether to automatically create a PolarFS cold storage instance.</summary>
+            /// <remarks>
+            /// Valid
+            /// values:
+            ///
+            /// <list type="bullet">
+            /// <description>false (default): Does not automatically create the instance.</description>
+            /// <description>true: Automatically creates the instance.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "autoCreatePolarFs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AutoCreatePolarFs
@@ -210,7 +261,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property components: The list of components.</summary>
+            /// <summary>Property components: A list of custom child components for the application.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "components", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-polardb.RosApplication.ComponentsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Components
@@ -239,7 +290,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property period: The period of the application.</summary>
+            /// <summary>Property period: The subscription period type.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Period
@@ -247,7 +298,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property polarFsInstanceId: The ID of the PolarFS instance.</summary>
+            /// <summary>Property polarFsInstanceId: The ID of the PolarFileSystem (PolarFS) cold storage or high-performance instance.</summary>
+            /// <remarks>
+            /// This parameter is empty by default. If you specify this parameter, the
+            /// corresponding storage is mounted to the application.
+            /// This feature is currently supported only by the following applications:
+            ///
+            /// <list type="bullet">
+            /// <description>supabase</description>
+            /// <description>raycluster</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "polarFsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolarFsInstanceId
@@ -263,7 +324,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property securityIpList: The security IP list of the component.</summary>
+            /// <summary>Property securityIpList: The IP address whitelist.</summary>
+            /// <remarks>
+            /// If you do not specify this parameter, the default value
+            /// <c>127.0.0.1</c> is used.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SecurityIpList
@@ -279,7 +344,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property vSwitchId: The ID of the VSwitch.</summary>
+            /// <summary>Property vSwitchId: The vSwitch.</summary>
+            /// <remarks>
+            /// The default value is the current vSwitch in the primary zone of the
+            /// instance.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? VSwitchId
@@ -287,7 +356,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property zoneId: The ID of the zone.</summary>
+            /// <summary>Property zoneId: The zone.</summary>
+            /// <remarks>
+            /// The default value is the primary zone of the instance.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ZoneId

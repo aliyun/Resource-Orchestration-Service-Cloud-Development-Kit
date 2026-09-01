@@ -12,7 +12,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
     public interface IRosDataFlowProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: fileSystemId: File system ID.
+        /// <strong>Property</strong>: fileSystemId: The ID of the file system.
+        /// *   The IDs of CPFS file systems must start with `cpfs-`. Example:
+        /// cpfs-125487\*\*\*\*.
+        /// *   The IDs of CPFS for Lingjun file systems must start with `bmcpfs-`. Example:
+        /// bmcpfs-0015\*\*\*\*.
         /// </remarks>
         [JsiiProperty(name: "fileSystemId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object FileSystemId
@@ -21,7 +25,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: fsetId: Fileset ID.
+        /// <strong>Property</strong>: fsetId: The fileset ID.
+        /// >  This parameter is required for CPFS file systems.
         /// </remarks>
         [JsiiProperty(name: "fsetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object FsetId
@@ -30,15 +35,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: sourceStorage: Access path stored at the source.Format: <storage Type>: \/\/ <PATH>.
-        /// in:
-        /// Storage Type: Currently only supports OSS.
-        /// PATH: OSS's bucket name.Limit the following.
-        /// Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number.
-        /// The length is 8 ~ 128 English characters.
-        /// Use UTF-8 encoding.
-        /// Can't start with http: \/\/ and https: \/\/.
-        /// Explain that the OSS BUCKET must be the bucket that exists in the region.
+        /// <strong>Property</strong>: sourceStorage: The access path of the source storage. Format: `<storage type>:\/\/[<account
+        /// id>:]<path>`.
+        /// Parameters:
+        /// *   storage type: Only OSS is supported.
+        /// *   account id (optional): the UID of the account of the source storage. This
+        /// parameter is required when you use OSS buckets across accounts.
+        /// *   path: the name of the OSS bucket. Limits:
+        /// *   The name can contain only lowercase letters, digits, and hyphens (-). The
+        /// name must start and end with a lowercase letter or digit.
+        /// *   The name can be up to 128 characters in length.
+        /// *   The name must be encoded in UTF-8.
+        /// > *   The OSS bucket must be an existing bucket in the region.
+        /// > *   Only CPFS for LINGJUN V2.6.0 and later support the account id parameter.
         /// </remarks>
         [JsiiProperty(name: "sourceStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object SourceStorage
@@ -47,13 +56,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: throughput: The upper limit of transmission bandwidth for data flow, unit: MB\/s.
-        /// Value:
-        /// 600
-        /// 1200
-        /// 1500
-        ///
-        /// Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
+        /// <strong>Property</strong>: throughput: The maximum data flow throughput. Unit: MB\/s. Valid values:
+        /// *   600
+        /// *   1200
+        /// *   1500
+        /// >  The data flow throughput must be less than the I\/O throughput of the file
+        /// system. This parameter is required for CPFS file systems.
         /// </remarks>
         [JsiiProperty(name: "throughput", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Throughput
@@ -76,9 +84,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy.
-        /// None (default): The data update of the source is not automatically imported into CPFS. Users can import data update at the source end of the source through data flow tasks.
-        /// Importchanged: The data update at the source automatically imports CPFS.
+        /// <strong>Property</strong>: autoRefreshPolicy: The automatic update policy. The updated data in the source storage is imported
+        /// into the CPFS file system based on the policy.
+        /// *   None (default): Updated data in the source storage is not automatically
+        /// imported into the CPFS file system. You can run a data flow task to import the
+        /// updated data from the source storage.
+        /// *   ImportChanged: Updated data in the source storage is automatically imported
+        /// into the CPFS file system.
+        /// >  This parameter takes effect only for CPFS file systems.
         /// </remarks>
         [JsiiProperty(name: "autoRefreshPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -104,11 +117,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: description: Description of data flow.
-        /// limit:
-        /// The length is 2 to 128 English or Chinese characters.
-        /// Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-        /// It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+        /// <strong>Property</strong>: description: The description of the dataflow.
+        /// Limits:
+        /// *   The description must be 2 to 128 characters in length.
+        /// *   The description must start with a letter but cannot start with `http:\/\/` or
+        /// `https:\/\/`.
+        /// *   The description can contain letters, digits, colons (:), underscores (_), and
+        /// hyphens (-).
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -147,7 +162,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: fileSystemId: File system ID.
+            /// <strong>Property</strong>: fileSystemId: The ID of the file system.
+            /// *   The IDs of CPFS file systems must start with `cpfs-`. Example:
+            /// cpfs-125487\*\*\*\*.
+            /// *   The IDs of CPFS for Lingjun file systems must start with `bmcpfs-`. Example:
+            /// bmcpfs-0015\*\*\*\*.
             /// </remarks>
             [JsiiProperty(name: "fileSystemId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FileSystemId
@@ -156,7 +175,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: fsetId: Fileset ID.
+            /// <strong>Property</strong>: fsetId: The fileset ID.
+            /// >  This parameter is required for CPFS file systems.
             /// </remarks>
             [JsiiProperty(name: "fsetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FsetId
@@ -165,15 +185,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: sourceStorage: Access path stored at the source.Format: <storage Type>: \/\/ <PATH>.
-            /// in:
-            /// Storage Type: Currently only supports OSS.
-            /// PATH: OSS's bucket name.Limit the following.
-            /// Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number.
-            /// The length is 8 ~ 128 English characters.
-            /// Use UTF-8 encoding.
-            /// Can't start with http: \/\/ and https: \/\/.
-            /// Explain that the OSS BUCKET must be the bucket that exists in the region.
+            /// <strong>Property</strong>: sourceStorage: The access path of the source storage. Format: `<storage type>:\/\/[<account
+            /// id>:]<path>`.
+            /// Parameters:
+            /// *   storage type: Only OSS is supported.
+            /// *   account id (optional): the UID of the account of the source storage. This
+            /// parameter is required when you use OSS buckets across accounts.
+            /// *   path: the name of the OSS bucket. Limits:
+            /// *   The name can contain only lowercase letters, digits, and hyphens (-). The
+            /// name must start and end with a lowercase letter or digit.
+            /// *   The name can be up to 128 characters in length.
+            /// *   The name must be encoded in UTF-8.
+            /// > *   The OSS bucket must be an existing bucket in the region.
+            /// > *   Only CPFS for LINGJUN V2.6.0 and later support the account id parameter.
             /// </remarks>
             [JsiiProperty(name: "sourceStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SourceStorage
@@ -182,13 +206,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: throughput: The upper limit of transmission bandwidth for data flow, unit: MB\/s.
-            /// Value:
-            /// 600
-            /// 1200
-            /// 1500
-            ///
-            /// Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
+            /// <strong>Property</strong>: throughput: The maximum data flow throughput. Unit: MB\/s. Valid values:
+            /// *   600
+            /// *   1200
+            /// *   1500
+            /// >  The data flow throughput must be less than the I\/O throughput of the file
+            /// system. This parameter is required for CPFS file systems.
             /// </remarks>
             [JsiiProperty(name: "throughput", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Throughput
@@ -208,9 +231,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy.
-            /// None (default): The data update of the source is not automatically imported into CPFS. Users can import data update at the source end of the source through data flow tasks.
-            /// Importchanged: The data update at the source automatically imports CPFS.
+            /// <strong>Property</strong>: autoRefreshPolicy: The automatic update policy. The updated data in the source storage is imported
+            /// into the CPFS file system based on the policy.
+            /// *   None (default): Updated data in the source storage is not automatically
+            /// imported into the CPFS file system. You can run a data flow task to import the
+            /// updated data from the source storage.
+            /// *   ImportChanged: Updated data in the source storage is automatically imported
+            /// into the CPFS file system.
+            /// >  This parameter takes effect only for CPFS file systems.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "autoRefreshPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -230,11 +258,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: description: Description of data flow.
-            /// limit:
-            /// The length is 2 to 128 English or Chinese characters.
-            /// Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-            /// It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+            /// <strong>Property</strong>: description: The description of the dataflow.
+            /// Limits:
+            /// *   The description must be 2 to 128 characters in length.
+            /// *   The description must start with a letter but cannot start with `http:\/\/` or
+            /// `https:\/\/`.
+            /// *   The description can contain letters, digits, colons (:), underscores (_), and
+            /// hyphens (-).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

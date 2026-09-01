@@ -28,6 +28,7 @@
 @alicloud/ros-cdk-resourcemanager.IResourceShareAssociation=com.aliyun.ros.cdk.resourcemanager.IResourceShareAssociation
 @alicloud/ros-cdk-resourcemanager.IRole=com.aliyun.ros.cdk.resourcemanager.IRole
 @alicloud/ros-cdk-resourcemanager.ISavedQuery=com.aliyun.ros.cdk.resourcemanager.ISavedQuery
+@alicloud/ros-cdk-resourcemanager.IServiceLinkedRole=com.aliyun.ros.cdk.resourcemanager.IServiceLinkedRole
 @alicloud/ros-cdk-resourcemanager.ISharedTarget=com.aliyun.ros.cdk.resourcemanager.ISharedTarget
 @alicloud/ros-cdk-resourcemanager.MessageContact=com.aliyun.ros.cdk.resourcemanager.MessageContact
 @alicloud/ros-cdk-resourcemanager.MessageContactProps=com.aliyun.ros.cdk.resourcemanager.MessageContactProps
@@ -89,10 +90,14 @@
 @alicloud/ros-cdk-resourcemanager.RosRoleProps=com.aliyun.ros.cdk.resourcemanager.RosRoleProps
 @alicloud/ros-cdk-resourcemanager.RosSavedQuery=com.aliyun.ros.cdk.resourcemanager.RosSavedQuery
 @alicloud/ros-cdk-resourcemanager.RosSavedQueryProps=com.aliyun.ros.cdk.resourcemanager.RosSavedQueryProps
+@alicloud/ros-cdk-resourcemanager.RosServiceLinkedRole=com.aliyun.ros.cdk.resourcemanager.RosServiceLinkedRole
+@alicloud/ros-cdk-resourcemanager.RosServiceLinkedRoleProps=com.aliyun.ros.cdk.resourcemanager.RosServiceLinkedRoleProps
 @alicloud/ros-cdk-resourcemanager.RosSharedTarget=com.aliyun.ros.cdk.resourcemanager.RosSharedTarget
 @alicloud/ros-cdk-resourcemanager.RosSharedTargetProps=com.aliyun.ros.cdk.resourcemanager.RosSharedTargetProps
 @alicloud/ros-cdk-resourcemanager.SavedQuery=com.aliyun.ros.cdk.resourcemanager.SavedQuery
 @alicloud/ros-cdk-resourcemanager.SavedQueryProps=com.aliyun.ros.cdk.resourcemanager.SavedQueryProps
+@alicloud/ros-cdk-resourcemanager.ServiceLinkedRole=com.aliyun.ros.cdk.resourcemanager.ServiceLinkedRole
+@alicloud/ros-cdk-resourcemanager.ServiceLinkedRoleProps=com.aliyun.ros.cdk.resourcemanager.ServiceLinkedRoleProps
 @alicloud/ros-cdk-resourcemanager.SharedTarget=com.aliyun.ros.cdk.resourcemanager.SharedTarget
 @alicloud/ros-cdk-resourcemanager.SharedTargetProps=com.aliyun.ros.cdk.resourcemanager.SharedTargetProps
 @alicloud/ros-cdk-resourcemanager.datasource.IResourceGroup=com.aliyun.ros.cdk.resourcemanager.datasource.IResourceGroup

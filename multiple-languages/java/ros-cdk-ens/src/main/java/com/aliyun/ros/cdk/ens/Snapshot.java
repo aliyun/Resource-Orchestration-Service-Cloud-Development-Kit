@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ens;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ENS::Snapshot</code>, which is used to create a snapshot.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ENS::Snapshot</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:47:31.728Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:01:14.009Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.Snapshot")
 public class Snapshot extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ens.ISnapshot {
 
@@ -183,7 +183,9 @@ public class Snapshot extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property snapshotName: The name of the snapshot.
          * <p>
-         * The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+         * The name must be 2 to 128 characters in length. It must
+         * start with a letter or a Chinese character, but cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>. It can contain digits, colons (:), underscores (_), and hyphens (-).
          * <p>
          * @return {@code this}
          * @param snapshotName Property snapshotName: The name of the snapshot. This parameter is required.
@@ -195,7 +197,9 @@ public class Snapshot extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property snapshotName: The name of the snapshot.
          * <p>
-         * The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+         * The name must be 2 to 128 characters in length. It must
+         * start with a letter or a Chinese character, but cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>. It can contain digits, colons (:), underscores (_), and hyphens (-).
          * <p>
          * @return {@code this}
          * @param snapshotName Property snapshotName: The name of the snapshot. This parameter is required.

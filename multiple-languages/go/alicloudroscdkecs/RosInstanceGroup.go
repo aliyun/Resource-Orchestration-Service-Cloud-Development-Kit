@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroup`The , which resource creates a group of ECS instances that share identical configurations.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroup`.
 type RosInstanceGroup interface {
 	alicloudroscdkcore.RosResource
 	Affinity() interface{}

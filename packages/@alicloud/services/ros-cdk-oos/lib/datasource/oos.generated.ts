@@ -186,6 +186,205 @@ export class RosGitCodeRepo extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosParameter`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-parameter
+ */
+export interface RosParameterProps {
+
+    /**
+     * @Property name: The name of the common parameter.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property parameterVersion: The version number of the common parameter.
+     */
+    readonly parameterVersion?: number | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosParameterProps`
+ *
+ * @param properties - the TypeScript properties of a `RosParameterProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosParameterPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('parameterVersion', ros.validateNumber)(properties.parameterVersion));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosParameterProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::OOS::Parameter` resource
+ *
+ * @param properties - the TypeScript properties of a `RosParameterProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::OOS::Parameter` resource.
+ */
+// @ts-ignore TS6133
+function rosParameterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosParameterPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ParameterVersion': ros.numberToRosTemplate(properties.parameterVersion),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Parameter`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Parameter` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-parameter
+ */
+export class RosParameter extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::OOS::Parameter";
+
+    /**
+     * @Attribute Constraints: The constraints of the common parameter.
+     */
+    public readonly attrConstraints: ros.IResolvable;
+
+    /**
+     * @Attribute CreatedBy: The user who created the common parameter.
+     */
+    public readonly attrCreatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute CreatedDate: The time when the common parameter was created.
+     */
+    public readonly attrCreatedDate: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the common parameter.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterId: The ID of the common parameter.
+     */
+    public readonly attrParameterId: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterVersion: The version number of the common parameter.
+     */
+    public readonly attrParameterVersion: ros.IResolvable;
+
+    /**
+     * @Attribute ShareType: The share type of the common parameter.
+     */
+    public readonly attrShareType: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of the common parameter.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute Type: The data type of the common parameter.
+     */
+    public readonly attrType: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedBy: The user who last updated the common parameter.
+     */
+    public readonly attrUpdatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedDate: The time when the common parameter was last updated.
+     */
+    public readonly attrUpdatedDate: ros.IResolvable;
+
+    /**
+     * @Attribute Value: The value of the common parameter.
+     */
+    public readonly attrValue: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property name: The name of the common parameter.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property parameterVersion: The version number of the common parameter.
+     */
+    public parameterVersion: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosParameterProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosParameter.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConstraints = this.getAtt('Constraints');
+        this.attrCreatedBy = this.getAtt('CreatedBy');
+        this.attrCreatedDate = this.getAtt('CreatedDate');
+        this.attrDescription = this.getAtt('Description');
+        this.attrParameterId = this.getAtt('ParameterId');
+        this.attrParameterVersion = this.getAtt('ParameterVersion');
+        this.attrShareType = this.getAtt('ShareType');
+        this.attrTags = this.getAtt('Tags');
+        this.attrType = this.getAtt('Type');
+        this.attrUpdatedBy = this.getAtt('UpdatedBy');
+        this.attrUpdatedDate = this.getAtt('UpdatedDate');
+        this.attrValue = this.getAtt('Value');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.name = props.name;
+        this.parameterVersion = props.parameterVersion;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            name: this.name,
+            parameterVersion: this.parameterVersion,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosParameterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosPatchBaseline`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaseline
  */
@@ -1326,7 +1525,7 @@ function rosTemplatesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Templates`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Templates`The , which type is used to query template lists.
  * @Note This class does not contain additional functions, so it is recommended to use the `Templates` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-templates
  */

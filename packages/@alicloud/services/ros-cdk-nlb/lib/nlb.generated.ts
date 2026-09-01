@@ -998,12 +998,15 @@ export interface RosLoadBalancerProps {
     readonly zoneMappings: Array<RosLoadBalancer.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property addressIpVersion: The version of IP address that the NLB instance uses to provide services.
+     * @Property addressIpVersion: The version of IP addresses used for the NLB instance. Valid values:
+     * - ipv4 (default)
+     * - DualStack
      */
     readonly addressIpVersion?: string | ros.IResolvable;
 
     /**
-     * @Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+     * @Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance that is associated with the
+     * Internet-facing NLB instance.
      */
     readonly bandwidthPackageId?: string | ros.IResolvable;
 
@@ -1029,7 +1032,8 @@ export interface RosLoadBalancerProps {
     readonly loadBalancerName?: string | ros.IResolvable;
 
     /**
-     * @Property loadBalancerType: The type of the NLB instance.
+     * @Property loadBalancerType: The type of the Server Load Balancer (SLB) instance. Set the value to network,
+     * which indicates an NLB instance.
      */
     readonly loadBalancerType?: string | ros.IResolvable;
 
@@ -1213,12 +1217,15 @@ export class RosLoadBalancer extends ros.RosResource {
     public zoneMappings: Array<RosLoadBalancer.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property addressIpVersion: The version of IP address that the NLB instance uses to provide services.
+     * @Property addressIpVersion: The version of IP addresses used for the NLB instance. Valid values:
+     * - ipv4 (default)
+     * - DualStack
      */
     public addressIpVersion: string | ros.IResolvable | undefined;
 
     /**
-     * @Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+     * @Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance that is associated with the
+     * Internet-facing NLB instance.
      */
     public bandwidthPackageId: string | ros.IResolvable | undefined;
 
@@ -1244,7 +1251,8 @@ export class RosLoadBalancer extends ros.RosResource {
     public loadBalancerName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property loadBalancerType: The type of the NLB instance.
+     * @Property loadBalancerType: The type of the Server Load Balancer (SLB) instance. Set the value to network,
+     * which indicates an NLB instance.
      */
     public loadBalancerType: string | ros.IResolvable | undefined;
 
@@ -1773,7 +1781,9 @@ export class RosSecurityGroupAttachment extends ros.RosResource {
 export interface RosSecurityPolicyProps {
 
     /**
-     * @Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version. You can specify at most 32 cipher suites.
+     * @Property ciphers: The cipher suites supported by the security policy. Valid values of this
+     * parameter vary based on the value of TlsVersions. You can specify up to 32 cipher
+     * suites.
      */
     readonly ciphers: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -1887,7 +1897,9 @@ export class RosSecurityPolicy extends ros.RosResource {
 
 
     /**
-     * @Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version. You can specify at most 32 cipher suites.
+     * @Property ciphers: The cipher suites supported by the security policy. Valid values of this
+     * parameter vary based on the value of TlsVersions. You can specify up to 32 cipher
+     * suites.
      */
     public ciphers: Array<string | ros.IResolvable> | ros.IResolvable;
 

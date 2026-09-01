@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudphone;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudPhone::InstanceGroup</code>, which is used to create and start cloud phones.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudPhone::InstanceGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:49:40.176Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:37:59.539Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.InstanceGroup")
 public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudphone.IInstanceGroup {
 
@@ -420,26 +420,34 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property period: Prepaid time period.
+         * Property period: The subscription duration.
          * <p>
-         * While PeriodUnit is month, it could be 1, 2, 3, 6.
-         * While PeriodUnit is year, it could be from 1 to 5Default value is 1.
+         * Default value: 1.
+         * <p>
+         * <ul>
+         * <li>Valid values if you set PeriodUnit to Month: 1, 2, 3, and 6.</li>
+         * <li>Valid values if you set PeriodUnit to Year: 1, 2, 3, 4, and 5.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param period Property period: Prepaid time period. This parameter is required.
+         * @param period Property period: The subscription duration. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: Prepaid time period.
+         * Property period: The subscription duration.
          * <p>
-         * While PeriodUnit is month, it could be 1, 2, 3, 6.
-         * While PeriodUnit is year, it could be from 1 to 5Default value is 1.
+         * Default value: 1.
+         * <p>
+         * <ul>
+         * <li>Valid values if you set PeriodUnit to Month: 1, 2, 3, and 6.</li>
+         * <li>Valid values if you set PeriodUnit to Year: 1, 2, 3, 4, and 5.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param period Property period: Prepaid time period. This parameter is required.
+         * @param period Property period: The subscription duration. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);

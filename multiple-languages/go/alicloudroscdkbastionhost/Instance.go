@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::BastionHost::Instance`, which is used to create a bastion host.
+// This class encapsulates and extends the ROS resource type `ALIYUN::BastionHost::Instance`.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

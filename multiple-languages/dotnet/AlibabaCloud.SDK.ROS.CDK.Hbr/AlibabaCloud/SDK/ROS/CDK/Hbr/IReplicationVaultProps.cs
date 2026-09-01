@@ -43,7 +43,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             }
         }
 
-        /// <summary>Property encryptType: The encryption type of the vault.</summary>
+        /// <summary>Property encryptType: The method that is used to encrypt the source data.</summary>
+        /// <remarks>
+        /// This parameter is valid only
+        /// if you set the VaultType parameter to STANDARD or OTS_BACKUP. Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>HBR_PRIVATE: The source data is encrypted by using the built-in encryption
+        /// method of Hybrid Backup Recovery (HBR).</description>
+        /// <description>KMS: The source data is encrypted by using Key Management Service (KMS).</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "encryptType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EncryptType
@@ -54,7 +64,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             }
         }
 
-        /// <summary>Property kmsKeyId: The KMS key ID used for encryption.</summary>
+        /// <summary>Property kmsKeyId: The customer master key (CMK) created in KMS or the alias of the key.</summary>
+        /// <remarks>
+        /// This
+        /// parameter is required only if you set the EncryptType parameter to KMS.
+        /// </remarks>
         [JsiiProperty(name: "kmsKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? KmsKeyId
@@ -65,7 +79,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             }
         }
 
-        /// <summary>Property redundancyType: The redundancy type of the vault.</summary>
+        /// <summary>Property redundancyType: The data redundancy type of the backup vault.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>LRS: standard locally redundant storage (LRS). Cloud Backup stores the copies
+        /// of each object on multiple devices of different facilities in the same zone. This
+        /// way, Cloud Backup ensures data durability and availability even if hardware
+        /// failures occur.</description>
+        /// <description>ZRS: standard zone-redundant storage (ZRS). Cloud Backup uses the multi-zone
+        /// mechanism to distribute data across three zones within the same region. If a zone
+        /// fails, the data that is stored in the other two zones is still accessible.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "redundancyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? RedundancyType
@@ -76,7 +103,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             }
         }
 
-        /// <summary>Property vaultStorageClass: The storage class of the vault.</summary>
+        /// <summary>Property vaultStorageClass: The storage type of the backup vault.</summary>
+        /// <remarks>
+        /// Valid value: STANDARD, which indicates
+        /// standard storage.
+        /// </remarks>
         [JsiiProperty(name: "vaultStorageClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? VaultStorageClass
@@ -127,7 +158,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property encryptType: The encryption type of the vault.</summary>
+            /// <summary>Property encryptType: The method that is used to encrypt the source data.</summary>
+            /// <remarks>
+            /// This parameter is valid only
+            /// if you set the VaultType parameter to STANDARD or OTS_BACKUP. Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>HBR_PRIVATE: The source data is encrypted by using the built-in encryption
+            /// method of Hybrid Backup Recovery (HBR).</description>
+            /// <description>KMS: The source data is encrypted by using Key Management Service (KMS).</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "encryptType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EncryptType
@@ -135,7 +176,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property kmsKeyId: The KMS key ID used for encryption.</summary>
+            /// <summary>Property kmsKeyId: The customer master key (CMK) created in KMS or the alias of the key.</summary>
+            /// <remarks>
+            /// This
+            /// parameter is required only if you set the EncryptType parameter to KMS.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "kmsKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? KmsKeyId
@@ -143,7 +188,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property redundancyType: The redundancy type of the vault.</summary>
+            /// <summary>Property redundancyType: The data redundancy type of the backup vault.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>LRS: standard locally redundant storage (LRS). Cloud Backup stores the copies
+            /// of each object on multiple devices of different facilities in the same zone. This
+            /// way, Cloud Backup ensures data durability and availability even if hardware
+            /// failures occur.</description>
+            /// <description>ZRS: standard zone-redundant storage (ZRS). Cloud Backup uses the multi-zone
+            /// mechanism to distribute data across three zones within the same region. If a zone
+            /// fails, the data that is stored in the other two zones is still accessible.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "redundancyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RedundancyType
@@ -151,7 +209,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property vaultStorageClass: The storage class of the vault.</summary>
+            /// <summary>Property vaultStorageClass: The storage type of the backup vault.</summary>
+            /// <remarks>
+            /// Valid value: STANDARD, which indicates
+            /// standard storage.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "vaultStorageClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? VaultStorageClass

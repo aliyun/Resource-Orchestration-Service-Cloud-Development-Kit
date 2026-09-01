@@ -15,7 +15,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Appflow
     {
         private object _authConfig;
 
-        /// <summary>Property authConfig: AuthConfig.</summary>
+        /// <summary>Property authConfig: The details of the authentication configuration.</summary>
+        /// <remarks>
+        /// The value is a JSON string.
+        /// </remarks>
         [JsiiProperty(name: "authConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}")]
         public object AuthConfig
         {

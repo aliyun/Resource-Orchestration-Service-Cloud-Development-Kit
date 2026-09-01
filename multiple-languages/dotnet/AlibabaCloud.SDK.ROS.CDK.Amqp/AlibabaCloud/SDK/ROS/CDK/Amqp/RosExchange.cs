@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Exchange`, which is used to create an exchange.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Exchange`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Exchange` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
@@ -108,7 +108,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: exchangeName: The name of the exchange.
+        /// <strong></strong>: ). The name
+        /// must be 1 to 255 characters in length.
+        /// - The name of an exchange cannot be changed after the exchange is created. To
+        /// change the name, delete the exchange and create a new one.
+        ///
+        /// <strong>Property</strong>: exchangeName: The name of the exchange. Note:
+        /// - The name can contain only letters, digits, hyphens (-), underscores (_),
+        /// periods (.), number signs (#), forward slashes (\/), and at signs (
         /// </remarks>
         [JsiiProperty(name: "exchangeName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ExchangeName
@@ -139,10 +146,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 
         /// <remarks>
         /// <strong>Property</strong>: exchangeType: The type of the exchange. Valid values:
-        /// FANOUT: An exchange of this type routes all the received messages to all the queues bound to this exchange. You can use a fanout exchange to broadcast messages.
-        /// DIRECT: An exchange of this type routes a message to the queue whose binding key is exactly the same as the routing key of the message.
-        /// TOPIC: This type is similar to the direct exchange type. An exchange of this type routes a message to one or more queues based on the fuzzy match or multi-condition match result between the routing key of the message and the binding keys of the current exchange.
-        /// HEADERS: Headers Exchange uses the Headers property instead of Routing Key for routing matching. When binding Headers Exchange and Queue, set the key-value pair of the binding property; when sending a message to the Headers Exchange, set the message's Headers property key-value pair and use the message Headers The message is routed to the bound Queue by comparing the attribute key-value pair and the bound attribute key-value pair.
+        /// - DIRECT: This routing rule type routes messages to a queue whose binding key
+        /// exactly matches the routing key of the message.
+        /// - TOPIC: This type is similar to the DIRECT type. It routes messages to bound
+        /// queues using routing key pattern matching and string comparison.
+        /// - FANOUT: This routing rule type is simple. It routes all messages sent to the
+        /// exchange to all queues that are bound to the exchange. This works like a
+        /// broadcast feature.
+        /// - HEADERS: This type is similar to the DIRECT type. It uses header properties
+        /// instead of a routing key for routing. When a queue is bound to a headers
+        /// exchange, key-value pairs are defined for the binding. When a message is sent to
+        /// the exchange, key-value pairs are defined in the message header. The exchange
+        /// routes the message by comparing the key-value pairs in the header with the
+        /// key-value pairs of the binding.
         /// </remarks>
         [JsiiProperty(name: "exchangeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ExchangeType

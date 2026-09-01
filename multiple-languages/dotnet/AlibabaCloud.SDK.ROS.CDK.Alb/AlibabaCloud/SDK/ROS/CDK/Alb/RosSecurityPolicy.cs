@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityPolicy`, which is used to create a custom security policy.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityPolicy`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `SecurityPolicy` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitypolicy
@@ -69,9 +69,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: ciphers: The supported cipher suites, which are determined by the TLS protocol version.
-        /// The specified cipher suites must be supported by at least one TLS protocol version that you specify.
-        /// Note For example, if you set the TLSVersions parameter to TLSv1.3, you must specify cipher suites that are supported by TLS 1.3.
+        /// <strong>Property</strong>: ciphers: The supported cipher suites.
         /// </remarks>
         [JsiiProperty(name: "ciphers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         public virtual object Ciphers
@@ -126,8 +124,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <remarks>
         /// <strong>Property</strong>: securityPolicyName: The name of the security policy.
-        /// The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-        /// (.), underscores (_), and hyphens (-). The name must start with a letter.
+        /// The name must be 2 to 128 characters in length, and can contain letters, digits,
+        /// Chinese characters, periods (.), underscores (_), hyphens (-), and spaces.
         /// </remarks>
         [JsiiProperty(name: "securityPolicyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object SecurityPolicyName

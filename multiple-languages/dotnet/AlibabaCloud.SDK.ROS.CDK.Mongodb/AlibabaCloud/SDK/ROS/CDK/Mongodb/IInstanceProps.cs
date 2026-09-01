@@ -28,7 +28,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             get;
         }
 
-        /// <summary>Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.</summary>
+        /// <summary>Property accountPassword: The password of the root account.</summary>
+        /// <remarks>
+        /// The password must meet the following
+        /// requirements:
+        ///
+        /// <list type="bullet">
+        /// <description>It must contain at least three of the following character types: uppercase
+        /// letters, lowercase letters, digits, and special characters.</description>
+        /// <description>Special characters include !@#$%^&amp;*()_+-=</description>
+        /// <description>It must be 8 to 32 characters in length.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "accountPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AccountPassword
@@ -50,9 +61,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property autoRenew: Indicates whether automatic renewal is enabled for the instance.</summary>
+        /// <summary>Property autoRenew: Specifies whether to enable auto-renewal for the instance.</summary>
         /// <remarks>
-        /// Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>true: Auto-renewal is enabled.</description>
+        /// <description>false: Auto-renewal is disabled. You must manually renew the instance. This is
+        /// the default value.</description>
+        /// </list>
+        ///
+        ///     This parameter is optional and takes effect only when you set the ChargeType
+        ///     parameter to PrePaid.
         /// </remarks>
         [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -64,7 +84,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property backupId: Specific backup set Id.</summary>
+        /// <summary>Property backupId: The backup point ID.</summary>
+        /// <remarks>
+        /// To query the backup point ID, call the <a href="">DescribeBackups</a>
+        /// operation.
+        ///
+        ///     You must specify this parameter and the SrcDBInstanceId parameter only when you
+        ///     clone an instance based on a backup point.
+        /// </remarks>
         [JsiiProperty(name: "backupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? BackupId
@@ -122,9 +149,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property couponNo: The coupon code.</summary>
+        /// <summary>Property couponNo: Specifies whether to use a coupon.</summary>
         /// <remarks>
-        /// Default value:youhuiquan_promotion_option_id_for_blank.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>default or null (default): Uses a coupon.</description>
+        /// <description>youhuiquan_promotion_option_id_for_blank: Does not use a coupon.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "couponNo", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -136,7 +168,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property databaseNames: The name of the database.</summary>
+        /// <summary>Property databaseNames: The database name.</summary>
+        /// <remarks>
+        ///     When you clone an instance, you can specify this parameter to clone specific
+        ///     databases. If you do not specify this parameter, all databases of the instance
+        ///     are cloned.
+        /// </remarks>
         [JsiiProperty(name: "databaseNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DatabaseNames
@@ -147,7 +184,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property dbInstanceDescription: Description of created database instance.</summary>
+        /// <summary>Property dbInstanceDescription: The name of the instance.</summary>
+        /// <remarks>
+        /// The name must meet the following requirements:
+        ///
+        /// <list type="bullet">
+        /// <description>It must start with a Chinese character or a letter.</description>
+        /// <description>It can contain digits, Chinese characters, letters, underscores (_), periods
+        /// (.), and hyphens (-).</description>
+        /// <description>It must be 2 to 256 characters in length.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "dbInstanceDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DbInstanceDescription
@@ -199,7 +246,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property engineVersion: Database instance version.</summary>
+        /// <summary>Property engineVersion: The database version.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>8.0</description>
+        /// <description>7.0</description>
+        /// <description>6.0</description>
+        /// <description>5.0</description>
+        /// <description>4.4</description>
+        /// <description>4.2</description>
+        /// <description>4.0</description>
+        /// </list>
+        ///
+        ///     <list type="bullet">
+        ///     <description>When you clone an instance by calling this operation, the value of this
+        ///     parameter must be the same as that of the source instance.</description>
+        ///     </list>
+        /// </remarks>
         [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EngineVersion
@@ -225,7 +290,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.</summary>
+        /// <summary>Property period: The subscription duration of the instance.</summary>
+        /// <remarks>
+        /// Unit: month.
+        /// Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+        ///
+        ///     This parameter is required and takes effect only when you set the ChargeType
+        ///     parameter to PrePaid.
+        /// </remarks>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Period
@@ -261,7 +333,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.</summary>
+        /// <summary>Property readonlyReplicas: The number of read-only nodes in the replica set instance.</summary>
+        /// <remarks>
+        /// Valid values are
+        /// integers from 0 to 5. The default value is 0.
+        /// </remarks>
         [JsiiProperty(name: "readonlyReplicas", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ReadonlyReplicas
@@ -311,13 +387,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property restoreType: Backup recovery instance.</summary>
+        /// <summary>Property restoreType: The method to restore an instance from a backup.</summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <description>0: Restore instance to specified backup set</description>
-        /// <description>1: Restore instance to specified point in time</description>
-        /// <description>2: Restore released instance to specified backup set</description>
-        /// <description>3: Restore instance to specified backup set</description>
+        /// <description>0: Restores the instance to a specified backup set.</description>
+        /// <description>1: Restores the instance to a specified point in time.</description>
+        /// <description>2: Restores a released instance to a specified backup set.</description>
+        /// <description>3: Restores the instance to a specified geo-redundant backup set.</description>
         /// </list>
         /// </remarks>
         [JsiiProperty(name: "restoreType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -373,7 +449,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property srcDbInstanceId: Create an instance of the backup set based on an instance.</summary>
+        /// <summary>Property srcDbInstanceId: The source instance ID.</summary>
+        /// <remarks>
+        ///     This parameter is required only when you clone an instance by calling this
+        ///     operation. You must also specify the RestoreTime parameter.
+        /// </remarks>
         [JsiiProperty(name: "srcDbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SrcDbInstanceId
@@ -551,7 +631,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.</summary>
+            /// <summary>Property accountPassword: The password of the root account.</summary>
+            /// <remarks>
+            /// The password must meet the following
+            /// requirements:
+            ///
+            /// <list type="bullet">
+            /// <description>It must contain at least three of the following character types: uppercase
+            /// letters, lowercase letters, digits, and special characters.</description>
+            /// <description>Special characters include !@#$%^&amp;*()_+-=</description>
+            /// <description>It must be 8 to 32 characters in length.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "accountPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AccountPassword
@@ -567,9 +658,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property autoRenew: Indicates whether automatic renewal is enabled for the instance.</summary>
+            /// <summary>Property autoRenew: Specifies whether to enable auto-renewal for the instance.</summary>
             /// <remarks>
-            /// Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>true: Auto-renewal is enabled.</description>
+            /// <description>false: Auto-renewal is disabled. You must manually renew the instance. This is
+            /// the default value.</description>
+            /// </list>
+            ///
+            ///     This parameter is optional and takes effect only when you set the ChargeType
+            ///     parameter to PrePaid.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -578,7 +678,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property backupId: Specific backup set Id.</summary>
+            /// <summary>Property backupId: The backup point ID.</summary>
+            /// <remarks>
+            /// To query the backup point ID, call the <a href="">DescribeBackups</a>
+            /// operation.
+            ///
+            ///     You must specify this parameter and the SrcDBInstanceId parameter only when you
+            ///     clone an instance based on a backup point.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "backupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? BackupId
@@ -621,9 +728,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property couponNo: The coupon code.</summary>
+            /// <summary>Property couponNo: Specifies whether to use a coupon.</summary>
             /// <remarks>
-            /// Default value:youhuiquan_promotion_option_id_for_blank.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>default or null (default): Uses a coupon.</description>
+            /// <description>youhuiquan_promotion_option_id_for_blank: Does not use a coupon.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "couponNo", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -632,7 +744,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property databaseNames: The name of the database.</summary>
+            /// <summary>Property databaseNames: The database name.</summary>
+            /// <remarks>
+            ///     When you clone an instance, you can specify this parameter to clone specific
+            ///     databases. If you do not specify this parameter, all databases of the instance
+            ///     are cloned.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "databaseNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DatabaseNames
@@ -640,7 +757,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property dbInstanceDescription: Description of created database instance.</summary>
+            /// <summary>Property dbInstanceDescription: The name of the instance.</summary>
+            /// <remarks>
+            /// The name must meet the following requirements:
+            ///
+            /// <list type="bullet">
+            /// <description>It must start with a Chinese character or a letter.</description>
+            /// <description>It can contain digits, Chinese characters, letters, underscores (_), periods
+            /// (.), and hyphens (-).</description>
+            /// <description>It must be 2 to 256 characters in length.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dbInstanceDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DbInstanceDescription
@@ -680,7 +807,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property engineVersion: Database instance version.</summary>
+            /// <summary>Property engineVersion: The database version.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>8.0</description>
+            /// <description>7.0</description>
+            /// <description>6.0</description>
+            /// <description>5.0</description>
+            /// <description>4.4</description>
+            /// <description>4.2</description>
+            /// <description>4.0</description>
+            /// </list>
+            ///
+            ///     <list type="bullet">
+            ///     <description>When you clone an instance by calling this operation, the value of this
+            ///     parameter must be the same as that of the source instance.</description>
+            ///     </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EngineVersion
@@ -700,7 +845,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.</summary>
+            /// <summary>Property period: The subscription duration of the instance.</summary>
+            /// <remarks>
+            /// Unit: month.
+            /// Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+            ///
+            ///     This parameter is required and takes effect only when you set the ChargeType
+            ///     parameter to PrePaid.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Period
@@ -727,7 +879,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.</summary>
+            /// <summary>Property readonlyReplicas: The number of read-only nodes in the replica set instance.</summary>
+            /// <remarks>
+            /// Valid values are
+            /// integers from 0 to 5. The default value is 0.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "readonlyReplicas", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ReadonlyReplicas
@@ -765,13 +921,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property restoreType: Backup recovery instance.</summary>
+            /// <summary>Property restoreType: The method to restore an instance from a backup.</summary>
             /// <remarks>
             /// <list type="bullet">
-            /// <description>0: Restore instance to specified backup set</description>
-            /// <description>1: Restore instance to specified point in time</description>
-            /// <description>2: Restore released instance to specified backup set</description>
-            /// <description>3: Restore instance to specified backup set</description>
+            /// <description>0: Restores the instance to a specified backup set.</description>
+            /// <description>1: Restores the instance to a specified point in time.</description>
+            /// <description>2: Restores a released instance to a specified backup set.</description>
+            /// <description>3: Restores the instance to a specified geo-redundant backup set.</description>
             /// </list>
             /// </remarks>
             [JsiiOptional]
@@ -815,7 +971,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property srcDbInstanceId: Create an instance of the backup set based on an instance.</summary>
+            /// <summary>Property srcDbInstanceId: The source instance ID.</summary>
+            /// <remarks>
+            ///     This parameter is required only when you clone an instance by calling this
+            ///     operation. You must also specify the RestoreTime parameter.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "srcDbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SrcDbInstanceId

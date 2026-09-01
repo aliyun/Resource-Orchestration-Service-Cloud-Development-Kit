@@ -10,11 +10,11 @@ export { RosAutoProvisioningGroup as AutoProvisioningGroupProperty };
 export interface AutoProvisioningGroupProps {
 
     /**
-     * Property totalTargetCapacity: The total target capacity of the auto provisioning group. The target capacity consists
-     * of the following three parts:
-     * The target capacity of pay-as-you-go instances specified by the PayAsYouGoTargetCapacity parameter
-     * The target capacity of preemptible instances specified by the SpotTargetCapacity parameter
-     * The supplemental capacity besides PayAsYouGoTargetCapacity and SpotTargetCapacity
+     * Property totalTargetCapacity: The total target capacity of the auto provisioning group. Valid values: Positive
+     * integers.
+     * The total capacity must be greater than or equal to the sum of
+     * `PayAsYouGoTargetCapacity` (target capacity for pay-as-you-go instances) and
+     * `SpotTargetCapacity` (target capacity for spot instances).
      */
     readonly totalTargetCapacity: string | ros.IResolvable;
 
@@ -26,16 +26,16 @@ export interface AutoProvisioningGroupProps {
     readonly autoProvisioningGroupName?: string | ros.IResolvable;
 
     /**
-     * Property autoProvisioningGroupType: The type of the auto provisioning group. Valid values:
-     * request: One-time delivery. After the auto provisioning group is started, it only attempts
-     * to create an instance cluster once. If the cluster fails to be created, the group
-     * does not try again.
-     * maintain: The continuous delivery and maintain capacity type. After the auto provisioning group
-     * is started, it continuously attempts to create and maintain the instance cluster.
-     * The auto provisioning group compares the real-time and target capacity of the cluster.
-     * If the cluster does not meet the target capacity, the group will create instances
-     * until the cluster meets the target capacity.
-     * Default value: maintain
+     * Property autoProvisioningGroupType: The delivery type of the auto provisioning group. Valid values:
+     * - request: One-time asynchronous delivery. The group delivers the instance
+     * cluster only at startup. If scheduling fails, no retry occurs.
+     * - instant: One-time synchronous delivery. The group creates instances
+     * synchronously at startup and returns the list of successfully created instances
+     * and reasons for failures in the response.
+     * - maintain: Continuous provisioning. The group attempts to deliver the instance
+     * cluster at startup and monitors real-time capacity. If the target capacity is not
+     * met, it continues creating ECS instances.
+     * Default value: maintain.
      */
     readonly autoProvisioningGroupType?: string | ros.IResolvable;
 
@@ -50,11 +50,12 @@ export interface AutoProvisioningGroupProps {
     readonly dataDiskConfig?: Array<RosAutoProvisioningGroup.DataDiskConfigProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property defaultTargetCapacityType: The type of supplemental instances. When the total value of PayAsYouGoTargetCapacity and SpotTargetCapacity is smaller than the value of TotalTargetCapacity, the auto provisioning group will create instances of the specified type to meet
-     * the capacity requirements. Valid values:
-     * PayAsYouGo: Pay-as-you-go instances.
-     * Spot: Preemptible instances.
-     * Default value: Spot
+     * Property defaultTargetCapacityType: Specifies the billing method for the capacity difference when the sum of
+     * `PayAsYouGoTargetCapacity` and `SpotTargetCapacity` is less than
+     * `TotalTargetCapacity`. Valid values:
+     * - PayAsYouGo: Pay-as-you-go instances.
+     * - Spot: Spot instances.
+     * Default value: Spot.
      */
     readonly defaultTargetCapacityType?: string | ros.IResolvable;
 
@@ -64,12 +65,13 @@ export interface AutoProvisioningGroupProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property excessCapacityTerminationPolicy: The shutdown policy for excess preemptible instances followed when the capacity of
-     * the auto provisioning group exceeds the target capacity. Valid values:
-     * no-termination: Excess preemptible instances are not shut down.
-     * termination: Excess preemptible instances are to be shut down. The action to be performed on these
-     * shutdown instances is specified by the SpotInstanceInterruptionBehavior parameter.
-     * Default value: no-termination
+     * Property excessCapacityTerminationPolicy: Specifies whether to release instances when the real-time capacity of the auto
+     * provisioning group exceeds the target capacity and scale-in is triggered. Valid
+     * values:
+     * - termination: Releases scaled-in instances.
+     * - no-termination: Only removes scaled-in instances from the auto provisioning
+     * group.
+     * Default value: no-termination.
      */
     readonly excessCapacityTerminationPolicy?: string | ros.IResolvable;
 
@@ -93,8 +95,10 @@ export interface AutoProvisioningGroupProps {
     readonly launchTemplateId?: string | ros.IResolvable;
 
     /**
-     * Property launchTemplateVersion: The version of the instance launch template associated with the auto provisioning
-     * group. You can call the DescribeLaunchTemplateVersions operation to query the versions of available instance launch templates.
+     * Property launchTemplateVersion: The version of the launch template associated with the auto provisioning group.
+     * Call [DescribeLaunchTemplateVersions]() to query available launch template
+     * versions.
+     * Default value: The default version of the launch template.
      */
     readonly launchTemplateVersion?: string | ros.IResolvable;
 
@@ -124,7 +128,8 @@ export interface AutoProvisioningGroupProps {
     readonly payAsYouGoAllocationStrategy?: string | ros.IResolvable;
 
     /**
-     * Property payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group.
+     * Property payAsYouGoTargetCapacity: The target capacity for pay-as-you-go instances in the auto provisioning group.
+     * Valid values: Integers less than or equal to the value of `TotalTargetCapacity`.
      */
     readonly payAsYouGoTargetCapacity?: string | ros.IResolvable;
 
@@ -141,31 +146,37 @@ export interface AutoProvisioningGroupProps {
     readonly resourcePoolOptions?: RosAutoProvisioningGroup.ResourcePoolOptionsProperty | ros.IResolvable;
 
     /**
-     * Property spotAllocationStrategy: The scale-out policy for preemptible instances. Valid values:
-     * lowest-price: The cost optimization policy the auto provisioning group follows to select instance
-     * types of the lowest cost to create instances.
-     * diversified: The distribution balancing policy the auto provisioning group follows to evenly create
-     * instances across zones specified in multiple extended template configurations.
-     * Default value: lowest-price
+     * Property spotAllocationStrategy: The strategy for creating spot instances. Valid values:
+     * - lowest-price: Cost optimization strategy. Selects the instance type with the
+     * lowest price.
+     * - diversified: Balanced zone distribution strategy. Creates instances across the
+     * zones specified in the launch template configurations and distributes them
+     * evenly.
+     * - capacity-optimized: Capacity optimization strategy. Selects the optimal
+     * instance type and zone based on inventory availability.
+     * Default value: lowest-price.
      */
     readonly spotAllocationStrategy?: string | ros.IResolvable;
 
     /**
-     * Property spotInstanceInterruptionBehavior: The default behavior after preemptible instances are shut down. Value values:
-     * stop: stops preemptible instances.
-     * terminate: releases preemptible instances.
-     * Default value: stop
+     * Property spotInstanceInterruptionBehavior: The behavior when a spot instance is interrupted. Valid values:
+     * - stop: Stops the instance.
+     * - terminate: Releases the instance.
+     * Default value: terminate.
      */
     readonly spotInstanceInterruptionBehavior?: string | ros.IResolvable;
 
     /**
-     * Property spotInstancePoolsToUseCount: This parameter takes effect when the SpotAllocationStrategy parameter is set to lowest-price. The auto provisioning group selects instance types of the lowest cost to create
-     * instances.
+     * Property spotInstancePoolsToUseCount: Takes effect only when `SpotAllocationStrategy` is set to `lowest-price`.
+     * Specifies the number of lowest-priced instance types from which the auto
+     * provisioning group creates instances.
+     * Valid values: Less than the value of N in `LaunchTemplateConfig.N`.
      */
     readonly spotInstancePoolsToUseCount?: number | ros.IResolvable;
 
     /**
-     * Property spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group.
+     * Property spotTargetCapacity: The target capacity for spot instances in the auto provisioning group. Valid
+     * values: Integers less than or equal to the value of `TotalTargetCapacity`.
      */
     readonly spotTargetCapacity?: string | ros.IResolvable;
 
@@ -175,34 +186,38 @@ export interface AutoProvisioningGroupProps {
     readonly systemDiskConfig?: Array<RosAutoProvisioningGroup.SystemDiskConfigProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property terminateInstances: Specifies whether to release instances of the auto provisioning group. Valid values:
-     * true
-     * false
-     * Default: false
+     * Property terminateInstances: Specifies whether to release instances in the group when you delete the auto
+     * provisioning group. Valid values:
+     * - true: Releases instances in the group.
+     * - false: Retains instances in the group.
+     * Default value: false.
      */
     readonly terminateInstances?: boolean | ros.IResolvable;
 
     /**
-     * Property terminateInstancesWithExpiration: The shutdown policy for preemptible instances when the auto provisioning group expires.
-     * Valid values:
-     * true: shuts down preemptible instances. The action to be performed on these shutdown instances
-     * is specified by the SpotInstanceInterruptionBehavior parameter.
-     * false: does not shut down preemptible instances.
-     * Default: false
+     * Property terminateInstancesWithExpiration: Specifies whether to release instances in the group when the auto provisioning
+     * group expires. Valid values:
+     * - true: Releases instances in the group.
+     * - false: Only removes instances from the auto provisioning group.
+     * Default value: false.
      */
     readonly terminateInstancesWithExpiration?: boolean | ros.IResolvable;
 
     /**
-     * Property validFrom: The time when the auto provisioning group is started. The period of time between this
-     * point in time and the point in time specified by the ValidUntil parameter is the effective time period of the auto provisioning group.
-     * By default, an auto provisioning group is immediately started after creation.
+     * Property validFrom: The start time of the auto provisioning group. Used together with `ValidUntil` to
+     * define the validity period.
+     * Specify the time in [ISO 8601]() format using UTC+0 time. Format:
+     * yyyy-MM-ddTHH:mm:ssZ.
+     * Default value: The timestamp when the API call takes effect immediately.
      */
     readonly validFrom?: string | ros.IResolvable;
 
     /**
-     * Property validUntil: The time when the auto provisioning group expires. The period of time between this
-     * point in time and the point in time specified by the ValidFrom parameter is the effective time period of the auto provisioning group.
-     * By default, an auto provisioning group never expires.
+     * Property validUntil: The expiration time of the auto provisioning group. Used together with
+     * `ValidFrom` to define the validity period.
+     * Specify the time in [ISO 8601]() format using UTC+0 time. Format:
+     * yyyy-MM-ddTHH:mm:ssZ.
+     * Default value: 2099-12-31T23:59:59Z.
      */
     readonly validUntil?: string | ros.IResolvable;
 }
@@ -224,7 +239,7 @@ export interface IAutoProvisioningGroup extends ros.IResource {
     readonly attrAutoProvisioningGroupName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`, which is used to create an auto provisioning group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoProvisioningGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
  */

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.adb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADB::Account</code>, which is used to create a database account for an AnalyticDB for MySQL cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADB::Account</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:14:30.195Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:53:53.076Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.adb.IAccount {
 
@@ -128,20 +128,38 @@ public class Account extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property accountName: The name of the account.
+         * Property accountName: The database account name.
+         * <p>
+         * The name must meet the following requirements:
+         * <p>
+         * <ul>
+         * <li>Start with a lowercase letter and end with a lowercase letter or digit.</li>
+         * <li>Contain only lowercase letters, digits, or underscores (_).</li>
+         * <li>Be 2 to 16 characters long.</li>
+         * <li>Not use reserved usernames such as root, admin, or opsadmin.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accountName Property accountName: The name of the account. This parameter is required.
+         * @param accountName Property accountName: The database account name. This parameter is required.
          */
         public Builder accountName(final java.lang.String accountName) {
             this.props.accountName(accountName);
             return this;
         }
         /**
-         * Property accountName: The name of the account.
+         * Property accountName: The database account name.
+         * <p>
+         * The name must meet the following requirements:
+         * <p>
+         * <ul>
+         * <li>Start with a lowercase letter and end with a lowercase letter or digit.</li>
+         * <li>Contain only lowercase letters, digits, or underscores (_).</li>
+         * <li>Be 2 to 16 characters long.</li>
+         * <li>Not use reserved usernames such as root, admin, or opsadmin.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accountName Property accountName: The name of the account. This parameter is required.
+         * @param accountName Property accountName: The database account name. This parameter is required.
          */
         public Builder accountName(final com.aliyun.ros.cdk.core.IResolvable accountName) {
             this.props.accountName(accountName);
@@ -149,30 +167,34 @@ public class Account extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property accountPassword: The password of the account.
+         * Property accountPassword: The database account password.
          * <p>
-         * The password must contain uppercase letters, lowercase letters, digits, and special
-         * characters.
-         * Special characters include ! &#64; # $ % ^ &amp; * ()  _ + - and =
-         * The password must be 8 to 32 characters in length.
+         * <ul>
+         * <li>Use any three of the following character types: uppercase letters, lowercase
+         * letters, digits, and special characters.</li>
+         * <li>Special characters include the following: <code>!&#64;#$%^&amp;*()_+-=</code></li>
+         * <li>Be 8 to 32 characters long.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accountPassword Property accountPassword: The password of the account. This parameter is required.
+         * @param accountPassword Property accountPassword: The database account password. This parameter is required.
          */
         public Builder accountPassword(final java.lang.String accountPassword) {
             this.props.accountPassword(accountPassword);
             return this;
         }
         /**
-         * Property accountPassword: The password of the account.
+         * Property accountPassword: The database account password.
          * <p>
-         * The password must contain uppercase letters, lowercase letters, digits, and special
-         * characters.
-         * Special characters include ! &#64; # $ % ^ &amp; * ()  _ + - and =
-         * The password must be 8 to 32 characters in length.
+         * <ul>
+         * <li>Use any three of the following character types: uppercase letters, lowercase
+         * letters, digits, and special characters.</li>
+         * <li>Special characters include the following: <code>!&#64;#$%^&amp;*()_+-=</code></li>
+         * <li>Be 8 to 32 characters long.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accountPassword Property accountPassword: The password of the account. This parameter is required.
+         * @param accountPassword Property accountPassword: The database account password. This parameter is required.
          */
         public Builder accountPassword(final com.aliyun.ros.cdk.core.IResolvable accountPassword) {
             this.props.accountPassword(accountPassword);

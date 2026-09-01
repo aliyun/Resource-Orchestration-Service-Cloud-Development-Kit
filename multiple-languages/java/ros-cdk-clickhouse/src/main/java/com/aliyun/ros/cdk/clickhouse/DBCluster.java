@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.clickhouse;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ClickHouse::DBCluster</code>, which is used to create an ApsaraDB for ClickHouse cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ClickHouse::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:46:44.995Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:34:08.051Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.clickhouse.IDBCluster {
 
@@ -647,20 +647,44 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property period: The unit of the subscription duration.
+         * Property period: The subscription duration unit.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <notice>This parameter is required only when <code>PayType</code> is set to
+         * <code>Prepaid</code>.&gt;</notice>
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>Year: Measured in years.</li>
+         * <li>Month: Measured in months.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param period Property period: The unit of the subscription duration. This parameter is required.
+         * @param period Property period: The subscription duration unit. This parameter is required.
          */
         public Builder period(final java.lang.String period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The unit of the subscription duration.
+         * Property period: The subscription duration unit.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <notice>This parameter is required only when <code>PayType</code> is set to
+         * <code>Prepaid</code>.&gt;</notice>
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>Year: Measured in years.</li>
+         * <li>Month: Measured in months.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param period Property period: The unit of the subscription duration. This parameter is required.
+         * @param period Property period: The subscription duration unit. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);

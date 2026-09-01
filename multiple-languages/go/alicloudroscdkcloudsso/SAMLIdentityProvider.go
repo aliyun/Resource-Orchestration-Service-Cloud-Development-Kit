@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::SAMLIdentityProvider`, which is used to configure the information about a Security Assertion Markup Language (SAML) identity provider (IdP).
+// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::SAMLIdentityProvider`.
 type SAMLIdentityProvider interface {
 	alicloudroscdkcore.Resource
 	ISAMLIdentityProvider

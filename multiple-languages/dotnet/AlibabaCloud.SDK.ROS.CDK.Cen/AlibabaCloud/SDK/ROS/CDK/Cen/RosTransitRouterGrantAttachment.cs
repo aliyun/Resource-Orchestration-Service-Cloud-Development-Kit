@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterGrantAttachment`The , which resource grants a transit router permissions on a network instance.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterGrantAttachment`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `TransitRouterGrantAttachment` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutergrantattachment
@@ -211,9 +211,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: orderType: The billing method for the network instance. Valid values:
-        /// - PayByCenOwner: The fees incurred by the network instance are paid by the owner of the CEN instance.
-        /// - PayByResourceOwner: The fees incurred by the network instance are paid by the owner of the network instance.
+        /// <strong>Property</strong>: orderType: The entity that pays the fees of the network instance. Valid values:
+        /// - PayByCenOwner: the account that owns the CEN instance.
+        /// - PayByResourceOwner: the account that owns the network instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "orderType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

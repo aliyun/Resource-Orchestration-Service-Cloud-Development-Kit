@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-peeringrouterinterfacebinding
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.496Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.308Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.PeeringRouterInterfaceBindingProps")
 @software.amazon.jsii.Jsii.Proxy(PeeringRouterInterfaceBindingProps.Jsii$Proxy.class)
 public interface PeeringRouterInterfaceBindingProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,7 @@ public interface PeeringRouterInterfaceBindingProps extends software.amazon.jsii
     @org.jetbrains.annotations.NotNull java.lang.Object getOppositeInterfaceId();
 
     /**
-     * Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface.
+     * Property routerInterfaceId: The ID of the router interface.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRouterInterfaceId();
 
@@ -71,7 +71,7 @@ public interface PeeringRouterInterfaceBindingProps extends software.amazon.jsii
 
         /**
          * Sets the value of {@link PeeringRouterInterfaceBindingProps#getRouterInterfaceId}
-         * @param routerInterfaceId Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface. This parameter is required.
+         * @param routerInterfaceId Property routerInterfaceId: The ID of the router interface. This parameter is required.
          * @return {@code this}
          */
         public Builder routerInterfaceId(java.lang.String routerInterfaceId) {
@@ -81,7 +81,7 @@ public interface PeeringRouterInterfaceBindingProps extends software.amazon.jsii
 
         /**
          * Sets the value of {@link PeeringRouterInterfaceBindingProps#getRouterInterfaceId}
-         * @param routerInterfaceId Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface. This parameter is required.
+         * @param routerInterfaceId Property routerInterfaceId: The ID of the router interface. This parameter is required.
          * @return {@code this}
          */
         public Builder routerInterfaceId(com.aliyun.ros.cdk.core.IResolvable routerInterfaceId) {

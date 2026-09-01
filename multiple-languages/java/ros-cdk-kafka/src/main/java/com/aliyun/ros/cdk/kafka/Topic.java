@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::KAFKA::Topic</code>, which is used to create a topic.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:37:40.616Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:51:39.134Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kafka.ITopic {
 
@@ -188,11 +188,14 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         /**
          * Property topic: The name of the topic.
          * <p>
-         * The value of this parameter must meet the following requirements:
-         * The name can only contain letters, digits, hyphens (-), and underscores (_).
-         * The name must be 3 to 64 characters in length, and will be automatically truncated
-         * if it contains more characters.
-         * The name cannot be modified after being created.
+         * <ul>
+         * <li>Reserved instance: The name can contain uppercase letters, lowercase letters,
+         * digits, underscores (_), hyphens (-), and periods (.). The name must be 3 to 64
+         * characters in length.</li>
+         * <li>Serverless instance: The name can contain uppercase letters, lowercase letters,
+         * digits, underscores (_), hyphens (-), and periods (.). The name must be 1 to 249
+         * characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param topic Property topic: The name of the topic. This parameter is required.
@@ -204,11 +207,14 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         /**
          * Property topic: The name of the topic.
          * <p>
-         * The value of this parameter must meet the following requirements:
-         * The name can only contain letters, digits, hyphens (-), and underscores (_).
-         * The name must be 3 to 64 characters in length, and will be automatically truncated
-         * if it contains more characters.
-         * The name cannot be modified after being created.
+         * <ul>
+         * <li>Reserved instance: The name can contain uppercase letters, lowercase letters,
+         * digits, underscores (_), hyphens (-), and periods (.). The name must be 3 to 64
+         * characters in length.</li>
+         * <li>Serverless instance: The name can contain uppercase letters, lowercase letters,
+         * digits, underscores (_), hyphens (-), and periods (.). The name must be 1 to 249
+         * characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param topic Property topic: The name of the topic. This parameter is required.
@@ -248,28 +254,74 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property config: Supplementary configuration.
+         * Property config: The advanced configurations of the topic.
          * <p>
-         * Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
-         * This parameter can only be specified if the LocalTopic value is true.
-         * NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+         * <ul>
+         * <li>Configure this parameter in the JSON format.</li>
+         * <li>This parameter is available only if LocalTopic is set to true.</li>
+         * <li>The following configurations are supported for reserved instances:</li>
+         * <li>retention.ms: The message retention period. The value must be an integer from
+         * 3,600,000 to 31,536,000,000. Unit: milliseconds.</li>
+         * <li>max.message.bytes: The maximum size of a message that can be sent. The value
+         * must be an integer from 1,048,576 to 10,485,760. Unit: bytes.</li>
+         * <li>message.timestamp.type: The timestamp type of a message. Valid values:
+         * CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+         * the time when the producer creates the message. If you do not specify a
+         * timestamp, the client time is used. LogAppendTime indicates that the message
+         * timestamp is the time when the server stores the message. The default value is
+         * CreateTime. We recommend that you set this parameter to LogAppendTime.</li>
+         * <li>The following configurations are supported for Serverless instances:</li>
+         * <li>retention.hours: The message retention period. The value is of the string type.
+         * The value must be an integer from 24 to 8,760.</li>
+         * <li>max.message.bytes: The maximum size of a message that can be sent. The value is
+         * of the string type. The value must be an integer from 1,048,576 to 10,485,760.</li>
+         * <li>message.timestamp.type: The timestamp type of a message. Valid values:
+         * CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+         * the time when the producer creates the message. If you do not specify a
+         * timestamp, the client time is used. LogAppendTime indicates that the message
+         * timestamp is the time when the server stores the message. The default value is
+         * CreateTime. We recommend that you set this parameter to LogAppendTime.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param config Property config: Supplementary configuration. This parameter is required.
+         * @param config Property config: The advanced configurations of the topic. This parameter is required.
          */
         public Builder config(final com.aliyun.ros.cdk.core.IResolvable config) {
             this.props.config(config);
             return this;
         }
         /**
-         * Property config: Supplementary configuration.
+         * Property config: The advanced configurations of the topic.
          * <p>
-         * Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
-         * This parameter can only be specified if the LocalTopic value is true.
-         * NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+         * <ul>
+         * <li>Configure this parameter in the JSON format.</li>
+         * <li>This parameter is available only if LocalTopic is set to true.</li>
+         * <li>The following configurations are supported for reserved instances:</li>
+         * <li>retention.ms: The message retention period. The value must be an integer from
+         * 3,600,000 to 31,536,000,000. Unit: milliseconds.</li>
+         * <li>max.message.bytes: The maximum size of a message that can be sent. The value
+         * must be an integer from 1,048,576 to 10,485,760. Unit: bytes.</li>
+         * <li>message.timestamp.type: The timestamp type of a message. Valid values:
+         * CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+         * the time when the producer creates the message. If you do not specify a
+         * timestamp, the client time is used. LogAppendTime indicates that the message
+         * timestamp is the time when the server stores the message. The default value is
+         * CreateTime. We recommend that you set this parameter to LogAppendTime.</li>
+         * <li>The following configurations are supported for Serverless instances:</li>
+         * <li>retention.hours: The message retention period. The value is of the string type.
+         * The value must be an integer from 24 to 8,760.</li>
+         * <li>max.message.bytes: The maximum size of a message that can be sent. The value is
+         * of the string type. The value must be an integer from 1,048,576 to 10,485,760.</li>
+         * <li>message.timestamp.type: The timestamp type of a message. Valid values:
+         * CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+         * the time when the producer creates the message. If you do not specify a
+         * timestamp, the client time is used. LogAppendTime indicates that the message
+         * timestamp is the time when the server stores the message. The default value is
+         * CreateTime. We recommend that you set this parameter to LogAppendTime.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param config Property config: Supplementary configuration. This parameter is required.
+         * @param config Property config: The advanced configurations of the topic. This parameter is required.
          */
         public Builder config(final java.util.Map<java.lang.String, ? extends java.lang.Object> config) {
             this.props.config(config);
@@ -337,10 +389,14 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         /**
          * Property partitionNum: The number of partitions in the topic.
          * <p>
-         * Valid values:
-         * 1 to 48
-         * We recommend that you set the number of partitions to a multiple of 6 to reduce the
-         * risk of data skew.Note:For special requirements,submit a ticket.
+         * <ul>
+         * <li>The value must be an integer from 1 to 360.</li>
+         * <li>The console suggests a number of partitions based on the instance type. Follow
+         * the suggestion to reduce the risk of data skew.
+         * Default value:</li>
+         * <li>Reserved instance: 12</li>
+         * <li>Serverless instance: 3</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param partitionNum Property partitionNum: The number of partitions in the topic. This parameter is required.
@@ -352,10 +408,14 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         /**
          * Property partitionNum: The number of partitions in the topic.
          * <p>
-         * Valid values:
-         * 1 to 48
-         * We recommend that you set the number of partitions to a multiple of 6 to reduce the
-         * risk of data skew.Note:For special requirements,submit a ticket.
+         * <ul>
+         * <li>The value must be an integer from 1 to 360.</li>
+         * <li>The console suggests a number of partitions based on the instance type. Follow
+         * the suggestion to reduce the risk of data skew.
+         * Default value:</li>
+         * <li>Reserved instance: 12</li>
+         * <li>Serverless instance: 3</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param partitionNum Property partitionNum: The number of partitions in the topic. This parameter is required.

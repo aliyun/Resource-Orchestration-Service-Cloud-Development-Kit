@@ -22,7 +22,9 @@ type QosPolicyProps struct {
 	// The supported protocols provided in this topic are for reference only. The actual
 	// protocols in the console shall prevail.
 	IpProtocol interface{} `field:"required" json:"ipProtocol" yaml:"ipProtocol"`
-	// Property priority: The priority of the traffic throttling policy to which the traffic classification rule belongs.
+	// Property priority: The priority of the throttling rule to which the stream classification rule belongs.
+	//
+	// Valid values: 1 to 3. A smaller value indicates a higher priority.
 	Priority interface{} `field:"required" json:"priority" yaml:"priority"`
 	// Property qosId: The ID of the QoS policy.
 	QosId interface{} `field:"required" json:"qosId" yaml:"qosId"`
@@ -38,10 +40,11 @@ type QosPolicyProps struct {
 	// 80\/80: port 80
 	// -1\/-1: all ports.
 	SourcePortRange interface{} `field:"required" json:"sourcePortRange" yaml:"sourcePortRange"`
-	// Property description: The description of the traffic classification rule.
+	// Property description: The description of the stream classification rule for the QoS policy.
 	//
-	// The description must be 1 to 512 characters in length and can contain letters, digits,
-	// underscores (_), and hyphens (-). It must start with a letter.
+	// The description must be 1 to 512 characters in length. It must start with a
+	// letter or a Chinese character and can contain digits, underscores (_), and
+	// hyphens (-).
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property dpiGroupIds: The ID of the application group.
 	//
@@ -58,10 +61,10 @@ type QosPolicyProps struct {
 	// Specify the time in the ISO 8601 standard in the YYYY-MM-DDThh:mm:ss+0800 format.
 	// The time must be in UTC+8.
 	EndTime interface{} `field:"optional" json:"endTime" yaml:"endTime"`
-	// Property name: The name of the traffic classification rule.
+	// Property name: The name of the stream classification rule.
 	//
-	// The name must be 2 to 100 characters in length, and can contain digits, underscores
-	// (_), and hyphens (-). It must start with a letter.
+	// The name must be 2 to 100 characters in length. It must start with a letter or a
+	// Chinese character and can contain digits, hyphens (-), and underscores (_).
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	// Property startTime: The time when the traffic classification rule takes effect.
 	//

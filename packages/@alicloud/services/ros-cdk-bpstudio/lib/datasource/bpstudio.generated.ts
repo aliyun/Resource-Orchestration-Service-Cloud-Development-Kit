@@ -64,7 +64,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::BPStudio::Application`, which is used to query the information about an application.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::BPStudio::Application`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Application` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-bpstudio-application
  */
@@ -207,7 +207,7 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::BPStudio::Template`, which is used to query the information about a template, such as the architecture diagram.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::BPStudio::Template`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-bpstudio-template
  */

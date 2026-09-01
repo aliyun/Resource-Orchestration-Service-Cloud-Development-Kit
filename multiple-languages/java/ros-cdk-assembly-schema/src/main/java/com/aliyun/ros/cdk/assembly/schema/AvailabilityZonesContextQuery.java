@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Query to availability zone context provider.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:02:50.062Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:24:41.893Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.AvailabilityZonesContextQuery")
 @software.amazon.jsii.Jsii.Proxy(AvailabilityZonesContextQuery.Jsii$Proxy.class)
 public interface AvailabilityZonesContextQuery extends software.amazon.jsii.JsiiSerializable {

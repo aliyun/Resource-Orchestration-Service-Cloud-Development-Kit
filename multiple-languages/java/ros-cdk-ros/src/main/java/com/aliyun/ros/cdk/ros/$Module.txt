@@ -19,6 +19,7 @@
 @alicloud/ros-cdk-ros.RosAssert=com.aliyun.ros.cdk.ros.RosAssert
 @alicloud/ros-cdk-ros.RosAssertProps=com.aliyun.ros.cdk.ros.RosAssertProps
 @alicloud/ros-cdk-ros.RosAutoEnableService=com.aliyun.ros.cdk.ros.RosAutoEnableService
+@alicloud/ros-cdk-ros.RosAutoEnableService.ServiceParametersProperty=com.aliyun.ros.cdk.ros.RosAutoEnableService$ServiceParametersProperty
 @alicloud/ros-cdk-ros.RosAutoEnableServiceProps=com.aliyun.ros.cdk.ros.RosAutoEnableServiceProps
 @alicloud/ros-cdk-ros.RosCustomResource=com.aliyun.ros.cdk.ros.RosCustomResource
 @alicloud/ros-cdk-ros.RosCustomResource.HttpConfigProperty=com.aliyun.ros.cdk.ros.RosCustomResource$HttpConfigProperty

@@ -189,9 +189,11 @@ export interface RosAutoEnableServiceProps {
      * DCDN: Dynamic Route for CDN
      * EDAS: Enterprise Distributed Application Service
      * EMAS: Enterprise Mobile Application Studio
+     * EMR\/AICenter: EMR Serverless Spark AI Center
      * FC: Function Compute
      * FNF: Serverless Workflow
      * MaxCompute: MaxCompute
+     * Milvus\/Function: Milvus Function
      * NAS: Network Attached Storage
      * MNS: Message Service (MNS)
      * HBR: Hybrid Backup Recovery
@@ -220,6 +222,11 @@ export interface RosAutoEnableServiceProps {
      * DSC: Data Security Center Free Edition Service
      */
     readonly serviceName: string | ros.IResolvable;
+
+    /**
+     * @Property serviceParameters: The parameters that are required to enable the service. WorkspaceId is required when ServiceName is EMR\/AICenter.
+     */
+    readonly serviceParameters?: RosAutoEnableService.ServiceParametersProperty | ros.IResolvable;
 }
 
 /**
@@ -236,10 +243,11 @@ function RosAutoEnableServicePropsValidator(properties: any): ros.ValidationResu
     if(properties.serviceName && (typeof properties.serviceName) !== 'object') {
         errors.collect(ros.propertyValidator('serviceName', ros.validateAllowedValues)({
           data: properties.serviceName,
-          allowedValues: ["AHAS","ARMS","ARMS/App","ARMS/Web","ARMS/PrometheusMonitor","ARMS/SyntheticPost","ApiGateway","BatchCompute","BrainIndustrial","CloudStorageGateway","CMS","CR","CS","DataHub","DCDN","EDAS","EMAS","FC","FNF","MaxCompute","MNS","NAS","HBR","IMM","KMS","NLP","OSS","OTS","PrivateLink","PrivateZone","RocketMQ","SAE","SLS","TrafficMirror","VS","Xtrace","CDN","CDT","CDTCb","TransitRouter","PAI","Config","CloudSSO","ControlPolicy","DSC","DataWorks","TrustedService/ROS"],
+          allowedValues: ["AHAS","ARMS","ARMS/App","ARMS/Web","ARMS/PrometheusMonitor","ARMS/SyntheticPost","ApiGateway","BatchCompute","BrainIndustrial","CloudStorageGateway","CMS","CR","CS","DataHub","DCDN","EDAS","EMAS","EMR/AICenter","FC","FNF","MaxCompute","Milvus/Function","MNS","NAS","HBR","IMM","KMS","NLP","OSS","OTS","PrivateLink","PrivateZone","RocketMQ","SAE","SLS","TrafficMirror","VS","Xtrace","CDN","CDT","CDTCb","TransitRouter","PAI","Config","CloudSSO","ControlPolicy","DSC","DataWorks","TrustedService/ROS"],
         }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
+    errors.collect(ros.propertyValidator('serviceParameters', RosAutoEnableService_ServiceParametersPropertyValidator)(properties.serviceParameters));
     return errors.wrap('supplied properties not correct for "RosAutoEnableServiceProps"');
 }
 
@@ -258,6 +266,7 @@ function rosAutoEnableServicePropsToRosTemplate(properties: any, enableResourceP
     }
     return {
       'ServiceName': ros.stringToRosTemplate(properties.serviceName),
+      'ServiceParameters': rosAutoEnableServiceServiceParametersPropertyToRosTemplate(properties.serviceParameters),
     };
 }
 
@@ -294,9 +303,11 @@ export class RosAutoEnableService extends ros.RosResource {
      * DCDN: Dynamic Route for CDN
      * EDAS: Enterprise Distributed Application Service
      * EMAS: Enterprise Mobile Application Studio
+     * EMR\/AICenter: EMR Serverless Spark AI Center
      * FC: Function Compute
      * FNF: Serverless Workflow
      * MaxCompute: MaxCompute
+     * Milvus\/Function: Milvus Function
      * NAS: Network Attached Storage
      * MNS: Message Service (MNS)
      * HBR: Hybrid Backup Recovery
@@ -327,6 +338,11 @@ export class RosAutoEnableService extends ros.RosResource {
     public serviceName: string | ros.IResolvable;
 
     /**
+     * @Property serviceParameters: The parameters that are required to enable the service. WorkspaceId is required when ServiceName is EMR\/AICenter.
+     */
+    public serviceParameters: RosAutoEnableService.ServiceParametersProperty | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -336,17 +352,68 @@ export class RosAutoEnableService extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.serviceName = props.serviceName;
+        this.serviceParameters = props.serviceParameters;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             serviceName: this.serviceName,
+            serviceParameters: this.serviceParameters,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosAutoEnableServicePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosAutoEnableService {
+    /**
+     * @stability external
+     */
+    export interface ServiceParametersProperty {
+        /**
+         * @Property workspaceId: The ID of the EMR Serverless Spark workspace.
+         */
+        readonly workspaceId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ServiceParametersProperty`
+ *
+ * @param properties - the TypeScript properties of a `ServiceParametersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAutoEnableService_ServiceParametersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
+    if(properties.workspaceId && (Array.isArray(properties.workspaceId) || (typeof properties.workspaceId) === 'string')) {
+        errors.collect(ros.propertyValidator('workspaceId', ros.validateLength)({
+            data: properties.workspaceId.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
+    return errors.wrap('supplied properties not correct for "ServiceParametersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ROS::AutoEnableService.ServiceParameters` resource
+ *
+ * @param properties - the TypeScript properties of a `ServiceParametersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ROS::AutoEnableService.ServiceParameters` resource.
+ */
+// @ts-ignore TS6133
+function rosAutoEnableServiceServiceParametersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAutoEnableService_ServiceParametersPropertyValidator(properties).assertSuccess();
+    return {
+      'WorkspaceId': ros.stringToRosTemplate(properties.workspaceId),
+    };
 }
 
 /**

@@ -78,7 +78,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: aclName: The name of the access control list.
+        /// <strong>Property</strong>: aclName: The name of the ACL. The name must be 1 to 80 characters in length, and can
+        /// contain letters, digits, periods (.), hyphens (-), forward slashes (\/), and
+        /// underscores (_). The name of the ACL that you create must be unique within each
+        /// region.
         /// </remarks>
         [JsiiProperty(name: "aclName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AclName
@@ -163,7 +166,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: addressIpVersion: IP version. Could be "ipv4" or "ipv6".
+        /// <strong>Property</strong>: addressIpVersion: The IP version. Valid values: ipv4 and ipv6.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "addressIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

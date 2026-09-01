@@ -7,23 +7,37 @@ package alicloudroscdkess
 type ScalingRuleProps struct {
 	// Property scalingGroupId: ID of the scaling group of a scaling rule.
 	ScalingGroupId interface{} `field:"required" json:"scalingGroupId" yaml:"scalingGroupId"`
-	// Property adjustmentType: Adjustment mode of a scaling rule.
+	// Property adjustmentType: The adjustment method of the scaling rule.
 	//
-	// Optional values:
-	// - QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.
-	// - PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.
-	// - TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.
+	// If you set ScalingRuleType to
+	// SimpleScalingRule or StepScalingRule, you must specify this parameter. Valid
+	// values:
+	// *   QuantityChangeInCapacity: adds the specified number of ECS instances to or
+	// removes the specified number of ECS instances from the scaling group.
+	// *   PercentChangeInCapacity: adds the specified percentage of ECS instances to or
+	// removes the specified percentage of ECS instances from the scaling group.
+	// *   TotalCapacity: adjusts the number of ECS instances in the scaling group to a
+	// specified number.
 	AdjustmentType interface{} `field:"optional" json:"adjustmentType" yaml:"adjustmentType"`
-	// Property adjustmentValue: Adjusted value of a scaling rule.
+	// Property adjustmentValue: The number of instances that must be scaled based on the scaling rule.
 	//
-	// Value range:
-	// - QuantityChangeInCapacity: [-500, 500]
-	// - PercentChangeInCapacity: [-100, 10000]
-	// - TotalCapacity: [0, 1000].
+	// If you set
+	// ScalingRuleType to SimpleScalingRule or StepScalingRule, you must specify this
+	// parameter. The number of ECS instances that must be scaled in a scaling activity
+	// cannot exceed 1,000. Valid values of AdjustmentValue vary based on the value of
+	// AdjustmentType.
+	// *   Valid values if AdjustmentType is set to QuantityChangeInCapacity: -1000 to
+	// 1000.
+	// *   Valid values if AdjustmentType is set to PercentChangeInCapacity: -100 to
+	// 10000.
+	// *   Valid values if AdjustmentType is set to TotalCapacity: 0 to 2000.
 	AdjustmentValue interface{} `field:"optional" json:"adjustmentValue" yaml:"adjustmentValue"`
-	// Property cooldown: Cool-down time of a scaling rule.
+	// Property cooldown: The cooldown period of the scaling rule.
 	//
-	// Value range: [0, 86,400], in seconds. The default value is empty.
+	// This parameter is available only if you
+	// set ScalingRuleType to SimpleScalingRule. Valid values: 0 to 86400. Unit:
+	// seconds.
+	// You can leave this parameter empty.
 	Cooldown interface{} `field:"optional" json:"cooldown" yaml:"cooldown"`
 	// Property disableScaleIn: Specifies whether to disable scale-in.
 	//
@@ -95,9 +109,14 @@ type ScalingRuleProps struct {
 	// After a target tracking scaling rule is created, an event-triggered task is automatically created and then associated with the target tracking scaling rule.
 	// Default value: 3.
 	ScaleOutEvaluationCount interface{} `field:"optional" json:"scaleOutEvaluationCount" yaml:"scaleOutEvaluationCount"`
-	// Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters.
+	// Property scalingRuleName: The name of the scaling rule.
 	//
-	// It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
+	// The name must be 2 to 64 characters in length, and
+	// can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+	// name must start with a letter or a digit.
+	// The name of a scaling rule must be unique within an account in a
+	// region.
+	// >  If you leave this parameter empty, the scaling rule ID is used.
 	ScalingRuleName interface{} `field:"optional" json:"scalingRuleName" yaml:"scalingRuleName"`
 	// Property scalingRuleType: The type of the scaling rule.
 	//
@@ -108,7 +127,7 @@ type ScalingRuleProps struct {
 	// - PredictiveScalingRule: uses machine learning to analyze historical monitoring data of the scaling group and then predicts the future values of monitored metrics, the rule then automatically creates scheduled tasks to set the boundary values for the scaling group.
 	//   If this parameter value is not specified, the default value is SimpleScalingRule.
 	ScalingRuleType interface{} `field:"optional" json:"scalingRuleType" yaml:"scalingRuleType"`
-	// Property stepAdjustment:.
+	// Property stepAdjustment: Details of the step adjustments.
 	StepAdjustment interface{} `field:"optional" json:"stepAdjustment" yaml:"stepAdjustment"`
 	// Property targetValue: The target value of a metric.
 	//

@@ -11,7 +11,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     [JsiiInterface(nativeType: typeof(IImageSharePermissionProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.ImageSharePermissionProps")]
     public interface IImageSharePermissionProps
     {
-        /// <summary>Property imageId: The shared custom image ID.</summary>
+        /// <summary>Property imageId: The ID of the custom image.</summary>
+        /// <remarks>
+        ///     <notice xmlns="http://www.w3.org/1999/xhtml"></notice>
+        ///
+        /// You can no longer share images that are encrypted by using a service key. You can
+        /// share only images that are encrypted by using a customer managed key (CMK). If
+        /// you attempt to share an image that is encrypted by using a service key, the
+        /// request fails.
+        /// </remarks>
         [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ImageId
         {
@@ -29,9 +37,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property isPublic: Whether to publish or remove community mirrors.</summary>
+        /// <summary>Property isPublic: Specifies whether to publish or unpublish the community image.</summary>
         /// <remarks>
-        /// If this property is not set, no changes will be made to the community image
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>true: publishes the image as a community image.</description>
+        /// <description>false: unpublishes the community image. The image becomes a custom image. If
+        /// the image is a custom image, this setting has no effect.
+        /// Default value: false.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "isPublic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -65,7 +80,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             {
             }
 
-            /// <summary>Property imageId: The shared custom image ID.</summary>
+            /// <summary>Property imageId: The ID of the custom image.</summary>
+            /// <remarks>
+            ///     <notice xmlns="http://www.w3.org/1999/xhtml"></notice>
+            ///
+            /// You can no longer share images that are encrypted by using a service key. You can
+            /// share only images that are encrypted by using a customer managed key (CMK). If
+            /// you attempt to share an image that is encrypted by using a service key, the
+            /// request fails.
+            /// </remarks>
             [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ImageId
             {
@@ -80,9 +103,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property isPublic: Whether to publish or remove community mirrors.</summary>
+            /// <summary>Property isPublic: Specifies whether to publish or unpublish the community image.</summary>
             /// <remarks>
-            /// If this property is not set, no changes will be made to the community image
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>true: publishes the image as a community image.</description>
+            /// <description>false: unpublishes the community image. The image becomes a custom image. If
+            /// the image is a custom image, this setting has no effect.
+            /// Default value: false.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "isPublic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

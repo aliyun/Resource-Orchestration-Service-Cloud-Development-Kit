@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.eventbridge;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::EventBridge::Rule</code>, which is used to create an event rule for an event bus.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::EventBridge::Rule</code>, which creates an event rule for a specified event bus.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:01:25.423Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:09:00.280Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eventbridge.$Module.class, fqn = "@alicloud/ros-cdk-eventbridge.Rule")
 public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.eventbridge.IRule {
 
@@ -151,20 +151,28 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property filterPattern: The event pattern, in the JSON format.
+         * Property filterPattern: The event pattern, in JSON format.
+         * <p>
+         * Supported pattern types are <code>stringEqual</code> and
+         * <code>stringExpression</code>. Each field can contain a maximum of five expressions in a map
+         * structure.
          * <p>
          * @return {@code this}
-         * @param filterPattern Property filterPattern: The event pattern, in the JSON format. This parameter is required.
+         * @param filterPattern Property filterPattern: The event pattern, in JSON format. This parameter is required.
          */
         public Builder filterPattern(final com.aliyun.ros.cdk.core.IResolvable filterPattern) {
             this.props.filterPattern(filterPattern);
             return this;
         }
         /**
-         * Property filterPattern: The event pattern, in the JSON format.
+         * Property filterPattern: The event pattern, in JSON format.
+         * <p>
+         * Supported pattern types are <code>stringEqual</code> and
+         * <code>stringExpression</code>. Each field can contain a maximum of five expressions in a map
+         * structure.
          * <p>
          * @return {@code this}
-         * @param filterPattern Property filterPattern: The event pattern, in the JSON format. This parameter is required.
+         * @param filterPattern Property filterPattern: The event pattern, in JSON format. This parameter is required.
          */
         public Builder filterPattern(final java.util.Map<java.lang.String, ? extends java.lang.Object> filterPattern) {
             this.props.filterPattern(filterPattern);

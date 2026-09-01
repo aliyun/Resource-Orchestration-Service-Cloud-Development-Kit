@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::HpcCluster</code>, which is used to create a High Performance Computing (HPC) cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::HpcCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.885Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.255Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.HpcCluster")
 public class HpcCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IHpcCluster {
 
@@ -122,9 +122,9 @@ public class HpcCluster extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property name: The name of the HPC cluster.
          * <p>
-         * The name must be 2 to 128 characters in length. It must
-         * start with a letter but cannot start with http:// or https://. It can contain letters,
-         * digits, colons (:), underscores (_), and hyphens (-).
+         * The name must be 2 to 128 characters in length, and
+         * can contain letters, digits, underscores (_), and hyphens (-). The name must
+         * start with a letter but cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
          * @param name Property name: The name of the HPC cluster. This parameter is required.
@@ -136,9 +136,9 @@ public class HpcCluster extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property name: The name of the HPC cluster.
          * <p>
-         * The name must be 2 to 128 characters in length. It must
-         * start with a letter but cannot start with http:// or https://. It can contain letters,
-         * digits, colons (:), underscores (_), and hyphens (-).
+         * The name must be 2 to 128 characters in length, and
+         * can contain letters, digits, underscores (_), and hyphens (-). The name must
+         * start with a letter but cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
          * @param name Property name: The name of the HPC cluster. This parameter is required.

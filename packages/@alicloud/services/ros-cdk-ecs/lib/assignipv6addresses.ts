@@ -15,8 +15,9 @@ export interface AssignIpv6AddressesProps {
     readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
-     * Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
-     * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
+     * Property ipv6AddressCount: The number of IPv6 addresses to randomly generate for the ENI. Valid values: 1 to
+     * 10.
+     * > You must specify `Ipv6Addresses.N` or `Ipv6AddressCount`, but not both.
      */
     readonly ipv6AddressCount?: number | ros.IResolvable;
 
@@ -27,7 +28,9 @@ export interface AssignIpv6AddressesProps {
     readonly ipv6Addresses?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+     * Property ipv6PrefixCount: The number of IPv6 prefixes to assign to the ENI. Valid values: 1 to 10.
+     * > To assign IPv6 prefixes to the ENI, you must specify Ipv6Prefix.N or
+     * Ipv6PrefixCount, but not both.
      */
     readonly ipv6PrefixCount?: number | ros.IResolvable;
 
@@ -59,7 +62,7 @@ export interface IAssignIpv6Addresses extends ros.IResource {
     readonly attrNetworkInterfaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AssignIpv6Addresses`, which is used to assign IPv6 addresses to an elastic network interface (ENI).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AssignIpv6Addresses`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAssignIpv6Addresses`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
  */

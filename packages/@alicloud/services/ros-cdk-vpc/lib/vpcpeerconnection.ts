@@ -77,8 +77,6 @@ export interface VpcPeerConnectionProps {
 
     /**
      * Property resourceGroupId: The ID of the resource group.
-     * 
-     * For more information about resource groups, see [What is Resource Group](~~94475~~).
      */
     readonly resourceGroupId?: string | ros.IResolvable;
 }

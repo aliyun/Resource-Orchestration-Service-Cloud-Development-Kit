@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CDT::ResourcePackage`The , which type creates a resource plan.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CDT::ResourcePackage`.
 type RosResourcePackage interface {
 	alicloudroscdkcore.RosResource
 	AttrInstanceId() alicloudroscdkcore.IResolvable

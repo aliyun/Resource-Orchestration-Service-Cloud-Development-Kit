@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.servicecatalog;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ServiceCatalog::Constraint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:53:18.319Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:37:42.555Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.servicecatalog.$Module.class, fqn = "@alicloud/ros-cdk-servicecatalog.Constraint")
 public class Constraint extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.servicecatalog.IConstraint {
 
@@ -114,6 +114,8 @@ public class Constraint extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property config: The configuration of the constraint.
          * <p>
+         * Format: { "LocalRoleName": "&lt;role_name&gt;" }.
+         * <p>
          * @return {@code this}
          * @param config Property config: The configuration of the constraint. This parameter is required.
          */
@@ -123,6 +125,8 @@ public class Constraint extends com.aliyun.ros.cdk.core.Resource implements com.
         }
         /**
          * Property config: The configuration of the constraint.
+         * <p>
+         * Format: { "LocalRoleName": "&lt;role_name&gt;" }.
          * <p>
          * @return {@code this}
          * @param config Property config: The configuration of the constraint. This parameter is required.
@@ -135,6 +139,8 @@ public class Constraint extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property constraintType: The type of the constraint.
          * <p>
+         * The value is fixed as Launch, which specifies the launch constraint.
+         * <p>
          * @return {@code this}
          * @param constraintType Property constraintType: The type of the constraint. This parameter is required.
          */
@@ -144,6 +150,8 @@ public class Constraint extends com.aliyun.ros.cdk.core.Resource implements com.
         }
         /**
          * Property constraintType: The type of the constraint.
+         * <p>
+         * The value is fixed as Launch, which specifies the launch constraint.
          * <p>
          * @return {@code this}
          * @param constraintType Property constraintType: The type of the constraint. This parameter is required.
@@ -198,6 +206,8 @@ public class Constraint extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property description: The description of the constraint.
          * <p>
+         * The value must be 1 to 128 characters in length.
+         * <p>
          * @return {@code this}
          * @param description Property description: The description of the constraint. This parameter is required.
          */
@@ -207,6 +217,8 @@ public class Constraint extends com.aliyun.ros.cdk.core.Resource implements com.
         }
         /**
          * Property description: The description of the constraint.
+         * <p>
+         * The value must be 1 to 128 characters in length.
          * <p>
          * @return {@code this}
          * @param description Property description: The description of the constraint. This parameter is required.

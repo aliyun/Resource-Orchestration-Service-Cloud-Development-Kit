@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apig;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-pluginattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.607Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:05:26.196Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.PluginAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(PluginAttachmentProps.Jsii$Proxy.class)
 public interface PluginAttachmentProps extends software.amazon.jsii.JsiiSerializable {

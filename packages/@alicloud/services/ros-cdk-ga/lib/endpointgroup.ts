@@ -43,9 +43,25 @@ export interface EndpointGroupProps {
     readonly endpointGroupType?: string | ros.IResolvable;
 
     /**
+     * Property endpointIpVersion: The IP address protocol version of the backend service. Valid values:
+     * IPv4
+     * IPv6
+     * ProtocolAffinity
+     */
+    readonly endpointIpVersion?: string | ros.IResolvable;
+
+    /**
+     * Property endpointProtocolVersion: The protocol version of the backend service. Valid values:
+     * HTTP1.1
+     * HTTP2
+     * Note This parameter is valid only when the listener uses HTTPS.
+     */
+    readonly endpointProtocolVersion?: string | ros.IResolvable;
+
+    /**
      * Property endpointRequestProtocol: The protocol used by the backend service. Valid values:
-     * http: This is the default value.
-     * https
+     * HTTP: This is the default value.
+     * HTTPS
      * Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
      * For an HTTP listener, the backend service protocol must be HTTP.
      */
@@ -55,6 +71,11 @@ export interface EndpointGroupProps {
      * Property healthCheckEnabled: Specifies whether to enable the health check feature.
      */
     readonly healthCheckEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * Property healthCheckHost: The domain name that is used for health checks.
+     */
+    readonly healthCheckHost?: string | ros.IResolvable;
 
     /**
      * Property healthCheckIntervalSeconds: The interval between two consecutive health checks. Unit: seconds.
@@ -85,6 +106,16 @@ export interface EndpointGroupProps {
     readonly name?: string | ros.IResolvable;
 
     /**
+     * Property portOverrides: The port mapping relationship of the endpoint group.
+     */
+    readonly portOverrides?: Array<RosEndpointGroup.PortOverridesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to endpoint group. Max support 20 tags to add during create endpoint group. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosEndpointGroup.TagsProperty[];
+
+    /**
      * Property thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
      * Valid values: 2 to 10. Default value: 3.
      */
@@ -109,7 +140,7 @@ export interface IEndpointGroup extends ros.IResource {
     readonly attrEndpointGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GA::EndpointGroup`, which is used to create an endpoint group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::EndpointGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEndpointGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
  */
@@ -141,16 +172,21 @@ export class EndpointGroup extends ros.Resource implements IEndpointGroup {
             trafficPercentage: props.trafficPercentage,
             description: props.description,
             healthCheckPath: props.healthCheckPath,
+            healthCheckHost: props.healthCheckHost,
             thresholdCount: props.thresholdCount,
             healthCheckEnabled: props.healthCheckEnabled,
             endpointRequestProtocol: props.endpointRequestProtocol,
             name: props.name,
+            endpointProtocolVersion: props.endpointProtocolVersion,
+            portOverrides: props.portOverrides,
             endpointGroupRegion: props.endpointGroupRegion,
             healthCheckProtocol: props.healthCheckProtocol,
             healthCheckPort: props.healthCheckPort,
             acceleratorId: props.acceleratorId,
             endpointConfigurations: props.endpointConfigurations,
+            endpointIpVersion: props.endpointIpVersion,
             endpointGroupType: props.endpointGroupType,
+            tags: props.tags,
             listenerId: props.listenerId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosEndpointGroup;

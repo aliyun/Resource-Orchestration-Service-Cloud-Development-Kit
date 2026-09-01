@@ -15,7 +15,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
     {
         private object _accessGroupName;
 
-        /// <summary>Property accessGroupName: Permission group name.</summary>
+        /// <summary>Property accessGroupName: The name of the permission group.</summary>
+        /// <remarks>
+        /// Limits:
+        ///
+        /// <list type="bullet">
+        /// <description>The name must be 3 to 64 characters in length.</description>
+        /// <description>The name must start with a letter and can contain letters, digits,
+        /// underscores (_), and hyphens (-).</description>
+        /// <description>The name must be different from the name of the default permission group.
+        /// The default permission group for virtual private clouds (VPCs) is named
+        /// DEFAULT_VPC_GROUP_NAME.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "accessGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AccessGroupName
         {
@@ -75,9 +87,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 
         private object? _description;
 
-        /// <summary>Property description: Permission group description.</summary>
+        /// <summary>Property description: The description of the permission group.</summary>
         /// <remarks>
-        /// It is the same as the permission group name by default.
+        /// Limits:
+        ///
+        /// <list type="bullet">
+        /// <description>By default, the description of a permission group is the same as the name of
+        /// the permission group. The description must be 2 to 128 characters in length.</description>
+        /// <description>The name must start with a letter and cannot start with <c>http:\/\/</c> or
+        /// <c>https:\/\/</c>.</description>
+        /// <description>The description can contain digits, colons (:), underscores (_), and hyphens
+        /// (-).</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

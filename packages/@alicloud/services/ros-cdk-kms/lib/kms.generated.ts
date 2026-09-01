@@ -9,7 +9,9 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosAliasProps {
 
     /**
-     * @Property aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias\/ must be included.
+     * @Property aliasName: The alias of the CMK.
+     * The alias must be 1 to 255 characters in length and must contain the prefix
+     * `alias\/`. The alias cannot be prefixed with the reserved word `alias\/acs`.
      */
     readonly aliasName: string | ros.IResolvable;
 
@@ -63,7 +65,7 @@ function rosAliasPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Alias`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Alias`Creates an alias for a customer master key (CMK) in Key Management Service (KMS).
  * @Note This class does not contain additional functions, so it is recommended to use the `Alias` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-alias
  */
@@ -77,7 +79,9 @@ export class RosAlias extends ros.RosResource {
 
 
     /**
-     * @Property aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias\/ must be included.
+     * @Property aliasName: The alias of the CMK.
+     * The alias must be 1 to 255 characters in length and must contain the prefix
+     * `alias\/`. The alias cannot be prefixed with the reserved word `alias\/acs`.
      */
     public aliasName: string | ros.IResolvable;
 
@@ -148,9 +152,9 @@ export interface RosInstanceProps {
     readonly logStorage?: number | ros.IResolvable;
 
     /**
-     * @Property period: The subscription duration of the KMS instance.
-     * If PeriodUnit is Month, the valid range is 1, 2, 3, 6, 12, 24, 36
-     * If PeriodUnit is Year, the valid range is 1, 2, 3
+     * @Property period: The subscription duration. Unit: month. The value must be an integral multiple of
+     * 12.
+     * >  This parameter is required if you create a subscription instance.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -163,7 +167,9 @@ export interface RosInstanceProps {
     readonly periodUnit?: string | ros.IResolvable;
 
     /**
-     * @Property renewPeriod: Automatic renewal period, in months.
+     * @Property renewPeriod: The auto-renewal period. Unit: month.
+     * >  This parameter is required if the RenewalStatus parameter is set to
+     * AutoRenewal.
      */
     readonly renewPeriod?: number | ros.IResolvable;
 
@@ -366,9 +372,9 @@ export class RosInstance extends ros.RosResource {
     public logStorage: number | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The subscription duration of the KMS instance.
-     * If PeriodUnit is Month, the valid range is 1, 2, 3, 6, 12, 24, 36
-     * If PeriodUnit is Year, the valid range is 1, 2, 3
+     * @Property period: The subscription duration. Unit: month. The value must be an integral multiple of
+     * 12.
+     * >  This parameter is required if you create a subscription instance.
      */
     public period: number | ros.IResolvable | undefined;
 
@@ -381,7 +387,9 @@ export class RosInstance extends ros.RosResource {
     public periodUnit: string | ros.IResolvable | undefined;
 
     /**
-     * @Property renewPeriod: Automatic renewal period, in months.
+     * @Property renewPeriod: The auto-renewal period. Unit: month.
+     * >  This parameter is required if the RenewalStatus parameter is set to
+     * AutoRenewal.
      */
     public renewPeriod: number | ros.IResolvable | undefined;
 
@@ -540,7 +548,9 @@ export interface RosKeyProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property dkmsInstanceId: The ID of the dedicated KMS instance.
+     * @Property dkmsInstanceId: The ID of the KMS instance.
+     * > This parameter is required when you create a key for a KMS instance. This
+     * parameter is not required when you create a default key (master key).
      */
     readonly dkmsInstanceId?: string | ros.IResolvable;
 
@@ -578,14 +588,30 @@ export interface RosKeyProps {
     readonly policy?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property protectionLevel: The protection level of the CMK to create. Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
-     * If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
-     * If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
+     * @Property protectionLevel: You do not need to specify this parameter. KMS automatically sets an appropriate
+     * protection level for your key.
+     * The protection level of the key. Valid values:
+     * - SOFTWARE
+     * - HSM
+     * > * If you specify DKMSInstanceId, this parameter is ignored. If the instance is
+     * a software key management instance, the protection level is SOFTWARE. If the
+     * instance is a hardware key management instance, the protection level is HSM.
+     * - If you do not specify DKMSInstanceId, leave this parameter empty. KMS sets the
+     * protection level. If a managed HSM is available in the region, KMS sets this
+     * parameter to HSM. Otherwise, KMS sets this parameter to SOFTWARE. For more
+     * information, see [Managed HSM overview]().
      */
     readonly protectionLevel?: string | ros.IResolvable;
 
     /**
-     * @Property rotationInterval: The time period for automatic rotation. The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
+     * @Property rotationInterval: The automatic rotation period. The format is \`integer\[unit]\`. \`integer\`
+     * indicates the length of the period. \`unit\` indicates the unit of time. Valid
+     * units: d (day), h (hour), m (minute), and s (second). For example, both 7d and
+     * 604800s represent a period of 7 days.
+     * - If the key is a default key, the value is 365d.
+     * - If the key is a software-protected key, the value can be from 7d to 365d.
+     * - If the key is a hardware-protected key, automatic rotation is not supported.
+     * > This parameter is required if you set EnableAutomaticRotation to true.
      */
     readonly rotationInterval?: string | ros.IResolvable;
 
@@ -700,7 +726,9 @@ export class RosKey extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dkmsInstanceId: The ID of the dedicated KMS instance.
+     * @Property dkmsInstanceId: The ID of the KMS instance.
+     * > This parameter is required when you create a key for a KMS instance. This
+     * parameter is not required when you create a default key (master key).
      */
     public dkmsInstanceId: string | ros.IResolvable | undefined;
 
@@ -738,14 +766,30 @@ export class RosKey extends ros.RosResource {
     public policy: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
-     * @Property protectionLevel: The protection level of the CMK to create. Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
-     * If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
-     * If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
+     * @Property protectionLevel: You do not need to specify this parameter. KMS automatically sets an appropriate
+     * protection level for your key.
+     * The protection level of the key. Valid values:
+     * - SOFTWARE
+     * - HSM
+     * > * If you specify DKMSInstanceId, this parameter is ignored. If the instance is
+     * a software key management instance, the protection level is SOFTWARE. If the
+     * instance is a hardware key management instance, the protection level is HSM.
+     * - If you do not specify DKMSInstanceId, leave this parameter empty. KMS sets the
+     * protection level. If a managed HSM is available in the region, KMS sets this
+     * parameter to HSM. Otherwise, KMS sets this parameter to SOFTWARE. For more
+     * information, see [Managed HSM overview]().
      */
     public protectionLevel: string | ros.IResolvable | undefined;
 
     /**
-     * @Property rotationInterval: The time period for automatic rotation. The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
+     * @Property rotationInterval: The automatic rotation period. The format is \`integer\[unit]\`. \`integer\`
+     * indicates the length of the period. \`unit\` indicates the unit of time. Valid
+     * units: d (day), h (hour), m (minute), and s (second). For example, both 7d and
+     * 604800s represent a period of 7 days.
+     * - If the key is a default key, the value is 365d.
+     * - If the key is a software-protected key, the value can be from 7d to 365d.
+     * - If the key is a hardware-protected key, automatic rotation is not supported.
+     * > This parameter is required if you set EnableAutomaticRotation to true.
      */
     public rotationInterval: string | ros.IResolvable | undefined;
 
@@ -929,7 +973,7 @@ function rosNetworkRulePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::NetworkRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::NetworkRule`, which is used to create a network access rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-networkrule
  */
@@ -1278,19 +1322,53 @@ function rosPolicyAccessControlRulesPropertyToRosTemplate(properties: any): any 
 export interface RosSecretProps {
 
     /**
-     * @Property secretData: The value of the secret that you want to create. Secrets Manager encrypts the secret
-     * value and stores it in the initial version.
+     * @Property secretData: The value of the secret. The value can be up to 30,720 bytes (30 KB) in length.
+     * KMS encrypts the secret value with the specified key and stores the encrypted
+     * value in the initial version.
+     * - If SecretType is set to Generic, you can specify a custom secret value.
+     * - If SecretType is set to Rds, the secret value must be in the following format:
+     * `{"Accounts":[{"AccountName":"","AccountPassword":""}]}`. In the format,
+     * `AccountName` specifies the username of the account for the RDS instance and
+     * `AccountPassword` specifies the password of the account.
+     * - If SecretType is set to Redis, set this parameter to `$Auto`.
+     * - If SecretType is set to RAMCredentials, the secret value must be in the
+     * following format: `{"AccessKeys":[{"AccessKeyId":"","AccessKeySecret":""}]}`. In
+     * the format, `AccessKeyId` specifies the AccessKey ID and `AccessKeySecret`
+     * specifies the AccessKey secret. You must specify all AccessKey pairs of the RAM
+     * user.
+     * - If SecretType is set to PolarDB, set this parameter to `$Auto`.
+     * - If SecretType is set to ECS, the secret value must be in one of the following
+     * formats:
+     * - If SecretSubType in the ExtendedConfig parameter is set to Password:
+     * `{"UserName":"","Password": ""}`. In the format, `UserName` specifies the
+     * username used to log on to the ECS instance and `Password` specifies the password
+     * used to log on to the ECS instance.
+     * - If SecretSubType in the ExtendedConfig parameter is set to SSHKey:
+     * `{"UserName":"","PublicKey": "", "PrivateKey": ""}`. In the format, `PublicKey`
+     * specifies the SSH-formatted public key used to log on to the ECS instance and
+     * `PrivateKey` specifies the private key used to log on to the ECS instance.
      */
     readonly secretData: string | ros.IResolvable;
 
     /**
-     * @Property secretName: The name of the secret.
+     * @Property secretName: The name of the secret. The name must be unique in the same region.
+     * The name can be up to 192 characters in length and can contain letters, digits,
+     * underscores (_), forward slashes (\/), plus signs (+), equal signs (=), periods
+     * (.), hyphens (-), and at signs (@). The following limits apply to secret names
+     * for different types of secrets:
+     * - If SecretType is set to Generic, Rds, or Redis, the name cannot start with
+     * `acs\/`.
+     * - If SecretType is set to RAMCredentials, set this parameter to the fixed value
+     * `$Auto`. In this case, KMS automatically generates a secret name that starts with
+     * `acs\/ram\/user\/` and contains the display name of the RAM user.
+     * - If SecretType is set to ECS, the name must start with `acs\/ecs\/`.
      */
     readonly secretName: string | ros.IResolvable;
 
     /**
-     * @Property versionId: The version number of the initial version. Version numbers are unique in each secret
-     * object.
+     * @Property versionId: The version number of the initial version. The version number must be unique
+     * within the secret.
+     * The version number can be up to 64 characters in length.
      */
     readonly versionId: string | ros.IResolvable;
 
@@ -1306,21 +1384,97 @@ export interface RosSecretProps {
 
     /**
      * @Property enableAutomaticRotation: Specifies whether to enable automatic rotation. Valid values:
-     * true: specifies to enable automatic rotation.
-     * false: specifies to disable automatic rotation. This is the default value.
+     * - true: enables automatic rotation.
+     * - false (default): disables automatic rotation.
+     * > This parameter is valid only if SecretType is set to Rds, PolarDB, Redis,
+     * RAMCredentials, or ECS. If SecretType is set to Generic, automatic rotation is
+     * not supported. You can call the [PutSecretValue]() operation to manually rotate
+     * the secret.
      */
     readonly enableAutomaticRotation?: boolean | ros.IResolvable;
 
     /**
-     * @Property encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.
-     * If you do not specify this parameter, Secrets Manager automatically creates an encryption
-     * key to encrypt the secret.
-     * Note The KMS CMK must be a symmetric key.
+     * @Property encryptionKeyId: The ID of the key used to encrypt the secret value.
+     * > The key and the secret must be in the same KMS instance. The key must be a
+     * symmetric key.
      */
     readonly encryptionKeyId?: string | ros.IResolvable;
 
     /**
-     * @Property extendedConfig: The extended configuration of the secret. This parameter specifies the properties of the secret of the specific type.
+     * @Property extendedConfig: The extended configuration of the secret. This parameter specifies the properties
+     * of the secret of a specific type. The value can be up to 1,024 characters in
+     * length.
+     * - If SecretType is set to Generic, this parameter is ignored.
+     * - If SecretType is set to Rds, you must specify the following parameters in
+     * ExtendedConfig:
+     * - SecretSubType (Required): The subtype of the secret. Valid values:
+     * - SingleUser: Secrets Manager manages the RDS secret in single-account mode. When
+     * the secret is rotated, the password of the specified account is reset to a new
+     * random password.
+     * - DoubleUsers: Secrets Manager manages the RDS secret in double-account mode.
+     * ACSCurrent and ACSPrevious point to one of the accounts. When the secret is
+     * rotated, the password of the account pointed to by ACSPrevious is reset to a new
+     * random password. Then, Secrets Manager swaps the accounts that ACSCurrent and
+     * ACSPrevious point to.
+     * - DBInstanceId (Required): The ID of the RDS instance to which the account
+     * belongs.
+     * - CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). Example: `{"Key1": "v1", "fds":"fdsf"}`. The
+     * default value is `{}`.
+     * - If SecretType is set to Redis, you must specify the following parameters in
+     * ExtendedConfig:
+     * - SecretSubType (Required): The subtype of the secret. Valid values:
+     * - DoubleUsers: Secrets Manager manages the Redis secret in double-account mode.
+     * ACSCurrent and ACSPrevious point to one of the accounts. When the secret is
+     * rotated, the password of the account pointed to by ACSPrevious is reset to a new
+     * random password. Then, Secrets Manager swaps the accounts that ACSCurrent and
+     * ACSPrevious point to.
+     * - AccountName (Required): The database username.
+     * - CloneAccountName (Required): The database username, which is the value of
+     * AccountName with the `_clone` suffix.
+     * - AccountPrivilege (Required): The permissions to access the database.
+     * - InstanceId (Required): The ID of the Redis instance.
+     * - RegionId (Required): The ID of the region where the Redis instance resides.
+     * - CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). Example: `{"Key1": "v1", "fds":"fdsf"}`. The
+     * default value is `{}`.
+     * - If SecretType is set to RAMCredentials, you must specify the following
+     * parameters in ExtendedConfig:
+     * - SecretSubType (Required): The subtype of the secret. The value is
+     * RamUserAccessKey.
+     * - UserName (Required): The name of the RAM user.
+     * - CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). The default value is `{}`.
+     * - If SecretType is set to ECS, you must specify the following parameters in
+     * ExtendedConfig:
+     * - SecretSubType (Required): The subtype of the secret. Valid values:
+     * - Password: an ECS password.
+     * - SSHKey: an ECS SSH key pair.
+     * - RegionId (Required): The ID of the region where the ECS instance resides.
+     * - InstanceId (Required): The ID of the ECS instance.
+     * - CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). The default value is `{}`.
+     * - If SecretType is set to PolarDB, you must specify the following parameters in
+     * ExtendedConfig:
+     * - SecretSubType (Required): The fixed value is DoubleUsers.
+     * - RegionId (Required): The region.
+     * - DBClusterId (Required): The ID of the PolarDB instance.
+     * - DBType (Required): MySQL or PostgreSQL.
+     * - AccountName (Required): The account name.
+     * - CloneAccountName: The value is AccountName_clone.
+     * - AccountType: Only Normal is supported.
+     * - AccountPrivilege: This parameter is available only for MySQL.
+     * - DBName: This parameter is available only for MySQL.
+     * - CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). Example: {"Key1": "v1", "fds":"fdsf"}. The
+     * default value is {}.
+     * > If SecretType is set to Rds, Redis, PolarDB, RAMCredentials, or ECS, you must
+     * configure this parameter.
      */
     readonly extendedConfig?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -1352,25 +1506,35 @@ export interface RosSecretProps {
     readonly recoveryWindowInDays?: number | ros.IResolvable;
 
     /**
-     * @Property rotationInterval: The interval for automatic rotation. Valid values: 6 hours to 8,760 hours (365 days).
-     * The value is in the integer[unit] format.
-     * The unit can be d (day), h (hour), m (minute), or s (second). For example, both 7d and 604800s indicate a seven-day interval.
+     * @Property rotationInterval: The interval for automatic rotation. The value is in the range of 6 hours to
+     * 8,760 hours (365 days).<br>
+     * The value is in the `integer[unit]` format. `integer` indicates the interval.
+     * `unit` indicates the unit of time.<br>
+     * Valid values for unit: d (day), h (hour), m (minute), and s (second). For
+     * example, both 7d and 604,800s indicate a rotation interval of 7 days.<br><br>
+     * > You must specify this parameter if you set EnableAutomaticRotation to true. You
+     * do not need to specify this parameter if you set EnableAutomaticRotation to
+     * false.
      */
     readonly rotationInterval?: string | ros.IResolvable;
 
     /**
      * @Property secretDataType: The type of the secret value. Valid values:
-     * text (default value)
-     * binary
+     * - text (default): The secret value is a text string.
+     * - binary: The secret value is a binary string.
+     * > If SecretType is set to Rds, Redis, PolarDB, RAMCredentials, or ECS,
+     * SecretDataType must be set to text.
      */
     readonly secretDataType?: string | ros.IResolvable;
 
     /**
      * @Property secretType: The type of the secret. Valid values:
-     * Generic: specifies a generic secret.
-     * Rds: specifies a managed ApsaraDB RDS secret.
-     * RAMCredentials: specifies a managed RAM secret.
-     * ECS: specifies a managed ECS secret.
+     * - Generic (default): a generic secret.
+     * - Rds: an RDS secret.
+     * - Redis: a Redis secret.
+     * - RAMCredentials: a RAM secret.
+     * - ECS: an ECS secret.
+     * - PolarDB: a PolarDB secret.
      */
     readonly secretType?: string | ros.IResolvable;
 
@@ -1495,19 +1659,53 @@ export class RosSecret extends ros.RosResource {
 
 
     /**
-     * @Property secretData: The value of the secret that you want to create. Secrets Manager encrypts the secret
-     * value and stores it in the initial version.
+     * @Property secretData: The value of the secret. The value can be up to 30,720 bytes (30 KB) in length.
+     * KMS encrypts the secret value with the specified key and stores the encrypted
+     * value in the initial version.
+     * - If SecretType is set to Generic, you can specify a custom secret value.
+     * - If SecretType is set to Rds, the secret value must be in the following format:
+     * `{"Accounts":[{"AccountName":"","AccountPassword":""}]}`. In the format,
+     * `AccountName` specifies the username of the account for the RDS instance and
+     * `AccountPassword` specifies the password of the account.
+     * - If SecretType is set to Redis, set this parameter to `$Auto`.
+     * - If SecretType is set to RAMCredentials, the secret value must be in the
+     * following format: `{"AccessKeys":[{"AccessKeyId":"","AccessKeySecret":""}]}`. In
+     * the format, `AccessKeyId` specifies the AccessKey ID and `AccessKeySecret`
+     * specifies the AccessKey secret. You must specify all AccessKey pairs of the RAM
+     * user.
+     * - If SecretType is set to PolarDB, set this parameter to `$Auto`.
+     * - If SecretType is set to ECS, the secret value must be in one of the following
+     * formats:
+     * - If SecretSubType in the ExtendedConfig parameter is set to Password:
+     * `{"UserName":"","Password": ""}`. In the format, `UserName` specifies the
+     * username used to log on to the ECS instance and `Password` specifies the password
+     * used to log on to the ECS instance.
+     * - If SecretSubType in the ExtendedConfig parameter is set to SSHKey:
+     * `{"UserName":"","PublicKey": "", "PrivateKey": ""}`. In the format, `PublicKey`
+     * specifies the SSH-formatted public key used to log on to the ECS instance and
+     * `PrivateKey` specifies the private key used to log on to the ECS instance.
      */
     public secretData: string | ros.IResolvable;
 
     /**
-     * @Property secretName: The name of the secret.
+     * @Property secretName: The name of the secret. The name must be unique in the same region.
+     * The name can be up to 192 characters in length and can contain letters, digits,
+     * underscores (_), forward slashes (\/), plus signs (+), equal signs (=), periods
+     * (.), hyphens (-), and at signs (@). The following limits apply to secret names
+     * for different types of secrets:
+     * - If SecretType is set to Generic, Rds, or Redis, the name cannot start with
+     * `acs\/`.
+     * - If SecretType is set to RAMCredentials, set this parameter to the fixed value
+     * `$Auto`. In this case, KMS automatically generates a secret name that starts with
+     * `acs\/ram\/user\/` and contains the display name of the RAM user.
+     * - If SecretType is set to ECS, the name must start with `acs\/ecs\/`.
      */
     public secretName: string | ros.IResolvable;
 
     /**
-     * @Property versionId: The version number of the initial version. Version numbers are unique in each secret
-     * object.
+     * @Property versionId: The version number of the initial version. The version number must be unique
+     * within the secret.
+     * The version number can be up to 64 characters in length.
      */
     public versionId: string | ros.IResolvable;
 
@@ -1523,21 +1721,97 @@ export class RosSecret extends ros.RosResource {
 
     /**
      * @Property enableAutomaticRotation: Specifies whether to enable automatic rotation. Valid values:
-     * true: specifies to enable automatic rotation.
-     * false: specifies to disable automatic rotation. This is the default value.
+     * - true: enables automatic rotation.
+     * - false (default): disables automatic rotation.
+     * > This parameter is valid only if SecretType is set to Rds, PolarDB, Redis,
+     * RAMCredentials, or ECS. If SecretType is set to Generic, automatic rotation is
+     * not supported. You can call the [PutSecretValue]() operation to manually rotate
+     * the secret.
      */
     public enableAutomaticRotation: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.
-     * If you do not specify this parameter, Secrets Manager automatically creates an encryption
-     * key to encrypt the secret.
-     * Note The KMS CMK must be a symmetric key.
+     * @Property encryptionKeyId: The ID of the key used to encrypt the secret value.
+     * > The key and the secret must be in the same KMS instance. The key must be a
+     * symmetric key.
      */
     public encryptionKeyId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property extendedConfig: The extended configuration of the secret. This parameter specifies the properties of the secret of the specific type.
+     * @Property extendedConfig: The extended configuration of the secret. This parameter specifies the properties
+     * of the secret of a specific type. The value can be up to 1,024 characters in
+     * length.
+     * - If SecretType is set to Generic, this parameter is ignored.
+     * - If SecretType is set to Rds, you must specify the following parameters in
+     * ExtendedConfig:
+     * - SecretSubType (Required): The subtype of the secret. Valid values:
+     * - SingleUser: Secrets Manager manages the RDS secret in single-account mode. When
+     * the secret is rotated, the password of the specified account is reset to a new
+     * random password.
+     * - DoubleUsers: Secrets Manager manages the RDS secret in double-account mode.
+     * ACSCurrent and ACSPrevious point to one of the accounts. When the secret is
+     * rotated, the password of the account pointed to by ACSPrevious is reset to a new
+     * random password. Then, Secrets Manager swaps the accounts that ACSCurrent and
+     * ACSPrevious point to.
+     * - DBInstanceId (Required): The ID of the RDS instance to which the account
+     * belongs.
+     * - CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). Example: `{"Key1": "v1", "fds":"fdsf"}`. The
+     * default value is `{}`.
+     * - If SecretType is set to Redis, you must specify the following parameters in
+     * ExtendedConfig:
+     * - SecretSubType (Required): The subtype of the secret. Valid values:
+     * - DoubleUsers: Secrets Manager manages the Redis secret in double-account mode.
+     * ACSCurrent and ACSPrevious point to one of the accounts. When the secret is
+     * rotated, the password of the account pointed to by ACSPrevious is reset to a new
+     * random password. Then, Secrets Manager swaps the accounts that ACSCurrent and
+     * ACSPrevious point to.
+     * - AccountName (Required): The database username.
+     * - CloneAccountName (Required): The database username, which is the value of
+     * AccountName with the `_clone` suffix.
+     * - AccountPrivilege (Required): The permissions to access the database.
+     * - InstanceId (Required): The ID of the Redis instance.
+     * - RegionId (Required): The ID of the region where the Redis instance resides.
+     * - CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). Example: `{"Key1": "v1", "fds":"fdsf"}`. The
+     * default value is `{}`.
+     * - If SecretType is set to RAMCredentials, you must specify the following
+     * parameters in ExtendedConfig:
+     * - SecretSubType (Required): The subtype of the secret. The value is
+     * RamUserAccessKey.
+     * - UserName (Required): The name of the RAM user.
+     * - CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). The default value is `{}`.
+     * - If SecretType is set to ECS, you must specify the following parameters in
+     * ExtendedConfig:
+     * - SecretSubType (Required): The subtype of the secret. Valid values:
+     * - Password: an ECS password.
+     * - SSHKey: an ECS SSH key pair.
+     * - RegionId (Required): The ID of the region where the ECS instance resides.
+     * - InstanceId (Required): The ID of the ECS instance.
+     * - CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). The default value is `{}`.
+     * - If SecretType is set to PolarDB, you must specify the following parameters in
+     * ExtendedConfig:
+     * - SecretSubType (Required): The fixed value is DoubleUsers.
+     * - RegionId (Required): The region.
+     * - DBClusterId (Required): The ID of the PolarDB instance.
+     * - DBType (Required): MySQL or PostgreSQL.
+     * - AccountName (Required): The account name.
+     * - CloneAccountName: The value is AccountName_clone.
+     * - AccountType: Only Normal is supported.
+     * - AccountPrivilege: This parameter is available only for MySQL.
+     * - DBName: This parameter is available only for MySQL.
+     * - CustomData (Optional): The custom data. The value is a key-value pair in the
+     * JSON format. You can specify up to 10 key-value pairs. Separate multiple
+     * key-value pairs with commas (,). Example: {"Key1": "v1", "fds":"fdsf"}. The
+     * default value is {}.
+     * > If SecretType is set to Rds, Redis, PolarDB, RAMCredentials, or ECS, you must
+     * configure this parameter.
      */
     public extendedConfig: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
@@ -1569,25 +1843,35 @@ export class RosSecret extends ros.RosResource {
     public recoveryWindowInDays: number | ros.IResolvable | undefined;
 
     /**
-     * @Property rotationInterval: The interval for automatic rotation. Valid values: 6 hours to 8,760 hours (365 days).
-     * The value is in the integer[unit] format.
-     * The unit can be d (day), h (hour), m (minute), or s (second). For example, both 7d and 604800s indicate a seven-day interval.
+     * @Property rotationInterval: The interval for automatic rotation. The value is in the range of 6 hours to
+     * 8,760 hours (365 days).<br>
+     * The value is in the `integer[unit]` format. `integer` indicates the interval.
+     * `unit` indicates the unit of time.<br>
+     * Valid values for unit: d (day), h (hour), m (minute), and s (second). For
+     * example, both 7d and 604,800s indicate a rotation interval of 7 days.<br><br>
+     * > You must specify this parameter if you set EnableAutomaticRotation to true. You
+     * do not need to specify this parameter if you set EnableAutomaticRotation to
+     * false.
      */
     public rotationInterval: string | ros.IResolvable | undefined;
 
     /**
      * @Property secretDataType: The type of the secret value. Valid values:
-     * text (default value)
-     * binary
+     * - text (default): The secret value is a text string.
+     * - binary: The secret value is a binary string.
+     * > If SecretType is set to Rds, Redis, PolarDB, RAMCredentials, or ECS,
+     * SecretDataType must be set to text.
      */
     public secretDataType: string | ros.IResolvable | undefined;
 
     /**
      * @Property secretType: The type of the secret. Valid values:
-     * Generic: specifies a generic secret.
-     * Rds: specifies a managed ApsaraDB RDS secret.
-     * RAMCredentials: specifies a managed RAM secret.
-     * ECS: specifies a managed ECS secret.
+     * - Generic (default): a generic secret.
+     * - Rds: an RDS secret.
+     * - Redis: a Redis secret.
+     * - RAMCredentials: a RAM secret.
+     * - ECS: an ECS secret.
+     * - PolarDB: a PolarDB secret.
      */
     public secretType: string | ros.IResolvable | undefined;
 

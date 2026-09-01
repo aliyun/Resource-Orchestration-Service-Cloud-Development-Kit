@@ -10,7 +10,10 @@ export { RosGroup as GroupProperty };
 export interface GroupProps {
 
     /**
-     * Property groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+     * Property groupName: The name of the API group. The name must be unique and 4 to 50 characters in
+     * length. It must start with a letter or a Chinese character and can contain
+     * letters, digits, underscores (_), and Chinese characters. If you do not specify
+     * this parameter, the name is not modified.
      */
     readonly groupName: string | ros.IResolvable;
 
@@ -73,7 +76,7 @@ export interface IGroup extends ros.IResource {
     readonly attrTags: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Group`, which is used to create an API group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Group`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
  */

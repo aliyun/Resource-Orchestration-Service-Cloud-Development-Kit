@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ga;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.786Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:19:27.764Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.EndpointGroupProps")
 @software.amazon.jsii.Jsii.Proxy(EndpointGroupProps.Jsii$Proxy.class)
 public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -50,11 +50,35 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property endpointIpVersion: The IP address protocol version of the backend service.
+     * <p>
+     * Valid values:
+     * IPv4
+     * IPv6
+     * ProtocolAffinity
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointIpVersion() {
+        return null;
+    }
+
+    /**
+     * Property endpointProtocolVersion: The protocol version of the backend service.
+     * <p>
+     * Valid values:
+     * HTTP1.1
+     * HTTP2
+     * Note This parameter is valid only when the listener uses HTTPS.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointProtocolVersion() {
+        return null;
+    }
+
+    /**
      * Property endpointRequestProtocol: The protocol used by the backend service.
      * <p>
      * Valid values:
-     * http: This is the default value.
-     * https
+     * HTTP: This is the default value.
+     * HTTPS
      * Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
      * For an HTTP listener, the backend service protocol must be HTTP.
      */
@@ -66,6 +90,13 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
      * Property healthCheckEnabled: Specifies whether to enable the health check feature.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckEnabled() {
+        return null;
+    }
+
+    /**
+     * Property healthCheckHost: The domain name that is used for health checks.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckHost() {
         return null;
     }
 
@@ -111,6 +142,22 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property portOverrides: The port mapping relationship of the endpoint group.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPortOverrides() {
+        return null;
+    }
+
+    /**
+     * Property tags: Tags to attach to endpoint group.
+     * <p>
+     * Max support 20 tags to add during create endpoint group. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ga.RosEndpointGroup.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * Property thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
      * <p>
      * Valid values: 2 to 10. Default value: 3.
@@ -142,13 +189,18 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object listenerId;
         java.lang.Object description;
         java.lang.Object endpointGroupType;
+        java.lang.Object endpointIpVersion;
+        java.lang.Object endpointProtocolVersion;
         java.lang.Object endpointRequestProtocol;
         java.lang.Object healthCheckEnabled;
+        java.lang.Object healthCheckHost;
         java.lang.Object healthCheckIntervalSeconds;
         java.lang.Object healthCheckPath;
         java.lang.Object healthCheckPort;
         java.lang.Object healthCheckProtocol;
         java.lang.Object name;
+        java.lang.Object portOverrides;
+        java.util.List<com.aliyun.ros.cdk.ga.RosEndpointGroup.TagsProperty> tags;
         java.lang.Object thresholdCount;
         java.lang.Object trafficPercentage;
 
@@ -281,11 +333,67 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link EndpointGroupProps#getEndpointIpVersion}
+         * @param endpointIpVersion Property endpointIpVersion: The IP address protocol version of the backend service.
+         *                          Valid values:
+         *                          IPv4
+         *                          IPv6
+         *                          ProtocolAffinity
+         * @return {@code this}
+         */
+        public Builder endpointIpVersion(java.lang.String endpointIpVersion) {
+            this.endpointIpVersion = endpointIpVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getEndpointIpVersion}
+         * @param endpointIpVersion Property endpointIpVersion: The IP address protocol version of the backend service.
+         *                          Valid values:
+         *                          IPv4
+         *                          IPv6
+         *                          ProtocolAffinity
+         * @return {@code this}
+         */
+        public Builder endpointIpVersion(com.aliyun.ros.cdk.core.IResolvable endpointIpVersion) {
+            this.endpointIpVersion = endpointIpVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getEndpointProtocolVersion}
+         * @param endpointProtocolVersion Property endpointProtocolVersion: The protocol version of the backend service.
+         *                                Valid values:
+         *                                HTTP1.1
+         *                                HTTP2
+         *                                Note This parameter is valid only when the listener uses HTTPS.
+         * @return {@code this}
+         */
+        public Builder endpointProtocolVersion(java.lang.String endpointProtocolVersion) {
+            this.endpointProtocolVersion = endpointProtocolVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getEndpointProtocolVersion}
+         * @param endpointProtocolVersion Property endpointProtocolVersion: The protocol version of the backend service.
+         *                                Valid values:
+         *                                HTTP1.1
+         *                                HTTP2
+         *                                Note This parameter is valid only when the listener uses HTTPS.
+         * @return {@code this}
+         */
+        public Builder endpointProtocolVersion(com.aliyun.ros.cdk.core.IResolvable endpointProtocolVersion) {
+            this.endpointProtocolVersion = endpointProtocolVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EndpointGroupProps#getEndpointRequestProtocol}
          * @param endpointRequestProtocol Property endpointRequestProtocol: The protocol used by the backend service.
          *                                Valid values:
-         *                                http: This is the default value.
-         *                                https
+         *                                HTTP: This is the default value.
+         *                                HTTPS
          *                                Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
          *                                For an HTTP listener, the backend service protocol must be HTTP.
          * @return {@code this}
@@ -299,8 +407,8 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
          * Sets the value of {@link EndpointGroupProps#getEndpointRequestProtocol}
          * @param endpointRequestProtocol Property endpointRequestProtocol: The protocol used by the backend service.
          *                                Valid values:
-         *                                http: This is the default value.
-         *                                https
+         *                                HTTP: This is the default value.
+         *                                HTTPS
          *                                Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
          *                                For an HTTP listener, the backend service protocol must be HTTP.
          * @return {@code this}
@@ -327,6 +435,26 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder healthCheckEnabled(com.aliyun.ros.cdk.core.IResolvable healthCheckEnabled) {
             this.healthCheckEnabled = healthCheckEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getHealthCheckHost}
+         * @param healthCheckHost Property healthCheckHost: The domain name that is used for health checks.
+         * @return {@code this}
+         */
+        public Builder healthCheckHost(java.lang.String healthCheckHost) {
+            this.healthCheckHost = healthCheckHost;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getHealthCheckHost}
+         * @param healthCheckHost Property healthCheckHost: The domain name that is used for health checks.
+         * @return {@code this}
+         */
+        public Builder healthCheckHost(com.aliyun.ros.cdk.core.IResolvable healthCheckHost) {
+            this.healthCheckHost = healthCheckHost;
             return this;
         }
 
@@ -439,6 +567,38 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link EndpointGroupProps#getPortOverrides}
+         * @param portOverrides Property portOverrides: The port mapping relationship of the endpoint group.
+         * @return {@code this}
+         */
+        public Builder portOverrides(com.aliyun.ros.cdk.core.IResolvable portOverrides) {
+            this.portOverrides = portOverrides;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getPortOverrides}
+         * @param portOverrides Property portOverrides: The port mapping relationship of the endpoint group.
+         * @return {@code this}
+         */
+        public Builder portOverrides(java.util.List<? extends java.lang.Object> portOverrides) {
+            this.portOverrides = portOverrides;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getTags}
+         * @param tags Property tags: Tags to attach to endpoint group.
+         *             Max support 20 tags to add during create endpoint group. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ga.RosEndpointGroup.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ga.RosEndpointGroup.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EndpointGroupProps#getThresholdCount}
          * @param thresholdCount Property thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
          *                       Valid values: 2 to 10. Default value: 3.
@@ -502,13 +662,18 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object listenerId;
         private final java.lang.Object description;
         private final java.lang.Object endpointGroupType;
+        private final java.lang.Object endpointIpVersion;
+        private final java.lang.Object endpointProtocolVersion;
         private final java.lang.Object endpointRequestProtocol;
         private final java.lang.Object healthCheckEnabled;
+        private final java.lang.Object healthCheckHost;
         private final java.lang.Object healthCheckIntervalSeconds;
         private final java.lang.Object healthCheckPath;
         private final java.lang.Object healthCheckPort;
         private final java.lang.Object healthCheckProtocol;
         private final java.lang.Object name;
+        private final java.lang.Object portOverrides;
+        private final java.util.List<com.aliyun.ros.cdk.ga.RosEndpointGroup.TagsProperty> tags;
         private final java.lang.Object thresholdCount;
         private final java.lang.Object trafficPercentage;
 
@@ -524,13 +689,18 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.listenerId = software.amazon.jsii.Kernel.get(this, "listenerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointGroupType = software.amazon.jsii.Kernel.get(this, "endpointGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.endpointIpVersion = software.amazon.jsii.Kernel.get(this, "endpointIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.endpointProtocolVersion = software.amazon.jsii.Kernel.get(this, "endpointProtocolVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointRequestProtocol = software.amazon.jsii.Kernel.get(this, "endpointRequestProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckEnabled = software.amazon.jsii.Kernel.get(this, "healthCheckEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckHost = software.amazon.jsii.Kernel.get(this, "healthCheckHost", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckIntervalSeconds = software.amazon.jsii.Kernel.get(this, "healthCheckIntervalSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckPath = software.amazon.jsii.Kernel.get(this, "healthCheckPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckPort = software.amazon.jsii.Kernel.get(this, "healthCheckPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckProtocol = software.amazon.jsii.Kernel.get(this, "healthCheckProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.portOverrides = software.amazon.jsii.Kernel.get(this, "portOverrides", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ga.RosEndpointGroup.TagsProperty.class)));
             this.thresholdCount = software.amazon.jsii.Kernel.get(this, "thresholdCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.trafficPercentage = software.amazon.jsii.Kernel.get(this, "trafficPercentage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -538,6 +708,7 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.acceleratorId = java.util.Objects.requireNonNull(builder.acceleratorId, "acceleratorId is required");
@@ -546,13 +717,18 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.listenerId = java.util.Objects.requireNonNull(builder.listenerId, "listenerId is required");
             this.description = builder.description;
             this.endpointGroupType = builder.endpointGroupType;
+            this.endpointIpVersion = builder.endpointIpVersion;
+            this.endpointProtocolVersion = builder.endpointProtocolVersion;
             this.endpointRequestProtocol = builder.endpointRequestProtocol;
             this.healthCheckEnabled = builder.healthCheckEnabled;
+            this.healthCheckHost = builder.healthCheckHost;
             this.healthCheckIntervalSeconds = builder.healthCheckIntervalSeconds;
             this.healthCheckPath = builder.healthCheckPath;
             this.healthCheckPort = builder.healthCheckPort;
             this.healthCheckProtocol = builder.healthCheckProtocol;
             this.name = builder.name;
+            this.portOverrides = builder.portOverrides;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ga.RosEndpointGroup.TagsProperty>)builder.tags;
             this.thresholdCount = builder.thresholdCount;
             this.trafficPercentage = builder.trafficPercentage;
         }
@@ -588,6 +764,16 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getEndpointIpVersion() {
+            return this.endpointIpVersion;
+        }
+
+        @Override
+        public final java.lang.Object getEndpointProtocolVersion() {
+            return this.endpointProtocolVersion;
+        }
+
+        @Override
         public final java.lang.Object getEndpointRequestProtocol() {
             return this.endpointRequestProtocol;
         }
@@ -595,6 +781,11 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getHealthCheckEnabled() {
             return this.healthCheckEnabled;
+        }
+
+        @Override
+        public final java.lang.Object getHealthCheckHost() {
+            return this.healthCheckHost;
         }
 
         @Override
@@ -623,6 +814,16 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getPortOverrides() {
+            return this.portOverrides;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.ga.RosEndpointGroup.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         public final java.lang.Object getThresholdCount() {
             return this.thresholdCount;
         }
@@ -648,11 +849,20 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getEndpointGroupType() != null) {
                 data.set("endpointGroupType", om.valueToTree(this.getEndpointGroupType()));
             }
+            if (this.getEndpointIpVersion() != null) {
+                data.set("endpointIpVersion", om.valueToTree(this.getEndpointIpVersion()));
+            }
+            if (this.getEndpointProtocolVersion() != null) {
+                data.set("endpointProtocolVersion", om.valueToTree(this.getEndpointProtocolVersion()));
+            }
             if (this.getEndpointRequestProtocol() != null) {
                 data.set("endpointRequestProtocol", om.valueToTree(this.getEndpointRequestProtocol()));
             }
             if (this.getHealthCheckEnabled() != null) {
                 data.set("healthCheckEnabled", om.valueToTree(this.getHealthCheckEnabled()));
+            }
+            if (this.getHealthCheckHost() != null) {
+                data.set("healthCheckHost", om.valueToTree(this.getHealthCheckHost()));
             }
             if (this.getHealthCheckIntervalSeconds() != null) {
                 data.set("healthCheckIntervalSeconds", om.valueToTree(this.getHealthCheckIntervalSeconds()));
@@ -668,6 +878,12 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
+            }
+            if (this.getPortOverrides() != null) {
+                data.set("portOverrides", om.valueToTree(this.getPortOverrides()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getThresholdCount() != null) {
                 data.set("thresholdCount", om.valueToTree(this.getThresholdCount()));
@@ -699,13 +915,18 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (!listenerId.equals(that.listenerId)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.endpointGroupType != null ? !this.endpointGroupType.equals(that.endpointGroupType) : that.endpointGroupType != null) return false;
+            if (this.endpointIpVersion != null ? !this.endpointIpVersion.equals(that.endpointIpVersion) : that.endpointIpVersion != null) return false;
+            if (this.endpointProtocolVersion != null ? !this.endpointProtocolVersion.equals(that.endpointProtocolVersion) : that.endpointProtocolVersion != null) return false;
             if (this.endpointRequestProtocol != null ? !this.endpointRequestProtocol.equals(that.endpointRequestProtocol) : that.endpointRequestProtocol != null) return false;
             if (this.healthCheckEnabled != null ? !this.healthCheckEnabled.equals(that.healthCheckEnabled) : that.healthCheckEnabled != null) return false;
+            if (this.healthCheckHost != null ? !this.healthCheckHost.equals(that.healthCheckHost) : that.healthCheckHost != null) return false;
             if (this.healthCheckIntervalSeconds != null ? !this.healthCheckIntervalSeconds.equals(that.healthCheckIntervalSeconds) : that.healthCheckIntervalSeconds != null) return false;
             if (this.healthCheckPath != null ? !this.healthCheckPath.equals(that.healthCheckPath) : that.healthCheckPath != null) return false;
             if (this.healthCheckPort != null ? !this.healthCheckPort.equals(that.healthCheckPort) : that.healthCheckPort != null) return false;
             if (this.healthCheckProtocol != null ? !this.healthCheckProtocol.equals(that.healthCheckProtocol) : that.healthCheckProtocol != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            if (this.portOverrides != null ? !this.portOverrides.equals(that.portOverrides) : that.portOverrides != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.thresholdCount != null ? !this.thresholdCount.equals(that.thresholdCount) : that.thresholdCount != null) return false;
             return this.trafficPercentage != null ? this.trafficPercentage.equals(that.trafficPercentage) : that.trafficPercentage == null;
         }
@@ -718,13 +939,18 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.listenerId.hashCode());
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.endpointGroupType != null ? this.endpointGroupType.hashCode() : 0);
+            result = 31 * result + (this.endpointIpVersion != null ? this.endpointIpVersion.hashCode() : 0);
+            result = 31 * result + (this.endpointProtocolVersion != null ? this.endpointProtocolVersion.hashCode() : 0);
             result = 31 * result + (this.endpointRequestProtocol != null ? this.endpointRequestProtocol.hashCode() : 0);
             result = 31 * result + (this.healthCheckEnabled != null ? this.healthCheckEnabled.hashCode() : 0);
+            result = 31 * result + (this.healthCheckHost != null ? this.healthCheckHost.hashCode() : 0);
             result = 31 * result + (this.healthCheckIntervalSeconds != null ? this.healthCheckIntervalSeconds.hashCode() : 0);
             result = 31 * result + (this.healthCheckPath != null ? this.healthCheckPath.hashCode() : 0);
             result = 31 * result + (this.healthCheckPort != null ? this.healthCheckPort.hashCode() : 0);
             result = 31 * result + (this.healthCheckProtocol != null ? this.healthCheckProtocol.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.portOverrides != null ? this.portOverrides.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.thresholdCount != null ? this.thresholdCount.hashCode() : 0);
             result = 31 * result + (this.trafficPercentage != null ? this.trafficPercentage.hashCode() : 0);
             return result;

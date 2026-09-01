@@ -49,7 +49,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         private object _siteType;
 
         /// <remarks>
-        /// <strong>Property</strong>: siteType: The type of the website.
+        /// <strong>Property</strong>: siteType: The application type. Valid values: web, miniapp, ios, and android.
         /// </remarks>
         [JsiiProperty(name: "siteType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SiteType
@@ -213,7 +213,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         private object? _packageName;
 
         /// <remarks>
-        /// <strong>Property</strong>: packageName: The package name of the RUM application.
+        /// <strong>Property</strong>: packageName: The name of the Android application package. This parameter is required if you
+        /// create an Android application.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "packageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -246,7 +247,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         private object? _realRegionId;
 
         /// <remarks>
-        /// <strong>Property</strong>: realRegionId: The actual region ID for internal use.
+        /// <strong>Property</strong>: realRegionId: The region where the application resides. You can leave this parameter empty or
+        /// set it to China East 2 Finance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "realRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -312,7 +314,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         private object? _source;
 
         /// <remarks>
-        /// <strong>Property</strong>: source: The source of the RUM application.
+        /// <strong>Property</strong>: source: The source. This is a reserved parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "source", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

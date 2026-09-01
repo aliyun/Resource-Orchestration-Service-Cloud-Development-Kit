@@ -5,9 +5,10 @@ package alicloudroscdksag
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-appuser
 type AppUserProps struct {
-	// Property bandwidth: The bandwidth.
+	// Property bandwidth: The maximum bandwidth value.
 	//
-	// Unit: Kbit\/s. Maximum bandwidth: 2,000 Kbit\/s.
+	// Unit: Kbit\/s. Valid values: 1 to 20000. Default
+	// value: 2000.
 	Bandwidth interface{} `field:"required" json:"bandwidth" yaml:"bandwidth"`
 	// Property smartAgId: The ID of the SAG APP instance.
 	SmartAgId interface{} `field:"required" json:"smartAgId" yaml:"smartAgId"`
@@ -27,15 +28,21 @@ type AppUserProps struct {
 	ClientIp interface{} `field:"optional" json:"clientIp" yaml:"clientIp"`
 	// Property disable: Disable user or not.
 	Disable interface{} `field:"optional" json:"disable" yaml:"disable"`
-	// Property password: The password used to log on to SAG APP.
+	// Property password: The password that is used to log on to the SAG app.
 	//
-	// For a client account, if you specify the username, you must also specify the password.
+	// The password must be 8 to 32 characters in length. It can contain letters,
+	// digits, underscores (_), at signs (@), and hyphens (-). It must start with a
+	// letter or a digit.
 	Password interface{} `field:"optional" json:"password" yaml:"password"`
 	// Property userName: The username of the client account.
 	//
-	// Usernames of client accounts added to the same
-	// SAG APP instance must be unique.
-	// For a client account, if you specify the username, you must also specify the password.
+	// The usernames of client accounts added to the
+	// same SAG app instance must be unique.
+	// The username must be 7 to 33 characters in length, and can contain letters,
+	// digits, underscores (_), at signs (@), periods (.), and hyphens (-). It must
+	// start with a letter or a digit.
+	// >  For a client account, if you specify the username, you must also specify the
+	// password. If you specify the password, you must specify the username.
 	UserName interface{} `field:"optional" json:"userName" yaml:"userName"`
 }
 

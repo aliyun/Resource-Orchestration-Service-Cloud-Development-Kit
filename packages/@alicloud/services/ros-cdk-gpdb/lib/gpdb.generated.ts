@@ -209,7 +209,10 @@ export interface RosDBInstanceProps {
     readonly engineVersion: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The vSwitch ID of the instance.
+     * @Property vSwitchId: The vSwitch ID.
+     * > - This parameter is required.
+     * >
+     * > - The vSwitch must be in the zone specified by `ZoneId`.
      */
     readonly vSwitchId: string | ros.IResolvable;
 
@@ -230,7 +233,7 @@ export interface RosDBInstanceProps {
     readonly backupId?: string | ros.IResolvable;
 
     /**
-     * @Property cacheStorageSize: Cache storage size.
+     * @Property cacheStorageSize: The cache size for a serverless instance, in GB.
      */
     readonly cacheStorageSize?: string | ros.IResolvable;
 
@@ -242,13 +245,17 @@ export interface RosDBInstanceProps {
     readonly createSampleData?: boolean | ros.IResolvable;
 
     /**
-     * @Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
-     * This parameter must be passed in to create a storage reservation mode instance.
+     * @Property dbInstanceCategory: The instance edition. Valid values:
+     * - HighAvailability: High-availability Edition
+     * - Basic: Basic Edition
+     * > This parameter is required for instances in elastic storage mode.
      */
     readonly dbInstanceCategory?: string | ros.IResolvable;
 
     /**
-     * @Property dbInstanceClass: The instance type.
+     * @Property dbInstanceClass: The instance type. For more information, see the description of the
+     * `DBInstanceClass` parameter.
+     * > This parameter is required for instances in reserved storage mode.
      */
     readonly dbInstanceClass?: string | ros.IResolvable;
 
@@ -258,8 +265,9 @@ export interface RosDBInstanceProps {
     readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
-     * @Property dbInstanceGroupCount: The number of compute nodes in the instance.
-     * The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+     * @Property dbInstanceGroupCount: The number of compute groups. Valid values: 2, 4, 8, 12, 16, 24, 32, 64, 96, and
+     * 128.
+     * > This parameter is required for instances in reserved storage mode.
      */
     readonly dbInstanceGroupCount?: number | ros.IResolvable;
 
@@ -269,7 +277,13 @@ export interface RosDBInstanceProps {
     readonly dbInstanceMode?: string | ros.IResolvable;
 
     /**
-     * @Property deployMode: The deployment mode of the instance.
+     * @Property deployMode: The deployment mode. Valid values:
+     * - multiple: multi-AZ deployment.
+     * - single: single-AZ deployment.
+     * > * If this parameter is not specified, the default value is single.
+     * >
+     * > * Defaults to `single` (single-AZ deployment), which is the only mode currently
+     * supported.
      */
     readonly deployMode?: string | ros.IResolvable;
 
@@ -292,16 +306,29 @@ export interface RosDBInstanceProps {
     readonly encryptionType?: string | ros.IResolvable;
 
     /**
-     * @Property idleTime: Idle release wait time. That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+     * @Property idleTime: The period of inactivity, in seconds, after which the instance is considered
+     * idle. Minimum value: 60. Default value: 600.
+     * > This parameter is required only for serverless instances that use
+     * auto-scheduling.
      */
     readonly idleTime?: number | ros.IResolvable;
 
     /**
-     * @Property instanceSpec: The specification of segment nodes.
-     * - When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.
-     * - When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.
-     * - When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
-     * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
+     * @Property instanceSpec: The instance type for the compute nodes.
+     * Valid values for a High-availability Edition instance in elastic storage mode:
+     * - 2C16G
+     * - 4C32G
+     * - 16C128G
+     * Valid values for a Basic Edition instance in elastic storage mode:
+     * - 2C8G
+     * - 4C16G
+     * - 8C32G
+     * - 16C64G
+     * Valid values for a serverless instance:
+     * - 4C16G
+     * - 8C32G
+     * > This parameter is required for instances in elastic storage mode or serverless
+     * mode.
      */
     readonly instanceSpec?: string | ros.IResolvable;
 
@@ -311,7 +338,13 @@ export interface RosDBInstanceProps {
     readonly masterAiSpec?: string | ros.IResolvable;
 
     /**
-     * @Property masterCu: Master resources. Default is 8.
+     * @Property masterCu: The resources for the coordinator node. Valid values:
+     * - 2 CU
+     * - 4 CU
+     * - 8 CU
+     * - 16 CU
+     * - 32 CU
+     * > You are charged for coordinator node resources of 8 CUs or more.
      */
     readonly masterCu?: number | ros.IResolvable;
 
@@ -338,7 +371,7 @@ export interface RosDBInstanceProps {
     readonly periodUnit?: string | ros.IResolvable;
 
     /**
-     * @Property privateIpAddress: Private IP address.
+     * @Property privateIpAddress: This parameter is deprecated.
      */
     readonly privateIpAddress?: string | ros.IResolvable;
 
@@ -353,14 +386,21 @@ export interface RosDBInstanceProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
-     * 127.0.0.1.
+     * @Property securityIpList: The IP address whitelist for the instance.
+     * A value of 127.0.0.1 blocks all external access. After you create the instance,
+     * you can call the [ModifySecurityIps]() operation to modify the IP address
+     * whitelist.
      */
     readonly securityIpList?: string | ros.IResolvable;
 
     /**
-     * @Property segDiskPerformanceLevel: Seg disk performance level. The value can be:
-     * pl0、pl1 and pl2
+     * @Property segDiskPerformanceLevel: The performance level of the ESSDs. Valid values:
+     * - pl0: PL0
+     * - pl1: PL1
+     * - pl2: PL2
+     * > * This parameter applies only if the segment node storage type is ESSD.
+     * >
+     * > * If this parameter is not specified, pl1 is used by default.
      */
     readonly segDiskPerformanceLevel?: string | ros.IResolvable;
 
@@ -387,8 +427,10 @@ export interface RosDBInstanceProps {
     readonly serverlessMode?: string | ros.IResolvable;
 
     /**
-     * @Property serverlessResource: Computing resource threshold. The value ranges from 8 to 32. The step length is 8.
-     * The unit is ACU. The default value is 32.
+     * @Property serverlessResource: The threshold for computing resources, in AnalyticDB Compute Units (ACUs). The
+     * value must be a multiple of 8, ranging from 8 to 32. The default value is 32.
+     * > This parameter is required only for serverless instances that use
+     * auto-scheduling.
      */
     readonly serverlessResource?: number | ros.IResolvable;
 
@@ -398,17 +440,27 @@ export interface RosDBInstanceProps {
     readonly srcDbInstanceName?: string | ros.IResolvable;
 
     /**
-     * @Property standbyVSwitchId: The standby VSwitch ID of the instance.
+     * @Property standbyVSwitchId: The ID of the vSwitch in the standby zone.
+     * > - This parameter is required only for a multi-AZ deployment.
+     * >
+     * > - The vSwitch must be in the standby zone specified in `StandbyZoneId`.
      */
     readonly standbyVSwitchId?: string | ros.IResolvable;
 
     /**
-     * @Property standbyZoneId: The standby zone ID of the instance.
+     * @Property standbyZoneId: The ID of the standby zone.
+     * > - This parameter is required only for a multi-AZ deployment.
+     * >
+     * > - You can call the [DescribeRegions]() operation to query the IDs of available
+     * zones.
+     * >
+     * > - The standby zone must be different from the primary zone.
      */
     readonly standbyZoneId?: string | ros.IResolvable;
 
     /**
-     * @Property storageSize: The storage capacity of per segment node. Unit: GB. Minimum is 50, max is 4000, step is 50.
+     * @Property storageSize: The storage capacity for the instance, in GB. Valid values: .
+     * > This parameter is required for instances in elastic storage mode.
      */
     readonly storageSize?: number | ros.IResolvable;
 
@@ -680,7 +732,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::DBInstance`Use the , which resource to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::DBInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
@@ -724,7 +776,10 @@ export class RosDBInstance extends ros.RosResource {
     public engineVersion: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The vSwitch ID of the instance.
+     * @Property vSwitchId: The vSwitch ID.
+     * > - This parameter is required.
+     * >
+     * > - The vSwitch must be in the zone specified by `ZoneId`.
      */
     public vSwitchId: string | ros.IResolvable;
 
@@ -745,7 +800,7 @@ export class RosDBInstance extends ros.RosResource {
     public backupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property cacheStorageSize: Cache storage size.
+     * @Property cacheStorageSize: The cache size for a serverless instance, in GB.
      */
     public cacheStorageSize: string | ros.IResolvable | undefined;
 
@@ -757,13 +812,17 @@ export class RosDBInstance extends ros.RosResource {
     public createSampleData: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
-     * This parameter must be passed in to create a storage reservation mode instance.
+     * @Property dbInstanceCategory: The instance edition. Valid values:
+     * - HighAvailability: High-availability Edition
+     * - Basic: Basic Edition
+     * > This parameter is required for instances in elastic storage mode.
      */
     public dbInstanceCategory: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dbInstanceClass: The instance type.
+     * @Property dbInstanceClass: The instance type. For more information, see the description of the
+     * `DBInstanceClass` parameter.
+     * > This parameter is required for instances in reserved storage mode.
      */
     public dbInstanceClass: string | ros.IResolvable | undefined;
 
@@ -773,8 +832,9 @@ export class RosDBInstance extends ros.RosResource {
     public dbInstanceDescription: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dbInstanceGroupCount: The number of compute nodes in the instance.
-     * The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+     * @Property dbInstanceGroupCount: The number of compute groups. Valid values: 2, 4, 8, 12, 16, 24, 32, 64, 96, and
+     * 128.
+     * > This parameter is required for instances in reserved storage mode.
      */
     public dbInstanceGroupCount: number | ros.IResolvable | undefined;
 
@@ -784,7 +844,13 @@ export class RosDBInstance extends ros.RosResource {
     public dbInstanceMode: string | ros.IResolvable | undefined;
 
     /**
-     * @Property deployMode: The deployment mode of the instance.
+     * @Property deployMode: The deployment mode. Valid values:
+     * - multiple: multi-AZ deployment.
+     * - single: single-AZ deployment.
+     * > * If this parameter is not specified, the default value is single.
+     * >
+     * > * Defaults to `single` (single-AZ deployment), which is the only mode currently
+     * supported.
      */
     public deployMode: string | ros.IResolvable | undefined;
 
@@ -807,16 +873,29 @@ export class RosDBInstance extends ros.RosResource {
     public encryptionType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property idleTime: Idle release wait time. That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+     * @Property idleTime: The period of inactivity, in seconds, after which the instance is considered
+     * idle. Minimum value: 60. Default value: 600.
+     * > This parameter is required only for serverless instances that use
+     * auto-scheduling.
      */
     public idleTime: number | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceSpec: The specification of segment nodes.
-     * - When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.
-     * - When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.
-     * - When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
-     * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
+     * @Property instanceSpec: The instance type for the compute nodes.
+     * Valid values for a High-availability Edition instance in elastic storage mode:
+     * - 2C16G
+     * - 4C32G
+     * - 16C128G
+     * Valid values for a Basic Edition instance in elastic storage mode:
+     * - 2C8G
+     * - 4C16G
+     * - 8C32G
+     * - 16C64G
+     * Valid values for a serverless instance:
+     * - 4C16G
+     * - 8C32G
+     * > This parameter is required for instances in elastic storage mode or serverless
+     * mode.
      */
     public instanceSpec: string | ros.IResolvable | undefined;
 
@@ -826,7 +905,13 @@ export class RosDBInstance extends ros.RosResource {
     public masterAiSpec: string | ros.IResolvable | undefined;
 
     /**
-     * @Property masterCu: Master resources. Default is 8.
+     * @Property masterCu: The resources for the coordinator node. Valid values:
+     * - 2 CU
+     * - 4 CU
+     * - 8 CU
+     * - 16 CU
+     * - 32 CU
+     * > You are charged for coordinator node resources of 8 CUs or more.
      */
     public masterCu: number | ros.IResolvable | undefined;
 
@@ -853,7 +938,7 @@ export class RosDBInstance extends ros.RosResource {
     public periodUnit: string | ros.IResolvable | undefined;
 
     /**
-     * @Property privateIpAddress: Private IP address.
+     * @Property privateIpAddress: This parameter is deprecated.
      */
     public privateIpAddress: string | ros.IResolvable | undefined;
 
@@ -868,14 +953,21 @@ export class RosDBInstance extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
-     * 127.0.0.1.
+     * @Property securityIpList: The IP address whitelist for the instance.
+     * A value of 127.0.0.1 blocks all external access. After you create the instance,
+     * you can call the [ModifySecurityIps]() operation to modify the IP address
+     * whitelist.
      */
     public securityIpList: string | ros.IResolvable | undefined;
 
     /**
-     * @Property segDiskPerformanceLevel: Seg disk performance level. The value can be:
-     * pl0、pl1 and pl2
+     * @Property segDiskPerformanceLevel: The performance level of the ESSDs. Valid values:
+     * - pl0: PL0
+     * - pl1: PL1
+     * - pl2: PL2
+     * > * This parameter applies only if the segment node storage type is ESSD.
+     * >
+     * > * If this parameter is not specified, pl1 is used by default.
      */
     public segDiskPerformanceLevel: string | ros.IResolvable | undefined;
 
@@ -902,8 +994,10 @@ export class RosDBInstance extends ros.RosResource {
     public serverlessMode: string | ros.IResolvable | undefined;
 
     /**
-     * @Property serverlessResource: Computing resource threshold. The value ranges from 8 to 32. The step length is 8.
-     * The unit is ACU. The default value is 32.
+     * @Property serverlessResource: The threshold for computing resources, in AnalyticDB Compute Units (ACUs). The
+     * value must be a multiple of 8, ranging from 8 to 32. The default value is 32.
+     * > This parameter is required only for serverless instances that use
+     * auto-scheduling.
      */
     public serverlessResource: number | ros.IResolvable | undefined;
 
@@ -913,17 +1007,27 @@ export class RosDBInstance extends ros.RosResource {
     public srcDbInstanceName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property standbyVSwitchId: The standby VSwitch ID of the instance.
+     * @Property standbyVSwitchId: The ID of the vSwitch in the standby zone.
+     * > - This parameter is required only for a multi-AZ deployment.
+     * >
+     * > - The vSwitch must be in the standby zone specified in `StandbyZoneId`.
      */
     public standbyVSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property standbyZoneId: The standby zone ID of the instance.
+     * @Property standbyZoneId: The ID of the standby zone.
+     * > - This parameter is required only for a multi-AZ deployment.
+     * >
+     * > - You can call the [DescribeRegions]() operation to query the IDs of available
+     * zones.
+     * >
+     * > - The standby zone must be different from the primary zone.
      */
     public standbyZoneId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property storageSize: The storage capacity of per segment node. Unit: GB. Minimum is 50, max is 4000, step is 50.
+     * @Property storageSize: The storage capacity for the instance, in GB. Valid values: .
+     * > This parameter is required for instances in elastic storage mode.
      */
     public storageSize: number | ros.IResolvable | undefined;
 
@@ -1716,7 +1820,10 @@ export interface RosElasticDBInstanceProps {
     readonly storageSize: number | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The vSwitch ID of the instance.
+     * @Property vSwitchId: The vSwitch ID.
+     * > - This parameter is required.
+     * >
+     * > - The vSwitch must be in the zone specified by `ZoneId`.
      */
     readonly vSwitchId: string | ros.IResolvable;
 
@@ -1732,8 +1839,10 @@ export interface RosElasticDBInstanceProps {
     readonly backupId?: string | ros.IResolvable;
 
     /**
-     * @Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
-     * This parameter must be passed in to create a storage reservation mode instance.
+     * @Property dbInstanceCategory: The instance edition. Valid values:
+     * - HighAvailability: High-availability Edition
+     * - Basic: Basic Edition
+     * > This parameter is required for instances in elastic storage mode.
      */
     readonly dbInstanceCategory?: string | ros.IResolvable;
 
@@ -1783,13 +1892,15 @@ export interface RosElasticDBInstanceProps {
     readonly periodUnit?: string | ros.IResolvable;
 
     /**
-     * @Property privateIpAddress: Private IP address.
+     * @Property privateIpAddress: This parameter is deprecated.
      */
     readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
-     * @Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
-     * 127.0.0.1.
+     * @Property securityIpList: The IP address whitelist for the instance.
+     * A value of 127.0.0.1 blocks all external access. After you create the instance,
+     * you can call the [ModifySecurityIps]() operation to modify the IP address
+     * whitelist.
      */
     readonly securityIpList?: string | ros.IResolvable;
 
@@ -2032,7 +2143,10 @@ export class RosElasticDBInstance extends ros.RosResource {
     public storageSize: number | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The vSwitch ID of the instance.
+     * @Property vSwitchId: The vSwitch ID.
+     * > - This parameter is required.
+     * >
+     * > - The vSwitch must be in the zone specified by `ZoneId`.
      */
     public vSwitchId: string | ros.IResolvable;
 
@@ -2048,8 +2162,10 @@ export class RosElasticDBInstance extends ros.RosResource {
     public backupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
-     * This parameter must be passed in to create a storage reservation mode instance.
+     * @Property dbInstanceCategory: The instance edition. Valid values:
+     * - HighAvailability: High-availability Edition
+     * - Basic: Basic Edition
+     * > This parameter is required for instances in elastic storage mode.
      */
     public dbInstanceCategory: string | ros.IResolvable | undefined;
 
@@ -2099,13 +2215,15 @@ export class RosElasticDBInstance extends ros.RosResource {
     public periodUnit: string | ros.IResolvable | undefined;
 
     /**
-     * @Property privateIpAddress: Private IP address.
+     * @Property privateIpAddress: This parameter is deprecated.
      */
     public privateIpAddress: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
-     * 127.0.0.1.
+     * @Property securityIpList: The IP address whitelist for the instance.
+     * A value of 127.0.0.1 blocks all external access. After you create the instance,
+     * you can call the [ModifySecurityIps]() operation to modify the IP address
+     * whitelist.
      */
     public securityIpList: string | ros.IResolvable | undefined;
 
@@ -2419,7 +2537,9 @@ export class RosExternalDataService extends ros.RosResource {
 export interface RosInstancePublicConnectionProps {
 
     /**
-     * @Property connectionStringPrefix: The endpoint that is used to connect to the specified database.
+     * @Property connectionStringPrefix: The prefix of the endpoint.
+     * Specify a prefix for the endpoint. Example: `gp-bp12ga6v69h86**`. In this
+     * example, the endpoint is `gp-bp12ga6v69h86**.gpdb.rds.example.com`.
      */
     readonly connectionStringPrefix: string | ros.IResolvable;
 
@@ -2516,7 +2636,9 @@ export class RosInstancePublicConnection extends ros.RosResource {
 
 
     /**
-     * @Property connectionStringPrefix: The endpoint that is used to connect to the specified database.
+     * @Property connectionStringPrefix: The prefix of the endpoint.
+     * Specify a prefix for the endpoint. Example: `gp-bp12ga6v69h86**`. In this
+     * example, the endpoint is `gp-bp12ga6v69h86**.gpdb.rds.example.com`.
      */
     public connectionStringPrefix: string | ros.IResolvable;
 
@@ -3085,7 +3207,10 @@ export interface RosSupabaseProjectProps {
     readonly payType?: string | ros.IResolvable;
 
     /**
-     * @Property period: The billing period.
+     * @Property period: The unit of the subscription duration. Valid values:
+     * - Month
+     * - Year
+     * > This parameter is required if you use the subscription billing method.
      */
     readonly period?: string | ros.IResolvable;
 
@@ -3095,7 +3220,10 @@ export interface RosSupabaseProjectProps {
     readonly storageSize?: number | ros.IResolvable;
 
     /**
-     * @Property usedTime: The subscription period of the instance. Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+     * @Property usedTime: The subscription duration. Valid values:
+     * - If Period is set to Month, the valid values are 1 to 11.
+     * - If Period is set to Year, the valid values are 1 to 3.
+     * > This parameter is required if you use the subscription billing method.
      */
     readonly usedTime?: number | ros.IResolvable;
 }
@@ -3195,7 +3323,7 @@ function rosSupabaseProjectPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::SupabaseProject`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::SupabaseProject`The , which resource creates a Supabase project.
  * @Note This class does not contain additional functions, so it is recommended to use the `SupabaseProject` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-supabaseproject
  */
@@ -3300,7 +3428,10 @@ export class RosSupabaseProject extends ros.RosResource {
     public payType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The billing period.
+     * @Property period: The unit of the subscription duration. Valid values:
+     * - Month
+     * - Year
+     * > This parameter is required if you use the subscription billing method.
      */
     public period: string | ros.IResolvable | undefined;
 
@@ -3310,7 +3441,10 @@ export class RosSupabaseProject extends ros.RosResource {
     public storageSize: number | ros.IResolvable | undefined;
 
     /**
-     * @Property usedTime: The subscription period of the instance. Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+     * @Property usedTime: The subscription duration. Valid values:
+     * - If Period is set to Month, the valid values are 1 to 11.
+     * - If Period is set to Year, the valid values are 1 to 3.
+     * > This parameter is required if you use the subscription billing method.
      */
     public usedTime: number | ros.IResolvable | undefined;
 

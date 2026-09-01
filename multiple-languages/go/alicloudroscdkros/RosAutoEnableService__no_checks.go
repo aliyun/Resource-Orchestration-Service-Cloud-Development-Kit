@@ -92,6 +92,10 @@ func (j *jsiiProxy_RosAutoEnableService) validateSetServiceNameParameters(val in
 	return nil
 }
 
+func (j *jsiiProxy_RosAutoEnableService) validateSetServiceParametersParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosAutoEnableServiceParameters(scope alicloudroscdkcore.Construct, id *string, props *RosAutoEnableServiceProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

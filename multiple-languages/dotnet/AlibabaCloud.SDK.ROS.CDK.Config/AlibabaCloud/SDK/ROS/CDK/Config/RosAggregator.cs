@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Config
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Aggregator`, which is used to create an account group.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Aggregator`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Aggregator` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregator
@@ -218,7 +218,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: folderId: The folder ID.
+        /// <strong>Property</strong>: folderId: The ID of the attached folder. You can specify multiple folder IDs. Separate the
+        /// IDs with commas (,).
+        /// This parameter is required if you set `AggregatorType` to `FOLDER`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "folderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -5,13 +5,15 @@ package com.aliyun.ros.cdk.cloudstoragegateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudstoragegateway-gateway
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:55:20.331Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:43:59.781Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudstoragegateway.$Module.class, fqn = "@alicloud/ros-cdk-cloudstoragegateway.GatewayProps")
 @software.amazon.jsii.Jsii.Proxy(GatewayProps.Jsii$Proxy.class)
 public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property category: The category of the gateway.
+     * <p>
+     * The default value is <code>Cloud</code>.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getCategory();
 
@@ -22,6 +24,10 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property name: The name of the gateway.
+     * <p>
+     * The name must be 60 characters in length. The name must
+     * start with a letter or a Chinese character. The name can contain letters, Chinese
+     * characters, digits, underscores (_), hyphens (-), and periods (.).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
@@ -38,28 +44,62 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property gatewayClass: The class of the gateway.
+     * Property gatewayClass: If your gateway is deployed in a data center, which is an on-premises gateway, you can ignore this parameter.
+     * <p>
+     * If your gateway is deployed on the cloud, which is a cloud gateway, valid
+     * values are:
+     * <p>
+     * <ul>
+     * <li>Basic: Basic</li>
+     * <li>Standard: Medium</li>
+     * <li>Enhanced: Enhanced</li>
+     * <li>Advanced: Performance</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGatewayClass() {
         return null;
     }
 
     /**
-     * Property postPaid: Whether the gateway is pay-as-you-go.
+     * Property postPaid: Valid values: - true: pay-as-you-go.
+     * <p>
+     * <ul>
+     * <li>false: subscription.
+     * Default value: false (subscription).</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPostPaid() {
         return null;
     }
 
     /**
-     * Property publicNetworkBandwidth: The public network bandwidth of the gateway.
+     * Property publicNetworkBandwidth: &gt; - This parameter is supported only for cloud gateways.
+     * <p>
+     * You can ignore this
+     * parameter for on-premises gateways.
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>Configure this parameter only when you need to mount an OSS bucket across
+     * regions.</li>
+     * <li>If you specify 0 or do not specify this parameter, the default value is 5.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPublicNetworkBandwidth() {
         return null;
     }
 
     /**
-     * Property releaseAfterExpiration: Whether to release the gateway after expiration.
+     * Property releaseAfterExpiration: Specifies whether to release the gateway when the subscription expires.
+     * <p>
+     * Valid
+     * values:
+     * true: The gateway is automatically released.
+     * false: The billing method of the gateway is automatically changed to
+     * pay-as-you-go after the subscription expires.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getReleaseAfterExpiration() {
         return null;
@@ -80,7 +120,10 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property storageBundleId: The ID of the storage bundle.
+     * Property storageBundleId: The ID of the gateway cluster.
+     * <p>
+     * You must specify this parameter if you do not
+     * specify ResourceRegionId.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStorageBundleId() {
         return null;
@@ -101,7 +144,17 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property vSwitchId: The ID of the VSwitch.
+     * Property vSwitchId: The ID of the virtual switch.
+     * <p>
+     * If your gateway is deployed in a data center, you
+     * can ignore this parameter.
+     * <p>
+     * <ul>
+     * <li>The vSwitch must be in the same VPC as the ECS instance that you want to
+     * attach.</li>
+     * <li>If no gateway resources can be allocated in the zone where the vSwitch resides,
+     * create a vSwitch in another zone.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
@@ -136,6 +189,7 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link GatewayProps#getCategory}
          * @param category Property category: The category of the gateway. This parameter is required.
+         *                 The default value is <code>Cloud</code>.
          * @return {@code this}
          */
         public Builder category(java.lang.String category) {
@@ -146,6 +200,7 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link GatewayProps#getCategory}
          * @param category Property category: The category of the gateway. This parameter is required.
+         *                 The default value is <code>Cloud</code>.
          * @return {@code this}
          */
         public Builder category(com.aliyun.ros.cdk.core.IResolvable category) {
@@ -176,6 +231,9 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link GatewayProps#getName}
          * @param name Property name: The name of the gateway. This parameter is required.
+         *             The name must be 60 characters in length. The name must
+         *             start with a letter or a Chinese character. The name can contain letters, Chinese
+         *             characters, digits, underscores (_), hyphens (-), and periods (.).
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -186,6 +244,9 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link GatewayProps#getName}
          * @param name Property name: The name of the gateway. This parameter is required.
+         *             The name must be 60 characters in length. The name must
+         *             start with a letter or a Chinese character. The name can contain letters, Chinese
+         *             characters, digits, underscores (_), hyphens (-), and periods (.).
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
@@ -235,7 +296,16 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GatewayProps#getGatewayClass}
-         * @param gatewayClass Property gatewayClass: The class of the gateway.
+         * @param gatewayClass Property gatewayClass: If your gateway is deployed in a data center, which is an on-premises gateway, you can ignore this parameter.
+         *                     If your gateway is deployed on the cloud, which is a cloud gateway, valid
+         *                     values are:
+         *                     <p>
+         *                     <ul>
+         *                     <li>Basic: Basic</li>
+         *                     <li>Standard: Medium</li>
+         *                     <li>Enhanced: Enhanced</li>
+         *                     <li>Advanced: Performance</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder gatewayClass(java.lang.String gatewayClass) {
@@ -245,7 +315,16 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GatewayProps#getGatewayClass}
-         * @param gatewayClass Property gatewayClass: The class of the gateway.
+         * @param gatewayClass Property gatewayClass: If your gateway is deployed in a data center, which is an on-premises gateway, you can ignore this parameter.
+         *                     If your gateway is deployed on the cloud, which is a cloud gateway, valid
+         *                     values are:
+         *                     <p>
+         *                     <ul>
+         *                     <li>Basic: Basic</li>
+         *                     <li>Standard: Medium</li>
+         *                     <li>Enhanced: Enhanced</li>
+         *                     <li>Advanced: Performance</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder gatewayClass(com.aliyun.ros.cdk.core.IResolvable gatewayClass) {
@@ -255,7 +334,11 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GatewayProps#getPostPaid}
-         * @param postPaid Property postPaid: Whether the gateway is pay-as-you-go.
+         * @param postPaid Property postPaid: Valid values: - true: pay-as-you-go.
+         *                 <ul>
+         *                 <li>false: subscription.
+         *                 Default value: false (subscription).</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder postPaid(java.lang.Boolean postPaid) {
@@ -265,7 +348,11 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GatewayProps#getPostPaid}
-         * @param postPaid Property postPaid: Whether the gateway is pay-as-you-go.
+         * @param postPaid Property postPaid: Valid values: - true: pay-as-you-go.
+         *                 <ul>
+         *                 <li>false: subscription.
+         *                 Default value: false (subscription).</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder postPaid(com.aliyun.ros.cdk.core.IResolvable postPaid) {
@@ -275,7 +362,19 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GatewayProps#getPublicNetworkBandwidth}
-         * @param publicNetworkBandwidth Property publicNetworkBandwidth: The public network bandwidth of the gateway.
+         * @param publicNetworkBandwidth Property publicNetworkBandwidth: &gt; - This parameter is supported only for cloud gateways.
+         *                               You can ignore this
+         *                               parameter for on-premises gateways.
+         *                               <p>
+         *                               <blockquote>
+         *                               <p>
+         *                               <ul>
+         *                               <li>Configure this parameter only when you need to mount an OSS bucket across
+         *                               regions.</li>
+         *                               <li>If you specify 0 or do not specify this parameter, the default value is 5.</li>
+         *                               </ul>
+         *                               <p>
+         *                               </blockquote>
          * @return {@code this}
          */
         public Builder publicNetworkBandwidth(java.lang.Number publicNetworkBandwidth) {
@@ -285,7 +384,19 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GatewayProps#getPublicNetworkBandwidth}
-         * @param publicNetworkBandwidth Property publicNetworkBandwidth: The public network bandwidth of the gateway.
+         * @param publicNetworkBandwidth Property publicNetworkBandwidth: &gt; - This parameter is supported only for cloud gateways.
+         *                               You can ignore this
+         *                               parameter for on-premises gateways.
+         *                               <p>
+         *                               <blockquote>
+         *                               <p>
+         *                               <ul>
+         *                               <li>Configure this parameter only when you need to mount an OSS bucket across
+         *                               regions.</li>
+         *                               <li>If you specify 0 or do not specify this parameter, the default value is 5.</li>
+         *                               </ul>
+         *                               <p>
+         *                               </blockquote>
          * @return {@code this}
          */
         public Builder publicNetworkBandwidth(com.aliyun.ros.cdk.core.IResolvable publicNetworkBandwidth) {
@@ -295,7 +406,12 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GatewayProps#getReleaseAfterExpiration}
-         * @param releaseAfterExpiration Property releaseAfterExpiration: Whether to release the gateway after expiration.
+         * @param releaseAfterExpiration Property releaseAfterExpiration: Specifies whether to release the gateway when the subscription expires.
+         *                               Valid
+         *                               values:
+         *                               true: The gateway is automatically released.
+         *                               false: The billing method of the gateway is automatically changed to
+         *                               pay-as-you-go after the subscription expires.
          * @return {@code this}
          */
         public Builder releaseAfterExpiration(java.lang.Boolean releaseAfterExpiration) {
@@ -305,7 +421,12 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GatewayProps#getReleaseAfterExpiration}
-         * @param releaseAfterExpiration Property releaseAfterExpiration: Whether to release the gateway after expiration.
+         * @param releaseAfterExpiration Property releaseAfterExpiration: Specifies whether to release the gateway when the subscription expires.
+         *                               Valid
+         *                               values:
+         *                               true: The gateway is automatically released.
+         *                               false: The billing method of the gateway is automatically changed to
+         *                               pay-as-you-go after the subscription expires.
          * @return {@code this}
          */
         public Builder releaseAfterExpiration(com.aliyun.ros.cdk.core.IResolvable releaseAfterExpiration) {
@@ -355,7 +476,9 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GatewayProps#getStorageBundleId}
-         * @param storageBundleId Property storageBundleId: The ID of the storage bundle.
+         * @param storageBundleId Property storageBundleId: The ID of the gateway cluster.
+         *                        You must specify this parameter if you do not
+         *                        specify ResourceRegionId.
          * @return {@code this}
          */
         public Builder storageBundleId(java.lang.String storageBundleId) {
@@ -365,7 +488,9 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GatewayProps#getStorageBundleId}
-         * @param storageBundleId Property storageBundleId: The ID of the storage bundle.
+         * @param storageBundleId Property storageBundleId: The ID of the gateway cluster.
+         *                        You must specify this parameter if you do not
+         *                        specify ResourceRegionId.
          * @return {@code this}
          */
         public Builder storageBundleId(com.aliyun.ros.cdk.core.IResolvable storageBundleId) {
@@ -415,7 +540,16 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GatewayProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch.
+         * @param vSwitchId Property vSwitchId: The ID of the virtual switch.
+         *                  If your gateway is deployed in a data center, you
+         *                  can ignore this parameter.
+         *                  <p>
+         *                  <ul>
+         *                  <li>The vSwitch must be in the same VPC as the ECS instance that you want to
+         *                  attach.</li>
+         *                  <li>If no gateway resources can be allocated in the zone where the vSwitch resides,
+         *                  create a vSwitch in another zone.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -425,7 +559,16 @@ public interface GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GatewayProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch.
+         * @param vSwitchId Property vSwitchId: The ID of the virtual switch.
+         *                  If your gateway is deployed in a data center, you
+         *                  can ignore this parameter.
+         *                  <p>
+         *                  <ul>
+         *                  <li>The vSwitch must be in the same VPC as the ECS instance that you want to
+         *                  attach.</li>
+         *                  <li>If no gateway resources can be allocated in the zone where the vSwitch resides,
+         *                  create a vSwitch in another zone.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {

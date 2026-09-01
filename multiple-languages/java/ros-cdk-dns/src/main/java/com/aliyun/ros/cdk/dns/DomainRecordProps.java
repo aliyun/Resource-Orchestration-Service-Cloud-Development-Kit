@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dns;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domainrecord
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.858Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:23:04.461Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.DomainRecordProps")
 @software.amazon.jsii.Jsii.Proxy(DomainRecordProps.Jsii$Proxy.class)
 public interface DomainRecordProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,9 @@ public interface DomainRecordProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getDomainName();
 
     /**
-     * Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty.
+     * Property rr: The host record.
+     * <p>
+     * To resolve example.com, set the host record to "&#64;" instead of leaving it empty.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRr();
 
@@ -40,16 +42,21 @@ public interface DomainRecordProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be.
+     * Property priority: The priority of the MX record.
+     * <p>
+     * Valid values: <code>[1,50]</code>.
+     * This parameter is required if the record type is MX. A smaller value indicates a
+     * higher priority.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
         return null;
     }
 
     /**
-     * Property ttl: The resolution time is valid.
+     * Property ttl: The time to live (TTL) value of the Domain Name System (DNS) record.
      * <p>
-     * The default is 600 seconds (10 minutes). See the TTL definition.
+     * Default
+     * value: 600. Unit: seconds.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTtl() {
         return null;
@@ -95,7 +102,8 @@ public interface DomainRecordProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DomainRecordProps#getRr}
-         * @param rr Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty. This parameter is required.
+         * @param rr Property rr: The host record. This parameter is required.
+         *           To resolve example.com, set the host record to "&#64;" instead of leaving it empty.
          * @return {@code this}
          */
         public Builder rr(java.lang.String rr) {
@@ -105,7 +113,8 @@ public interface DomainRecordProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DomainRecordProps#getRr}
-         * @param rr Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty. This parameter is required.
+         * @param rr Property rr: The host record. This parameter is required.
+         *           To resolve example.com, set the host record to "&#64;" instead of leaving it empty.
          * @return {@code this}
          */
         public Builder rr(com.aliyun.ros.cdk.core.IResolvable rr) {
@@ -177,7 +186,10 @@ public interface DomainRecordProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DomainRecordProps#getPriority}
-         * @param priority Property priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be.
+         * @param priority Property priority: The priority of the MX record.
+         *                 Valid values: <code>[1,50]</code>.
+         *                 This parameter is required if the record type is MX. A smaller value indicates a
+         *                 higher priority.
          * @return {@code this}
          */
         public Builder priority(java.lang.Number priority) {
@@ -187,7 +199,10 @@ public interface DomainRecordProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DomainRecordProps#getPriority}
-         * @param priority Property priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be.
+         * @param priority Property priority: The priority of the MX record.
+         *                 Valid values: <code>[1,50]</code>.
+         *                 This parameter is required if the record type is MX. A smaller value indicates a
+         *                 higher priority.
          * @return {@code this}
          */
         public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {
@@ -197,8 +212,9 @@ public interface DomainRecordProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DomainRecordProps#getTtl}
-         * @param ttl Property ttl: The resolution time is valid.
-         *            The default is 600 seconds (10 minutes). See the TTL definition.
+         * @param ttl Property ttl: The time to live (TTL) value of the Domain Name System (DNS) record.
+         *            Default
+         *            value: 600. Unit: seconds.
          * @return {@code this}
          */
         public Builder ttl(java.lang.Number ttl) {
@@ -208,8 +224,9 @@ public interface DomainRecordProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link DomainRecordProps#getTtl}
-         * @param ttl Property ttl: The resolution time is valid.
-         *            The default is 600 seconds (10 minutes). See the TTL definition.
+         * @param ttl Property ttl: The time to live (TTL) value of the Domain Name System (DNS) record.
+         *            Default
+         *            value: 600. Unit: seconds.
          * @return {@code this}
          */
         public Builder ttl(com.aliyun.ros.cdk.core.IResolvable ttl) {

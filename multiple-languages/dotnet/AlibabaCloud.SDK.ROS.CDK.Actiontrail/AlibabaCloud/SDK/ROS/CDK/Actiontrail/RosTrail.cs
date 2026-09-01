@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`, which is used to create a trail to deliver events to Simple Log Service or Object Storage Service (OSS).</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Trail` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
@@ -76,7 +76,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: name: The name of the trail to be created, which must be unique for an account.
+        /// <strong>Property</strong>: name: The name of the trail to be created.
+        /// Length should be between 6 and 36 characters, must start with a lowercase letter,
+        /// and can include lowercase letters, numbers, hyphens (-), and underscores (_).
+        /// > The trail name must be unique within the same account.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Name
@@ -137,7 +140,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: ossBucketName: The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket.
+        /// <strong>Property</strong>: ossBucketName: The OSS bucket for the trail delivery.
+        /// Length should be between 3 and 63 characters, must start with a lowercase letter
+        /// or number, and can include lowercase letters, numbers, and hyphens (-).
+        /// > At least one of OssBucketName and SlsProjectArn must be specified.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ossBucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -168,7 +174,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: ossKeyPrefix: The prefix of the specified OSS bucket name. This parameter can be left empty.
+        /// <strong>Property</strong>: ossKeyPrefix: The prefix for the filenames in the OSS bucket for the trail delivery.
+        /// Length should be between 6 and 32 characters, must start with a letter, and can
+        /// include letters, numbers, hyphens (-), forward slashes (\/), and underscores (_).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ossKeyPrefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -199,7 +207,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: roleName: The RAM role in ActionTrail permitted by the user.
+        /// <strong>Property</strong>: roleName: The name of the associated role for Operation Audit, with a default value of
+        /// serviceroleforactiontrail.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "roleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -230,7 +239,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: slsProjectArn: The unique ARN of the Log Service project.
+        /// <strong>Property</strong>: slsProjectArn: The ARN of the Log Service project for the trail delivery.
+        /// > At least one of OssBucketName and SlsProjectArn must be specified.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "slsProjectArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -261,7 +271,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: slsWriteRoleArn: The unique ARN of the Log Service role.
+        /// <strong>Property</strong>: slsWriteRoleArn: The ARN of the role assumed by Operation Audit when delivering operation events
+        /// to the Log Service project.
+        /// - If this parameter is not specified, Operation Audit will create the necessary
+        /// resources by creating a service-linked role.
+        /// - If this parameter is specified, when you need to deliver events to the current
+        /// account, you need to grant the RAM role the permissions of the Operation Audit
+        /// service-linked role. When you need to deliver events to another account, you need
+        /// to bind the system permission policy for event delivery to the RAM role. For more
+        /// information on cross-account delivery, see Deliver Events from Multiple
+        /// Accounts to One Account.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "slsWriteRoleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

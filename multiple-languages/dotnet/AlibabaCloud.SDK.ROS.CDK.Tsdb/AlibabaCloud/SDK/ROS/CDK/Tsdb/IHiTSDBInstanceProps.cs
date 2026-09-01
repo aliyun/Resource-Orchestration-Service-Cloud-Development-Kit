@@ -11,7 +11,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
     [JsiiInterface(nativeType: typeof(IHiTSDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-tsdb.HiTSDBInstanceProps")]
     public interface IHiTSDBInstanceProps
     {
-        /// <summary>Property instanceClass: The type of the instance.</summary>
+        /// <summary>Property instanceClass: The storage capacity of the instance.</summary>
+        /// <remarks>
+        /// Unit: GB.
+        /// </remarks>
         [JsiiProperty(name: "instanceClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object InstanceClass
         {
@@ -49,7 +52,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
             get;
         }
 
-        /// <summary>Property diskCategory: The category of disk.</summary>
+        /// <summary>Property diskCategory: The ID of the request.</summary>
         [JsiiProperty(name: "diskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DiskCategory
@@ -85,14 +88,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
             }
         }
 
-        /// <summary>Property payType: The billing method.</summary>
-        /// <remarks>
-        /// Valid values:
-        ///
-        /// <list type="bullet">
-        /// <description><strong>prepay</strong>: The prepay value indicates the subscription method.</description>
-        /// </list>
-        /// </remarks>
+        /// <summary>Property payType: The ID of the VPC in which the instances reside.</summary>
         [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PayType
@@ -139,7 +135,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
             {
             }
 
-            /// <summary>Property instanceClass: The type of the instance.</summary>
+            /// <summary>Property instanceClass: The storage capacity of the instance.</summary>
+            /// <remarks>
+            /// Unit: GB.
+            /// </remarks>
             [JsiiProperty(name: "instanceClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceClass
             {
@@ -177,7 +176,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property diskCategory: The category of disk.</summary>
+            /// <summary>Property diskCategory: The ID of the request.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "diskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DiskCategory
@@ -204,14 +203,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property payType: The billing method.</summary>
-            /// <remarks>
-            /// Valid values:
-            ///
-            /// <list type="bullet">
-            /// <description><strong>prepay</strong>: The prepay value indicates the subscription method.</description>
-            /// </list>
-            /// </remarks>
+            /// <summary>Property payType: The ID of the VPC in which the instances reside.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PayType

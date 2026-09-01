@@ -45,7 +45,8 @@ export interface SAMLIdentityProviderProps {
     readonly wantRequestSigned?: boolean | ros.IResolvable;
 
     /**
-     * Property x509Certificate: The X.509 certificate n the PEM format. If you specify this parameter, all existing certificates are replaced.
+     * Property x509Certificate: The X.509 certificate in the PEM format. If you specify this parameter, all
+     * existing certificates are replaced.
      */
     readonly x509Certificate?: string | ros.IResolvable;
 }
@@ -57,7 +58,7 @@ export interface ISAMLIdentityProvider extends ros.IResource {
     readonly props: SAMLIdentityProviderProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::SAMLIdentityProvider`, which is used to configure the information about a Security Assertion Markup Language (SAML) identity provider (IdP).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::SAMLIdentityProvider`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSAMLIdentityProvider`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-samlidentityprovider
  */

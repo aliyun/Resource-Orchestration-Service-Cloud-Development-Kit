@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Represents a <code>SiteMonitor</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.966Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.245Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.ISiteMonitor")
 @software.amazon.jsii.Jsii.Proxy(ISiteMonitor.Jsii$Proxy.class)
 public interface ISiteMonitor extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.schedulerx;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-schedulerx-job
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:46:20.761Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:28:51.469Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.schedulerx.$Module.class, fqn = "@alicloud/ros-cdk-schedulerx.JobProps")
 @software.amazon.jsii.Jsii.Proxy(JobProps.Jsii$Proxy.class)
 public interface JobProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,49 +48,66 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getTimeType();
 
     /**
-     * Property attemptInterval: The attempt interval of the job.
+     * Property attemptInterval: The retry interval for a failed job, in seconds.
+     * <p>
+     * Defaults to 30.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAttemptInterval() {
         return null;
     }
 
     /**
-     * Property calendar: The calendar of the job.
+     * Property calendar: For a <code>cron</code> job, you can specify a custom calendar.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCalendar() {
         return null;
     }
 
     /**
-     * Property className: The class name of the job.
+     * Property className: The fully qualified class name of the job interface.
+     * <p>
+     * Required for <code>java</code> jobs.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getClassName() {
         return null;
     }
 
     /**
-     * Property consumerSize: The consumer size of the job.
+     * Property consumerSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of consumer threads per machine for processing subtasks.
+     * <p>
+     * Defaults to 5.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getConsumerSize() {
         return null;
     }
 
     /**
-     * Property contactInfo: The contact info of the job.
+     * Property contactInfo: The contact information for the job.
+     * <p>
+     * <blockquote><notice></blockquote>
+     * <p>
+     * This parameter is deprecated.
+     * <p>
+     * <blockquote></notice></blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getContactInfo() {
         return null;
     }
 
     /**
-     * Property content: The content of the job.
+     * Property content: - For a <code>python</code>, <code>shell</code>, or <code>k8s</code> job, this parameter specifies the script content.
+     * <p>
+     * <ul>
+     * <li>For a <code>go</code> job, the content must be in the following format:
+     * {"jobName":"HelloWorld"}</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getContent() {
         return null;
     }
 
     /**
-     * Property dataOffset: The data offset of the job.
+     * Property dataOffset: The time offset in seconds for a <code>cron</code> job.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDataOffset() {
         return null;
@@ -104,56 +121,78 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property dispatcherSize: The dispatcher size of the job.
+     * Property dispatcherSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of threads for dispatching subtasks.
+     * <p>
+     * Defaults to 5.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDispatcherSize() {
         return null;
     }
 
     /**
-     * Property failEnable: Whether fail is enabled for the job.
+     * Property failEnable: Specifies whether to enable alerts for failed jobs.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true: Enables failure alerts.</li>
+     * <li>false: Disables failure alerts.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getFailEnable() {
         return null;
     }
 
     /**
-     * Property failTimes: The fail times of the job.
+     * Property failTimes: The number of consecutive failures that triggers an alert.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getFailTimes() {
         return null;
     }
 
     /**
-     * Property maxAttempt: The max attempt of the job.
+     * Property maxAttempt: The maximum number of retries for a failed job.
+     * <p>
+     * Defaults to 0.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMaxAttempt() {
         return null;
     }
 
     /**
-     * Property maxConcurrency: The max concurrency of the job.
+     * Property maxConcurrency: The maximum number of concurrent job instances.
+     * <p>
+     * Defaults to 1. If an existing job
+     * instance is still running, a new one will not be triggered, even if its scheduled
+     * time has passed.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMaxConcurrency() {
         return null;
     }
 
     /**
-     * Property missWorkerEnable: Whether miss worker is enabled for the job.
+     * Property missWorkerEnable: Specifies whether to send an alert when no worker is available to run the job.
+     * <p>
+     * <ul>
+     * <li>true: Enables the alert.</li>
+     * <li>false: Disables the alert.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMissWorkerEnable() {
         return null;
     }
 
     /**
-     * Property namespaceSource: The namespace source of the job.
+     * Property namespaceSource: This parameter is required only for specific third-party integrations.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNamespaceSource() {
         return null;
     }
 
     /**
-     * Property pageSize: Advanced configuration for parallel grid tasks, the default number of sub-tasks pulled at a time is 100.
+     * Property pageSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of subtasks retrieved per pull.
+     * <p>
+     * Defaults to 100.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPageSize() {
         return null;
@@ -167,21 +206,37 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property priority: The priority of the job.
+     * Property priority: The job priority.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>1: Low</li>
+     * <li>5: Medium</li>
+     * <li>10: High</li>
+     * <li>15: Very High</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
         return null;
     }
 
     /**
-     * Property queueSize: The queue size of the job.
+     * Property queueSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of subtasks the queue can hold.
+     * <p>
+     * Defaults to 10000.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getQueueSize() {
         return null;
     }
 
     /**
-     * Property sendChannel: The send channel of the job.
+     * Property sendChannel: The channel for sending alerts.
+     * <p>
+     * <ul>
+     * <li>For the default channel of the application group, use <code>default</code>.</li>
+     * <li>For a specific channel for the job, use <code>sms</code>, <code>mail</code>, <code>phone</code>, or <code>webhook</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSendChannel() {
         return null;
@@ -195,42 +250,73 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property taskAttemptInterval: The task attempt interval of the job.
+     * Property taskAttemptInterval: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the retry interval in seconds for a failed subtask.
+     * <p>
+     * Defaults to 0.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTaskAttemptInterval() {
         return null;
     }
 
     /**
-     * Property taskMaxAttempt: The task max attempt of the job.
+     * Property taskMaxAttempt: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of retries for a failed subtask.
+     * <p>
+     * Defaults to 0.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTaskMaxAttempt() {
         return null;
     }
 
     /**
-     * Property timeExpression: The time expression of the job.
+     * Property timeExpression: The time expression, which depends on the value of <code>TimeType</code>.
+     * <p>
+     * <ul>
+     * <li>cron: A standard cron expression.</li>
+     * <li>api: No time expression is required.</li>
+     * <li>fixed_rate: A fixed interval in seconds. For example, a value of 30 triggers
+     * the job every 30 seconds.</li>
+     * <li>second_delay: A fixed delay in seconds before the job is executed. Valid
+     * values: 1 to 60.</li>
+     * <li>one_time: A specific time in <code>yyyy-MM-dd HH:mm:ss</code> format or a Unix timestamp
+     * in milliseconds. Example: "2022-10-10 10:10:00".</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTimeExpression() {
         return null;
     }
 
     /**
-     * Property timeout: The timeout of the job.
+     * Property timeout: The timeout threshold in seconds.
+     * <p>
+     * Defaults to 7200.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
         return null;
     }
 
     /**
-     * Property timeoutEnable: Whether timeout is enabled for the job.
+     * Property timeoutEnable: Specifies whether to enable timeout alerts.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true: Enables timeout alerts.</li>
+     * <li>false: Disables timeout alerts.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTimeoutEnable() {
         return null;
     }
 
     /**
-     * Property timeoutKillEnable: Whether timeout kill is enabled for the job.
+     * Property timeoutKillEnable: Specifies whether to terminate the job upon timeout.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true: Terminates the job if it times out.</li>
+     * <li>false: The job is not terminated if it times out.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTimeoutKillEnable() {
         return null;
@@ -244,7 +330,7 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property xAttrs: The extended attributes of the job.
+     * Property xAttrs: This parameter is required for <code>k8s</code> jobs.<br>For job tasks: {"resource":"job"}<br>For shell tasks: {"image":"busybox","resource":"shell"}<br><br>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getXAttrs() {
         return null;
@@ -430,7 +516,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getAttemptInterval}
-         * @param attemptInterval Property attemptInterval: The attempt interval of the job.
+         * @param attemptInterval Property attemptInterval: The retry interval for a failed job, in seconds.
+         *                        Defaults to 30.
          * @return {@code this}
          */
         public Builder attemptInterval(java.lang.Number attemptInterval) {
@@ -440,7 +527,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getAttemptInterval}
-         * @param attemptInterval Property attemptInterval: The attempt interval of the job.
+         * @param attemptInterval Property attemptInterval: The retry interval for a failed job, in seconds.
+         *                        Defaults to 30.
          * @return {@code this}
          */
         public Builder attemptInterval(com.aliyun.ros.cdk.core.IResolvable attemptInterval) {
@@ -450,7 +538,7 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getCalendar}
-         * @param calendar Property calendar: The calendar of the job.
+         * @param calendar Property calendar: For a <code>cron</code> job, you can specify a custom calendar.
          * @return {@code this}
          */
         public Builder calendar(java.lang.String calendar) {
@@ -460,7 +548,7 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getCalendar}
-         * @param calendar Property calendar: The calendar of the job.
+         * @param calendar Property calendar: For a <code>cron</code> job, you can specify a custom calendar.
          * @return {@code this}
          */
         public Builder calendar(com.aliyun.ros.cdk.core.IResolvable calendar) {
@@ -470,7 +558,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getClassName}
-         * @param className Property className: The class name of the job.
+         * @param className Property className: The fully qualified class name of the job interface.
+         *                  Required for <code>java</code> jobs.
          * @return {@code this}
          */
         public Builder className(java.lang.String className) {
@@ -480,7 +569,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getClassName}
-         * @param className Property className: The class name of the job.
+         * @param className Property className: The fully qualified class name of the job interface.
+         *                  Required for <code>java</code> jobs.
          * @return {@code this}
          */
         public Builder className(com.aliyun.ros.cdk.core.IResolvable className) {
@@ -490,7 +580,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getConsumerSize}
-         * @param consumerSize Property consumerSize: The consumer size of the job.
+         * @param consumerSize Property consumerSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of consumer threads per machine for processing subtasks.
+         *                     Defaults to 5.
          * @return {@code this}
          */
         public Builder consumerSize(java.lang.Number consumerSize) {
@@ -500,7 +591,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getConsumerSize}
-         * @param consumerSize Property consumerSize: The consumer size of the job.
+         * @param consumerSize Property consumerSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of consumer threads per machine for processing subtasks.
+         *                     Defaults to 5.
          * @return {@code this}
          */
         public Builder consumerSize(com.aliyun.ros.cdk.core.IResolvable consumerSize) {
@@ -510,7 +602,12 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getContactInfo}
-         * @param contactInfo Property contactInfo: The contact info of the job.
+         * @param contactInfo Property contactInfo: The contact information for the job.
+         *                    <blockquote><notice></blockquote>
+         *                    <p>
+         *                    This parameter is deprecated.
+         *                    <p>
+         *                    <blockquote></notice></blockquote>
          * @return {@code this}
          */
         public Builder contactInfo(com.aliyun.ros.cdk.core.IResolvable contactInfo) {
@@ -520,7 +617,12 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getContactInfo}
-         * @param contactInfo Property contactInfo: The contact info of the job.
+         * @param contactInfo Property contactInfo: The contact information for the job.
+         *                    <blockquote><notice></blockquote>
+         *                    <p>
+         *                    This parameter is deprecated.
+         *                    <p>
+         *                    <blockquote></notice></blockquote>
          * @return {@code this}
          */
         public Builder contactInfo(java.util.List<? extends java.lang.Object> contactInfo) {
@@ -530,7 +632,11 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getContent}
-         * @param content Property content: The content of the job.
+         * @param content Property content: - For a <code>python</code>, <code>shell</code>, or <code>k8s</code> job, this parameter specifies the script content.
+         *                <ul>
+         *                <li>For a <code>go</code> job, the content must be in the following format:
+         *                {"jobName":"HelloWorld"}</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder content(java.lang.String content) {
@@ -540,7 +646,11 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getContent}
-         * @param content Property content: The content of the job.
+         * @param content Property content: - For a <code>python</code>, <code>shell</code>, or <code>k8s</code> job, this parameter specifies the script content.
+         *                <ul>
+         *                <li>For a <code>go</code> job, the content must be in the following format:
+         *                {"jobName":"HelloWorld"}</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder content(com.aliyun.ros.cdk.core.IResolvable content) {
@@ -550,7 +660,7 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getDataOffset}
-         * @param dataOffset Property dataOffset: The data offset of the job.
+         * @param dataOffset Property dataOffset: The time offset in seconds for a <code>cron</code> job.
          * @return {@code this}
          */
         public Builder dataOffset(java.lang.Number dataOffset) {
@@ -560,7 +670,7 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getDataOffset}
-         * @param dataOffset Property dataOffset: The data offset of the job.
+         * @param dataOffset Property dataOffset: The time offset in seconds for a <code>cron</code> job.
          * @return {@code this}
          */
         public Builder dataOffset(com.aliyun.ros.cdk.core.IResolvable dataOffset) {
@@ -590,7 +700,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getDispatcherSize}
-         * @param dispatcherSize Property dispatcherSize: The dispatcher size of the job.
+         * @param dispatcherSize Property dispatcherSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of threads for dispatching subtasks.
+         *                       Defaults to 5.
          * @return {@code this}
          */
         public Builder dispatcherSize(java.lang.Number dispatcherSize) {
@@ -600,7 +711,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getDispatcherSize}
-         * @param dispatcherSize Property dispatcherSize: The dispatcher size of the job.
+         * @param dispatcherSize Property dispatcherSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of threads for dispatching subtasks.
+         *                       Defaults to 5.
          * @return {@code this}
          */
         public Builder dispatcherSize(com.aliyun.ros.cdk.core.IResolvable dispatcherSize) {
@@ -610,7 +722,13 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getFailEnable}
-         * @param failEnable Property failEnable: Whether fail is enabled for the job.
+         * @param failEnable Property failEnable: Specifies whether to enable alerts for failed jobs.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>true: Enables failure alerts.</li>
+         *                   <li>false: Disables failure alerts.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder failEnable(java.lang.Boolean failEnable) {
@@ -620,7 +738,13 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getFailEnable}
-         * @param failEnable Property failEnable: Whether fail is enabled for the job.
+         * @param failEnable Property failEnable: Specifies whether to enable alerts for failed jobs.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>true: Enables failure alerts.</li>
+         *                   <li>false: Disables failure alerts.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder failEnable(com.aliyun.ros.cdk.core.IResolvable failEnable) {
@@ -630,7 +754,7 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getFailTimes}
-         * @param failTimes Property failTimes: The fail times of the job.
+         * @param failTimes Property failTimes: The number of consecutive failures that triggers an alert.
          * @return {@code this}
          */
         public Builder failTimes(java.lang.Number failTimes) {
@@ -640,7 +764,7 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getFailTimes}
-         * @param failTimes Property failTimes: The fail times of the job.
+         * @param failTimes Property failTimes: The number of consecutive failures that triggers an alert.
          * @return {@code this}
          */
         public Builder failTimes(com.aliyun.ros.cdk.core.IResolvable failTimes) {
@@ -650,7 +774,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getMaxAttempt}
-         * @param maxAttempt Property maxAttempt: The max attempt of the job.
+         * @param maxAttempt Property maxAttempt: The maximum number of retries for a failed job.
+         *                   Defaults to 0.
          * @return {@code this}
          */
         public Builder maxAttempt(java.lang.Number maxAttempt) {
@@ -660,7 +785,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getMaxAttempt}
-         * @param maxAttempt Property maxAttempt: The max attempt of the job.
+         * @param maxAttempt Property maxAttempt: The maximum number of retries for a failed job.
+         *                   Defaults to 0.
          * @return {@code this}
          */
         public Builder maxAttempt(com.aliyun.ros.cdk.core.IResolvable maxAttempt) {
@@ -670,7 +796,10 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getMaxConcurrency}
-         * @param maxConcurrency Property maxConcurrency: The max concurrency of the job.
+         * @param maxConcurrency Property maxConcurrency: The maximum number of concurrent job instances.
+         *                       Defaults to 1. If an existing job
+         *                       instance is still running, a new one will not be triggered, even if its scheduled
+         *                       time has passed.
          * @return {@code this}
          */
         public Builder maxConcurrency(java.lang.Number maxConcurrency) {
@@ -680,7 +809,10 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getMaxConcurrency}
-         * @param maxConcurrency Property maxConcurrency: The max concurrency of the job.
+         * @param maxConcurrency Property maxConcurrency: The maximum number of concurrent job instances.
+         *                       Defaults to 1. If an existing job
+         *                       instance is still running, a new one will not be triggered, even if its scheduled
+         *                       time has passed.
          * @return {@code this}
          */
         public Builder maxConcurrency(com.aliyun.ros.cdk.core.IResolvable maxConcurrency) {
@@ -690,7 +822,11 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getMissWorkerEnable}
-         * @param missWorkerEnable Property missWorkerEnable: Whether miss worker is enabled for the job.
+         * @param missWorkerEnable Property missWorkerEnable: Specifies whether to send an alert when no worker is available to run the job.
+         *                         <ul>
+         *                         <li>true: Enables the alert.</li>
+         *                         <li>false: Disables the alert.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder missWorkerEnable(java.lang.Boolean missWorkerEnable) {
@@ -700,7 +836,11 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getMissWorkerEnable}
-         * @param missWorkerEnable Property missWorkerEnable: Whether miss worker is enabled for the job.
+         * @param missWorkerEnable Property missWorkerEnable: Specifies whether to send an alert when no worker is available to run the job.
+         *                         <ul>
+         *                         <li>true: Enables the alert.</li>
+         *                         <li>false: Disables the alert.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder missWorkerEnable(com.aliyun.ros.cdk.core.IResolvable missWorkerEnable) {
@@ -710,7 +850,7 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getNamespaceSource}
-         * @param namespaceSource Property namespaceSource: The namespace source of the job.
+         * @param namespaceSource Property namespaceSource: This parameter is required only for specific third-party integrations.
          * @return {@code this}
          */
         public Builder namespaceSource(java.lang.String namespaceSource) {
@@ -720,7 +860,7 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getNamespaceSource}
-         * @param namespaceSource Property namespaceSource: The namespace source of the job.
+         * @param namespaceSource Property namespaceSource: This parameter is required only for specific third-party integrations.
          * @return {@code this}
          */
         public Builder namespaceSource(com.aliyun.ros.cdk.core.IResolvable namespaceSource) {
@@ -730,7 +870,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getPageSize}
-         * @param pageSize Property pageSize: Advanced configuration for parallel grid tasks, the default number of sub-tasks pulled at a time is 100.
+         * @param pageSize Property pageSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of subtasks retrieved per pull.
+         *                 Defaults to 100.
          * @return {@code this}
          */
         public Builder pageSize(java.lang.Number pageSize) {
@@ -740,7 +881,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getPageSize}
-         * @param pageSize Property pageSize: Advanced configuration for parallel grid tasks, the default number of sub-tasks pulled at a time is 100.
+         * @param pageSize Property pageSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of subtasks retrieved per pull.
+         *                 Defaults to 100.
          * @return {@code this}
          */
         public Builder pageSize(com.aliyun.ros.cdk.core.IResolvable pageSize) {
@@ -770,7 +912,15 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getPriority}
-         * @param priority Property priority: The priority of the job.
+         * @param priority Property priority: The job priority.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>1: Low</li>
+         *                 <li>5: Medium</li>
+         *                 <li>10: High</li>
+         *                 <li>15: Very High</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder priority(java.lang.Number priority) {
@@ -780,7 +930,15 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getPriority}
-         * @param priority Property priority: The priority of the job.
+         * @param priority Property priority: The job priority.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>1: Low</li>
+         *                 <li>5: Medium</li>
+         *                 <li>10: High</li>
+         *                 <li>15: Very High</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {
@@ -790,7 +948,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getQueueSize}
-         * @param queueSize Property queueSize: The queue size of the job.
+         * @param queueSize Property queueSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of subtasks the queue can hold.
+         *                  Defaults to 10000.
          * @return {@code this}
          */
         public Builder queueSize(java.lang.Number queueSize) {
@@ -800,7 +959,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getQueueSize}
-         * @param queueSize Property queueSize: The queue size of the job.
+         * @param queueSize Property queueSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of subtasks the queue can hold.
+         *                  Defaults to 10000.
          * @return {@code this}
          */
         public Builder queueSize(com.aliyun.ros.cdk.core.IResolvable queueSize) {
@@ -810,7 +970,11 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getSendChannel}
-         * @param sendChannel Property sendChannel: The send channel of the job.
+         * @param sendChannel Property sendChannel: The channel for sending alerts.
+         *                    <ul>
+         *                    <li>For the default channel of the application group, use <code>default</code>.</li>
+         *                    <li>For a specific channel for the job, use <code>sms</code>, <code>mail</code>, <code>phone</code>, or <code>webhook</code>.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder sendChannel(java.lang.String sendChannel) {
@@ -820,7 +984,11 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getSendChannel}
-         * @param sendChannel Property sendChannel: The send channel of the job.
+         * @param sendChannel Property sendChannel: The channel for sending alerts.
+         *                    <ul>
+         *                    <li>For the default channel of the application group, use <code>default</code>.</li>
+         *                    <li>For a specific channel for the job, use <code>sms</code>, <code>mail</code>, <code>phone</code>, or <code>webhook</code>.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder sendChannel(com.aliyun.ros.cdk.core.IResolvable sendChannel) {
@@ -850,7 +1018,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getTaskAttemptInterval}
-         * @param taskAttemptInterval Property taskAttemptInterval: The task attempt interval of the job.
+         * @param taskAttemptInterval Property taskAttemptInterval: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the retry interval in seconds for a failed subtask.
+         *                            Defaults to 0.
          * @return {@code this}
          */
         public Builder taskAttemptInterval(java.lang.Number taskAttemptInterval) {
@@ -860,7 +1029,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getTaskAttemptInterval}
-         * @param taskAttemptInterval Property taskAttemptInterval: The task attempt interval of the job.
+         * @param taskAttemptInterval Property taskAttemptInterval: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the retry interval in seconds for a failed subtask.
+         *                            Defaults to 0.
          * @return {@code this}
          */
         public Builder taskAttemptInterval(com.aliyun.ros.cdk.core.IResolvable taskAttemptInterval) {
@@ -870,7 +1040,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getTaskMaxAttempt}
-         * @param taskMaxAttempt Property taskMaxAttempt: The task max attempt of the job.
+         * @param taskMaxAttempt Property taskMaxAttempt: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of retries for a failed subtask.
+         *                       Defaults to 0.
          * @return {@code this}
          */
         public Builder taskMaxAttempt(java.lang.Number taskMaxAttempt) {
@@ -880,7 +1051,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getTaskMaxAttempt}
-         * @param taskMaxAttempt Property taskMaxAttempt: The task max attempt of the job.
+         * @param taskMaxAttempt Property taskMaxAttempt: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of retries for a failed subtask.
+         *                       Defaults to 0.
          * @return {@code this}
          */
         public Builder taskMaxAttempt(com.aliyun.ros.cdk.core.IResolvable taskMaxAttempt) {
@@ -890,7 +1062,17 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getTimeExpression}
-         * @param timeExpression Property timeExpression: The time expression of the job.
+         * @param timeExpression Property timeExpression: The time expression, which depends on the value of <code>TimeType</code>.
+         *                       <ul>
+         *                       <li>cron: A standard cron expression.</li>
+         *                       <li>api: No time expression is required.</li>
+         *                       <li>fixed_rate: A fixed interval in seconds. For example, a value of 30 triggers
+         *                       the job every 30 seconds.</li>
+         *                       <li>second_delay: A fixed delay in seconds before the job is executed. Valid
+         *                       values: 1 to 60.</li>
+         *                       <li>one_time: A specific time in <code>yyyy-MM-dd HH:mm:ss</code> format or a Unix timestamp
+         *                       in milliseconds. Example: "2022-10-10 10:10:00".</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder timeExpression(java.lang.String timeExpression) {
@@ -900,7 +1082,17 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getTimeExpression}
-         * @param timeExpression Property timeExpression: The time expression of the job.
+         * @param timeExpression Property timeExpression: The time expression, which depends on the value of <code>TimeType</code>.
+         *                       <ul>
+         *                       <li>cron: A standard cron expression.</li>
+         *                       <li>api: No time expression is required.</li>
+         *                       <li>fixed_rate: A fixed interval in seconds. For example, a value of 30 triggers
+         *                       the job every 30 seconds.</li>
+         *                       <li>second_delay: A fixed delay in seconds before the job is executed. Valid
+         *                       values: 1 to 60.</li>
+         *                       <li>one_time: A specific time in <code>yyyy-MM-dd HH:mm:ss</code> format or a Unix timestamp
+         *                       in milliseconds. Example: "2022-10-10 10:10:00".</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder timeExpression(com.aliyun.ros.cdk.core.IResolvable timeExpression) {
@@ -910,7 +1102,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getTimeout}
-         * @param timeout Property timeout: The timeout of the job.
+         * @param timeout Property timeout: The timeout threshold in seconds.
+         *                Defaults to 7200.
          * @return {@code this}
          */
         public Builder timeout(java.lang.Number timeout) {
@@ -920,7 +1113,8 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getTimeout}
-         * @param timeout Property timeout: The timeout of the job.
+         * @param timeout Property timeout: The timeout threshold in seconds.
+         *                Defaults to 7200.
          * @return {@code this}
          */
         public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {
@@ -930,7 +1124,13 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getTimeoutEnable}
-         * @param timeoutEnable Property timeoutEnable: Whether timeout is enabled for the job.
+         * @param timeoutEnable Property timeoutEnable: Specifies whether to enable timeout alerts.
+         *                      Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>true: Enables timeout alerts.</li>
+         *                      <li>false: Disables timeout alerts.</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder timeoutEnable(java.lang.Boolean timeoutEnable) {
@@ -940,7 +1140,13 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getTimeoutEnable}
-         * @param timeoutEnable Property timeoutEnable: Whether timeout is enabled for the job.
+         * @param timeoutEnable Property timeoutEnable: Specifies whether to enable timeout alerts.
+         *                      Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>true: Enables timeout alerts.</li>
+         *                      <li>false: Disables timeout alerts.</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder timeoutEnable(com.aliyun.ros.cdk.core.IResolvable timeoutEnable) {
@@ -950,7 +1156,13 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getTimeoutKillEnable}
-         * @param timeoutKillEnable Property timeoutKillEnable: Whether timeout kill is enabled for the job.
+         * @param timeoutKillEnable Property timeoutKillEnable: Specifies whether to terminate the job upon timeout.
+         *                          Valid values:
+         *                          <p>
+         *                          <ul>
+         *                          <li>true: Terminates the job if it times out.</li>
+         *                          <li>false: The job is not terminated if it times out.</li>
+         *                          </ul>
          * @return {@code this}
          */
         public Builder timeoutKillEnable(java.lang.Boolean timeoutKillEnable) {
@@ -960,7 +1172,13 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getTimeoutKillEnable}
-         * @param timeoutKillEnable Property timeoutKillEnable: Whether timeout kill is enabled for the job.
+         * @param timeoutKillEnable Property timeoutKillEnable: Specifies whether to terminate the job upon timeout.
+         *                          Valid values:
+         *                          <p>
+         *                          <ul>
+         *                          <li>true: Terminates the job if it times out.</li>
+         *                          <li>false: The job is not terminated if it times out.</li>
+         *                          </ul>
          * @return {@code this}
          */
         public Builder timeoutKillEnable(com.aliyun.ros.cdk.core.IResolvable timeoutKillEnable) {
@@ -990,7 +1208,7 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getXAttrs}
-         * @param xAttrs Property xAttrs: The extended attributes of the job.
+         * @param xAttrs Property xAttrs: This parameter is required for <code>k8s</code> jobs.<br>For job tasks: {"resource":"job"}<br>For shell tasks: {"image":"busybox","resource":"shell"}<br><br>.
          * @return {@code this}
          */
         public Builder xAttrs(com.aliyun.ros.cdk.core.IResolvable xAttrs) {
@@ -1000,7 +1218,7 @@ public interface JobProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link JobProps#getXAttrs}
-         * @param xAttrs Property xAttrs: The extended attributes of the job.
+         * @param xAttrs Property xAttrs: This parameter is required for <code>k8s</code> jobs.<br>For job tasks: {"resource":"job"}<br>For shell tasks: {"image":"busybox","resource":"shell"}<br><br>.
          * @return {@code this}
          */
         public Builder xAttrs(java.util.Map<java.lang.String, ? extends java.lang.Object> xAttrs) {

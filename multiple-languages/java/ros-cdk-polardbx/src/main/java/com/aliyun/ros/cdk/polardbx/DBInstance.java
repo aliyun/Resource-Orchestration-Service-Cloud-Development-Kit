@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardbx;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PolarDBX::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:29:50.436Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:43:55.797Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardbx.$Module.class, fqn = "@alicloud/ros-cdk-polardbx.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.polardbx.IDBInstance {
 
@@ -136,20 +136,20 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property dbNodeClass: The specification of the nodes in the instance you want to create.
+         * Property dbNodeClass: Node specifications: - polarx.x4.medium.2e: 2 vCPUs, 8 GB - polarx.x4.large.2e: 4 vCPUs, 16 GB - polarx.x8.large.2e: 4 vCPUs, 32 GB - polarx.x4.xlarge.2e: 8 vCPUs, 32 GB - polarx.x8.xlarge.2e: 8 vCPUs, 64 GB - polarx.x4.2xlarge.2e: 16 vCPUs, 64 GB - polarx.x8.2xlarge.2e: 16 vCPUs, 128 GB - polarx.x4.4xlarge.2e: 32 vCPUs, 128 GB - polarx.x8.4xlarge.2e: 32 vCPUs, 256 GB - polarx.st.8xlarge.2e: 60 vCPUs, 470 GB - polarx.st.12xlarge.2e: 90 vCPUs, 720 GB.
          * <p>
          * @return {@code this}
-         * @param dbNodeClass Property dbNodeClass: The specification of the nodes in the instance you want to create. This parameter is required.
+         * @param dbNodeClass Property dbNodeClass: Node specifications: - polarx.x4.medium.2e: 2 vCPUs, 8 GB - polarx.x4.large.2e: 4 vCPUs, 16 GB - polarx.x8.large.2e: 4 vCPUs, 32 GB - polarx.x4.xlarge.2e: 8 vCPUs, 32 GB - polarx.x8.xlarge.2e: 8 vCPUs, 64 GB - polarx.x4.2xlarge.2e: 16 vCPUs, 64 GB - polarx.x8.2xlarge.2e: 16 vCPUs, 128 GB - polarx.x4.4xlarge.2e: 32 vCPUs, 128 GB - polarx.x8.4xlarge.2e: 32 vCPUs, 256 GB - polarx.st.8xlarge.2e: 60 vCPUs, 470 GB - polarx.st.12xlarge.2e: 90 vCPUs, 720 GB. This parameter is required.
          */
         public Builder dbNodeClass(final java.lang.String dbNodeClass) {
             this.props.dbNodeClass(dbNodeClass);
             return this;
         }
         /**
-         * Property dbNodeClass: The specification of the nodes in the instance you want to create.
+         * Property dbNodeClass: Node specifications: - polarx.x4.medium.2e: 2 vCPUs, 8 GB - polarx.x4.large.2e: 4 vCPUs, 16 GB - polarx.x8.large.2e: 4 vCPUs, 32 GB - polarx.x4.xlarge.2e: 8 vCPUs, 32 GB - polarx.x8.xlarge.2e: 8 vCPUs, 64 GB - polarx.x4.2xlarge.2e: 16 vCPUs, 64 GB - polarx.x8.2xlarge.2e: 16 vCPUs, 128 GB - polarx.x4.4xlarge.2e: 32 vCPUs, 128 GB - polarx.x8.4xlarge.2e: 32 vCPUs, 256 GB - polarx.st.8xlarge.2e: 60 vCPUs, 470 GB - polarx.st.12xlarge.2e: 90 vCPUs, 720 GB.
          * <p>
          * @return {@code this}
-         * @param dbNodeClass Property dbNodeClass: The specification of the nodes in the instance you want to create. This parameter is required.
+         * @param dbNodeClass Property dbNodeClass: Node specifications: - polarx.x4.medium.2e: 2 vCPUs, 8 GB - polarx.x4.large.2e: 4 vCPUs, 16 GB - polarx.x8.large.2e: 4 vCPUs, 32 GB - polarx.x4.xlarge.2e: 8 vCPUs, 32 GB - polarx.x8.xlarge.2e: 8 vCPUs, 64 GB - polarx.x4.2xlarge.2e: 16 vCPUs, 64 GB - polarx.x8.2xlarge.2e: 16 vCPUs, 128 GB - polarx.x4.4xlarge.2e: 32 vCPUs, 128 GB - polarx.x8.4xlarge.2e: 32 vCPUs, 256 GB - polarx.st.8xlarge.2e: 60 vCPUs, 470 GB - polarx.st.12xlarge.2e: 90 vCPUs, 720 GB. This parameter is required.
          */
         public Builder dbNodeClass(final com.aliyun.ros.cdk.core.IResolvable dbNodeClass) {
             this.props.dbNodeClass(dbNodeClass);
@@ -157,20 +157,24 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property dbNodeCount: The number of nodes in the instance you want to create.
+         * Property dbNodeCount: Number of instance nodes.
+         * <p>
+         * Minimum value is 2.
          * <p>
          * @return {@code this}
-         * @param dbNodeCount Property dbNodeCount: The number of nodes in the instance you want to create. This parameter is required.
+         * @param dbNodeCount Property dbNodeCount: Number of instance nodes. This parameter is required.
          */
         public Builder dbNodeCount(final java.lang.Number dbNodeCount) {
             this.props.dbNodeCount(dbNodeCount);
             return this;
         }
         /**
-         * Property dbNodeCount: The number of nodes in the instance you want to create.
+         * Property dbNodeCount: Number of instance nodes.
+         * <p>
+         * Minimum value is 2.
          * <p>
          * @return {@code this}
-         * @param dbNodeCount Property dbNodeCount: The number of nodes in the instance you want to create. This parameter is required.
+         * @param dbNodeCount Property dbNodeCount: Number of instance nodes. This parameter is required.
          */
         public Builder dbNodeCount(final com.aliyun.ros.cdk.core.IResolvable dbNodeCount) {
             this.props.dbNodeCount(dbNodeCount);
@@ -178,20 +182,20 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property engineVersion: The version of the database engine.
+         * Property engineVersion: MySQL engine version, either 5.7 or 8.0.
          * <p>
          * @return {@code this}
-         * @param engineVersion Property engineVersion: The version of the database engine. This parameter is required.
+         * @param engineVersion Property engineVersion: MySQL engine version, either 5.7 or 8.0. This parameter is required.
          */
         public Builder engineVersion(final java.lang.String engineVersion) {
             this.props.engineVersion(engineVersion);
             return this;
         }
         /**
-         * Property engineVersion: The version of the database engine.
+         * Property engineVersion: MySQL engine version, either 5.7 or 8.0.
          * <p>
          * @return {@code this}
-         * @param engineVersion Property engineVersion: The version of the database engine. This parameter is required.
+         * @param engineVersion Property engineVersion: MySQL engine version, either 5.7 or 8.0. This parameter is required.
          */
         public Builder engineVersion(final com.aliyun.ros.cdk.core.IResolvable engineVersion) {
             this.props.engineVersion(engineVersion);
@@ -383,20 +387,24 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property resourceGroupId: The ID of resource group.
+         * Property resourceGroupId: Can be empty.
+         * <p>
+         * Resource group ID. Not supported for now.
          * <p>
          * @return {@code this}
-         * @param resourceGroupId Property resourceGroupId: The ID of resource group. This parameter is required.
+         * @param resourceGroupId Property resourceGroupId: Can be empty. This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
             return this;
         }
         /**
-         * Property resourceGroupId: The ID of resource group.
+         * Property resourceGroupId: Can be empty.
+         * <p>
+         * Resource group ID. Not supported for now.
          * <p>
          * @return {@code this}
-         * @param resourceGroupId Property resourceGroupId: The ID of resource group. This parameter is required.
+         * @param resourceGroupId Property resourceGroupId: Can be empty. This parameter is required.
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);

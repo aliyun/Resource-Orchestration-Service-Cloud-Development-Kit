@@ -37,7 +37,10 @@ export interface ElasticDBInstanceProps {
     readonly storageSize: number | ros.IResolvable;
 
     /**
-     * Property vSwitchId: The vSwitch ID of the instance.
+     * Property vSwitchId: The vSwitch ID.
+     * > - This parameter is required.
+     * >
+     * > - The vSwitch must be in the zone specified by `ZoneId`.
      */
     readonly vSwitchId: string | ros.IResolvable;
 
@@ -53,8 +56,10 @@ export interface ElasticDBInstanceProps {
     readonly backupId?: string | ros.IResolvable;
 
     /**
-     * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
-     * This parameter must be passed in to create a storage reservation mode instance.
+     * Property dbInstanceCategory: The instance edition. Valid values:
+     * - HighAvailability: High-availability Edition
+     * - Basic: Basic Edition
+     * > This parameter is required for instances in elastic storage mode.
      */
     readonly dbInstanceCategory?: string | ros.IResolvable;
 
@@ -104,13 +109,15 @@ export interface ElasticDBInstanceProps {
     readonly periodUnit?: string | ros.IResolvable;
 
     /**
-     * Property privateIpAddress: Private IP address.
+     * Property privateIpAddress: This parameter is deprecated.
      */
     readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
-     * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
-     * 127.0.0.1.
+     * Property securityIpList: The IP address whitelist for the instance.
+     * A value of 127.0.0.1 blocks all external access. After you create the instance,
+     * you can call the [ModifySecurityIps]() operation to modify the IP address
+     * whitelist.
      */
     readonly securityIpList?: string | ros.IResolvable;
 

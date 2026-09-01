@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Represents a <code>OtsBackupPlan</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.753Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.136Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.IOtsBackupPlan")
 @software.amazon.jsii.Jsii.Proxy(IOtsBackupPlan.Jsii$Proxy.class)
 public interface IOtsBackupPlan extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

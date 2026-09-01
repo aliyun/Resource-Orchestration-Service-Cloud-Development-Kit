@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Aligreen
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::AuditCallback`, which is used to create an audit callback.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::AuditCallback`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAuditCallback`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-auditcallback

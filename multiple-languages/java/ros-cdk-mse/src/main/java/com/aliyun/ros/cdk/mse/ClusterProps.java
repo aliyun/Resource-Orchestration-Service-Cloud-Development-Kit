@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mse;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.292Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:13:41.641Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -70,24 +70,16 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterVersion();
 
     /**
-     * Property instanceCount: Number of instance nodes. Range: 1~15.
+     * Property instanceCount: Number of instance nodes, with a range limit of 1 to 9.
      * <p>
      * [Professional Edition]
      * <p>
      * <ul>
-     * <li>Must be &gt;=3 and odd number.</li>
-     * </ul>
-     * <p>
-     * [Development Edition]
-     * <p>
-     * <ul>
-     * <li>Only 1 allowed.</li>
-     * </ul>
-     * <p>
+     * <li>The number of instances must be 3 or more and must be an odd number.
+     * [Developer Edition]</li>
+     * <li>The number of instances can only be 1.
      * [Serverless Edition]
-     * <p>
-     * <ul>
-     * <li>Ignore this parameter.</li>
+     * Ignore this parameter.</li>
      * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceCount();
@@ -137,7 +129,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP).
+     * Property eipEnabled: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating whether to enable public network access (Elastic IP).
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEipEnabled() {
         return null;
@@ -182,7 +174,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance.
+     * Property securityGroupType: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating the security group type of the instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupType() {
         return null;
@@ -386,23 +378,15 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getInstanceCount}
-         * @param instanceCount Property instanceCount: Number of instance nodes. Range: 1~15. This parameter is required.
+         * @param instanceCount Property instanceCount: Number of instance nodes, with a range limit of 1 to 9. This parameter is required.
          *                      [Professional Edition]
          *                      <p>
          *                      <ul>
-         *                      <li>Must be &gt;=3 and odd number.</li>
-         *                      </ul>
-         *                      <p>
-         *                      [Development Edition]
-         *                      <p>
-         *                      <ul>
-         *                      <li>Only 1 allowed.</li>
-         *                      </ul>
-         *                      <p>
+         *                      <li>The number of instances must be 3 or more and must be an odd number.
+         *                      [Developer Edition]</li>
+         *                      <li>The number of instances can only be 1.
          *                      [Serverless Edition]
-         *                      <p>
-         *                      <ul>
-         *                      <li>Ignore this parameter.</li>
+         *                      Ignore this parameter.</li>
          *                      </ul>
          * @return {@code this}
          */
@@ -413,23 +397,15 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getInstanceCount}
-         * @param instanceCount Property instanceCount: Number of instance nodes. Range: 1~15. This parameter is required.
+         * @param instanceCount Property instanceCount: Number of instance nodes, with a range limit of 1 to 9. This parameter is required.
          *                      [Professional Edition]
          *                      <p>
          *                      <ul>
-         *                      <li>Must be &gt;=3 and odd number.</li>
-         *                      </ul>
-         *                      <p>
-         *                      [Development Edition]
-         *                      <p>
-         *                      <ul>
-         *                      <li>Only 1 allowed.</li>
-         *                      </ul>
-         *                      <p>
+         *                      <li>The number of instances must be 3 or more and must be an odd number.
+         *                      [Developer Edition]</li>
+         *                      <li>The number of instances can only be 1.
          *                      [Serverless Edition]
-         *                      <p>
-         *                      <ul>
-         *                      <li>Ignore this parameter.</li>
+         *                      Ignore this parameter.</li>
          *                      </ul>
          * @return {@code this}
          */
@@ -556,7 +532,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getEipEnabled}
-         * @param eipEnabled Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP).
+         * @param eipEnabled Property eipEnabled: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating whether to enable public network access (Elastic IP).
          * @return {@code this}
          */
         public Builder eipEnabled(java.lang.Boolean eipEnabled) {
@@ -566,7 +542,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getEipEnabled}
-         * @param eipEnabled Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP).
+         * @param eipEnabled Property eipEnabled: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating whether to enable public network access (Elastic IP).
          * @return {@code this}
          */
         public Builder eipEnabled(com.aliyun.ros.cdk.core.IResolvable eipEnabled) {
@@ -672,7 +648,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getSecurityGroupType}
-         * @param securityGroupType Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance.
+         * @param securityGroupType Property securityGroupType: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating the security group type of the instance.
          * @return {@code this}
          */
         public Builder securityGroupType(java.lang.String securityGroupType) {
@@ -682,7 +658,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getSecurityGroupType}
-         * @param securityGroupType Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance.
+         * @param securityGroupType Property securityGroupType: Valid when <code>ConnectionType</code> is <code>single_eni</code>, indicating the security group type of the instance.
          * @return {@code this}
          */
         public Builder securityGroupType(com.aliyun.ros.cdk.core.IResolvable securityGroupType) {

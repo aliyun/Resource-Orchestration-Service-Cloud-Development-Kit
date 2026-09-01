@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::Config::DeliveryChannel`, which is used to create or update a delivery channel.
+// This class encapsulates and extends the ROS resource type `ALIYUN::Config::DeliveryChannel`.
 type DeliveryChannel interface {
 	alicloudroscdkcore.Resource
 	IDeliveryChannel

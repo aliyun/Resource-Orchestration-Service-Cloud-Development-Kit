@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::AutoSnapshotPolicy</code>, which is used to create an automatic snapshot policy.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::AutoSnapshotPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.836Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.181Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AutoSnapshotPolicy")
 public class AutoSnapshotPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IAutoSnapshotPolicy {
 
@@ -240,30 +240,42 @@ public class AutoSnapshotPolicy extends com.aliyun.ros.cdk.core.Resource impleme
         }
 
         /**
-         * Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies.
+         * Property copiedSnapshotsRetentionDays: The retention period of the snapshot copy in the destination region.
          * <p>
-         * Range:
-         * -1: Permanent storage
-         * 1-65535: Specifies the number of days to save
-         * Default value: -1
+         * Unit: days.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>-1: The snapshot copy is retained until it is deleted.</li>
+         * <li>1 to 65535: The snapshot copy is retained for the specified number of days.
+         * After the retention period of the snapshot copy expires, the snapshot copy is
+         * automatically deleted.
+         * Default value: -1.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param copiedSnapshotsRetentionDays Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies. This parameter is required.
+         * @param copiedSnapshotsRetentionDays Property copiedSnapshotsRetentionDays: The retention period of the snapshot copy in the destination region. This parameter is required.
          */
         public Builder copiedSnapshotsRetentionDays(final java.lang.Number copiedSnapshotsRetentionDays) {
             this.props.copiedSnapshotsRetentionDays(copiedSnapshotsRetentionDays);
             return this;
         }
         /**
-         * Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies.
+         * Property copiedSnapshotsRetentionDays: The retention period of the snapshot copy in the destination region.
          * <p>
-         * Range:
-         * -1: Permanent storage
-         * 1-65535: Specifies the number of days to save
-         * Default value: -1
+         * Unit: days.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>-1: The snapshot copy is retained until it is deleted.</li>
+         * <li>1 to 65535: The snapshot copy is retained for the specified number of days.
+         * After the retention period of the snapshot copy expires, the snapshot copy is
+         * automatically deleted.
+         * Default value: -1.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param copiedSnapshotsRetentionDays Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies. This parameter is required.
+         * @param copiedSnapshotsRetentionDays Property copiedSnapshotsRetentionDays: The retention period of the snapshot copy in the destination region. This parameter is required.
          */
         public Builder copiedSnapshotsRetentionDays(final com.aliyun.ros.cdk.core.IResolvable copiedSnapshotsRetentionDays) {
             this.props.copiedSnapshotsRetentionDays(copiedSnapshotsRetentionDays);

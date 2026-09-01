@@ -138,6 +138,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
+        private object? _cpuOptions;
+
+        /// <summary>Property cpuOptions: CPU options.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "cpuOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingConfiguration.CpuOptionsProperty\"}]}}", isOptional: true)]
+        public object? CpuOptions
+        {
+            get => _cpuOptions;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Ess.RosScalingConfiguration.ICpuOptionsProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ess.RosScalingConfiguration.ICpuOptionsProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _cpuOptions = value;
+            }
+        }
+
         private object? _creditSpecification;
 
         /// <summary>Property creditSpecification: The performance mode of the burstable instance.</summary>

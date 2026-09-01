@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Disk</code>, which is used to create a cloud disk in Elastic Compute Service (ECS).
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Disk</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.873Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.230Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Disk")
 public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IDisk {
 
@@ -151,20 +151,48 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property burstingEnabled: Whether enable bursting.
+         * Property burstingEnabled: Specifies whether to enable performance bursting.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true</li>
+         * <li>false</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is available only for ESSD AutoPL disks (<code>cloud_auto</code>). For more
+         * information, see <a href="">ESSD AutoPL disks</a>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param burstingEnabled Property burstingEnabled: Whether enable bursting. This parameter is required.
+         * @param burstingEnabled Property burstingEnabled: Specifies whether to enable performance bursting. This parameter is required.
          */
         public Builder burstingEnabled(final java.lang.Boolean burstingEnabled) {
             this.props().burstingEnabled(burstingEnabled);
             return this;
         }
         /**
-         * Property burstingEnabled: Whether enable bursting.
+         * Property burstingEnabled: Specifies whether to enable performance bursting.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true</li>
+         * <li>false</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is available only for ESSD AutoPL disks (<code>cloud_auto</code>). For more
+         * information, see <a href="">ESSD AutoPL disks</a>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param burstingEnabled Property burstingEnabled: Whether enable bursting. This parameter is required.
+         * @param burstingEnabled Property burstingEnabled: Specifies whether to enable performance bursting. This parameter is required.
          */
         public Builder burstingEnabled(final com.aliyun.ros.cdk.core.IResolvable burstingEnabled) {
             this.props().burstingEnabled(burstingEnabled);
@@ -243,20 +271,32 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * Property diskName: The name of the disk.
+         * <p>
+         * The name must be 2 to 128 characters in length. It must
+         * start with a letter as defined by Unicode and can contain letters (including
+         * English and Chinese characters), digits (0-9), colons (:), underscores (_),
+         * periods (.), and hyphens (-).
+         * Default value: empty.
          * <p>
          * @return {@code this}
-         * @param diskName Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'. This parameter is required.
+         * @param diskName Property diskName: The name of the disk. This parameter is required.
          */
         public Builder diskName(final java.lang.String diskName) {
             this.props().diskName(diskName);
             return this;
         }
         /**
-         * Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * Property diskName: The name of the disk.
+         * <p>
+         * The name must be 2 to 128 characters in length. It must
+         * start with a letter as defined by Unicode and can contain letters (including
+         * English and Chinese characters), digits (0-9), colons (:), underscores (_),
+         * periods (.), and hyphens (-).
+         * Default value: empty.
          * <p>
          * @return {@code this}
-         * @param diskName Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'. This parameter is required.
+         * @param diskName Property diskName: The name of the disk. This parameter is required.
          */
         public Builder diskName(final com.aliyun.ros.cdk.core.IResolvable diskName) {
             this.props().diskName(diskName);
@@ -285,32 +325,36 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+         * Property instanceId: Creates a subscription disk and automatically attaches it to the specified subscription instance.
          * <p>
          * <ul>
-         * <li>Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.</li>
-         * <li>You cannot specify both ZoneId and InstanceId.
-         * Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.</li>
+         * <li>If you set this parameter, the <code>ResourceGroupId</code>, <code>Tag.N.Key</code>, <code>Tag.N.Value</code>,
+         * <code>ClientToken</code>, and <code>KMSKeyId</code> parameters are ignored.</li>
+         * <li>You cannot specify both <code>ZoneId</code> and <code>InstanceId</code>.
+         * Default value: empty. An empty value indicates that you are creating a
+         * pay-as-you-go disk. The disk's location is determined by <code>RegionId</code> and <code>ZoneId</code>.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param instanceId Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId. This parameter is required.
+         * @param instanceId Property instanceId: Creates a subscription disk and automatically attaches it to the specified subscription instance. This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
             this.props().instanceId(instanceId);
             return this;
         }
         /**
-         * Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+         * Property instanceId: Creates a subscription disk and automatically attaches it to the specified subscription instance.
          * <p>
          * <ul>
-         * <li>Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.</li>
-         * <li>You cannot specify both ZoneId and InstanceId.
-         * Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.</li>
+         * <li>If you set this parameter, the <code>ResourceGroupId</code>, <code>Tag.N.Key</code>, <code>Tag.N.Value</code>,
+         * <code>ClientToken</code>, and <code>KMSKeyId</code> parameters are ignored.</li>
+         * <li>You cannot specify both <code>ZoneId</code> and <code>InstanceId</code>.
+         * Default value: empty. An empty value indicates that you are creating a
+         * pay-as-you-go disk. The disk's location is determined by <code>RegionId</code> and <code>ZoneId</code>.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param instanceId Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId. This parameter is required.
+         * @param instanceId Property instanceId: Creates a subscription disk and automatically attaches it to the specified subscription instance. This parameter is required.
          */
         public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
             this.props().instanceId(instanceId);
@@ -318,20 +362,72 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property kmsKeyId: KMS key ID used by the cloud disk.
+         * Property kmsKeyId: The ID of the KMS key to use for the disk.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If <code>Encrypted</code> is set to true and you do not specify <code>KMSKeyId</code>, a default key
+         * is used for encryption. The <code>KMSKeyId</code> is returned in the response after the
+         * instance is created.
+         * <p>
+         * <ul>
+         * <li><ul>
+         * <li>If the disk is created from an unshared encrypted snapshot, the encryption
+         * key used by that snapshot is used by default.</li>
+         * </ul></li>
+         * <li><ul>
+         * <li>If the disk is created from a shared encrypted snapshot, the service key is
+         * used by default.</li>
+         * </ul></li>
+         * <li><ul>
+         * <li>If the disk is created in a region with account-level default encryption
+         * enabled, the specified account-level key is used by default.</li>
+         * </ul></li>
+         * <li><ul>
+         * <li>In other cases, the service key is used by default.</li>
+         * </ul></li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param kmsKeyId Property kmsKeyId: KMS key ID used by the cloud disk. This parameter is required.
+         * @param kmsKeyId Property kmsKeyId: The ID of the KMS key to use for the disk. This parameter is required.
          */
         public Builder kmsKeyId(final java.lang.String kmsKeyId) {
             this.props().kmsKeyId(kmsKeyId);
             return this;
         }
         /**
-         * Property kmsKeyId: KMS key ID used by the cloud disk.
+         * Property kmsKeyId: The ID of the KMS key to use for the disk.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If <code>Encrypted</code> is set to true and you do not specify <code>KMSKeyId</code>, a default key
+         * is used for encryption. The <code>KMSKeyId</code> is returned in the response after the
+         * instance is created.
+         * <p>
+         * <ul>
+         * <li><ul>
+         * <li>If the disk is created from an unshared encrypted snapshot, the encryption
+         * key used by that snapshot is used by default.</li>
+         * </ul></li>
+         * <li><ul>
+         * <li>If the disk is created from a shared encrypted snapshot, the service key is
+         * used by default.</li>
+         * </ul></li>
+         * <li><ul>
+         * <li>If the disk is created in a region with account-level default encryption
+         * enabled, the specified account-level key is used by default.</li>
+         * </ul></li>
+         * <li><ul>
+         * <li>In other cases, the service key is used by default.</li>
+         * </ul></li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param kmsKeyId Property kmsKeyId: KMS key ID used by the cloud disk. This parameter is required.
+         * @param kmsKeyId Property kmsKeyId: The ID of the KMS key to use for the disk. This parameter is required.
          */
         public Builder kmsKeyId(final com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
             this.props().kmsKeyId(kmsKeyId);
@@ -391,20 +487,50 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property provisionedIops: Provisioning IOPS.
+         * Property provisionedIops: The provisioned read/write IOPS of a single ESSD AutoPL disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Capacity &lt;= 3 GiB: You cannot set provisioned performance.</li>
+         * <li>Capacity &gt;= 4 GiB: 0 to min(1,000 IOPS/GiB × Capacity - Baseline IOPS, 50,000).
+         * Baseline IOPS = max(min(1,800 + 50 × Capacity, 50,000), 3,000).</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is available only for ESSD AutoPL disks (<code>cloud_auto</code>). For more
+         * information, see <a href="">ESSD AutoPL disks</a>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param provisionedIops Property provisionedIops: Provisioning IOPS. This parameter is required.
+         * @param provisionedIops Property provisionedIops: The provisioned read/write IOPS of a single ESSD AutoPL disk. This parameter is required.
          */
         public Builder provisionedIops(final java.lang.Number provisionedIops) {
             this.props().provisionedIops(provisionedIops);
             return this;
         }
         /**
-         * Property provisionedIops: Provisioning IOPS.
+         * Property provisionedIops: The provisioned read/write IOPS of a single ESSD AutoPL disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Capacity &lt;= 3 GiB: You cannot set provisioned performance.</li>
+         * <li>Capacity &gt;= 4 GiB: 0 to min(1,000 IOPS/GiB × Capacity - Baseline IOPS, 50,000).
+         * Baseline IOPS = max(min(1,800 + 50 × Capacity, 50,000), 3,000).</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is available only for ESSD AutoPL disks (<code>cloud_auto</code>). For more
+         * information, see <a href="">ESSD AutoPL disks</a>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param provisionedIops Property provisionedIops: Provisioning IOPS. This parameter is required.
+         * @param provisionedIops Property provisionedIops: The provisioned read/write IOPS of a single ESSD AutoPL disk. This parameter is required.
          */
         public Builder provisionedIops(final com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
             this.props().provisionedIops(provisionedIops);
@@ -433,20 +559,70 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property size: The size of the disk unit in GB.
+         * Property size: The capacity of the disk, in GiB.
+         * <p>
+         * You must specify a value for this parameter.
+         * Value range:
+         * <p>
+         * <ul>
+         * <li><code>cloud</code>: 5 to 2,000</li>
+         * <li><code>cloud_efficiency</code>: 20 to 32,768</li>
+         * <li><code>cloud_ssd</code>: 20 to 32,768</li>
+         * <li><code>PerformanceLevel</code></li>
+         * <li>PL0: 1 to 65,536</li>
+         * <li>PL1: 20 to 65,536</li>
+         * <li>PL2: 461 to 65,536</li>
+         * <li>PL3: 1,261 to 65,536</li>
+         * <li><code>cloud_auto</code>: 1 to 65,536</li>
+         * <li><code>cloud_essd_entry</code>: 10 to 32,768</li>
+         * <li><code>cloud_regional_disk_auto</code>: 10 to 65,536</li>
+         * <li><code>elastic_ephemeral_disk_standard</code>: 64 to 8,192</li>
+         * <li><code>elastic_ephemeral_disk_premium</code>: 64 to 8,192
+         * If you specify <code>SnapshotId</code>, the following limits apply to <code>SnapshotId</code> and
+         * <code>Size</code>:</li>
+         * <li>If the snapshot capacity is greater than the specified <code>Size</code>, the actual disk
+         * size is the snapshot capacity.</li>
+         * <li>If the snapshot capacity is smaller than the specified <code>Size</code>, the actual disk
+         * size is the specified <code>Size</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param size Property size: The size of the disk unit in GB. This parameter is required.
+         * @param size Property size: The capacity of the disk, in GiB. This parameter is required.
          */
         public Builder size(final java.lang.Number size) {
             this.props().size(size);
             return this;
         }
         /**
-         * Property size: The size of the disk unit in GB.
+         * Property size: The capacity of the disk, in GiB.
+         * <p>
+         * You must specify a value for this parameter.
+         * Value range:
+         * <p>
+         * <ul>
+         * <li><code>cloud</code>: 5 to 2,000</li>
+         * <li><code>cloud_efficiency</code>: 20 to 32,768</li>
+         * <li><code>cloud_ssd</code>: 20 to 32,768</li>
+         * <li><code>PerformanceLevel</code></li>
+         * <li>PL0: 1 to 65,536</li>
+         * <li>PL1: 20 to 65,536</li>
+         * <li>PL2: 461 to 65,536</li>
+         * <li>PL3: 1,261 to 65,536</li>
+         * <li><code>cloud_auto</code>: 1 to 65,536</li>
+         * <li><code>cloud_essd_entry</code>: 10 to 32,768</li>
+         * <li><code>cloud_regional_disk_auto</code>: 10 to 65,536</li>
+         * <li><code>elastic_ephemeral_disk_standard</code>: 64 to 8,192</li>
+         * <li><code>elastic_ephemeral_disk_premium</code>: 64 to 8,192
+         * If you specify <code>SnapshotId</code>, the following limits apply to <code>SnapshotId</code> and
+         * <code>Size</code>:</li>
+         * <li>If the snapshot capacity is greater than the specified <code>Size</code>, the actual disk
+         * size is the snapshot capacity.</li>
+         * <li>If the snapshot capacity is smaller than the specified <code>Size</code>, the actual disk
+         * size is the specified <code>Size</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param size Property size: The size of the disk unit in GB. This parameter is required.
+         * @param size Property size: The capacity of the disk, in GiB. This parameter is required.
          */
         public Builder size(final com.aliyun.ros.cdk.core.IResolvable size) {
             this.props().size(size);
@@ -454,20 +630,42 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property snapshotId: If specified, the backup used as the source to create disk.
+         * Property snapshotId: The ID of the snapshot used to create the disk.
+         * <p>
+         * Snapshots created on or before
+         * July 15, 2013 cannot be used to create disks.
+         * The <code>SnapshotId</code> and <code>Size</code> parameters have the following limits:
+         * <p>
+         * <ul>
+         * <li>If the snapshot capacity is greater than the specified <code>Size</code>, the actual disk
+         * size is the snapshot capacity.</li>
+         * <li>If the snapshot capacity is smaller than the specified <code>Size</code>, the actual disk
+         * size is the specified <code>Size</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param snapshotId Property snapshotId: If specified, the backup used as the source to create disk. This parameter is required.
+         * @param snapshotId Property snapshotId: The ID of the snapshot used to create the disk. This parameter is required.
          */
         public Builder snapshotId(final java.lang.String snapshotId) {
             this.props().snapshotId(snapshotId);
             return this;
         }
         /**
-         * Property snapshotId: If specified, the backup used as the source to create disk.
+         * Property snapshotId: The ID of the snapshot used to create the disk.
+         * <p>
+         * Snapshots created on or before
+         * July 15, 2013 cannot be used to create disks.
+         * The <code>SnapshotId</code> and <code>Size</code> parameters have the following limits:
+         * <p>
+         * <ul>
+         * <li>If the snapshot capacity is greater than the specified <code>Size</code>, the actual disk
+         * size is the snapshot capacity.</li>
+         * <li>If the snapshot capacity is smaller than the specified <code>Size</code>, the actual disk
+         * size is the specified <code>Size</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param snapshotId Property snapshotId: If specified, the backup used as the source to create disk. This parameter is required.
+         * @param snapshotId Property snapshotId: The ID of the snapshot used to create the disk. This parameter is required.
          */
         public Builder snapshotId(final com.aliyun.ros.cdk.core.IResolvable snapshotId) {
             this.props().snapshotId(snapshotId);
@@ -475,20 +673,38 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property storageSetId: Storage set ID.
+         * Property storageSetId: The ID of the storage set.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can specify either storage set parameters (<code>StorageSetId</code> and
+         * <code>StorageSetPartitionNumber</code>) or the dedicated block storage cluster parameter
+         * (<code>StorageClusterId</code>), but not both. The request fails if you specify parameters
+         * for both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param storageSetId Property storageSetId: Storage set ID. This parameter is required.
+         * @param storageSetId Property storageSetId: The ID of the storage set. This parameter is required.
          */
         public Builder storageSetId(final java.lang.String storageSetId) {
             this.props().storageSetId(storageSetId);
             return this;
         }
         /**
-         * Property storageSetId: Storage set ID.
+         * Property storageSetId: The ID of the storage set.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can specify either storage set parameters (<code>StorageSetId</code> and
+         * <code>StorageSetPartitionNumber</code>) or the dedicated block storage cluster parameter
+         * (<code>StorageClusterId</code>), but not both. The request fails if you specify parameters
+         * for both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param storageSetId Property storageSetId: Storage set ID. This parameter is required.
+         * @param storageSetId Property storageSetId: The ID of the storage set. This parameter is required.
          */
         public Builder storageSetId(final com.aliyun.ros.cdk.core.IResolvable storageSetId) {
             this.props().storageSetId(storageSetId);
@@ -496,20 +712,30 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property storageSetPartitionNumber: The number of storage set partitions.
+         * Property storageSetPartitionNumber: The number of partitions in the storage set.
+         * <p>
+         * The value must be greater than or
+         * equal to 2 and cannot exceed the quota returned by the
+         * <a href="">DescribeAccountAttributes</a> operation.
+         * Default value: 2.
          * <p>
          * @return {@code this}
-         * @param storageSetPartitionNumber Property storageSetPartitionNumber: The number of storage set partitions. This parameter is required.
+         * @param storageSetPartitionNumber Property storageSetPartitionNumber: The number of partitions in the storage set. This parameter is required.
          */
         public Builder storageSetPartitionNumber(final java.lang.Number storageSetPartitionNumber) {
             this.props().storageSetPartitionNumber(storageSetPartitionNumber);
             return this;
         }
         /**
-         * Property storageSetPartitionNumber: The number of storage set partitions.
+         * Property storageSetPartitionNumber: The number of partitions in the storage set.
+         * <p>
+         * The value must be greater than or
+         * equal to 2 and cannot exceed the quota returned by the
+         * <a href="">DescribeAccountAttributes</a> operation.
+         * Default value: 2.
          * <p>
          * @return {@code this}
-         * @param storageSetPartitionNumber Property storageSetPartitionNumber: The number of storage set partitions. This parameter is required.
+         * @param storageSetPartitionNumber Property storageSetPartitionNumber: The number of partitions in the storage set. This parameter is required.
          */
         public Builder storageSetPartitionNumber(final com.aliyun.ros.cdk.core.IResolvable storageSetPartitionNumber) {
             this.props().storageSetPartitionNumber(storageSetPartitionNumber);
@@ -530,30 +756,44 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+         * Property zoneId: The ID of the zone in which to create the pay-as-you-go disk.
          * <p>
          * <ul>
-         * <li>If you do not set InstanceId, ZoneId is required.</li>
-         * <li>You cannot specify both ZoneId and InstanceId.</li>
+         * <li>If you do not set <code>InstanceId</code>, this parameter is required.</li>
+         * <li>You cannot specify both <code>ZoneId</code> and <code>InstanceId</code>.</li>
          * </ul>
          * <p>
+         * <blockquote>
+         * <p>
+         * ESSD zone-redundant disks (<code>cloud_regional_disk_auto</code>) do not require a zone
+         * ID.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
-         * @param zoneId Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area. This parameter is required.
+         * @param zoneId Property zoneId: The ID of the zone in which to create the pay-as-you-go disk. This parameter is required.
          */
         public Builder zoneId(final java.lang.String zoneId) {
             this.props().zoneId(zoneId);
             return this;
         }
         /**
-         * Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+         * Property zoneId: The ID of the zone in which to create the pay-as-you-go disk.
          * <p>
          * <ul>
-         * <li>If you do not set InstanceId, ZoneId is required.</li>
-         * <li>You cannot specify both ZoneId and InstanceId.</li>
+         * <li>If you do not set <code>InstanceId</code>, this parameter is required.</li>
+         * <li>You cannot specify both <code>ZoneId</code> and <code>InstanceId</code>.</li>
          * </ul>
          * <p>
+         * <blockquote>
+         * <p>
+         * ESSD zone-redundant disks (<code>cloud_regional_disk_auto</code>) do not require a zone
+         * ID.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
-         * @param zoneId Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area. This parameter is required.
+         * @param zoneId Property zoneId: The ID of the zone in which to create the pay-as-you-go disk. This parameter is required.
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props().zoneId(zoneId);

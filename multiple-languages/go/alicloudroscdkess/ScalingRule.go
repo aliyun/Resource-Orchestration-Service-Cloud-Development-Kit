@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingRule`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingRule`Creates a scaling rule for Auto Scaling (ESS).
 type ScalingRule interface {
 	alicloudroscdkcore.Resource
 	IScalingRule

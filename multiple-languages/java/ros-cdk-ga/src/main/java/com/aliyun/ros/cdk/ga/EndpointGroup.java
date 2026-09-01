@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::EndpointGroup</code>, which is used to create an endpoint group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::EndpointGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.784Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:19:27.762Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.EndpointGroup")
 public class EndpointGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ga.IEndpointGroup {
 
@@ -248,11 +248,73 @@ public class EndpointGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
+         * Property endpointIpVersion: The IP address protocol version of the backend service.
+         * <p>
+         * Valid values:
+         * IPv4
+         * IPv6
+         * ProtocolAffinity
+         * <p>
+         * @return {@code this}
+         * @param endpointIpVersion Property endpointIpVersion: The IP address protocol version of the backend service. This parameter is required.
+         */
+        public Builder endpointIpVersion(final java.lang.String endpointIpVersion) {
+            this.props.endpointIpVersion(endpointIpVersion);
+            return this;
+        }
+        /**
+         * Property endpointIpVersion: The IP address protocol version of the backend service.
+         * <p>
+         * Valid values:
+         * IPv4
+         * IPv6
+         * ProtocolAffinity
+         * <p>
+         * @return {@code this}
+         * @param endpointIpVersion Property endpointIpVersion: The IP address protocol version of the backend service. This parameter is required.
+         */
+        public Builder endpointIpVersion(final com.aliyun.ros.cdk.core.IResolvable endpointIpVersion) {
+            this.props.endpointIpVersion(endpointIpVersion);
+            return this;
+        }
+
+        /**
+         * Property endpointProtocolVersion: The protocol version of the backend service.
+         * <p>
+         * Valid values:
+         * HTTP1.1
+         * HTTP2
+         * Note This parameter is valid only when the listener uses HTTPS.
+         * <p>
+         * @return {@code this}
+         * @param endpointProtocolVersion Property endpointProtocolVersion: The protocol version of the backend service. This parameter is required.
+         */
+        public Builder endpointProtocolVersion(final java.lang.String endpointProtocolVersion) {
+            this.props.endpointProtocolVersion(endpointProtocolVersion);
+            return this;
+        }
+        /**
+         * Property endpointProtocolVersion: The protocol version of the backend service.
+         * <p>
+         * Valid values:
+         * HTTP1.1
+         * HTTP2
+         * Note This parameter is valid only when the listener uses HTTPS.
+         * <p>
+         * @return {@code this}
+         * @param endpointProtocolVersion Property endpointProtocolVersion: The protocol version of the backend service. This parameter is required.
+         */
+        public Builder endpointProtocolVersion(final com.aliyun.ros.cdk.core.IResolvable endpointProtocolVersion) {
+            this.props.endpointProtocolVersion(endpointProtocolVersion);
+            return this;
+        }
+
+        /**
          * Property endpointRequestProtocol: The protocol used by the backend service.
          * <p>
          * Valid values:
-         * http: This is the default value.
-         * https
+         * HTTP: This is the default value.
+         * HTTPS
          * Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
          * For an HTTP listener, the backend service protocol must be HTTP.
          * <p>
@@ -267,8 +329,8 @@ public class EndpointGroup extends com.aliyun.ros.cdk.core.Resource implements c
          * Property endpointRequestProtocol: The protocol used by the backend service.
          * <p>
          * Valid values:
-         * http: This is the default value.
-         * https
+         * HTTP: This is the default value.
+         * HTTPS
          * Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
          * For an HTTP listener, the backend service protocol must be HTTP.
          * <p>
@@ -298,6 +360,27 @@ public class EndpointGroup extends com.aliyun.ros.cdk.core.Resource implements c
          */
         public Builder healthCheckEnabled(final com.aliyun.ros.cdk.core.IResolvable healthCheckEnabled) {
             this.props.healthCheckEnabled(healthCheckEnabled);
+            return this;
+        }
+
+        /**
+         * Property healthCheckHost: The domain name that is used for health checks.
+         * <p>
+         * @return {@code this}
+         * @param healthCheckHost Property healthCheckHost: The domain name that is used for health checks. This parameter is required.
+         */
+        public Builder healthCheckHost(final java.lang.String healthCheckHost) {
+            this.props.healthCheckHost(healthCheckHost);
+            return this;
+        }
+        /**
+         * Property healthCheckHost: The domain name that is used for health checks.
+         * <p>
+         * @return {@code this}
+         * @param healthCheckHost Property healthCheckHost: The domain name that is used for health checks. This parameter is required.
+         */
+        public Builder healthCheckHost(final com.aliyun.ros.cdk.core.IResolvable healthCheckHost) {
+            this.props.healthCheckHost(healthCheckHost);
             return this;
         }
 
@@ -415,6 +498,40 @@ public class EndpointGroup extends com.aliyun.ros.cdk.core.Resource implements c
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
+            return this;
+        }
+
+        /**
+         * Property portOverrides: The port mapping relationship of the endpoint group.
+         * <p>
+         * @return {@code this}
+         * @param portOverrides Property portOverrides: The port mapping relationship of the endpoint group. This parameter is required.
+         */
+        public Builder portOverrides(final com.aliyun.ros.cdk.core.IResolvable portOverrides) {
+            this.props.portOverrides(portOverrides);
+            return this;
+        }
+        /**
+         * Property portOverrides: The port mapping relationship of the endpoint group.
+         * <p>
+         * @return {@code this}
+         * @param portOverrides Property portOverrides: The port mapping relationship of the endpoint group. This parameter is required.
+         */
+        public Builder portOverrides(final java.util.List<? extends java.lang.Object> portOverrides) {
+            this.props.portOverrides(portOverrides);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to endpoint group.
+         * <p>
+         * Max support 20 tags to add during create endpoint group. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to endpoint group. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ga.RosEndpointGroup.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

@@ -48,9 +48,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         private object _rr;
 
         /// <remarks>
-        /// <strong></strong>: " instead of empty
+        /// <strong></strong>: " instead of leaving it empty.
         ///
-        /// <strong>Property</strong>: rr: Host record, if you want to resolve
+        /// <strong>Property</strong>: rr: The host record.
+        /// To resolve example.com, set the host record to "
         /// </remarks>
         [JsiiProperty(name: "rr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Rr
@@ -179,7 +180,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         private object? _priority;
 
         /// <remarks>
-        /// <strong>Property</strong>: priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be
+        /// <strong>Property</strong>: priority: The priority of the MX record. Valid values: `[1,50]`.
+        /// This parameter is required if the record type is MX. A smaller value indicates a
+        /// higher priority.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -232,7 +235,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         private object? _ttl;
 
         /// <remarks>
-        /// <strong>Property</strong>: ttl: The resolution time is valid. The default is 600 seconds (10 minutes). See the TTL definition.
+        /// <strong>Property</strong>: ttl: The time to live (TTL) value of the Domain Name System (DNS) record. Default
+        /// value: 600. Unit: seconds.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ttl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
